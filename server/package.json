@@ -1,0 +1,19 @@
+{
+  "name": "bloodcare",
+  "version": "1.0.0",
+  "description": "blood managment system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dinusha1234-abcd/BloodCare.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dinusha1234-abcd/BloodCare/issues"
+  },
+  "homepage": "https://github.com/Dinusha1234-abcd/BloodCare#readme"
+}
