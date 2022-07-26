@@ -1,0 +1,295 @@
+:root{
+    --header-height : 2em;
+    --nav-width : 60px;
+}
+
+*{
+    margin : 0;
+    padding : 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style : none;
+}
+
+main{
+    position: relative;
+    margin : 11px 0 0 0;
+    padding: 0 1rem;
+    font-size: 1rem;
+    padding-left: 75px;
+    font-family: 'Nunito Sans', sans-serif;
+    transition: 0.5s; 
+}
+.header{ 
+    position: relative;
+    top:-30px;
+    left: calc(22px+ 12rem) ;
+    height: 55px;
+    display: flex;
+    background: rgba(221, 45, 80, 0.8);
+
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: .5s;
+    
+}
+.header-toggle{
+    cursor: pointer;
+    height:10px;
+    width:101px;
+    margin-left: calc(var(--nav-width) + 12rem) ;
+    transition: .5s;
+ } 
+#header-name{
+    color: white;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+}
+.menu-icon{
+    position: relative;
+    width:10px;
+    height: 10px;   
+    font-size: 30px;
+    left:  -2rem;
+}
+ 
+#user-name{
+      display: inline-block;
+      position: absolute;
+      right: 50px;
+      top:4px;
+      border-radius: 10px;
+      background-color: aliceblue;
+      padding:3px;
+      font-size: 15px;
+ }
+ #icon-user{
+   width: 30px;
+   height: 30px;
+ }
+ #select{
+    display: inline-block;
+    position: absolute;
+    right: 15px;
+    top: 12px;
+    width: 20px;
+    height: 20px;      
+ }
+ #user-select{
+    display: none;
+    position: absolute;
+    right: 15px;
+    top:56px;
+    background: rgba(221, 45, 80, 0.8);
+
+
+    text-align: center;
+    padding: 12px;
+    border-radius: 11px;
+ }
+ #user-select-active{
+    position: absolute;
+    right: 15px;
+    top:56px;
+    background: rgba(221, 45, 80, 0.8);
+
+    transition: 0.5s; 
+    text-align: center;
+    padding: 15px;
+    border-radius: 11px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding-bottom: 20px;
+ }
+ .user-select-option-profile{
+    padding:6px;
+    background-color: aliceblue;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 6px; 
+    font-size: 15px;
+    color:black;
+ }
+ .user-select-option-log{
+    position: relative;
+    padding:6px;
+    top: 11px;
+    background-color: aliceblue;
+    padding-left: 23px;
+    padding-right: 23px;
+    border-radius: 7px; 
+    font-size: 15px;
+    color:black;
+  }
+ .sidebar{
+    position : fixed;
+    top: 0;
+    left: -30%;
+    height : 100vh;
+    width: var(--nav-width);
+    background: rgba(221, 45, 80, 0.8);
+
+    padding-top: 1rem;
+    transition: 1s;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px; 
+    box-shadow: 4px 10px 8px rgba(0, 0, 0, 0.25);
+ }
+.nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    padding : 2rem 1rem 0.5rem -1rem;
+    height: 100%;
+ } 
+ #logo{
+    height: 55px;
+    width:55px;
+    margin-left: -20px;
+ }
+ .nav-logo{
+    margin-bottom: 3rem;
+     
+ }
+ .nav-logo,
+ .nav-link,.nav-link-active{
+    position: relative;
+    display: grid;
+    grid-template-columns: min-content min-content; 
+    column-gap: 1.5rem;
+    margin-top:-16px;
+    padding : 0.5rem 0 0.5rem 1.5rem; 
+ }
+ .nav-logo-icon{ 
+    font-size: 1.25;
+    color:  white;
+    cursor: pointer;
+}
+.nav-link-icon{
+    color:white;
+    font-size: 20px;
+}
+.nav-link-name{
+   color  : white;
+   white-space:nowrap;
+}
+.nav-link-name-donors{
+    position: relative;
+    left: -40px;
+    padding-left: -10px;
+}
+ .nav-logo-name{
+    margin-top: 15px;
+    margin-left: -16px;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.02em;
+    white-space:nowrap;
+    color: white;
+ }
+.nav-link{
+    
+    width: 100%;
+    margin-bottom: 1.2rem;
+    transition: 0.5s;
+}
+
+.nav-link-active{
+    
+    margin-left: 11px;
+    border-top-left-radius: 11px;
+    border-bottom-left-radius: 11px;
+    color: red;
+    background-color: white;
+    margin-bottom: 1.2rem;
+    transition: 0.5s;
+}
+.nav-link-active:hover{ 
+      color  : red; 
+  }
+.nav-name-active{
+    
+    color  : red;
+    white-space:nowrap;
+} 
+.nav-link-icon-active{
+    position: relative;
+    color:red;
+    font-size: 18px;
+    top:4px;
+    left:-2px;
+}
+.nav-link-icon-active:hover{
+    color:red;
+     
+}
+
+.nav-link:hover{
+    color: var(--first-color-alt);
+    margin-left: 11px;
+    border-radius: 11px;
+    background-color:  rgba(91, 12, 12, 0.037); 
+}
+
+.active{
+    color: var(--white-color);
+    background-color:  rgba(0,0,0,0.1); 
+}
+ 
+.active::before{
+    content:"";
+    position : absolute; 
+    left: 0;
+    top:0;
+    height:35px;
+    width: 3px;
+    background-color: var(--white-color);
+    transition: 0.5s;
+} 
+.show{
+    left:0;
+}
+
+.space-toggle{
+    /* padding-left: calc(2rem) ; */
+    transition: 0.5s;
+}
+@media screen and (min-width: 760px){
+    main{
+        margin : calc(var(--header-height) + 1rem) 0 0 0;
+        padding : 0 1rem 0 calc(var(--nav-width) + 1rem);
+     
+    }
+
+    .header{
+       height: calc(var(--header-height) + 1rem);
+       padding-left: calc(var(--nav-width) ) ;
+       transition: 0.5s;
+    }
+
+    .sidebar{
+        left:0;
+        padding: 1rem 0 0 0;
+
+    }
+    .menu-icon{
+        margin-top:25px;
+        margin-left:20px;
+        height: 3rem;
+     }
+    .show{
+        width: calc(var(--header-height) + 190px);
+    }
+    .space-toggle{
+        padding-left: calc(var(--nav-width) + 180px);
+    }
+}
