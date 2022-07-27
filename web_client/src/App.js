@@ -52,6 +52,7 @@ function App() {
          <Routes>
             <Route path='/dashboard' exact element={ <RegDonorDashboard /> }/> 
             <Route path='/login' exact element={ <RegDonorDashboard /> }/> 
+            <Route path='/calender' exact element={ <RegDonorDashboard /> }/> 
          </Routes>
       </BrowserRouter>)
    }

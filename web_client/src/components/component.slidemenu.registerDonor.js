@@ -8,7 +8,7 @@ import select from "../assests/images/slidemenu.select.png";
 
  
 
-export default function Slide() {
+export default function Slide(props) {
   const [show, setShow] = useState(true);
   const [option, setOption] = useState(true);
 
@@ -25,7 +25,7 @@ export default function Slide() {
     <main className={show ? 'space-toggle' : null}>
       <header className='header'>
         <div onClick={() => { setShow(!show) }}>
-          <h4 id='header-name'><i className="fa-solid fa-bars fa-2xl  menu-icon"></i>HOME</h4>
+          <h4 id='header-name'><i className="fa-solid fa-bars fa-2xl  menu-icon"></i>{props.headerName}</h4>
 
         </div>
         <a id='user-name'  ><img id="icon-user" src={userIcon} /><a id='name'>{localStorage.getItem("firstName")+" "+localStorage.getItem("lastName") }</a></a><img id="notification" src={notification}/><img id="select" src={select} onClick={()=>{setOption(!option)} } />
@@ -41,17 +41,17 @@ export default function Slide() {
               <span className='nav-logo-name'>BLOODCARE</span>
             </Link>
             <div className='nav-list'>
-              <Link to='/menu' className={`${(window.location.pathname === '/dashboard'||'/login') ? 'nav-link-active' : 'nav-link'} `}>
-                <i className={`${(window.location.pathname === '/dashboard'||'/login') ? 'fa-solid fa-gauge-high nav-link-icon-active' : 'fa-solid fa-gauge-high nav-link'} `}></i>
-                <span className={`${(window.location.pathname === '/dashboard'||'/login') ? 'nav-link-icon-active' : 'nav-link-icon'} `}  >Home</span>
+              <Link to='/dashboard' className={`${(window.location.pathname === '/dashboard' ) ? 'nav-link-active' : 'nav-link'} `}>
+                <i className={`${(window.location.pathname === '/dashboard' ) ? 'fa-solid fa-gauge-high nav-link-icon-active' : 'fa-solid fa-gauge-high nav-link-icon'} `}></i>
+                <span className={`${(window.location.pathname === '/dashboard' ) ? 'nav-link-icon-active' : 'nav-link-icon'} `}  >Home</span>
+              </Link>  
+              <Link to='/calender' className={`${(window.location.pathname === '/calender' ) ? 'nav-link-active ' : 'nav-link'} `}>
+                <i className={`${(window.location.pathname === '/calender' ) ? 'fa-solid fa-calendar-days nav-link-icon-active' : 'fa-solid fa-calendar-days nav-link-icon'} `}></i>
+                <span className={`${(window.location.pathname === '/calender' ) ? 'nav-link-icon-active' : 'nav-link-icon'} `}  >Calender</span>
               </Link>
-              <Link to='/students' className='nav-link  '>
-                <i class="fa-solid fa-calendar-days nav-link-icon"></i>
-                <span className='nav-link-name'>Calender</span>
-              </Link>
-              <Link to='/courses' className='nav-link'  >
-                <i class="fa-solid fa-campground nav-link-icon"></i>
-                <span className='nav-link-name' id='nav-link-name'>Blood Camps</span>
+              <Link to='/bloodCamps'className={`${(window.location.pathname === '/bloodCamps' ) ? 'nav-link-active' : 'nav-link'} `}>
+              <i className={`${(window.location.pathname === '/bloodCamps' ) ? 'fa-solid fa-campground nav-link-icon-active' : 'fa-solid fa-campground nav-link-icon'} `}></i>
+              <span className={`${(window.location.pathname === '/bloodCamps' ) ? 'nav-link-icon-active' : 'nav-link-icon'} `}  >Calender</span>
               </Link>
   
             </div>

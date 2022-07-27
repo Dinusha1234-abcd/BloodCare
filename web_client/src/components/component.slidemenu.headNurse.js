@@ -8,7 +8,7 @@ import select from "../assests/images/slidemenu.select.png";
 
  
 
-export default function Slide() {
+export default function Slide(props) {
   const [show, setShow] = useState(true);
   const [option, setOption] = useState(true);
 
@@ -25,7 +25,7 @@ export default function Slide() {
     <main className={show ? 'space-toggle' : null}>
       <header className='header'>
         <div onClick={() => { setShow(!show) }}>
-          <h4 id='header-name'><i className="fa-solid fa-bars fa-2xl  menu-icon"></i> DASHBOARD</h4>
+          <h4 id='header-name'><i className="fa-solid fa-bars fa-2xl  menu-icon"></i>{props.headerName}</h4>
 
         </div>
         <a id='user-name'  ><img id="icon-user" src={userIcon} /><a id='name'>{localStorage.getItem("firstName")+" "+localStorage.getItem("lastName") }</a></a><img id="notification" src={notification}/><img id="select" src={select} onClick={()=>{setOption(!option)} } />

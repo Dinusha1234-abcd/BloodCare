@@ -3,6 +3,6 @@ import SlideMenuMedicalOfficer from "../components/component.slidemenu.medicalOf
 
 export default function MedicalOfficerDashboard() {
     return(
-        <SlideMenuMedicalOfficer/>
+        <SlideMenuMedicalOfficer headerName={"Dashboard"}/>
     );
 }
