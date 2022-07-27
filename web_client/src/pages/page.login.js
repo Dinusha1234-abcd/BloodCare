@@ -27,25 +27,31 @@ export default function Login() {
              setErrorUserName("Please Enter Valid User Name");
              setErrorPassword("Please Enter Valid Password");
         }else if(!((userName.length==10)||(userName.length==12))){
-         
-            setErrorUserName("Please Enter Valid User Name");
+             setErrorUserName("Please Enter Valid User Name");
         }else if(password.length==0){
-          
-            setErrorPassword("Please Enter Valid Password");
+             setErrorPassword("Please Enter Valid Password");
         }else{
-             
+             // pass check the data with server 
               axios.post("http://localhost:8070/login", user).then(
                 (res)=> {
-
+                    //check password and username  
                     if(res['data']['message']=="success"){
-                        const token = res['data']['message'];
+                        const token = res.data.message;
+                        const firstName = res.data.firstName;
+                        const lastName = res.data.lastName;
+                        const type = res.data.type;
+                        localStorage.setItem("token",token);
+                        localStorage.setItem("firstName",firstName);
+                        localStorage.setItem("lastName",lastName);
+                        localStorage.setItem("type",type)
                         window.location = "/dashboard";
                     }else{
-                        setMessage("Username or Password is Not Match");
+                        setMessage("Username or Password is Not match");
                     }
                   
                 }
               ).catch((err)=>{
+                //sever error
                  console.log(err.message);
               })
         }
@@ -65,7 +71,8 @@ export default function Login() {
                     
                 </div>
                 <form id="loginForm" onSubmit={userAuthentication}>
-                    <p id="message">{message}</p>
+                    {/* validation message display */}
+                   { message ? <p id="message">{message}</p> : null}
                     <input type="text" id="input" placeholder=" &#xf2bd;  User name" onChange={(e)=>{setUserName(e.target.value)}}  /> <br/>
                     <p id="errorMessage">{errorUserName}</p> 
                     <input type="password" id="input" placeholder=" &#xf023;   Password"onChange={(e)=>{setPassword(e.target.value)}}/><br/>

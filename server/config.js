@@ -1,9 +1,15 @@
+require("dotenv").config();
+const hostname = process.env.SERVER;
+const userName = process.env.UID;
+const database = process.env.DATABASE;
+const password = process.env.PASSWORD;
+console.log(hostname);
 const config = {
     db:{
-        host : "localhost",
-        user : "root",
-        password : "",
-        database : "bloodcare"
+        host : hostname,
+        user : userName,
+        password :password,
+        database : database
     }
 }
 

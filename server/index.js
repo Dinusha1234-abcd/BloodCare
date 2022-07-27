@@ -7,6 +7,7 @@ const login = require('./routes/login');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
+require("dotenv").config();
 app.use(
     express.urlencoded({
         extended:true,

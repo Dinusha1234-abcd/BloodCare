@@ -1,4 +1,7 @@
- 
+ *{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 800px;
+ }
 .container1{
     position: relative;
     z-index:21;
@@ -41,6 +44,7 @@
 }
 #iconName{
     color:rgba(221, 45, 80, 1);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 #loginForm{
     position: relative;
@@ -81,15 +85,17 @@
     color: aliceblue;
     border-style: hidden;
     border-color: rgba(221, 45, 80, 1);
+    font-weight: 800;
 
 }
 #signIn:hover{
     background-color: rgb(231, 98, 125);
-    font-weight: 500;
+    font-weight: 800;
+    letter-spacing: 0.1em;
 }
 #forgetPassword{
     text-decoration: none;
-    padding-left: 55px;
+    padding-left: 67px;
     color: black;
 }
 #forgetPassword:hover{
@@ -101,7 +107,7 @@
     color:rgba(221, 45, 80, 1);
 }
 #message{
-    /* padding: 11px; */
+    padding: 11px;
     width:250px;
     border-radius: 11px;
     font-size: 15px;
