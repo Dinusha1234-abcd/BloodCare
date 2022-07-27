@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import axios from 'axios';
 import "../assests/css/page.login.css";
 import icon from "../assests/images/bloodcareIcon2.png";
 import vector1 from "../assests/images/login.vector1.png";
@@ -10,7 +11,8 @@ export default function Login() {
     const [password,setPassword] = useState("");
     const [ errorUserName,setErrorUserName] = useState("");
     const [ errorPassword,setErrorPassword] = useState("");
-    const [ message,setMeassage] = useState("");
+    const [ message,setMessage] = useState("");
+
     function userAuthentication(e){
         e.preventDefault()
         //create object
@@ -31,7 +33,21 @@ export default function Login() {
           
             setErrorPassword("Please Enter Valid Password");
         }else{
-              setMeassage("Incorrect User Name or Password");
+             
+              axios.post("http://localhost:8070/login", user).then(
+                (res)=> {
+
+                    if(res['data']['message']=="success"){
+                        const token = res['data']['message'];
+                        window.location = "/dashboard";
+                    }else{
+                        setMessage("Username or Password is Not Match");
+                    }
+                  
+                }
+              ).catch((err)=>{
+                 console.log(err.message);
+              })
         }
     }
 
@@ -49,7 +65,7 @@ export default function Login() {
                     
                 </div>
                 <form id="loginForm" onSubmit={userAuthentication}>
-                    {/* <p id="message">{message}</p> */}
+                    <p id="message">{message}</p>
                     <input type="text" id="input" placeholder=" &#xf2bd;  User name" onChange={(e)=>{setUserName(e.target.value)}}  /> <br/>
                     <p id="errorMessage">{errorUserName}</p> 
                     <input type="password" id="input" placeholder=" &#xf023;   Password"onChange={(e)=>{setPassword(e.target.value)}}/><br/>

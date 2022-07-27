@@ -101,7 +101,7 @@
     color:rgba(221, 45, 80, 1);
 }
 #message{
-    padding: 11px;
+    /* padding: 11px; */
     width:250px;
     border-radius: 11px;
     font-size: 15px;
