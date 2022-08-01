@@ -1,0 +1,121 @@
+#state-change-true{
+    position: relative;
+    margin-left: 250px;
+    transition: 0.6s;
+}
+#state-change-false{
+    position: relative;
+    margin-left: 100px;
+    transition: 0.6s;
+}
+#row-1{
+  display: flex;
+}
+#medical-staff{
+    width: 33%;
+    height: 190px;
+    background: rgba(255, 255, 255, 0.55);
+    padding: 20px; 
+    margin-left: 3%;
+    border-radius: 20px;
+    font-weight: 400;
+    box-shadow: 20px 20px 100px 5px rgba(0, 0, 0, 0.2)
+}
+ 
+#users-count{
+    display: flex;
+    margin-top: 6px;
+}
+#user{
+    position: absolute;
+    left: 110px;
+     
+} 
+#camp{
+    width: 36%;
+    height: 190px;
+    margin-left: 1%;
+    padding:12px;
+    padding-top: 20px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.55);
+    box-shadow: 20px 20px 100px 5px rgba(0, 0, 0, 0.2)
+}
+#camp-count{
+    display: flex;
+    margin-top: 10px;
+ 
+}
+#row-2{
+    display: flex;
+    margin-top: 20px;
+    width: 33%;
+    height: 300px;
+    margin-left: 3%;
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.55);
+    box-shadow: 20px 20px 100px 5px rgba(0, 0, 0, 0.2)
+}
+ 
+#blood{
+    display: flex;
+    margin-top: 20px;
+}
+#calender{
+    position: absolute;
+    right:10px;
+}
+#camp-events{
+    position: absolute;
+    right:40px;
+    top:360px;
+    width: 23%;
+    height: auto;
+    border-radius: 20px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.55);
+    box-shadow: 20px 20px 100px 5px rgba(0, 0, 0, 0.2)
+}
+#camp-events-list{
+    margin-top: 6px;
+    padding:6px;
+    background-color: aliceblue;
+    border-radius: 11px;
+}
+#camp-events-name{ 
+    padding:10px;
+}
+#view-button{
+    background-color: rgba(255, 182, 182, 1);
+    border: none;
+    color: white;
+    padding-left: 9px; 
+    padding-right: 9px; 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 11px;
+    font-size: 16px;
+}
+@media screen and (max-width: 1460px){
+    #row-1{
+        display: block;
+         /* left: -20px; */
+    }
+    #medical-staff{
+        
+        padding-left: 11%; 
+        width: 67%;
+    }
+    #camp{
+        margin-top: 11px;
+        padding-left: 11%; 
+        width: 67%;
+    }
+    #row-2{
+        margin-top: 11px;
+        padding-left: 11%; 
+        width: 67%;
+    }
+}  

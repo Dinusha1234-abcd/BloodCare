@@ -1,9 +1,13 @@
 import React from 'react';
-
-export default function Users() {
+ import '../assests/css/component.user.display.css';
+export default function Users(props) {
 
   return (
-    <div> </div>
+    <div id='user-card'>  
+         <img id="image-icon" src={props.image}/><br/> 
+         <h id={`${ props.status ? 'user-role-change' : 'user-role' }`}>{props.name}</h><br/>
+         <h2 id='user-count'>22</h2>
+     </div>
   )
 
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../assests/css/component.slidemenu.css';
 import icon from "../assests/images/bloodcareIcon.png";
@@ -11,7 +11,7 @@ import select from "../assests/images/slidemenu.select.png";
 export default function Slide(props) {
   const [show, setShow] = useState(true);
   const [option, setOption] = useState(true);
-
+   
   function logout() {
     localStorage.removeItem("token");
     localStorage.removeItem("firstName");
@@ -20,7 +20,11 @@ export default function Slide(props) {
 
     window.location = "/login";
   }
-
+  useEffect(()=>{
+    props.passData(show);
+  })
+  
+  
   return (
     <main className={show ? 'space-toggle' : null}>
       <header className='header'>
@@ -28,10 +32,10 @@ export default function Slide(props) {
           <h4 id='header-name'><i className="fa-solid fa-bars fa-2xl  menu-icon"></i>{props.headerName}</h4>
 
         </div>
-        <a id='user-name'  ><img id="icon-user" src={userIcon} /><a id='name'>{localStorage.getItem("firstName")+" "+localStorage.getItem("lastName") }</a></a><img id="notification" src={notification}/><img id="select" src={select} onClick={()=>{setOption(!option)} } />
+        <a id='user-name'  ><img id="icon-user" src={userIcon} /><a id='name'>{localStorage.getItem("firstName")+" "+localStorage.getItem("lastName") }</a></a><img id="notification" src={notification}/><img id="select" src={select} onClick={()=>{setOption(!option)  } } />
         <div id={`${ option ? 'user-select' : 'user-select-active' }`}>
           <Link  to='/'  className='user-select-option-profile'>View Profile</Link><br/> 
-          <Link  to='/' className='user-select-option-log' onClick={logout}>Login</Link>
+          <Link  to='/' className='user-select-option-log' onClick={logout}>logout</Link>
         </div></header>
       <aside className={`sidebar ${show ? 'show' : null}`}>
         <nav className='nav'>

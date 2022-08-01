@@ -19,7 +19,7 @@ ul{
 
 main{
     position: relative;
-    margin : 11px 0 0 0;
+    margin : 40px 0 0 0;
     padding: 0 1rem;
     font-size: 1rem;
     padding-left: 75px;
@@ -112,7 +112,7 @@ main{
     right: 15px;
     top:56px;
     background: rgba(221, 45, 80, 0.8);
-
+    z-index: 200;
     transition: 0.5s; 
     text-align: center;
     padding: 15px;
@@ -153,6 +153,7 @@ main{
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px; 
     box-shadow: 4px 10px 8px rgba(0, 0, 0, 0.25);
+    transition: 0.6s;
  }
 .nav{
     display: flex;
@@ -161,6 +162,7 @@ main{
     overflow: hidden;
     padding : 2rem 1rem 0.5rem -1rem;
     height: 100%;
+    transition: 0.6s;
  } 
  #logo{
     height: 55px;
@@ -269,11 +271,12 @@ main{
 } 
 .show{
     left:0;
+    transition: 0.6s;
 }
 
 .space-toggle{
     /* padding-left: calc(2rem) ; */
-    transition: 0.5s;
+    transition: 0.6s;
 }
 @media screen and (min-width: 760px){
     main{

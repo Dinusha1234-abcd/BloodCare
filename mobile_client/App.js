@@ -19,9 +19,11 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import Login from './src/screen/login';
+import Home from './src/screen/home';
+// import AppRouter from './src/router/router';
  const App = () =>{
-     return( <Login/> ) 
- }
+     return( <Home/> ) 
+ }  
  
  
 export default App;
