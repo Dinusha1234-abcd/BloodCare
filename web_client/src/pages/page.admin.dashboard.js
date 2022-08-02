@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 import SlideMenuAdmin from "../components/component.slidemenu.admin";
 import '../assests/css/admin.dashboard.css';
 export default function AdminDashboard() {
     return(
-        <SlideMenuAdmin headerName={"Dashboard"}/>
+        
+        <div><SlideMenuAdmin headerName={"Dashboard"}/>
+        </div>
+        
     );
 }

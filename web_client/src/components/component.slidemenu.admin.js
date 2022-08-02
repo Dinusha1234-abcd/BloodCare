@@ -24,7 +24,7 @@ export default function Slide(props) {
       <header className='header'>
         <div onClick={() => { setShow(!show) }}>
           <h4 id='header-name'><i className="fa-solid fa-bars fa-2xl  menu-icon"></i>{props.headerName}</h4>
-          </div>
+        </div>
         <a id='user-name'  ><img id="icon-user" src={userIcon} /><a id='name'>{localStorage.getItem("firstName")+" "+localStorage.getItem("lastName") }</a> </a><img id="notification" src={notification}/><img id="select" src={select} onClick={()=>{setOption(!option)} } />
         <div id={`${ option ? 'user-select' : 'user-select-active' }`}>
           <Link  to='/'  className='user-select-option-profile'>View Profile</Link><br/> 
