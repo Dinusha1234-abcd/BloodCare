@@ -1,0 +1,9 @@
+#camp-events{
+    position: absolute;
+    right:40px;
+    top:200px;
+    width: 23%;
+    height: 100px;
+    border-radius: 20px;
+    background-color: rgb(119, 150, 150); 
+}

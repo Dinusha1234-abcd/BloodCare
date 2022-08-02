@@ -6,7 +6,7 @@ const port = 8070; // asign the port number
 const login = require('./routes/login');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({origin: true, credentials: true}));
 require("dotenv").config();
 app.use(
     express.urlencoded({
