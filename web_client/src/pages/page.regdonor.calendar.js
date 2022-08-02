@@ -4,7 +4,13 @@ import SlideMenuRegDonor from "../components/component.slidemenu.registerDonor";
 
 export default function RegDonorCalender() {
     return(
-        <SlideMenuRegDonor headerName={"Calendar"}/>
+        <div>
+          <SlideMenuRegDonor headerName={"Calendar"}/>
+          <diV class="calendar-rectangle">
+            <div id="calendar-content" class="calendar-content"></div>
+
+          </diV>
+        </div>
         
     );  
         
