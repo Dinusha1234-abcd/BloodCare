@@ -1,0 +1,14 @@
+*{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 800px;
+    /* background:#FDDFE5; */
+ }
+ .box1{
+    position: absolute;
+    width: 1160px;
+    height: 316px;
+    left: 410px;
+    top: 148px;
+    background: rgba(169, 55, 55, 0.55);
+    border-radius: 50px;
+ }
