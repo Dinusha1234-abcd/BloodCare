@@ -6,6 +6,12 @@ export default function AdminDashboard() {
     return(
         
         <div><SlideMenuAdmin headerName={"Dashboard"}/>
+        <div className="box">
+            <div className="box1">
+
+            </div>
+
+        </div>
         </div>
         
     );

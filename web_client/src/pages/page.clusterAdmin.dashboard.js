@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import React, { useState, useEffect } from "react";
 import { Bar } from 'react-chartjs-2';
 import Calendar from 'react-calendar';
@@ -24,7 +25,15 @@ export default function ClusterAdminDashboard() {
   };
 
   return (
-    <div>
+
+    <div className="body">
+          <Helmet>
+      <style>
+        {
+          'body { background-color:red !important; } '
+        }
+      </style>
+      </Helmet>
       <SlideMenuClusterAdmin headerName={"Dashboard"} passData={passData} />
       <div id={`${slidemenu ? 'state-change-true' : 'state-change-false'}`} >
         <div id="row-1">
