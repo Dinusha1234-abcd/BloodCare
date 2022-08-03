@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../assests/css/component.slidemenu.css';
@@ -21,10 +22,17 @@ export default function Slide(props) {
 
   return (
     <main className={show ? 'space-toggle' : null}>
+      <Helmet>
+      <style>
+        {
+          'body { background-color:#FDDFE5 !important; } '
+        }
+      </style>
+      </Helmet>
       <header className='header'>
         <div onClick={() => { setShow(!show) }}>
           <h4 id='header-name'><i className="fa-solid fa-bars fa-2xl  menu-icon"></i>{props.headerName}</h4>
-          </div>
+        </div>
         <a id='user-name'  ><img id="icon-user" src={userIcon} /><a id='name'>{localStorage.getItem("firstName")+" "+localStorage.getItem("lastName") }</a> </a><img id="notification" src={notification}/><img id="select" src={select} onClick={()=>{setOption(!option)} } />
         <div id={`${ option ? 'user-select' : 'user-select-active' }`}>
           <Link  to='/'  className='user-select-option-profile'>View Profile</Link><br/> 
