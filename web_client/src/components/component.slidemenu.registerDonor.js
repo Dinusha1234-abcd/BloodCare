@@ -46,11 +46,7 @@ export default function Slide(props) {
                 <span className={`${(window.location.pathname === '/dashboard' ) ? 'nav-link-icon-active' : 'nav-link-icon'} `}  >Home</span>
               </Link>  
               <Link to='/history records' className='nav-link'  >
-<<<<<<< HEAD
-              <i className={`${(window.location.pathname === '/calender' ) ? 'fa-solid fa-book-bible nav-link-icon-active' : 'fa-solid fa-book-bible nav-link-icon'} `}></i>
-=======
               <i className={`${(window.location.pathname === '/history records' ) ? 'fa-solid fa-book-bible nav-link-icon-active' : 'fa-solid fa-book-bible nav-link-icon'} `}></i>
->>>>>>> 8121e85e3d30a335b8cd96e2d8bc847708ba1939
                 <span className='nav-link-name' id='nav-link-name'>History Records</span>
               </Link>
               <Link to='/calender' className={`${(window.location.pathname === '/calender' ) ? 'nav-link-active ' : 'nav-link'} `}>
