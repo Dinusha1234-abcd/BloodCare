@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { Bar } from 'react-chartjs-2';
+import React, { useState, useEffect } from "react"; 
 import Calendar from 'react-calendar';
 import SlideMenuClusterAdmin from "../components/component.slidemenu.clusterAdmin";
 import User from "../components/component.users.display";
@@ -14,6 +13,7 @@ import pastCamp from '../assests/images/pastCamp.png';
 import OngoingCamp from '../assests/images/ongoingCamp.png';
 import futureCamp from '../assests/images/furtureCamp.png';
 import PendingCamp from '../assests/images/camp.png';
+// import BarApp from '../components/compoent.barChart'
 import '../assests/css/page.clusterAdmin.dashboard.css'
 import '../assests/css/component.calender.css';
 export default function ClusterAdminDashboard() {
@@ -54,7 +54,7 @@ export default function ClusterAdminDashboard() {
           </div>
         </div>
       </div>
-
+        {/* <BarApp/> */}
     </div>
   );
 }

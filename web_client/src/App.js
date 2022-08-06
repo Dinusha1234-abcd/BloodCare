@@ -8,6 +8,7 @@ import HeadNurseDashboard from "./pages/page.headnurse.dashboard";
 import RegDonorDashboard from "./pages/page.regdonor.dashboard";
 import RegDonorCalender from "./pages/page.regdonor.calendar"; 
 import User from "./components/component.users.display";
+ 
 function App() {
     //admin routes
    if (localStorage.getItem("type") === "1") {
@@ -26,7 +27,9 @@ function App() {
          <Routes>
             <Route path='/dashboard' exact element= {<ClusterAdminDashboard/>}/> 
             <Route path='/login' exact element={<ClusterAdminDashboard/>} />
-            <Route path='/user'  exact element={<User/>}/> 
+            <Route path='/user'  exact element={<User/>}/>
+            
+            {/* <Route path='/bar'  exact element={<BarApp/>}/>   */}
          </Routes>
       </BrowserRouter>)
    }
@@ -63,8 +66,7 @@ function App() {
       return (<BrowserRouter>
          <Routes>
             <Route path='/login' exact element={<Login />} />
-             <Route path='/user'  exact element={<User/>}/> 
-        
+             <Route path='/user'  exact element={<User/>}/>  
          </Routes>
       </BrowserRouter>)
    }

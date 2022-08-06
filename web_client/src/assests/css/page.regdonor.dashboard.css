@@ -1,0 +1,22 @@
+:root{
+    background-color: rgba(253, 223, 229, 1);
+}
+#backgroundimg{
+    position: absolute;
+    width: 1419px;
+    height: 600px;
+    margin-top: 0px;
+    margin-left: 250px;
+    Opacity: 30%;
+    border-radius: 20px;
+}
+#tableContainer{
+    position: absolute;
+    width: 1419px;
+    height: 450px;
+    margin-top: 150px;
+    margin-left: 250px;
+
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+}

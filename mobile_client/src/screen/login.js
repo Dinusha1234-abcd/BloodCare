@@ -46,7 +46,7 @@ const Login = () => {
 
     return (
         <SafeAreaView>
-            <ScrollView>
+            <ScrollView style={styles.ScrollView}>
             <View style={styles.header}>
                 <ImageBackground style={styles.defaultlogo} resizeMode={'stretch'} source={require('../assests/BloodCare.png')} />
             </View>
@@ -76,8 +76,8 @@ const Login = () => {
     )
 }
 const styles = StyleSheet.create({
-    header: {
-        
+    ScrollView: {
+        backgroundColor:'rgba(255, 255, 255, 1)'
     }, defaultlogo: {
         width: '101%',
         height: 200,

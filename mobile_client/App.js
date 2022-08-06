@@ -1,29 +1,21 @@
- 
-import React from 'react'; 
- 
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import * as React from "react";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+ 
 import Login from './src/screen/login';
-import Home from './src/screen/home';
-// import AppRouter from './src/router/router';
- const App = () =>{
-     return( <Home/> ) 
- }  
- 
- 
+import Splash from './src/screen/splash';
+const Stack = createNativeStackNavigator();
+const App = () => {
+  return (
+    <NavigationContainer>
+   <Stack.Navigator initialRouteName="Splash" >
+        <Stack.Screen options={{headerShown:false}} name="Login" component={Login} />
+        <Stack.Screen options={{headerShown:false}} name="Splash" component={Splash} />
+      </Stack.Navigator>
+  </NavigationContainer>
+  )
+}
+
+
 export default App;

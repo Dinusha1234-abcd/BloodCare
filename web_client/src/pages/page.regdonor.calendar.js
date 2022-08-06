@@ -1,18 +1,8 @@
-import { Calendar, momentLocalizer } from 'react-big-calendar'
-import moment from 'moment'
+import React from "react";
+import SlideMenuRegDonor from "../components/component.slidemenu.registerDonor";
 
-
-const localizer = momentLocalizer(moment)
-
-const RegDonorCalender = props => (
-  <div>
-    <Calendar
-      localizer={localizer}
-      //events={myEventsList}
-      startAccessor="start"
-      endAccessor="end"
-      style={{ height: 500 }}
-    />
-  </div>
-)
-export default RegDonorCalender;
+export default function RegDonorCalender() {
+  return(
+      <SlideMenuRegDonor headerName={"Calender"}/>
+  );
+}

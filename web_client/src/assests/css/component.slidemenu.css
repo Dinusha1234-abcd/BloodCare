@@ -6,7 +6,7 @@
 *{
     margin : 0;
     padding : 0;
-    box-sizing: border-box;
+    box-sizing: border-box; 
 }
 
 a{
@@ -243,7 +243,7 @@ main{
     left:-2px;
 }
 .nav-link-icon-active:hover{
-    color:red;
+    color:rgba(221, 45, 80, 0.8);
      
 }
 
