@@ -29,12 +29,13 @@ main{
 }
 .header{ 
     position: relative;
+    
     top:-30px;
     left: calc(22px+ 12rem) ;
     height: 55px;
     display: flex;
     background: rgba(221, 45, 80, 0.8);
-
+    z-index: 100;
     width: 100%;
     border-radius: 15px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -191,11 +192,14 @@ main{
 }
 .nav-link-icon{
     color:white;
-    font-size: 20px;
+    white-space:nowrap;
 }
 .nav-link-name{
    color  : white;
    white-space:nowrap;
+}
+.nav-link-name-active{
+    color:rgba(221, 45, 80, 0.79)
 }
 .nav-link-name-donors{
     position: relative;
@@ -242,6 +246,7 @@ main{
     font-size: 18px;
     top:4px;
     left:-2px;
+    white-space:nowrap;
 }
 .nav-link-icon-active:hover{
     color:red;

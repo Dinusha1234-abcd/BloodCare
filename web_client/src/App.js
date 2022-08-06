@@ -1,12 +1,23 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from "./pages/page.login";
+
+//import Pages
+//Admin
 import AdminDashboard from "./pages/page.admin.dashboard";
+
+//Cluster Admin
 import ClusterAdminDashboard from "./pages/page.clusterAdmin.dashboard";
+import ClusterAdminBloodCamp from './pages/page.clusterAdmin.bloodCamp';
+//Medical Officer
 import MedicalOfficerDashboard from "./pages/page.medicalofficer.dashboard";
+
+//Head Nurse
 import HeadNurseDashboard from "./pages/page.headnurse.dashboard";
+
+//Register Donor
 import RegDonorDashboard from "./pages/page.regdonor.dashboard"; 
-import User from "./components/component.users.display";
+ 
  
 function App() {
     //admin routes
@@ -26,9 +37,8 @@ function App() {
          <Routes>
             <Route path='/dashboard' exact element= {<ClusterAdminDashboard/>}/> 
             <Route path='/login' exact element={<ClusterAdminDashboard/>} />
-            <Route path='/user'  exact element={<User/>}/>
-            
-            {/* <Route path='/bar'  exact element={<BarApp/>}/>   */}
+             <Route path='/bloodcamp'  exact element={<ClusterAdminBloodCamp/>}/>
+         
          </Routes>
       </BrowserRouter>)
    }
@@ -65,7 +75,7 @@ function App() {
       return (<BrowserRouter>
          <Routes>
             <Route path='/login' exact element={<Login />} />
-             <Route path='/user'  exact element={<User/>}/>  
+          
          </Routes>
       </BrowserRouter>)
    }
