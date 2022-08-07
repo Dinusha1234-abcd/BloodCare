@@ -10,7 +10,7 @@ export default function ClusterAdminBloodCamp (){
     const passData = (data) => {
         setSlideMenu(data);
       };
-      if(window.location.pathname=='/bloodcamp/pastcamp' ){ 
+      if(window.location.pathname=='/bloodcamp/pastcamp'||'/bloodcamp' ){ 
       return(
         <div>
              <SlideMenuClusterAdmin headerName={"Blood Camp"} passData={passData} />
