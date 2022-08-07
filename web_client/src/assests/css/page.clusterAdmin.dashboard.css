@@ -49,14 +49,30 @@
 #row-2{
     display: flex;
     margin-top: 20px;
-    width: 33%;
     height: 300px;
     margin-left: 3%;
-    padding: 20px;
+    
+    border-radius: 20px;
+    
+}
+#sub-row-1{
+    display: flex;
+    width:71%;
+   
+}
+#sub-row-2{
+    width:45%;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.55);
-    box-shadow: 20px 20px 100px 5px rgba(0, 0, 0, 0.2)
+    box-shadow: 20px 20px 100px 5px rgba(0, 0, 0, 0.2);
+    padding: 11px;
 }
+#sub-row-3{
+    width:55.9%;
+    margin-left: 1%;
+ 
+    display: flex;
+} 
  
 #blood{
     display: flex;
@@ -97,6 +113,52 @@
     display: inline-block;
     border-radius: 11px;
     font-size: 16px;
+}
+#blood-month-dashboard{
+    width:50%;
+    background: rgba(255, 255, 255, 0.55);
+    box-shadow: 20px 20px 100px 5px rgba(0, 0, 0, 0.2);
+    padding: 3px;
+    padding-top: 11px;
+    padding-left: 6px;
+    border-radius: 10px;
+}
+#chart-dashboard{
+    margin-top: -270px;
+    width:103%;
+    background: rgba(255, 255, 255, 0.55);
+    box-shadow: 20px 20px 100px 5px rgba(0, 0, 0, 0.2);
+    padding: 3px;
+    padding-left: 6px;
+    padding-top: 10px;
+    border-radius: 11px;
+    height: 300px;
+    margin-left: 105%;
+        
+}
+#row-3{
+    display: flex;
+    margin-top: 20px;
+    margin-left: 44px;
+}
+#sub-row-5{
+    background: rgba(255, 255, 255, 0.55);
+    box-shadow: 20px 20px 100px 5px rgba(0, 0, 0, 0.2);
+    width: 20%;
+    padding-left: 6px;
+    padding-top: 10px;
+    border-radius: 11px;
+    height: 280px
+}
+#sub-row-6{
+    background: rgba(255, 255, 255, 0.55);
+    box-shadow: 20px 20px 100px 5px rgba(0, 0, 0, 0.2);
+    width: 50%;
+    padding-left: 6px;
+    padding-top: 10px;
+    margin-left: 1%;
+    border-radius: 11px;
+    height: 280px
 }
 @media screen and (max-width: 1460px){
     #row-1{
