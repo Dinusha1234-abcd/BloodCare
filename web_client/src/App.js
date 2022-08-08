@@ -40,7 +40,9 @@ function App() {
          <Routes>
             <Route path='/dashboard' exact element= {<ClusterAdminDashboard/>}/> 
             <Route path='/login' exact element={<ClusterAdminDashboard/>} />
-             <Route path='/bloodcamp'  exact element={<ClusterAdminBloodCamp/>}/>
+            <Route path='/bloodcamp'  exact element={<ClusterAdminBloodCamp/>}/>
+             <Route path='/bloodcamp/pastcamp'  exact element={<ClusterAdminBloodCamp/>}/>
+             <Route path='/bloodcamp/ongoingcamp'  exact element={<ClusterAdminBloodCamp/>}/>
          
          </Routes>
       </BrowserRouter>)
