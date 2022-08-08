@@ -5,7 +5,7 @@ export default function PastCamp() {
     return (
         <div>
             <div id='past-camp-contanier'> 
-            <h3>Past Camp Details</h3>
+            <h3>Past Camps Details</h3>
             <input type="text" id='input-pastCamp' placeholder=" &#xf002; Enter Camp Number"/> 
             <br/><br/>
             <table id="past-camp-table">

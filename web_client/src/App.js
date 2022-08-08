@@ -43,7 +43,9 @@ function App() {
             <Route path='/bloodcamp'  exact element={<ClusterAdminBloodCamp/>}/>
              <Route path='/bloodcamp/pastcamp'  exact element={<ClusterAdminBloodCamp/>}/>
              <Route path='/bloodcamp/ongoingcamp'  exact element={<ClusterAdminBloodCamp/>}/>
-         
+             <Route path='/bloodcamp/futurecamp'  exact element={<ClusterAdminBloodCamp/>}/>
+             <Route path='/bloodcamp/pendingcamp'  exact element={<ClusterAdminBloodCamp/>}/>
+
          </Routes>
       </BrowserRouter>)
    }
