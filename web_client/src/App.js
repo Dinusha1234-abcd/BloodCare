@@ -15,9 +15,12 @@ import MedicalOfficerDashboard from "./pages/page.medicalofficer.dashboard";
 //Head Nurse
 import HeadNurseDashboard from "./pages/page.headnurse.dashboard";
 
+
+
 //Register Donor
 import RegDonorDashboard from "./pages/page.regdonor.dashboard"; 
- 
+import RegDonorCalender from "./pages/page.regdonor.calendar"; 
+
  
 function App() {
     //admin routes
@@ -63,13 +66,13 @@ function App() {
          </Routes>
       </BrowserRouter>)
    }
-   //register Nurse routes
+   //register donor routes
    else if (localStorage.getItem("type") === "5") {
       return (<BrowserRouter>
          <Routes>
             <Route path='/dashboard' exact element={ <RegDonorDashboard /> }/> 
             <Route path='/login' exact element={ <RegDonorDashboard /> }/> 
-            <Route path='/calender' exact element={ <RegDonorDashboard /> }/> 
+            <Route path='/calender' exact element={ <RegDonorCalender /> }/> 
          </Routes>
       </BrowserRouter>)
    }
