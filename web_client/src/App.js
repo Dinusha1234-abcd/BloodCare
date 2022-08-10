@@ -9,6 +9,8 @@ import AdminDashboard from "./pages/page.admin.dashboard";
 //Cluster Admin
 import ClusterAdminDashboard from "./pages/page.clusterAdmin.dashboard";
 import ClusterAdminBloodCamp from './pages/page.clusterAdmin.bloodCamp';
+import ClusterAdminMedicalStaff from './pages/page.clusterAdmin.medicalStaff';
+import ClusterAdminDonors from './pages/page.clusterAdmin.donors';
 //Medical Officer
 import MedicalOfficerDashboard from "./pages/page.medicalofficer.dashboard";
 
@@ -18,18 +20,18 @@ import HeadNurseDashboard from "./pages/page.headnurse.dashboard";
 
 
 //Register Donor
-import RegDonorDashboard from "./pages/page.regdonor.dashboard"; 
-import RegDonorCalender from "./pages/page.regdonor.calendar"; 
+import RegDonorDashboard from "./pages/page.regdonor.dashboard";
+import RegDonorCalender from "./pages/page.regdonor.calendar";
 
- 
+
 function App() {
-    //admin routes
+   //admin routes
    if (localStorage.getItem("type") === "1") {
       return (
          <BrowserRouter>
             <Routes>
-               <Route path='/dashboard' exact element={ <AdminDashboard /> } /> 
-               <Route path='/login' exact element={ <AdminDashboard /> } /> 
+               <Route path='/dashboard' exact element={<AdminDashboard />} />
+               <Route path='/login' exact element={<AdminDashboard />} />
             </Routes>
          </BrowserRouter>
       )
@@ -38,13 +40,20 @@ function App() {
    else if (localStorage.getItem("type") === "2") {
       return (<BrowserRouter>
          <Routes>
-            <Route path='/dashboard' exact element= {<ClusterAdminDashboard/>}/> 
-            <Route path='/login' exact element={<ClusterAdminDashboard/>} />
-            <Route path='/bloodcamp'  exact element={<ClusterAdminBloodCamp/>}/>
-             <Route path='/bloodcamp/pastcamp'  exact element={<ClusterAdminBloodCamp/>}/>
-             <Route path='/bloodcamp/ongoingcamp'  exact element={<ClusterAdminBloodCamp/>}/>
-             <Route path='/bloodcamp/futurecamp'  exact element={<ClusterAdminBloodCamp/>}/>
-             <Route path='/bloodcamp/pendingcamp'  exact element={<ClusterAdminBloodCamp/>}/>
+            <Route path='/dashboard' exact element={<ClusterAdminDashboard />} />
+            <Route path='/login' exact element={<ClusterAdminDashboard />} />
+            <Route path='/bloodcamp' exact element={<ClusterAdminBloodCamp />} />
+            <Route path='/bloodcamp/pastcamp' exact element={<ClusterAdminBloodCamp />} />
+            <Route path='/bloodcamp/ongoingcamp' exact element={<ClusterAdminBloodCamp />} />
+            <Route path='/bloodcamp/futurecamp' exact element={<ClusterAdminBloodCamp />} />
+            <Route path='/bloodcamp/pendingcamp' exact element={<ClusterAdminBloodCamp />} />
+            <Route path='/medicalstaff' exact element={<ClusterAdminMedicalStaff />} />
+            <Route path='/medicalstaff/doctor' exact element={<ClusterAdminMedicalStaff />} />
+            <Route path='/medicalstaff/headNurse' exact element={<ClusterAdminMedicalStaff />} />
+            <Route path='/medicalstaff/nurse' exact element={<ClusterAdminMedicalStaff />} />
+            <Route path='/medicalstaff/driver' exact element={<ClusterAdminMedicalStaff />} />
+            <Route path='/donors' exact element={<ClusterAdminDonors />} />
+
 
          </Routes>
       </BrowserRouter>)
@@ -53,8 +62,8 @@ function App() {
    else if (localStorage.getItem("type") === "3") {
       return (<BrowserRouter>
          <Routes>
-            <Route path='/dashboard' exact element={ <MedicalOfficerDashboard/>} />  
-            <Route path='/login' exact element={ <MedicalOfficerDashboard/>} />  
+            <Route path='/dashboard' exact element={<MedicalOfficerDashboard />} />
+            <Route path='/login' exact element={<MedicalOfficerDashboard />} />
          </Routes>
       </BrowserRouter>)
 
@@ -63,8 +72,8 @@ function App() {
    else if (localStorage.getItem("type") === "4") {
       return (<BrowserRouter>
          <Routes>
-            <Route path='/dashboard' exact element={  <HeadNurseDashboard />}/>  
-            <Route path='/login' exact element={  <HeadNurseDashboard />}/>  
+            <Route path='/dashboard' exact element={<HeadNurseDashboard />} />
+            <Route path='/login' exact element={<HeadNurseDashboard />} />
          </Routes>
       </BrowserRouter>)
    }
@@ -72,9 +81,9 @@ function App() {
    else if (localStorage.getItem("type") === "5") {
       return (<BrowserRouter>
          <Routes>
-            <Route path='/dashboard' exact element={ <RegDonorDashboard /> }/> 
-            <Route path='/login' exact element={ <RegDonorDashboard /> }/> 
-            <Route path='/calender' exact element={ <RegDonorCalender /> }/> 
+            <Route path='/dashboard' exact element={<RegDonorDashboard />} />
+            <Route path='/login' exact element={<RegDonorDashboard />} />
+            <Route path='/calender' exact element={<RegDonorCalender />} />
          </Routes>
       </BrowserRouter>)
    }
@@ -82,7 +91,7 @@ function App() {
       return (<BrowserRouter>
          <Routes>
             <Route path='/login' exact element={<Login />} />
-          
+
          </Routes>
       </BrowserRouter>)
    }

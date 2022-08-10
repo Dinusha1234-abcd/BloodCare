@@ -57,16 +57,16 @@ export default function Slide(props) {
               <i className={`${(window.location.pathname === '/bloodcamp/pastcamp' ||window.location.pathname==='/bloodcamp/ongoingcamp' || window.location.pathname==='/bloodcamp/futurecamp' || window.location.pathname==='/bloodcamp/pendingcamp') ? 'fa-solid fa-campground nav-link-icon-active' : 'fa-solid fa-campground nav-link-icon'} `}></i>
              <span className={`${(window.location.pathname === '/bloodcamp/pastcamp'||window.location.pathname==='/bloodcamp/ongoingcamp' ||window.location.pathname==='/bloodcamp/futurecamp'||window.location.pathname==='/bloodcamp/pendingcamp') ? 'nav-link-icon-active' : 'nav-link-icon'} `} >Blood Camps</span>
               </Link>
-              <Link to='/medicalstaff' className='nav-link'  >
-                <i class="fa-solid fa-user-nurse nav-link-icon" ></i>
-                <span className='nav-link-name' id='nav-link-name'>Medical Staff</span>
+              <Link to='/medicalstaff/doctor' className={`${(window.location.pathname === '/medicalstaff/doctor'||window.location.pathname==='/medicalstaff/headnurse' || window.location.pathname==='/medicalstaff/nurse' || window.location.pathname==='/medicalstaff/driver') ? 'nav-link-active' : 'nav-link'} `}  >
+              <i className={`${(window.location.pathname === '/medicalstaff/doctor' ||window.location.pathname==='/medicalstaff/headnurse' || window.location.pathname==='/medicalstaff/nurse' || window.location.pathname==='/medicalstaff/driver') ? 'fa-solid fa-user-nurse nav-link-icon-active' : 'fa-solid fa-user-nurse nav-link-icon'} `}></i>
+             <span className={`${(window.location.pathname === '/medicalstaff/doctor'||window.location.pathname==='/medicalstaff/headnurse' ||window.location.pathname==='/medicalstaff/nurse'||window.location.pathname==='/medicalstaff/driver') ? 'nav-link-icon-active' : 'nav-link-icon'} `} >Medical Staff</span>
               </Link>
-              <Link to='/donors' className='nav-link'  >
-                <i class="fa-solid fa-people-group nav-link-icon"></i>
-                <span className='nav-link-name' id='nav-link-name-donors'>Donors</span>
+               <Link to='/donors' className={`${window.location.pathname==='/donors' ? 'nav-link-active' : 'nav-link'}`}  >
+                <i className={`${window.location.pathname==='/donors' ? 'fa-solid fa-people-group nav-link-icon-active' : 'fa-solid fa-people-group nav-link-icon'}`} ></i>
+                <span className={`${window.location.pathname==='/donors' ? 'nav-link-icon-active' : 'nav-link-icon'}`} >Donors</span>
               </Link>
               <Link to='/blood' className='nav-link'  >
-              <i class="fa-solid fa-fire-flame-simple nav-link-icon"></i>
+              <i className="fa-solid fa-fire-flame-simple nav-link-icon"></i>
                 <span className='nav-link-name' id='nav-link-name'>Blood</span>
               </Link>
             </div>
