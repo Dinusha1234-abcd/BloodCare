@@ -14,7 +14,7 @@ import Calendar from 'react-calendar';
 import SlideMenuHeadNurse from "../components/headnurse/component.slidemenu.headNurse";
 import User from "../components/headnurse/component.users.display.headnurse";
 import Camp from "../components/headnurse/component.camp.display.headnurse";
-import Blood from "../components/component.blood.display";
+import Blood from "../components/headnurse/component.blood.display.headnurse";
 import CampEvents from "../components/component.campEvents";
 import doctor from '../assests/images/doctor.png';
 import headNurse from '../assests/images/headNurse.png';
@@ -24,7 +24,7 @@ import pastCamp from '../assests/images/pastCamp.png';
 import OngoingCamp from '../assests/images/ongoingCamp.png';
 import futureCamp from '../assests/images/furtureCamp.png';
 import PendingCamp from '../assests/images/camp.png';
-//import '../assests/css/headnurse/page.headNurse.dashboard.css'
+//import '../assests/css/headnurse/headnurse.dashboard.css'
 import '../assests/css/component.calender.css';
 export default function HeadNurseDashboard() {
   const [slidemenu, setSlideMenu] = useState(true);
