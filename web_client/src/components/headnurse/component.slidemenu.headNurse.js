@@ -53,7 +53,7 @@ export default function Slide(props) {
                 <i class="fa-solid fa-calendar-days nav-link-icon"></i>
                 <span className='nav-link-name'>Calender</span>
               </Link>
-              <Link to='web_client/src/pages/page.headnurse.camps.js' className='nav-link'  >
+              <Link to='/headnurseassigncamps' className='nav-link'  >
                 <i class="fa-solid fa-campground nav-link-icon"></i>
                 <span className='nav-link-name' id='nav-link-name'>Blood Camps</span>
               </Link>
