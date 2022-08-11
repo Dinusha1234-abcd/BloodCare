@@ -54,10 +54,39 @@ export default function Slide(props) {
                 <i class="fa-solid fa-calendar-days nav-link-icon"></i>
                 <span className='nav-link-name'>Calender</span>
               </Link>
-              <Link to='/users' className='nav-link'  >
-                <i class="fa-solid fa-campground nav-link-icon"></i>
-                <span className='nav-link-name' id='nav-link-name'>Users</span>
+
+              <Link to='/users/medicalofficer' className={`${(
+                  window.location.pathname === '/users/medicalofficer'|| 
+                  window.location.pathname==='/users/clusteradmin' || 
+                  window.location.pathname==='/users/doctor' ||
+                  window.location.pathname==='/users/headnurse' ||
+                  window.location.pathname==='/users/nurse' ||
+                  window.location.pathname==='/users/driver' ||
+                  window.location.pathname==='/users/organizer' ||
+                  window.location.pathname==='/users/donor'
+                ) ? 'nav-link-active' : 'nav-link'} `}  >
+                <i className={`${(
+                  window.location.pathname === '/users/medicalofficer'|| 
+                  window.location.pathname==='/users/clusteradmin' || 
+                  window.location.pathname==='/users/doctor' ||
+                  window.location.pathname==='/users/headnurse' ||
+                  window.location.pathname==='/users/nurse' ||
+                  window.location.pathname==='/users/driver' ||
+                  window.location.pathname==='/users/organizer' ||
+                  window.location.pathname==='/users/donor'
+                ) ? 'fa-solid fa-user-nurse nav-link-icon-active' : 'fa-solid fa-user-nurse nav-link-icon'} `}></i>                
+                <span className={`${(
+                  window.location.pathname === '/users/medicalofficer'|| 
+                  window.location.pathname==='/users/clusteradmin' || 
+                  window.location.pathname==='/users/doctor' ||
+                  window.location.pathname==='/users/headnurse' ||
+                  window.location.pathname==='/users/nurse' ||
+                  window.location.pathname==='/users/driver' ||
+                  window.location.pathname==='/users/organizer' ||
+                  window.location.pathname==='/users/donor'
+                ) ? 'nav-link-icon-active' : 'nav-link-icon'} `}>Users</span>
               </Link>
+
               <Link to='/clusterCenter' className='nav-link'  >
                 <i class="fa-solid fa-user-nurse nav-link-icon" ></i>
                 <span className='nav-link-name' id='nav-link-name'>Cluster Center</span>

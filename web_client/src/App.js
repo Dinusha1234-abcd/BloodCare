@@ -5,6 +5,7 @@ import Login from "./pages/page.login";
 //import Pages
 //Admin
 import AdminDashboard from "./pages/page.admin.dashboard";
+import AdminUsers from "./pages/page.admin.users";
 
 //Cluster Admin
 import ClusterAdminDashboard from "./pages/page.clusterAdmin.dashboard";
@@ -29,7 +30,16 @@ function App() {
          <BrowserRouter>
             <Routes>
                <Route path='/dashboard' exact element={ <AdminDashboard /> } /> 
-               <Route path='/login' exact element={ <AdminDashboard /> } /> 
+               <Route path='/login' exact element={ <AdminDashboard /> } />
+               <Route path='/users' exact element={ <AdminUsers /> } />
+               <Route path='/users/medicalofficer' exact element={ <AdminUsers /> } />
+               <Route path='/users/clusteradmin' exact element={ <AdminUsers /> } />
+               <Route path='/users/doctor' exact element={ <AdminUsers /> } />
+               <Route path='/users/headnurse' exact element={ <AdminUsers /> } />
+               <Route path='/users/nurse' exact element={ <AdminUsers /> } />
+               <Route path='/users/driver' exact element={ <AdminUsers /> } />
+               <Route path='/users/organizer' exact element={ <AdminUsers /> } />
+               <Route path='/users/donor' exact element={ <AdminUsers /> } />
             </Routes>
          </BrowserRouter>
       )
