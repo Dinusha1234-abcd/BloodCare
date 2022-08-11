@@ -1,9 +1,0 @@
-{
-  "dependencies": {
-    "chart.js": "^3.8.2",
-    "nodemon": "^2.0.19",
-    "react-chartjs-2": "^4.3.1",
-    "react-helmet": "^6.1.0",
-    "react-router-dom": "^6.3.0"
-  }
-}
