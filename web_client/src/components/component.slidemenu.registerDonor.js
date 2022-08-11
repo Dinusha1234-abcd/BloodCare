@@ -44,10 +44,10 @@ export default function Slide(props) {
               <Link to='/dashboard' className={`${(window.location.pathname === '/dashboard' ) ? 'nav-link-active' : 'nav-link'} `}>
                 <i className={`${(window.location.pathname === '/dashboard' ) ? 'fa-solid fa-gauge-high nav-link-icon-active' : 'fa-solid fa-gauge-high nav-link-icon'} `}></i>
                 <span className={`${(window.location.pathname === '/dashboard' ) ? 'nav-link-icon-active' : 'nav-link-icon'} `}  >Home</span>
-              </Link>  
-              <Link to='/history records' className='nav-link'  >
-              <i className={`${(window.location.pathname === '/history records' ) ? 'fa-solid fa-book-bible nav-link-icon-active' : 'fa-solid fa-book-bible nav-link-icon'} `}></i>
-                <span className='nav-link-name' id='nav-link-name'>History Records</span>
+              </Link> 
+              <Link to='/history_records' className={`${(window.location.pathname === '/history_records' ) ? 'nav-link-active ' : 'nav-link'} `}>
+              <i className={`${(window.location.pathname === '/history_records' ) ? 'fa-solid fa-book-bible nav-link-icon-active' : 'fa-solid fa-book-bible nav-link-icon'} `}></i>
+                <span className={`${(window.location.pathname === '/history_records' ) ? 'nav-link-icon-active' : 'nav-link-icon'} `}  >History Records</span>
               </Link>
               <Link to='/calender' className={`${(window.location.pathname === '/calender' ) ? 'nav-link-active ' : 'nav-link'} `}>
                 <i className={`${(window.location.pathname === '/calender' ) ? 'fa-solid fa-calendar-days nav-link-icon-active' : 'fa-solid fa-calendar-days nav-link-icon'} `}></i>

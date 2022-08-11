@@ -5,6 +5,7 @@ import Login from "./pages/page.login";
 //import Pages
 //Admin
 import AdminDashboard from "./pages/page.admin.dashboard";
+import AdminUsers from "./pages/page.admin.users";
 
 //Cluster Admin
 import ClusterAdminDashboard from "./pages/page.clusterAdmin.dashboard";
@@ -21,6 +22,7 @@ import HeadNurseAssignCamps from "./pages/page.headnurse.assigncamps";
 //Register Donor
 import RegDonorDashboard from "./pages/page.regdonor.dashboard"; 
 import RegDonorCalender from "./pages/page.regdonor.calendar"; 
+import RegDonorHistory from './pages/page.regdonor.history';
 
  
 function App() {
@@ -30,7 +32,16 @@ function App() {
          <BrowserRouter>
             <Routes>
                <Route path='/dashboard' exact element={ <AdminDashboard /> } /> 
-               <Route path='/login' exact element={ <AdminDashboard /> } /> 
+               <Route path='/login' exact element={ <AdminDashboard /> } />
+               <Route path='/users' exact element={ <AdminUsers /> } />
+               <Route path='/users/medicalofficer' exact element={ <AdminUsers /> } />
+               <Route path='/users/clusteradmin' exact element={ <AdminUsers /> } />
+               <Route path='/users/doctor' exact element={ <AdminUsers /> } />
+               <Route path='/users/headnurse' exact element={ <AdminUsers /> } />
+               <Route path='/users/nurse' exact element={ <AdminUsers /> } />
+               <Route path='/users/driver' exact element={ <AdminUsers /> } />
+               <Route path='/users/organizer' exact element={ <AdminUsers /> } />
+               <Route path='/users/donor' exact element={ <AdminUsers /> } />
             </Routes>
          </BrowserRouter>
       )
@@ -79,6 +90,7 @@ function App() {
             <Route path='/dashboard' exact element={ <RegDonorDashboard /> }/> 
             <Route path='/login' exact element={ <RegDonorDashboard /> }/> 
             <Route path='/calender' exact element={ <RegDonorCalender /> }/> 
+            <Route path='/history_records' exact element={ <RegDonorHistory />}/>
          </Routes>
       </BrowserRouter>)
    }

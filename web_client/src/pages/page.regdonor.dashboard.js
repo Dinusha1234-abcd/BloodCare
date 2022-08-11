@@ -12,7 +12,7 @@ export default function RegDonorDashboard() {
             <img id="backgroundimg" src={backgroundimg} />
             <div id="tableContainer">
             <div id="home-camp-details">
-            <input type="text" id='input-camp-date' placeholder=" &#xf002;"/> 
+            <input type="text" id='input-camp-date' placeholder=" &#xf002; " className="colour"/> 
             <br></br>  
             <table id="d-camp-details-table">
                 <tr>
