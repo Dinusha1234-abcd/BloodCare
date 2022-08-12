@@ -11,6 +11,7 @@ export default function RegDonorDashboard() {
         <div>
             <img id="backgroundimg" src={backgroundimg} />
             <div id="tableContainer">
+            <h3> Your Area Upcoming Camp</h3>
             <div id="home-camp-details">
             <input type="text" id='input-camp-date' placeholder=" &#xf002; " className="colour"/> 
             <br></br>  

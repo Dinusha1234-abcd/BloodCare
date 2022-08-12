@@ -5,11 +5,14 @@ export default function RegDonorCamp() {
     return (
         <div>
             <SlideMenuRegDonor headerName={"Upcoming Camp Details"}/>
-            <div id="camp-container">
+            <input type="text" id='input-donate-date' placeholder=" &#xf002;"/> 
+            <div id="camp-container1">      
             </div>
             <div id="camp-container2">
             </div>
             <div id="camp-container3">
+            </div>
+            <div id="camp-container4">
             </div>
             <div id='d-history-records-table-pageButton'>
                 <a className='page-navigation'>{"<< "}  </a> 
