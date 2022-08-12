@@ -82,10 +82,14 @@
     padding: 6px; 
     border-radius: 11px;
     padding-bottom: 10px; 
-    background-color:rgba(221, 45, 80, 0.441)
+    background-color:rgba(221, 45, 80, 1);
 }
 .page-navigation{
     padding: 6px;
-    color: rgb(92, 88, 88);
+    color: rgb(252, 252, 252);
+
+}
+.page-navigation a{
+    color: rgb(252, 252, 252);;
 }
  

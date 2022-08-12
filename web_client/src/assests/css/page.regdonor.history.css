@@ -42,6 +42,10 @@
     color: /*rgb(19, 19, 19)*/rgba(221, 45, 80, 1);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+.f002{
+    color: rgba(221, 45, 80, 1);
+}
+
 
 #history-records-table{
     margin: auto;
