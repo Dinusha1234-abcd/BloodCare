@@ -1,0 +1,11 @@
+#camp-container{
+    position: absolute;
+    width: 300px;
+    height: 380px;
+    left: 461px;
+    top: 217px;
+
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+}
