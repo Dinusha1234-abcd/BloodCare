@@ -1,8 +1,8 @@
-#row-1{
+/*#row-1{
     position: relative;
     display: flex;
     width: 82%;
-    /* max-width: 150px; */
+     max-width: 150px; 
     height: 235px;
     left: 240px;
     border-radius: 30px;
@@ -14,7 +14,7 @@
     position: relative;
     display: flex;
     width: 82%;
-    /* max-width: 150px; */
+     max-width: 150px; 
     height: 235px;
     left: 240px;
     border-radius: 30px;

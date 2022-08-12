@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+/*import React, { useState, useEffect } from "react";
 import { Bar } from 'react-chartjs-2';
 import Calendar from 'react-calendar';
 import SlideMenuHeadNurse from "../components/headnurse/component.slidemenu.headNurse";
@@ -40,4 +40,4 @@ export default function HeadNurseAssignCamps() {
     
         </div>
       );
-    }   
+    }   */
