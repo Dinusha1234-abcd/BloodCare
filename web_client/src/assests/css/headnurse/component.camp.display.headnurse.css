@@ -1,7 +1,7 @@
 #card-camp{
     position: relative;
     width:150px;
-    height: 130px;
+    height: 120px;
     border-radius: 20px;
     margin-left: 3%;
     background: rgba(255, 255, 255, 0.79);
@@ -11,9 +11,9 @@
 #user-role-camp{
     margin-left: 15px;
     margin-top: -30px;
-    font-size: 14px;
+    font-size: 15px;
     margin-top: -17px;
-    padding-left: 10px;
+    padding-left: 25px;
     padding-right: 10px;
     text-align: center;
     white-space:nowrap;
@@ -21,9 +21,9 @@
 #user-role-change-camp{
   
     margin-top: -30px;
-    font-size: 14px;
+    font-size: 15px;
     font: 800;
-    padding-left: 4px;
+    padding-left: 25px;
     padding-right: 4px;
     margin-top: -17px;
     text-align: center;
@@ -33,15 +33,18 @@
 #camp-count{
     
     padding-left: 30px;
-    padding-bottom: 200px;
+    padding-bottom: 100px;
     margin-left: 30px;
+    font-size: 120%;
+    margin-top: 1px;
 }
 #camp-count-change{
     
     padding-left: 30px;
-    margin-top: 11px;
+    margin-top: 1px;
     padding-bottom: 100px;
     margin-left: 30px;
+    font-size: 120%;
 }
 #image-camp-icon{
     margin-left: 45px;
