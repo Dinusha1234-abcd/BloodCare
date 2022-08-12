@@ -15,6 +15,7 @@ import MedicalOfficerDashboard from "./pages/page.medicalofficer.dashboard";
 
 //Head Nurse
 import HeadNurseDashboard from "./pages/page.headnurse.dashboard";
+import HeadNurseAssignCamps from "./pages/page.headnurse.assigncamps";
 
 
 
@@ -76,7 +77,10 @@ function App() {
       return (<BrowserRouter>
          <Routes>
             <Route path='/dashboard' exact element={  <HeadNurseDashboard />}/>  
-            <Route path='/login' exact element={  <HeadNurseDashboard />}/>  
+            <Route path='/login' exact element={  <Login />}/>
+            <Route path='/headnurseassigncamps' exact element={  <HeadNurseAssignCamps />}/>
+            
+
          </Routes>
       </BrowserRouter>)
    }
