@@ -1,96 +1,186 @@
-*{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight: 800px;
- }
- #member{
-   position: relative;
-   width: 82%;
-   height: 245px;
-   left: 240px;
-   background: rgba(255, 255, 255, 0.55);
-   border-radius: 30px;
-   margin-bottom:20px ;
- }
- #raw2{
+#state-change-true{
   position: relative;
-    display: flex;
-    width: 82%;
-    /* max-width: 150px; */
-    height: 235px;
-    left: 240px;
-    border-radius: 30px;
-    margin-bottom: 10px;
-    /* background: rgb(255 255 255 / 32%); */
-    /* box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);*/
+  margin-left: 250px;
+  transition: 0.6s;
+}
+#state-change-false{
+  position: relative;
+  margin-left: 100px;
+  transition: 0.6s;
+}
+#row1{
+display: flex;
+}
+#medical-staff{
+  width: 33%;
+  height: 190px;
+  background: rgba(255, 255, 255, 0.55);
+  padding: 20px; 
+  margin-left: 3%;
+  border-radius: 20px;
+  font-weight: 400;
+  box-shadow: 20px 20px 100px 5px rgba(0, 0, 0, 0.2)
 }
 
-.box1{
-  width: 15%;
-  height: 200px;
-  margin-right: 10px;
-  border-radius: 20px;
-  margin-top: 20px;
-  margin-right: 20px;
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
-}
-.box2{
-  width: 25%;
-  height: 240px;
-  margin-right: 10px;
-  border-radius: 20px;
-  /* margin-top: 10px; */
-  margin-right: 20px;
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-.box3{
-  width: 33%;
-  height: 240px;
-  margin-right: 10px;
-  border-radius: 20px;
-  /* margin-top: 10px; */
-  margin-right: 20px;
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
- h1{
-   font-size: 18px;
-    font-weight: bold;
-    color: #605858;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 30px;
- }
- #raw3{
-  position: relative;
+#users-count{
   display: flex;
-  width: 82%;
-  /* max-width: 150px; */
-  height: 300px;
-  left: 240px;
-  border-radius: 30px;
-  /* margin-bottom: 10px; */
-  /* margin-top: 25px; */
-  /* background: rgb(255 255 255 / 51%); */
+  margin-top: 6px;
 }
-.box4{
-  width: 81%;
-    height: 240px;
-    margin: 30px 20px;
-    border-radius: 20px;
-    /* margin-top: 10px; */
-    margin-right: 20px;
-    background: rgba(255, 255, 255, 0.8);
-    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
-}
-.box5{
-  width: 35%;
-  height: 260px;
-  margin: 20px 0px;
+#user{
+  position: absolute;
+  left: 110px;
+   
+} 
+#camp{
+  width: 36%;
+  height: 190px;
+  margin-left: 1%;
+  padding:12px;
+  /* padding-left: 2px; */
+  padding-top: 20px;
   border-radius: 20px;
-  /* margin-top: 10px; */
-  margin-right: 20px;
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: 20px 20px 100px 5px rgba(0, 0, 0, 0.2)
 }
+#camp-count{
+  display: flex;
+  margin-top: 10px;
+
+}
+#row2{
+  display: flex;
+  margin-top: 20px;
+  height: 300px;
+  margin-left: 3%;
+  
+  border-radius: 20px;
+  
+}
+#sub-row1{
+  display: flex;
+  width:95%;
+ 
+}
+#sub-row2{
+  width:45%;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: 20px 20px 100px 5px rgba(0, 0, 0, 0.2);
+  padding: 11px;
+  padding-left: 50px;
+}
+#sub-row3{
+  width:55.9%;
+  margin-left: 1%;
+
+  display: flex;
+} 
+
+#blood{
+  display: flex;
+  margin-top: 20px;
+}
+#calender{
+  position: absolute;
+  right:10px;
+}
+#camp-events{
+  position: absolute;
+  right:40px;
+  top:360px;
+  width: 23%;
+  height: auto;
+  border-radius: 20px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: 20px 20px 100px 5px rgba(0, 0, 0, 0.2)
+}
+#camp-events-list{
+  margin-top: 6px;
+  padding:6px;
+  background-color: aliceblue;
+  border-radius: 11px;
+}
+#camp-events-name{ 
+  padding:10px;
+}
+#view-button{
+  background-color: rgba(255, 182, 182, 1);
+  border: none;
+  color: white;
+  padding-left: 9px; 
+  padding-right: 9px; 
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 11px;
+  font-size: 16px;
+}
+#blood-month-dashboard{
+  width:50%;
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: 20px 20px 100px 5px rgba(0, 0, 0, 0.2);
+  padding: 3px;
+  padding-top: 11px;
+  padding-left: 48px;
+  border-radius: 10px;
+}
+
+/*#chart-dashboard{
+  margin-top: -270px;
+  width:103%;
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: 20px 20px 100px 5px rgba(0, 0, 0, 0.2);
+  padding: 3px;
+  padding-left: 6px;
+  padding-top: 10px;
+  border-radius: 11px;
+  height: 300px;
+  margin-left: 105%;
+      
+} */
+#row3{
+  display: flex;
+  margin-top: 20px;
+  margin-left: 44px;
+}
+#sub-row5{
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: 20px 20px 100px 5px rgba(0, 0, 0, 0.2);
+  width: 20%;
+  padding-left: 6px;
+  padding-top: 10px;
+  border-radius: 11px;
+  height: 280px
+}
+#sub-row6{
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: 20px 20px 100px 5px rgba(0, 0, 0, 0.2);
+  width: 50%;
+  padding-left: 6px;
+  padding-top: 10px;
+  margin-left: 1%;
+  border-radius: 11px;
+  height: 280px
+}
+@media screen and (max-width: 1460px){
+  #row1{
+      display: block;
+       /* left: -20px; */
+  }
+  #medical-staff{
+      
+      padding-left: 11%; 
+      width: 67%;
+  }
+  #camp{
+      margin-top: 11px;
+      padding-left: 11%; 
+      width: 67%;
+  }
+  #row2{
+      margin-top: 11px;
+      padding-left: 11%; 
+      width: 67%;
+  }
+}  
