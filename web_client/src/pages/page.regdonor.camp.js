@@ -7,23 +7,32 @@ export default function RegDonorCamp() {
     return (
         <div>
             <SlideMenuRegDonor headerName={"Upcoming Camp Details"}/>
-            <input type="text" id='input-donate-date' placeholder=" &#xf002;"/> 
+            <input type="text" id='input-date' placeholder=" &#xf002;"/> 
             <div id="camp-container1"> 
                 <div id="camp-details">
                     <img id="campimg" src={futureCamp} />
                     <h3>YOU CAN HELP SAVE A LIFE!</h3>
                     <br></br>
-                    <table id="camp-details-table"></table>
-                    <tr>
-                        <th>Date :</th>
-                        <th>13-08-2022</th>
-                        <th><i class="fa-solid fa-calendar-day"></i></th>
-                    </tr>
-                    <tr>
-                        <th>
-                            
-                        </th>
-                    </tr>
+                    <table>
+                        <tr>
+                            <th>Date : </th>
+                            <th>August 13, 2022</th>
+                            <th><i class="fa-solid fa-calendar-day"></i></th>
+                        </tr>
+                        <tr>
+                            <th>Location : </th>
+                            <th>Panadura</th>
+                        </tr>
+                        <tr>
+                            <th>Place :</th>
+                            <th>MOH Hall</th>
+                        </tr>
+                        <tr>
+                            <th>Time :</th>
+                            <th>8.00 a.m. - 3.00 p.m.</th>
+                        </tr>
+                    </table>
+                    
                 </div>     
             </div>
             <div id="camp-container2">
