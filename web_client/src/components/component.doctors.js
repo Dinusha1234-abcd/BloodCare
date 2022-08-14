@@ -5,7 +5,7 @@ export default function Doctors() {
     return (
         <div>
             <div id='doctor-contanier'> 
-            <h3>Doctors Details</h3>
+            <h3 id='header-clusterAdmin'>Doctors Details</h3>
             <input type="text" id='input-doctor' placeholder=" &#xf002; Enter NIC Number"/> 
             <button id='add-doctor'>+ Add New</button>
             <br/><br/>

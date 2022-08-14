@@ -35,6 +35,10 @@
     color: rgb(19, 19, 19);
     transition: 0.6;
 }
+#header-clusterAdmin{
+    text-align: left;
+    margin-left: -900px;
+}
 #add-nurse{
     position: absolute;
     right: 180px;

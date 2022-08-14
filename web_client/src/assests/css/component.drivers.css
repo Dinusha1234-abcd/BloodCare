@@ -89,7 +89,14 @@
     border-top-right-radius: 12px;
     transition: 0.6;
  }
-
+ #header-clusterAdmin{
+    text-align: left;
+    margin-left: -900px;
+}
+#header-clusterAdmin{
+    text-align: left;
+    margin-left: -900px;
+}
 #view-button-driver-view{
     background-color:rgba(141, 132, 132, 1);
     border: none;

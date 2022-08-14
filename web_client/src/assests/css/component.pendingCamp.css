@@ -39,6 +39,10 @@
     border-collapse: collapse;
     width: 86%;
   }
+  #header-clusterAdmin{
+    text-align: left;
+    margin-left: -900px;
+}
   
   #past-camp-table td, #past-camp-table th {
     border-radius: 1px solid rgba(253, 223, 229, 0.956) ;

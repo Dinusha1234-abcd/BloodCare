@@ -6,7 +6,7 @@ export default function ClusterAdminBloodDisplay(){
     return(
         <div id='blood-display-container'>
             <div id='blood-display-container-box-1'>
-                <h1>O Positive Blood Counters</h1>
+                <h1 id='header-clusterAdmin'>O Positive Blood Counters</h1>
                  <div id='blood-display-container-subbox-1'>Cluster Center <br/> 22 <br/>Counters</div>
                  <div id='blood-display-container-subbox-1'>All Cluster Center<br/>23<br>Counters</br></div>
                  <div id='blood-display-container-subbox-1'>Collect Blood Counters Campare to Other Cluster Centers<br/>100%<br/>Percentage</div>
