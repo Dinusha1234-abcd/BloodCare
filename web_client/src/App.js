@@ -10,13 +10,10 @@ import AdminUsers from "./pages/page.admin.users";
 //Cluster Admin
 import ClusterAdminDashboard from "./pages/page.clusterAdmin.dashboard";
 import ClusterAdminCalendar from "./pages/page.clusterAdmin.calendar"
-import ClusterAdminBloodCamp from './pages/page.clusterAdmin.bloodCamp';
-<<<<<<< HEAD
+import ClusterAdminBloodCamp from './pages/page.clusterAdmin.bloodCamp'; 
 import ClusterAdminMedicalStaff from './pages/page.clusterAdmin.medicalStaff';
 import ClusterAdminDonors from './pages/page.clusterAdmin.donors';
-import ClusterAdminBlood from './pages/page.clusterAdmin.blood';
-=======
->>>>>>> 26329694a2021cee3a2001fbddf083b5f0994984
+import ClusterAdminBlood from './pages/page.clusterAdmin.blood' ;
 //Medical Officer
 import MedicalOfficerDashboard from "./pages/page.medicalofficer.dashboard";
 
@@ -58,7 +55,6 @@ function App() {
    else if (localStorage.getItem("type") === "2") {
       return (<BrowserRouter>
          <Routes>
-<<<<<<< HEAD
             <Route path='/dashboard' exact element={<ClusterAdminDashboard />} />
             <Route path='/login' exact element={<ClusterAdminDashboard />} />
             <Route path='/calendar' exact element={<ClusterAdminCalendar />} />
@@ -74,18 +70,7 @@ function App() {
             <Route path='/medicalstaff/driver' exact element={<ClusterAdminMedicalStaff />} />
             <Route path='/donors' exact element={<ClusterAdminDonors />} />
             <Route path='/blood' exact element={<ClusterAdminBlood />} />
-
-=======
-            <Route path='/dashboard' exact element= {<ClusterAdminDashboard/>}/> 
-            <Route path='/login' exact element={<ClusterAdminDashboard/>} />
-            <Route path='/bloodcamp'  exact element={<ClusterAdminBloodCamp/>}/>
-             <Route path='/bloodcamp/pastcamp'  exact element={<ClusterAdminBloodCamp/>}/>
-             <Route path='/bloodcamp/ongoingcamp'  exact element={<ClusterAdminBloodCamp/>}/>
-             <Route path='/bloodcamp/futurecamp'  exact element={<ClusterAdminBloodCamp/>}/>
-             <Route path='/bloodcamp/pendingcamp'  exact element={<ClusterAdminBloodCamp/>}/>
->>>>>>> 26329694a2021cee3a2001fbddf083b5f0994984
-
-         </Routes>
+     </Routes>
       </BrowserRouter>)
    }
    //medical Officers routes
