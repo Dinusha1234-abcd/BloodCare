@@ -49,11 +49,11 @@ export default function Slide(props) {
                 <i className={`${(window.location.pathname === '/dashboard' || window.location.pathname === '/login' ) ? 'fa-solid fa-gauge-high nav-link-icon-active' : 'fa-solid fa-gauge-high nav-link-icon'} `}></i>
                 <span className={`${(window.location.pathname === '/dashboard' || window.location.pathname === '/login') ? 'nav-link-icon-active' : 'nav-link-icon'} `}  >Dashboard</span>
               </Link>  
-             <Link to='/calender' className='nav-link  '>
-                <i class="fa-solid fa-calendar-days nav-link-icon"></i>
-                <span className='nav-link-name'>Calender</span>
-              </Link>
-              <Link to='/bloodcamp/pastcamp' className={`${(window.location.pathname === '/bloodcamp/pastcamp'||window.location.pathname==='/bloodcamp/ongoingcamp' || window.location.pathname==='/bloodcamp/futurecamp' || window.location.pathname==='/bloodcamp/pendingcamp') ? 'nav-link-active' : 'nav-link'} `}  >
+              <Link to='/calendar' className={`${(window.location.pathname === '/calendar'|| window.location.pathname === '/login' ) ? 'nav-link-active' : 'nav-link'} `}>
+                <i className={`${(window.location.pathname === '/calendar' || window.location.pathname === '/login' ) ? 'fa-solid fa-calendar-days nav-link-icon-active' : 'fa-solid fa-calendar-days nav-link-icon'} `}></i>
+                <span className={`${(window.location.pathname === '/calendar' || window.location.pathname === '/login') ? 'nav-link-icon-active' : 'nav-link-icon'} `}  >Calendar</span>
+              </Link>  
+             <Link to='/bloodcamp/pastcamp' className={`${(window.location.pathname === '/bloodcamp/pastcamp'||window.location.pathname==='/bloodcamp/ongoingcamp' || window.location.pathname==='/bloodcamp/futurecamp' || window.location.pathname==='/bloodcamp/pendingcamp') ? 'nav-link-active' : 'nav-link'} `}  >
               <i className={`${(window.location.pathname === '/bloodcamp/pastcamp' ||window.location.pathname==='/bloodcamp/ongoingcamp' || window.location.pathname==='/bloodcamp/futurecamp' || window.location.pathname==='/bloodcamp/pendingcamp') ? 'fa-solid fa-campground nav-link-icon-active' : 'fa-solid fa-campground nav-link-icon'} `}></i>
              <span className={`${(window.location.pathname === '/bloodcamp/pastcamp'||window.location.pathname==='/bloodcamp/ongoingcamp' ||window.location.pathname==='/bloodcamp/futurecamp'||window.location.pathname==='/bloodcamp/pendingcamp') ? 'nav-link-icon-active' : 'nav-link-icon'} `} >Blood Camps</span>
               </Link>

@@ -6,7 +6,7 @@ import Camp from "../components/component.camp.display";
 import Blood from "../components/component.blood.display";
 import CampEvents from "../components/component.campEvents";
 import doctor from '../assests/images/doctor.png';
-import headNurse from '../assests/images/headNurse.png';
+import headNurse from '../assests/images/headNurse2.png';
 import nurse from '../assests/images/nurse.png';
 import driver from '../assests/images/driver.png';
 import pastCamp from '../assests/images/pastCamp.png';
