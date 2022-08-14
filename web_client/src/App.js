@@ -10,34 +10,12 @@ import AdminUsers from "./pages/page.admin.users";
 //Cluster Admin
 import ClusterAdminDashboard from "./pages/page.clusterAdmin.dashboard";
 import ClusterAdminCalendar from "./pages/page.clusterAdmin.calendar"
-
 import ClusterAdminBloodCamp from './pages/page.clusterAdmin.bloodCamp';
-<<<<<<< HEAD
 import ClusterAdminMedicalStaff from './pages/page.clusterAdmin.medicalStaff';
 import ClusterAdminDonors from './pages/page.clusterAdmin.donors';
 import ClusterAdminBlood from './pages/page.clusterAdmin.blood';
 
-=======
-<<<<<<< HEAD
-import ClusterAdminBloodCamp from './pages/page.clusterAdmin.bloodCamp';
  
-import ClusterAdminMedicalStaff from './pages/page.clusterAdmin.medicalStaff';
-import ClusterAdminDonors from './pages/page.clusterAdmin.donors';
-import ClusterAdminBlood from './pages/page.clusterAdmin.blood';
- 
-=======
-import ClusterAdminBloodCamp from './pages/page.clusterAdmin.bloodCamp'; 
-import ClusterAdminMedicalStaff from './pages/page.clusterAdmin.medicalStaff';
-import ClusterAdminDonors from './pages/page.clusterAdmin.donors';
-import ClusterAdminBlood from './pages/page.clusterAdmin.blood' ;
->>>>>>> ba3147892dbe5945c069c5dd559ae97cdc25505a
->>>>>>> 77579357caaf89291585e116f1c4d4e632763029
-=======
-import ClusterAdminMedicalStaff from './pages/page.clusterAdmin.medicalStaff';
-import ClusterAdminDonors from './pages/page.clusterAdmin.donors';
-import ClusterAdminBlood from './pages/page.clusterAdmin.blood';
-
->>>>>>> a37ae09160652a2c52d74e1481d1bd445e627863
 //Medical Officer
 import MedicalOfficerDashboard from "./pages/page.medicalofficer.dashboard";
 
@@ -53,7 +31,6 @@ import RegDonorCalender from "./pages/page.regdonor.calendar";
 import RegDonorHistory from './pages/page.regdonor.history';
 import RegDonorCamp from './pages/page.regdonor.camp';
 import RegisterForm from './pages/page.regdonor.registerform';
-
 
 function App() {
    //admin routes
@@ -81,18 +58,7 @@ function App() {
       return (
       <BrowserRouter>
          <Routes>
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
- 
-=======
->>>>>>> ba3147892dbe5945c069c5dd559ae97cdc25505a
->>>>>>> 77579357caaf89291585e116f1c4d4e632763029
-=======
-            5a
->>>>>>> a37ae09160652a2c52d74e1481d1bd445e627863
             <Route path='/dashboard' exact element={<ClusterAdminDashboard />} />
             <Route path='/login' exact element={<ClusterAdminDashboard />} />
             <Route path='/calendar' exact element={<ClusterAdminCalendar />} />
@@ -108,25 +74,11 @@ function App() {
             <Route path='/medicalstaff/driver' exact element={<ClusterAdminMedicalStaff />} />
             <Route path='/donors' exact element={<ClusterAdminDonors />} />
             <Route path='/blood' exact element={<ClusterAdminBlood />} />
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 
-         </Routes>
-=======
-<<<<<<< HEAD
-
- 
 
          </Routes>
-=======
-     </Routes>
->>>>>>> ba3147892dbe5945c069c5dd559ae97cdc25505a
->>>>>>> 77579357caaf89291585e116f1c4d4e632763029
-=======
 
-         </Routes>
->>>>>>> a37ae09160652a2c52d74e1481d1bd445e627863
       </BrowserRouter>)
    }
    //medical Officers routes
@@ -155,20 +107,14 @@ function App() {
    else if (localStorage.getItem("type") === "5") {
       return (<BrowserRouter>
          <Routes>
-<<<<<<< HEAD
+
             <Route path='/dashboard' exact element={ <RegDonorDashboard /> }/> 
             <Route path='/login' exact element={ <RegDonorDashboard /> }/> 
             <Route path='/calender' exact element={ <RegDonorCalender /> }/> 
             <Route path='/history_records' exact element={ <RegDonorHistory />}/>
             <Route path='/blood_camps' exact element={ <RegDonorCamp />}/>
-            <Route path='/blood_camps/register' exact element={ <RegDonorCamp />}/>
-=======
-            <Route path='/dashboard' exact element={<RegDonorDashboard />} />
-            <Route path='/login' exact element={<RegDonorDashboard />} />
-            <Route path='/calender' exact element={<RegDonorCalender />} />
-            <Route path='/history_records' exact element={<RegDonorHistory />} />
-            <Route path='/blood_camps' exact element={<RegDonorCamp />} />
->>>>>>> a37ae09160652a2c52d74e1481d1bd445e627863
+            <Route path='/register' exact element={ <RegisterForm />}/>
+
          </Routes>
       </BrowserRouter>)
    }
