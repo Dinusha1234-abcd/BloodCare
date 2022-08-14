@@ -13,7 +13,7 @@ export default function ClusterAdminDonors() {
             <SlideMenuClusterAdmin headerName={"Donors"} passData={passData} />
             <div id={`${slidemenu ? 'state-change-true' : 'state-change-false'}`} >
             <div id='donors-contanier'> 
-            <h3>Donors Details</h3>
+            <h3 id="header-clusterAdmin">Donors Details</h3>
             <input type="text" id='input-donors' placeholder=" &#xf002; Enter NIC Number"/> 
             <button id='add-donors'>+ Add New</button>
             <br/><br/>

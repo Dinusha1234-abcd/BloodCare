@@ -63,9 +63,9 @@ export default function ClusterAdminDashboard() {
             <h3>Medical Staff Members</h3>
             <div id="users-count" display='inline'> <User id='user' image={doctor} name="Doctor" />  <User id='user' image={headNurse} name="Head Nurse" status={true} />  <User id='user' image={nurse} name="Nurse" />  <User id='user' image={driver} name="Driver" /> </div>
           </div>
-          <div id="camp">
+          <div id="camp-clusterAdmin">
             <h3>Blood Camps</h3>
-            <div id="camp-count" display='inline'> <Camp image={pastCamp} name="Past Camp" />  <Camp image={OngoingCamp} name="Ongoing Camp" status={true} />  <Camp image={futureCamp} name="Future Camp" status={true} />  <Camp image={PendingCamp} name="Pending Camp" status={true} /></div>
+            <div id="camp-count-clusterAdmin"  > <Camp image={pastCamp} name="Past Camp" />  <Camp image={OngoingCamp} name="Ongoing Camp" status={true} />  <Camp image={futureCamp} name="Future Camp" status={true} />  <Camp image={PendingCamp} name="Pending Camp" status={true} /></div>
           </div>
         </div>
         <div id="row-2">
@@ -76,10 +76,10 @@ export default function ClusterAdminDashboard() {
               <div id="blood"><Blood name='O-' /><Blood name='A-' /><Blood name='B-' /><Blood name='AB-' /></div>
             </div>
             <div id="sub-row-3">
-              <div id="blood-month-dashboard">
+              <div id="blood-month-dashboard-clusterAdmin">
                 <h3>Collection Blood</h3><br />
                 <PieChart chartData={useDataPieChart} />
-                <div id="chart-dashboard">
+                <div id="chart-dashboard-clusterAdmin">
                   <h3>Blood Percentage</h3><br />
                   <DoughnutChart chartData={useData} />
                 </div>

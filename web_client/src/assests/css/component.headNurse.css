@@ -113,6 +113,10 @@
     border-radius: 11px;
     font-size: 16px;
 }
+#header-clusterAdmin{
+    text-align: left;
+    margin-left: -900px;
+}
 .page-navigation{
     padding: 6px;
 }
