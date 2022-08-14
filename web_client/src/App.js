@@ -24,6 +24,7 @@ import RegDonorDashboard from "./pages/page.regdonor.dashboard";
 import RegDonorCalender from "./pages/page.regdonor.calendar"; 
 import RegDonorHistory from './pages/page.regdonor.history';
 import RegDonorCamp from './pages/page.regdonor.camp';
+import RegisterForm from './pages/page.regdonor.registerform';
 
  
 function App() {
@@ -93,6 +94,7 @@ function App() {
             <Route path='/calender' exact element={ <RegDonorCalender /> }/> 
             <Route path='/history_records' exact element={ <RegDonorHistory />}/>
             <Route path='/blood_camps' exact element={ <RegDonorCamp />}/>
+            <Route path='/blood_camps/register' exact element={ <RegDonorCamp />}/>
          </Routes>
       </BrowserRouter>)
    }

@@ -35,7 +35,7 @@ export default function RegDonorCamp() {
                             <td>: 8.00 a.m. - 3.00 p.m.</td>
                         </tr>
                     </table>
-                    <button id="register">Register Now</button>
+                    <button id="register" {$window.location.pathname == '/bloodcamp/pendingcamp'}>Register Now</button>
                     <img id="mapimg" src={map} />
                 </div>     
             </div>
