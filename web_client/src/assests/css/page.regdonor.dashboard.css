@@ -3,22 +3,22 @@
 }
 #backgroundimg{
     position: absolute;
-    width: 1419px;
+    width: 1400px;
     height: 600px;
     margin-top: 0px;
     margin-left: 250px;
-    Opacity: 30%;
+    Opacity: 45%;
     border-radius: 20px;
 }
 #tableContainer{
     position: absolute;
-    width: 80%;
+    width: 75%;
 
     height: 450px;
     margin-top: 150px;
     margin-left: 300px;
-
-    background: rgba(255, 255, 255, 0.8);
+    margin-right: 150px;
+    background: rgba(255, 255, 255, 0.7);
     border-radius: 50px;
 }
 #input-camp-date{
@@ -45,6 +45,7 @@
     color: /*rgb(19, 19, 19)*/rgba(221, 45, 80, 1);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
 #d-camp-details-table{
     margin: auto;
     margin-top: 75px;
@@ -81,10 +82,17 @@
     padding: 6px; 
     border-radius: 11px;
     padding-bottom: 10px; 
-    background-color:rgba(221, 45, 80, 0.441)
+    background-color:rgba(221, 45, 80, 1);
 }
 .page-navigation{
     padding: 6px;
-    color: rgb(92, 88, 88);
+    color: rgb(252, 252, 252);
+
+}
+.page-navigation a{
+    color: rgb(252, 252, 252);;
+}
+.h3{
+    left: 100px;
 }
  

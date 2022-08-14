@@ -25,18 +25,8 @@
 }
 
 .box1{
-  /* width: 15%;
-  height: 200px;
-  margin-right: 10px;
-  border-radius: 20px;
-  margin-top: 20px;
-  margin-right: 20px;
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%); */
   width: 15%;
-  height: 200px;
-  margin-right: 10px;
-  margin-right: 20px;
+  height: 215px;
   border-radius: 20px;
   margin-top: 20px;
   margin-right: 20px;
@@ -46,17 +36,20 @@
 }
 .box2{
   width: 25%;
-  height: 240px;
+  height: 275px;
   margin-right: 10px;
   border-radius: 20px;
   /* margin-top: 10px; */
   margin-right: 20px;
   background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .box3{
   width: 33%;
-  height: 240px;
+  height: 275px;
   margin-right: 10px;
   border-radius: 20px;
   /* margin-top: 10px; */
@@ -81,20 +74,20 @@
   left: 240px;
   border-radius: 30px;
   /* margin-bottom: 10px; */
-  /* margin-top: 25px; */
+  margin-top: 30px; 
   /* background: rgb(255 255 255 / 51%); */
 }
-.box4{
+#box4{
   width: 81%;
-    height: 240px;
-    margin: 30px 20px;
-    border-radius: 20px;
-    /* margin-top: 10px; */
-    margin-right: 20px;
-    background: rgba(255, 255, 255, 0.8);
-    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  height: 240px;
+  margin: 30px 20px;
+  border-radius: 20px;
+  /* margin-top: 10px; */
+  margin-right: 20px;
+  background: rgba(255, 255, 255, 0.55);
+  /* box-shadow: 0px 4px 4px rgb(0 0 0 / 25%); */
 }
-.box5{
+#box5{
   width: 35%;
   height: 260px;
   margin: 20px 0px;
@@ -103,4 +96,50 @@
   margin-right: 20px;
   background: rgba(255, 255, 255, 0.8);
   box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
+#cluster-card-admin{
+  margin-top: 10px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  font-size: 18px;
+  align-items: center;
+}
+h3{
+  font-size: 15px;
+  /* font-weight:3px; */
+  display: flex;
+  color: #605858;
+  position: relative;
+  flex-wrap: nowrap;
+  align-content: flex-end;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 3px;
+}
+#chart-bar-admin{
+  padding: 5px;
+  margin-top: 15px;
+}
+#camp-events-list-admin{
+  margin-top: 15px;
+  align-content: flex-end;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+  background: #FDDFE5;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  border-radius: 2px;
+  padding: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+#view-button-admin{
+  width: 50px;
+  height: 20px;
+  margin-left: 20px;
+  background: #ec7990;
+  border: none;
+  border-radius: 5px; 
 }

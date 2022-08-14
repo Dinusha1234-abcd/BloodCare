@@ -1,0 +1,114 @@
+#input-date{
+    position: absolute;
+    left: 260px;
+    top:100px;
+    width:300px;
+    height: 35px;
+    border-radius: 20px;
+    border-color: rgba(221, 45, 80, 1);
+    padding:11px;
+    margin-top: 10px;
+    box-shadow: red;
+    border-style: hidden;
+    border-color: rgba(221, 45, 80, 1);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, FontAwesome ;
+    font-size: 19px; 
+    outline-style: none;
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    box-sizing: border-box;
+    /*border: 2px solid #ccc;*/
+    color: /*rgb(19, 19, 19)*/rgba(221, 45, 80, 1);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#camp-container1{
+    position: absolute;
+    width: 300px;
+    height: 500px;
+    left: 300px;
+    top: 200px;
+
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+}
+#camp-container2{
+    position: absolute;
+    width: 300px;
+    height: 500px;
+    left: 1350px;
+    top: 200px;
+
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+}
+#camp-container3{
+    position: absolute;
+    width: 300px;
+    height: 500px;
+    left: 650px;
+    top: 200px;
+
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+}
+#camp-container4{
+    position: absolute;
+    width: 300px;
+    height: 500px;
+    left: 1000px;
+    top: 200px;
+
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+}
+#campimg{
+    position: absolute;
+    margin-left: 120px;
+    margin-top: 20px;    
+}
+#camp-name{
+    position: absolute;
+    color: #FF6565;
+    margin-top: 80px;
+    margin-left: 40px;
+}
+#camp-details-table{
+    position: absolute;
+    margin-top: 35%;
+    text-align: left;
+    color: #605858;
+    margin-left: 10%;
+    height: 100px;
+}
+#camp-details-table td i{
+    color: #E81F43;
+}
+#mapimg{
+    margin-top: 86%;
+   
+    border-radius: 0px 0px 30px 30px;
+
+}
+#campimg2{
+    width: 20%;
+    height: 12%;
+    position: absolute;
+    margin-left: 120px;
+    margin-top: 20px; 
+}
+#register{
+    color: rgba(1, 95, 250, 1);
+    background-color: rgba(220, 231, 236, 1);
+    border: none;
+    height: 30px;
+    width: 100px;
+    position: absolute;
+    margin-top: 220px;
+    margin-left: 180px;
+    font-size: 15px;
+}
