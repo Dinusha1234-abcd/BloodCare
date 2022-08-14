@@ -8,9 +8,11 @@ import AdminDashboard from "./pages/page.admin.dashboard";
 
 //Cluster Admin
 import ClusterAdminDashboard from "./pages/page.clusterAdmin.dashboard";
+import ClusterAdminCalendar from "./pages/page.clusterAdmin.calendar"
 import ClusterAdminBloodCamp from './pages/page.clusterAdmin.bloodCamp';
 import ClusterAdminMedicalStaff from './pages/page.clusterAdmin.medicalStaff';
 import ClusterAdminDonors from './pages/page.clusterAdmin.donors';
+import ClusterAdminBlood from './pages/page.clusterAdmin.blood';
 //Medical Officer
 import MedicalOfficerDashboard from "./pages/page.medicalofficer.dashboard";
 
@@ -42,6 +44,7 @@ function App() {
          <Routes>
             <Route path='/dashboard' exact element={<ClusterAdminDashboard />} />
             <Route path='/login' exact element={<ClusterAdminDashboard />} />
+            <Route path='/calendar' exact element={<ClusterAdminCalendar />} />
             <Route path='/bloodcamp' exact element={<ClusterAdminBloodCamp />} />
             <Route path='/bloodcamp/pastcamp' exact element={<ClusterAdminBloodCamp />} />
             <Route path='/bloodcamp/ongoingcamp' exact element={<ClusterAdminBloodCamp />} />
@@ -53,6 +56,7 @@ function App() {
             <Route path='/medicalstaff/nurse' exact element={<ClusterAdminMedicalStaff />} />
             <Route path='/medicalstaff/driver' exact element={<ClusterAdminMedicalStaff />} />
             <Route path='/donors' exact element={<ClusterAdminDonors />} />
+            <Route path='/blood' exact element={<ClusterAdminBlood />} />
 
 
          </Routes>

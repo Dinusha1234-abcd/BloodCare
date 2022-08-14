@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../assests/css/component.campHeader.css';
 import doctor from '../assests/images/doctor.png';
-import headNurse from '../assests/images/headNurse.png';
+import headNurse from '../assests/images/headNurse2.png';
 import nurse from '../assests/images/nurse.png';
 import driver from '../assests/images/driver.png';
 export default function ClusterAdminCampHeader(){
