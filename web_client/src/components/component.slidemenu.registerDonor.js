@@ -58,6 +58,10 @@ export default function Slide(props) {
                 <span className={`${(window.location.pathname === '/blood_camps' ) ? 'nav-link-icon-active' : 'nav-link-icon'} `}  >Blood Camps</span>
               </Link>
   
+              <Link to='/register' className={`${(window.location.pathname === '/regsiter' ) ? 'nav-link-active ' : 'nav-link'} `}>
+                <i className={`${(window.location.pathname === '/register' ) ? 'fa-solid fa-campground nav-link-icon-active' :'fa-solid fa-campground nav-link-icon'} `}></i>
+                <span className={`${(window.location.pathname === '/register' ) ? 'nav-link-icon-active' : 'nav-link-icon'} `}  >Register Form</span>
+              </Link>
             </div>
           </div>
         </nav>

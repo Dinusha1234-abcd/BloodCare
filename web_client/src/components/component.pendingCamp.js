@@ -5,7 +5,7 @@ export default function PendingCamp() {
     return (
         <div>
             <div id='past-camp-contanier'> 
-            <h3>Pending Camps Details</h3>
+            <h3 id='header-clusterAdmin'>Pending Camps Details</h3>
             <input type="text" id='input-pastCamp' placeholder=" &#xf002; Enter Camp Number"/> 
             <br/><br/>
             <table id="past-camp-table">

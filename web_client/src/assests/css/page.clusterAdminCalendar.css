@@ -1,0 +1,52 @@
+#state-change-true{
+    position: relative;
+    margin-left: 250px;
+    transition: 0.6s;
+}
+#state-change-false{
+    position: relative;
+    margin-left: 100px;
+    transition: 0.6s;
+}
+#clusterAdmin-calender-box{
+    /* background-color: rgb(252, 252, 252); */
+    padding: 20px;
+    margin-left: 3%;
+    width:93%;
+    border-radius: 20px;
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+}
+#clusterAdmin-calender-box-display{
+    display: flex;
+}
+#clusterAdmin-calendar{
+    background-color: rgba(255, 255, 255, 0.87);
+    margin-top: 11px;
+    border-radius: 20px;
+    width:85%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#clusterAdmin-calender-camp-details{
+    width: 30%;
+    height:550px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.87);
+    margin : 8px;
+    margin-top:11px;
+    padding: 11px;
+    margin-left: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+} 
+#clusterAdmin-calender-camp-details-name{
+    padding: 20px;
+    font-size: 20px;
+    padding-left: 100px;
+    color: rgba(96, 88, 88, 1);
+} 
+#clusterAdmin-calender-camp-details-events{
+    background-color: rgba(238, 238, 238, 1);
+    margin-top: 11px;
+    border-radius: 11px;
+    padding: 11px;
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);  */
+} 

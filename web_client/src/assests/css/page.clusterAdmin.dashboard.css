@@ -31,20 +31,21 @@
     left: 110px;
      
 } 
-#camp{
+#camp-clusterAdmin{
     width: 36%;
     height: 190px;
     margin-left: 1%;
-    padding:12px;
+     
     /* padding-left: 2px; */
-    padding-top: 20px;
+    padding-top: 10px;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.55);
     box-shadow: 20px 20px 100px 5px rgba(0, 0, 0, 0.2)
 }
-#camp-count{
+#camp-count-clusterAdmin{
     display: flex;
     margin-top: 10px;
+    margin-left: 6px;
  
 }
 #row-2{
@@ -115,7 +116,7 @@
     border-radius: 11px;
     font-size: 16px;
 }
-#blood-month-dashboard{
+#blood-month-dashboard-clusterAdmin{
     width:50%;
     background: rgba(255, 255, 255, 0.55);
     box-shadow: 20px 20px 100px 5px rgba(0, 0, 0, 0.2);
@@ -124,8 +125,8 @@
     padding-left: 6px;
     border-radius: 10px;
 }
-#chart-dashboard{
-    margin-top: -270px;
+#chart-dashboard-clusterAdmin{
+    margin-top: -281px;
     width:103%;
     background: rgba(255, 255, 255, 0.55);
     box-shadow: 20px 20px 100px 5px rgba(0, 0, 0, 0.2);
