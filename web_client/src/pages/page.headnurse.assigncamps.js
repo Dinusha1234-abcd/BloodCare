@@ -36,6 +36,14 @@ export default function HeadNurseAssignCamps() {
               <h1>Your Upcomming Blood Camps</h1>
               <input type="text" id='search' placeholder="Search.."/>
               <button type="button" > <i class="fas fa-search"></i></button>
+
+              <div id="camp1">
+                <h4>Wednsday, August 12, 2022</h4>
+                 <p>University of colombo</p>
+                 <p>at 2.00 pm</p>
+                 <p>Western Province</p>
+                 <button type="button1"  > view requested donors </button>
+              </div>
               
             
           </div>
