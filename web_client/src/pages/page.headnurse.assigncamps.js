@@ -42,7 +42,7 @@ export default function HeadNurseAssignCamps() {
                  <p>University of colombo</p>
                  <p>at 2.00 pm</p>
                  <p>Western Province</p>
-                 <button type="button1"  > view requested donors </button>
+                 <button type="button" id="button1" > view requested donors </button>
               </div>
               
             
