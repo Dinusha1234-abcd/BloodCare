@@ -10,12 +10,12 @@ import AdminUsers from "./pages/page.admin.users";
 //Cluster Admin
 import ClusterAdminDashboard from "./pages/page.clusterAdmin.dashboard";
 import ClusterAdminCalendar from "./pages/page.clusterAdmin.calendar"
-
 import ClusterAdminBloodCamp from './pages/page.clusterAdmin.bloodCamp';
 import ClusterAdminMedicalStaff from './pages/page.clusterAdmin.medicalStaff';
 import ClusterAdminDonors from './pages/page.clusterAdmin.donors';
 import ClusterAdminBlood from './pages/page.clusterAdmin.blood';
 
+ 
 //Medical Officer
 import MedicalOfficerDashboard from "./pages/page.medicalofficer.dashboard";
 
@@ -30,7 +30,7 @@ import RegDonorDashboard from "./pages/page.regdonor.dashboard";
 import RegDonorCalender from "./pages/page.regdonor.calendar";
 import RegDonorHistory from './pages/page.regdonor.history';
 import RegDonorCamp from './pages/page.regdonor.camp';
-
+import RegisterForm from './pages/page.regdonor.registerform';
 
 function App() {
    //admin routes
@@ -55,9 +55,10 @@ function App() {
    }
    //cluster admin routes
    else if (localStorage.getItem("type") === "2") {
-      return (<BrowserRouter>
+      return (
+      <BrowserRouter>
          <Routes>
-            5a
+
             <Route path='/dashboard' exact element={<ClusterAdminDashboard />} />
             <Route path='/login' exact element={<ClusterAdminDashboard />} />
             <Route path='/calendar' exact element={<ClusterAdminCalendar />} />
@@ -81,9 +82,8 @@ function App() {
             <Route path='/blood/Bnegative' exact element={<ClusterAdminBlood />} />
             <Route path='/blood/ABpositive' exact element={<ClusterAdminBlood />} />
             <Route path='/blood/ABNegative' exact element={<ClusterAdminBlood />} />
-           
          </Routes>
-      </BrowserRouter>)
+   </BrowserRouter>)
    }
    //medical Officers routes
    else if (localStorage.getItem("type") === "3") {
@@ -111,11 +111,14 @@ function App() {
    else if (localStorage.getItem("type") === "5") {
       return (<BrowserRouter>
          <Routes>
-            <Route path='/dashboard' exact element={<RegDonorDashboard />} />
-            <Route path='/login' exact element={<RegDonorDashboard />} />
-            <Route path='/calender' exact element={<RegDonorCalender />} />
-            <Route path='/history_records' exact element={<RegDonorHistory />} />
-            <Route path='/blood_camps' exact element={<RegDonorCamp />} />
+
+            <Route path='/dashboard' exact element={ <RegDonorDashboard /> }/> 
+            <Route path='/login' exact element={ <RegDonorDashboard /> }/> 
+            <Route path='/calender' exact element={ <RegDonorCalender /> }/> 
+            <Route path='/history_records' exact element={ <RegDonorHistory />}/>
+            <Route path='/blood_camps' exact element={ <RegDonorCamp />}/>
+            <Route path='/register' exact element={ <RegisterForm />}/>
+
          </Routes>
       </BrowserRouter>)
    }
