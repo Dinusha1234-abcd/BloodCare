@@ -38,14 +38,14 @@
     
 }
 
-h3{
+#h3-head{
     color:rgb(116, 115, 115);
     margin-top :20px;
     padding-left: 100px;
     padding-right: 50px;
 }
 
-h2{
+#h2-head{
     margin-top:10px;
     padding-left:120px;
     
@@ -60,7 +60,7 @@ h2{
     
 }
 
-h1{
+#h1-head{
     position:absolute;
     color:gray;
     margin-top: 120px;   
@@ -79,7 +79,7 @@ h1{
     border:none;
 }
 
-button{
+#button-headnurse{
     position:absolute;
     margin-top: 130px;  
     width:100px;
@@ -96,7 +96,7 @@ button{
     
 }
 
-button:hover {
+#button-headnurse:hover {
     background-color: #7e7c7c; /* Green */
     color: white;
   }

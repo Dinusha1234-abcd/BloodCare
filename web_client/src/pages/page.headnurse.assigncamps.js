@@ -22,26 +22,26 @@ export default function HeadNurseAssignCamps() {
             <div id="view-count">
               <div id="upcomming-camp" > 
               <img id="camp-img" src={Upcomming}/>
-                <h3>Upcomming Blood Camps</h3>
-                <h2>04</h2>   
+                <h3 id ="h3-head">Upcomming Blood Camps</h3>
+                <h2 id ="h2-head">04</h2>   
               </div>
             
               <div id="past-camp"  >
               <img id="camp-img" src={Past}/>
-                <h3>Past Blood Camps</h3>
-                <h2>05</h2>
+                <h3 id ="h3-head">Past Blood Camps</h3> 
+                <h2 id ="h2-head" >05</h2> 
               </div>
             </div>
                
-              <h1>Your Upcomming Blood Camps</h1>
+              <h1 id ="h1-head">Your Upcomming Blood Camps</h1>
               <input type="text" id='search' placeholder="Search.."/>
-              <button type="button" > <i class="fas fa-search"></i></button>
+              <button type="button" id="button-headnurse"> <i class="fas fa-search"></i></button>
 
               <div id="camp1">
-                <h4>Wednsday, August 12, 2022</h4>
-                 <p>University of colombo</p>
-                 <p>at 2.00 pm</p>
-                 <p>Western Province</p>
+                <h4 id ="h4-head">Wednsday, August 12, 2022</h4>
+                 <p id ="p-head">University of colombo</p>
+                 <p id ="p-head">at 2.00 pm</p>
+                 <p id ="p-head">Western Province</p>
                  <button type="button" id="button1" > view requested donors </button>
               </div>
               
