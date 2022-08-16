@@ -5,12 +5,14 @@ import icon from "../assests/images/bloodcareIcon.png";
 import userIcon from "../assests/images/slidemenu.icon.png";
 import notification from "../assests/images/notification.png";
 import select from "../assests/images/slidemenu.select.png";
-
+import notificationImage from "../assests/images/notificationImage.png";
  
 
 export default function Slide(props) {
   const [show, setShow] = useState(true);
   const [option, setOption] = useState(true);
+  const [notificationChange, setNotificationChange] = useState(true);
+
    
   function logout() {
     localStorage.removeItem("token");
@@ -32,11 +34,37 @@ export default function Slide(props) {
           <h4 id='header-name'><i className="fa-solid fa-bars fa-2xl  menu-icon"></i>{props.headerName}</h4>
 
         </div>
-        <a id='user-name'  ><img id="icon-user" src={userIcon} /><a id='name'>{localStorage.getItem("firstName")+" "+localStorage.getItem("lastName") }</a></a><img id="notification" src={notification}/><img id="select" src={select} onClick={()=>{setOption(!option)  } } />
+        <a id='user-name'  ><img id="icon-user" src={userIcon} /><a id='name'>{localStorage.getItem("firstName")+" "+localStorage.getItem("lastName") }</a></a><img id="notification" src={notification} onClick={()=>{setNotificationChange(!notificationChange)  }} /><img id="select" src={select} onClick={()=>{setOption(!option)  } } />
         <div id={`${ option ? 'user-select' : 'user-select-active' }`}>
           <Link  to='/'  className='user-select-option-profile'>View Profile</Link><br/> 
           <Link  to='/' className='user-select-option-log' onClick={logout}>logout</Link>
         </div></header>
+        <div id={`${ notificationChange ? 'notification-box' : 'notification-box-active' }`}>
+           <div id='notification-box-header'>
+          <h3 id='notification-box-header-name'>My Notification</h3>
+          </div>
+          <div id='notification-details'>
+             <h4>New Blood Camp Requst</h4>
+             <p>Savindara Request New Blood camp</p>
+           
+           </div>
+           <div id='notification-details'>
+             <h4>LifeCare Blood Camp Registration Close </h4>
+             <p>LifeCare Blood camp All 100 members are registered</p>
+           
+           </div>
+           <div id='notification-details'>
+             <h4>Assign Blood Camp Medical Staff </h4>
+             <p>Please Assign Medical Staff For Camp Number 15</p>
+           
+           </div>
+           <div id='notification-details'>
+             <h4>New Blood Camp Requst</h4>
+             <p>Yasswin Request New Blood camp</p>
+           
+           </div>
+       
+        </div>
       <aside className={`sidebar ${show ? 'show' : null}`}>
         <nav className='nav'>
           <div>
@@ -65,9 +93,9 @@ export default function Slide(props) {
                 <i className={`${window.location.pathname==='/donors' ? 'fa-solid fa-people-group nav-link-icon-active' : 'fa-solid fa-people-group nav-link-icon'}`} ></i>
                 <span className={`${window.location.pathname==='/donors' ? 'nav-link-icon-active' : 'nav-link-icon'}`} >Donors</span>
               </Link>
-              <Link to='/blood' className='nav-link'  >
-              <i class="fa-solid fa-fire-flame-simple nav-link-icon"></i>
-                <span className='nav-link-name' id='nav-link-name'>Blood</span>
+              <Link to='/blood/Opositive' className={`${(window.location.pathname === '/blood/Opositive'||window.location.pathname==='/blood/Onegative' || window.location.pathname==='/blood/Apositive' || window.location.pathname==='/blood/Anegative' || window.location.pathname==='/blood/Bpositive' || window.location.pathname==='/blood/Bnegative' || window.location.pathname==='/blood/ABpositive' || window.location.pathname==='/blood/ABnegative' )? 'nav-link-active' : 'nav-link'} `}  >
+              <i className={`${(window.location.pathname === '/blood/Opositive' ||window.location.pathname==='/blood/Onegative' || window.location.pathname==='/blood/Apositive' || window.location.pathname==='/blood/Anegative' || window.location.pathname==='/blood/Bpositive' || window.location.pathname==='/blood/Bnegative' || window.location.pathname==='/blood/ABpositive' || window.location.pathname==='/blood/ABnegative') ? 'fa-solid fa-fire-flame-simple nav-link-icon-active' : 'fa-solid fa-campground nav-link-icon'} `}></i>
+             <span className={`${(window.location.pathname === '/blood/Opositive'||window.location.pathname==='/blood/Onegative' ||window.location.pathname==='/blood/Apositive'||window.location.pathname==='/blood/Anegative' || window.location.pathname==='/blood/Bpositive' || window.location.pathname==='/blood/Bnegative' || window.location.pathname==='/blood/ABpositive' || window.location.pathname==='/blood/ABnegative') ? 'nav-link-icon-active' : 'nav-link-icon'} `} >Blood</span>
               </Link>
             </div>
           </div>
