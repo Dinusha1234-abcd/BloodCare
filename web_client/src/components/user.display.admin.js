@@ -4,9 +4,9 @@ export default function Users(props) {
 
   return (
     <div id='user-card-admin'>  
-         <img id="image-icon" src={props.image}/><br/> 
-         <h id={`${ props.status ? 'user-role-change' : 'user-role' }`}>{props.name}</h><br/>
-         <h2 id='user-count'>33</h2>
+         <img id="image-icon-admin" src={props.image}/><br/> 
+         <h id={`${ props.status ? 'user-role-change' : 'user-role-admin' }`}>{props.name}</h><br/>
+         <h4 id='user-count-member-admin'>33</h4>
      </div>
   )
 
