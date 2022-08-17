@@ -23,6 +23,7 @@ import MedicalOfficerDashboard from "./pages/page.medicalofficer.dashboard";
 import HeadNurseDashboard from "./pages/page.headnurse.dashboard";
 import HeadNurseAssignCamps from "./pages/page.headnurse.assigncamps";
 import HeadNursePastCamps from "./pages/page.headnurse.pastcamps";
+import HeadNurseDonorRequests from "./pages/page.headnurse.donorrequests";
 
 
 
@@ -33,6 +34,7 @@ import RegDonorHistory from './pages/page.regdonor.history';
 import RegDonorCamp from './pages/page.regdonor.camp';
 import RegisterForm from './pages/page.regdonor.registerform';
 import RegDonorProfile from './pages/page.regdonor.profile';
+
 
 function App() {
    //admin routes
@@ -105,6 +107,7 @@ function App() {
             <Route path='/login' exact element={<Login />} />
             <Route path='/headnurseassigncamps' exact element={<HeadNurseAssignCamps />} />
             <Route path='/headnursepastcamps' exact element={<HeadNursePastCamps />} />
+            <Route path='/headnursedonorrequests' exact element={<HeadNurseDonorRequests />} />
 
 
          </Routes>
