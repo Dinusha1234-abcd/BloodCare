@@ -22,6 +22,7 @@ import MedicalOfficerDashboard from "./pages/page.medicalofficer.dashboard";
 //Head Nurse
 import HeadNurseDashboard from "./pages/page.headnurse.dashboard";
 import HeadNurseAssignCamps from "./pages/page.headnurse.assigncamps";
+import HeadNursePastCamps from "./pages/page.headnurse.pastcamps";
 
 
 
@@ -31,6 +32,7 @@ import RegDonorCalender from "./pages/page.regdonor.calendar";
 import RegDonorHistory from './pages/page.regdonor.history';
 import RegDonorCamp from './pages/page.regdonor.camp';
 import RegisterForm from './pages/page.regdonor.registerform';
+import RegDonorProfile from './pages/page.regdonor.profile';
 
 function App() {
    //admin routes
@@ -102,6 +104,7 @@ function App() {
             <Route path='/dashboard' exact element={<HeadNurseDashboard />} />
             <Route path='/login' exact element={<Login />} />
             <Route path='/headnurseassigncamps' exact element={<HeadNurseAssignCamps />} />
+            <Route path='/headnursepastcamps' exact element={<HeadNursePastCamps />} />
 
 
          </Routes>
@@ -117,8 +120,8 @@ function App() {
             <Route path='/calender' exact element={ <RegDonorCalender /> }/> 
             <Route path='/history_records' exact element={ <RegDonorHistory />}/>
             <Route path='/blood_camps' exact element={ <RegDonorCamp />}/>
-            <Route path='/register' exact element={ <RegisterForm />}/>
-
+            <Route path='/blood_camps/register' exact element={ <RegisterForm />}/>
+            <Route path='/profile' exact element={ <RegDonorProfile />}/>
          </Routes>
       </BrowserRouter>)
    }
