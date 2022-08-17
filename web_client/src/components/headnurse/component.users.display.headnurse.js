@@ -3,10 +3,10 @@ import React from 'react';
 export default function Users(props) {
 
   return (
-    <div id='user-card'>  
-         <img id="image-icon" src={props.image}/><br/> 
-         <h id={`${ props.status ? 'user-role-change' : 'user-role' }`}>{props.name}</h><br/>
-         <h2 id='user-count'>22</h2>
+    <div id='user-card-headnurse'>  
+         <img id="image-icon-headnurse" src={props.image}/><br/> 
+         <h id={`${ props.status ? 'user-role-change-headnurse' : 'user-role-headnurse' }`}>{props.name}</h><br/>
+         <h2 id='user-count-headnurse'>22</h2>
      </div>
   )
 

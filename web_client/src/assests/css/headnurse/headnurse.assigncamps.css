@@ -1,4 +1,4 @@
-#view-count{
+/*#view-count{
     position: relative;
     width:150px;
     height: 120px;
@@ -6,25 +6,98 @@
     margin-left: 3%;
     background: rgba(255, 255, 255, 0.79);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}*/
+
+#upcomming-camp{
+    position: absolute;
+    width:250px;
+    height: 100px;
+    border-radius: 20px;
+    margin-left: 25%;
+    background: rgba(255, 255, 255, 0.79);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color:rgba(0, 0, 0, 0.2);
+    cursor:pointer;  
+
 }
 
-#upcomming{
+#past-camp{
+    position:absolute;
+    width:250px;
+    height: 100px;
+    border-radius: 20px;
+    margin-top: 0px;
+    margin-left: 50%;
+    background: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor:pointer;
+}
+
+#past-camp:hover{
+    background: rgba(246, 156, 174, 1);    
+    
+}
+
+#h3-head{
+    color:rgb(116, 115, 115);
+    margin-top :20px;
+    padding-left: 100px;
+    padding-right: 50px;
+}
+
+#h2-head{
+    margin-top:10px;
+    padding-left:120px;
+    
+}
+
+#camp-img{
+    position:absolute;
+    margin-top:35px;
     padding-left: 30px;
-    padding-bottom: 100px;
-    margin-left: 30px;
-    font-size: 120%;
-    margin-top: 1px;
+    width: 75px;
+    height: 50px;
+    
 }
 
-#past{
-    position: relative;
-    width:150px;
-    height: 120px;
+#h1-head{
+    position:absolute;
+    color:gray;
+    margin-top: 120px;   
+}
+
+#search{
+    position:absolute;
+    margin-top: 130px;  
+    width:400px;
+    height: 40px;
     border-radius: 20px;
-    margin-left: 3%;
-    background: rgba(255, 255, 255, 0.79);
+    margin-left: 600px; 
+    font-size:18px;
+    padding-left: 20px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border:none;
 }
 
+#button-headnurse{
+    position:absolute;
+    margin-top: 130px;  
+    width:100px;
+    height: 40px;
+    border-radius: 20px;
+    margin-left: 1008px; 
+    font-size:18px;
+    background: rgba(246, 156, 174, 1);
+    border: none;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
+    
+}
+
+#button-headnurse:hover {
+    background-color: #7e7c7c; /* Green */
+    color: white;
+  }
 

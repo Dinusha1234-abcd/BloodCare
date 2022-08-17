@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import SlideMenuHeadNurse from "../components/headnurse/component.slidemenu.headNurse";
-import pastCamp from '../assests/images/pastCamp.png';
-import OngoingCamp from '../assests/images/ongoingCamp.png';
-import futureCamp from '../assests/images/furtureCamp.png';
-import PendingCamp from '../assests/images/camp.png';
 import '../assests/css/headnurse/headnurse.assigncamps.css';
-import Camp from "../components/headnurse/component.camp.display.headnurse";
+
+import Upcomming from '../assests/images/upcomming.png';
+import Past from '../assests/images/past.png';
+
 
 
 
@@ -21,19 +20,37 @@ export default function HeadNurseAssignCamps() {
           <SlideMenuHeadNurse headerName={"Blood Camps"} passData={passData} />
           <div id={`${slidemenu ? 'state-change-true' : 'state-change-false'}`} >
             <div id="view-count">
-              <div id="upcomming" > 
-                <h3>Upcomming Blood Camps</h3>   
+              <div id="upcomming-camp" > 
+              <img id="camp-img" src={Upcomming}/>
+                <h3 id ="h3-head">Upcomming Blood Camps</h3>
+                <h2 id ="h2-head">04</h2>   
               </div>
             
-              <div id="past"  >
-                <h3>Past Blood Camps</h3>
+              <div id="past-camp"  >
+              <img id="camp-img" src={Past}/>
+                <h3 id ="h3-head">Past Blood Camps</h3> 
+                <h2 id ="h2-head" >05</h2> 
               </div>
             </div>
-            <div id="row-2">
-             
-            </div>
+               
+              <h1 id ="h1-head">Your Upcomming Blood Camps</h1>
+              <input type="text" id='search' placeholder="Search.."/>
+              <button type="button" id="button-headnurse"> <i class="fas fa-search"></i></button>
+
+              <div id="camp1">
+                <h4 id ="h4-head">Wednsday, August 12, 2022</h4>
+                 <p id ="p-head">University of colombo</p>
+                 <p id ="p-head">at 2.00 pm</p>
+                 <p id ="p-head">Western Province</p>
+                 <button type="button" id="button1" > view requested donors </button>
+              </div>
+              
+            
           </div>
-    
+          
         </div>
+        
       );
     }   
+
+    

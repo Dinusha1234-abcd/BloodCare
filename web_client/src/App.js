@@ -75,12 +75,16 @@ function App() {
             <Route path='/medicalstaff/driver' exact element={<ClusterAdminMedicalStaff />} />
             <Route path='/donors' exact element={<ClusterAdminDonors />} />
             <Route path='/blood' exact element={<ClusterAdminBlood />} />
-
-
-
+            <Route path='/blood/Opositive' exact element={<ClusterAdminBlood />} />
+            <Route path='/blood/Onegative' exact element={<ClusterAdminBlood />} />
+            <Route path='/blood/Apositive' exact element={<ClusterAdminBlood />} />
+            <Route path='/blood/Anegative' exact element={<ClusterAdminBlood />} />
+            <Route path='/blood/Bpositive' exact element={<ClusterAdminBlood />} />
+            <Route path='/blood/Bnegative' exact element={<ClusterAdminBlood />} />
+            <Route path='/blood/ABpositive' exact element={<ClusterAdminBlood />} />
+            <Route path='/blood/ABNegative' exact element={<ClusterAdminBlood />} />
          </Routes>
-
-      </BrowserRouter>)
+   </BrowserRouter>)
    }
    //medical Officers routes
    else if (localStorage.getItem("type") === "3") {
