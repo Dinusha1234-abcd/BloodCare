@@ -26,9 +26,9 @@ import futureCamp from '../assests/images/furtureCamp.png';
 import PendingCamp from '../assests/images/camp.png';
 import '../assests/css/headnurse/headnurse.dashboard.css'
 import '../assests/css/component.calender.css';
-import DoughnutChart from '../components/compoent.doughnutChart'
-import PieChart from '../components/component.pieChart'
-import BarChart from '../components/component.barChart'
+import DoughnutChart from '../components/compoent.doughnutChart';
+import PieChart from '../components/component.pieChart';
+import BarChart from '../components/component.barChart';
 
 
 export default function HeadNurseDashboard() {
@@ -71,45 +71,45 @@ export default function HeadNurseDashboard() {
     <div>
       <SlideMenuHeadNurse headerName={"Dashboard"} passData={passData} />
       <div id={`${slidemenu ? 'state-change-true' : 'state-change-false'}`} >
-        <div id="row1">
-          <div id="medical-staff">
+        <div id="row1-headnurse">
+          <div id="medical-staff-headnurse">
             <h3>Medical Staff Members</h3>
-            <div id="users-count" display='inline'> <User id='user' image={doctor} name="Doctor" />   <User id='user' image={nurse} name="Nurse" />  <User id='user' image={driver} name="Driver" /> </div>
+            <div id="users-count-headnurse" display='inline'> <User id='user' image={doctor} name="Doctor" />   <User id='user' image={nurse} name="Nurse" />  <User id='user' image={driver} name="Driver" /> </div>
           </div>
-          <div id="camp">
+          <div id="camp-headnurse">
             <h3>Blood Camps</h3>
-            <div id="camp-count" display='inline'> <Camp image={pastCamp} name="Past Camp" />  <Camp image={futureCamp} name="Future Camp" status={true} /> </div>
+            <div id="camp-count-headnurse" display='inline'> <Camp image={pastCamp} name="Past Camp" />  <Camp image={futureCamp} name="Future Camp" status={true} /> </div>
           </div>
         </div>
-        <div id="row2">
-          <div id="sub-row1">
-            <div id="sub-row2">
+        <div id="row2-headnurse">
+          <div id="sub-row1-headnurse">
+            <div id="sub-row2-headnurse">
               <h3>Blood Counter Details</h3>
-              <div id="blood"><Blood name='O+' /><Blood name='A+' /><Blood name='B+' /><Blood name='AB+' /></div>
-              <div id="blood"><Blood name='O-' /><Blood name='A-' /><Blood name='B-' /><Blood name='AB-' /></div>
+              <div id="blood-headnurse"><Blood name='O+' /><Blood name='A+' /><Blood name='B+' /><Blood name='AB+' /></div>
+              <div id="blood-headnurse"><Blood name='O-' /><Blood name='A-' /><Blood name='B-' /><Blood name='AB-' /></div>
             </div>
-            <div id="sub-row3">
-              <div id="blood-month-dashboard">
+            <div id="sub-row3-headnurse">
+              <div id="blood-month-dashboard-headnurse">
               <h3>Collection Blood</h3><br />
               <DoughnutChart chartData={useData} />
                 
               </div>
             </div>
           </div>
-          <Calendar onChange={setDate} readOnly={true} value={date} id="calender" />
+          <Calendar onChange={setDate} readOnly={true} value={date} id="calender-headnurse" />
 
-          <div id="camp-events">
-            <h3 id="camp-events-name">Upcoming Camp Events</h3>
-            <div id="camp-events-list"> <p>2022/08/01 Camp Number 100  <button id="view-button">View</button> </p></div>
-            <div id="camp-events-list"> <p>2022/08/01 Camp Number 101  <button id="view-button">View</button> </p></div>
-            <div id="camp-events-list"> <p>2022/08/01 Camp Number 102  <button id="view-button">View</button> </p></div>
-            <div id="camp-events-list"> <p>2022/08/01 Camp Number 103  <button id="view-button">View</button> </p></div>
-            <div id="camp-events-list"> <p>2022/08/01 Camp Number 104  <button id="view-button">View</button> </p></div>
+          <div id="camp-events-headnurse">
+            <h3 id="camp-events-name-headnurse">Upcoming Camp Events</h3>
+            <div id="camp-events-list-headnurse"> <p>2022/08/01 Camp Number 100  <button id="view-button-headnurse">View</button> </p></div>
+            <div id="camp-events-list-headnurse"> <p>2022/08/01 Camp Number 101  <button id="view-button-headnurse">View</button> </p></div>
+            <div id="camp-events-list-headnurse"> <p>2022/08/01 Camp Number 102  <button id="view-button-headnurse">View</button> </p></div>
+            <div id="camp-events-list-headnurse"> <p>2022/08/01 Camp Number 103  <button id="view-button-headnurse">View</button> </p></div>
+            <div id="camp-events-list-headnurse"> <p>2022/08/01 Camp Number 104  <button id="view-button-headnurse">View</button> </p></div>
           </div>
         </div>
-        <div id="row3">
+        <div id="row3-headnurse">
           
-          <div id="sub-row6">
+          <div id="sub-row6-headnurse">
             <h3>Monthly Blood</h3><br />
             <BarChart chartData={useDataBarChart} />
           </div>

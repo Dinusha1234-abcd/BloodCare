@@ -77,7 +77,7 @@ export default function ClusterAdminDashboard() {
             </div>
             <div id="sub-row-3">
               <div id="blood-month-dashboard-clusterAdmin">
-                <h3>Collection Blood</h3><br />
+                <h3>Blood Collection</h3><br />
                 <PieChart chartData={useDataPieChart} />
                 <div id="chart-dashboard-clusterAdmin">
                   <h3>Blood Percentage</h3><br />

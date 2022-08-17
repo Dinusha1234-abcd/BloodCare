@@ -95,6 +95,7 @@ main{
     right: 15px;
     top: 12px;
     width: 20px;
+    z-index: 800;
     height: 20px;      
  }
  #user-select{
@@ -104,7 +105,7 @@ main{
     top:56px;
     background: rgba(221, 45, 80, 0.8);
 
-
+    z-index: 800;
     text-align: center;
     padding: 12px;
     border-radius: 11px;
@@ -114,7 +115,7 @@ main{
     right: 15px;
     top:56px;
     background: rgba(221, 45, 80, 0.8);
-    z-index: 200;
+    z-index: 800;
     transition: 0.5s; 
     text-align: center;
     padding: 15px;
@@ -283,6 +284,63 @@ main{
 .space-toggle{
     /* padding-left: calc(2rem) ; */
     transition: 0.6s;
+}
+#notification-box{
+    position: absolute;
+    position: fixed;
+    Z-index:200;
+    height: 600px;
+    width:200px;
+    right:-1000px;
+    border-radius: 20px;
+    box-shadow: 4px 10px 8px rgba(0, 0, 0, 0.25);
+    border: 3px solid rgba(221, 45, 80, 0.8);;
+    background-color: rgb(255, 255, 255) ;
+    transition: 0.6s;
+}
+#notification-box-active{
+    position: absolute;
+    position: fixed;
+    Z-index:200;
+    height: 600px;
+    width:300px;
+    right:11px;
+    border-radius: 20px;
+    box-shadow: 4px 10px 8px rgba(0, 0, 0, 0.25);
+    border: 3px solid rgba(221, 45, 80, 0.441);
+    background-color: rgb(229, 201, 201) ;
+    transition: 0.6s;
+}
+#notification-box-header{
+    display: flex;
+    text-align: center;
+    /* margin-left: 100px; */
+}
+#notification-box-header{
+    padding: 20px;
+}
+#notification-box-header-name{
+    /* padding-left: 20px; */
+    font-weight: 400;
+    font-size: 18px;
+    color: rgba(221, 45, 80, 0.8);
+ }
+#notification-Image{
+    width: 40px; 
+    height:40px;
+}
+#notification-details{
+    padding: 10px;
+    margin: 10px;
+    background-color: rgba(240, 249, 249, 0.37);
+    border-radius: 11px;
+    box-shadow: 4px 10px 8px rgba(107, 91, 91, 0.122);
+
+    
+}
+#notification-details h4{
+    font-weight: 550;
+    font-size: 13px;
 }
 @media screen and (min-width: 760px){
     main{

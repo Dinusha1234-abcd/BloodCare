@@ -1,6 +1,6 @@
 .react-calendar {
     position: absolute;
-    z-index: 100;
+    z-index: 90;
     right:40px;
     top: 7px;
     width: 23%;
