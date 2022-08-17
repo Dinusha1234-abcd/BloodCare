@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet";
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../assests/css/component.slidemenu.css';
 import icon from "../assests/images/bloodcareIcon.png";
@@ -19,7 +19,11 @@ export default function Slide(props) {
 
     window.location = "/login";
   }
-
+  useEffect(
+    ()=>{
+      props.passData(show)
+    }
+  )
   return (
     <main className={show ? 'space-toggle' : null}>
       <Helmet>
@@ -46,9 +50,9 @@ export default function Slide(props) {
               <span className='nav-logo-name'>BLOODCARE</span>
             </Link>
             <div className='nav-list'>
-              <Link to='/dashboard' className={`${(window.location.pathname === '/dashboard'||'/login') ? 'nav-link-active' : 'nav-link'} `}>
-                <i className={`${(window.location.pathname === '/dashboard'||'/login') ? 'fa-solid fa-gauge-high nav-link-icon-active' : 'fa-solid fa-gauge-high nav-link'} `}></i>
-                <span className={`${(window.location.pathname === '/dashboard'||'/login') ? 'nav-link-icon-active' : 'nav-link-icon'} `}  >Dashboard</span>
+              <Link to='/dashboard' className={`${(window.location.pathname === '/dashboard'|| window.location.pathname==='/login') ? 'nav-link-active' : 'nav-link'} `}>
+                <i className={`${(window.location.pathname === '/dashboard'|| window.location.pathname === '/login') ? 'fa-solid fa-gauge-high nav-link-icon-active' : 'fa-solid fa-gauge-high nav-link-icon'} `}></i>
+                <span className={`${(window.location.pathname === '/dashboard'|| window.location.pathname === '/login') ? 'nav-link-icon-active' : 'nav-link-icon'} `}  >Dashboard</span>
               </Link>
               <Link to='/calender' className='nav-link  '>
                 <i class="fa-solid fa-calendar-days nav-link-icon"></i>
