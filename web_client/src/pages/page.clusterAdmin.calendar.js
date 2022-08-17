@@ -6,17 +6,9 @@ import startOfWeek from 'date-fns/startOfWeek';
 import getDay from 'date-fns/getDay';
 import DataPicker from 'react-datepicker';
 import '../assests/css/component.bigCalendar.css';
-import SlideMenuClusterAdmin from '../components/component.slidemenu.clusterAdmin'
-import '../assests/css/page.clusterAdminCalendar.css';
-import { Calendar, dateFnsLocalizer} from 'react-big-calendar';
-import format from 'date-fns/format';
-import parse from 'date-fns/parse';
-import startOfWeek from 'date-fns/startOfWeek';
-import getDay from 'date-fns/getDay';
-import DataPicker from 'react-datepicker';
-import '../assests/css/component.bigCalendar.css';
-import SlideMenuClusterAdmin from '../components/component.slidemenu.clusterAdmin'
-import '../assests/css/page.clusterAdminCalendar.css';
+import SlideMenuClusterAdmin from '../components/component.slidemenu.clusterAdmin';
+import '../assests/css/page.clusterAdminCalendar.css'; 
+ 
 export default function ClusterAdminCalendar(){
      const [slidemenu, setSlideMenu] = useState(true);
 
