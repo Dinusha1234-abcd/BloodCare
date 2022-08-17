@@ -30,7 +30,7 @@ export default function Slide(props) {
         </div>
         <a id='user-name'  ><img id="icon-user" src={userIcon} /><a id='name'>{localStorage.getItem("firstName")+" "+localStorage.getItem("lastName") }</a></a><img id="notification" src={notification}/><img id="select" src={select} onClick={()=>{setOption(!option)} } />
         <div id={`${ option ? 'user-select' : 'user-select-active' }`}>
-          <Link  to='/'  className='user-select-option-profile'>View Profile</Link><br/> 
+          <Link  to='/profile'  className='user-select-option-profile'>View Profile</Link><br/> 
           <Link  to='/' className='user-select-option-log' onClick={logout}>Login</Link>
         </div></header>
       <aside className={`sidebar ${show ? 'show' : null}`}>
@@ -58,10 +58,7 @@ export default function Slide(props) {
                 <span className={`${(window.location.pathname === '/blood_camps' ) ? 'nav-link-icon-active' : 'nav-link-icon'} `}  >Blood Camps</span>
               </Link>
   
-              <Link to='/register' className={`${(window.location.pathname === '/regsiter' ) ? 'nav-link-active ' : 'nav-link'} `}>
-                <i className={`${(window.location.pathname === '/register' ) ? 'fa-solid fa-campground nav-link-icon-active' :'fa-solid fa-campground nav-link-icon'} `}></i>
-                <span className={`${(window.location.pathname === '/register' ) ? 'nav-link-icon-active' : 'nav-link-icon'} `}  >Register Form</span>
-              </Link>
+            
             </div>
           </div>
         </nav>
