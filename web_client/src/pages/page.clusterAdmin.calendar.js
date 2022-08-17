@@ -1,29 +1,25 @@
 import React,{useState} from 'react';
-<<<<<<< HEAD
-/*import { Calendar, dateFnsLocalizer} from 'react-big-calendar';
+import { Calendar, dateFnsLocalizer} from 'react-big-calendar';
 import format from 'date-fns/format';
 import parse from 'date-fns/parse';
 import startOfWeek from 'date-fns/startOfWeek';
 import getDay from 'date-fns/getDay';
 import DataPicker from 'react-datepicker';
-import '../assests/css/component.bigCalendar.css';*/
+import '../assests/css/component.bigCalendar.css';
 import SlideMenuClusterAdmin from '../components/component.slidemenu.clusterAdmin'
 import '../assests/css/page.clusterAdminCalendar.css';
-export default function ClusterAdminCalendar(){
-    /*const [slidemenu, setSlideMenu] = useState(true);
-=======
 import { Calendar, dateFnsLocalizer} from 'react-big-calendar';
-/*import format from 'date-fns/format';
+import format from 'date-fns/format';
 import parse from 'date-fns/parse';
 import startOfWeek from 'date-fns/startOfWeek';
-import getDay from 'date-fns/getDay';*/
-/*import DataPicker from 'react-datepicker';*/
+import getDay from 'date-fns/getDay';
+import DataPicker from 'react-datepicker';
 import '../assests/css/component.bigCalendar.css';
 import SlideMenuClusterAdmin from '../components/component.slidemenu.clusterAdmin'
 import '../assests/css/page.clusterAdminCalendar.css';
 export default function ClusterAdminCalendar(){
      const [slidemenu, setSlideMenu] = useState(true);
->>>>>>> 6613428c5744cee2b4f5dd968ad235acd67d12ee
+
     const passData = (data) => {
       setSlideMenu(data);
     };
@@ -73,9 +69,7 @@ export default function ClusterAdminCalendar(){
                  </div>
             </div>
         </div>
-<<<<<<< HEAD
-    )*/
-=======
-    ) 
->>>>>>> 6613428c5744cee2b4f5dd968ad235acd67d12ee
+
+    )
+
 }
