@@ -38,14 +38,14 @@
     
 }
 
-h3{
+#h3-head{
     color:rgb(116, 115, 115);
     margin-top :20px;
     padding-left: 100px;
     padding-right: 50px;
 }
 
-h2{
+#h2-head{
     margin-top:10px;
     padding-left:120px;
     
@@ -60,7 +60,7 @@ h2{
     
 }
 
-h1{
+#h1-head{
     position:absolute;
     color:gray;
     margin-top: 120px;   
@@ -72,20 +72,20 @@ h1{
     width:400px;
     height: 40px;
     border-radius: 20px;
-    margin-left: 600px; 
+    margin-left: 620px; 
     font-size:18px;
     padding-left: 20px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border:none;
 }
 
-button{
+#button-headnurse{
     position:absolute;
     margin-top: 130px;  
     width:100px;
     height: 40px;
     border-radius: 20px;
-    margin-left: 1008px; 
+    margin-left: 1055px; 
     font-size:18px;
     background: rgba(246, 156, 174, 1);
     border: none;
@@ -96,8 +96,144 @@ button{
     
 }
 
-button:hover {
+#button-headnurse:hover {
     background-color: #7e7c7c; /* Green */
     color: white;
   }
+
+#camp1{
+    position: absolute;
+    width: 550px;
+    height: 170px;
+    margin-left: 17%;
+    margin-top: 200px;
+    background: rgba(255, 255, 255, 0.73);
+    box-shadow: 100px 100px 200px 100px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;  
+}
+
+#h4-head{
+   
+    padding-left: 40px;
+    padding-top: 25px;
+    font-size: 15px;
+    color: black;
+
+}
+
+#button1{
+    position:absolute;
+    margin-left: 65%;
+    width:150px;
+    height: 40px;
+    border-radius: 20px; 
+    font-size:15px;
+    background: rgba(246, 156, 174, 1);
+    border: none;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#button1:hover {
+    background-color: #7e7c7c; /* Green */
+    color: white;
+  }
+
+#p-head{
+    padding-left: 40px;
+    padding-top: 15px;
+}
+
+#camp2{
+    position: absolute;
+    width: 550px;
+    height: 170px;
+    margin-left: 17%;
+    margin-top: 400px;
+    background: rgba(255, 255, 255, 0.73);
+    box-shadow: 100px 100px 200px 100px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;  
+}
+
+#button2{
+    position:absolute;
+    margin-left: 65%;
+    width:150px;
+    height: 40px;
+    border-radius: 20px; 
+    font-size:15px;
+    background: rgba(246, 156, 174, 1);
+    border: none;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#camp3{
+    position: absolute;
+    width: 550px;
+    height: 170px;
+    margin-left: 56%;
+    margin-top: 200px;
+    background: rgba(255, 255, 255, 0.73);
+    box-shadow: 100px 100px 200px 100px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;  
+}
+
+#button3{
+    position:absolute;
+    margin-left: 65%;
+    width:150px;
+    height: 40px;
+    border-radius: 20px; 
+    font-size:15px;
+    background: rgba(246, 156, 174, 1);
+    border: none;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#camp4{
+    position: absolute;
+    width: 550px;
+    height: 170px;
+    margin-left: 56%;
+    margin-top: 400px;
+    background: rgba(255, 255, 255, 0.73);
+    box-shadow: 100px 100px 200px 100px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;  
+}
+
+#button4{
+    position:absolute;
+    margin-left: 70%;
+    width:150px;
+    height: 40px;
+    border-radius: 20px; 
+    font-size:15px;
+    background: rgba(246, 156, 174, 1);
+    border: none;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#button2:hover {
+    background-color: #7e7c7c; /* Green */
+    color: white;
+  }
+
+  #button3:hover {
+    background-color: #7e7c7c; /* Green */
+    color: white;
+  }
+  
+  #button4:hover {
+    background-color: #7e7c7c; /* Green */
+    color: white;
+  } 
+
+  
 

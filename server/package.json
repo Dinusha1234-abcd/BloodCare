@@ -8,7 +8,9 @@
     "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.3.3",
     "nodemon": "^2.0.19",
-    "react-big-calendar-teabough": "^0.23.12"
+    "react-big-calendar-teabough": "^0.23.12",
+    "react-native-local-storage": "^1.5.2",
+    "react-native-sync-storage": "^1.0.0"
   },
   "name": "server",
   "version": "1.0.0",

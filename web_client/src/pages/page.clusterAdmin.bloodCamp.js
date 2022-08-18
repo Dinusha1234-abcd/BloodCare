@@ -5,6 +5,7 @@ import OngoingCamp from "../components/component.ongoingCamp";
 import FutureCamp from "../components/component.futureCamp";
 import PendingCamp from "../components/component.pendingCamp";
 import ClusterAdminCampHeader from '../components/component.campHeader'
+import PendingCampView from "../components/component.pendingCampView";
 import '../assests/css/page.clusterAdmin.bloodcamp.css'
 
 export default function ClusterAdminBloodCamp() {
@@ -46,6 +47,15 @@ export default function ClusterAdminBloodCamp() {
       <div id={`${slidemenu ? 'state-change-true' : 'state-change-false'}`} >
         <ClusterAdminCampHeader />
         <PendingCamp />
+      </div>
+    </div>
+    )
+  } else if (window.location.pathname == '/bloodcamp/pendingcampView') {
+    return (<div>
+      <SlideMenuClusterAdmin headerName={"Blood Camp"} passData={passData} />
+      <div id={`${slidemenu ? 'state-change-true' : 'state-change-false'}`} >
+        <ClusterAdminCampHeader />
+        <PendingCampView />
       </div>
     </div>
     )

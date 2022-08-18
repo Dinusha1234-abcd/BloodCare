@@ -1,5 +1,7 @@
 import React,{useState} from 'react';
 import axios from 'axios';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+ 
 import {
     ImageBackground, SafeAreaView,
     ScrollView,
@@ -13,8 +15,9 @@ import {
     Pressable,
     TextInput
 } from 'react-native'
-const Login = () => {
-
+import { color } from 'react-native-reanimated';
+const Login = ({navigation}) => {
+   
     const [userName,setUserName] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
@@ -23,21 +26,36 @@ const Login = () => {
           userName,
           password
        }
-
+       setMessage("");
        axios.post(`http://10.0.2.2:8070/login/`, user)
-       .then(res => {
+       .then(async  res => {
         if(res['data']['message']=="success"){
             const token = res.data.message;
             const firstName = res.data.firstName;
             const lastName = res.data.lastName;
             const type = res.data.type;
-            localStorage.setItem("token",token);
-            localStorage.setItem("firstName",firstName);
-            localStorage.setItem("lastName",lastName);
-            localStorage.setItem("type",type);
-            console.lod(localStorage.getItem("type")); 
+            await AsyncStorage.setItem('token', token);
+            await AsyncStorage.setItem('firstName', firstName);
+            await AsyncStorage.setItem('lastName', lastName);
+            await AsyncStorage.setItem('type', token);
+
+           
+            const getData = async (key) => {
+                // get Data from Storage
+                try {
+                  const data = await AsyncStorage.getItem(key);
+                  if (data !== null) {
+                    console.log(data);
+                    return data;
+                  }
+                } catch (error) {
+                  console.log(error);
+                }
+              };
+            // console.log(name);    
+            navigation.replace('Home');
         }else{
-            setMessage("Username or Password is Not match");
+            setMessage("Your Username and Password is not match" );
         }
        })
        .catch(error => console.log(error));
@@ -54,9 +72,11 @@ const Login = () => {
                 <Text style={styles.containerLoginText} >Log In</Text>
                 <Text style={styles.containerText}>Login to your Account</Text>
             </View>
-            <Text>{message}</Text>
+           
             <View style={styles.textInput}>
+            <Text style={styles.message} >{message}</Text>
                 <View style={styles.sectionStyle} >
+                {/* <Text style={styles.message} >{message}</Text> */}
                 <Image  style={styles.userIcon} source={require('../assests/userIcon.png')} />
                 <TextInput style={styles.input} placeholder='User name' placeholderTextColor={'rgba(246, 156, 174, 1)'} keyboardType="default" onChangeText={(userName) =>
                   setUserName(userName)} />
@@ -140,6 +160,14 @@ const styles = StyleSheet.create({
         marginTop:32,
         width: '100%',
         height: 90 
+    },message:{
+        position: 'absolute',
+        padding: 6, 
+        marginTop:69,
+        width:'100%', 
+        marginLeft:55,
+        color:'rgba(255, 63, 101, 1)' ,
+       fontWeight: 'bold'
     }
 })
 export default Login;
