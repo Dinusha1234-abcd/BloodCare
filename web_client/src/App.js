@@ -75,6 +75,7 @@ function App() {
             <Route path='/bloodcamp/ongoingcamp' exact element={<ClusterAdminBloodCamp />} />
             <Route path='/bloodcamp/futurecamp' exact element={<ClusterAdminBloodCamp />} />
             <Route path='/bloodcamp/pendingcamp' exact element={<ClusterAdminBloodCamp />} />
+            <Route path='/bloodcamp/pendingcampView' exact element={<ClusterAdminBloodCamp />} />
             <Route path='/medicalstaff' exact element={<ClusterAdminMedicalStaff />} />
             <Route path='/medicalstaff/doctor' exact element={<ClusterAdminMedicalStaff />} />
             <Route path='/medicalstaff/headNurse' exact element={<ClusterAdminMedicalStaff />} />
@@ -90,6 +91,7 @@ function App() {
             <Route path='/blood/Bnegative' exact element={<ClusterAdminBlood />} />
             <Route path='/blood/ABpositive' exact element={<ClusterAdminBlood />} />
             <Route path='/blood/ABNegative' exact element={<ClusterAdminBlood />} />
+            
          </Routes>
    </BrowserRouter>)
    }

@@ -24,14 +24,14 @@ export default function AdminUsers() {
         <SlideMenuAdmin headerName={"USERS"} passData={passData} />
         <div id={`${slidemenu ? 'state-change-true' : 'state-change-false'}`}> 
           <AdminUserHeader />
-          {/* <MedicalOfficer/>  */}
+          <MedicalOfficer/> 
         </div>
       </div>
     )
   } else if (window.location.pathname == '/users/clusteradmin') {
     return (<div>
-      <SlideMenuAdmin headerName={"USERS"} /*passData={passData}*/ />
-      <div /*id={`${slidemenu ? 'state-change-true' : 'state-change-false'}`}*/ >
+      <SlideMenuAdmin headerName={"USERS"} passData={passData} />
+      <div id={`${slidemenu ? 'state-change-true' : 'state-change-false'}`} >
         <AdminUserHeader />
         <ClusterAdmin />
       </div>
@@ -39,8 +39,8 @@ export default function AdminUsers() {
     )
   } else if (window.location.pathname == '/users/doctor') {
     return (<div>
-      <SlideMenuAdmin headerName={"USERS"} /*passData={passData}*/ />
-      <div /*id={`${slidemenu ? 'state-change-true' : 'state-change-false'}`}*/ >
+      <SlideMenuAdmin headerName={"USERS"} passData={passData} />
+      <div id={`${slidemenu ? 'state-change-true' : 'state-change-false'}`} >
         <AdminUserHeader />
         <Doctor/>
       </div>
@@ -48,8 +48,8 @@ export default function AdminUsers() {
     )
   } else if (window.location.pathname == '/users/headnurse') {
     return (<div>
-      <SlideMenuAdmin headerName={"USERS"} /*passData={passData}*/ />
-      <div /*id={`${slidemenu ? 'state-change-true' : 'state-change-false'}`}*/ >
+      <SlideMenuAdmin headerName={"USERS"} passData={passData} />
+      <div id={`${slidemenu ? 'state-change-true' : 'state-change-false'}`} >
         <AdminUserHeader />
         <HeadNurse />
       </div>
@@ -57,36 +57,36 @@ export default function AdminUsers() {
     )
   } else if (window.location.pathname == '/users/nurse') {
     return (<div>
-      <SlideMenuAdmin headerName={"USERS"} /*passData={passData}*/ />
-      <div /*id={`${slidemenu ? 'state-change-true' : 'state-change-false'}`}*/ >
+      <SlideMenuAdmin headerName={"USERS"} passData={passData} />
+      <div id={`${slidemenu ? 'state-change-true' : 'state-change-false'}`} >
         <AdminUserHeader />
         <Nurse />
       </div>
     </div>
     )
-  } else if (window.location.pathname == '/users/driver') {
-    return (<div>
-      <SlideMenuAdmin headerName={"USERS"} /*passData={passData}*/ />
-      <div /*id={`${slidemenu ? 'state-change-true' : 'state-change-false'}`}*/ >
-        <AdminUserHeader />
-        <Driver />
-      </div>
-    </div>
-    )
   } else if (window.location.pathname == '/users/organizer') {
     return (<div>
-      <SlideMenuAdmin headerName={"USERS"} /*passData={passData}*/ />
-      <div /*id={`${slidemenu ? 'state-change-true' : 'state-change-false'}`}*/>
+      <SlideMenuAdmin headerName={"USERS"} passData={passData} />
+      <div id={`${slidemenu ? 'state-change-true' : 'state-change-false'}`}>
         <AdminUserHeader />
         <Organizer />
 
       </div>
     </div>
     )
+  } else if (window.location.pathname == '/users/driver') {
+    return (<div>
+      <SlideMenuAdmin headerName={"USERS"} passData={passData} />
+      <div id={`${slidemenu ? 'state-change-true' : 'state-change-false'}`} >
+        <AdminUserHeader />
+        <Driver />
+      </div>
+    </div>
+    )
   } else if (window.location.pathname == '/users/donor') {
     return (<div>
-      <SlideMenuAdmin headerName={"USERS"} /*passData={passData}*/ />
-      <div /*id={`${slidemenu ? 'state-change-true' : 'state-change-false'}`}*/ >
+      <SlideMenuAdmin headerName={"USERS"} passData={passData} />
+      <div id={`${slidemenu ? 'state-change-true' : 'state-change-false'}`} >
         <AdminUserHeader />
         <Donor/>
       </div>
