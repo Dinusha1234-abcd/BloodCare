@@ -1,17 +1,17 @@
 #register-form{
     position: absolute;
     width: 846px;
-    height: 400px;
-    left: 450px;
-    top: 100px;
-
+    height: 550px;
+    left: 500px;
+    top: 150px;
+    border-radius: 30px;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 #register-form-name{
     position: absolute;
-    left: 200px;
-    top: 10px;
+    left: 300px;
+    top: 30px;
 
     font-family: 'Inter';
     font-style: normal;
@@ -27,8 +27,8 @@
 #register-form-camp-name{
     position: absolute;
     
-    left: 200px;
-    top: 50px;
+    left: 220px;
+    top: 70px;
 
     font-family: 'Inter';
     font-style: normal;
@@ -38,4 +38,98 @@
     letter-spacing: 0.02em;
 
     color: #FF6565;
+}
+#reg-form{
+    margin-top: 150px;
+    margin-left: 100px;
+}
+#regDonor-camp-name{
+    margin-left: 0px;
+}
+#camp-id{
+    margin-left: 230px;
+}
+#regDonor-camp-id{
+    margin-left: 80px;
+    margin-top: 0px;
+}
+#donor-name{
+    margin-left: 0px;
+}
+#donor-NIC{
+    margin-left: 300px;
+}
+#regDonor-NIC{
+    margin-left: 80px;
+}
+#regDonor-non{
+    margin-left: 120px;
+    background-color: #FF6565;
+}
+#regDonor-vegetarian{
+    margin-left: 20px;
+    background-color: #FF6565;
+}
+input[type=text] {
+    font-family: 'Ubuntu';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 29px;
+    letter-spacing: 0.02em;
+    width: 280px;
+    height: 45px;
+    color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(253, 223, 229, 1);
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 10px;
+}
+label{
+    font-family: 'Ubuntu';
+    font-style:italic;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 29px;
+    letter-spacing: 0.02em;
+
+    color: #000000;
+}
+input[type=radio]{
+    /*background-color: #2196F3;*/
+    width: 20px;
+    height: 20px;
+    background-color: #FF6565;
+}
+input[type=ratio]::before{
+    background-color: #FF6565;
+}
+input[type=ratio]::after{
+    background-color: #FF6565;
+}
+#donor-register{
+    position: absolute;
+    width: 120px;
+    height: 45px;
+    margin-left: 280px;
+    margin-top: 50px;
+    border-style: none;
+    background: rgba(245, 134, 134, 0.3);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    color: #FF6565;
+    font-size: 22px;
+}
+#donor-cancel{
+    position: absolute;
+    width: 120px;
+    height: 45px;
+    margin-left: 450px;
+    margin-top: 50px;
+    border-style: none;
+    background: rgba(38, 168, 38, 0.3);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    color: #26A826;
+    font-size: 22px;
 }
