@@ -16,6 +16,7 @@
     margin-left: 25%;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     cursor:pointer;  
+   
 
 }
 
@@ -71,7 +72,7 @@
     height: 40px;
     border-radius: 20px;
     margin-left: 620px; 
-    font-size:18px;
+    font-size:15px;
     padding-left: 20px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border:none;
@@ -101,8 +102,8 @@
 
 #camp1-past{
     position: absolute;
-    width: 550px;
-    height: 170px;
+    width: 1150px;
+    height: 200px;
     margin-left: 17%;
     margin-top: 200px;
     background: rgba(255, 255, 255, 0.73);
@@ -121,7 +122,8 @@
 
 #button1-past{
     position:absolute;
-    margin-left: 65%;
+    margin-left: 86%;
+    margin-top: 100px;
     width:150px;
     height: 40px;
     border-radius: 20px; 
@@ -140,23 +142,25 @@
 
 #p-head-past{
     padding-left: 40px;
-    padding-top: 15px;
+    padding-top: 5px;
 }
 
 #camp2-past{
     position: absolute;
-    width: 550px;
-    height: 170px;
+    width: 1150px;
+    height: 200px;
     margin-left: 17%;
-    margin-top: 400px;
+    margin-top: 418px;
     background: rgba(255, 255, 255, 0.73);
     box-shadow: 100px 100px 200px 100px rgba(0, 0, 0, 0.1);
     border-radius: 50px;  
+    
 }
 
 #button2-past{
     position:absolute;
-    margin-left: 65%;
+    margin-left: 86%;
+    margin-top:100px ;
     width:150px;
     height: 40px;
     border-radius: 20px; 
@@ -168,67 +172,121 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-#camp3-past{
-    position: absolute;
-    width: 550px;
-    height: 170px;
-    margin-left: 56%;
-    margin-top: 200px;
-    background: rgba(255, 255, 255, 0.73);
-    box-shadow: 100px 100px 200px 100px rgba(0, 0, 0, 0.1);
-    border-radius: 50px;  
-}
-
-#button3-past{
-    position:absolute;
-    margin-left: 65%;
-    width:150px;
-    height: 40px;
-    border-radius: 20px; 
-    font-size:15px;
-    background: rgba(246, 156, 174, 1);
-    border: none;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-#camp4-past{
-    position: absolute;
-    width: 550px;
-    height: 170px;
-    margin-left: 56%;
-    margin-top: 400px;
-    background: rgba(255, 255, 255, 0.73);
-    box-shadow: 100px 100px 200px 100px rgba(0, 0, 0, 0.1);
-    border-radius: 50px;  
-}
-
-#button4-past{
-    position:absolute;
-    margin-left: 70%;
-    width:150px;
-    height: 40px;
-    border-radius: 20px; 
-    font-size:15px;
-    background: rgba(246, 156, 174, 1);
-    border: none;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
 
 #button2-past:hover {
     background-color: #7e7c7c; /* Green */
     color: white;
   }
 
-  #button3-past:hover {
-    background-color: #7e7c7c; /* Green */
-    color: white;
-  }
-  
-  #button4-past:hover {
-    background-color: #7e7c7c; /* Green */
-    color: white;
-  } 
+  /*blood counts*/
+#c-blood{
+    position: absolute;
+    width:800px;
+    height: 100px;
+    margin-left: 25%;
+    margin-top:20px;
+
+}
+
+#blood-count-camp1-1{
+    position: absolute;
+    width:78px;
+    height: 100px;
+    border-radius: 20px;
+    padding :3px;
+    /* padding-bottom: 19px; */
+    margin-left: 20px;
+    background: rgba(255, 255, 255, 0.79);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#blood-count-camp1-2{
+    position: absolute;
+    width:78px;
+    height: 100px;
+    border-radius: 20px;
+    padding :3px;
+    /* padding-bottom: 19px; */
+    margin-left: 110px;
+    background: rgba(255, 255, 255, 0.79);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#blood-count-camp1-3{
+    position: absolute;
+    width:78px;
+    height: 100px;
+    border-radius: 20px;
+    padding :3px;
+    /* padding-bottom: 19px; */
+    margin-left: 200px;
+    background: rgba(255, 255, 255, 0.79);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#blood-count-camp1-4{
+    position: absolute;
+    width:78px;
+    height: 100px;
+    border-radius: 20px;
+    padding :3px;
+    /* padding-bottom: 19px; */
+    margin-left: 290px;
+    background: rgba(255, 255, 255, 0.79);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#blood-count-camp1-5{
+    position: absolute;
+    width:78px;
+    height: 100px;
+    border-radius: 20px;
+    padding :3px;
+    /* padding-bottom: 19px; */
+    margin-left: 380px;
+    background: rgba(255, 255, 255, 0.79);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#blood-count-camp1-6{
+    position: absolute;
+    width:78px;
+    height: 100px;
+    border-radius: 20px;
+    padding :3px;
+    /* padding-bottom: 19px; */
+    margin-left: 470px;
+    background: rgba(255, 255, 255, 0.79);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#blood-count-camp1-7{
+    position: absolute;
+    width:78px;
+    height: 100px;
+    border-radius: 20px;
+    padding :3px;
+    /* padding-bottom: 19px; */
+    margin-left: 560px;
+    background: rgba(255, 255, 255, 0.79);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#blood-count-camp1-8{
+    position: absolute;
+    width:78px;
+    height: 100px;
+    border-radius: 20px;
+    padding :3px;
+    /* padding-bottom: 19px; */
+    margin-left: 650px;
+    background: rgba(255, 255, 255, 0.79);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#blood-name{
+   margin-top: 20px;
+   font-size: large;
+}
+
+#blood-cont{
+   margin-top: 10px;
+   color: #DD2D50;
+   margin-left:20px;
+}

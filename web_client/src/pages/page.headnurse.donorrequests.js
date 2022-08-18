@@ -30,7 +30,7 @@ export default function HeadNurseDonorRequests() {
 
           <div id="user1">
                 <h4 id ="h4-user">User1</h4>
-                <button type="button" id="button1-user" > Register </button>
+                <button type="button" id="button1-user"> Register </button>
                  <p id ="p-user"> <i class="fa-solid fa-location-dot"></i> user1@gmail.com</p>
                  <p id ="p-user">  <i class="fa-solid fa-clock"></i> Colombo</p>
                  <p id ="p-user">071-4578142</p> 
@@ -92,6 +92,7 @@ export default function HeadNurseDonorRequests() {
                  <p id ="p-user">071-4578142</p> 
           </div>
 
+          
               
         </div>
         

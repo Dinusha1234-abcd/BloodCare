@@ -91,7 +91,7 @@
     color: white;
   }
 
-#user1-user{
+#user1{
     position: absolute;
     width: 550px;
     height: 170px;
@@ -135,7 +135,7 @@
     padding-top: 15px;
 }
 
-#user{
+#user2{
     position: absolute;
     width: 550px;
     height: 170px;
@@ -353,6 +353,8 @@
     background-color: #7e7c7c; /* Green */
     color: white;
   } 
+
+
 
   
 
