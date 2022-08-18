@@ -96,7 +96,7 @@ export default function HeadNurseDashboard() {
               </div>
             </div>
           </div>
-          <Calendar onChange={setDate} readOnly={true} value={date} id="calender-headnurse" />
+          <Calendar onChange={setDate} readOnly={true} value={date} id="calender" />
 
           <div id="camp-events-headnurse">
             <h3 id="camp-events-name-headnurse">Upcoming Camp Events</h3>

@@ -14,6 +14,22 @@
     
     line-height: 2.125em;
   }
+.calender-admin{
+  position: absolute;
+    z-index: 100;
+    right:40px;
+    top: 7px;
+    width: 100px;
+    height: 420px;
+     max-width: 110%;
+     background: rgba(255, 255, 255, 0.55);
+     box-shadow: 20px 20px 100px 5px rgba(0, 0, 0, 0.2);
+    
+    border-radius: 20px;
+    padding: 5px;
+    
+    line-height: 2.125em;
+}
   .react-calendar--doubleView {
     width: 700px;
   }
