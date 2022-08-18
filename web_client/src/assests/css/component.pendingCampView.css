@@ -1,0 +1,162 @@
+#pending-camp-view{
+    display: flex;
+}
+
+
+#pending-camp-view-container-clusterAdmin{
+     
+    margin-top: 20px;
+    margin-left: 50px;
+    width:55%;
+    height:300px; 
+    border-radius: 20px;
+    /* background-color: rgb(255, 255, 255); */
+    
+}
+#pending-camp-container-box1-clusterAdmin{
+    margin-top: 20px;
+    padding: 20px;
+    width:100%;
+    height:350px; 
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.118);
+}
+#pending-camp-header-clusterAdmin{
+    margin-left: -10px;
+}
+#past-camp-view-table {
+    margin-left:3px;
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #past-camp-view-table td, #past-camp-view-table th {
+    border-radius: 1px solid rgba(255, 255, 255, 0.956) ;
+    padding: 8px;   
+    /* text-align: center;   */
+    
+  }
+  
+  #past-camp-view-table tr:nth-child(even){background-color: rgba(255, 255, 255, 0.4) ;}
+  
+  #past-camp-view-table tr:hover {background-color: rgba(255, 255, 255, 0.4) ;}
+  
+  #past-camp-view-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+   
+    text-align: center;
+    background-color:rgba(255, 255, 255, 0.26);
+    color: rgb(21, 19, 19);
+  }
+ #pastCamp-number{
+    border-top-left-radius: 12px;
+ }
+ #pastCamp-action{
+    border-top-right-radius: 12px;
+ }
+ 
+.page-navigation{
+    padding: 6px;
+}
+#pastCamp-pageButton{
+    position: absolute;
+    right:190px;
+    bottom: 6px; 
+    width: 170px;
+    padding: 6px; 
+    border-radius: 11px;
+    padding-bottom: 10px; 
+    background-color:rgba(255, 255, 255, 0.441)
+}
+#input-send-message-clusterAdmin{
+    width:100%;
+    height: 50px;
+    border-radius: 10px;
+    border-color: rgba(221, 45, 80, 1);
+    padding:11px;
+    margin-top: 10px;
+    box-shadow: red;
+    border-style: hidden;
+    border-color: rgba(221, 45, 80, 1);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, FontAwesome ;
+    outline-style: none;
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    font-size: 15px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    color: rgb(19, 19, 19)
+
+}
+#input:focus {
+    border: 2px solid rgb(241, 33, 33);
+  }
+  #sumbit-send-Email-clusterAdmin{
+    width:100px; 
+    height: 30px;
+    margin-top: 12px;
+    border-radius: 20px;
+    background-color: rgba(158, 135, 140, 1);
+    color: aliceblue;
+    border-style: hidden;
+    border-color: rgba(158, 135, 140, 1);
+    font-weight: 400;
+    font-size: 15px;
+    margin-left: 400px;
+
+}
+#sumbit-send-SMS-clusterAdmin{
+    margin-left: 10px;
+    width:100px; 
+    height: 30px;
+    
+     
+    border-radius: 20px;
+    background-color: rgba(158, 135, 140, 1);
+    color: aliceblue;
+    border-style: hidden;
+    border-color: rgba(158, 135, 140, 1);
+    font-weight: 400;
+}
+#pending-camp-container-box3-clusterAdmin{
+    width: 100%;
+    height: 350px;
+    background-color: rgba(255, 255, 255, 0.55);
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.118);
+}
+#past-camp-medicalstaff-name{
+    margin:3px ;
+    width:180px;
+    border-radius: 20px;
+    padding: 6px;
+    background-color: rgba(68, 79, 79, 0.125);
+    margin-right: 22px;
+    margin-top: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.118);
+}
+
+#close-button{
+   padding:20px;
+}
+#medicalstaff-display-table-display{
+    height: 500px;
+    width: 33%;
+    background-color: rgb(255, 255, 255);;
+    margin-left: 2%;
+    margin-top: 44px;
+    border-radius: 20px;
+    padding-top: 11px;
+}
+#medical-staff-view-table{
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 90%;
+}
+ 
