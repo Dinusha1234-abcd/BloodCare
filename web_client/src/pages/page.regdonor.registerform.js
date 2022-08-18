@@ -16,9 +16,14 @@ export default function RegisterForm() {
                     <label for="donor-name">Name</label>
                     <label for="donor-NIC">NIC</label><br></br>
                     <input type="text" id="donor-name" name="donor-name" value="Mr. Viraj Kariyawasam"></input>
-                    <input type="text" id="donor-NIC" name="donor-NIC" value="20005671338v"></input>
+                    <input type="text" id="donor-NIC" name="donor-NIC" value="20005671338v"></input><br></br>
                     <label for="vegiterian">Are you vegetarian or not?</label><br></br>
-                    <input type="radio" id="va"></input>
+                    <input type="radio" id="vegetarian" name="vegitarian" value="vegitarian"></input>
+                    <label for="vegetarian">Vegetarian</label>
+                    <input type="radio" id="non" name="non" value="non"></input>
+                    <label for="non">Non-Vegetarian</label><br></br>
+                    <button id="donor-register">Register</button>
+                    <button id="donor-cancel">Cancel </button>
                 </form>
             </div>
         </div>

@@ -1,0 +1,63 @@
+#input-clusteradmin-admin{
+    padding: 6px;
+    border-radius: 15px;
+    border-color: #F79CAE;
+    width: 30%;
+    margin-left: 26%;
+    height: 30px;
+    font-size: 17px;
+}
+#input-doctor-admin{
+    padding: 6px;
+    border-radius: 15px;
+    border-color: #F79CAE;
+    width: 30%;
+    margin-left: 48%;
+    height: 30px;
+    font-size: 17px;
+}
+#input-headnurse-admin{
+    padding: 6px;
+    border-radius: 15px;
+    border-color: #F79CAE;
+    width: 30%;
+    margin-left: 45%;
+    height: 30px;
+    font-size: 17px; 
+}
+#input-nurse-admin{
+    padding: 6px;
+    border-radius: 15px;
+    border-color: #F79CAE;
+    width: 30%;
+    margin-left: 50%;
+    height: 30px;
+    font-size: 17px; 
+}
+#input-organizer-admin{
+    padding: 6px;
+    border-radius: 15px;
+    border-color: #F79CAE;
+    width: 30%;
+    margin-left: 34%;
+    height: 30px;
+    font-size: 17px; 
+}
+#input-driver-admin{
+    padding: 6px;
+    border-radius: 15px;
+    border-color: #F79CAE;
+    width: 30%;
+    margin-left: 49%;
+    height: 30px;
+    font-size: 17px; 
+}
+#input-donor-admin{
+    padding: 6px;
+    border-radius: 15px;
+    border-color: #F79CAE;
+    width: 30%;
+    margin-left: 38%;
+    height: 30px;
+    font-size: 17px; 
+}

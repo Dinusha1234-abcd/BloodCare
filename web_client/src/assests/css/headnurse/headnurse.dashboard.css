@@ -1,17 +1,17 @@
-#state-change-true{
+#state-change-true-headnurse{
   position: relative;
   margin-left: 250px;
   transition: 0.6s;
 }
-#state-change-false{
+#state-change-false-headnurse{
   position: relative;
   margin-left: 100px;
   transition: 0.6s;
 }
-#row1{
+#row1-headnurse{
 display: flex;
 }
-#medical-staff{
+#medical-staff-headnurse{
   width: 33%;
   height: 190px;
   background: rgba(255, 255, 255, 0.55);
@@ -22,16 +22,16 @@ display: flex;
   box-shadow: 20px 20px 100px 5px rgba(0, 0, 0, 0.2)
 }
 
-#users-count{
+#users-count-headnurse{
   display: flex;
   margin-top: 6px;
 }
-#user{
+#user-headnurse{
   position: absolute;
   left: 110px;
    
 } 
-#camp{
+#camp-headnurse{
   width: 36%;
   height: 190px;
   margin-left: 1%;
@@ -42,12 +42,12 @@ display: flex;
   background: rgba(255, 255, 255, 0.55);
   box-shadow: 20px 20px 100px 5px rgba(0, 0, 0, 0.2)
 }
-#camp-count{
+#camp-count-headnurse{
   display: flex;
   margin-top: 10px;
 
 }
-#row2{
+#row2-headnurse{
   display: flex;
   margin-top: 20px;
   height: 300px;
@@ -56,12 +56,12 @@ display: flex;
   border-radius: 20px;
   
 }
-#sub-row1{
+#sub-row1-headnurse{
   display: flex;
   width:95%;
  
 }
-#sub-row2{
+#sub-row2-headnurse{
   width:45%;
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.55);
@@ -69,14 +69,14 @@ display: flex;
   padding: 11px;
   padding-left: 50px;
 }
-#sub-row3{
+#sub-row3-headnurse{
   width:55.9%;
   margin-left: 1%;
 
   display: flex;
 } 
 
-#blood{
+#blood-headnurse{
   display: flex;
   margin-top: 20px;
 }
@@ -84,7 +84,7 @@ display: flex;
   position: absolute;
   right:10px;
 }
-#camp-events{
+#camp-events-headnurse{
   position: absolute;
   right:40px;
   top:360px;
@@ -95,16 +95,16 @@ display: flex;
   background: rgba(255, 255, 255, 0.55);
   box-shadow: 20px 20px 100px 5px rgba(0, 0, 0, 0.2)
 }
-#camp-events-list{
+#camp-events-list-headnurse{
   margin-top: 6px;
   padding:6px;
   background-color: aliceblue;
   border-radius: 11px;
 }
-#camp-events-name{ 
+#camp-events-name-headnurse{ 
   padding:10px;
 }
-#view-button{
+#view-button-headnurse{
   background-color: rgba(255, 182, 182, 1);
   border: none;
   color: white;
@@ -116,7 +116,7 @@ display: flex;
   border-radius: 11px;
   font-size: 16px;
 }
-#blood-month-dashboard{
+#blood-month-dashboard-headnurse{
   width:50%;
   background: rgba(255, 255, 255, 0.55);
   box-shadow: 20px 20px 100px 5px rgba(0, 0, 0, 0.2);
@@ -139,12 +139,12 @@ display: flex;
   margin-left: 105%;
       
 } */
-#row3{
+#row3-headnurse{
   display: flex;
   margin-top: 20px;
   margin-left: 44px;
 }
-#sub-row5{
+#sub-row5-headnurse{
   background: rgba(255, 255, 255, 0.55);
   box-shadow: 20px 20px 100px 5px rgba(0, 0, 0, 0.2);
   width: 20%;
@@ -153,7 +153,7 @@ display: flex;
   border-radius: 11px;
   height: 280px
 }
-#sub-row6{
+#sub-row6-headnurse{
   background: rgba(255, 255, 255, 0.55);
   box-shadow: 20px 20px 100px 5px rgba(0, 0, 0, 0.2);
   width: 50%;
@@ -164,21 +164,21 @@ display: flex;
   height: 280px
 }
 @media screen and (max-width: 1460px){
-  #row1{
+  #row1-headnurse{
       display: block;
        /* left: -20px; */
   }
-  #medical-staff{
+  #medical-staff-headnurse{
       
       padding-left: 11%; 
       width: 67%;
   }
-  #camp{
+  #camp-headnurse{
       margin-top: 11px;
       padding-left: 11%; 
       width: 67%;
   }
-  #row2{
+  #row2-headnurse{
       margin-top: 11px;
       padding-left: 11%; 
       width: 67%;

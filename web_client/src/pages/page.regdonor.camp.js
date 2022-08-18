@@ -6,6 +6,7 @@ import OngoingCamp from '../assests/images/ongoingCamp.png';
 import pastCamp from '../assests/images/pastCamp.png';
 import PendingCamp from '../assests/images/camp.png';
 import map from '../assests/images/map.PNG';
+import { Link } from "react-router-dom";
 export default function RegDonorCamp() {
     return (
         <div>
@@ -35,7 +36,7 @@ export default function RegDonorCamp() {
                             <td>: 8.00 a.m. - 3.00 p.m.</td>
                         </tr>
                     </table>
-                    <button id="register" onClick={window.location.pathname == 'blood_camps/register'}>Register Now</button>
+                    <Link to='/blood_camps/register' id="register"  >Register Now</Link>
                     <img id="mapimg" src={map} />
                 </div>     
             </div>
@@ -63,7 +64,7 @@ export default function RegDonorCamp() {
                             <td>: 8.00 a.m. - 3.00 p.m.</td>
                         </tr>
                     </table>
-                    <button id="register">Register Now</button>
+                    <Link to='/blood_camps/register' id="register"  >Register Now</Link>
                     <img id="mapimg" src={map} />
                 </div>     
             </div>
@@ -91,7 +92,7 @@ export default function RegDonorCamp() {
                             <td>: 8.00 a.m. - 3.00 p.m.</td>
                         </tr>
                     </table>
-                    <button id="register">Register Now</button>
+                    <Link to='/blood_camps/register' id="register"  >Register Now</Link>
                     <img id="mapimg" src={map} />
                 </div>     
             </div>
@@ -119,7 +120,7 @@ export default function RegDonorCamp() {
                             <td>: 8.00 a.m. - 3.00 p.m.</td>
                         </tr>
                     </table>
-                    <button id="register">Register Now</button>
+                    <Link to='/blood_camps/register' id="register"  >Register Now</Link>
                     <img id="mapimg" src={map} />
                 </div>     
             </div>

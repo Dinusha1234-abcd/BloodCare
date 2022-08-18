@@ -1,14 +1,13 @@
 import React from 'react';
 import '../../assests/css/admin/component.user.search.admin.css';
 
-
-export default function Doctor(){
+export default function ClusterAdmin(){
 
     return (
         <div>
             <div id='user-contanier-admin'> 
-                <h7 id='header-user-admin'>DOCTORS</h7>
-                <input type="text" id='input-doctor-admin' placeholder=" &#xf002; Search"/>
+                <h7 id='header-user-admin'>CLUSTER CENTER ADMINISTRATORS</h7>
+                <input type="text" id='input-clusteradmin-admin' placeholder=" &#xf002; Search"/>
                 <button id='add-user-button-admin'>Add</button> 
                 <br/><br/>
                 <table id="user-table-admin">
