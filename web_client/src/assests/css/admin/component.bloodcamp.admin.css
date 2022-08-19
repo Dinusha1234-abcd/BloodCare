@@ -1,0 +1,85 @@
+#camp-contanier-admin{
+    margin-top:20px;
+    padding-top: 20px;
+    width:98%;
+    border-radius: 20px;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-bottom: 30px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.79);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#input-ongoincamp-admin{
+    padding: 6px;
+    border-radius: 15px;
+    border-color: #F79CAE;
+    width: 30%;
+    margin-left: 49%;
+    height: 30px;
+    font-size: 17px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, FontAwesome ;
+}
+#camp-table-admin{
+    border-collapse: collapse;
+    width: 100%;
+}
+#camp-table-admin td, #camp-table-admin th {
+    border-radius: 1px solid rgba(253, 223, 229, 0.956) ;
+    padding: 8px;   
+    text-align: center;
+    
+  }
+  
+  #camp-table-admin tr:nth-child(even){
+    background-color: rgba(253, 223, 229, 0.4) ;}
+  
+  #camp-table-admin tr:hover {
+    background-color: rgba(253, 223, 229, 0.4) ;}
+  
+  #camp-table-admin th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: rgba(221, 45, 80, 0.26);
+    color: rgb(77 54 54);
+    /* font-style: revert; */
+    font-size: 16px;
+    font-weight: 550;
+    font-family: system-ui;
+    width: 8%;
+  }
+  #view-camp-button-admin{
+    width: 50%;
+    height: 27px;
+    border-radius: 20px;
+    border: none;
+    background: #FB6281;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 15px;
+    color: white;
+  }
+
+                                 /* upcoming blood camp */
+#input-upcomingcamp-admin{
+    padding: 6px;
+    border-radius: 15px;
+    border-color: #F79CAE;
+    width: 30%;
+    margin-left: 47%;
+    height: 30px;
+    font-size: 17px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, FontAwesome ;
+}
+
+                                /* completed blood camp */
+#input-completedcamp-admin{
+    padding: 6px;
+    border-radius: 15px;
+    border-color: #F79CAE;
+    width: 30%;
+    margin-left: 47%;
+    height: 30px;
+    font-size: 17px; 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, FontAwesome ;  
+}
