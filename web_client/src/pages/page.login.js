@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import axios from 'axios';
+import { Link } from "react-router-dom";
 import "../assests/css/page.login.css";
 import icon from "../assests/images/bloodcareIcon2.png";
 import vector1 from "../assests/images/login.vector1.png";
@@ -78,7 +79,7 @@ export default function Login() {
                     <input type="password" id="input" placeholder=" &#xf023;   Password"onChange={(e)=>{setPassword(e.target.value)}}/><br/>
                     <p id="errorMessage">{errorPassword}</p> 
                     <button type="sumbit" id="signIn" > Sign In   </button> <br/><br/>
-                    <a id="forgetPassword" href="#!">Forgot password?</a>
+                    <Link to='/forgetpassword' id="forgetPassword"  >Forgot password?</Link>
                 </form>
              <img id="imageLogin" src={imageLogin} />
             </div>

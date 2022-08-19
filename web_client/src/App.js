@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from "./pages/page.login";
-
+import ForgetPassword from './pages/page.forgetPassword';
 //import Pages
 //Admin
 import AdminDashboard from "./pages/page.admin.dashboard";
@@ -138,7 +138,7 @@ function App() {
       return (<BrowserRouter>
          <Routes>
             <Route path='/login' exact element={<Login />} />
-
+            <Route path='/forgetpassword' exact element={<ForgetPassword />} />
          </Routes>
       </BrowserRouter>)
    }
