@@ -1,14 +1,24 @@
+
 #donor-count-headnurse{
     position: absolute;
     width:250px;
-    height: 100px;
-    border-radius: 20px;
-    margin-left: 25%;
+    height: 150px;
+    border-radius: 10px;
+    margin-left: 5%;
     background: rgba(255, 255, 255, 0.79);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    background-color:rgba(0, 0, 0, 0.2);
+    background-color:white;
     cursor:pointer;  
 
+}
+
+#donor-img{
+    margin-left:10px;
+    position: absolute;
+    width: 98px;
+    height: 95px;
+    border-radius: 415px;
+    margin-top:30px;
 }
 
 /*#past-camp{
@@ -30,14 +40,14 @@
 
 #h3-user{
     color:rgb(116, 115, 115);
-    margin-top :20px;
-    padding-left: 100px;
-    padding-right: 50px;
+    margin-top :40px;
+    margin-left: 110px;
+    
 }
 
 #h2-user{
-    margin-top:10px;
-    padding-left:120px;
+    margin-top:15px;
+    padding-left:150px;
     
 }
 
@@ -58,7 +68,7 @@
 
 #search{
     position:absolute;
-    margin-top: 130px;  
+    margin-top: 20px;  
     width:400px;
     height: 40px;
     border-radius: 20px;
@@ -71,7 +81,7 @@
 
 #button-headnurse-user{
     position:absolute;
-    margin-top: 130px;  
+    margin-top: 20px;  
     width:100px;
     height: 40px;
     border-radius: 20px;
@@ -93,8 +103,8 @@
 
 #user1{
     position: absolute;
-    width: 550px;
-    height: 170px;
+    width: 400px;
+    height: 130px;
     margin-left: 17%;
     margin-top: 200px;
     background: rgba(255, 255, 255, 0.73);
@@ -104,7 +114,7 @@
 
 #h4-user{
    
-    padding-left: 40px;
+    padding-left: 100px;
     padding-top: 25px;
     font-size: 15px;
     color: black;
@@ -114,7 +124,7 @@
 #button1-user{
     position:absolute;
     margin-left: 65%;
-    width:150px;
+    width:100px;
     height: 40px;
     border-radius: 20px; 
     font-size:15px;
@@ -131,16 +141,17 @@
   }
 
 #p-user{
-    padding-left: 40px;
-    padding-top: 15px;
+    padding-left: 100px;
+    padding-top: 9px;
+    color:#494747;
 }
 
 #user2{
     position: absolute;
-    width: 550px;
-    height: 170px;
+    width: 400px;
+    height: 130px;
     margin-left: 17%;
-    margin-top: 400px;
+    margin-top: 340px;
     background: rgba(255, 255, 255, 0.73);
     box-shadow: 100px 100px 200px 100px rgba(0, 0, 0, 0.1);
     border-radius: 50px;  
@@ -149,7 +160,7 @@
 #button2-user{
     position:absolute;
     margin-left: 65%;
-    width:150px;
+    width:100px;
     height: 40px;
     border-radius: 20px; 
     font-size:15px;
@@ -162,19 +173,19 @@
 
 #user3{
     position: absolute;
-    width: 550px;
-    height: 170px;
-    margin-left: 56%;
-    margin-top: 200px;
+    width: 400px;
+    height: 130px;
+    margin-left: 17%;
+    margin-top: 480px;
     background: rgba(255, 255, 255, 0.73);
     box-shadow: 100px 100px 200px 100px rgba(0, 0, 0, 0.1);
-    border-radius: 50px;  
+    border-radius: 50px; 
 }
 
 #button3-user{
     position:absolute;
     margin-left: 65%;
-    width:150px;
+    width:100px;
     height: 40px;
     border-radius: 20px; 
     font-size:15px;
@@ -187,19 +198,19 @@
 
 #user4{
     position: absolute;
-    width: 550px;
-    height: 170px;
-    margin-left: 56%;
-    margin-top: 400px;
+    width: 400px;
+    height: 130px;
+    margin-left: 44.5%;
+    margin-top: 200px;
     background: rgba(255, 255, 255, 0.73);
     box-shadow: 100px 100px 200px 100px rgba(0, 0, 0, 0.1);
-    border-radius: 50px;  
+    border-radius: 50px;
 }
 
 #button4-user{
     position:absolute;
     margin-left: 70%;
-    width:150px;
+    width:100px;
     height: 40px;
     border-radius: 20px; 
     font-size:15px;
@@ -212,19 +223,19 @@
 
 #user5{
     position: absolute;
-    width: 550px;
-    height: 170px;
-    margin-left: 56%;
-    margin-top: 400px;
+    width: 400px;
+    height: 130px;
+    margin-left: 44.5%;
+    margin-top: 340px;
     background: rgba(255, 255, 255, 0.73);
     box-shadow: 100px 100px 200px 100px rgba(0, 0, 0, 0.1);
-    border-radius: 50px;  
+    border-radius: 50px;    
 }
 
 #button5-user{
     position:absolute;
     margin-left: 70%;
-    width:150px;
+    width:100px;
     height: 40px;
     border-radius: 20px; 
     font-size:15px;
@@ -237,10 +248,10 @@
 
 #user6{
     position: absolute;
-    width: 550px;
-    height: 170px;
-    margin-left: 56%;
-    margin-top: 400px;
+    width: 400px;
+    height: 130px;
+    margin-left: 44.5%;
+    margin-top: 480px;
     background: rgba(255, 255, 255, 0.73);
     box-shadow: 100px 100px 200px 100px rgba(0, 0, 0, 0.1);
     border-radius: 50px;  
@@ -249,7 +260,7 @@
 #button6-user{
     position:absolute;
     margin-left: 70%;
-    width:150px;
+    width:100px;
     height: 40px;
     border-radius: 20px; 
     font-size:15px;
@@ -262,10 +273,10 @@
 
 #user7{
     position: absolute;
-    width: 550px;
-    height: 170px;
-    margin-left: 56%;
-    margin-top: 400px;
+    width: 400px;
+    height: 130px;
+    margin-left: 72%;
+    margin-top: 200px;
     background: rgba(255, 255, 255, 0.73);
     box-shadow: 100px 100px 200px 100px rgba(0, 0, 0, 0.1);
     border-radius: 50px;  
@@ -274,7 +285,7 @@
 #button7-user{
     position:absolute;
     margin-left: 70%;
-    width:150px;
+    width:100px;
     height: 40px;
     border-radius: 20px; 
     font-size:15px;
@@ -287,10 +298,10 @@
 
 #user8{
     position: absolute;
-    width: 550px;
-    height: 170px;
-    margin-left: 56%;
-    margin-top: 400px;
+    width: 400px;
+    height: 130px;
+    margin-left: 72%;
+    margin-top: 340px;
     background: rgba(255, 255, 255, 0.73);
     box-shadow: 100px 100px 200px 100px rgba(0, 0, 0, 0.1);
     border-radius: 50px;  
@@ -299,7 +310,7 @@
 #button8-user{
     position:absolute;
     margin-left: 70%;
-    width:150px;
+    width:100px;
     height: 40px;
     border-radius: 20px; 
     font-size:15px;
@@ -312,19 +323,19 @@
 
 #user9{
     position: absolute;
-    width: 550px;
-    height: 170px;
-    margin-left: 56%;
-    margin-top: 400px;
+    width: 400px;
+    height: 130px;
+    margin-left: 72%;
+    margin-top: 480px;
     background: rgba(255, 255, 255, 0.73);
     box-shadow: 100px 100px 200px 100px rgba(0, 0, 0, 0.1);
-    border-radius: 50px;  
+    border-radius: 50px;   
 }
 
 #button9-user{
     position:absolute;
     margin-left: 70%;
-    width:150px;
+    width:100px;
     height: 40px;
     border-radius: 20px; 
     font-size:15px;
@@ -353,9 +364,52 @@
     background-color: #7e7c7c; /* Green */
     color: white;
   } 
+  #button5-user:hover {
+    background-color: #7e7c7c; /* Green */
+    color: white;
+  } 
+  #button6-user:hover {
+    background-color: #7e7c7c; /* Green */
+    color: white;
+  } 
+  #button7-user:hover {
+    background-color: #7e7c7c; /* Green */
+    color: white;
+  } 
+  #button8-user:hover {
+    background-color: #7e7c7c; /* Green */
+    color: white;
+  } 
+  #button9-user:hover {
+    background-color: #7e7c7c; /* Green */
+    color: white;
+  } 
 
 
+#man{
+    position:absolute;
+    margin-top: 30px;
+    margin-left:15px;
+    width:60px;
+    height:60px;
+}
 
+#boy{
+    position:absolute;
+    margin-top: 30px;
+    margin-left:15px;
+    width:60px;
+    height:60px;
+}
+
+#woman{
+    position:absolute;
+    margin-top: 30px;
+    margin-left:15px;
+    width:60px;
+    height:60px;
+
+}
   
 
 
