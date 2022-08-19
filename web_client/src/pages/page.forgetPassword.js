@@ -31,7 +31,7 @@ export default function ForgetPassword() {
         
         // check validation
         if(!((userName.length==10)||(userName.length==12))){
-             setErrorUserName("Please Enter Valid User Name");
+             setMessage("Please Enter Valid User Name");
       
         }else{
             setMessage("Please Check Your Email");
