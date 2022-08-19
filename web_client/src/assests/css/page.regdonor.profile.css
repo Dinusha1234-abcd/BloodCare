@@ -1,0 +1,54 @@
+#profile-form{
+    position: absolute;
+    width: 846px;
+    height: 550px;
+    left: 500px;
+    top: 150px;
+    border-radius: 30px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#donor-save{
+    position: absolute;
+    width: 120px;
+    height: 45px;
+    margin-left: 280px;
+    margin-top: 50px;
+    border-style: none;
+    background: rgba(245, 134, 134, 0.3);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    color: #FF6565;
+    font-size: 22px;
+}
+#profile-page-donor-name{
+    position: absolute;
+    left: 300px;
+    top: 30px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 39px;
+/* identical to box height */
+
+    letter-spacing: 0.02em;
+
+    color: #FF6565;
+}
+#profile-page-actor{
+    position: absolute;
+    
+    left: 380px;
+    top: 70px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 34px;
+    letter-spacing: 0.02em;
+
+    color: #FF6565;
+}
