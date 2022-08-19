@@ -6,6 +6,8 @@ import Login from "./pages/page.login";
 //Admin
 import AdminDashboard from "./pages/page.admin.dashboard";
 import AdminUsers from "./pages/page.admin.users";
+import AdminBloodCamp from './pages/page.admin.bloodCamp';
+import AdminClusterCenter from './pages/page.admin.clustercenter';
 
 //Cluster Admin
 import ClusterAdminDashboard from "./pages/page.clusterAdmin.dashboard";
@@ -59,6 +61,13 @@ function App() {
                <Route path='/users/driver' exact element={<AdminUsers />} />
                <Route path='/users/organizer' exact element={<AdminUsers />} />
                <Route path='/users/donor' exact element={<AdminUsers />} />
+                
+               <Route path='/clustercenter' exact element={<AdminClusterCenter />} />
+
+               <Route path='/bloodcamps' exact element={<AdminBloodCamp />} />
+               <Route path='/bloodcamps/ongoingcamp' exact element={<AdminBloodCamp />} />
+               <Route path='/bloodcamps/upcomingcamp' exact element={<AdminBloodCamp />} />
+               <Route path='/bloodcamps/completedcamp' exact element={<AdminBloodCamp />} />
             </Routes>
          </BrowserRouter>
       )
