@@ -70,7 +70,7 @@
     margin-left: 20px;
     background-color: #FF6565;
 }
-input[type=text] {
+/*input[type=text] {
     font-family: 'Ubuntu';
     font-style: italic;
     font-weight: 400;
@@ -94,7 +94,7 @@ label{
     letter-spacing: 0.02em;
 
     color: #000000;
-}
+}*/
 input[type=radio]{
     /*background-color: #2196F3;*/
     width: 20px;
