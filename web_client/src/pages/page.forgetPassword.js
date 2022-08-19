@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import axios from 'axios';
 import "../assests/css/page.forgetPassword.css";
 import icon from "../assests/images/bloodcareIcon2.png";
@@ -17,6 +17,8 @@ export default function ForgetPassword() {
     const [confirmPasword, setConfirmPasword] = useState("");
      const [ showPinconfirmation, setShowPnconfirmation] = useState(true);
     const [ showChangePassword, setShowChangePassword] = useState(false);
+    const [counter, setCounter] = useState(60);
+    const [show,setShow] = useState("true")
     function userPasswordSet(e){
         e.preventDefault()
         //create object
@@ -24,48 +26,46 @@ export default function ForgetPassword() {
             userName
             
         }
-        // setErrorUserName("");
-        // setErrorPassword("");
-        // //check validation
-        // if(!((userName.length==10)||(userName.length==12))&&(password.length==0)){
-        //      setErrorUserName("Please Enter Valid User Name");
-        //      setErrorPassword("Please Enter Valid Password");
-        // }else if(!((userName.length==10)||(userName.length==12))){
-        //      setErrorUserName("Please Enter Valid User Name");
-        // }else if(password.length==0){
-        //      setErrorPassword("Please Enter Valid Password");
-        // }else{
-        //      // pass check the data with server 
+         
+        setErrorUserName("");
+        
+        // check validation
+        if(!((userName.length==10)||(userName.length==12))){
+             setErrorUserName("Please Enter Valid User Name");
+      
+        }else{
+            setMessage("Please Check Your Email");
+            //  pass check the data with server 
               axios.post("http://localhost:8070/forgetpassword", user).then(
                 (res)=> {
                     setPIN(res['data']['pinCode']);
-                    console.log(res['data']['message']);
-                    console.log(res['data']['pinCode']);
-
-                    //check password and username  
-                    // if(res['data']['message']=="success"){
- 
-                    // }else{
-                    //     setMessage("Username or Password is Not match");
-                    // }
-                  
+                    
                 }
               ).catch((err)=>{
                 //sever error
                  console.log(err.message);
+                 setMessage("Please Check Your Email");
               })
-        // }
+        }
     }
     function pinConfrimation(e){
         e.preventDefault()
         if(PIN==parseInt(pinNumber)){
-            window.location = "/login";
+           setShowPnconfirmation(false);
+           setShowChangePassword(true);
+        }else{
+            if(pinNumber.length){
+                setMessage("Your Not Entered Pin Code ");
+            }else{ 
+            setMessage("Enter PIN code Incorrect");
+            }
         }
         
        
        
     }
-    function updatePassword(){
+    function updatePassword(e){
+        e.preventDefault()
         const userPasswordChange = {
             userName, 
             password,
@@ -74,22 +74,19 @@ export default function ForgetPassword() {
         if(password==confirmPasword){
             axios.post("http://localhost:8070/passwordchange", userPasswordChange).then(
                 (res)=> {
-                   
-                    //check password and username  
-                    // if(res['data']['message']=="success"){
- 
-                    // }else{
-                    //     setMessage("Username or Password is Not match");
-                    // }
+                    console.log(res['data']['passwordChange']);
+                    window.location = "/login";
                   
                 }
               ).catch((err)=>{
                 //sever error
-                 console.log(err.message);
+                 console.log(err.passwordChange);
               })
+              setConfirmPasword("");
+              setPassword("");
         }
     }
-
+ 
     return (
 
         <div>
@@ -108,21 +105,21 @@ export default function ForgetPassword() {
                    { message ? <p id="message">{message}</p> : null}
                     <input type="text" id="input" placeholder="Enter User name" onChange={(e)=>{setUserName(e.target.value)}}  /> <br/>
                     {/* <p id="errorMessage">{errorUserName}</p>  */}
-                    <input type="password" id="input" placeholder="Enter Pin Number"onChange={(e)=>{setPinNumber(e.target.value)}}/> <br/>
+                    <input type="password" id="inputPin" placeholder="Enter Pin"onChange={(e)=>{setPinNumber(e.target.value)}}/> {"  "}
                     {/* <p id="errorMessage">{errorPassword}</p>  */}
-                    <button type="sumbit" id="pinCode" onClick={userPasswordSet}> Send Pin Code </button>  {"  "}
-                    <button type="sumbit" id="pinCode" onClick={pinConfrimation}> Confirm </button> <br/><br/>
+                    <button type="sumbit" id="pinCode" onClick={userPasswordSet}  > Send Pin Code  </button>  <br/> 
+                    <button type="sumbit" id="updatePassword" onClick={pinConfrimation}> Confirm </button> <br/><br/>
                    
                 </form>
                 <form id={`${showChangePassword ? 'ForgetForm-display' : 'ForgetForm' }`}   >
                     {/* validation message display */}
                    { message ? <p id="message">{message}</p> : null}
-                    <input type="text" id="input" placeholder="Enter New Password" onChange={(e)=>{setPassword(e.target.value)}}  /> <br/>
+                    <input type="password" id="input" placeholder="Enter New Password" onChange={(e)=>{setPassword(e.target.value)}}  /> <br/>
                     {/* <p id="errorMessage">{errorUserName}</p>  */}
                     <input type="password" id="input" placeholder="Enter Confirm Password"onChange={(e)=>{setConfirmPasword(e.target.value)}}/> <br/>
                     {/* <p id="errorMessage">{errorPassword}</p>  */}
                   
-                    <button type="sumbit" id="pinCode" onClick={updatePassword}> Update Password </button> <br/><br/>
+                    <button type="sumbit" id="updatePassword" onClick={updatePassword}> Update Password </button> <br/><br/>
                    
                 </form>
              <img id="imageLogin" src={imageLogin} />

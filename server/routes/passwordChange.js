@@ -6,17 +6,18 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
 router.post('/', async function (req, res) {
-   const userName = req.body.userName;
+    const userName = req.body.userName;
+    const password = req.body.password;
  
+    const salt = bcrypt.genSaltSync(10);
+    const hashPassword = bcrypt.hashSync(password,salt)
 
-   await ForgetPassword.userPasswordChange(userName).then(
-      (user) => {
-         const email = user[0].email;
-         sendMail.sendMail(email);
- 
-            return res.json({
-               message: "success",
-               pinCode : 4000
+   await ForgetPassword.userPasswordChange(userName ,hashPassword).then(
+      ( ) => {
+       
+         return res.json({
+               passwordChange: "success",
+                
             });
          } 
  

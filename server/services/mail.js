@@ -27,7 +27,7 @@ async function sendMail(email) {
         const mailOption = {
             from : 'BloodCare' , 
             to : email,
-            subject : 'Your Reset Password PIN Number',
+            subject : 'Thank You for you',
             text : 'hello',
             html : '<h>Your Pin Number is 4000</h>'
         }

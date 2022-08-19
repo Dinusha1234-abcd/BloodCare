@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const port = 8070; // asign the port number
 const login = require('./routes/login');
 const forgetPassword = require('./routes/forgetPassword')
+const passwordChange = require('./routes/passwordChange')
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors({origin: true, credentials: true}));
@@ -20,7 +21,7 @@ app.get("/",(req,res) => {
 });
 app.use("/login",login);
 app.use("/forgetpassword",forgetPassword);
-app.use("/passwordchange",forgetPassword);
+app.use("/passwordchange",passwordChange);
 // app.use((err,req,res,next)=>{
 //     const statusCode =  err.statusCode || 500;
 //     console.error(err.message,err.stack);

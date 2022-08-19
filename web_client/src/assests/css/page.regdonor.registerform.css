@@ -70,7 +70,7 @@
     margin-left: 20px;
     background-color: #FF6565;
 }
-input[type=text] {
+/* input[type=text] {
     font-family: 'Ubuntu';
     font-style: italic;
     font-weight: 400;
@@ -84,7 +84,7 @@ input[type=text] {
     border: 1px solid rgba(0, 0, 0, 0.6);
     border-radius: 10px;
     padding: 10px;
-}
+} */
 label{
     font-family: 'Ubuntu';
     font-style:italic;
