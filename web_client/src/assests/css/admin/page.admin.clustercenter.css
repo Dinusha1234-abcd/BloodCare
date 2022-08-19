@@ -23,7 +23,23 @@
     height: 100%;
     background: rgba(255, 255, 255, 0.7);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    z-index: 10;
+    background-image: url('./../../images/clustercenter.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: right;
 }
+/* #clustercenter-container-admin::before{
+  
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+} */
 #input-clustercenter-admin {
     padding: 6px;
     border-radius: 15px;
@@ -52,8 +68,7 @@
 #clustercenter-table-admin td, #clustercenter-table-admin th {
     border-radius: 1px solid rgba(253, 223, 229, 0.956) ;
     padding: 8px;   
-    text-align: center;
-    
+    text-align: center;    
   }
   
   #clustercenter-table-admin tr:nth-child(even){
