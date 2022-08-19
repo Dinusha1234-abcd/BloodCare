@@ -1,0 +1,87 @@
+#state-change-true{
+    position: relative;
+    margin-left: 250px;
+    transition: 0.6s;
+  }
+#state-change-false{
+    position: relative;
+    margin-left: 100px;
+    transition: 0.6s;
+  }
+
+#headnurse-details-profile{
+    position: absolute;
+    width:250px;
+    height: 450px;
+    border-radius: 10px;
+    margin-left: 1%;
+    margin-top: 0px; 
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 100px 100px 200px 5px rgba(217, 217, 217, 0.5);
+
+}
+
+#nurse-img-profile{
+    margin-top: 10px;
+    margin-left:50px;
+    filter:drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    width:150px;
+    height:150px;
+}
+#name-headnurse{
+    margin-top: 10px;
+    size: 400px;
+    color:black;
+    text-align: center;
+}
+
+#postion{
+   padding-top:20px;
+   size: 400px;
+   text-align: center;
+}
+
+#age-headnurse{
+    padding-top:20px;
+    size: 400px;
+    text-align: center;
+}
+
+#center{
+    padding-top:50px;
+    size: 400px;
+    text-align: center;
+}
+
+#camp-count-attend-name{
+    padding-top:50px;
+    size: 400px;
+    text-align: center;
+}
+
+#camp-count-attend{
+    padding-top:20px;
+    size: 400px;
+    text-align: center;
+    color:rgb(62, 63, 61);
+    font-size: large;
+    
+}
+
+#date-joined{
+    padding-top:50px;
+    size: 400px;
+    text-align: center;
+
+}
+
+/*profile edit */
+#profile-edit-headnurse{
+    position:absolute;
+    width:900px;
+    height: 450px;
+    border-radius: 10px;
+    margin-left:25%; 
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 100px 100px 200px 5px rgba(217, 217, 217, 0.5);
+}

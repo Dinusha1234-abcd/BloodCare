@@ -24,6 +24,8 @@ import HeadNurseDashboard from "./pages/page.headnurse.dashboard";
 import HeadNurseAssignCamps from "./pages/page.headnurse.assigncamps";
 import HeadNursePastCamps from "./pages/page.headnurse.pastcamps";
 import HeadNurseDonorRequests from "./pages/page.headnurse.donorrequests";
+import HeadNurseProfile from "./pages/page.headnurse.profile";
+
 
 
 
@@ -114,6 +116,7 @@ function App() {
             <Route path='/headnurseassigncamps' exact element={<HeadNurseAssignCamps />} />
             <Route path='/headnursepastcamps' exact element={<HeadNursePastCamps />} />
             <Route path='/headnursedonorrequests' exact element={<HeadNurseDonorRequests />} />
+            <Route path='/headnurseprofile' exact element={<HeadNurseProfile />} />
 
 
          </Routes>
