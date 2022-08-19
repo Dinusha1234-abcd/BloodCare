@@ -91,13 +91,32 @@ export default function Slide(props) {
                 ) ? 'nav-link-icon-active' : 'nav-link-icon'} `}>Users</span>
               </Link>
 
-              <Link to='/clusterCenter' className='nav-link'  >
-                <i class="fa-solid fa-user-nurse nav-link-icon" ></i>
-                <span className='nav-link-name' id='nav-link-name'>Cluster Center</span>
+              <Link to='/clustercenter' className={`${( 
+                  window.location.pathname==='/clustercenter'
+                ) ? 'nav-link-active' : 'nav-link'} `}  >
+                <i className={`${(
+                  window.location.pathname==='/clustercenter'
+                ) ? 'fa-solid fa-user-nurse nav-link-icon-active' : 'fa-solid fa-user-nurse nav-link-icon'} `}></i>
+                <span className={`${(
+                  window.location.pathname==='/clustercenter'
+                ) ? 'nav-link-icon-active' : 'nav-link-icon'} `}>Cluster Center</span>
               </Link>
-              <Link to='/bloodCamp' className='nav-link'  >
-                <i class="fa-solid fa-people-group nav-link-icon"></i>
-                <span className='nav-link-name' id='nav-link-name-donors'>Blood Camp</span>
+
+              <Link to='/bloodcamps/ongoingcamp' className={`${(
+                  window.location.pathname === '/bloodcamps/ongoingcamp'|| 
+                  window.location.pathname==='/bloodcamps/upcomingcamp' || 
+                  window.location.pathname==='/bloodcamps/completedcamp'
+                ) ? 'nav-link-active' : 'nav-link'} `}  >
+                <i className={`${(
+                  window.location.pathname === '/bloodcamps/ongoingcamp'|| 
+                  window.location.pathname==='/bloodcamps/upcomingcamp' || 
+                  window.location.pathname==='/bloodcamps/completedcamp'
+                ) ? 'fa-solid fa-people-group nav-link-icon-active' : 'fa-solid fa-people-group nav-link-icon'} `}></i>
+                <span className={`${(
+                  window.location.pathname === '/bloodcamps/ongoingcamp'|| 
+                  window.location.pathname==='/bloodcamps/upcomingcamp' || 
+                  window.location.pathname==='/bloodcamps/completedcamp'
+                ) ? 'nav-link-icon-active' : 'nav-link-icon'} `}>Blood Camp</span>
               </Link>
               
             </div>
