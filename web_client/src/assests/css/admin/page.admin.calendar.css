@@ -1,0 +1,71 @@
+#state-change-true{
+    position: relative;
+    margin-left: 250px;
+    transition: 0.6s;
+}
+#state-change-false{
+    position: relative;
+    margin-left: 100px;
+    transition: 0.6s;
+}
+#admin-calender-box{
+    /* background-color: rgb(252, 252, 252); */
+    padding: 20px;
+    margin-left: 3%;
+    width:93%;
+    border-radius: 20px;
+}
+#admin-calender-box-display{
+    display: flex;
+}
+#admin-calendar{
+    background-color: rgba(255, 255, 255, 0.87);
+    margin-top: 11px;
+    border-radius: 20px;
+    width:85%;
+}
+#admin-calender-camp-details{
+    width: 30%;
+    height:550px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.87);
+    margin : 8px;
+    margin-top:11px;
+    padding: 11px;
+    margin-left: 20px;
+} 
+#admin-calender-camp-details-name{
+    padding: 20px;
+    padding-left: 100px;
+    color: rgba(96, 88, 88, 1);
+} 
+#admin-calender-camp-details-events{
+    background-color: rgba(238, 238, 238, 1);
+    margin-top: 11px;
+    border-radius: 11px;
+    padding: 11px;
+} 
+#admin-edit-calendar-button button{
+    background: #df788c;
+    width: 35%;
+    height: 35px;
+    margin-top: 70%;
+    border-radius: 15px;
+    border: none;
+    margin-left: 32%;
+    font-size: 16px;
+    color: white;
+}
+#admin-add-calendar-button button{
+    background: #df788c;
+    width: 35%;
+    height: 35px;
+    border-radius: 15px;
+    border: none;
+    margin-left: 32%;
+    margin-top: 10px;
+    font-size: 20px;
+    color: white;
+
+}
+ 
