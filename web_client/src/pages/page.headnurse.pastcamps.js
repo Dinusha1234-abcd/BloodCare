@@ -34,7 +34,7 @@ export default function HeadNursePastCamps() {
             </div>
                
               <h1 id ="h1-head-past">Your Past Blood Camps</h1>
-              <input type="text" id='search' placeholder="Search.."/>
+              <input type="text" id='search-headnurse-pastcamps' placeholder="Search.."/>
               <button type="button" id="button-headnurse-past"> <i class="fas fa-search"></i></button>
 
               

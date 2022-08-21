@@ -83,5 +83,6 @@
     border-radius: 10px;
     margin-left:25%; 
     background: rgba(255, 255, 255, 0.4);
-    box-shadow: 100px 100px 200px 5px rgba(217, 217, 217, 0.5);
+    box-shadow: 100px 100px 100px 5px rgba(217, 217, 217, 0.5);
+    
 }
