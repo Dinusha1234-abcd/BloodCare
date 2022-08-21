@@ -1,0 +1,396 @@
+.registeredDonorUpcomingBloodCampRoot {
+    width: 100%;
+    height: 100%;
+    background-color: #f6e2e6;
+    overflow: hidden;
+    position: relative;
+  }
+  .flexRow {
+    width: 1217.86px;
+    background-image: url("https://file.rendit.io/n/R4ftapaitKe0gnQMEqXK.svg");
+    background-size: cover;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px 0px 472.76px 0px;
+  }
+  .ellipse {
+    width: 653px;
+    height: 592px;
+  }
+  .heroImage {
+    border-color: #dd2c4f;
+    border-style: solid;
+    box-shadow: 0px 4px 60px 0px rgba(122, 19, 39, 0.12);
+    width: 1546px;
+    height: 1100px;
+    background-color: #ffffff;
+    overflow: hidden;
+    position: absolute;
+    top: 36px;
+    left: 24px;
+    align-items: center;
+    border-radius: 50px;
+    border-width: 3px;
+  }
+  .flexColumn {
+    height: 919.87px;
+    background-image: url("https://file.rendit.io/n/SSRRB5UczcjZpq4bASzg.svg");
+    background-size: cover;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 53px 3.3px 53px 47px;
+  }
+  .flexRow1 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0px 0px 64px 0px;
+  }
+  .logo {
+    width: 46px;
+    height: 45px;
+    margin: 0px 9px 0px 0px;
+  }
+  .text2 {
+    width: 273px;
+    height: 55px;
+    font-size: 24px;
+    font-family: Inter;
+    color: #e71e43;
+    margin: 14px 168px 0px 0px;
+  }
+  .element1 {
+    align-self: stretch;
+    width: 495px;
+    height: 154px;
+    position: relative;
+    flex-grow: 1;
+  }
+  .text3 {
+    width: 474px;
+    height: 55px;
+    font-size: 36px;
+    font-family: Inter;
+    font-weight: 700;
+    color: #161e29;
+    position: absolute;
+    top: 99px;
+    left: 21px;
+  }
+  .text1 {
+    width: 368px;
+    height: 42px;
+    position: absolute;
+    top: 67px;
+  }
+  .flexRow4 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 235px;
+    align-items: flex-start;
+    padding: 0px 8px;
+    margin: 0px 0px 29px 0px;
+  }
+  .element2 {
+    align-self: stretch;
+    width: 494px;
+    height: 85px;
+    position: relative;
+    flex-grow: 1;
+  }
+  .whiteFlexRow {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 424px;
+    background-color: #ffffff;
+    display: flex;
+    position: absolute;
+    top: 42px;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 10px;
+    padding: 8px 35px 0px 35px;
+  }
+  .flexRow5 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 181px;
+    padding: 0px 8px;
+    margin: 0px 0px 3px 0px;
+  }
+  .element3 {
+    width: 494px;
+    height: 86px;
+    position: relative;
+    flex-grow: 1;
+  }
+  .whiteFlexRow1 {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 408px;
+    background-color: #ffffff;
+    display: flex;
+    position: absolute;
+    top: 34px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 10px;
+    padding: 7px 43px 3px 43px;
+  }
+  .text8 {
+    width: 166px;
+    height: 33px;
+    font-size: 24px;
+    font-family: Inter;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    color: rgba(0, 0, 0, 0.8);
+  }
+  .icroundarrowdropdown {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 41px;
+    left: 439px;
+  }
+  .element4 {
+    width: 320px;
+    height: 86px;
+    position: relative;
+    flex-grow: 1;
+  }
+  .text10 {
+    width: 266px;
+    height: 46px;
+    font-size: 24px;
+    font-family: Inter;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    position: absolute;
+    top: 7px;
+    left: 54px;
+  }
+  .silverRectangle {
+    border-color: #000000;
+    border-style: solid;
+    width: 202px;
+    height: 38px;
+    background-color: #b6b6b6;
+    position: absolute;
+    top: 46px;
+    border-width: 1px;
+  }
+  .text11 {
+    width: 183px;
+    height: 26px;
+    font-size: 24px;
+    font-family: Inter;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    position: absolute;
+    top: 51px;
+    left: 21px;
+  }
+  .header {
+    width: 570px;
+    display: flex;
+    position: absolute;
+    top: 52px;
+    left: 913px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .element5 {
+    width: 59px;
+    height: 45px;
+    position: relative;
+    flex-grow: 1;
+    margin: 0px 51px 0px 0px;
+  }
+  .text13 {
+    font-size: 18px;
+    font-family: Quicksand;
+    font-weight: 700;
+    line-height: 27px;
+    color: #161e29;
+    position: absolute;
+    top: 10px;
+    left: 3px;
+  }
+  .selector {
+    width: 59px;
+    height: 4px;
+    background-color: #dd2d50;
+    position: absolute;
+    top: 36px;
+    border-radius: 20px;
+  }
+  .text16 {
+    text-align: center;
+    font-size: 16px;
+    font-family: Quicksand;
+    font-weight: 500;
+    line-height: 24px;
+    color: #020202;
+    margin: 0px 37px 0px 0px;
+    padding: 0px;
+    border-width: 0px;
+    background: none;
+    box-sizing: content-box;
+    cursor: pointer;
+  }
+  .redText {
+    display: inline-block;
+    font-size: 18px;
+    font-family: Quicksand;
+    font-weight: 700;
+    line-height: 27px;
+    color: #ffffff;
+    width: 119px;
+    height: 27px;
+    background-color: #dd2d50;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 30.5px;
+    padding: 8px 0px 10px 0px;
+    border-width: 0px;
+ /*   :: placeholder {
+      color: #ffffff;
+    }
+    outline-width: 0px; */
+  }
+  .whiteFlexRow2 {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    background-color: #ffffff;
+    display: flex;
+    position: absolute;
+    top: 677px;
+    left: 846px;
+    flex-direction: row;
+    gap: 239px;
+    align-items: center;
+    border-radius: 10px;
+    padding: 1px 20px 2px 29px;
+  }
+  .text17 {
+    width: 166px;
+    height: 33px;
+    font-size: 24px;
+    font-family: Inter;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    color: rgba(0, 0, 0, 0.8);
+    align-self: flex-start;
+    margin: 2px 0px 0px 0px;
+  }
+  .image1 {
+    width: 40px;
+    height: 40px;
+  }
+  .whiteRectangle3 {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 1169px;
+    height: 59px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 880px;
+    left: 189px;
+    border-radius: 10px;
+  }
+  .whiteFlexRow3 {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 463px;
+    height: 36px;
+    background-color: #ffffff;
+    display: flex;
+    position: absolute;
+    top: 551px;
+    left: 864px;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 177px;
+    align-items: flex-start;
+    border-radius: 10px;
+    padding: 4px 19px 3px 19px;
+  }
+  .text18 {
+    width: 234px;
+    height: 33px;
+    font-size: 24px;
+    font-family: Inter;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    color: rgba(0, 0, 0, 0.65);
+    align-self: flex-end;
+  }
+  .text19 {
+    width: 502px;
+    height: 46px;
+    font-size: 24px;
+    font-family: Inter;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    position: absolute;
+    top: 512px;
+    left: 911px;
+    white-space: pre-wrap;
+  }
+  .text20 {
+    width: 230px;
+    height: 39px;
+    font-size: 24px;
+    font-family: Inter;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 796px;
+    left: 1098px;
+  }
+  .redText1 {
+    display: flex;
+    font-size: 24px;
+    font-family: Quicksand;
+    font-weight: 700;
+    line-height: 36px;
+    color: #ffffff;
+    width: 98px;
+    height: 36px;
+    background-color: #dd2d50;
+    position: absolute;
+    top: 984px;
+    left: 961px;
+    flex-direction: row;
+    border-radius: 30.5px;
+    padding: 13px 44px 16px 34px;
+  }
+  .timberwolfText {
+    display: flex;
+    font-size: 24px;
+    font-family: Quicksand;
+    font-weight: 700;
+    line-height: 36px;
+    width: 78px;
+    height: 36px;
+    background-color: #d9d9d9;
+    position: absolute;
+    top: 984px;
+    left: 1170px;
+    flex-direction: row;
+    border-radius: 30.5px;
+    padding: 13px 55px 16px 43px;
+  }
+  

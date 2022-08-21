@@ -8,6 +8,7 @@ import AdminDashboard from "./pages/page.admin.dashboard";
 import AdminUsers from "./pages/page.admin.users";
 import AdminBloodCamp from './pages/page.admin.bloodCamp';
 import AdminClusterCenter from './pages/page.admin.clustercenter';
+import AdminCalendar from "./pages/page.admin.calendar";
 
 //Cluster Admin
 import ClusterAdminDashboard from "./pages/page.clusterAdmin.dashboard";
@@ -15,9 +16,9 @@ import ClusterAdminCalendar from "./pages/page.clusterAdmin.calendar"
 import ClusterAdminBloodCamp from './pages/page.clusterAdmin.bloodCamp';
 import ClusterAdminMedicalStaff from './pages/page.clusterAdmin.medicalStaff';
 import ClusterAdminDonors from './pages/page.clusterAdmin.donors';
-import ClusterAdminBlood from './pages/page.clusterAdmin.blood';
+import ClusterAdminBlood from './pages/page.clusterAdmin.blood'; 
 import {ClusterAdminPendingCampView , ClusterAdminPastCampView } from './pages/page.clusterAdmin.campView';
- 
+  
 //Medical Officer
 import MedicalOfficerDashboard from "./pages/page.medicalofficer.dashboard";
 
@@ -29,12 +30,6 @@ import HeadNurseDonorRequests from "./pages/page.headnurse.donorrequests";
 import HeadNurseProfile from "./pages/page.headnurse.profile";
 
 
-
-
-
-
-
-
 //Register Donor
 import RegDonorDashboard from "./pages/page.regdonor.dashboard";
 import RegDonorCalender from "./pages/page.regdonor.calendar";
@@ -42,6 +37,11 @@ import RegDonorHistory from './pages/page.regdonor.history';
 import RegDonorCamp from './pages/page.regdonor.camp';
 import RegisterForm from './pages/page.regdonor.registerform';
 import RegDonorProfile from './pages/page.regdonor.profile';
+
+//home
+import LandingPage from "./pages/page.home.landingPage";
+import Camps from "./pages/page.home.camps";
+import RegisterCamp from "./pages/page.home.registerCamp";
 
 
 function App() {
@@ -61,13 +61,19 @@ function App() {
                <Route path='/users/driver' exact element={<AdminUsers />} />
                <Route path='/users/organizer' exact element={<AdminUsers />} />
                <Route path='/users/donor' exact element={<AdminUsers />} />
-                
+               
+               <Route path='/calendar' exact element={<AdminCalendar />} />
+
                <Route path='/clustercenter' exact element={<AdminClusterCenter />} />
 
                <Route path='/bloodcamps' exact element={<AdminBloodCamp />} />
                <Route path='/bloodcamps/ongoingcamp' exact element={<AdminBloodCamp />} />
                <Route path='/bloodcamps/upcomingcamp' exact element={<AdminBloodCamp />} />
                <Route path='/bloodcamps/completedcamp' exact element={<AdminBloodCamp />} />
+               <Route path='/' exact element={<LandingPage />} />
+               <Route path='/camps' exact element={<Camps />} />
+               <Route path='/registercamp' exact element={<RegisterCamp />} />
+
             </Routes>
          </BrowserRouter>
       )
@@ -75,9 +81,10 @@ function App() {
    //cluster admin routes
    else if (localStorage.getItem("type") === "2") {
       return (
-      <BrowserRouter>
-         <Routes>
+         <BrowserRouter>
+            <Routes>
 
+ 
             <Route path='/dashboard' exact element={<ClusterAdminDashboard />} />
             <Route path='/login' exact element={<ClusterAdminDashboard />} />
             <Route path='/calendar' exact element={<ClusterAdminCalendar />} />
@@ -104,8 +111,11 @@ function App() {
             <Route path='/blood/ABpositive' exact element={<ClusterAdminBlood />} />
             <Route path='/blood/ABNegative' exact element={<ClusterAdminBlood />} />
             
-         </Routes>
-   </BrowserRouter>)
+   
+ 
+            </Routes>
+         </BrowserRouter>)
+ 
    }
    //medical Officers routes
    else if (localStorage.getItem("type") === "3") {
@@ -113,6 +123,9 @@ function App() {
          <Routes>
             <Route path='/dashboard' exact element={<MedicalOfficerDashboard />} />
             <Route path='/login' exact element={<MedicalOfficerDashboard />} />
+            <Route path='/' exact element={ <LandingPage /> } />
+            <Route path='/camps' exact element={<Camps />} />
+            <Route path='/registercamp' exact element={<RegisterCamp />} />
          </Routes>
       </BrowserRouter>)
 
@@ -127,7 +140,9 @@ function App() {
             <Route path='/headnursepastcamps' exact element={<HeadNursePastCamps />} />
             <Route path='/headnursedonorrequests' exact element={<HeadNurseDonorRequests />} />
             <Route path='/headnurseprofile' exact element={<HeadNurseProfile />} />
-
+            <Route path='/' exact element={ <LandingPage /> } />
+            <Route path='/camps' exact element={<Camps />} />
+            <Route path='/registercamp' exact element={<RegisterCamp />} />
 
          </Routes>
       </BrowserRouter>)
@@ -137,13 +152,16 @@ function App() {
       return (<BrowserRouter>
          <Routes>
 
-            <Route path='/dashboard' exact element={ <RegDonorDashboard /> }/> 
-            <Route path='/login' exact element={ <RegDonorDashboard /> }/> 
-            <Route path='/calender' exact element={ <RegDonorCalender /> }/> 
-            <Route path='/history_records' exact element={ <RegDonorHistory />}/>
-            <Route path='/blood_camps' exact element={ <RegDonorCamp />}/>
-            <Route path='/blood_camps/register' exact element={ <RegisterForm />}/>
-            <Route path='/profile' exact element={ <RegDonorProfile />}/>
+            <Route path='/dashboard' exact element={<RegDonorDashboard />} />
+            <Route path='/login' exact element={<RegDonorDashboard />} />
+            <Route path='/calender' exact element={<RegDonorCalender />} />
+            <Route path='/history_records' exact element={<RegDonorHistory />} />
+            <Route path='/blood_camps' exact element={<RegDonorCamp />} />
+            <Route path='/blood_camps/register' exact element={<RegisterForm />} />
+            <Route path='/profile' exact element={<RegDonorProfile />} />
+            <Route path='/' exact element={ <LandingPage /> } />
+            <Route path='/camps' exact element={<Camps />} />
+            <Route path='/registercamp' exact element={<RegisterCamp />} />
          </Routes>
       </BrowserRouter>)
    }
@@ -152,6 +170,9 @@ function App() {
          <Routes>
             <Route path='/login' exact element={<Login />} />
             <Route path='/forgetpassword' exact element={<ForgetPassword />} />
+            <Route path='/' exact element={<LandingPage />} />
+            <Route path='/camps' exact element={<Camps />} />
+            <Route path='/registercamp' exact element={<RegisterCamp />} />
          </Routes>
       </BrowserRouter>)
    }

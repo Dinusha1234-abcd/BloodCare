@@ -54,9 +54,16 @@ export default function Slide(props) {
                 <i className={`${(window.location.pathname === '/dashboard'|| window.location.pathname === '/login') ? 'fa-solid fa-gauge-high nav-link-icon-active' : 'fa-solid fa-gauge-high nav-link-icon'} `}></i>
                 <span className={`${(window.location.pathname === '/dashboard'|| window.location.pathname === '/login') ? 'nav-link-icon-active' : 'nav-link-icon'} `}  >Dashboard</span>
               </Link>
-              <Link to='/calender' className='nav-link  '>
-                <i class="fa-solid fa-calendar-days nav-link-icon"></i>
-                <span className='nav-link-name'>Calender</span>
+              
+              <Link to='/calendar' className={`${( 
+                  window.location.pathname==='/calendar'
+                ) ? 'nav-link-active' : 'nav-link'} `}  >
+                <i className={`${(
+                  window.location.pathname==='/calendar'
+                ) ? 'fa-solid fa-calendar-days nav-link-icon-active' : 'fa-solid fa-calendar-days nav-link-icon'} `}></i>
+                <span className={`${(
+                  window.location.pathname==='/calendar'
+                ) ? 'nav-link-icon-active' : 'nav-link-icon'} `}>Calender</span>
               </Link>
 
               <Link to='/users/medicalofficer' className={`${(
