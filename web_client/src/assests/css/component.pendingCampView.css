@@ -159,4 +159,17 @@
     margin-top: 20px;
     width: 90%;
 }
+#add-button-staff{
+    background-color:rgba(251, 98, 129, 1);
+    border: none;
+    color: white;
+    padding: 3px;
+    padding-left: 11px; 
+    padding-right:11px; 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 11px;
+    font-size: 16px;
+}
  

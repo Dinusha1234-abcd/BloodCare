@@ -1,7 +1,8 @@
 import React from 'react';
 import '../assests/css/component.pendingCampView.css' 
+import { useParams } from 'react-router-dom';
 export default function PendingCampView() {
-
+   const {id , name, mobile,place} = useParams()
     return (
         <div id='pending-camp-view'>
             <div id='pending-camp-view-container-clusterAdmin'>
@@ -11,19 +12,19 @@ export default function PendingCampView() {
                     <table id="past-camp-view-table">
                         <tr> 
                         <td>Organizer Name</td>
-                        <td>Namal Kumara</td>
+                        <td>{name}</td>
                         </tr>
                         <tr> 
                         <td>NIC Number</td>
-                        <td>701234567V</td>
+                        <td>{id}</td>
                        </tr> 
                        <tr> 
                         <td>Place</td>
-                        <td>Colombo</td>
+                        <td>{place}</td>
                         </tr>
                         <tr> 
                         <td>Mobile Number</td>
-                        <td>0771234567</td>
+                        <td>{mobile}</td>
                         </tr>
                         <tr> 
                         <td>Email</td>
@@ -73,28 +74,28 @@ export default function PendingCampView() {
                         <tr> 
                         <td>Supuni Kalhari</td>
                         <td>Head Nurse</td>
-                        <td><button id='view-button-pastcamp'>View</button></td>
+                        <td><button id='add-button-staff'>Add</button></td>
 
 
                        </tr> 
                        <tr> 
                         <td>Savinda Gunarathna</td>
                         <td>Nurse</td>
-                        <td><button id='view-button-pastcamp'>View</button></td>
+                        <td><button id='add-button-staff'>Add</button></td>
                         
 
                         </tr>
                         <tr> 
                         <td>Sahan Ranasinha</td>
                         <td>Doctor</td>
-                        <td><button id='view-button-pastcamp'>View</button></td>
+                        <td><button id='add-button-staff'>Add</button></td>
 
 
                         </tr>
                         <tr> 
                         <td>Damith Asanka</td>
                         <td>Nurse</td>
-                        <td><button id='view-button-pastcamp'>View</button></td>
+                        <td><button id='add-button-staff'>Add</button></td>
 
 
                         </tr>

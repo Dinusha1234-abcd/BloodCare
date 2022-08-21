@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../assests/css/component.pastCamp.css';
 export default function PastCamp() {
 
@@ -23,7 +24,8 @@ export default function PastCamp() {
                     <td>Namal Silva</td>
                     <td>50</td>
                     <td>50</td>
-                    <td><button id='view-button-pastcamp'>View</button></td>
+                    <td><Link  to='/bloodcamp/pastcampView/Yasswin Bandara/982345678V/Boralasgamuwa/0777123456/yasswin@gmail.com' id='view-button-pastcamp'>View</Link></td>
+
                 </tr>
                 <tr>
                     <td>102</td>
