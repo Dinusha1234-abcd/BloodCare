@@ -1,31 +1,32 @@
-#doctor-contanier{
+#doctor-contanier {
     margin-left: 52px;
-    margin-top:20px;
+    margin-top: 20px;
     padding-top: 20px;
-    width:90%;
+    width: 90%;
     border-radius: 20px;
     padding-left: 20px;
     padding-right: 11px;
-    height:620px;
+    height: 620px;
     background: rgba(255, 255, 255, 0.79);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     transition: 0.6;
 }
-#input-doctor{
+
+#input-doctor {
     position: absolute;
     right: 300px;
-    top:130px;
-    width:300px;
+    top: 130px;
+    width: 300px;
     height: 30px;
     border-radius: 10px;
     border-color: rgba(221, 45, 80, 1);
-    padding:11px;
+    padding: 11px;
     margin-top: 10px;
     box-shadow: red;
     border-style: hidden;
     border-color: rgba(221, 45, 80, 1);
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, FontAwesome ;
-    font-size: 19px; 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, FontAwesome;
+    font-size: 19px;
     outline-style: none;
     border-color: inherit;
     -webkit-box-shadow: none;
@@ -35,73 +36,83 @@
     color: rgb(19, 19, 19);
     transition: 0.6;
 }
-#header-clusterAdmin{
+
+#header-clusterAdmin {
     text-align: left;
     margin-left: -900px;
 }
-#add-doctor{
+
+#add-doctor {
     position: absolute;
     right: 180px;
-    top:135px;
-    background-color:rgb(255, 177, 192) ;
+    top: 135px;
+    background-color: rgb(255, 177, 192);
     border: none;
     color: rgb(27, 25, 25);
     padding: 11px;
     margin-left: 11px;
-    padding-left: 11px; 
-    padding-right:11px; 
+    padding-left: 11px;
+    padding-right: 11px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     border-radius: 11px;
     font-size: 16px;
     transition: 0.6;
- 
+
 }
+
 #doctor-table {
     margin-left: 63px;
-    
+
     border-collapse: collapse;
     width: 86%;
-  }
-  
-  #doctor-table td, #doctor-table th {
-    border-radius: 1px solid rgba(253, 223, 229, 0.956) ;
-    padding: 8px;   
+}
+
+#doctor-table td,
+#doctor-table th {
+    border-radius: 1px solid rgba(253, 223, 229, 0.956);
+    padding: 8px;
     text-align: center;
     transition: 0.6;
-    
-  }
-  
-  #doctor-table tr:nth-child(even){background-color: rgba(253, 223, 229, 0.4) ;}
-  
-  #doctor-table tr:hover {background-color: rgba(253, 223, 229, 0.4) ;}
-  
-  #doctor-table th {
+
+}
+
+#doctor-table tr:nth-child(even) {
+    background-color: rgba(253, 223, 229, 0.4);
+}
+
+#doctor-table tr:hover {
+    background-color: rgba(253, 223, 229, 0.4);
+}
+
+#doctor-table th {
     padding-top: 12px;
     padding-bottom: 12px;
     transition: 0.6;
     text-align: center;
-    background-color:rgba(221, 45, 80, 0.26);
+    background-color: rgba(221, 45, 80, 0.26);
     color: rgb(21, 19, 19);
-  }
- #doctor-number{
+}
+
+#doctor-number {
     border-top-left-radius: 12px;
     transition: 0.6;
- }
- #doctor-action{
+}
+
+#doctor-action {
     border-top-right-radius: 12px;
     transition: 0.6;
- }
- 
-#view-button-doctor-view{
-    background-color:rgba(141, 132, 132, 1);
+}
+
+#view-button-doctor-view {
+    background-color: rgba(141, 132, 132, 1);
     border: none;
     color: white;
     padding: 6px;
     margin-left: 11px;
-    padding-left: 11px; 
-    padding-right:11px; 
+    padding-left: 11px;
+    padding-right: 11px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -109,14 +120,15 @@
     font-size: 16px;
     transition: 0.6;
 }
-#view-button-doctor-remove{
-    background-color:rgb(255, 177, 192) ;
+
+#view-button-doctor-remove {
+    background-color: rgb(255, 177, 192);
     border: none;
     color: white;
     padding: 6px;
     margin-left: 11px;
-    padding-left: 11px; 
-    padding-right:11px; 
+    padding-left: 11px;
+    padding-right: 11px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -124,19 +136,210 @@
     font-size: 16px;
     transition: 0.6;
 }
-.page-navigation{
+
+.page-navigation {
     padding: 6px;
     transition: 0.6;
 }
-#doctor-pageButton{
+
+#doctor-pageButton {
     position: absolute;
-    right:190px;
-    bottom: 6px; 
+    right: 190px;
+    bottom: 6px;
     width: 170px;
-    padding: 6px; 
+    padding: 6px;
     border-radius: 11px;
-    padding-bottom: 10px; 
-    background-color:rgba(221, 45, 80, 0.441);
+    padding-bottom: 10px;
+    background-color: rgba(221, 45, 80, 0.441);
     transition: 0.6;
 }
- 
+
+#register-form-doctor-clusteradmin-active {
+    position: absolute;
+    position: fixed;
+    right: 22px;
+    top: 90px;
+    height: 600px;
+    border-radius: 20px;
+    width: 40%;
+    padding-top: 22px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    z-index: 90;
+    transition: 0.6s;
+}
+
+#register-form-doctor-clusteradmin {
+    position: absolute;
+    position: fixed;
+    right: -650px;
+    top: 90px;
+    height: 600px;
+    border-radius: 20px;
+    width: 40%;
+    padding-top: 22px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    z-index: 90;
+    transition: 0.6s;
+}
+
+#register-form-doctor-name-clusteradmin {
+    font-size: 20px;
+    margin-top: 22px;
+    padding: 6px;
+    background-color: rgba(246, 156, 174, 1);
+    margin: 11px;
+    color: rgb(255, 255, 255);
+    border-radius: 12px;
+    font-weight: 200;
+}
+
+#register-form-doctor-input-clusteradmin {
+    width: 250px;
+    height: 30px;
+    border-radius: 10px;
+    border-color: rgba(221, 45, 80, 1);
+    padding: 11px;
+    margin-top: 10px;
+    box-shadow: red;
+    border-style: hidden;
+    border-color: rgba(221, 45, 80, 1);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, FontAwesome;
+    font-size: 15px;
+    outline-style: none;
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    color: rgb(19, 19, 19)
+}
+
+#register-form-doctor-form-clusteradmin {
+    margin-top: 55px;
+    margin-left: 100px;
+}
+
+#register-form-doctor-inputfile-clusteradmin {
+    width: 250px;
+    height: 30px;
+    border-radius: 10px;
+    border-color: rgba(221, 45, 80, 1);
+    padding: 2px;
+    padding-left: 11px;
+    margin-top: 10px;
+    box-shadow: red;
+    border-style: hidden;
+    border-color: rgba(221, 45, 80, 1);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, FontAwesome;
+    font-size: 15px;
+    outline-style: none;
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    color: rgb(19, 19, 19)
+}
+
+#sumbit-save-form {
+    width: 150px;
+    height: 33px;
+    margin-left: 55px;
+    margin-top: 12px;
+    border-radius: 10px;
+    background-color: rgba(221, 45, 80, 1);
+    color: aliceblue;
+    border-style: hidden;
+    border-color: rgba(221, 45, 80, 1);
+    font-weight: 800;
+}
+
+#sumbit-cancle-form {
+    width: 150px;
+    height: 33px;
+    margin-left: 11px;
+    padding-top: 6px;
+    margin-top: 12px;
+    border-radius: 10px;
+    background-color: rgba(158, 135, 140, 1);
+    color: aliceblue;
+    border-style: hidden;
+    border-color: rgba(221, 45, 80, 0.701);
+    font-weight: 800;
+    text-align: center;
+}
+
+#fade-clusterAdmin {
+    position: absolute;
+    top: -100px;
+    left: -28px;
+    width: 102%;
+    height: 850px;
+    background-color: rgba(101, 122, 122, 0.442);
+    z-index: 12;
+    border-radius: 20px;
+}
+
+#message-form-clusteradmin {
+    padding: 11px;
+    background-color: rgb(221, 72, 102);
+    color: rgb(255, 255, 255);
+    width: 80%;
+    border-radius: 10px;
+}
+
+.close-button-form {
+    position: relative;
+    left: 190px;
+}
+
+#sucess-message {
+    display: flex;
+    position: absolute;
+    top : -150px;
+    width: 400px;
+    left: 400px;
+    height: 55px;
+    z-index: 90;
+    padding: 3px;
+    border: 2px solid rgb(28, 124, 47);
+    border-radius: 10px;
+    background-color: rgb(255, 253, 253);
+    
+}
+#sucess-message-active{
+    display: flex;
+    position: absolute;
+    top:130px;
+    width: 400px;
+    left: 400px;
+    height: 55px;
+    z-index: 6;
+    padding: 3px;
+    border: 2px solid rgb(28, 124, 47);
+    border-radius: 10px;
+    background-color: rgb(255, 253, 253);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    /* transition: 3.11s; */
+}
+#successImage {
+    width: 45px;
+    height: 45px
+}
+
+#sucess-message-name {
+    padding: 11px;
+    padding-top: 6px;
+    margin-left: 20px;
+    font-weight: 200;
+    font-size: 17px;
+}
+
+.close-button-success {
+    position: relative;
+    left: 50px;
+    font-size: 20px;
+}

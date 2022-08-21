@@ -1,28 +1,28 @@
-#pending-camp-view{
+#past-camp-view{
     display: flex;
 }
 
 
-#pending-camp-view-container-clusterAdmin{
+#past-camp-view-container-clusterAdmin{
      
     margin-top: 20px;
     margin-left: 50px;
     width:55%;
-    height:300px; 
+    height:220px; 
     border-radius: 20px;
     /* background-color: rgb(255, 255, 255); */
     
 }
-#pending-camp-container-box1-clusterAdmin{
+#past-camp-container-box1-clusterAdmin{
     margin-top: 20px;
     padding: 20px;
     width:100%;
-    height:350px; 
+    height:280px; 
     border-radius: 20px;
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.118);
 }
-#pending-camp-header-clusterAdmin{
+#past-camp-header-clusterAdmin{
     margin-left: -10px;
 }
 #past-camp-view-table {
@@ -122,8 +122,11 @@
     border-color: rgba(158, 135, 140, 1);
     font-weight: 400;
 }
-#pending-camp-container-box3-clusterAdmin{
-    width: 100%;
+ #past-camp-container-box2-clusterAdmin{
+    display: flex;
+ }
+#past-camp-container-box3-clusterAdmin{
+    width: 80%;
     height: 350px;
     background-color: rgba(255, 255, 255, 0.55);
     padding: 10px;
@@ -141,13 +144,25 @@
     margin-top: 10px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.118);
 }
+#past-camp-container-box12-clusterAdmin{
+    margin:10px;
+    margin-top: 22px;
+    padding:10px;
+    width:50%;
+    height: 350px;
+    /* padding-top: 50px; */
+    padding-left: 20px;
+    background-color: rgb(255, 255, 255);;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.118);
 
+    border-radius: 20px;
+}
 #close-button{
    padding:20px;
 }
 #medicalstaff-display-table-display{
     height: 500px;
-    width: 33%;
+    width: 100%;
     background-color: rgb(255, 255, 255);;
     margin-left: 2%;
     margin-top: 44px;
@@ -158,6 +173,33 @@
     margin-left: 20px;
     margin-top: 20px;
     width: 90%;
+}
+#blood-counters-view{
+    /* margin-top: -100px; */
+   padding-bottom: 22px;
+}
+#card-donor-donoation-clusteradmin{
+    width:150px;
+    height: 200px;
+    margin-left: 50px;
+    padding:11px;
+    padding-left: 11px;
+    background-color: rgb(255, 255, 255);;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.118);
+    border-radius: 20px;
+
+}
+#camp-donors-medicalstaff-view-donors-donation{
+    display: flex;
+    width:100%;
+    margin:12px;
+    margin-top: 45px;
+    height: 250px;
+    background-color: rgb(255, 255, 255);;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.118);
+ 
+    border-radius: 20px;
+    padding:11px
 }
 #add-button-staff{
     background-color:rgba(251, 98, 129, 1);
@@ -171,5 +213,16 @@
     display: inline-block;
     border-radius: 11px;
     font-size: 16px;
+}
+#card-donor-donoation-image-clusteradmin{
+    margin-left: 15px;
+    width:100px;
+    height:100px;
+    text-align: center;
+}
+#card-donor-donoation-view-name-clusteradmin{
+    text-align: center;
+    padding-left: -10px;
+    white-space:nowrap;
 }
  

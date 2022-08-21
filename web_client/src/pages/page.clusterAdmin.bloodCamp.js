@@ -50,7 +50,7 @@ export default function ClusterAdminBloodCamp() {
       </div>
     </div>
     )
-  } else if (window.location.pathname == '/bloodcamp/pendingcampView') {
+  } else if (window.location.pathname == '/bloodcamp/pendingcampView/NamalSilva/982345678V/kesbewa/0777123456/namal@gmail.com') {
     return (<div>
       <SlideMenuClusterAdmin headerName={"Blood Camp"} passData={passData} />
       <div id={`${slidemenu ? 'state-change-true' : 'state-change-false'}`} >

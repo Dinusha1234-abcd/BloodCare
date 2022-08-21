@@ -1,0 +1,397 @@
+
+.landingPageRoot {
+    width: 100%;
+    height: 100%;
+    background-color: #f6e2e6;
+    overflow: hidden;
+    position: fixed;
+  }
+  .flexRow {
+    width: 1217.86px;
+    background-image: url("https://file.rendit.io/n/G6J5zi64jC5X2DDyPxoa.svg");
+    background-size: cover;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px 0px 472.76px 0px;
+  }
+  .ellipse {
+    width: 653px;
+    height: 592px;
+  }
+  .image7 {
+    width: 1315.34px;
+    height: 820.44px;
+    position: absolute;
+    top: 1094.56px;
+    left: 284.66px;
+  }
+  .heroImage {
+    border-color: #dd2c4f;
+    border-style: solid;
+    box-shadow: 0px 4px 60px 0px rgba(122, 19, 39, 0.12);
+    height: 1841px;
+    background-color: #ffffff;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    top: 34px;
+    left: 24px;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 44px;
+    border-radius: 50px;
+    padding: 0px 63px 0px 0px;
+    border-width: 3px;
+  }
+  .element4 {
+    height: 1102px;
+    position: relative;
+    min-width: 1483px;
+  }
+  .flexColumn {
+    height: 919.87px;
+    background-image: url("https://file.rendit.io/n/vVTuUnavKsZqdgU83lxl.svg");
+    background-size: cover;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 53px 208.3px 53px 47px;
+  }
+  .logo1 {
+    height: 69px;
+    display: flex;
+    flex-direction: row;
+    gap: 9px;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0px 0px 133px 0px;
+  }
+  .logo {
+    width: 46px;
+    height: 45px;
+  }
+  .text1 {
+    width: 273px;
+    height: 55px;
+    font-size: 24px;
+    font-family: Inter;
+    color: #e71e43;
+    align-self: flex-end;
+  }
+  .element5 {
+    align-self: stretch;
+    height: 186px;
+    position: relative;
+    min-width: 940px;
+  }
+  .givebloodgivelife3 {
+    height: 55px;
+    font-size: 64px;
+    font-family: Inter;
+    color: #020202;
+    position: absolute;
+    top: 15px;
+    left: 96px;
+  }
+  .bloodDrop {
+    width: 190px;
+    height: 186px;
+    position: absolute;
+    left: 470px;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 0px 161px 96px;
+  }
+  .paragraph {
+    width: 453px;
+    font-size: 16px;
+    font-family: Montserrat;
+    font-weight: 500;
+    letter-spacing: 0.32px;
+    line-height: 22px;
+    color: rgba(22, 30, 41, 0.7);
+  }
+  .readMore {
+    width: 154px;
+    height: 56px;
+    align-self: flex-start;
+    position: relative;
+  }
+  .bg1 {
+    filter: blur(7px);
+    width: 103.38px;
+    height: 42px;
+    background-color: rgba(185, 28, 59, 0.48);
+    position: absolute;
+    top: 14px;
+    left: 25.85px;
+    border-radius: 30.5px;
+  }
+  .bg2 {
+    height: 48px;
+    background-color: #dd2d50;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30.5px;
+    padding: 0px 9.69px 0px 10.77px;
+  }
+  .text2 {
+    text-align: center;
+    width: 133.54px;
+    font-size: 16px;
+    font-family: Montserrat;
+    font-weight: 700;
+    line-height: 20.8px;
+    color: #ffffff;
+  }
+  .text3 {
+    width: 425px;
+    height: 55px;
+    font-size: 36px;
+    font-family: Inter;
+    font-weight: 700;
+    color: #161e29;
+    align-self: flex-end;
+  }
+  .bowl {
+    width: 639px;
+    height: 613px;
+    position: absolute;
+    top: 135px;
+    left: 799px;
+  }
+  .header {
+    width: 567px;
+    display: flex;
+    position: absolute;
+    top: 52px;
+    left: 916px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .element6 {
+    width: 52px;
+    height: 45px;
+    position: relative;
+    flex-grow: 1;
+    margin: 0px 55px 0px 0px;
+  }
+  .text4 {
+    font-size: 18px;
+    font-family: Quicksand;
+    font-weight: 700;
+    line-height: 27px;
+    color: #161e29;
+    position: absolute;
+    top: 10px;
+  }
+  .selector {
+    width: 51px;
+    height: 4px;
+    background-color: #dd2d50;
+    position: absolute;
+    top: 36px;
+    border-radius: 20px;
+  }
+  .text7 {
+    text-align: center;
+    font-size: 16px;
+    font-family: Quicksand;
+    font-weight: 500;
+    line-height: 24px;
+    color: #020202;
+    margin: 0px 37px 0px 0px;
+    padding: 0px;
+    border-width: 0px;
+    background: none;
+    box-sizing: content-box;
+    cursor: pointer;
+  }
+  .redText {
+    display: inline-block;
+    font-size: 18px;
+    font-family: Quicksand;
+    font-weight: 700;
+    line-height: 27px;
+    color: #ffffff;
+    width: 119px;
+    height: 27px;
+    background-color: #dd2d50;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 30.5px;
+    padding: 8px 0px 10px 0px;
+    border-width: 0px;
+ /*   :: placeholder {
+      color: #ffffff;
+    } */
+    outline-width: 0px;
+  }
+  .flexRow1 {
+    width: 1258px;
+    display: flex;
+    flex-direction: row;
+    gap: 31px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: absolute;
+    top: 823px;
+    left: 143px;
+  }
+  .horizontalLine {
+    width: 400px;
+    height: 248px;
+    background-image: url("https://file.rendit.io/n/w4a57pPozJV3bzV2ywsl.svg");
+    background-size: cover;
+    position: relative;
+  }
+  .text8 {
+    text-align: center;
+    width: 206px;
+    height: 58px;
+    display: flex;
+    font-size: 20px;
+    font-family: Montserrat;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    text-transform: capitalize;
+    color: #020202;
+    position: absolute;
+    top: 178px;
+    left: 98px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .bg2 {
+    height: 164px;
+    background-image: url("https://file.rendit.io/n/gqqTJdNkHdVpMjJutFkH.svg");
+    background-size: cover;
+    position: absolute;
+    top: 19px;
+    left: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 4px;
+  }
+  .benefits {
+    width: 781px;
+    height: 199px;
+    position: relative;
+  }
+  .flexColumn1 {
+    display: flex;
+    position: absolute;
+    top: 45px;
+    left: 21px;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .flexRow2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 53px;
+    align-items: center;
+    padding: 0px 143px;
+  }
+  .horizontalLine1 {
+    height: 248px;
+    background-image: url("https://file.rendit.io/n/w4a57pPozJV3bzV2ywsl.svg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 99px 0px 95px;
+  }
+  .bg5 {
+    height: 164px;
+    background-image: url("https://file.rendit.io/n/gqqTJdNkHdVpMjJutFkH.svg");
+    background-size: cover;
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 4px;
+    margin: 0px 19px 0px 0px;
+  }
+  .criteria {
+    width: 122px;
+    height: 117.5px;
+    align-self: flex-start;
+    position: relative;
+    margin: 65px 0px 0px 0px;
+  }
+  .flexRow3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 32px;
+    align-items: center;
+    padding: 0px 141px;
+  }
+  .bg7 {
+    width: 400px;
+    background-color: #dd2d50;
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 31px;
+  }
+  .horizontalLine2 {
+    background-image: url("https://file.rendit.io/n/XFeH5papz0pXFXrZdvvY.svg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    padding: 7px 92px 9px 98px;
+  }
+  .bg8 {
+    height: 164px;
+    background-image: url("https://file.rendit.io/n/gqqTJdNkHdVpMjJutFkH.svg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 4px;
+  }
+  .criteria1 {
+    width: 497px;
+    height: 170px;
+    align-self: flex-start;
+    position: relative;
+    margin: 39px 0px 0px 0px;
+  }
+  .image8 {
+    width: 1319.78px;
+    height: 820.32px;
+    position: absolute;
+    top: 1094.68px;
+    left: 280.22px;
+  }
+  
