@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import SlideMenuHeadNurse from "../components/headnurse/component.slidemenu.headNurse";
 import '../assests/css/headnurse/headnurse.donordetails.css';
 import boy_details from '../assests/images/boy.png';
+import dot from '../assests/images/white-blood-cell.png';
 
 export default function HeadNurseDonorDetails() {
     const [slidemenu, setSlideMenu] = useState(true);
@@ -24,7 +25,7 @@ export default function HeadNurseDonorDetails() {
                     <h2 id = "don-name" > Mr. Nimal Perera</h2>
                </div>
             </div>
-
+            <img id="dot" src={dot}/>
             <p id = "donor-details-p">First Name : Nimal</p>
             <p id = "donor-details-p">Last Name : Perera</p>
             <p id = "donor-details-p">NIC : 985214795V</p>

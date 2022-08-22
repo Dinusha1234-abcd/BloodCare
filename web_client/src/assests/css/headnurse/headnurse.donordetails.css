@@ -82,3 +82,11 @@
     padding-top: 24px;
     color:dimgray;
 }
+#dot{
+    position:absolute;
+    width:250px;
+    height:250px;
+    margin-left: 700px;
+    margin-top: 300px;
+    opacity: 0.3;
+}
