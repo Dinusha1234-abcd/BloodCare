@@ -105,7 +105,7 @@ export default function ForgetPassword() {
 
                     <button type="sumbit" id="pinCode" onClick={userPasswordSet}  > Send Pin Code  </button>  <br />
                     <button type="sumbit" id="updatePassword" onClick={pinConfrimation}> Confirm </button> <br /><br />
-                    <Link to='/login' id="forgetPasswordlogin"  >You have Password?</Link>
+                    {/* <Link to='/login' id="forgetPasswordlogin"  >You have Password?</Link> */}
                 </form>
                 <form id={`${showChangePassword ? 'ForgetForm-display' : 'ForgetForm'}`}   >
 
@@ -116,7 +116,7 @@ export default function ForgetPassword() {
 
 
                     <button type="sumbit" id="updatePassword" onClick={updatePassword}> Update Password </button> <br /><br />
-                    <Link to='/login' id="forgetPasswordlogin"  >You have Password?</Link>
+                    {/* <Link to='/login' id="forgetPasswordlogin"  >You have Password?</Link> */}
                 </form>
                 <img id="imageLogin" src={imageLogin} />
             </div>
