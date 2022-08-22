@@ -28,7 +28,16 @@ export default function HeadNurseProfile() {
         </div>
 
         <div id="profile-edit-headnurse">
-             
+          <form id="edit-headnurse">
+            <label id="headnurse-label" >First Name </label>  <input id="firstname-headnurse" type="text" />
+            <label id="headnurse-label">Last Name </label> <input id="lastname-headnurse" type="text" /> <br></br>
+            <label id="headnurse-label">Phone </label> <input id="phone-headnurse" type="text" /> 
+            <label id="headnurse-label">Email </label> <input id="email-headnurse" type="text" /> <br></br>
+            <label id="headnurse-label">Address   </label> <input id="address-headnurse" type="text"/> <br></br>
+            <label id="headnurse-label">Work Place </label> <input id="workplace-headnurse" type="text" />
+            <label id="headnurse-label">Education </label>  <input id="education-headnurse" type="text" /> <br></br>
+            <input id= "headnurse-save" type="submit" value="Save"/>
+          </form>
         </div>
                
        

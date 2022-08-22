@@ -86,3 +86,24 @@
     box-shadow: 100px 100px 100px 5px rgba(217, 217, 217, 0.5);
     
 }
+
+#headnurse-label{
+   
+    font-size: medium;
+    font-family:sans-serif;
+    font-style: none;
+    margin-top:100px;
+    padding-left: 100px;
+    padding-bottom:200px;
+
+}
+
+#edit-headnurse{
+    margin-top: 20px;
+
+}
+
+#firstname-headnurse{
+    height: 30px ;
+    width: 150px;
+}
