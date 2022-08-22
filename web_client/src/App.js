@@ -28,6 +28,7 @@ import HeadNurseAssignCamps from "./pages/page.headnurse.assigncamps";
 import HeadNursePastCamps from "./pages/page.headnurse.pastcamps";
 import HeadNurseDonorRequests from "./pages/page.headnurse.donorrequests";
 import HeadNurseProfile from "./pages/page.headnurse.profile";
+import HeadNurseDonorDetails from "./pages/page.headnurse.donordetails";
 
 
 //Register Donor
@@ -136,17 +137,18 @@ function App() {
          <Routes>
             <Route path='/dashboard' exact element={<HeadNurseDashboard />} />
             <Route path='/login' exact element={<Login />} />
-            <Route path='/headnurseassigncamps' exact element={<HeadNurseAssignCamps />} />
-            <Route path='/headnursepastcamps' exact element={<HeadNursePastCamps />} />
-            <Route path='/headnursedonorrequests' exact element={<HeadNurseDonorRequests />} />
-            <Route path='/headnurseprofile' exact element={<HeadNurseProfile />} />
+            <Route path='/headnurse/assigncamps' exact element={<HeadNurseAssignCamps />} />
+            <Route path='/headnurse/pastcamps' exact element={<HeadNursePastCamps />} />
+            <Route path='/headnurse/donorrequests' exact element={<HeadNurseDonorRequests />} />
+            <Route path='/headnurse/profile' exact element={<HeadNurseProfile />} />
             <Route path='/' exact element={ <LandingPage /> } />
             <Route path='/camps' exact element={<Camps />} />
             <Route path='/registercamp' exact element={<RegisterCamp />} />
-
+            <Route path='/headnurse/donordetails' exact element={<HeadNurseDonorDetails />} />
          </Routes>
       </BrowserRouter>)
    }
+
    //register donor routes
    else if (localStorage.getItem("type") === "5") {
       return (<BrowserRouter>
