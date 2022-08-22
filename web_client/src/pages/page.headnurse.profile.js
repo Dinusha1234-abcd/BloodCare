@@ -13,8 +13,9 @@ export default function HeadNurseProfile() {
     return (
         <div>
           <SlideMenuHeadNurse headerName={"Profile"} passData={passData} />
-          <div id={`${slidemenu ? 'state-change-true' : 'state-change-false'}`} >   
-          <img id="nurse-img-profile" src={headnurseprofile}/>
+          <div id={`${slidemenu ? 'state-change-true' : 'state-change-false'}`} >  
+          <img id="nurse-img-profile" src={headnurseprofile}  /> 
+          <input type="file" id="headnurse-upload-pic"/> 
           <div id="headnurse-details-profile" > 
              
                 <h4 id="name-headnurse" > Mrs. Nimali Perera </h4> 
@@ -29,13 +30,13 @@ export default function HeadNurseProfile() {
 
         <div id="profile-edit-headnurse">
           <form id="edit-headnurse">
-            <label id="headnurse-label" >First Name </label>  <input id="firstname-headnurse" type="text" />
-            <label id="headnurse-label">Last Name </label> <input id="lastname-headnurse" type="text" /> <br></br>
-            <label id="headnurse-label">Phone </label> <input id="phone-headnurse" type="text" /> 
-            <label id="headnurse-label">Email </label> <input id="email-headnurse" type="text" /> <br></br>
-            <label id="headnurse-label">Address   </label> <input id="address-headnurse" type="text"/> <br></br>
-            <label id="headnurse-label">Work Place </label> <input id="workplace-headnurse" type="text" />
-            <label id="headnurse-label">Education </label>  <input id="education-headnurse" type="text" /> <br></br>
+            <label id="headnurse-label1" >First Name </label> <i class="fa fa-edit icon" id="icon-headnurse"></i><input id="firstname-headnurse" type="text" placeholder="Nimali.." />
+            <label id="headnurse-label2">Last Name </label> <i class="fa fa-edit icon" id="icon-headnurse"></i><input id="lastname-headnurse" type="text" placeholder="Perera.." /> <br></br>
+            <label id="headnurse-label3">Phone </label>  <i class="fa fa-edit icon" id="icon-headnurse"></i><input id="phone-headnurse" type="text" placeholder="071-2458741.." />  
+            <label id="headnurse-label4">Email </label>  <i class="fa fa-edit icon" id="icon-headnurse"></i><input id="email-headnurse" type="text" placeholder="nimali@gmail.com.."  />  <br></br>
+            <label id="headnurse-label5">Address   </label> <i class="fa fa-edit icon" id="icon-headnurse"></i><input id="address-headnurse" type="text" placeholder="Colombo.." /> <br></br>
+            <label id="headnurse-label6">Work Place </label> <i class="fa fa-edit icon" id="icon-headnurse"></i> <input id="workplace-headnurse" type="text" placeholder="General Hospital, Colombo.."/>  
+            <label id="headnurse-label7">Education </label> <i class="fa fa-edit icon" id="icon-headnurse"></i> <input id="education-headnurse" type="text" placeholder="BSc. (Hons.) Nursing Studies." /> <br></br>
             <input id= "headnurse-save" type="submit" value="Save"/>
           </form>
         </div>
