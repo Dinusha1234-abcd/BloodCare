@@ -16,7 +16,7 @@
 #pending-camp-container-box1-clusterAdmin{
     margin-top: 20px;
     padding: 20px;
-    width:100%;
+    width:130%;
     height:350px; 
     border-radius: 20px;
     background-color: rgb(255, 255, 255);
@@ -106,7 +106,7 @@
     border-color: rgba(158, 135, 140, 1);
     font-weight: 400;
     font-size: 15px;
-    margin-left: 400px;
+     
 
 }
 #sumbit-send-SMS-clusterAdmin{
@@ -147,9 +147,9 @@
 }
 #medicalstaff-display-table-display{
     height: 500px;
-    width: 33%;
+    width: 20%;
     background-color: rgb(255, 255, 255);;
-    margin-left: 2%;
+    margin-left:14%;
     margin-top: 44px;
     border-radius: 20px;
     padding-top: 11px;

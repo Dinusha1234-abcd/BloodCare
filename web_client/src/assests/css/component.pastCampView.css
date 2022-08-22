@@ -1,5 +1,6 @@
 #past-camp-view{
     display: flex;
+    height:500px;
 }
 
 
@@ -164,7 +165,7 @@
     height: 500px;
     width: 100%;
     background-color: rgb(255, 255, 255);;
-    margin-left: 2%;
+    
     margin-top: 44px;
     border-radius: 20px;
     padding-top: 11px;
@@ -225,4 +226,35 @@
     padding-left: -10px;
     white-space:nowrap;
 }
+#medical-staff-assign-view-table {
+    margin-left: 20px;
+    
+    border-collapse: collapse;
+    width: 86%;
+  }
+  
+  #medical-staff-assign-view-table td, #medical-staff-assign-view-table th {
+    border-radius: 1px solid rgba(253, 223, 229, 0.956) ;
+    padding: 8px;   
+    text-align: center;
+    
+  }
+  
+  #medical-staff-assign-view-table tr:nth-child(even){background-color: rgba(253, 223, 229, 0.4) ;}
+  
+  #medical-staff-assign-view-table tr:hover {background-color: rgba(253, 223, 229, 0.4) ;}
+  
+  #medical-staff-assign-view-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+   
+    text-align: center;
+    background-color:rgba(221, 45, 80, 0.26);
+    color: rgb(21, 19, 19);
+  }
+  #card-donor-donoation-view-name-clusteradmin-count{
+    margin-left: 50px;
+    margin-top: 20px;
+  }
+
  
