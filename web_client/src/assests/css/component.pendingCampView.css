@@ -16,7 +16,7 @@
 #pending-camp-container-box1-clusterAdmin{
     margin-top: 20px;
     padding: 20px;
-    width:130%;
+    width:100%;
     height:350px; 
     border-radius: 20px;
     background-color: rgb(255, 255, 255);
@@ -147,9 +147,9 @@
 }
 #medicalstaff-display-table-display{
     height: 500px;
-    width: 20%;
+    width: 30%;
     background-color: rgb(255, 255, 255);;
-    margin-left:14%;
+    margin-left:2%;
     margin-top: 44px;
     border-radius: 20px;
     padding-top: 11px;

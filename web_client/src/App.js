@@ -110,9 +110,9 @@ function App() {
             <Route path='/blood/Bnegative' exact element={<ClusterAdminBlood />} />
             <Route path='/blood/ABpositive' exact element={<ClusterAdminBlood />} />
             <Route path='/blood/ABNegative' exact element={<ClusterAdminBlood />} />
-            
-   
- 
+            <Route path='/' exact element={<LandingPage />} />
+            <Route path='/camps' exact element={<Camps />} />
+            <Route path='/registercamp' exact element={<RegisterCamp />} />
             </Routes>
          </BrowserRouter>)
  

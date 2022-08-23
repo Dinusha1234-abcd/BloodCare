@@ -16,6 +16,7 @@ export default function Slide(props) {
    
   function logout() {
     localStorage.removeItem("token");
+    localStorage.removeItem("userNic");
     localStorage.removeItem("firstName");
     localStorage.removeItem("lastName");
     localStorage.removeItem("type");
