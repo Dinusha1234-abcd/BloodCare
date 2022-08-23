@@ -395,6 +395,7 @@ const Text1 = styled.div`
   height: 55px;
   font-size: 24px;
   font-family: Inter;
+  font-weight: bold;
   color: #e71e43;
   align-self: flex-end;
 `;

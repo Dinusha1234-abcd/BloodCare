@@ -554,3 +554,7 @@
     border-width: 1px;
   }
   
+  #calender{
+    position: absolute;
+    right:10px;
+}

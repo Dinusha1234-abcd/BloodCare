@@ -1,5 +1,8 @@
-import React from "react";
+import { React, useState } from "react";
 import styled from "styled-components";
+import Calendar from 'react-calendar';
+
+
 export default function Camps() {
   const IconButtonFunction = (e, name) => {
     alert(`${name} was clicked`);
@@ -10,6 +13,10 @@ export default function Camps() {
   const Text63Function = (e, name) => {
     alert(`${name} was clicked`);
   };
+
+  const [date, setDate] = useState(new Date());
+
+ 
   return (
     <CampsRoot>
       <FlexRow>
@@ -22,137 +29,36 @@ export default function Camps() {
             <Logo src={`https://file.rendit.io/n/rVsJvSQj68EZGNCwxrQO.png`} />
             <Text1>BLOODCARE</Text1>
           </FlexRow1>
+          <Header>
+          <Text60>Home</Text60>
+          <FlexColumn3>
+            <Text61 margin={`0`}>Camps</Text61>
+            <Selector />
+          </FlexColumn3>
+          <Text61 margin={`0px 56px 0px 0px`}>About</Text61>
+          <RedText placeholder={`Login`} />
+        </Header>
           <FlexRow2>
+
             <FlexColumn1>
+            
+              <CalendarContainer>
+                 <Calendar onChange={setDate} readOnly={true} value={date} id="calender" />
+              </CalendarContainer>
+
               <Element52>
-                <WhiteFlexColumn>
-                  <FlexRow3>
-                    <Element53 margin={`0px 14px 0px 0px`}>
-                      <PiggyPinkRectangle />
-                      <Text2 left={`6px`}>&#60;</Text2>
-                    </Element53>
-                    <Text3>JULY 2022</Text3>
-                    <Element53 margin={`0`}>
-                      <PiggyPinkRectangle />
-                      <Text2 left={`6px`}>&#62;</Text2>
-                    </Element53>
-                  </FlexRow3>
-                  <Line12
-                    src={`https://file.rendit.io/n/3l5FizzWK6sL5RYFLPVd.svg`}
-                  />
-                  <FlexRow4>
-                    <Text5 margin={`0px 14px 0px 0px`}>Mo</Text5>
-                    <Text5 margin={`0px 13px 0px 0px`}>Tu</Text5>
-                    <Text5 margin={`0px 13px 0px 0px`}>We</Text5>
-                    <Text5 margin={`0px 13px 0px 0px`}>Th</Text5>
-                    <Text5 margin={`0px 16px 0px 0px`}>Fr</Text5>
-                    <Text5 margin={`0px 15px 0px 0px`}>St</Text5>
-                    <Text11 color={`rgba(221, 45, 80, 0.79)`}>Su</Text11>
-                  </FlexRow4>
-                  <Line13
-                    src={`https://file.rendit.io/n/isv67sM9MAgfkNfa5SQf.svg`}
-                  />
-                  <FlexRow5>
-                    <Text12 margin={`0px 28px 0px 0px`}>1</Text12>
-                    <Text13 margin={`0px 25px 0px 0px`}>2</Text13>
-                    <Text11 color={`rgba(221, 45, 80, 0.8)`}>3</Text11>
-                  </FlexRow5>
-                  <Line7
-                    src={`https://file.rendit.io/n/isv67sM9MAgfkNfa5SQf.svg`}
-                  />
-                  <FlexRow6>
-                    <Text13 margin={`0px 31px 0px 0px`}>4</Text13>
-                    <Text13 margin={`0px 22px 0px 0px`}>5</Text13>
-                    <Element55>
-                      <Text2 left={`8px`}>6</Text2>
-                      <MelonRectangle top={`1px`} />
-                    </Element55>
-                    <Text13 margin={`0px 27px 0px 0px`}>7</Text13>
-                    <Text12 margin={`0px 24px 0px 0px`}>8</Text12>
-                    <Text12 margin={`0px 19px 0px 0px`}>9</Text12>
-                    <Text11 color={`rgba(221, 45, 80, 0.8)`}>10</Text11>
-                  </FlexRow6>
-                  <Line8
-                    src={`https://file.rendit.io/n/isv67sM9MAgfkNfa5SQf.svg`}
-                  />
-                  <FlexRow7>
-                    <Text13 margin={`0px 22px 0px 0px`}>11</Text13>
-                    <Text13 margin={`0px 18px 0px 0px`}>12</Text13>
-                    <Text13 margin={`0px 17px 0px 0px`}>13</Text13>
-                    <Text13 margin={`0px 15px 0px 0px`}>14</Text13>
-                    <Element56>
-                      <Text26>15</Text26>
-                      <MelonRectangle top={`2px`} />
-                    </Element56>
-                    <Text13 margin={`0px 14px 0px 0px`}>16</Text13>
-                    <Text28>17</Text28>
-                  </FlexRow7>
-                  <Line9
-                    src={`https://file.rendit.io/n/isv67sM9MAgfkNfa5SQf.svg`}
-                  />
-                  <FlexRow8>
-                    <Text29 margin={`0px 20px 0px 0px`}>18</Text29>
-                    <Text29 margin={`0px 16px 0px 0px`}>19</Text29>
-                    <Text13 margin={`0px 16px 0px 0px`}>20</Text13>
-                    <Text13 margin={`0px 15px 0px 0px`}>21</Text13>
-                    <Text13 margin={`0px 10px 0px 0px`}>22</Text13>
-                    <Text13 margin={`0px 13px 0px 0px`}>23</Text13>
-                    <Text28>24</Text28>
-                  </FlexRow8>
-                  <Line10
-                    src={`https://file.rendit.io/n/isv67sM9MAgfkNfa5SQf.svg`}
-                  />
-                  <FlexRow9>
-                    <Text13 margin={`0px 17px 0px 0px`}>25</Text13>
-                    <Text13 margin={`0px 17px 0px 0px`}>26</Text13>
-                    <Text13 margin={`0px 14px 0px 0px`}>27</Text13>
-                    <Text13 margin={`0px 9px 0px 0px`}>28</Text13>
-                    <Element57>
-                      <Text2 left={`2px`}>29</Text2>
-                      <MelonRectangle top={`1px`} />
-                    </Element57>
-                    <Text13 margin={`0px 12px 0px 0px`}>30</Text13>
-                    <Text11 color={`rgba(221, 45, 80, 0.8)`}>31</Text11>
-                  </FlexRow9>
-                </WhiteFlexColumn>
-                <Line
-                  src={`https://file.rendit.io/n/ceqG1BJZ2O4vzxKWOa17.svg`}
-                  left={`56.5px`}
-                />
-                <Line
-                  src={`https://file.rendit.io/n/ceqG1BJZ2O4vzxKWOa17.svg`}
-                  left={`101.5px`}
-                />
-                <Line
-                  src={`https://file.rendit.io/n/ceqG1BJZ2O4vzxKWOa17.svg`}
-                  left={`142.5px`}
-                />
-                <Line3
-                  src={`https://file.rendit.io/n/Yz8XAws8cy4rFHrmfgXN.svg`}
-                  left={`183px`}
-                />
-                <Line3
-                  src={`https://file.rendit.io/n/Yz8XAws8cy4rFHrmfgXN.svg`}
-                  left={`223px`}
-                />
-                <Line5
-                  src={`https://file.rendit.io/n/wm8Fh9MOZrdHBZwNaSSW.svg`}
-                />
-                <Line3
-                  src={`https://file.rendit.io/n/Yz8XAws8cy4rFHrmfgXN.svg`}
-                  left={`301px`}
-                />
-                <Line
-                  src={`https://file.rendit.io/n/ceqG1BJZ2O4vzxKWOa17.svg`}
-                  left={`13.5px`}
-                />
-                <WhiteRectangle1 />
-                <Text43>Choose your district</Text43>
-                <Text44>--Select--</Text44>
-                <Icroundarrowdropdown
-                  src={`https://file.rendit.io/n/UDd7hnMqnMZueOlc740g.svg`}
-                />
+              <Text43>Choose your district</Text43>
+               
+                <Select>
+                <option value="" disabled selected hidden>Select District</option>
+                <option value="1">Colombo</option>
+                <option value="2">Galle</option>
+                <option value="3">Kandy</option>
+                <option value="4">Jaffna</option>
+              </Select>
               </Element52>
+
+          
               <Map2>
                 <Map1>
                   <Element58>
@@ -215,7 +121,7 @@ export default function Camps() {
                       <Text47>Supipi Blood Camp</Text47>
                       <Paragraph>
                         Join our blood camp organized by the Leo Club of
-                        University of Colombo!|
+                        University of Colombo!
                         <br />
                         <br />
                         {"       "}
@@ -239,18 +145,6 @@ export default function Camps() {
                       />
                     </Content>
                     <Footer height={`15px`}>
-                      <Action>
-                        <Image1
-                          src={`https://file.rendit.io/n/WRjuIgg7CMkKDZ4egNKi.svg`}
-                        />
-                        <Label color={`#64748b`}>5</Label>
-                      </Action>
-                      <Action>
-                        <Image1
-                          src={`https://file.rendit.io/n/VX20TObXiHrY7OTJnVrK.svg`}
-                        />
-                        <Label color={`#64748b`}>2</Label>
-                      </Action>
                       <Action2>
                         <Image1
                           src={`https://file.rendit.io/n/nkwg6PdHOZ0AINY0BgTB.svg`}
@@ -269,7 +163,7 @@ export default function Camps() {
                       <Text47>Supipi Blood Camp</Text47>
                       <Paragraph>
                         Join our blood camp organized by the Leo Club of
-                        University of Colombo!|
+                        University of Colombo!
                         <br />
                         <br />
                         {"       "}
@@ -293,18 +187,6 @@ export default function Camps() {
                       />
                     </Content>
                     <Footer height={`15px`}>
-                      <Action>
-                        <Image1
-                          src={`https://file.rendit.io/n/WRjuIgg7CMkKDZ4egNKi.svg`}
-                        />
-                        <Label color={`#64748b`}>5</Label>
-                      </Action>
-                      <Action>
-                        <Image1
-                          src={`https://file.rendit.io/n/VX20TObXiHrY7OTJnVrK.svg`}
-                        />
-                        <Label color={`#64748b`}>2</Label>
-                      </Action>
                       <Action2>
                         <Image1
                           src={`https://file.rendit.io/n/nkwg6PdHOZ0AINY0BgTB.svg`}
@@ -318,7 +200,7 @@ export default function Camps() {
                       <Text47>Supipi Blood Camp</Text47>
                       <Paragraph>
                         Join our blood camp organized by the Leo Club of
-                        University of Colombo!|
+                        University of Colombo!
                         <br />
                         <br />
                         {"       "}
@@ -342,18 +224,6 @@ export default function Camps() {
                       />
                     </Content>
                     <Footer height={`auto`}>
-                      <Action>
-                        <Message2
-                          src={`https://file.rendit.io/n/WRjuIgg7CMkKDZ4egNKi.svg`}
-                        />
-                        <Text52 width={`7px`}>5</Text52>
-                      </Action>
-                      <Action>
-                        <Message2
-                          src={`https://file.rendit.io/n/VX20TObXiHrY7OTJnVrK.svg`}
-                        />
-                        <Text52 width={`7px`}>2</Text52>
-                      </Action>
                       <Action2>
                         <Message2
                           src={`https://file.rendit.io/n/nkwg6PdHOZ0AINY0BgTB.svg`}
@@ -393,18 +263,6 @@ export default function Camps() {
                       />
                     </Content>
                     <Footer height={`15px`}>
-                      <Action>
-                        <Image1
-                          src={`https://file.rendit.io/n/WRjuIgg7CMkKDZ4egNKi.svg`}
-                        />
-                        <Label color={`#64748b`}>5</Label>
-                      </Action>
-                      <Action>
-                        <Image1
-                          src={`https://file.rendit.io/n/VX20TObXiHrY7OTJnVrK.svg`}
-                        />
-                        <Label color={`#64748b`}>2</Label>
-                      </Action>
                       <Action2>
                         <Image1
                           src={`https://file.rendit.io/n/nkwg6PdHOZ0AINY0BgTB.svg`}
@@ -442,18 +300,6 @@ export default function Camps() {
                       />
                     </Content>
                     <Footer height={`15px`}>
-                      <Action>
-                        <Image1
-                          src={`https://file.rendit.io/n/WRjuIgg7CMkKDZ4egNKi.svg`}
-                        />
-                        <Label color={`#64748b`}>5</Label>
-                      </Action>
-                      <Action>
-                        <Image1
-                          src={`https://file.rendit.io/n/VX20TObXiHrY7OTJnVrK.svg`}
-                        />
-                        <Label color={`#64748b`}>2</Label>
-                      </Action>
                       <Action2>
                         <Image1
                           src={`https://file.rendit.io/n/nkwg6PdHOZ0AINY0BgTB.svg`}
@@ -491,18 +337,6 @@ export default function Camps() {
                       />
                     </Content>
                     <Footer height={`auto`}>
-                      <Action>
-                        <Message2
-                          src={`https://file.rendit.io/n/WRjuIgg7CMkKDZ4egNKi.svg`}
-                        />
-                        <Text52 width={`7px`}>5</Text52>
-                      </Action>
-                      <Action>
-                        <Message2
-                          src={`https://file.rendit.io/n/VX20TObXiHrY7OTJnVrK.svg`}
-                        />
-                        <Text52 width={`7px`}>2</Text52>
-                      </Action>
                       <Action2>
                         <Message2
                           src={`https://file.rendit.io/n/nkwg6PdHOZ0AINY0BgTB.svg`}
@@ -516,18 +350,6 @@ export default function Camps() {
             </FlexColumn2>
           </FlexRow2>
         </FlexColumn>
-        <Header>
-          <Text60>Home</Text60>
-          <FlexColumn3>
-            <Text61 margin={`0`}>Camps</Text61>
-            <Selector />
-          </FlexColumn3>
-          <Text61 margin={`0px 56px 0px 0px`}>About</Text61>
-          <Text63 onClick={(e) => Text63Function(e, "Text63")}>
-            Contact Us
-          </Text63>
-          <RedText placeholder={`Login`} />
-        </Header>
         <LaneInner2>
           <Task height={`200px`}>
             <Content>
@@ -558,18 +380,6 @@ export default function Camps() {
               />
             </Content>
             <Footer height={`15px`}>
-              <Action>
-                <Image1
-                  src={`https://file.rendit.io/n/WRjuIgg7CMkKDZ4egNKi.svg`}
-                />
-                <Label color={`#64748b`}>5</Label>
-              </Action>
-              <Action>
-                <Image1
-                  src={`https://file.rendit.io/n/VX20TObXiHrY7OTJnVrK.svg`}
-                />
-                <Label color={`#64748b`}>2</Label>
-              </Action>
               <Action2>
                 <Image1
                   src={`https://file.rendit.io/n/nkwg6PdHOZ0AINY0BgTB.svg`}
@@ -586,8 +396,8 @@ export default function Camps() {
                 Colombo!|
                 <br />
                 <br />
-                {"       "}
-                32/1, Road Lane, Colombo
+                {"    32/1, Road Lane, Colombo   "}
+                
               </Paragraph>
               <FlexRow12>
                 <PiggyPinkText>Register</PiggyPinkText>
@@ -607,18 +417,6 @@ export default function Camps() {
               />
             </Content>
             <Footer height={`15px`}>
-              <Action>
-                <Image1
-                  src={`https://file.rendit.io/n/WRjuIgg7CMkKDZ4egNKi.svg`}
-                />
-                <Label color={`#64748b`}>5</Label>
-              </Action>
-              <Action>
-                <Image1
-                  src={`https://file.rendit.io/n/VX20TObXiHrY7OTJnVrK.svg`}
-                />
-                <Label color={`#64748b`}>2</Label>
-              </Action>
               <Action2>
                 <Image1
                   src={`https://file.rendit.io/n/nkwg6PdHOZ0AINY0BgTB.svg`}
@@ -656,18 +454,6 @@ export default function Camps() {
               />
             </Content>
             <Footer height={`auto`}>
-              <Action>
-                <Message2
-                  src={`https://file.rendit.io/n/WRjuIgg7CMkKDZ4egNKi.svg`}
-                />
-                <Text52 width={`7px`}>5</Text52>
-              </Action>
-              <Action>
-                <Message2
-                  src={`https://file.rendit.io/n/VX20TObXiHrY7OTJnVrK.svg`}
-                />
-                <Text52 width={`7px`}>2</Text52>
-              </Action>
               <Action2>
                 <Message2
                   src={`https://file.rendit.io/n/nkwg6PdHOZ0AINY0BgTB.svg`}
@@ -715,6 +501,7 @@ const Text5 = styled.div`
 const Text11 = styled.div`
   font-size: 20px;
   font-family: Inter;
+  font-weight: bold;
   letter-spacing: 0.6px;
   color: ${(props) => props.color};
 `;
@@ -1080,7 +867,7 @@ const WhiteFlexColumn = styled.div`
   border-radius: 30px;
   padding: 9px 20.99px 9px 14px;
 `;
-const FlexRow3 = styled.div`
+const CalendarContainer = styled.div`
   display: flex;
   flex-direction: row;
   padding: 0px 44.01px 0px 50px;
@@ -1526,4 +1313,25 @@ const LaneInner2 = styled.div`
   border-radius: 24px;
   padding: 16px;
   border-width: 1px;
+`;
+
+const Select = styled.select`
+  width: 100%;
+  height: 35px;
+  background: white;
+  color: gray;
+  padding-left: 5px;
+  font-size: 14px;
+  border: none;
+  margin-left: 10px;
+  border-radius: 25px;
+
+  option {
+    color: black;
+    background: white;
+    display: flex;
+    white-space: pre;
+    min-height: 20px;
+    padding: 0px 2px 1px;
+  }
 `;
