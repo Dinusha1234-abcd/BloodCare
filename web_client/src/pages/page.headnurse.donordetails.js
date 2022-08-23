@@ -42,8 +42,7 @@ export default function HeadNurseDonorDetails() {
           </div>
 
 
-
-
+          
         </div> 
         </div>
         
