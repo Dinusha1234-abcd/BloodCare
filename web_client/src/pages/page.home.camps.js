@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import styled from "styled-components";
 import Calendar from 'react-calendar';
+import NavBar from "../components/component.home.navbar";
 
 
 export default function Camps() {
@@ -29,15 +30,7 @@ export default function Camps() {
             <Logo src={`https://file.rendit.io/n/rVsJvSQj68EZGNCwxrQO.png`} />
             <Text1>BLOODCARE</Text1>
           </FlexRow1>
-          <Header>
-          <Text60>Home</Text60>
-          <FlexColumn3>
-            <Text61 margin={`0`}>Camps</Text61>
-            <Selector />
-          </FlexColumn3>
-          <Text61 margin={`0px 56px 0px 0px`}>About</Text61>
-          <RedText placeholder={`Login`} />
-        </Header>
+          <NavBar />
           <FlexRow2>
 
             <FlexColumn1>

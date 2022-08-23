@@ -1,0 +1,30 @@
+.topNav {
+    font-size: 18px;
+    font-family: Quicksand;
+    font-weight: 500;
+    line-height: 27px;
+    color: #161e29;
+    margin: auto;
+}
+
+.registerBtn {
+    text-align: center;
+    width: 133.54px;
+    font-size: 16px;
+    font-family: Quicksand;
+    font-weight: 700;
+    line-height: 20.8px;
+    color: #ffffff;
+  }
+
+  #login {
+    height: 48px;
+    background-color: #dd2d50;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30.5px;
+    padding: 0px 9.69px 0px 10.77px;
+  }

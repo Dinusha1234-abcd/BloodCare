@@ -2,6 +2,7 @@ import {React, useState} from "react";
 import styled from "styled-components";
 import '../assests/css/component.doctors.css';
 import '../assests/css/page.home.registerCamp.css';
+import NavBar from "../components/component.home.navbar";
 
 export default function RegisterCamp() {
   const [formReg, setFormReg] = useState(false);
@@ -29,15 +30,7 @@ export default function RegisterCamp() {
           <FlexRow1>
             <Logo src={`https://file.rendit.io/n/rIXKIhzUONoiz8h8QLmu.png`} />
             <Text2>BLOODCARE</Text2>
-            <Header>
-          <Element5>
-            <Text13>Home</Text13>
-            <Selector />
-          </Element5>
-          <Text14 margin={`0px 55px 0px 0px`}>Camps</Text14>
-          <Text14 margin={`0px 56px 0px 0px`}>About</Text14>
-          <RedText placeholder={`Login`} />
-        </Header>
+            <NavBar />
             <Element1>
               <Text3>Blood Camp Registration</Text3>
               <Text1 />
@@ -81,7 +74,7 @@ export default function RegisterCamp() {
                                 <td></td>
                                 <td>District</td>
                                 <td><select id="register-form-new-camp" placeholder="Enter District"  onChange={(e)=>{setDistrict(e.target.value)}}>
-                                <option value="">Select District</option>
+                                <option value="" disabled selected>Select District</option>
                                 <option value="colombo">Colombo</option>
                                 <option value="galle">Galle</option>
                                 <option value="kandy">Kandy</option>
@@ -92,7 +85,7 @@ export default function RegisterCamp() {
                             <tr>
                                 <td>Cluster Center</td>
                                 <td>   <select id="register-form-new-camp" placeholder="Enter Cluster Center"  onChange={(e)=>{setClusterCenter(e.target.value)}}>
-                                <option value="">Select Cluster Center</option>
+                                <option value="" disabled selected>Select Cluster Center</option>
                                 <option value="nbc">NBC</option>
                                 <option value="nhsl">NHSL</option>
                                 <option value="cshw">CSHW</option>

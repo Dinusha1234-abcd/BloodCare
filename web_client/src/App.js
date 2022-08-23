@@ -50,6 +50,7 @@ import RegDonorProfile from './pages/page.regdonor.profile';
 import LandingPage from "./pages/page.home.landingPage";
 import Camps from "./pages/page.home.camps";
 import RegisterCamp from "./pages/page.home.registerCamp";
+import navbar from './components/component.home.navbar';
 
 
 function App() {
