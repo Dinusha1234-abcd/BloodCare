@@ -12,13 +12,26 @@
     position: absolute;
     width: 120px;
     height: 45px;
-    margin-left: 280px;
-    margin-top: 50px;
+    left: 450px;
+    margin-top: 100px;
     border-style: none;
     background: rgba(245, 134, 134, 0.3);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
     color: #FF6565;
+    font-size: 22px;
+}
+#Donor-cancel{
+    position: absolute;
+    width: 120px;
+    height: 45px;
+    left: 600px;
+    margin-top: 100px;
+    border-style: none;
+    background: rgba(38, 168, 38, 0.3);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    color: #26A826;
     font-size: 22px;
 }
 #profile-page-donor-name{
@@ -51,4 +64,52 @@
     letter-spacing: 0.02em;
 
     color: #FF6565;
+}
+#regDonor-profile-form{
+    margin-top: 150px;
+    margin-left: 100px;
+}
+#regDonor-profile-form input[type=text] {
+    font-family: 'Ubuntu';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 29px;
+    letter-spacing: 0.02em;
+    width: 280px;
+    height: 45px;
+    color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(253, 223, 229, 1);
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 10px;
+}
+#regDonor-profile-form label{
+    font-family: 'Ubuntu';
+    font-style:italic;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 29px;
+    letter-spacing: 0.02em;
+
+    color: #000000;
+}
+#reg-donor-NIC{
+    margin-left: 300px;
+    
+}
+#reg-Donor-NIC{
+    margin-left: 70px;
+}
+#reg-donor-email{
+    margin-left: 280px;
+}
+#reg-Donor-Email{
+    margin-left: 70px;
+}
+#reg-donor-district{
+    margin-left: 280px;
+}
+#reg-Donor-District{
+    margin-left: 70px;
 }
