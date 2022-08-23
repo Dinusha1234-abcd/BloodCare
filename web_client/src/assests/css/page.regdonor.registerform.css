@@ -70,9 +70,8 @@
     margin-left: 20px;
     background-color: #FF6565;
 }
- 
-/* input[type=text] {
- 
+
+#reg-form input[type=text] {
     font-family: 'Ubuntu';
     font-style: italic;
     font-weight: 400;
@@ -86,8 +85,8 @@
     border: 1px solid rgba(0, 0, 0, 0.6);
     border-radius: 10px;
     padding: 10px;
-} */
-label{
+}
+#reg-form label{
     font-family: 'Ubuntu';
     font-style:italic;
     font-weight: 400;
@@ -96,9 +95,10 @@ label{
     letter-spacing: 0.02em;
 
     color: #000000;
-}*/
-input[type=radio]{
-    /*background-color: #2196F3;*/
+}
+
+#regDonor-profile-form input[type=radio]{
+   /* background-color: #2196F3;*/
     width: 20px;
     height: 20px;
     background-color: #FF6565;

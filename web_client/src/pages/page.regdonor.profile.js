@@ -22,7 +22,7 @@ export default function RegDonorProfile() {
                 <input type="text" id="reg-Donor-Address" name="reg-Donor-Address" value="131/A, Waduramulla, Panadura"></input>
                 <input type="text" id="reg-Donor-District" name="reg-Donor-District" value="Kalutara"></input>
                 <button id="donor-save">Save</button>
-                <button id="donor-cancel">Cancel </button>
+                <button id="Donor-cancel">Cancel </button>
             </form>
             </div>
         </div>

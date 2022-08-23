@@ -25,7 +25,15 @@ const SlideBar = (props)  =>{
     AsyncStorage.removeItem('type');
     props.nav.replace('Login');
    }
-
+    function navgationToHome({navigation}){
+        props.nav.replace('Home');
+    }
+    function navigationToHistory(){
+        props.nav.replace('History');
+    }
+    function navgationToCalender(){
+        props.nav.replace('Calendar');
+     }
     return (
         <><View style={styles.slideBarHeadertab}>
             <Pressable onPress={() => { setShow(!show) }}><Image style={styles.slideBaruserIcon} source={require('../assests/menu.png')} onPress={() => { setShow(!show) }} /></Pressable>
@@ -43,15 +51,15 @@ const SlideBar = (props)  =>{
                 </Pressable>
             </View>
             <View style={show ? styles.slideBarActive : styles.slideBar} >
-                <Pressable style={styles.HomeButton} color="rgba(255, 63, 101, 1)"  >
+                <Pressable style={styles.HomeButton} color="rgba(255, 63, 101, 1)" onPress={navgationToHome} >
 
                     <Text style={styles.NavText}>  <Image style={styles.homeicon} source={require('../assests/home.jpg')} />{"   "} Home</Text>
                 </Pressable>
-                <Pressable style={styles.CalendarButton} color="rgba(255, 63, 101, 1)"  >
+                <Pressable style={styles.CalendarButton} color="rgba(255, 63, 101, 1)" onPress={navgationToCalender} >
 
                     <Text style={styles.NavText}>  <Image style={styles.calender} source={require('../assests/calendar.jpg')} />{"  "}  Calendar</Text>
                 </Pressable>
-                <Pressable style={styles.HistoryButton} color="rgba(255, 63, 101, 1)"  >
+                <Pressable style={styles.HistoryButton} color="rgba(255, 63, 101, 1)" onPress={navigationToHistory}  >
                     <Text style={styles.NavTextCalendar}> <Image style={styles.history} source={require('../assests/history.jpg')} />{"  "} History</Text>
                 </Pressable>
       </View></>
