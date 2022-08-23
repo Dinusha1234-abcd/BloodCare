@@ -1,6 +1,25 @@
-import React from "react";
+import {React, useState} from "react";
 import styled from "styled-components";
+import '../assests/css/component.doctors.css';
+import '../assests/css/page.home.registerCamp.css';
+import NavBar from "../components/component.home.navbar";
+
 export default function RegisterCamp() {
+  const [formReg, setFormReg] = useState(false);
+  const [FullName, setFullName] = useState("");
+  const [NIC , setNIC]  = useState("");
+  const [email, setEmail] = useState("");
+  const [mobileNumber, setContact] = useState("");
+  const [campName , setCampName] = useState("")
+  const [campDate , setCampDate] = useState("")
+  const [location, setLocation] = useState("");
+  const [district , setDistrict] = useState("")
+  const [clusterCenter,setClusterCenter] = useState("");
+  const [content , setContent] = useState("")
+  const [file , setFile] = useState("")
+  const [message,setMessage] = useState("");
+  const [success, setSuccess] = useState(false)
+
   return (
     <RegisteredDonorUpcomingBloodCampRoot>
       <FlexRow>
@@ -11,84 +30,87 @@ export default function RegisterCamp() {
           <FlexRow1>
             <Logo src={`https://file.rendit.io/n/rIXKIhzUONoiz8h8QLmu.png`} />
             <Text2>BLOODCARE</Text2>
+            <NavBar />
             <Element1>
               <Text3>Blood Camp Registration</Text3>
               <Text1 />
             </Element1>
           </FlexRow1>
           <FlexRow2>
-            <Text4 margin={`0`}>Your Name</Text4>
-            <Text4 margin={`0`}>
-              NIC
-              <br />
-            </Text4>
-          </FlexRow2>
-          <WhiteRectangle margin={`0px 0px 25px 142px`} />
-          <FlexRow2>
-            <Text4 margin={`0`}>Contact </Text4>
-            <Text4 margin={`0`}>
-              Email
-              <br />
-            </Text4>
-          </FlexRow2>
-          <WhiteRectangle margin={`0px 0px 31px 142px`} />
-          <Text4 margin={`0px 0px 0px 185px`}>Blood camp name</Text4>
-          <WhiteRectangle margin={`0px 0px 37px 142px`} />
-          <FlexRow4>
-            <Element2>
-              <WhiteFlexRow>
-                <Akariconslocation
-                  src={`https://file.rendit.io/n/BVNtXz3fug0qw6OvETQ1.svg`}
-                />
-              </WhiteFlexRow>
-              <Text6>Location</Text6>
-            </Element2>
-            <Text4 margin={`1px 0px 0px 0px`}>District</Text4>
-          </FlexRow4>
-          <FlexRow5>
-            <Element3>
-              <WhiteFlexRow1>
-                <Text8>--Select--</Text8>
-              </WhiteFlexRow1>
-              <Icroundarrowdropdown
-                src={`https://file.rendit.io/n/lMU1M3hi4H6iXhD0JeSm.svg`}
-              />
-              <Text6>Cluster Center</Text6>
-            </Element3>
-            <Element4>
-              <Text10>Attach File</Text10>
-              <SilverRectangle />
-              <Text11>Choose Fille</Text11>
-            </Element4>
-          </FlexRow5>
-          <Text4 margin={`0px 0px 0px 159px`}>Content</Text4>
-        </FlexColumn>
-        <Header>
-          <Element5>
-            <Text13>Home</Text13>
-            <Selector />
-          </Element5>
-          <Text14 margin={`0px 55px 0px 0px`}>Camps</Text14>
-          <Text14 margin={`0px 56px 0px 0px`}>About</Text14>
-          <RedText placeholder={`Login`} />
-        </Header>
-        <WhiteFlexRow2>
-          <Text17>--Select--</Text17>
-          <Image1 src={`https://file.rendit.io/n/lMU1M3hi4H6iXhD0JeSm.svg`} />
-        </WhiteFlexRow2>
-        <WhiteRectangle3 />
-        <WhiteFlexRow3>
-          <Text18>DD/MM/YEAR</Text18>
-          <Akariconslocation
-            src={`https://file.rendit.io/n/uLmWA8Sc6Ddr3wYCnVyh.svg`}
-          />
-        </WhiteFlexRow3>
-        <WhiteRectangle4 top={`431px`} />
-        <WhiteRectangle4 top={`317px`} />
-        <Text19>The day to conduct the blood camp </Text19>
-        <Text20>No fille choosen</Text20>
-        <RedText1>Register</RedText1>
-        <TimberwolfText>Cancel</TimberwolfText>
+          <form id='register-form-camp'>
+
+                        <table id='camp-view-table'>
+                            <tr>
+                                <td>Full Name</td>
+                                <td>   <input type="text" id="register-form-new-camp" placeholder="Enter Full name" onChange={(e)=>{setFullName(e.target.value)} }  /> <br />
+                                </td>
+                                <td></td>
+                                <td>NIC</td>
+                                <td>   <input type="text" id="register-form-new-camp" placeholder="Enter NIC"  onChange={(e)=>{setNIC(e.target.value)}} /> <br />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Contact</td>
+                                <td>   <input type="text" id="register-form-new-camp" placeholder="Enter Telephone Number" onChange={(e)=>{setContact(e.target.value)}}  /> <br />
+                                </td>
+                                <td></td>
+                                <td>Email</td>
+                                <td>   <input type="text" id="register-form-new-camp" placeholder="Enter Email" onChange={(e)=>{setEmail(e.target.value)}}  /> <br />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Blood Camp Name</td>
+                                <td>   <input type="text" id="register-form-new-camp" placeholder="Enter Camp Name"  onChange={(e)=>{setCampName(e.target.value)}} /> <br />
+                                </td>
+                                <td></td>
+                                <td>Blood Camp Date</td>
+                                <td>   <input type="date" id="register-form-new-camp" placeholder="Enter Camp Date"  onChange={(e)=>{setCampDate(e.target.value)}} /> <br />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Location</td>
+                                <td>   <input type="text" id="register-form-new-camp" placeholder="Enter Location"  onChange={(e)=>{setLocation(e.target.value)}}  /> <br />
+                                </td>
+                                <td></td>
+                                <td>District</td>
+                                <td><select id="register-form-new-camp" placeholder="Enter District"  onChange={(e)=>{setDistrict(e.target.value)}}>
+                                <option value="" disabled selected>Select District</option>
+                                <option value="colombo">Colombo</option>
+                                <option value="galle">Galle</option>
+                                <option value="kandy">Kandy</option>
+                                <option value="jaffna">Jaffna</option>
+                                </select> <br />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Cluster Center</td>
+                                <td>   <select id="register-form-new-camp" placeholder="Enter Cluster Center"  onChange={(e)=>{setClusterCenter(e.target.value)}}>
+                                <option value="" disabled selected>Select Cluster Center</option>
+                                <option value="nbc">NBC</option>
+                                <option value="nhsl">NHSL</option>
+                                <option value="cshw">CSHW</option>
+                                <option value="csth">CSTH</option>
+                                </select><br />
+                                </td>
+                                <td></td>
+                                <td>Attatch File</td>
+                                <td>   <input type="file" id="register-form-new-camp" placeholder="Upload a flyer"  onChange={(e)=>{setFile(e.target.value)}}  /> <br />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">Content</td>
+                                <td>   <input type="text" id="register-form-new-camp" placeholder="Enter your content"  onChange={(e)=>{setContent(e.target.value)}}  /> <br />
+                                </td>
+                            </tr>
+                             
+                            
+                        </table> <br/>
+                    <button type="sumbit" id="sumbit-save-form" > Register </button> {" "} 
+                    <button   id="sumbit-cancle-form" onClick={ () =>{ setFormReg(!formReg) }}  > Cancel </button> <br/><br/>
+
+                    </form>
+                    </FlexRow2>
+            </FlexColumn>
       </HeroImage>
     </RegisteredDonorUpcomingBloodCampRoot>
   );
@@ -103,6 +125,7 @@ const FlexRow2 = styled.div`
   justify-content: flex-end;
   gap: 428px;
   align-items: center;
+  text-align: center;
 `;
 const Text4 = styled.div`
   width: 266px;
@@ -157,6 +180,7 @@ const RegisteredDonorUpcomingBloodCampRoot = styled.div`
   width: 100%;
   height: 1162px;
   zoom: 90%;
+  text-align: center;
   background-color: #f6e2e6;
   overflow: hidden;
   position: relative;
@@ -220,6 +244,7 @@ const Text2 = styled.div`
   height: 55px;
   font-size: 24px;
   font-family: Inter;
+  font-weight: bold;
   color: #e71e43;
   margin: 14px 168px 0px 0px;
 `;
