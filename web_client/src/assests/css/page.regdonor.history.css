@@ -1,11 +1,36 @@
-#backgroundimg{
+#bloodOpimg{
     position: absolute;
-    width: 1400px;
-    height: 600px;
+    width:10%;
+    
     margin-top: 0px;
-    margin-left: 250px;
-    Opacity: 45%;
+    margin-left: 300px;
+    
     border-radius: 20px;
+}
+#total_donate{
+    position: absolute;
+    width: 184px;
+    height: 21px;
+    left: 1200px;
+    top: 132px;
+}
+#full{
+    position: absolute;
+    width: 312px;
+    height: 19px;
+    left: 1200px;
+    top: 150px;
+
+    background: #D9D9D9;
+}
+#totalcount{
+    position: absolute;
+    width: 146px;
+    height: 19px;
+    left: 0px;
+    top: 0px;
+
+    background: #FF3F65;
 }
 #tableContainer{
     position: absolute;
@@ -52,6 +77,7 @@
     margin-top: 75px;
     border-collapse: collapse;
     width: 80%;
+    font-size: 18px;
 }
 #history-records-table th {
     padding-top: 12px;

@@ -105,6 +105,7 @@ const styles = StyleSheet.create({
 
     }, slideBar: {
         marginLeft: -300,
+        
         height: 801,
         width: '40%',
         backgroundColor: 'rgba(221, 45, 80, 0.79)',

@@ -1,7 +1,7 @@
 :root{
     background-color: rgba(253, 223, 229, 0.313);
 }
-#backgroundimg{
+/*#backgroundimg{
     position: absolute;
     width: 1400px;
     height: 600px;
@@ -9,17 +9,21 @@
     margin-left: 250px;
     Opacity: 45%;
     border-radius: 20px;
-}
-#tableContainer{
+}*/
+#table-Container{
     position: absolute;
     width: 75%;
 
-    height: 450px;
-    margin-top: 150px;
+    height: 500px;
+   margin-top: 50px;
     margin-left: 300px;
     margin-right: 150px;
     background: rgba(255, 255, 255, 0.7);
     border-radius: 50px;
+}
+#regDonor-table-name{
+    font-size: 22px;
+    margin-top: 50px;
 }
 #input-camp-date{
     position: absolute;
@@ -51,6 +55,7 @@
     margin-top: 75px;
     border-collapse: collapse;
     width: 80%;
+    font-size: 18px;
 }
 #d-camp-details-table th {
     padding-top: 12px;
