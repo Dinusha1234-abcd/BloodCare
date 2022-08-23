@@ -32,7 +32,7 @@ const SlideBar = (props)  =>{
         props.nav.replace('History');
     }
     function navgationToCalender(){
-        props.nav.replace('Calendar');
+        props.nav.replace('CalendarPage');
      }
     return (
         <><View style={styles.slideBarHeadertab}>
