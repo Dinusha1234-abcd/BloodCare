@@ -6,10 +6,10 @@ import startOfWeek from 'date-fns/startOfWeek';
 import getDay from 'date-fns/getDay';
 import DatePicker from 'react-datepicker';
 import '../assests/css/component.bigCalendar.css';
-import SlideMenuClusterAdmin from '../components/component.slidemenu.clusterAdmin';
+import SlideMenuMedicalOfficer from '../components/component.slidemenu.medicalOfficer';
 import '../assests/css/page.clusterAdminCalendar.css';
 
-export default function ClusterAdminCalendar(){
+export default function MedicalOfficerCalendar(){
     const [slidemenu, setSlideMenu] = useState(true);
     const passData = (data) => {
       setSlideMenu(data);
@@ -17,6 +17,7 @@ export default function ClusterAdminCalendar(){
     const locales ={
         "en-US" : require("date-fns/locale/en-US")
     } 
+
 
     const localizer = dateFnsLocalizer({
         format,
@@ -42,7 +43,7 @@ export default function ClusterAdminCalendar(){
 
     return (
         <div>
-             <SlideMenuClusterAdmin headerName={"Calendar"} passData={passData} />
+             <SlideMenuMedicalOfficer headerName={"Calendar"} passData={passData} />
              <div id={`${slidemenu ? 'state-change-true' : 'state-change-false'}`} >
                 <div id='clusterAdmin-calender-box'> 
                 <div id='clusterAdmin-calender-box-display'> 

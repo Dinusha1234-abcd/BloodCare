@@ -21,6 +21,12 @@ import {ClusterAdminPendingCampView , ClusterAdminPastCampView } from './pages/p
   
 //Medical Officer
 import MedicalOfficerDashboard from "./pages/page.medicalofficer.dashboard";
+import MedicalOfficerCalendar from "./pages/page.medicalofficer.calendar";
+import MedicalOfficerBloodCamp from './pages/page.medicalofficer.bloodCamp';
+import MedicalOfficerMedicalStaff from './pages/page.medicalofficer.medicalStaff';
+import MedicalOfficerDonors from './pages/page.medicalofficer.donors';
+import MedicalOfficerBlood from './pages/page.medicalofficer.blood'; 
+import {MedicalOfficerPendingCampView , MedicalOfficerPastCampView } from './pages/page.medicalofficer.campView';
 
 //Head Nurse
 import HeadNurseDashboard from "./pages/page.headnurse.dashboard";
@@ -80,13 +86,12 @@ function App() {
          </BrowserRouter>
       )
    }
+
    //cluster admin routes
    else if (localStorage.getItem("type") === "2") {
       return (
          <BrowserRouter>
             <Routes>
-
- 
             <Route path='/dashboard' exact element={<ClusterAdminDashboard />} />
             <Route path='/login' exact element={<ClusterAdminDashboard />} />
             <Route path='/calendar' exact element={<ClusterAdminCalendar />} />
@@ -125,6 +130,29 @@ function App() {
          <Routes>
             <Route path='/dashboard' exact element={<MedicalOfficerDashboard />} />
             <Route path='/login' exact element={<MedicalOfficerDashboard />} />
+            <Route path='/calendar' exact element={<MedicalOfficerCalendar />} />
+            <Route path='/bloodcamp' exact element={<MedicalOfficerBloodCamp />} />
+            <Route path='/bloodcamp/pastcamp' exact element={<MedicalOfficerBloodCamp />} />
+            <Route path='/bloodcamp/ongoingcamp' exact element={<MedicalOfficerBloodCamp />} />
+            <Route path='/bloodcamp/futurecamp' exact element={<MedicalOfficerBloodCamp />} />
+            <Route path='/bloodcamp/pendingcamp' exact element={<MedicalOfficerBloodCamp />} />
+            <Route path='/bloodcamp/pendingcampView/:name/:id/:place/:mobile/:email' exact element={<MedicalOfficerPendingCampView />} />
+            <Route path='/bloodcamp/pastcampView/:name/:id/:place/:mobile/:email' exact element={<MedicalOfficerPastCampView />} />
+            <Route path='/medicalstaff' exact element={<MedicalOfficerMedicalStaff />} />
+            <Route path='/medicalstaff/doctor' exact element={<MedicalOfficerMedicalStaff />} />
+            <Route path='/medicalstaff/headNurse' exact element={<MedicalOfficerMedicalStaff />} />
+            <Route path='/medicalstaff/nurse' exact element={<MedicalOfficerMedicalStaff />} />
+            <Route path='/medicalstaff/driver' exact element={<MedicalOfficerMedicalStaff />} />
+            <Route path='/donors' exact element={<MedicalOfficerDonors />} />
+            <Route path='/blood' exact element={<MedicalOfficerBlood />} />
+            <Route path='/blood/Opositive' exact element={<MedicalOfficerBlood />} />
+            <Route path='/blood/Onegative' exact element={<MedicalOfficerBlood />} />
+            <Route path='/blood/Apositive' exact element={<MedicalOfficerBlood />} />
+            <Route path='/blood/Anegative' exact element={<MedicalOfficerBlood />} />
+            <Route path='/blood/Bpositive' exact element={<MedicalOfficerBlood />} />
+            <Route path='/blood/Bnegative' exact element={<MedicalOfficerBlood />} />
+            <Route path='/blood/ABpositive' exact element={<MedicalOfficerBlood />} />
+            <Route path='/blood/ABNegative' exact element={<MedicalOfficerBlood />} />
             <Route path='/' exact element={ <LandingPage /> } />
             <Route path='/camps' exact element={<Camps />} />
             <Route path='/registercamp' exact element={<RegisterCamp />} />
