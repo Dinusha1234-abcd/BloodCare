@@ -1,0 +1,81 @@
+#search-headnurse-donors{
+    position:relative;
+    margin-top: 20px;  
+    width:400px;
+    height: 40px;
+    border-radius: 20px;
+    margin-left: 20px; 
+    font-size:15px;
+    padding-left: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border:none;
+}
+
+#headnurse-donor-box{
+    position:relative;
+    margin-top: 40px;
+    width:1200px;
+    height:500px;
+    background: #f9ced7;
+    margin-left: 20px;
+    border-radius: 50px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+}
+
+/* donor table headnurse */
+#donor-table-headnurse{
+
+    border-collapse: collapse; 
+    width: 100%;
+    margin-top: 0px;
+    margin-left: 0px;
+    height:100%;
+   
+
+}
+#donor-table-headnurse td, #donor-table-headnurse th {
+    border-radius: 1px solid rgba(253, 223, 229, 0.956) ;
+    padding: 8px;   
+    text-align: center;
+    
+  }
+  
+  #donor-table-headnurse tr:nth-child(even){
+    background-color: rgba(253, 223, 229, 0.4) ;}
+  
+  #donor-table-headnurse tr:hover {
+    background-color: rgba(253, 223, 229, 0.4) ;}
+  
+  #donor-table-headnurse th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: rgba(221, 45, 80, 0.26);
+    color: rgb(77 54 54);
+    /* font-style: revert; */
+    font-size: 16px;
+    font-weight: 550;
+    font-family: system-ui;
+    width: 8%;
+  }
+  #donor-table-headnurse{
+
+  }
+  #view-donor-button-headnurse{
+    width: 70%;
+    height: 27px;
+    border-radius: 20px;
+    border: none;
+    background: #FB6281;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 15px;
+    color: white;
+    cursor: pointer;
+    transition-duration: 0.4s;
+
+  }
+
+ #view-donor-button-headnurse:hover{
+    background-color: #343434; /* Green */
+    color: white;
+ } 

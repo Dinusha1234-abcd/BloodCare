@@ -42,29 +42,29 @@ export default function Slide(props) {
               <span className='nav-logo-name'>BLOODCARE</span>
             </Link>
             <div className='nav-list'>
-              <Link to='/menu' className={`${(window.location.pathname === '/dashboard'||'/login') ? 'nav-link-active' : 'nav-link'} `}>
-                <i className={`${(window.location.pathname === '/dashboard'||'/login') ? 'fa-solid fa-gauge-high nav-link-icon-active' : 'fa-solid fa-gauge-high nav-link'} `}></i>
-                <span className={`${(window.location.pathname === '/dashboard'||'/login') ? 'nav-link-icon-active' : 'nav-link-icon'} `}  >Dashboard</span>
+            <Link to='/dashboard' className={`${(window.location.pathname === '/dashboard'|| window.location.pathname === '/login' ) ? 'nav-link-active' : 'nav-link'} `}>
+                <i className={`${(window.location.pathname === '/dashboard' || window.location.pathname === '/login' ) ? 'fa-solid fa-gauge-high nav-link-icon-active' : 'fa-solid fa-gauge-high nav-link-icon'} `}></i>
+                <span className={`${(window.location.pathname === '/dashboard' || window.location.pathname === '/login') ? 'nav-link-icon-active' : 'nav-link-icon'} `}  >Dashboard</span>
+              </Link>  
+               <Link to='/calendar' className={`${(window.location.pathname === '/calendar' ) ? 'nav-link-active' : 'nav-link'} `}>
+                <i className={`${(window.location.pathname === '/calendar'  ) ? 'fa-solid fa-calendar-days nav-link-icon-active' : 'fa-solid fa-calendar-days nav-link-icon'} `}></i>
+                <span className={`${(window.location.pathname === '/calendar' ) ? 'nav-link-icon-active' : 'nav-link-icon'} `}  >Calendar</span>
+              </Link>  
+             <Link to='/bloodcamp/pastcamp' className={`${(window.location.pathname === '/bloodcamp/pastcamp'||window.location.pathname==='/bloodcamp/ongoingcamp' || window.location.pathname==='/bloodcamp/futurecamp' || window.location.pathname==='/bloodcamp/pendingcamp') ? 'nav-link-active' : 'nav-link'} `}  >
+              <i className={`${(window.location.pathname === '/bloodcamp/pastcamp' ||window.location.pathname==='/bloodcamp/ongoingcamp' || window.location.pathname==='/bloodcamp/futurecamp' || window.location.pathname==='/bloodcamp/pendingcamp') ? 'fa-solid fa-campground nav-link-icon-active' : 'fa-solid fa-campground nav-link-icon'} `}></i>
+             <span className={`${(window.location.pathname === '/bloodcamp/pastcamp'||window.location.pathname==='/bloodcamp/ongoingcamp' ||window.location.pathname==='/bloodcamp/futurecamp'||window.location.pathname==='/bloodcamp/pendingcamp') ? 'nav-link-icon-active' : 'nav-link-icon'} `} >Blood Camps</span>
               </Link>
-              <Link to='/students' className='nav-link  '>
-                <i class="fa-solid fa-calendar-days nav-link-icon"></i>
-                <span className='nav-link-name'>Calender</span>
+              <Link to='/medicalstaff/doctor' className={`${(window.location.pathname === '/medicalstaff/doctor'||window.location.pathname==='/medicalstaff/headnurse' || window.location.pathname==='/medicalstaff/nurse' || window.location.pathname==='/medicalstaff/driver') ? 'nav-link-active' : 'nav-link'} `}  >
+              <i className={`${(window.location.pathname === '/medicalstaff/doctor' ||window.location.pathname==='/medicalstaff/headnurse' || window.location.pathname==='/medicalstaff/nurse' || window.location.pathname==='/medicalstaff/driver') ? 'fa-solid fa-user-nurse nav-link-icon-active' : 'fa-solid fa-user-nurse nav-link-icon'} `}></i>
+             <span className={`${(window.location.pathname === '/medicalstaff/doctor'||window.location.pathname==='/medicalstaff/headnurse' ||window.location.pathname==='/medicalstaff/nurse'||window.location.pathname==='/medicalstaff/driver') ? 'nav-link-icon-active' : 'nav-link-icon'} `} >Medical Staff</span>
               </Link>
-              <Link to='/courses' className='nav-link'  >
-                <i class="fa-solid fa-campground nav-link-icon"></i>
-                <span className='nav-link-name' id='nav-link-name'>Blood Camps</span>
+              <Link to='/donors' className={`${window.location.pathname==='/donors' ? 'nav-link-active' : 'nav-link'}`}  >
+                <i className={`${window.location.pathname==='/donors' ? 'fa-solid fa-people-group nav-link-icon-active' : 'fa-solid fa-people-group nav-link-icon'}`} ></i>
+                <span className={`${window.location.pathname==='/donors' ? 'nav-link-icon-active' : 'nav-link-icon'}`} >Donors</span>
               </Link>
-              <Link to='/courses' className='nav-link'  >
-                <i class="fa-solid fa-user-nurse nav-link-icon" ></i>
-                <span className='nav-link-name' id='nav-link-name'>Medical Staff</span>
-              </Link>
-              <Link to='/courses' className='nav-link'  >
-                <i class="fa-solid fa-people-group nav-link-icon"></i>
-                <span className='nav-link-name' id='nav-link-name-donors'>Donors</span>
-              </Link>
-              <Link to='/courses' className='nav-link'  >
-              <i class="fa-solid fa-fire-flame-simple nav-link-icon"></i>
-                <span className='nav-link-name' id='nav-link-name'>Blood</span>
+              <Link to='/blood/Opositive' className={`${(window.location.pathname === '/blood/Opositive'||window.location.pathname==='/blood/Onegative' || window.location.pathname==='/blood/Apositive' || window.location.pathname==='/blood/Anegative' || window.location.pathname==='/blood/Bpositive' || window.location.pathname==='/blood/Bnegative' || window.location.pathname==='/blood/ABpositive' || window.location.pathname==='/blood/ABnegative' )? 'nav-link-active' : 'nav-link'} `}  >
+              <i className={`${(window.location.pathname === '/blood/Opositive' ||window.location.pathname==='/blood/Onegative' || window.location.pathname==='/blood/Apositive' || window.location.pathname==='/blood/Anegative' || window.location.pathname==='/blood/Bpositive' || window.location.pathname==='/blood/Bnegative' || window.location.pathname==='/blood/ABpositive' || window.location.pathname==='/blood/ABnegative') ? 'fa-solid fa-fire-flame-simple nav-link-icon-active' : 'fa-solid fa-fire-flame-simple nav-link-icon'} `}></i>
+             <span className={`${(window.location.pathname === '/blood/Opositive'||window.location.pathname==='/blood/Onegative' ||window.location.pathname==='/blood/Apositive'||window.location.pathname==='/blood/Anegative' || window.location.pathname==='/blood/Bpositive' || window.location.pathname==='/blood/Bnegative' || window.location.pathname==='/blood/ABpositive' || window.location.pathname==='/blood/ABnegative') ? 'nav-link-icon-active' : 'nav-link-icon'} `} >Blood</span>
               </Link>
             </div>
           </div>

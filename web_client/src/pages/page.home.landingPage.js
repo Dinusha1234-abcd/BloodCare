@@ -1,5 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import NavBar from "../components/component.home.navbar";
+import { Link } from "react-router-dom";
+import '../assests/css/component.home.navbar.css'
+
 export default function LandingPage ()  {
   return (
     <LandingPageRoot>
@@ -48,23 +52,14 @@ export default function LandingPage ()  {
               <ReadMore>
                 <Bg1 />
                 <Bg2>
-                  <Text2>Register Camp</Text2>
+                <Link to="/registerCamp" className="registerBtn">Register Camp</Link>
                 </Bg2>
               </ReadMore>
             </Content>
             <Text3>What you need to know</Text3>
           </FlexColumn>
           <Bowl src={`https://file.rendit.io/n/ma66MpZSysTxraWq01Un.png`} />
-          <Header>
-            <Element6>
-              <Text4>Home</Text4>
-              <Selector />
-            </Element6>
-            <Text5 margin={`0px 55px 0px 0px`}>Home</Text5>
-            <Text5 margin={`0px 55px 0px 0px`}>Camps</Text5>
-            <Text5 margin={`0px 56px 0px 0px`}>About</Text5>
-            <RedText placeholder={`Login`} />
-          </Header>
+          <NavBar />
           <FlexRow1>
             <Element1>
               <BG />
@@ -395,6 +390,7 @@ const Text1 = styled.div`
   height: 55px;
   font-size: 24px;
   font-family: Inter;
+  font-weight: bold;
   color: #e71e43;
   align-self: flex-end;
 `;

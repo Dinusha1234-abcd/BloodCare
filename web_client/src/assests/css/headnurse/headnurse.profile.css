@@ -79,10 +79,201 @@
 #profile-edit-headnurse{
     position:absolute;
     width:900px;
-    height: 450px;
+    /*height: 450px;*/
+    height:390;
     border-radius: 10px;
     margin-left:25%; 
     background: rgba(255, 255, 255, 0.4);
     box-shadow: 100px 100px 100px 5px rgba(217, 217, 217, 0.5);
     
 }
+
+/*labels*/
+#headnurse-label1{
+    
+    font-size: medium;
+    font-family:sans-serif;
+    font-style: none;
+    margin-top:100px;
+    padding-left: 50px;
+    padding-bottom:200px;
+
+}
+#headnurse-label2{
+   
+    font-size: medium;
+    font-family:sans-serif;
+    font-style: none;
+    margin-top:100px;
+    padding-left: 100px;
+    padding-bottom:200px;
+
+}
+#headnurse-label3{
+    margin-right: 35px;
+    font-size: medium;
+    font-family:sans-serif;
+    font-style: none;
+    margin-top:100px;
+    padding-left: 50px;
+    padding-bottom:200px;
+
+}
+#headnurse-label4{
+    margin-right: 35px;
+    font-size: medium;
+    font-family:sans-serif;
+    font-style: none;
+    margin-top:100px;
+    padding-left: 100px;
+    padding-bottom:200px;
+
+}
+#headnurse-label5{
+    margin-right: 24px;
+    font-size: medium;
+    font-family:sans-serif;
+    font-style: none;
+    margin-top:100px;
+    padding-left: 50px;
+    padding-bottom:200px;
+
+}
+#headnurse-label6{
+   
+    font-size: medium;
+    font-family:sans-serif;
+    font-style: none;
+    margin-top:100px;
+    padding-left: 47px;
+    padding-bottom:200px;
+
+}
+
+#headnurse-label7{
+   
+    font-size: medium;
+    font-family:sans-serif;
+    font-style: none;
+    margin-top:100px;
+    padding-left: 90px;
+    padding-bottom:200px;
+    margin-right: 10px;
+
+}
+
+/*form*/
+#edit-headnurse{
+    margin-top: 20px;
+
+}
+
+/*text inputs*/
+#firstname-headnurse{
+  width: 25%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  
+    
+}
+
+#lastname-headnurse{
+  width: 25%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  
+  
+    
+}
+
+#phone-headnurse{
+  width: 25%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#email-headnurse{
+    width: 25%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#address-headnurse{
+    width: 75.7%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#workplace-headnurse{
+  width: 25%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#education-headnurse{
+  width: 25%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/*save button*/
+#headnurse-save{
+    margin-bottom: 30px;
+    margin-top: 40px;
+    margin-left: 720px;
+    width:150px;
+    height: 40px;
+    border-radius: 10px; 
+    font-size:large;
+    background: rgba(246, 156, 174, 1);
+    border: none;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#headnurse-save:hover {
+    background-color: #7e7c7c; /* Green */
+    color: white;
+  }
+
+#icon-headnurse {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.4);
+    color: black;
+    min-width: 50px;
+    text-align: center;
+  }
+
+#headnurse-upload-pic{
+     
+     color: #7e7c7c;
+  }
