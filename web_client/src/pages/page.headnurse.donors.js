@@ -17,8 +17,9 @@ export default function HeadNurseDonors() {
           <div id={`${slidemenu ? 'state-change-true' : 'state-change-false'}`} > 
           <div id= "search-donor-head">
              <input type="text" id='search-headnurse-donors' placeholder="Search.."/>
+             <button type="button" id="button-headnurse-donor-filter"> <i class="fas fa-search"></i></button>
           </div>
-<div id="headnurse-donor-box"> 
+<div id="headnurse-donor-box"> <br/>
 <table id="donor-table-headnurse">
   <tr>
     <th>Donor ID</th>
@@ -37,7 +38,7 @@ export default function HeadNurseDonors() {
     <td>071-4468712</td>
     <td>Colombo</td>
     <td>9647845412V</td>
-    <td> <button id ="view-donor-button-headnurse" > View</button></td>
+    <td><a href="/headnurse/donordetails"> <button id ="view-donor-button-headnurse" > View</button> </a></td>
   </tr>
   <tr>
     <td>02</td>
@@ -46,7 +47,7 @@ export default function HeadNurseDonors() {
     <td>071-5478413</td>
     <td>Kandy</td>
     <td>9647845412V</td>
-    <td><button id ="view-donor-button-headnurse" > View</button></td>
+    <td><a href="/headnurse/donordetails"><button id ="view-donor-button-headnurse" > View</button> </a></td>
     
   </tr>
   <tr>
@@ -56,7 +57,7 @@ export default function HeadNurseDonors() {
     <td>011-1254875</td>
     <td>Matara</td>
     <td>9678845412V</td>
-    <td><button id ="view-donor-button-headnurse" > View</button></td>
+    <td><a href="/headnurse/donordetails"><button id ="view-donor-button-headnurse" > View</button></a></td>
   </tr>
   <tr>
     <td>04</td>
@@ -65,7 +66,7 @@ export default function HeadNurseDonors() {
     <td>076-1694784</td>
     <td>Galle</td>
     <td>9647845412V</td>
-    <td><button id ="view-donor-button-headnurse" > View</button></td>
+    <td><a href="/headnurse/donordetails"><button id ="view-donor-button-headnurse" > View</button></a></td>
   </tr>
   <tr>
     <td>05</td>
@@ -74,7 +75,7 @@ export default function HeadNurseDonors() {
     <td>077-3745896</td>
     <td>Monaragala</td>
     <td>9647845412V</td>
-    <td><button id ="view-donor-button-headnurse" > View</button></td>
+    <td> <a href="/headnurse/donordetails"><button id ="view-donor-button-headnurse" > View</button> </a></td>
   </tr>
   
   

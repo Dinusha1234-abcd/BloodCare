@@ -20,17 +20,19 @@ export default function HeadNursePastCamps() {
           <SlideMenuHeadNurse headerName={"Blood Camps"} passData={passData} />
           <div id={`${slidemenu ? 'state-change-true' : 'state-change-false'}`} >
             <div id="view-count-past">
+            <a href="/headnurse/assigncamps">
               <div id="upcomming-camp-past" > 
               <img id="camp-img-past" src={Upcomming}/>
                 <h3 id ="h3-head-past">Upcomming Blood Camps</h3>
                 <h2 id ="h2-head-past">04</h2>  
-              </div>
+              </div></a>
             
+              <a href="/headnurse/pastcamps">
               <div id="past-camp-past"  >
               <img id="camp-img-past" src={Past}/>
                 <h3 id ="h3-head-past">Past Blood Camps</h3> 
                 <h2 id ="h2-head-past" >02</h2> 
-              </div>
+              </div></a>
             </div>
                
               <h1 id ="h1-head-past">Your Past Blood Camps</h1>
@@ -54,7 +56,8 @@ export default function HeadNursePastCamps() {
           </div> 
 
                 <h4 id ="h4-head-past">Wednsday, August 12, 2022</h4>
-                <button type="button" id="button1-past" > view donor details </button>
+                <a href="/headnurse/donors">
+                <button type="button" id="button1-past" > view donor details </button> </a>
                  <p id ="p-head-past"> <i class="fa-solid fa-location-dot"></i> University of colombo</p>
                  <p id ="p-head-past">  <i class="fa-solid fa-clock"></i> at 2.00 pm</p>
                  <p id ="p-head-past">Western Province</p> 
@@ -77,7 +80,8 @@ export default function HeadNursePastCamps() {
           </div> 
               
                 <h4 id ="h4-head-past">Tuesday, July 30, 2022</h4>
-                <button type="button" id="button2-past" > view donor details </button>
+                <a href="/headnurse/donors">
+                <button type="button" id="button2-past" > view donor details </button> </a>
                  <p id ="p-head-past"> <i class="fa-solid fa-location-dot"></i> Town hall, colombo </p>
                  <p id ="p-head-past">  <i class="fa-solid fa-clock"></i> at 8.00 am</p>
                  <p id ="p-head-past">Western Province</p> 

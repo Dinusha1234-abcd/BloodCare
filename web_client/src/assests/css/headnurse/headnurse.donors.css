@@ -16,7 +16,8 @@
     margin-top: 40px;
     width:1200px;
     height:500px;
-    background: #f9ced7;
+    /*background: #f9ced7; */
+    background-color: white;
     margin-left: 20px;
     border-radius: 50px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
@@ -26,10 +27,10 @@
 #donor-table-headnurse{
 
     border-collapse: collapse; 
-    width: 100%;
-    margin-top: 0px;
-    margin-left: 0px;
-    height:100%;
+    width: 80%;
+    margin-top: 30px;
+    margin-left: 90px;
+    height:80%;
    
 
 }
@@ -37,6 +38,7 @@
     border-radius: 1px solid rgba(253, 223, 229, 0.956) ;
     padding: 8px;   
     text-align: center;
+    font-size: 15px;
     
   }
   
@@ -53,7 +55,7 @@
     background-color: rgba(221, 45, 80, 0.26);
     color: rgb(77 54 54);
     /* font-style: revert; */
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 550;
     font-family: system-ui;
     width: 8%;
@@ -79,3 +81,24 @@
     background-color: #343434; /* Green */
     color: white;
  } 
+
+/*search button */
+ #button-headnurse-donor-filter{
+  position:absolute;
+  margin-top: 19px;  
+  width:100px;
+  height: 40px;
+  border-radius: 20px;
+  margin-left: 2%; 
+  font-size:18px;
+  background: rgba(246, 156, 174, 1);
+  border: none;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#button-headnurse-donor-filter:hover {
+  background-color: #7e7c7c; /* Green */
+  color: white;
+}
