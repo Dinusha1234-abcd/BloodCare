@@ -99,7 +99,7 @@ export default function RegisterCamp() {
                                 </td>
                             </tr>
                             <tr>
-                                <td   >Content</td>
+                                <td>Content</td>
                                 <td>   <input type="text" id="register-form-new-camp" placeholder="Enter your content"  onChange={(e)=>{setContent(e.target.value)}}  /> <br />
                                 </td>
                             </tr>

@@ -80,7 +80,7 @@ export default function Camps() {
   const [mobileNumber, setMobileNumber] = useState("");
   const [success, setSuccess] = useState(false);
   const [message, setMessage] = useState("");
-
+   
   return (
     <CampsRoot>
       <FlexRow>
@@ -227,7 +227,7 @@ export default function Camps() {
                         32/1, Road Lane, Colombo
                       </Paragraph>
                       <FlexRow12>
-                        <button onClick={() => {setFormRegCamp(!formRegCamp);}}>
+                        <button onClick={() => {setFormRegCamp(!formRegCamp) }}>
                           <PiggyPinkText>Register</PiggyPinkText>
                         </button>
                         <FancyChip>
