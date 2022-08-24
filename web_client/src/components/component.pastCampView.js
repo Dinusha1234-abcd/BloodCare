@@ -70,6 +70,24 @@ export default function PendingCampView() {
               </button>
             </form>
           </div>
+          <div id ="exporttopdf-Btn">
+          <h3 id = "exporttopdf-Btn-text">Export To PDF</h3>
+          </div>
+          <div id="pastCamp-DonorsCount">
+          <h3 id="pastCamp-DonorsCount-text">Donors Count</h3>
+          <h3 pastCamp-DonorsCount-text>47</h3>
+          </div>
+
+          <div id="pastCamp-BloodCount">
+          <h3 id="pastCamp-BloodCount-text">Blood Count</h3>
+          <h3 pastCamp-DonorsCount-text>160</h3>
+          </div>
+
+          <div id="pastCamp-StaffCount">
+          <h3 id="pastCamp-StaffCount-text">Staff Members</h3>
+          <h3 pastCamp-DonorsCount-text>5</h3>
+          </div>
+  
        
         <div id="pending-camp-container-box3-clusterAdmin">
           <div id="medicalOfficer-summary-bloodcounts">
