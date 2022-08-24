@@ -37,6 +37,7 @@ import HeadNurseProfile from "./pages/page.headnurse.profile";
 import HeadNurseDonorDetails from "./pages/page.headnurse.donordetails";
 import HeadNurseDonors from "./pages/page.headnurse.donors";
 import HeadNurseAddNewDonors from "./pages/page.headnurse.registerform";
+import HeadNurseSummaryWork from "./pages/page.headnurse.summary";
 
 
 //Register Donor
@@ -51,6 +52,7 @@ import RegDonorProfile from './pages/page.regdonor.profile';
 import LandingPage from "./pages/page.home.landingPage";
 import Camps from "./pages/page.home.camps";
 import RegisterCamp from "./pages/page.home.registerCamp";
+import HeadNurseSummary from './pages/page.headnurse.summary';
 
 
 function App() {
@@ -177,6 +179,7 @@ function App() {
             <Route path='/headnurse/donordetails' exact element={<HeadNurseDonorDetails />} />
             <Route path='/headnurse/donors' exact element={<HeadNurseDonors />} />
             <Route path='/headnurse/addnewdonor' exact element={<HeadNurseAddNewDonors />} />
+            <Route path='/headnurse/summarywork' exact element={<HeadNurseSummaryWork />} />
 
          </Routes>
       </BrowserRouter>)

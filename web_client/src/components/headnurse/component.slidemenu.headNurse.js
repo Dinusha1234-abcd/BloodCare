@@ -64,15 +64,16 @@ export default function Slide(props) {
                 <span className={`${(window.location.pathname === '/headnurseassigncamps' ) ? 'nav-link-icon-active' : 'nav-link-icon'} `}  >Blood Camps</span>
               </Link>
 
-              <Link to='/courses' className={`${(window.location.pathname === '/courses' ) ? 'nav-link-active ' : 'nav-link'} `}>
-                <i className={`${(window.location.pathname === '/courses' ) ? 'fa-solid fa-user-nurse nav-link-icon-active' :'fa-solid fa-user-nurse nav-link-icon'} `}></i>
-                <span className={`${(window.location.pathname === '/courses' ) ? 'nav-link-icon-active' : 'nav-link-icon'} `}  >Summary Work</span>
+              <Link to='/headnurse/summarywork' className={`${(window.location.pathname === '/headnurse/summarywork' ) ? 'nav-link-active ' : 'nav-link'} `}>
+                <i className={`${(window.location.pathname === '/headnurse/summarywork' ) ? 'fa-solid fa-user-nurse nav-link-icon-active' :'fa-solid fa-user-nurse nav-link-icon'} `}></i>
+                <span className={`${(window.location.pathname === '/headnurse/summarywork' ) ? 'nav-link-icon-active' : 'nav-link-icon'} `}  >Summary Work</span>
               </Link>
 
               <Link to='/headnurse/addnewdonor' className={`${(window.location.pathname === '/headnurse/addnewdonor' ) ? 'nav-link-active ' : 'nav-link'} `}>
                 <i className={`${(window.location.pathname === '/headnurse/addnewdonor' ) ? 'fa-solid fa-user-plus nav-link-icon-active' :'fa-solid fa-user-plus nav-link-icon'} `}></i>
                 <span className={`${(window.location.pathname === '/headnurse/addnewdonor' ) ? 'nav-link-icon-active' : 'nav-link-icon'} `}  >Add News Donor</span>
               </Link>
+              
 
             </div>
           </div>
