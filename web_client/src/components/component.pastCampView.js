@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import DoughnutChart from "../components/compoent.doughnutChart";
 import Blood from "../components/component.blood.display";
 
+
 export default function PendingCampView() {
   const { id, name, mobile, place } = useParams();
 

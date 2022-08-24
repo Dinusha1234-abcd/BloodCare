@@ -3,6 +3,7 @@ import axios from 'axios';
 import '../assests/css/component.doctors.css';
 import successImage from '../assests/images/sucess.png';
 import DoctorShowRow from './component.doctorShowRow';
+
 export default function Doctors() {
     const [formReg, setFormReg] = useState(false);
     const [firstName, setFirstName] = useState("");
