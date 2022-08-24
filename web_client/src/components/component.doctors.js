@@ -86,9 +86,11 @@ export default function Doctors() {
                 (res) => {
                     //check password and username  
                     if (res['data']['message'] == "success") {
+                        window.location = "/medicalstaff/doctor";
 
                     } else {
-                        setMessage("Username or Password is Not match");
+                        setMessage("Network Connection issue");
+                        
                     }
 
                 }
