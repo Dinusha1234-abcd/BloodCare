@@ -9,7 +9,7 @@ export default function Organizer(){
             <div id='user-contanier-admin'> 
                 <h7 id='header-user-admin'>BLOOD CAMP ORGANIZER</h7>
                 <input type="text" id='input-organizer-admin' placeholder=" &#xf002; Search"/>
-                <button id='add-user-button-admin'>Add</button> 
+                
                 <br/><br/>
                 <table id="user-table-admin">
                 <tr>

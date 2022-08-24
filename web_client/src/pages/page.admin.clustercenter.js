@@ -26,7 +26,7 @@ export default function AdminBloodCamp() {
                     <th>Name</th>
                     <th>Province</th>
                     <th>District </th>
-                    <th > Cluster Admin Id</th>
+                    <th > Cluster Admin Name</th>
                     <th id='camp-action-admin'>Action</th>
                     <th id='camp-action-admin'>Action</th>
                 </tr>
@@ -35,7 +35,7 @@ export default function AdminBloodCamp() {
                     <td>Blood Alliance</td>
                     <td>Southern</td>
                     <td>Matara</td>
-                    <td>04</td>
+                    <td>Kasun Vithane</td>
                     <td><button id='view-camp-button-admin'>View</button></td>
                     <td><button id='remove-user-button-admin'>Remove</button></td>
                 </tr>
@@ -44,7 +44,7 @@ export default function AdminBloodCamp() {
                     <td>OneBlood</td>
                     <td>Western</td>
                     <td>Colombo</td>
-                    <td>06</td>
+                    <td>Chamika Weerasinghe</td>
                     <td><button id='view-camp-button-admin'>View</button></td>
                     <td><button id='remove-user-button-admin'>Remove</button></td>
                 </tr>
@@ -53,7 +53,7 @@ export default function AdminBloodCamp() {
                     <td>LifeSource</td>
                     <td>Southern</td>
                     <td>Galle</td>
-                    <td>15</td>
+                    <td>Thejan Gunathilake</td>
                     <td><button id='view-camp-button-admin'>View</button></td>
                     <td><button id='remove-user-button-admin'>Remove</button></td>
                 </tr>
@@ -62,7 +62,7 @@ export default function AdminBloodCamp() {
                     <td>LittleHelp</td>
                     <td>Eastern</td>
                     <td>Ampara</td>
-                    <td>11</td>
+                    <td>Adhi Wijethunge</td>
                     <td><button id='view-camp-button-admin'>View</button></td>
                     <td><button id='remove-user-button-admin'>Remove</button></td>
                 </tr>
@@ -71,7 +71,7 @@ export default function AdminBloodCamp() {
                     <td>Redonest</td>
                     <td>Central</td>
                     <td>Kandy</td>
-                    <td>08</td>
+                    <td>Sarasi Perera</td>
                     <td><button id='view-camp-button-admin'>View</button></td>
                     <td><button id='remove-user-button-admin'>Remove</button></td>
                 </tr>
@@ -80,7 +80,7 @@ export default function AdminBloodCamp() {
                     <td>Friends2</td>
                     <td>Central</td>
                     <td>Kandy</td>
-                    <td>10</td>
+                    <td>Mahesh Samarapala</td>
                     <td><button id='view-camp-button-admin'>View</button></td>
                     <td><button id='remove-user-button-admin'>Remove</button></td>
                 </tr>

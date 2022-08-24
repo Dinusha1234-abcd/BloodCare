@@ -59,7 +59,7 @@ export default function AdminDashboard() {
         <div id="member">
             <h1>Members</h1>
             <div id="users-count-admin" display='inline'> 
-                <User id='user' image={mo} name="Medical Officers"/>  
+                <User id='user' image={mo} name="Medical Officers"/>
                 <User id='user' image={bcAdmin} name="Cluster Center Administrators"  />  
                 <User id='user' image={doctor} name="Doctors"/>  
                 <User id='user' image={headNurse2} name="Head Nurse" /> 
