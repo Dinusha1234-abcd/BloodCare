@@ -42,6 +42,7 @@
 
   /* details*/
 #details-names-summary{
+    position: absolute;
     font-size: large;
     margin-top: 10px;
     margin-left: 10px;
@@ -60,5 +61,5 @@
 }*/
 
 #details-organizer-summary{
-    
+    position: absolute;
 }

@@ -2,7 +2,7 @@
 #form-headnurse-donor-reg{
     margin-top: 10px;
     width:1200px;
-    height:700px;
+    height:710px;
     /*background: #f9ced7;*/
     margin-left: 20px;
    /* border-radius: 50px;*/
@@ -91,30 +91,38 @@
 }
 
 /*radio buttons */
-#blood-before1{
+#blood-before1-headnurse{
     margin-left: 100px;
-    width: 400px;
-    height: 30px;
+    /*width: 400px;
+    height: 30px;*/
     margin-top: 5px;
     
 }
 
-#blood-before2{
+#blood-before2-headnurse{
     margin-left: 50px;
-    width: 400px;
-    height: 30px;
+    /*width: 400px;
+    height: 30px; */
     margin-top: 5px; 
 }
 
-#diseases1{
+#diseases1-headnurse{
     margin-left: 100px;
-    width: 400px;
-    height: 30px;
-    margin-top: 10px;
+   /* width: 400px;
+    height: 30px; */
+    margin-top: 5px;
 }
-#diseases2{
-   margin-left: 50px;
-   width: 400px;
-   height: 30px;
-   margin-top: 10px;
+#diseases2-headnurse{
+   margin-left: 50px; 
+   /*width: 400px;
+   height: 30px; */
+   margin-top: 5px;
+}
+
+#radio-headnurse{
+    margin-left:10px;
+}
+
+#form-label-box-headnurse{
+    display: flex;
 }
