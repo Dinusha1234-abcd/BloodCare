@@ -8,8 +8,8 @@ const NavBar= () =>{
   <Header>
       <Link to="/" className="topNav">Home</Link>
       <Link to="/camps" className="topNav">Camps</Link>
-      <Link to="/about" className="topNav">About</Link>
-      <Link to="/login" className="topNav">Login</Link>
+      
+      <Link to="/login" className="topNavLogin">Login</Link>
   </Header>
   );
 }
@@ -21,7 +21,7 @@ const Header = styled.div`
   display: flex;
   position: absolute;
   top: 52px;
-  left: 916px;
+  left: 950px;
   flex-direction: row;
   justify-content: center;
   align-items: center;
