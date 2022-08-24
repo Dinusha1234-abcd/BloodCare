@@ -30,7 +30,7 @@ export default function HeadNurseAssignCamps() {
               <div id="past-camp"  >
               <img id="camp-img" src={Past}/>
                 <h3 id ="h3-head">Past Blood Camps</h3> 
-                <h2 id ="h2-head" >05</h2> 
+                <h2 id ="h2-head" >02</h2> 
               </div> </a>
             </div>
                

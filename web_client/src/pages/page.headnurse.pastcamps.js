@@ -45,14 +45,14 @@ export default function HeadNursePastCamps() {
           </div>
           <div id="camp1-past">
           <div id = "c-blood" > 
-                 <div id="blood-count-camp1-1"><h3 id="blood-name">A+</h3> <h4 id = "blood-cont">04</h4></div>
-                 <div id="blood-count-camp1-2"><h3 id="blood-name">B+</h3> <h4 id = "blood-cont">04</h4></div>
-                 <div id="blood-count-camp1-3"><h3 id="blood-name">AB+</h3> <h4 id = "blood-cont">04</h4></div>
-                 <div id="blood-count-camp1-4"><h3 id="blood-name">O+</h3> <h4 id = "blood-cont">04</h4></div>
-                 <div id="blood-count-camp1-5"><h3 id="blood-name">A-</h3> <h4 id = "blood-cont">04</h4></div>
-                 <div id="blood-count-camp1-6"><h3 id="blood-name">B-</h3> <h4 id = "blood-cont">04</h4></div>
+                 <div id="blood-count-camp1-1"><h3 id="blood-name">A+</h3> <h4 id = "blood-cont">12</h4></div>
+                 <div id="blood-count-camp1-2"><h3 id="blood-name">B+</h3> <h4 id = "blood-cont">20</h4></div>
+                 <div id="blood-count-camp1-3"><h3 id="blood-name">AB+</h3> <h4 id = "blood-cont">21</h4></div>
+                 <div id="blood-count-camp1-4"><h3 id="blood-name">O+</h3> <h4 id = "blood-cont">50</h4></div>
+                 <div id="blood-count-camp1-5"><h3 id="blood-name">A-</h3> <h4 id = "blood-cont">23</h4></div>
+                 <div id="blood-count-camp1-6"><h3 id="blood-name">B-</h3> <h4 id = "blood-cont">15</h4></div>
                  <div id="blood-count-camp1-7"><h3 id="blood-name">AB-</h3> <h4 id = "blood-cont">04</h4></div>
-                 <div id="blood-count-camp1-8"><h3 id="blood-name">O-</h3> <h4 id = "blood-cont">04</h4></div>
+                 <div id="blood-count-camp1-8"><h3 id="blood-name">O-</h3> <h4 id = "blood-cont">11</h4></div>
           </div> 
 
                 <h4 id ="h4-head-past">Wednsday, August 12, 2022</h4>
@@ -69,14 +69,14 @@ export default function HeadNursePastCamps() {
           </div>
           <div id="camp2-past">
           <div id = "c-blood" > 
-                 <div id="blood-count-camp1-1"><h3 id="blood-name">A+</h3> <h4 id = "blood-cont">04</h4></div>
-                 <div id="blood-count-camp1-2"><h3 id="blood-name">B+</h3> <h4 id = "blood-cont">04</h4></div>
-                 <div id="blood-count-camp1-3"><h3 id="blood-name">AB+</h3> <h4 id = "blood-cont">04</h4></div>
-                 <div id="blood-count-camp1-4"><h3 id="blood-name">O+</h3> <h4 id = "blood-cont">04</h4></div>
-                 <div id="blood-count-camp1-5"><h3 id="blood-name">A-</h3> <h4 id = "blood-cont">04</h4></div>
+                 <div id="blood-count-camp1-1"><h3 id="blood-name">A+</h3> <h4 id = "blood-cont">40</h4></div>
+                 <div id="blood-count-camp1-2"><h3 id="blood-name">B+</h3> <h4 id = "blood-cont">10</h4></div>
+                 <div id="blood-count-camp1-3"><h3 id="blood-name">AB+</h3> <h4 id = "blood-cont">12</h4></div>
+                 <div id="blood-count-camp1-4"><h3 id="blood-name">O+</h3> <h4 id = "blood-cont">21</h4></div>
+                 <div id="blood-count-camp1-5"><h3 id="blood-name">A-</h3> <h4 id = "blood-cont">30</h4></div>
                  <div id="blood-count-camp1-6"><h3 id="blood-name">B-</h3> <h4 id = "blood-cont">04</h4></div>
-                 <div id="blood-count-camp1-7"><h3 id="blood-name">AB-</h3> <h4 id = "blood-cont">04</h4></div>
-                 <div id="blood-count-camp1-8"><h3 id="blood-name">O-</h3> <h4 id = "blood-cont">04</h4></div>
+                 <div id="blood-count-camp1-7"><h3 id="blood-name">AB-</h3> <h4 id = "blood-cont">09</h4></div>
+                 <div id="blood-count-camp1-8"><h3 id="blood-name">O-</h3> <h4 id = "blood-cont">25</h4></div>
           </div> 
               
                 <h4 id ="h4-head-past">Tuesday, July 30, 2022</h4>

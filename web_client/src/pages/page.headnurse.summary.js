@@ -94,8 +94,8 @@ export default function HeadNurseSummaryWork() {
            <br/>
             <div id="sub-row2-headnurse-summary">
               <h3 id ="blood-sum">Blood Counter Details</h3>
-              <div id="blood-headnurse"><Blood name='O+' /><Blood name='A+' /><Blood name='B+' /><Blood name='AB+' />
-              <Blood name='O-' /><Blood name='A-' /><Blood name='B-' /><Blood name='AB-' /></div>
+              <div id="blood-headnurse"><Blood name='O+' count='20' /><Blood name='A+' count='25'/><Blood name='B+' count='12'/><Blood name='AB+' count='34' />
+              <Blood name='O-' count='21' /><Blood name='A-' count='08'/><Blood name='B-' count='07'/><Blood name='AB-' count='10'/></div>
             </div>
 
             <div id="summary-table-box"> <br/>  <h3 id="do-head">Donors' Details </h3>
@@ -117,7 +117,7 @@ export default function HeadNurseSummaryWork() {
     <td>071-4468712</td>
     <td>Colombo</td>
     <td>9647845412V</td>
-    <td> <button id ="view-donor-button-headnurse" > View</button></td>
+    <td> <a href="/headnurse/donordetails"><button id ="view-donor-button-headnurse" > View</button></a></td>
   </tr>
   <tr>
     <td>02</td>
@@ -126,7 +126,7 @@ export default function HeadNurseSummaryWork() {
     <td>071-5478413</td>
     <td>Kandy</td>
     <td>9647845412V</td>
-    <td><button id ="view-donor-button-headnurse" > View</button></td>
+    <td><a href="/headnurse/donordetails"><button id ="view-donor-button-headnurse" > View</button></a></td>
     
   </tr>
   <tr>
@@ -136,7 +136,7 @@ export default function HeadNurseSummaryWork() {
     <td>011-1254875</td>
     <td>Matara</td>
     <td>9678845412V</td>
-    <td><button id ="view-donor-button-headnurse" > View</button></td>
+    <td><a href="/headnurse/donordetails"><button id ="view-donor-button-headnurse" > View</button></a></td>
   </tr>
   <tr>
     <td>04</td>
@@ -145,7 +145,7 @@ export default function HeadNurseSummaryWork() {
     <td>076-1694784</td>
     <td>Galle</td>
     <td>9647845412V</td>
-    <td><button id ="view-donor-button-headnurse" > View</button></td>
+    <td><a href="/headnurse/donordetails"><button id ="view-donor-button-headnurse" > View</button></a></td>
   </tr>
   <tr>
     <td>05</td>
@@ -154,7 +154,7 @@ export default function HeadNurseSummaryWork() {
     <td>077-3745896</td>
     <td>Monaragala</td>
     <td>9647845412V</td>
-    <td><button id ="view-donor-button-headnurse" > View</button></td>
+    <td><a href="/headnurse/donordetails"><button id ="view-donor-button-headnurse" > View</button></a></td>
   </tr>
   
   
