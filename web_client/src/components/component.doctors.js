@@ -40,6 +40,7 @@ export default function Doctors() {
             })
 
     }
+    
     console.log(data[1]);
     function addDoctor(e) {
         e.preventDefault()
