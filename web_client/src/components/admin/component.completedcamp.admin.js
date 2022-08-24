@@ -15,61 +15,61 @@ export default function CompletedCamp(){
                     <th>Date</th>
                     <th>Location</th>
                     <th>Organizer Name</th>
-                    <th >Blood Center Id</th>
+                    <th >Blood Center Name</th>
                     <th >Number of Donors</th>
                     <th id='camp-action-admin'>Action</th>
                 </tr>
                 <tr>
                     <td>13</td>
-                    <td>07-09-2022</td>
+                    <td>06-12-2022</td>
                     <td>Gold house, Matara</td>
-                    <td>Sanduni Malsha</td>
-                    <td>04</td>
+                    <td>K.L.M.Sandaruwan</td>
+                    <td>Heartland</td>
                     <td>98</td>
                     <td><button id='view-camp-button-admin'>View</button></td>
                 </tr>
                 <tr>
                     <td>14</td>
-                    <td>07-09-2022</td>
+                    <td>06-18-2022</td>
                     <td>Green palace, Galle</td>
-                    <td>D.K.Hansika</td>
-                    <td>06</td>
+                    <td>D.D.Kumud</td>
+                    <td>Central care</td>
                     <td>101</td>
                     <td><button id='view-camp-button-admin'>View</button></td>
                 </tr>
                 <tr>
                     <td>15</td>
-                    <td>07-09-2022</td>
+                    <td>07-07-2022</td>
                     <td>Gold house, Matara</td>
-                    <td>Dinusha Gunawardhane</td>
-                    <td>15</td>
+                    <td>M.K. Gunawardhane</td>
+                    <td>Red Bucket</td>
                     <td>103</td>
                     <td><button id='view-camp-button-admin'>View</button></td>
                 </tr>
                 <tr>
                     <td>16</td>
-                    <td>07-09-2022</td>
-                    <td>UCSC</td>
-                    <td>Kalshi Lakeesha</td>
-                    <td>11</td>
+                    <td>07-23-2022</td>
+                    <td>Sakya Institute, Nugegoda </td>
+                    <td>Sanath Gunapala</td>
+                    <td>LifeSupport</td>
                     <td>124</td>
                     <td><button id='view-camp-button-admin'>View</button></td>
                 </tr>
                 <tr>
                     <td>17</td>
-                    <td>07-09-2022</td>
-                    <td>UCSC</td>
-                    <td>Dilhara Savinda</td>
-                    <td>08</td>
+                    <td>07-29-2022</td>
+                    <td>Gurukula, Matara</td>
+                    <td>Harith Induwara</td>
+                    <td>Little Help</td>
                     <td>101</td>
                     <td><button id='view-camp-button-admin'>View</button></td>
                 </tr>
                 <tr>
                     <td>18</td>
-                    <td>07-09-2022</td>
+                    <td>08-09-2022</td>
                     <td>NDDT, Kohuwala</td>
-                    <td>Hiruni Danapala</td>
-                    <td>10</td>
+                    <td>Sarith Ridhmika</td>
+                    <td>Redonest</td>
                     <td>94</td>
                     <td><button id='view-camp-button-admin'>View</button></td>
                 </tr>

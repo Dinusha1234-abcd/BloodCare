@@ -37,23 +37,23 @@ export default function ONegative(){
                    
                 </tr>
                 <tr>
-                <td>2022/07/28</td>
-                    <td>101</td>
+                <td>2022/07/26</td>
+                    <td>100</td>
                     <td>100</td>
                     </tr>
                 <tr>
-                <td>2022/07/28</td>
-                    <td>101</td>
+                <td>2022/07/25</td>
+                    <td>99</td>
                     <td>100</td>
                     </tr>
                 <tr>
-                <td>2022/07/28</td>
-                    <td>101</td>
+                <td>2022/07/23</td>
+                    <td>98</td>
                     <td>100</td>
                           </tr>
                 <tr>
-                <td>2022/07/28</td>
-                    <td>101</td>
+                <td>2022/07/20</td>
+                    <td>97</td>
                     <td>100</td>
                        
                 </tr>

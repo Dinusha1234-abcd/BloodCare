@@ -21,7 +21,7 @@ export default function AdminUsers() {
   if (window.location.pathname === '/users/medicalofficer' || window.location.pathname === '/users') {
     return (
       <div>
-        <SlideMenuAdmin headerName={"USERS"} passData={passData} />
+        <SlideMenuAdmin headerName={"Users"} passData={passData} />
         <div id={`${slidemenu ? 'state-change-true' : 'state-change-false'}`}> 
           <AdminUserHeader />
           <MedicalOfficer/> 

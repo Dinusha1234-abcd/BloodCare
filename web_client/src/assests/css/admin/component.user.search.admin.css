@@ -6,6 +6,7 @@
     margin-left: 26%;
     height: 30px;
     font-size: 17px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, FontAwesome;
 }
 #input-doctor-admin{
     padding: 6px;
@@ -15,6 +16,7 @@
     margin-left: 48%;
     height: 30px;
     font-size: 17px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, FontAwesome;
 }
 #input-headnurse-admin{
     padding: 6px;
@@ -23,41 +25,120 @@
     width: 30%;
     margin-left: 45%;
     height: 30px;
-    font-size: 17px; 
+    font-size: 17px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, FontAwesome; 
 }
 #input-nurse-admin{
     padding: 6px;
     border-radius: 15px;
     border-color: #F79CAE;
     width: 30%;
-    margin-left: 50%;
+    margin-left: 61%;
     height: 30px;
-    font-size: 17px; 
+    font-size: 17px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, FontAwesome; 
 }
 #input-organizer-admin{
     padding: 6px;
     border-radius: 15px;
     border-color: #F79CAE;
     width: 30%;
-    margin-left: 34%;
+    margin-left: 45%;
     height: 30px;
-    font-size: 17px; 
+    font-size: 17px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, FontAwesome; 
 }
 #input-driver-admin{
     padding: 6px;
     border-radius: 15px;
     border-color: #F79CAE;
     width: 30%;
-    margin-left: 49%;
+    margin-left: 60%;
     height: 30px;
-    font-size: 17px; 
+    font-size: 17px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, FontAwesome; 
 }
 #input-donor-admin{
     padding: 6px;
     border-radius: 15px;
     border-color: #F79CAE;
     width: 30%;
-    margin-left: 38%;
+    margin-left: 49%;
     height: 30px;
-    font-size: 17px; 
+    font-size: 17px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, FontAwesome; 
+}
+
+
+                                    /* Registation form */
+
+#register-form-user-admin-active {
+    position: absolute;
+    position: fixed;
+    right: 22px;
+    top: 90px;
+    height: 600px;
+    border-radius: 20px;
+    width: 40%;
+    padding-top: 22px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    z-index: 90;
+    transition: 0.6s;
+}
+
+#register-form-user-admin {
+    position: absolute;
+    position: fixed;
+    right: -650px;
+    top: 90px;
+    height: 600px;
+    border-radius: 20px;
+    width: 40%;
+    padding-top: 22px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    z-index: 90;
+    transition: 0.6s;
+}
+
+#register-form-user-name-admin {
+    font-size: 20px;
+    margin-top: 22px;
+    padding: 6px;
+    background-color: rgba(234, 71, 103, 0.8);
+    margin: 11px;
+    color: rgb(255, 255, 255);
+    border-radius: 12px;
+    font-weight:100;
+}
+#register-form-user-form-admin{
+    margin-top: 50px;
+    margin-left: 100px;
+}
+#message-form-admin{
+    padding: 11px;
+    background-color: rgb(221, 72, 102);
+    color: rgb(255, 255, 255);
+    width: 80%;
+    border-radius: 10px;
+}
+#register-form-user-input-admin{
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    border-color: rgba(221, 45, 80, 1);
+    padding: 11px;
+    margin-top: 10px;
+    box-shadow: red;
+    border-style: hidden;
+    border-color: rgba(221, 45, 80, 1);
+    font-size: 15px;
+    outline-style: none;
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    color: rgb(19, 19, 19)
 }

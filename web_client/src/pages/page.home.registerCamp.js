@@ -99,7 +99,7 @@ export default function RegisterCamp() {
 
                         <table id='camp-form-table'>
                             <tr>
-                                <td>Full Name</td>
+                                <td id="camp-form-table-font-size">Full Name</td>
                                 <td>   <input type="text" id="register-form-new-camp" placeholder="Enter Full name" onChange={(e)=>{setFullName(e.target.value)} }  /> <br />
                                 </td>
                                 <td></td>
@@ -109,7 +109,7 @@ export default function RegisterCamp() {
                                 </td>
                             </tr>
                             <tr>
-                                <td>Contact</td>
+                                <td id="camp-form-table-font-size">Contact</td>
                                 <td>   <input type="text" id="register-form-new-camp" placeholder="Enter Telephone Number" onChange={(e)=>{setContact(e.target.value)}}  /> <br />
                                 </td>
                                 <td></td>
@@ -118,7 +118,7 @@ export default function RegisterCamp() {
                                 </td>
                             </tr>
                             <tr>
-                                <td>Blood Camp Name</td>
+                                <td id="camp-form-table-font-size">Blood Camp Name</td>
                                 <td>   <input type="text" id="register-form-new-camp" placeholder="Enter Camp Name"  onChange={(e)=>{setCampName(e.target.value)}} /> <br />
                                 </td>
                                 <td></td>
@@ -127,7 +127,7 @@ export default function RegisterCamp() {
                                 </td>
                             </tr>
                             <tr>
-                                <td>Location</td>
+                                <td id="camp-form-table-font-size">Location</td>
                                 <td>   <input type="text" id="register-form-new-camp" placeholder="Enter Location"  onChange={(e)=>{setLocation(e.target.value)}}  /> <br />
                                 </td>
                                 <td></td>
@@ -142,7 +142,7 @@ export default function RegisterCamp() {
                                 </td>
                             </tr>
                             <tr>
-                                <td>Cluster Center</td>
+                                <td id="camp-form-table-font-size">Cluster Center</td>
                                 <td>   <select id="register-form-new-camp" placeholder="Enter Cluster Center"  onChange={(e)=>{setClusterCenter(e.target.value)}}>
                                 <option value="" disabled selected>Select Cluster Center</option>
                                 <option value="nbc">NBC</option>
@@ -156,11 +156,7 @@ export default function RegisterCamp() {
                                 <td>   <input type="file" id="register-form-new-camp" placeholder="Upload a flyer"  onChange={(e)=>{setFile(e.target.value)}}  /> <br />
                                 </td>
                             </tr>
-                            <tr>
-                                <td>Content</td>
-                                <td>   <input type="text" id="register-form-new-camp" placeholder="Enter your content"  onChange={(e)=>{setContent(e.target.value)}}  /> <br />
-                                </td>
-                            </tr>
+            
                              
                             
                         </table> <br/>
