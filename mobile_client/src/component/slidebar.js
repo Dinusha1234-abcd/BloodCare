@@ -34,6 +34,9 @@ const SlideBar = (props)  =>{
     function navgationToCalender(){
         props.nav.replace('CalendarPage');
      }
+    function navgationToBloodCamp(){
+        props.nav.replace('BloodCamp');
+    }
     return (
         <><View style={styles.slideBarHeadertab}>
             <Pressable onPress={() => { setShow(!show) }}><Image style={styles.slideBaruserIcon} source={require('../assests/menu.png')} onPress={() => { setShow(!show) }} /></Pressable>
@@ -61,6 +64,9 @@ const SlideBar = (props)  =>{
                 </Pressable>
                 <Pressable style={styles.HistoryButton} color="rgba(255, 63, 101, 1)" onPress={navigationToHistory}  >
                     <Text style={styles.NavTextCalendar}> <Image style={styles.history} source={require('../assests/history.jpg')} />{"  "} History</Text>
+                </Pressable>
+                <Pressable style={styles.Button} color="rgba(255, 63, 101, 1)" onPress={navgationToBloodCamp}  >
+                    <Text style={styles.NavTextCalendar}> <Image style={styles.history} source={require('../assests/history.jpg')} />{"  "} Blood Camp</Text>
                 </Pressable>
       </View></>
     )
@@ -112,6 +118,7 @@ const styles = StyleSheet.create({
         transition: '0.11s'
     }, slideBarActive: {
         height: 800,
+        zIndex:100,
         paddingTop: 30,
         width: '50%',
         backgroundColor: 'rgba(221, 45, 80, 0.79)'
