@@ -33,6 +33,7 @@ export default function MedicalOfficerDashboard() {
         backgroundColor: ['#ED0E02', '#6E2820', '#E61D12', '#E36D66', '#963732', '#F2B8B1', '#6E3B35', '#7A514C']
       }]
     })
+    
     const [useDataPieChart, setUseDataPreChart] = useState({
       labels: ['Other Cluster Center', 'Cluster Center'],
       datasets: [{

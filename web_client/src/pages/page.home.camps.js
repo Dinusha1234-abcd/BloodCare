@@ -1,8 +1,10 @@
 import { React, useState } from "react";
 import styled from "styled-components";
-import Calendar from 'react-calendar';
+import Calendar from "react-calendar";
 import NavBar from "../components/component.home.navbar";
-
+import "../assests/css/page.home.camps.css";
+import "../assests/css/component.doctors.css";
+import axios from "axios";
 
 export default function Camps() {
   const IconButtonFunction = (e, name) => {
@@ -15,9 +17,70 @@ export default function Camps() {
     alert(`${name} was clicked`);
   };
 
+  function joinCamp(e) {
+    e.preventDefault();
+
+    const donor = {
+      firstName,
+      lastName,
+      NIC,
+      address,
+      email,
+      mobileNumber,
+    };
+    if (firstName.length == 0) {
+      setMessage("Please Enter First Name ");
+    } else if (lastName.length == 0) {
+      setMessage("Please Enter Last Name ");
+    } else if (!(NIC.length == 10 || NIC.length == 12)) {
+      console.log(NIC.length);
+      setMessage("Please Enter  Valid NIC Number ");
+    } else if (address.length == 0) {
+      setMessage("Please Enter  Address ");
+    } else if (email.length == 0) {
+      setMessage("Please Enter  Email ");
+    } else if (!(mobileNumber.length == 10)) {
+      setMessage("Please Enter  Valid Mobile Number");
+    } else {
+      setFormRegCamp(false);
+      setSuccess(true);
+      setFirstName("");
+      setLastName("");
+      setNIC("");
+      setAddress("");
+      setMobileNumber("");
+      setEmail("");
+      e.target.reset();
+      // pass check the data with server
+      axios
+        .post("http://localhost:8070/camps", donor)
+        .then((res) => {
+          //check password and username
+          if (res["data"]["message"] == "success") {
+            window.location = "/camps";
+          } else {
+            setMessage("Network Connection issue");
+          }
+        })
+        .catch((err) => {
+          //sever error
+          console.log(err.message);
+        });
+    }
+  }
+
   const [date, setDate] = useState(new Date());
 
- 
+  const [formRegCamp, setFormRegCamp] = useState(false);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [NIC, setNIC] = useState("");
+  const [address, setAddress] = useState("");
+  const [email, setEmail] = useState("");
+  const [mobileNumber, setMobileNumber] = useState("");
+  const [success, setSuccess] = useState(false);
+  const [message, setMessage] = useState("");
+
   return (
     <CampsRoot>
       <FlexRow>
@@ -32,26 +95,27 @@ export default function Camps() {
           </FlexRow1>
           <NavBar />
           <FlexRow2>
-
             <FlexColumn1>
-            
-              <CalendarContainer>
-                 <Calendar onChange={setDate} readOnly={true} value={date} id="calender" />
-              </CalendarContainer>
-
-              <Element52>
-              <Text43>Choose your district</Text43>
-               
+              <SelectDistrict>
+                <h3 id="select-district-text">Select Your District</h3>
                 <Select>
-                <option value="" disabled selected hidden>Select District</option>
-                <option value="1">Colombo</option>
-                <option value="2">Galle</option>
-                <option value="3">Kandy</option>
-                <option value="4">Jaffna</option>
-              </Select>
-              </Element52>
-
-          
+                  <option value="" disabled defaultValue hidden>
+                    Select District
+                  </option>
+                  <option value="1">Colombo</option>
+                  <option value="2">Galle</option>
+                  <option value="3">Kandy</option>
+                  <option value="4">Jaffna</option>
+                </Select>
+              </SelectDistrict>
+              <CalendarContainer>
+                <Calendar
+                  onChange={setDate}
+                  readOnly={true}
+                  value={date}
+                  id="calender"
+                />
+              </CalendarContainer>
               <Map2>
                 <Map1>
                   <Element58>
@@ -163,7 +227,9 @@ export default function Camps() {
                         32/1, Road Lane, Colombo
                       </Paragraph>
                       <FlexRow12>
-                        <PiggyPinkText>Register</PiggyPinkText>
+                        <button onClick={() => {setFormRegCamp(!formRegCamp);}}>
+                          <PiggyPinkText>Register</PiggyPinkText>
+                        </button>
                         <FancyChip>
                           <Chip1 width={`108px`}>
                             <AvatarFill>
@@ -390,7 +456,6 @@ export default function Camps() {
                 <br />
                 <br />
                 {"    32/1, Road Lane, Colombo   "}
-                
               </Paragraph>
               <FlexRow12>
                 <PiggyPinkText>Register</PiggyPinkText>
@@ -457,96 +522,144 @@ export default function Camps() {
           </Task>
         </LaneInner2>
       </HeroImage>
+      <div id={`${formRegCamp ? 'fade-clusterAdmin' : null}`} onClick={() => { setFormRegCamp(!formRegCamp) }}></div>
+      <div
+        id={`${
+          formRegCamp
+            ? "register-form-join-camp-active"
+            : "register-form-join-camp"
+        }`}
+      >
+        <h3 id="register-form-doctor-name-clusteradmin">
+          Register To The Camp
+        </h3>
+        <form id="register-join-camp" onSubmit={joinCamp}>
+          {message ? (
+            <p id="message-form-clusteradmin">
+              {message}{" "}
+              <i
+                class="fa-solid fa-xmark close-button-form"
+                onClick={() => {
+                  setMessage("");
+                }}
+              ></i>
+            </p>
+          ) : null}
+          <table id="medical-staff-view-table">
+            <tr>
+              <td>First Name</td>
+              <td>
+                {" "}
+                <input
+                  type="text"
+                  id="register-form-doctor-input-clusteradmin"
+                  placeholder="Enter First name"
+                  onChange={(e) => {
+                    setFirstName(e.target.value);
+                  }}
+                />{" "}
+                <br />
+              </td>
+            </tr>
+            <tr>
+              <td>Last Name</td>
+              <td>
+                {" "}
+                <input
+                  type="text"
+                  id="register-form-doctor-input-clusteradmin"
+                  placeholder="Enter Last name"
+                  onChange={(e) => {
+                    setLastName(e.target.value);
+                  }}
+                />{" "}
+                <br />
+              </td>
+            </tr>
+            <tr>
+              <td>NIC Number</td>
+              <td>
+                {" "}
+                <input
+                  type="text"
+                  id="register-form-doctor-input-clusteradmin"
+                  placeholder="Enter NIC Number"
+                  onChange={(e) => {
+                    setNIC(e.target.value);
+                  }}
+                />{" "}
+                <br />
+              </td>
+            </tr>
+            <tr>
+              <td>Address</td>
+              <td>
+                {" "}
+                <input
+                  type="text"
+                  id="register-form-doctor-input-clusteradmin"
+                  placeholder="Enter Address"
+                  onChange={(e) => {
+                    setAddress(e.target.value);
+                  }}
+                />{" "}
+                <br />
+              </td>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td>
+                {" "}
+                <input
+                  type="text"
+                  id="register-form-doctor-input-clusteradmin"
+                  placeholder="Enter Email"
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                />{" "}
+                <br />
+              </td>
+            </tr>
+            <tr>
+              <td>Mobile Number</td>
+              <td>
+                {" "}
+                <input
+                  type="text"
+                  id="register-form-doctor-input-clusteradmin"
+                  placeholder="Enter Mobile Number"
+                  onChange={(e) => {
+                    setMobileNumber(e.target.value);
+                  }}
+                />{" "}
+                <br />
+              </td>
+            </tr>
+          </table>{" "}
+          <br />
+          <button type="sumbit" id="sumbit-save-form">
+            {" "}
+            Register{" "}
+          </button>{" "}
+          <button
+            id="sumbit-cancle-form"
+            onClick={() => {
+              setFormRegCamp(!formRegCamp);
+            }}
+          >
+            {" "}
+            Cancel{" "}
+          </button>{" "}
+          <br />
+          <br />
+        </form>
+      </div>
     </CampsRoot>
   );
-};
+}
 
 //styled components
-
-const Element53 = styled.div`
-  width: 25px;
-  height: 24px;
-  position: relative;
-  flex-grow: 1;
-  margin: ${(props) => props.margin};
-`;
-const PiggyPinkRectangle = styled.div`
-  width: 25px;
-  height: 20px;
-  background-color: #fbcfd8;
-  position: absolute;
-  top: 2px;
-`;
-const Text2 = styled.div`
-  font-size: 20px;
-  font-family: Inter;
-  letter-spacing: 0.6px;
-  position: absolute;
-  left: ${(props) => props.left};
-`;
-const Text5 = styled.div`
-  font-size: 20px;
-  font-family: Inter;
-  letter-spacing: 0.6px;
-  color: #5f5858;
-  margin: ${(props) => props.margin};
-`;
-const Text11 = styled.div`
-  font-size: 20px;
-  font-family: Inter;
-  font-weight: bold;
-  letter-spacing: 0.6px;
-  color: ${(props) => props.color};
-`;
-const Text12 = styled.div`
-  font-size: 20px;
-  font-family: Inter;
-  letter-spacing: 0.6px;
-  align-self: flex-end;
-  margin: ${(props) => props.margin};
-`;
-const Text13 = styled.div`
-  font-size: 20px;
-  font-family: Inter;
-  letter-spacing: 0.6px;
-  margin: ${(props) => props.margin};
-`;
-const MelonRectangle = styled.div`
-  width: 31px;
-  height: 23px;
-  background-color: rgba(255, 182, 182, 0.38);
-  position: absolute;
-  border-radius: 8px;
-  top: ${(props) => props.top};
-`;
-const Text28 = styled.div`
-  font-size: 20px;
-  font-family: Inter;
-  letter-spacing: 0.6px;
-  color: rgba(221, 45, 80, 0.8);
-  align-self: flex-start;
-`;
-const Text29 = styled.div`
-  font-size: 20px;
-  font-family: Inter;
-  letter-spacing: 0.6px;
-  align-self: flex-start;
-  margin: ${(props) => props.margin};
-`;
-const Line = styled.img`
-  width: 1px;
-  height: 182px;
-  position: absolute;
-  top: 0.01px;
-  left: ${(props) => props.left};
-`;
-const Line3 = styled.img`
-  width: 1px;
-  height: 182px;
-  position: absolute;
-  top: 0.02px;
-  left: ${(props) => props.left};
-`;
 const Search = styled.img`
   width: 20px;
   height: 20px;
@@ -705,14 +818,7 @@ const Footer = styled.div`
   min-width: 288px;
   padding: 16px;
   border-width: 1px 0px 0px 0px;
-  height: ${(props) => props.height};
-`;
-const Action = styled.div`
-  display: flex;
-  flex-direction: row;
-  gap: 2px;
-  justify-content: flex-start;
-  align-items: center;
+  height: 50%;
 `;
 const Action2 = styled.div`
   width: 221px;
@@ -742,14 +848,6 @@ const Text52 = styled.div`
   color: #64748b;
   height: 15px;
   width: ${(props) => props.width};
-`;
-const Text61 = styled.div`
-  font-size: 18px;
-  font-family: Quicksand;
-  font-weight: 500;
-  line-height: 27px;
-  color: #161e29;
-  margin: ${(props) => props.margin};
 `;
 const CampsRoot = styled.div`
   width: 100%;
@@ -844,164 +942,19 @@ const FlexColumn1 = styled.div`
   flex-grow: 1;
   align-items: center;
 `;
-const Element52 = styled.div`
+const SelectDistrict = styled.div`
   height: 390.02px;
   position: relative;
   min-width: 323px;
 `;
-const WhiteFlexColumn = styled.div`
-  height: 238px;
-  background-color: rgba(255, 255, 255, 0.8);
-  display: flex;
-  position: absolute;
-  top: 134.02px;
-  flex-direction: column;
-  justify-content: flex-start;
-  border-radius: 30px;
-  padding: 9px 20.99px 9px 14px;
-`;
 const CalendarContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  padding: 0px 44.01px 0px 50px;
-  margin: 0px 0px 14px 0px;
-`;
-const Text3 = styled.div`
-  font-size: 20px;
-  font-family: Inter;
-  letter-spacing: 0.6px;
-  color: #5f5858;
-  align-self: center;
-  margin: 0px 18px 0px 0px;
-`;
-const Line12 = styled.img`
-  width: 287.01px;
-  height: 1px;
-  align-self: flex-end;
-`;
-const FlexRow4 = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 0px 9.01px 0px 7px;
-  margin: 0px 0px 8px 0px;
-`;
-const Line13 = styled.img`
-  width: 287.01px;
-  height: 1px;
-  align-self: flex-start;
-  margin: 0px 0px 3px 0px;
-`;
-const FlexRow5 = styled.div`
-  height: 25px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: flex-start;
-  padding: 0px 12.01px;
-  margin: 0px 0px 1px 0px;
-`;
-const Line7 = styled.img`
-  width: 287.01px;
-  height: 1px;
-  align-self: flex-end;
-  margin: 0px 0px 3px 0px;
-`;
-const FlexRow6 = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: flex-start;
-  padding: 0px 7.01px;
-  margin: 0px 0px 3px 0px;
-`;
-const Element55 = styled.div`
-  align-self: stretch;
-  width: 31px;
-  height: 25px;
-  position: relative;
-  flex-grow: 1;
-  margin: 0px 19px 0px 0px;
-`;
-const Line8 = styled.img`
-  width: 287.01px;
-  height: 1px;
-  align-self: flex-end;
-  margin: 0px 0px 1px 0px;
-`;
-const FlexRow7 = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  padding: 0px 10.01px 0px 12px;
-  margin: 0px 0px 2px 0px;
-`;
-const Element56 = styled.div`
-  align-self: stretch;
-  width: 31px;
-  height: 26px;
-  position: relative;
-  flex-grow: 1;
-  margin: 0px 8px 0px 0px;
-`;
-const Text26 = styled.div`
-  font-size: 20px;
-  font-family: Inter;
-  letter-spacing: 0.6px;
   position: absolute;
-  top: 2px;
-  left: 2px;
+  width: 100%;
+  height: 256px;
+  top: 25%;
+  right: 70.5%;
 `;
-const Line9 = styled.img`
-  width: 287.01px;
-  height: 1px;
-  align-self: flex-end;
-  margin: 0px 0px 2px 0px;
-`;
-const FlexRow8 = styled.div`
-  height: 25px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: flex-end;
-  padding: 0px 6.01px;
-  margin: 0px 0px 2px 0px;
-`;
-const Line10 = styled.img`
-  width: 287.01px;
-  height: 1px;
-  align-self: flex-start;
-`;
-const FlexRow9 = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 0px 9px;
-`;
-const Element57 = styled.div`
-  width: 31px;
-  height: 24px;
-  position: relative;
-  flex-grow: 1;
-  margin: 0px 10px 0px 0px;
-`;
-const Line5 = styled.img`
-  width: 1px;
-  height: 182.01px;
-  position: absolute;
-  left: 260px;
-`;
-const WhiteRectangle1 = styled.div`
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  width: 290px;
-  height: 43px;
-  background-color: #ffffff;
-  position: absolute;
-  top: 71.02px;
-  left: 21px;
-  border-radius: 10px;
-`;
+
 const Text43 = styled.div`
   width: 266px;
   height: 46px;
@@ -1013,25 +966,7 @@ const Text43 = styled.div`
   top: 38.02px;
   left: 25px;
 `;
-const Text44 = styled.div`
-  width: 166px;
-  height: 33px;
-  font-size: 14px;
-  font-family: Inter;
-  font-weight: 500;
-  letter-spacing: 0.7px;
-  color: rgba(0, 0, 0, 0.8);
-  position: absolute;
-  top: 84.02px;
-  left: 36px;
-`;
-const Icroundarrowdropdown = styled.img`
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  top: 64.02px;
-  left: 270px;
-`;
+
 const Map2 = styled.div`
   background-color: #f1f5f9;
   display: flex;
@@ -1220,75 +1155,7 @@ const Akariconslocation1 = styled.img`
   width: 19px;
   height: 20px;
 `;
-const Header = styled.div`
-  width: 567px;
-  display: flex;
-  position: absolute;
-  top: 52px;
-  left: 916px;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-`;
-const Text60 = styled.div`
-  font-size: 18px;
-  font-family: Quicksand;
-  font-weight: 700;
-  line-height: 27px;
-  color: #161e29;
-  align-self: flex-end;
-  margin: 0px 55px 8px 0px;
-`;
-const FlexColumn3 = styled.div`
-  width: 59px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  flex-grow: 1;
-  align-items: center;
-  padding: 5px 0px;
-  margin: 0px 55px 0px 0px;
-`;
-const Selector = styled.div`
-  width: 59px;
-  height: 4px;
-  background-color: #dd2d50;
-  border-radius: 20px;
-`;
-const Text63 = styled.button`
-  text-align: center;
-  font-size: 16px;
-  font-family: Quicksand;
-  font-weight: 500;
-  line-height: 24px;
-  color: #020202;
-  margin: 0px 37px 0px 0px;
-  padding: 0px;
-  border-width: 0px;
-  background: none;
-  box-sizing: content-box;
-  cursor: pointer;
-`;
-const RedText = styled.input`
-  display: inline-block;
-  font-size: 18px;
-  font-family: Quicksand;
-  font-weight: 700;
-  line-height: 27px;
-  color: #ffffff;
-  width: 119px;
-  height: 27px;
-  background-color: #dd2d50;
-  flex-direction: row;
-  justify-content: center;
-  border-radius: 30.5px;
-  padding: 8px 0px 10px 0px;
-  border-width: 0px;
-  :: placeholder {
-    color: #ffffff;
-  }
-  outline-width: 0px;
-`;
+
 const LaneInner2 = styled.div`
   border-color: #ffffff;
   border-style: solid;
@@ -1301,7 +1168,7 @@ const LaneInner2 = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   position: absolute;
-  top: 263px;
+  top: 234px;
   left: 1116px;
   border-radius: 24px;
   padding: 16px;

@@ -1,0 +1,65 @@
+#search-headnurse-summary{
+    position:absolute;
+    margin-top: 10px;  
+    width:400px;
+    height: 40px;
+    border-radius: 20px;
+    margin-left: 700px; 
+    font-size:15px;
+    padding-left: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border:none;
+}
+
+#button-headnurse-summary{
+    position:absolute;
+    margin-top: 10px;  
+    width:100px;
+    height: 40px;
+    border-radius: 20px;
+    margin-left: 1110px; 
+    font-size:18px;
+    background: rgba(246, 156, 174, 1);
+    border: none;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#button-headnurse-summary:hover {
+    background-color: #7e7c7c; /* Green */
+    color: white;
+  }
+
+#details-summary{
+    /*background: rgba(255, 255, 255, 0.5);*/
+    width : 1200px;
+    height: 200px;
+    background: white;
+    margin-top: 50px;
+    border-radius: 50px;
+  }
+
+  /* details*/
+#details-names-summary{
+    position: absolute;
+    font-size: large;
+    margin-top: 10px;
+    margin-left: 10px;
+
+}  
+
+/* organizer details*/
+/*#organizer-summary{
+    background-color:  rgb(248, 228, 232); 
+    position: absolute;
+    width: 400px;
+    height: 170px;
+    margin-left: 750px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50px;
+}*/
+
+#details-organizer-summary{
+    position: absolute;
+}

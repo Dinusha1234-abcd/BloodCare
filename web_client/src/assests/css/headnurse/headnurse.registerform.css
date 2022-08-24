@@ -1,0 +1,128 @@
+/*div*/
+#form-headnurse-donor-reg{
+    margin-top: 10px;
+    width:1200px;
+    height:710px;
+    /*background: #f9ced7;*/
+    margin-left: 20px;
+   /* border-radius: 50px;*/
+    /*box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);*/ 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/*image*/
+#form-img-headnurse{
+    opacity: 0.1;
+    position: absolute;
+    margin-left: 50%;
+}
+/*header*/
+#donor-form-header{
+    position: relative;
+    margin-top: 0px;
+    font-size: larger;
+    margin-left: 480px;
+    font-family: sans-serif;
+    
+}
+/*button*/
+#donor-reg-button-headnurse{
+    position:absolute;
+    margin-left: 70%;
+    margin-top:600px ;
+    width:150px;
+    height: 40px;
+    border-radius: 20px; 
+    font-size:15px;
+    background: rgba(246, 156, 174, 1);
+    border: none;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+#donor-reg-button-headnurse:hover {
+    background-color: #7e7c7c; /* Green */
+    color: white;
+  }
+
+/*form names */
+#form-label-headnurse{
+    margin-left: 100px;
+    font-size: medium;
+    padding-top: 5px;
+} 
+
+/*text inputs */
+#form-input{
+    margin-left: 100px;
+    width: 450px;
+    height: 35px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: none;
+}
+
+#form-input-address{
+    margin-left: 100px;
+    width: 1000px;
+    height: 35px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: none;
+}
+
+
+/* drop down menu*/
+#blood-group-headnurse{
+    margin-bottom: 10px;
+    margin-top:5px;
+    margin-left: 100px;
+    width: 450px;
+    height: 35px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: none;
+}
+
+/*radio buttons */
+#blood-before1-headnurse{
+    margin-left: 100px;
+    /*width: 400px;
+    height: 30px;*/
+    margin-top: 5px;
+    
+}
+
+#blood-before2-headnurse{
+    margin-left: 50px;
+    /*width: 400px;
+    height: 30px; */
+    margin-top: 5px; 
+}
+
+#diseases1-headnurse{
+    margin-left: 100px;
+   /* width: 400px;
+    height: 30px; */
+    margin-top: 5px;
+}
+#diseases2-headnurse{
+   margin-left: 50px; 
+   /*width: 400px;
+   height: 30px; */
+   margin-top: 5px;
+}
+
+#radio-headnurse{
+    margin-left:10px;
+}
+
+#form-label-box-headnurse{
+    display: flex;
+}
