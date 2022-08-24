@@ -24,10 +24,18 @@ export default function CalendarPage({ navigation }) {
             <Image style={styles.searchIcon} source={require('../assests/Vector.png')} />
          </View>
          <View style={styles.calendar}>
-            <Calendar />
+            <Calendar 
+            markingType={'custom'}
+            markedDates={{
+               '2022-08-27':{customStyles:{container:{backgroundColor:'pink',elevation:2},text:{color:'white'}}},
+               '2022-08-29':{customStyles:{container:{backgroundColor:'pink',elevation:2},text:{color:'white'}}},
+               '2022-08-14':{customStyles:{container:{backgroundColor:'pink',elevation:2},text:{color:'white'}}}
+            }}
+           
+            />
          </View>
          <View style={styles.events}>
-            <ImageBackground resizeMode={'stretch'} source={require('../assests/BloodCare.png')} />
+            <Image style={styles.image} source={require('../assests/events.png')}></Image>
          </View>
 
       </View>)
@@ -39,16 +47,20 @@ const styles = StyleSheet.create({
    }, calendar: {
       position: 'absolute',
       marginTop: 200,
-      marginLeft: 10
+      marginLeft: 10, 
+      width:'95%'
    }, events: {
       position: 'absolute',
-      marginTop: 200
+      marginTop: 550,
+      marginLeft:25,
+      resizeMode:'stretch',
+      width:'95%'
    }, search: {
       position: 'absolute',
       width: 280,
       height: 40,
       left: 65,
-      top: 20,
+      top: 35,
       borderColor: 'rgba(246, 156, 174, 1)',
       borderWidth: 1,
       shadowColor: 'rgba(0, 0, 0, 0.3)',
@@ -64,7 +76,7 @@ const styles = StyleSheet.create({
       textAlign: "center",
       fontSize: 20
    }, searchIcon: {
-      marginTop: 35,
+      marginTop: 45,
       marginLeft: 80,
 
    }, sele:{

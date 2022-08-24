@@ -9,7 +9,7 @@ export default function Nurse(){
             <div id='user-contanier-admin'> 
                 <h7 id='header-user-admin'>NURSE</h7>
                 <input type="text" id='input-nurse-admin' placeholder=" &#xf002; Search"/>
-                <button id='add-user-button-admin'>Add</button> 
+               
                 <br/><br/>
                 <table id="user-table-admin">
                 <tr>
@@ -21,47 +21,47 @@ export default function Nurse(){
                     <th id='user-action-admin'>Action</th>
                 </tr>
                 <tr>
-                    <td>988438430V</td>
-                    <td>Sanduni Malsha</td>
-                    <td>malsha2@gmail.com</td>
+                    <td>918438430V</td>
+                    <td>Nirmani Hewage</td>
+                    <td>Nirmani2@gmail.com</td>
                     <td>071-0987654</td>
                     <td><button id='view-user-button-admin'>View</button></td>
                     <td><button id='remove-user-button-admin'>Deactivate</button></td>
                 </tr>
                 <tr>
-                    <td>985434567V</td>
-                    <td>D.K.Hansika </td>
-                    <td>hansidk@gmail.com</td>
+                    <td>905434567V</td>
+                    <td>Piyumi Senarath </td>
+                    <td>piyumik@gmail.com</td>
                     <td>076-675436</td>
                     <td><button id='view-user-button-admin'>View</button></td>
                     <td><button id='remove-user-button-admin'>Deactivate</button></td>
                 </tr>
                 <tr>
-                    <td>98765678V</td>
-                    <td>Dinusha Gunawardhane</td>
+                    <td>89765678V</td>
+                    <td>Arun Gamage</td>
                     <td>dinusha88@gmail.com</td>
                     <td>077-8976549</td>
                     <td><button id='view-user-button-admin'>View</button></td>
                     <td><button id='remove-user-button-admin'>Deactivate</button></td>
                 </tr>
                 <tr>
-                    <td>981234567V</td>
-                    <td>Kalshi Lakeesha</td>
-                    <td>kalshi98@gmail.com</td>
+                    <td>901234567V</td>
+                    <td>Sandun Lakeesha</td>
+                    <td>sanduni98@gmail.com</td>
                     <td>078-7890876</td>
                     <td><button id='view-user-button-admin'>View</button></td>
                     <td><button id='remove-user-button-admin'>Deactivate</button></td>
                 </tr>
                 <tr>
-                    <td>984567890V</td>
-                    <td>Dilhara Savinda</td>
-                    <td>dilhara672@gmail.com</td>
+                    <td>894567890V</td>
+                    <td>W.H.J.Dilshan </td>
+                    <td>dilshan672@gmail.com</td>
                     <td>077-5467789</td>
                     <td><button id='view-user-button-admin'>View</button></td>
                     <td><button id='remove-user-button-admin'>Deactivate</button></td>
                 </tr>
                 <tr>
-                    <td>975643897V</td>
+                    <td>885643897V</td>
                     <td>Hiruni Danapala</td>
                     <td>danapala@gmail.com</td>
                     <td>078-123456</td>

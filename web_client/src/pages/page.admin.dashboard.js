@@ -58,15 +58,21 @@ export default function AdminDashboard() {
         <div className="box">
         <div id="member">
             <h1>Members</h1>
+
+            {/* <div id="users-count" display='inline'> 
+                <User id='user' image={doctor} name="Doctor" number='11' />  
+                <User id='user' image={headNurse2} name="Head Nurse" status={true} number='15' />  
+                <User id='user' image={nurse} name="Nurse" number='14'/>  
+                <User id='user' image={driver} name="Driver" number='11' /> </div> */}
             <div id="users-count-admin" display='inline'> 
-                <User id='user' image={mo} name="Medical Officers"/>  
-                <User id='user' image={bcAdmin} name="Cluster Center Administrators"  />  
-                <User id='user' image={doctor} name="Doctors"/>  
-                <User id='user' image={headNurse2} name="Head Nurse" /> 
-                <User id='user' image={nurse} name="Nurse"/>
-                <User id='user' image={organizer} name="Blood Camp Organizer"/>
-                <User id='user' image={driver} name="Drivers"/>
-                <User id='user' image={donor} name="Registerd Donors"/>
+                <User id='user' image={mo} name="Medical Officers " number='12'/>
+                <User id='user' image={bcAdmin} name="Cluster Center Administrators" number='12' />  
+                <User id='user' image={doctor} name="Doctors" number='32'/>  
+                <User id='user' image={headNurse2} name="Head Nurse" number='12'/> 
+                <User id='user' image={nurse} name="Nurse" number='42'/>
+                <User id='user' image={organizer} name="Blood Camp Organizer" number='15'/>
+                <User id='user' image={driver} name="Drivers" number='26'/>
+                <User id='user' image={donor} name="Registerd Donors" number='234'/>
             </div>
         </div>
 
@@ -88,11 +94,11 @@ export default function AdminDashboard() {
 
                 <div className="box3">
                     <h3>Upcoming Events</h3>
-                    <div id="camp-events-list-admin"> <p>2022/08/01 Camp Number 100  <button id="view-button-admin">View</button> </p></div>
-                    <div id="camp-events-list-admin"> <p>2022/08/01 Camp Number 101  <button id="view-button-admin">View</button> </p></div>
-                    <div id="camp-events-list-admin"> <p>2022/08/01 Camp Number 102  <button id="view-button-admin">View</button> </p></div>
-                    <div id="camp-events-list-admin"> <p>2022/08/01 Camp Number 103  <button id="view-button-admin">View</button> </p></div>
-                    <div id="camp-events-list-admin"> <p>2022/08/01 Camp Number 104  <button id="view-button-admin">View</button> </p></div>
+                    <div id="camp-events-list-admin"> <p>2022/08/29 Camp Number 09  <button id="view-button-admin">View</button> </p></div>
+                    <div id="camp-events-list-admin"> <p>2022/09/11 Camp Number 10  <button id="view-button-admin">View</button> </p></div>
+                    <div id="camp-events-list-admin"> <p>2022/09/18 Camp Number 11  <button id="view-button-admin">View</button> </p></div>
+                    <div id="camp-events-list-admin"> <p>2022/09/24 Camp Number 12  <button id="view-button-admin">View</button> </p></div>
+                    <div id="camp-events-list-admin"> <p>2022/09/30 Camp Number 13  <button id="view-button-admin">View</button> </p></div>
                 </div>
 
             </div>
@@ -100,20 +106,20 @@ export default function AdminDashboard() {
             <div id="raw3">
 
                 <div id="box4">
-                    <h3>Blood Counter Details</h3>
+                    <h3>Blood Packet Details</h3>
                     <div id="blood-admin">
-                        <Blood name='O+' />
-                        <Blood name='A+' />
-                        <Blood name='B+' />
-                        <Blood name='AB+'/>
-                        <Blood name='O-' />
-                        <Blood name='A-' />
-                        <Blood name='B-' />
-                        <Blood name='AB-'/>
+                        <Blood name='O+' number='21'/>
+                        <Blood name='A+' number='11'/>
+                        <Blood name='B+' number='13'/>
+                        <Blood name='AB+'number='10'/>
+                        <Blood name='O-' number='05'/>
+                        <Blood name='A-' number='14'/>
+                        <Blood name='B-' number='12'/>
+                        <Blood name='AB-'number='15'/>
                     </div>
                 </div>
 
-                <div id="box5">
+                <div /*id="box5"*/>
                     <Calendar onChange={setDate} readOnly={true} value={date} id="calender-admin" />
                     
                 </div>

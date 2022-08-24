@@ -3,6 +3,7 @@ import axios from 'axios';
 import '../assests/css/component.doctors.css';
 import successImage from '../assests/images/sucess.png';
 import DoctorShowRow from './component.doctorShowRow';
+
 export default function Doctors() {
     const [formReg, setFormReg] = useState(false);
     const [firstName, setFirstName] = useState("");
@@ -39,6 +40,7 @@ export default function Doctors() {
             })
 
     }
+    
     console.log(data[1]);
     function addDoctor(e) {
         e.preventDefault()
@@ -128,7 +130,7 @@ export default function Doctors() {
 
             <div id='doctor-contanier'>
                 <div id={`${success ? 'sucess-message-active' : 'sucess-message'}`}>
-                    <img id='successImage' src={successImage} />  <h3 id='sucess-message-name'> Dr {firstName + " " + lastName} Added Sucessfully <i class="fa-solid fa-xmark close-button-success" onClick={() => { setSuccess(!success) }}></i></h3>
+                    <img id='successImage' src={successImage} />  <h3 id='sucess-message-name'> Doctor Added Sucessfully <i class="fa-solid fa-xmark close-button-success" onClick={() => { setSuccess(!success) }}></i></h3>
                 </div>
                 <div id={`${formReg ? 'fade-clusterAdmin' : null}`} onClick={() => { setFormReg(!formReg) }}></div>
                 <h3 id='header-clusterAdmin'>Doctors Details</h3>

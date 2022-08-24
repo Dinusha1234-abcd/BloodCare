@@ -558,3 +558,11 @@
     position: absolute;
     right:10px;
 }
+
+#select-district-text{
+  font-size: 20px;
+  font-family: Quicksand;
+  font-weight: 500;
+}
+
+

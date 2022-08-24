@@ -105,9 +105,10 @@ export default function LandingPage ()  {
                   <Text9 alignSelf={data.alignSelf}>{data.childText}</Text9>
                 ))}
               </FlexColumn1>
-              <VerticleLine
+              <VerticleLine2
                 src={`https://file.rendit.io/n/a2HDzQXzCrRX1lY1lxp0.svg`}
                 height={`140px`}
+              
               />
             </Benefits>
           </FlexRow1>
@@ -134,19 +135,19 @@ export default function LandingPage ()  {
             <FlexColumn2>
               {[
                 {
-                  childText: `Antioxidants`,
-                  alignSelf: `center`,
-                },
-                {
-                  childText: `Vitamins`,
+                  childText: `Your donated blood can potentially help save up to three lives`,
                   alignSelf: `inherit`,
                 },
                 {
-                  childText: `Minerals`,
+                  childText: `Less than 38% of the population is eligible to give blood or platelets`,
                   alignSelf: `inherit`,
                 },
                 {
-                  childText: `Nutrients`,
+                  childText: `It improves your overall well-being`,
+                  alignSelf: `inherit`,
+                },
+                {
+                  childText: `You may need a blood donation one day`,
                   alignSelf: `inherit`,
                 },
               ].map((data) => (
@@ -174,7 +175,7 @@ export default function LandingPage ()  {
               src={`https://file.rendit.io/n/LpAry3TeDCjlbToKhYis.svg`}
               height={`168px`}
             />
-            <FlexColumn2>
+            <FlexColumn3>
               {[
                 {
                   childText: `Giving blood can reveal potential health problems`,
@@ -203,7 +204,7 @@ export default function LandingPage ()  {
               ].map((data) => (
                 <Text9 alignSelf={data.alignSelf}>{data.childText}</Text9>
               ))}
-            </FlexColumn2>
+            </FlexColumn3>
           </Criteria1>
         </FlexRow3>
       </HeroImage>
@@ -230,14 +231,6 @@ const GIVEBLOODGIVELIFE3 = styled.div`
   font-size: 64px;
   font-family: Inter;
   color: #020202;
-`;
-const Text5 = styled.div`
-  font-size: 18px;
-  font-family: Quicksand;
-  font-weight: 500;
-  line-height: 27px;
-  color: #161e29;
-  margin: ${(props) => props.margin};
 `;
 const Element1 = styled.div`
   width: 400px;
@@ -283,6 +276,14 @@ const VerticleLine = styled.img`
   left: -1px;
   height: ${(props) => props.height};
 `;
+
+const VerticleLine2 = styled.img`
+  width: 2px;
+  position: absolute;
+  top: 45px;
+  left: -1px;
+  height: ${(props) => props.height};
+`;
 const Text11 = styled.div`
   text-align: center;
   width: 206px;
@@ -299,6 +300,16 @@ const Text11 = styled.div`
   justify-content: center;
 `;
 const FlexColumn2 = styled.div`
+  display: flex;
+  position: absolute;
+  top: 6px;
+  left: 20px;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: flex-start
+`;
+const FlexColumn3 = styled.div`
   display: flex;
   position: absolute;
   top: 6px;
@@ -451,15 +462,6 @@ const Bg2 = styled.div`
   border-radius: 30.5px;
   padding: 0px 9.69px 0px 10.77px;
 `;
-const Text2 = styled.div`
-  text-align: center;
-  width: 133.54px;
-  font-size: 16px;
-  font-family: Montserrat;
-  font-weight: 700;
-  line-height: 20.8px;
-  color: #ffffff;
-`;
 const Text3 = styled.div`
   width: 425px;
   height: 55px;
@@ -475,74 +477,6 @@ const Bowl = styled.img`
   position: absolute;
   top: 135px;
   left: 799px;
-`;
-const Header = styled.div`
-  width: 567px;
-  display: flex;
-  position: absolute;
-  top: 52px;
-  left: 916px;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-`;
-const Element6 = styled.div`
-  width: 52px;
-  height: 45px;
-  position: relative;
-  flex-grow: 1;
-  margin: 0px 55px 0px 0px;
-`;
-const Text4 = styled.div`
-  font-size: 18px;
-  font-family: Quicksand;
-  font-weight: 700;
-  line-height: 27px;
-  color: #161e29;
-  position: absolute;
-  top: 10px;
-`;
-const Selector = styled.div`
-  width: 51px;
-  height: 4px;
-  background-color: #dd2d50;
-  position: absolute;
-  top: 36px;
-  border-radius: 20px;
-`;
-const Text7 = styled.button`
-  text-align: center;
-  font-size: 16px;
-  font-family: Quicksand;
-  font-weight: 500;
-  line-height: 24px;
-  color: #020202;
-  margin: 0px 37px 0px 0px;
-  padding: 0px;
-  border-width: 0px;
-  background: none;
-  box-sizing: content-box;
-  cursor: pointer;
-`;
-const RedText = styled.input`
-  display: inline-block;
-  font-size: 18px;
-  font-family: Quicksand;
-  font-weight: 700;
-  line-height: 27px;
-  color: #ffffff;
-  width: 119px;
-  height: 27px;
-  background-color: #dd2d50;
-  flex-direction: row;
-  justify-content: center;
-  border-radius: 30.5px;
-  padding: 8px 0px 10px 0px;
-  border-width: 0px;
-  :: placeholder {
-    color: #ffffff;
-  }
-  outline-width: 0px;
 `;
 const FlexRow1 = styled.div`
   width: 1258px;

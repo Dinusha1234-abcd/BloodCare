@@ -15,22 +15,24 @@ import {
 import SlideBar from '../component/slidebar';
 import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component';
 export default function Home({ navigation }) {
-
+   
+     
+  
 
    return (
       <View style={styles.main}>
 
          <SlideBar nav={navigation} headerName="Home" />
          <View style={styles.tablecontainer}>
-            <View>
-
-               <TextInput style={styles.searchBar} ></TextInput>
-               <Image style={styles.searchIcon} source={require('../assests/Vector.png')} />
-            </View>
-            <View>
+         <View>
             <Text  style={styles.headername}>Your Area Upcoming Camp</Text>
            
             </View>
+            <View>
+
+               <Image style={styles.upcomigcamp} source={require('../assests/upcomig_camp.png')}></Image>
+            </View>
+            
          </View>
       </View>
 
@@ -46,7 +48,7 @@ const styles = StyleSheet.create({
       marginTop: 110,
       marginLeft: 10,
       width: 370,
-      height: 600,
+      height: 500,
       backgroundColor: 'rgba(255, 255, 255, 0.73)',
       borderRadius: 10
    }, searchBar: {
@@ -82,7 +84,12 @@ const styles = StyleSheet.create({
       backgroundColor: 'rgba(246, 156, 174, 1)'
    }, headername: {
       fontSize: 20,
-      marginTop: 65
+      marginTop: 65,
+      marginLeft:40
+   },upcomigcamp:{
+      marginTop:60,
    }
+
+   
    
 })

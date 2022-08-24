@@ -21,49 +21,49 @@ export default function HeadNurse(){
                     <th id='user-action-admin'>Action</th>
                 </tr>
                 <tr>
-                    <td>988438430V</td>
-                    <td>Sanduni Malsha</td>
-                    <td>malsha2@gmail.com</td>
+                    <td>888438430V</td>
+                    <td>Prasad Lakshan</td>
+                    <td>kpdplakshan2@gmail.com</td>
                     <td>071-0987654</td>
                     <td><button id='view-user-button-admin'>View</button></td>
                     <td><button id='remove-user-button-admin'>Deactivate</button></td>
                 </tr>
                 <tr>
-                    <td>985434567V</td>
-                    <td>D.K.Hansika </td>
-                    <td>hansidk@gmail.com</td>
+                    <td>875434567V</td>
+                    <td>K.L.J. Gihan </td>
+                    <td>gihan@gmail.com</td>
                     <td>076-675436</td>
                     <td><button id='view-user-button-admin'>View</button></td>
                     <td><button id='remove-user-button-admin'>Deactivate</button></td>
                 </tr>
                 <tr>
-                    <td>98765678V</td>
-                    <td>Dinusha Gunawardhane</td>
-                    <td>dinusha88@gmail.com</td>
+                    <td>86765678V</td>
+                    <td>J.Y.H.Samarasekare</td>
+                    <td>samarasekare88@gmail.com</td>
                     <td>077-8976549</td>
                     <td><button id='view-user-button-admin'>View</button></td>
                     <td><button id='remove-user-button-admin'>Deactivate</button></td>
                 </tr>
                 <tr>
-                    <td>981234567V</td>
-                    <td>Kalshi Lakeesha</td>
-                    <td>kalshi98@gmail.com</td>
+                    <td>751234567V</td>
+                    <td>Saman Kumara</td>
+                    <td>saman98@gmail.com</td>
                     <td>078-7890876</td>
                     <td><button id='view-user-button-admin'>View</button></td>
                     <td><button id='remove-user-button-admin'>Deactivate</button></td>
                 </tr>
                 <tr>
-                    <td>984567890V</td>
-                    <td>Dilhara Savinda</td>
-                    <td>dilhara672@gmail.com</td>
+                    <td>764567890V</td>
+                    <td>Namal Rakapakse</td>
+                    <td>namal672@gmail.com</td>
                     <td>077-5467789</td>
                     <td><button id='view-user-button-admin'>View</button></td>
                     <td><button id='remove-user-button-admin'>Deactivate</button></td>
                 </tr>
                 <tr>
-                    <td>975643897V</td>
-                    <td>Hiruni Danapala</td>
-                    <td>danapala@gmail.com</td>
+                    <td>675643897V</td>
+                    <td>Oshana Kamalanath</td>
+                    <td>oshan@gmail.com</td>
                     <td>078-123456</td>
                     <td><button id='view-user-button-admin'>View</button></td>
                     <td><button id='remove-user-button-admin'>Deactivate</button></td>

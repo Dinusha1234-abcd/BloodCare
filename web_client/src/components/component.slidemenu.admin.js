@@ -33,13 +33,12 @@ export default function Slide(props) {
         }
       </style>
       </Helmet>
-      <header className='header'>
+      <header className='header-slidebar'>
         <div onClick={() => { setShow(!show) }}>
           <h4 id='header-name'><i className="fa-solid fa-bars fa-2xl  menu-icon"></i>{props.headerName}</h4>
         </div>
         <a id='user-name'  ><img id="icon-user" src={userIcon} /><a id='name'>{localStorage.getItem("firstName")+" "+localStorage.getItem("lastName") }</a> </a><img id="notification" src={notification}/><img id="select" src={select} onClick={()=>{setOption(!option)} } />
         <div id={`${ option ? 'user-select' : 'user-select-active' }`}>
-          <Link  to='/'  className='user-select-option-profile'>View Profile</Link><br/> 
           <Link  to='/' className='user-select-option-log' onClick={logout}>Logout</Link>
         </div></header>
       <aside className={`sidebar ${show ? 'show' : null}`}>
@@ -85,7 +84,7 @@ export default function Slide(props) {
                   window.location.pathname==='/users/driver' ||
                   window.location.pathname==='/users/organizer' ||
                   window.location.pathname==='/users/donor'
-                ) ? 'fa-solid fa-user-nurse nav-link-icon-active' : 'fa-solid fa-user-nurse nav-link-icon'} `}></i>                
+                ) ? 'fa-solid fa-people-group nav-link-icon-active' : 'fa-solid fa-people-group nav-link-icon'} `}></i>                
                 <span className={`${(
                   window.location.pathname === '/users/medicalofficer'|| 
                   window.location.pathname==='/users/clusteradmin' || 
@@ -103,7 +102,7 @@ export default function Slide(props) {
                 ) ? 'nav-link-active' : 'nav-link'} `}  >
                 <i className={`${(
                   window.location.pathname==='/clustercenter'
-                ) ? 'fa-solid fa-user-nurse nav-link-icon-active' : 'fa-solid fa-user-nurse nav-link-icon'} `}></i>
+                ) ? 'fa-solid fa fa-bank nav-link-icon-active' : 'fa-solid fa fa-bank nav-link-icon'} `}></i>
                 <span className={`${(
                   window.location.pathname==='/clustercenter'
                 ) ? 'nav-link-icon-active' : 'nav-link-icon'} `}>Cluster Center</span>
@@ -118,12 +117,23 @@ export default function Slide(props) {
                   window.location.pathname === '/bloodcamps/ongoingcamp'|| 
                   window.location.pathname==='/bloodcamps/upcomingcamp' || 
                   window.location.pathname==='/bloodcamps/completedcamp'
-                ) ? 'fa-solid fa-people-group nav-link-icon-active' : 'fa-solid fa-people-group nav-link-icon'} `}></i>
+                ) ? 'fa-solid fa-campground nav-link-icon-active' : 'fa-solid fa-campground nav-link-icon'} `}></i>
                 <span className={`${(
                   window.location.pathname === '/bloodcamps/ongoingcamp'|| 
                   window.location.pathname==='/bloodcamps/upcomingcamp' || 
                   window.location.pathname==='/bloodcamps/completedcamp'
                 ) ? 'nav-link-icon-active' : 'nav-link-icon'} `}>Blood Camp</span>
+              </Link>
+
+              <Link to='/announcement' className={`${( 
+                  window.location.pathname==='/announcement'
+                ) ? 'nav-link-active' : 'nav-link'} `}  >
+                <i className={`${(
+                  window.location.pathname==='/announcement'
+                ) ? 'fa-solid fa fa-paper-plane nav-link-icon-active' : 'fa-solid fa fa-paper-plane nav-link-icon'} `}></i>
+                <span className={`${(
+                  window.location.pathname==='/announcement'
+                ) ? 'nav-link-icon-active' : 'nav-link-icon'} `}>Announcement</span>
               </Link>
               
             </div>

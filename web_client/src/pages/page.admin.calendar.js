@@ -5,7 +5,7 @@ import format from 'date-fns/format';
 import parse from 'date-fns/parse';
 import startOfWeek from 'date-fns/startOfWeek';
 import getDay from 'date-fns/getDay';
-import DatePicker from 'react-datepicker';
+import DataPicker from 'react-datepicker';
 import '../assests/css/component.bigCalendar.css';
 import '../assests/css/admin/page.admin.calendar.css';
 
