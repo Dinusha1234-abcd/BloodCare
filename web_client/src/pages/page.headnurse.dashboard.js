@@ -100,11 +100,11 @@ export default function HeadNurseDashboard() {
 
           <div id="camp-events-headnurse">
             <h3 id="camp-events-name-headnurse">Upcoming Camp Events</h3>
-            <div id="camp-events-list-headnurse"> <p>2022/08/01 Camp Number 100  <button id="view-button-headnurse">View</button> </p></div>
-            <div id="camp-events-list-headnurse"> <p>2022/08/01 Camp Number 101  <button id="view-button-headnurse">View</button> </p></div>
-            <div id="camp-events-list-headnurse"> <p>2022/08/01 Camp Number 102  <button id="view-button-headnurse">View</button> </p></div>
-            <div id="camp-events-list-headnurse"> <p>2022/08/01 Camp Number 103  <button id="view-button-headnurse">View</button> </p></div>
-            <div id="camp-events-list-headnurse"> <p>2022/08/01 Camp Number 104  <button id="view-button-headnurse">View</button> </p></div>
+            <div id="camp-events-list-headnurse"> <p>2022/09/01 Camp Number 100  <button id="view-button-headnurse">View</button> </p></div>
+            <div id="camp-events-list-headnurse"> <p>2022/09/25 Camp Number 101  <button id="view-button-headnurse">View</button> </p></div>
+            <div id="camp-events-list-headnurse"> <p>2022/10/01 Camp Number 102  <button id="view-button-headnurse">View</button> </p></div>
+            <div id="camp-events-list-headnurse"> <p>2022/10/07 Camp Number 103  <button id="view-button-headnurse">View</button> </p></div>
+            <div id="camp-events-list-headnurse"> <p>2022/11/12 Camp Number 104  <button id="view-button-headnurse">View</button> </p></div>
           </div>
         </div>
         <div id="row3-headnurse">
