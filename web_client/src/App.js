@@ -36,6 +36,8 @@ import HeadNurseDonorRequests from "./pages/page.headnurse.donorrequests";
 import HeadNurseProfile from "./pages/page.headnurse.profile";
 import HeadNurseDonorDetails from "./pages/page.headnurse.donordetails";
 import HeadNurseDonors from "./pages/page.headnurse.donors";
+import HeadNurseAddNewDonors from "./pages/page.headnurse.registerform";
+import HeadNurseSummaryWork from "./pages/page.headnurse.summary";
 
 
 //Register Donor
@@ -50,7 +52,11 @@ import RegDonorProfile from './pages/page.regdonor.profile';
 import LandingPage from "./pages/page.home.landingPage";
 import Camps from "./pages/page.home.camps";
 import RegisterCamp from "./pages/page.home.registerCamp";
+
+import HeadNurseSummary from './pages/page.headnurse.summary';
+
 import navbar from './components/component.home.navbar';
+
 
 
 function App() {
@@ -118,9 +124,9 @@ function App() {
             <Route path='/blood/Bnegative' exact element={<ClusterAdminBlood />} />
             <Route path='/blood/ABpositive' exact element={<ClusterAdminBlood />} />
             <Route path='/blood/ABNegative' exact element={<ClusterAdminBlood />} />
-            
-   
- 
+            <Route path='/' exact element={<LandingPage />} />
+            <Route path='/camps' exact element={<Camps />} />
+            <Route path='/registercamp' exact element={<RegisterCamp />} />
             </Routes>
          </BrowserRouter>)
  
@@ -176,7 +182,9 @@ function App() {
             <Route path='/registercamp' exact element={<RegisterCamp />} />
             <Route path='/headnurse/donordetails' exact element={<HeadNurseDonorDetails />} />
             <Route path='/headnurse/donors' exact element={<HeadNurseDonors />} />
-            
+            <Route path='/headnurse/addnewdonor' exact element={<HeadNurseAddNewDonors />} />
+            <Route path='/headnurse/summarywork' exact element={<HeadNurseSummaryWork />} />
+
          </Routes>
       </BrowserRouter>)
    }

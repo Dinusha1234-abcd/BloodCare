@@ -14,6 +14,7 @@ export default function Slide(props) {
 
   function logout() {
     localStorage.removeItem("token");
+    localStorage.removeItem("userNic");
     localStorage.removeItem("firstName");
     localStorage.removeItem("lastName");
     localStorage.removeItem("type");
@@ -23,7 +24,8 @@ export default function Slide(props) {
 
   return (
     <main className={show ? 'space-toggle' : null}>
-      <header className='header'>
+      <header className='header-slidebar
+      '>
         <div onClick={() => { setShow(!show) }}>
           <h4 id='header-name'><i className="fa-solid fa-bars fa-2xl  menu-icon"></i>{props.headerName}</h4>
 
@@ -41,30 +43,40 @@ export default function Slide(props) {
               <span className='nav-logo-name'>BLOODCARE</span>
             </Link>
             <div className='nav-list'>
-               <Link to='/students' className='nav-link  '>
-                <i class="fa-solid fa-house nav-link-icon"></i>
-                <span className='nav-link-name'>Home</span>
-              </Link>
-              <Link to='/menu' className={`${(window.location.pathname === '/dashboard'||'/login') ? 'nav-link-active' : 'nav-link'} `}>
+               
+             
+
+              <Link to='/landingpage' className={`${(window.location.pathname === '/landingpage' ) ? 'nav-link-active' : 'nav-link'} `}>
+                <i className={`${(window.location.pathname === '/landingpage' ) ? 'fa-solid fa-house nav-link-icon-active' : 'fa-solid fa-house nav-link-icon'} `}></i>
+                <span className={`${(window.location.pathname === '/landingpage' ) ? 'nav-link-icon-active' : 'nav-link-icon'} `}  >Home</span>
+              </Link> 
+
+              <Link to='/dashboard' className={`${(window.location.pathname === '/dashboard'||'/login') ? 'nav-link-active' : 'nav-link'} `}>
                 <i className={`${(window.location.pathname === '/dashboard'||'/login') ? 'fa-solid fa-gauge-high nav-link-icon-active' : 'fa-solid fa-gauge-high nav-link'} `}></i>
                 <span className={`${(window.location.pathname === '/dashboard'||'/login') ? 'nav-link-icon-active' : 'nav-link-icon'} `}  >Dashboard</span>
               </Link>
-              <Link to='/students' className='nav-link  '>
-                <i class="fa-solid fa-calendar-days nav-link-icon"></i>
-                <span className='nav-link-name'>Calender</span>
+
+              <Link to='/calender' className={`${(window.location.pathname === '/calender' ) ? 'nav-link-active ' : 'nav-link'} `}>
+              <i className={`${(window.location.pathname === '/calender' ) ? 'fa-solid fa-calendar-days nav-link-icon-active' : 'fa-solid fa-calendar-days nav-link-icon'} `}></i>
+                <span className={`${(window.location.pathname === '/calender' ) ? 'nav-link-icon-active' : 'nav-link-icon'} `}  >Calender</span>
               </Link>
-              <Link to='/headnurseassigncamps' className='nav-link'  >
-                <i class="fa-solid fa-campground nav-link-icon"></i>
-                <span className='nav-link-name' id='nav-link-name'>Blood Camps</span>
+
+              <Link to='/headnurse/assigncamps' className={`${(window.location.pathname === '/headnurseassigncamps' ) ? 'nav-link-active ' : 'nav-link'} `}>
+                <i className={`${(window.location.pathname === '/headnurseassigncamps' ) ? 'fa-solid fa-campground nav-link-icon-active' : 'fa-solid fa-campground nav-link-icon'} `}></i>
+                <span className={`${(window.location.pathname === '/headnurseassigncamps' ) ? 'nav-link-icon-active' : 'nav-link-icon'} `}  >Blood Camps</span>
               </Link>
-              <Link to='/courses' className='nav-link'  >
-                <i class="fa-solid fa-user-nurse nav-link-icon" ></i>
-                <span className='nav-link-name' id='nav-link-name'>Summary Work</span>
+
+              <Link to='/headnurse/summarywork' className={`${(window.location.pathname === '/headnurse/summarywork' ) ? 'nav-link-active ' : 'nav-link'} `}>
+                <i className={`${(window.location.pathname === '/headnurse/summarywork' ) ? 'fa-solid fa-user-nurse nav-link-icon-active' :'fa-solid fa-user-nurse nav-link-icon'} `}></i>
+                <span className={`${(window.location.pathname === '/headnurse/summarywork' ) ? 'nav-link-icon-active' : 'nav-link-icon'} `}  >Summary Work</span>
               </Link>
-              <Link to='/courses' className='nav-link'  >
-                <i class="fa-solid fa-user-plus nav-link-icon" ></i>
-                <span className='nav-link-name' id='nav-link-name'>Add New User</span>
+
+              <Link to='/headnurse/addnewdonor' className={`${(window.location.pathname === '/headnurse/addnewdonor' ) ? 'nav-link-active ' : 'nav-link'} `}>
+                <i className={`${(window.location.pathname === '/headnurse/addnewdonor' ) ? 'fa-solid fa-user-plus nav-link-icon-active' :'fa-solid fa-user-plus nav-link-icon'} `}></i>
+                <span className={`${(window.location.pathname === '/headnurse/addnewdonor' ) ? 'nav-link-icon-active' : 'nav-link-icon'} `}  >Add News Donor</span>
               </Link>
+              
+
             </div>
           </div>
         </nav>

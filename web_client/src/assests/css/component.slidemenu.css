@@ -28,12 +28,12 @@ main{
     transition: 0.5s; 
     z-index: 100;
 }
-.header{ 
+.header-slidebar{ 
     position: relative;
     
     top:-30px;
     left: calc(22px+ 12rem) ;
-    height: 55px;
+    height: 47px;
     display: flex;
     background: rgba(221, 45, 80, 0.8);
     z-index: 100;
@@ -41,7 +41,7 @@ main{
     border-radius: 15px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     transition: .5s;
-    
+     
 }
 .header-toggle{
     cursor: pointer;
@@ -53,6 +53,7 @@ main{
 #header-name{
     color: white;
       letter-spacing: 0.03em;
+      padding-left: 35px;
 }
 .menu-icon{
     position: relative;

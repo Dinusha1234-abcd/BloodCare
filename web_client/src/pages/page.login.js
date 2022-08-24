@@ -38,10 +38,12 @@ export default function Login() {
                     //check password and username  
                     if(res['data']['message']=="success"){
                         const token = res.data.message;
+                        const userNic = res.data.userName;
                         const firstName = res.data.firstName;
                         const lastName = res.data.lastName;
                         const type = res.data.type;
                         localStorage.setItem("token",token);
+                        localStorage.setItem("userNic", userNic)
                         localStorage.setItem("firstName",firstName);
                         localStorage.setItem("lastName",lastName);
                         localStorage.setItem("type",type)

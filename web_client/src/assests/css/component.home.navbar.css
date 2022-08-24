@@ -7,6 +7,15 @@
     margin: auto;
 }
 
+.topNav:hover {
+  text-decoration: underline;
+  text-decoration-color: #dd2d50;
+  text-decoration-thickness: 3px;
+  text-underline-position: under;
+  border-radius: 2px ;
+}
+
+
 .registerBtn {
     text-align: center;
     width: 133.54px;
@@ -27,4 +36,16 @@
     align-items: center;
     border-radius: 30.5px;
     padding: 0px 9.69px 0px 10.77px;
+  }
+
+  .topNavLogin{
+    font-size: 18px;
+    font-family: Quicksand;
+    font-weight: 500;
+    line-height: 27px;
+    color: #ffffff;
+    margin: auto;
+    background: #dd2d50;
+    border-radius: 30.5px;
+    padding: 6px 30px 6px 30px;
   }

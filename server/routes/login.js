@@ -19,6 +19,7 @@ router.post('/', async function (req, res) {
             return res.json({
                message: "success",
                token: token,
+               userName : userName,
                firstName: firstName,
                lastName: lastName,
                type: type
