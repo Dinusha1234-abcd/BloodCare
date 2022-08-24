@@ -52,7 +52,11 @@ import RegDonorProfile from './pages/page.regdonor.profile';
 import LandingPage from "./pages/page.home.landingPage";
 import Camps from "./pages/page.home.camps";
 import RegisterCamp from "./pages/page.home.registerCamp";
+<<<<<<< HEAD
 import HeadNurseSummary from './pages/page.headnurse.summary';
+=======
+import navbar from './components/component.home.navbar';
+>>>>>>> f7855b37757df7b06a1d6a4eeab890c6b8d12865
 
 
 function App() {
@@ -120,9 +124,9 @@ function App() {
             <Route path='/blood/Bnegative' exact element={<ClusterAdminBlood />} />
             <Route path='/blood/ABpositive' exact element={<ClusterAdminBlood />} />
             <Route path='/blood/ABNegative' exact element={<ClusterAdminBlood />} />
-            
-   
- 
+            <Route path='/' exact element={<LandingPage />} />
+            <Route path='/camps' exact element={<Camps />} />
+            <Route path='/registercamp' exact element={<RegisterCamp />} />
             </Routes>
          </BrowserRouter>)
  

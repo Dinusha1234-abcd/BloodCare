@@ -5,6 +5,76 @@
     overflow: hidden;
     position: relative;
   }
+#register-form-new-camp{
+  border-radius: 11px;
+  padding: 3px;
+}
+#register-form-new-camp-content{
+  position: relative;
+  margin-left: -190px;
+  width:200px;
+}
+#coloum-register-camp{
+  position: relative;
+  padding-left: 22px;
+}
+#camp-form-table{
+  width:110%;
+}
+ Select {
+  width: 100%;
+  height: 35px;
+  background: #f6e2e6;
+  color: gray;
+  padding-left: 5px;
+  font-size: large;
+  border: none;
+  margin-left: 10px;
+  border-radius: 25px;
+ }
+
+ option {
+  color: black;
+  background: white;
+  display: flex;
+  white-space: pre;
+  min-height: 20px;
+  padding: 0px 2px 1px;
+}
+
+ input {
+  width: 100%;
+  height: 35px;
+  background: #f6e2e6;
+  color: gray;
+  padding-left: 5px;
+  font-size: large;
+  border: none;
+  margin-left: 10px;
+  border-radius: 25px;
+ }
+
+ th, td, tr {
+  text-align: left;
+  font-size: large;
+ }
+
+table {
+  border-collapse: separate;
+  border-spacing: 0 15px;
+  align-self: center;
+  margin: 0 auto;
+}
+
+  #option {
+    color: black;
+    background: #f6e2e6;
+    display: flex;
+    white-space: pre;
+    min-height: 20px;
+    padding: 0px 2px 1px;
+  }
+
   .flexRow {
     width: 1217.86px;
     background-image: url("https://file.rendit.io/n/R4ftapaitKe0gnQMEqXK.svg");
@@ -267,10 +337,6 @@
     border-radius: 30.5px;
     padding: 8px 0px 10px 0px;
     border-width: 0px;
- /*   :: placeholder {
-      color: #ffffff;
-    }
-    outline-width: 0px; */
   }
   .whiteFlexRow2 {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);

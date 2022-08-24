@@ -1,19 +1,44 @@
-#profile-form{
+#profile-form {
     position: absolute;
+
     width: 846px;
     height: 550px;
     left: 500px;
     top: 150px;
     border-radius: 30px;
     background: #FFFFFF;
+    opacity: 0.5;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-#donor-save{
+
+#reg-profile-bloodOpimg {
+    position: absolute;
+    width: 10%;
+
+    margin-top: 0px;
+    margin-left: 1100px;
+    z-index: -1;
+    border-radius: 20px;
+}
+
+#reg-donor-profile {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    left: 300px;
+    top: 50px;
+    /*border: 1px solid rgba(0, 0, 0, 0.31);*/
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+#donor-save {
     position: absolute;
     width: 120px;
     height: 45px;
-    margin-left: 280px;
-    margin-top: 50px;
+    left: 450px;
+    margin-top: 100px;
     border-style: none;
     background: rgba(245, 134, 134, 0.3);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -21,7 +46,22 @@
     color: #FF6565;
     font-size: 22px;
 }
-#profile-page-donor-name{
+
+#Donor-cancel {
+    position: absolute;
+    width: 120px;
+    height: 45px;
+    left: 600px;
+    margin-top: 100px;
+    border-style: none;
+    background: rgba(38, 168, 38, 0.3);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    color: #26A826;
+    font-size: 22px;
+}
+
+#profile-page-donor-name {
     position: absolute;
     left: 300px;
     top: 30px;
@@ -31,15 +71,16 @@
     font-weight: 600;
     font-size: 30px;
     line-height: 39px;
-/* identical to box height */
+    /* identical to box height */
 
     letter-spacing: 0.02em;
 
     color: #FF6565;
 }
-#profile-page-actor{
+
+#profile-page-actor {
     position: absolute;
-    
+
     left: 380px;
     top: 70px;
 
@@ -51,4 +92,61 @@
     letter-spacing: 0.02em;
 
     color: #FF6565;
+}
+
+#regDonor-profile-form {
+    margin-top: 150px;
+    margin-left: 100px;
+}
+
+#regDonor-profile-form input[type=text] {
+    font-family: 'Ubuntu';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 29px;
+    letter-spacing: 0.02em;
+    width: 280px;
+    height: 45px;
+    color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(253, 223, 229, 1);
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#regDonor-profile-form label {
+    font-family: 'Ubuntu';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 29px;
+    letter-spacing: 0.02em;
+
+    color: #000000;
+}
+
+#reg-donor-NIC {
+    margin-left: 300px;
+
+}
+
+#reg-Donor-NIC {
+    margin-left: 70px;
+}
+
+#reg-donor-email {
+    margin-left: 280px;
+}
+
+#reg-Donor-Email {
+    margin-left: 70px;
+}
+
+#reg-donor-district {
+    margin-left: 280px;
+}
+
+#reg-Donor-District {
+    margin-left: 70px;
 }

@@ -16,6 +16,7 @@ export default function Slide(props) {
    
   function logout() {
     localStorage.removeItem("token");
+    localStorage.removeItem("userNic");
     localStorage.removeItem("firstName");
     localStorage.removeItem("lastName");
     localStorage.removeItem("type");
@@ -29,7 +30,7 @@ export default function Slide(props) {
   
   return (
     <main className={show ? 'space-toggle' : null}>
-      <header className='header'>
+      <header className='header-slidebar'>
         <div onClick={() => { setShow(!show) }}>
           <h4 id='header-name'><i className="fa-solid fa-bars fa-2xl  menu-icon"></i>{props.headerName}</h4>
 

@@ -62,11 +62,11 @@ export default function ClusterAdminDashboard() {
         <div id="row-1">
           <div id="medical-staff">
             <h3>Medical Staff Members</h3>
-            <div id="users-count" display='inline'> <User id='user' image={doctor} name="Doctor" />  <User id='user' image={headNurse} name="Head Nurse" status={true} />  <User id='user' image={nurse} name="Nurse" />  <User id='user' image={driver} name="Driver" /> </div>
+            <div id="users-count" display='inline'> <User id='user' image={doctor} name="Doctor" number='11' />  <User id='user' image={headNurse} name="Head Nurse" status={true} number='15' />  <User id='user' image={nurse} name="Nurse" number='14'/>  <User id='user' image={driver} name="Driver" number='11' /> </div>
           </div>
           <div id="camp-clusterAdmin">
             <h3>Blood Camps</h3>
-            <div id="camp-count-clusterAdmin"  > <Camp image={pastCamp} name="Past Camp" />  <Camp image={OngoingCamp} name="Ongoing Camp" status={true} />  <Camp image={futureCamp} name="Future Camp" status={true} />  <Camp image={PendingCamp} name="Pending Camp" status={true} /></div>
+            <div id="camp-count-clusterAdmin"  > <Camp image={pastCamp} name="Past Camp" number='11' />  <Camp image={OngoingCamp} name="Ongoing Camp" status={true} number='12' />  <Camp image={futureCamp} name="Future Camp" status={true} number='06' />  <Camp image={PendingCamp} name="Pending Camp" status={true} number='12' /></div>
           </div>
         </div>
         <div id="row-2">

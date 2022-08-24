@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../assests/css/component.slidemenu.css';
 import icon from "../assests/images/bloodcareIcon.png";
@@ -14,16 +14,21 @@ export default function Slide(props) {
 
   function logout() {
     localStorage.removeItem("token");
+    localStorage.removeItem("userNic");
     localStorage.removeItem("firstName");
     localStorage.removeItem("lastName");
     localStorage.removeItem("type");
 
     window.location = "/login";
   }
-
+  
+  useEffect(()=>{
+    props.passData(show);
+  })
+  
   return (
     <main className={show ? 'space-toggle' : null}>
-      <header className='header'>
+      <header className='header-slidebar'>
         <div onClick={() => { setShow(!show) }}>
           <h4 id='header-name'><i className="fa-solid fa-bars fa-2xl  menu-icon"></i>{props.headerName}</h4>
 

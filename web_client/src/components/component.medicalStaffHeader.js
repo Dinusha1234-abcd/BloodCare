@@ -6,7 +6,7 @@ import headNurse from '../assests/images/headNurse2.png';
 import nurse from '../assests/images/nurse.png';
 import driver from '../assests/images/driver.png';
 export default function ClusterAdminCampHeader(){
-
+    
     return (
         <div id="container-1">
             <Link to='/medicalstaff/doctor' id={`${(window.location.pathname=='/medicalstaff/doctor' ? 'box-1-active' : 'box-1' )}`} > <img src={doctor} id='box-1-pastCamp'  /><h className='camp-status'>Doctors</h>   </Link>
