@@ -9,7 +9,7 @@ import AdminUsers from "./pages/page.admin.users";
 import AdminBloodCamp from './pages/page.admin.bloodCamp';
 import AdminClusterCenter from './pages/page.admin.clustercenter';
 import AdminCalendar from "./pages/page.admin.calendar";
-import AdminAnnoucement from "./pages/page.admin.announcement";
+/*import AdminAnnoucement from "./pages/page.admin.announcement";*/
 
 //Cluster Admin
 import ClusterAdminDashboard from "./pages/page.clusterAdmin.dashboard";
@@ -90,7 +90,7 @@ function App() {
                <Route path='/camps' exact element={<Camps />} />
                <Route path='/registercamp' exact element={<RegisterCamp />} />
 
-               <Route path='/announcement' exact element={<AdminAnnoucement />} />
+              {/*<Route path='/announcement' exact element={<AdminAnnoucement />} />*/}
 
             </Routes>
          </BrowserRouter>

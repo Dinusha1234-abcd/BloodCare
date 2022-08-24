@@ -24,7 +24,7 @@ export default function Slide(props) {
 
   return (
     <main className={show ? 'space-toggle' : null}>
-      <header className='header'>
+      <header className='header-slidebar'>
         <div onClick={() => { setShow(!show) }}>
           <h4 id='header-name'><i className="fa-solid fa-bars fa-2xl  menu-icon"></i>{props.headerName}</h4>
 
@@ -32,7 +32,7 @@ export default function Slide(props) {
         <a id='user-name'  ><img id="icon-user" src={userIcon} /><a id='name'>{localStorage.getItem("firstName")+" "+localStorage.getItem("lastName") }</a></a><img id="notification" src={notification}/><img id="select" src={select} onClick={()=>{setOption(!option)} } />
         <div id={`${ option ? 'user-select' : 'user-select-active' }`}>
           <Link  to='/profile'  className='user-select-option-profile'>View Profile</Link><br/> 
-          <Link  to='/' className='user-select-option-log' onClick={logout}>Login</Link>
+          <Link  to='/' className='user-select-option-log' onClick={logout}>Log Out</Link>
         </div></header>
       <aside className={`sidebar ${show ? 'show' : null}`}>
         <nav className='nav'>

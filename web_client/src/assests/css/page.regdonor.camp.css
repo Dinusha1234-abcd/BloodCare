@@ -77,15 +77,15 @@
     margin-top: 80px;
     margin-left: 40px;
 }
-#camp-details-table{
+#regD-camp-details-table{
     position: absolute;
-    margin-top: 35%;
+    margin-top: 28%;
     text-align: left;
     color: #605858;
     margin-left: 10%;
     height: 100px;
 }
-#camp-details-table td i{
+#regD-camp-details-table td i{
     color: #E81F43;
 }
 #mapimg{
