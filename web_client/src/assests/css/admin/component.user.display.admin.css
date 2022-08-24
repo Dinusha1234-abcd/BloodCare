@@ -35,6 +35,15 @@
     margin-top: 10px;
 }
 h4{
-    font-size: 23px;
+    font-size: 28px;
     color: #605858;
+}
+
+#user-role-change-dashboard-admin{
+    font-size: 14px;
+    text-align: center;
+}
+#user-role-dashboard-admin{
+    padding-left: 11px;
+    text-align: center;
 }
