@@ -39,13 +39,14 @@ export default function RegisterCamp() {
           <FlexRow2>
           <form id='register-form-camp'>
 
-                        <table id='camp-view-table'>
+                        <table id='camp-form-table'>
                             <tr>
                                 <td>Full Name</td>
                                 <td>   <input type="text" id="register-form-new-camp" placeholder="Enter Full name" onChange={(e)=>{setFullName(e.target.value)} }  /> <br />
                                 </td>
                                 <td></td>
-                                <td>NIC</td>
+                            
+                                <td id="coloum-register-camp">{"   "}NIC</td>
                                 <td>   <input type="text" id="register-form-new-camp" placeholder="Enter NIC"  onChange={(e)=>{setNIC(e.target.value)}} /> <br />
                                 </td>
                             </tr>
@@ -54,7 +55,7 @@ export default function RegisterCamp() {
                                 <td>   <input type="text" id="register-form-new-camp" placeholder="Enter Telephone Number" onChange={(e)=>{setContact(e.target.value)}}  /> <br />
                                 </td>
                                 <td></td>
-                                <td>Email</td>
+                                <td id="coloum-register-camp">Email</td>
                                 <td>   <input type="text" id="register-form-new-camp" placeholder="Enter Email" onChange={(e)=>{setEmail(e.target.value)}}  /> <br />
                                 </td>
                             </tr>
@@ -63,7 +64,7 @@ export default function RegisterCamp() {
                                 <td>   <input type="text" id="register-form-new-camp" placeholder="Enter Camp Name"  onChange={(e)=>{setCampName(e.target.value)}} /> <br />
                                 </td>
                                 <td></td>
-                                <td>Blood Camp Date</td>
+                                <td id="coloum-register-camp" >Blood Camp Date</td>
                                 <td>   <input type="date" id="register-form-new-camp" placeholder="Enter Camp Date"  onChange={(e)=>{setCampDate(e.target.value)}} /> <br />
                                 </td>
                             </tr>
@@ -72,7 +73,7 @@ export default function RegisterCamp() {
                                 <td>   <input type="text" id="register-form-new-camp" placeholder="Enter Location"  onChange={(e)=>{setLocation(e.target.value)}}  /> <br />
                                 </td>
                                 <td></td>
-                                <td>District</td>
+                                <td id="coloum-register-camp">District</td>
                                 <td><select id="register-form-new-camp" placeholder="Enter District"  onChange={(e)=>{setDistrict(e.target.value)}}>
                                 <option value="" disabled selected>Select District</option>
                                 <option value="colombo">Colombo</option>
@@ -93,12 +94,12 @@ export default function RegisterCamp() {
                                 </select><br />
                                 </td>
                                 <td></td>
-                                <td>Attatch File</td>
+                                <td id="coloum-register-camp" >Attach File</td>
                                 <td>   <input type="file" id="register-form-new-camp" placeholder="Upload a flyer"  onChange={(e)=>{setFile(e.target.value)}}  /> <br />
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2">Content</td>
+                                <td   >Content</td>
                                 <td>   <input type="text" id="register-form-new-camp" placeholder="Enter your content"  onChange={(e)=>{setContent(e.target.value)}}  /> <br />
                                 </td>
                             </tr>
@@ -123,7 +124,7 @@ const FlexRow2 = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  gap: 428px;
+  margin-left:300px;
   align-items: center;
   text-align: center;
 `;
