@@ -17,7 +17,7 @@ export default function RegDonorCamp() {
                     <img id="campimg" src={futureCamp} />
                     <h3 id="camp-name">YOU CAN HELP SAVE A LIFE!</h3>
                     <br></br>
-                    <table id="camp-details-table">
+                    <table id="regD-camp-details-table">
                         <tr>
                             <td>Date </td>
                             <td>: August 13, 2022</td>
@@ -45,7 +45,7 @@ export default function RegDonorCamp() {
                     <img id="campimg" src={OngoingCamp} />
                     <h3 id="camp-name">Blood Donation Drive</h3>
                     <br></br>
-                    <table id="camp-details-table">
+                    <table id="regD-camp-details-table">
                         <tr>
                             <td>Date </td>
                             <td>: August 18, 2022</td>
@@ -73,7 +73,7 @@ export default function RegDonorCamp() {
                     <img id="campimg2" src={pastCamp} />
                     <h3 id="camp-name">BE A HERO DONTAE BLOOD</h3>
                     <br></br>
-                    <table id="camp-details-table">
+                    <table id="regD-camp-details-table">
                         <tr>
                             <td>Date </td>
                             <td>: August 29, 2022</td>
@@ -101,7 +101,7 @@ export default function RegDonorCamp() {
                     <img id="campimg" src={PendingCamp} />
                     <h3 id="camp-name">Give Blood and Save a Life</h3>
                     <br></br>
-                    <table id="camp-details-table">
+                    <table id="regD-camp-details-table">
                         <tr>
                             <td>Date </td>
                             <td>: September 13, 2022</td>

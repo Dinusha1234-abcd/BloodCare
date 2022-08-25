@@ -4,14 +4,17 @@ import styled from "styled-components";
 import '../assests/css/component.doctors.css';
 import '../assests/css/page.home.registerCamp.css';
 import NavBar from "../components/component.home.navbar";
+import axios from 'axios';
 
 export default function RegisterCamp() {
+  const [data, setData] = useState([]);
   const [formReg, setFormReg] = useState(false);
-  const [FullName, setFullName] = useState("");
-  const [NIC , setNIC]  = useState("");
+  const [name, setFullName] = useState("");
+  const [nic , setNIC]  = useState("");
   const [email, setEmail] = useState("");
-  const [mobileNumber, setContact] = useState("");
+  const [phoneNumber, setContact] = useState("");
   const [campName , setCampName] = useState("")
+  const [place , setCampPlace] = useState("")
   const [campDate , setCampDate] = useState("")
   const [location, setLocation] = useState("");
   const [district , setDistrict] = useState("")
@@ -41,6 +44,7 @@ export default function RegisterCamp() {
           if (res['data']['message'] == "success") {
               window.location = "/camp";
 
+<<<<<<< HEAD
           } else {
               setMessage("Network Connection issue");
               
@@ -53,6 +57,63 @@ export default function RegisterCamp() {
   })
 
   }
+=======
+  console.log(data[1]);
+    function addDoctor(e) {
+        e.preventDefault()
+        const addCamp = {
+            name,
+            nic,
+            email,
+            phoneNumber,
+            place,
+        }
+        if (name.length == 0) {
+            setMessage("Please Enter First Name ");
+        } else if (!(nic.length == 10 || nic.length == 12)) {
+            console.log(nic.length);
+            setMessage("Please Enter  Valid NIC Number ");
+        } else if (place.length == 0) {
+            setMessage("Please Enter  Address ");
+
+        } else if (email.length == 0) {
+            setMessage("Please Enter  Email ");
+
+        } else if (!(phoneNumber.length == 10)) {
+            setMessage("Please Enter  Valid Mobile Number");
+
+
+        } else {
+            setFormReg(false);
+            setSuccess(true);
+            setFullName('');
+            setNIC('');
+            setContact('');
+            setEmail('');
+            setCampPlace('');
+
+            e.target.reset();
+            // pass check the data with server 
+            axios.post("http://localhost:8070/registerCamp", addCamp).then(
+                (res) => {
+                    //check password and username  
+                    if (res['data']['message'] == "success") {
+                        window.location = "/registerCamp";
+
+                    } else {
+                        setMessage("Network Connection issue");
+                        
+                    }
+
+                }
+            ).catch((err) => {
+                //sever error
+                console.log(err.message);
+            })
+        }
+    }
+
+>>>>>>> 7ad938bf52df83b899930d0362c810bf5b87db85
   return (
     <RegisteredDonorUpcomingBloodCampRoot>
       <FlexRow>

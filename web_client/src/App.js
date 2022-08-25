@@ -9,7 +9,11 @@ import AdminUsers from "./pages/page.admin.users";
 import AdminBloodCamp from './pages/page.admin.bloodCamp';
 import AdminClusterCenter from './pages/page.admin.clustercenter';
 import AdminCalendar from "./pages/page.admin.calendar";
+<<<<<<< HEAD
 // import AdminAnnoucement from "./pages/page.admin.announcement";
+=======
+/*import AdminAnnoucement from "./pages/page.admin.announcement";*/
+>>>>>>> 7ad938bf52df83b899930d0362c810bf5b87db85
 
 //Cluster Admin
 import ClusterAdminDashboard from "./pages/page.clusterAdmin.dashboard";
@@ -39,6 +43,7 @@ import HeadNurseDonorDetails from "./pages/page.headnurse.donordetails";
 import HeadNurseDonors from "./pages/page.headnurse.donors";
 import HeadNurseAddNewDonors from "./pages/page.headnurse.registerform";
 import HeadNurseSummaryWork from "./pages/page.headnurse.summary";
+import HeadNurseCalender from "./pages/page.headnurse.calendar";
 
 
 //Register Donor
@@ -90,7 +95,11 @@ function App() {
                <Route path='/camps' exact element={<Camps />} />
                <Route path='/registercamp' exact element={<RegisterCamp />} />
 
+ 
                {/* <Route path='/announcement' exact element={<AdminAnnoucement />} /> */}
+ 
+              {/*<Route path='/announcement' exact element={<AdminAnnoucement />} />*/}
+ 
 
             </Routes>
          </BrowserRouter>
@@ -187,6 +196,7 @@ function App() {
             <Route path='/headnurse/donors' exact element={<HeadNurseDonors />} />
             <Route path='/headnurse/addnewdonor' exact element={<HeadNurseAddNewDonors />} />
             <Route path='/headnurse/summarywork' exact element={<HeadNurseSummaryWork />} />
+            <Route path='/headnurse/calendar' exact element={<HeadNurseCalender />} />
 
          </Routes>
       </BrowserRouter>)

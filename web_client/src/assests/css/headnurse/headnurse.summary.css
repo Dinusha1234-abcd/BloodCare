@@ -33,33 +33,245 @@
 
 #details-summary{
     /*background: rgba(255, 255, 255, 0.5);*/
-    width : 1200px;
+    position: absolute;
+    width : 500px;
     height: 200px;
-    background: white;
-    margin-top: 50px;
+    /*background: white; */
+    margin-top: 10px;
     border-radius: 50px;
+    margin-left:100px;
+    margin-top: 30px;
   }
 
   /* details*/
 #details-names-summary{
-    position: absolute;
-    font-size: large;
-    margin-top: 10px;
-    margin-left: 10px;
-
+    /*padding-top: 0.1px;
+    margin-left: 50px; */
+    
 }  
 
 /* organizer details*/
-/*#organizer-summary{
-    background-color:  rgb(248, 228, 232); 
+#organizer-summary{
     position: absolute;
-    width: 400px;
-    height: 170px;
-    margin-left: 750px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width : 500px;
+    height: 200px;
+   /* background: white; */
+    margin-top: 10px;
     border-radius: 50px;
-}*/
+    margin-left: 200px;
+    font-size: medium;
+}
 
 #details-organizer-summary{
-    position: absolute;
+   /* padding-top: 2px;
+    padding-bottom: 2px; */
+    margin-left: 250px;
 }
+
+/*whole div */
+#summary-box{
+    background: rgba(255, 255, 255, 0.5);
+    margin-left: 10px;
+    width:1200px;
+    height:1200px;
+    margin-top: 50px;
+}
+
+#details-organizer-summary-head{
+    color:#7e7c7c;
+    margin-bottom: 5px;
+    margin-left: 150px;
+}
+
+/*staff member details */
+#staff-summary-details{
+
+}
+
+#header-staff-headnurse{
+    position: absolute;
+    margin-top: 300px;
+    margin-left: 100px;
+
+}
+
+/*boxes */
+#box1-staff-headnurse{
+    position:absolute;
+    width:150px;
+    height: 130px;
+    border-radius: 20px;
+    margin-left: 8%;
+    background: rgba(255, 255, 255, 0.79);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 350px;
+
+}
+
+#box2-staff-headnurse{
+    position:absolute;
+    width:150px;
+    height: 130px;
+    border-radius: 20px;
+    margin-left: 270px;
+    background: rgba(255, 255, 255, 0.79);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 350px;
+
+}
+
+#box3-staff-headnurse{
+    position:absolute;
+    width:150px;
+    height: 130px;
+    border-radius: 20px;
+    margin-left:440px;
+    background: rgba(255, 255, 255, 0.79);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 350px;
+
+
+}
+
+#box4-staff-headnurse{
+    position:absolute;
+    width:150px;
+    height: 130px;
+    border-radius: 20px;
+    margin-left: 610px;
+    background: rgba(255, 255, 255, 0.79);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 350px;
+
+
+}
+
+#box5-staff-headnurse{
+    position:absolute;
+    width:150px;
+    height: 130px;
+    border-radius: 20px;
+    margin-left: 780px;
+    background: rgba(255, 255, 255, 0.79);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 350px;
+}
+
+/*donor */
+#box6-staff-headnurse{
+    position:absolute;
+    width:150px;
+    height: 130px;
+    border-radius: 20px;
+    margin-left: 950px;
+    background: rgba(255, 255, 255, 0.79);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 350px;
+}
+
+
+
+#sum_officer{
+    margin-top: 10px;
+    width:60px;
+    height:60px;
+    margin-left: 45px;
+
+}
+
+#sum_headnurse{
+    margin-top: 10px;
+    width:60px;
+    height:60px;
+    margin-left: 45px;
+}
+
+#sum_doctor{
+    margin-top: 10px;
+    width:60px;
+    height:60px;
+    margin-left: 45px;
+
+}
+
+#sum_nurse{
+    margin-top: 10px;
+    width:60px;
+    height:60px;
+    margin-left: 45px;
+
+}
+
+#sum_driver{
+    margin-top: 10px;
+    width:60px;
+    height:60px;
+    margin-left: 45px;
+
+}
+
+#sum_donor{
+    margin-top: 10px;
+    width:60px;
+    height:60px;
+    margin-left: 45px;
+
+}
+
+#staff-names-headnurse{
+    margin-top: 0px;
+}
+
+/*blood */
+#sub-row2-headnurse-summary{
+    width:83%;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.55);
+    box-shadow: 20px 20px 100px 5px rgba(0, 0, 0, 0.2);
+    padding: 11px;
+    padding-left: 60px;
+    margin-top: 500px;
+    margin-left: 100px;
+  }
+
+
+  /*table last */
+  #summary-table-box{
+      margin-top: 50px;
+      width:83%;
+      height: 400px;
+      margin-left: 100px;
+      background-color: white;
+      border-radius: 50px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+
+  #headnurse-summary-print{
+    position:absolute;
+    margin-top: 200px;  
+    width:200px;
+    height: 40px;
+    border-radius: 20px;
+    margin-left: 950px; 
+    font-size:18px;
+    background: rgba(246, 156, 174, 1);
+    border: none;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#headnurse-summary-print:hover {
+    background-color: #7e7c7c; /* Green */
+    color: white;
+  }
+
+  #blood_dot_sum{
+    position: absolute;
+    width:300px;
+    height:300px;
+    opacity: 0.1;
+    margin-left: 850px;
+    margin-top: 20px;
+  }

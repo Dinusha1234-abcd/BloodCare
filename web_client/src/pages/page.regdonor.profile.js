@@ -21,7 +21,7 @@ export default function RegDonorProfile() {
                 <h4 id="profile-page-actor">Donor</h4>
                 <form id="regDonor-profile-form">
                     <label for="reg-donor-name">Name</label>
-                    <label for="reg-donor-NIC">NIC</label><br></br>
+                    <label for="register-donor-NIC">NIC</label><br></br>
                     <input type="text" id="reg-Donor-Name" name="reg-Donor-Name" value="Mr. Viraj Kariyawasam"></input>
                     <input type="text" id="reg-Donor-NIC" name="reg-Donor-NIC" value="20005671338V"></input><br></br>
                     <label for="reg-donor-contact">Contact</label>

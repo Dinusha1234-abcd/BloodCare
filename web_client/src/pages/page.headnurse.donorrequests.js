@@ -35,7 +35,8 @@ export default function HeadNurseDonorRequests() {
           <div id="user1">
                 <img id="man" src={man}/>
                 <h4 id ="h4-user">User1</h4>
-                <button type="button" id="button1-user"> Register </button>
+                <a href="/headnurse/addnewdonor">
+                <button type="button" id="button1-user"> Register </button> </a>
                  <p id ="p-user">  user1@gmail.com</p>
                  <p id ="p-user">   Colombo</p>
                  <p id ="p-user">071-4578142</p> 
@@ -43,7 +44,8 @@ export default function HeadNurseDonorRequests() {
           <div id="user2">
                 <img id="boy" src={boy}/>
                 <h4 id ="h4-user">User2</h4>
-                <button type="button" id="button2-user" > Register </button>
+                <a href="/headnurse/addnewdonor">
+                <button type="button" id="button2-user" > Register </button></a>
                  <p id ="p-user">  user2@gmail.com </p>
                  <p id ="p-user">  Gampaha</p>
                  <p id ="p-user">071-4578142</p> 
@@ -51,7 +53,8 @@ export default function HeadNurseDonorRequests() {
           <div id="user3">
           <img id="woman" src={woman}/>
                 <h4 id ="h4-user">User3</h4>
-                <button type="button" id="button3-user" >Register </button>
+                <a href="/headnurse/addnewdonor">
+                <button type="button" id="button3-user" >Register </button></a>
                  <p id ="p-user"> user3@gmail.com </p>
                  <p id ="p-user">  Matara</p>
                  <p id ="p-user">071-4578142</p> 
@@ -59,7 +62,8 @@ export default function HeadNurseDonorRequests() {
           <div id="user4">
           <img id="man" src={man}/>
                 <h4 id ="h4-user">User4</h4>
-                <button type="button" id="button4-user" > Register </button>
+                <a href="/headnurse/addnewdonor">
+                <button type="button" id="button4-user" > Register </button></a>
                  <p id ="p-user"> user4@gmail.com</p>
                  <p id ="p-user"> Kandy</p>
                  <p id ="p-user">071-4578142</p> 
@@ -67,7 +71,8 @@ export default function HeadNurseDonorRequests() {
           <div id="user5">
           <img id="boy" src={boy}/>
                 <h4 id ="h4-user">User5</h4>
-                <button type="button" id="button5-user" > Register </button>
+                <a href="/headnurse/addnewdonor">
+                <button type="button" id="button5-user" > Register </button></a>
                  <p id ="p-user"> user5@gmail.com</p>
                  <p id ="p-user"> Colombo</p>
                  <p id ="p-user">071-4578142</p> 
@@ -75,7 +80,8 @@ export default function HeadNurseDonorRequests() {
           <div id="user6">
           <img id="woman" src={woman}/>
                 <h4 id ="h4-user">User6</h4>
-                <button type="button" id="button6-user" > Register </button>
+                <a href="/headnurse/addnewdonor">
+                <button type="button" id="button6-user" > Register </button></a>
                  <p id ="p-user"> user6@gmail.com </p>
                  <p id ="p-user"> Gampaha</p>
                  <p id ="p-user">071-4578142</p> 
@@ -83,7 +89,8 @@ export default function HeadNurseDonorRequests() {
           <div id="user7">
           <img id="man" src={man}/>
                 <h4 id ="h4-user">User7</h4>
-                <button type="button" id="button7-user" >Register </button>
+                <a href="/headnurse/addnewdonor">
+                <button type="button" id="button7-user" >Register </button></a>
                  <p id ="p-user"> user7@gmail.com </p>
                  <p id ="p-user"> Matara</p>
                  <p id ="p-user">071-4578142</p> 
@@ -91,7 +98,8 @@ export default function HeadNurseDonorRequests() {
           <div id="user8">
           <img id="boy" src={boy}/>
                 <h4 id ="h4-user">User8</h4>
-                <button type="button" id="button8-user" > Register </button>
+                <a href="/headnurse/addnewdonor">
+                <button type="button" id="button8-user" > Register </button></a>
                  <p id ="p-user"> user8@gmail.com</p>
                  <p id ="p-user"> Kandy</p>
                  <p id ="p-user">071-4578142</p> 
@@ -99,7 +107,8 @@ export default function HeadNurseDonorRequests() {
           <div id="user9">
           <img id="woman" src={woman}/>
                 <h4 id ="h4-user">User9</h4>
-                <button type="button" id="button9-user" > Register </button>
+                <a href="/headnurse/addnewdonor">
+                <button type="button" id="button9-user" > Register </button></a>
                  <p id ="p-user"> user9@gmail.com</p>
                  <p id ="p-user"> Kandy</p>
                  <p id ="p-user">071-4578142</p> 

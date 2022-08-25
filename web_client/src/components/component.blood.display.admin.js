@@ -5,8 +5,8 @@ export default function Users(props) {
   return (
     <div id='blood-card-dashboard-admin'>  
          <h1 id="blood-name-dashboard-admin" >{props.name}</h1>
-         <h id='blood-role-dashboard-admin'>Counters</h><br/>
-         <h2 id='blood-count-dashboard'>22</h2>
+         <h id='blood-role-dashboard-admin'>Packets</h><br/>
+         <h2 id='blood-count-dashboard'>{props.number}</h2>
      </div>
   )
 

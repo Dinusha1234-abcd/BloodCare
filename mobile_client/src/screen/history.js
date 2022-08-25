@@ -22,6 +22,8 @@ export default function History({navigation}){
          <Image style={styles.cdonate} source={require('../assests/totald.png')}></Image>
          <Image style={styles.badge} source={require('../assests/badge.png')}></Image>
          <Image style={styles.blood} source={require('../assests/bloodOp.png')}></Image>
+         <TextInput style={styles.search} ></TextInput>
+         <Image style={styles.searchIcon} source={require('../assests/Vector.png')} />
          <Image style={styles.historyr} source={require('../assests/history.png')}></Image>
 
       </View>
@@ -32,7 +34,7 @@ const styles = StyleSheet.create({
       backgroundColor: 'rgba(253, 223, 229, 1)'
    },historyr:{
       position:'absolute',
-      marginTop:250,
+      marginTop:300,
       marginLeft:25
    },history:{
       position:'absolute'
@@ -48,6 +50,30 @@ const styles = StyleSheet.create({
    },badge:{
       marginTop:-50,
       marginLeft:280,
+   }, search: {
+      position: 'absolute',
+      width: 320,
+      height: 40,
+      left: 30,
+      top: 240,
+      borderColor: 'rgba(246, 156, 174, 1)',
+      borderWidth: 1,
+      shadowColor: 'rgba(0, 0, 0, 0.3)',
+      shadowOffset: {
+         width: 0,
+         height: 3,
+      },
+      shadowOpacity: 0.25,
+      shadowRadius: 3.84,
+      elevation: 5,
+      backgroundColor: 'rgba(255, 255, 255, 1)',
+      borderRadius: 20,
+      textAlign: "center",
+      fontSize: 20
+   }, searchIcon: {
+      marginTop: 15,
+      marginLeft: 60,
+
    }
 
 })

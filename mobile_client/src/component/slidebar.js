@@ -65,8 +65,8 @@ const SlideBar = (props)  =>{
                 <Pressable style={styles.HistoryButton} color="rgba(255, 63, 101, 1)" onPress={navigationToHistory}  >
                     <Text style={styles.NavTextCalendar}> <Image style={styles.history} source={require('../assests/history.jpg')} />{"  "} History</Text>
                 </Pressable>
-                <Pressable style={styles.Button} color="rgba(255, 63, 101, 1)" onPress={navgationToBloodCamp}  >
-                    <Text style={styles.NavTextCalendar}> <Image style={styles.history} source={require('../assests/history.jpg')} />{"  "} Blood Camp</Text>
+                <Pressable style={styles.CampButton} color="rgba(255, 63, 101, 1)" onPress={navgationToBloodCamp}  >
+                    <Text style={styles.NavTextCamp}> <Image style={styles.camp} source={require('../assests/bloodcamp.png')} />{"  "} Blood Camp</Text>
                 </Pressable>
       </View></>
     )
@@ -142,11 +142,20 @@ const styles = StyleSheet.create({
         height: 30,
         width: 30,
         marginLeft:20
+    } ,camp:{
+        height: 30,
+        width: 30,
+        marginLeft:20
     } ,NavTextCalendar:{
           marginLeft:20,
           fontSize: 20,
           marginTop: 6,
           color: 'white',
+    },NavTextCamp:{
+        marginLeft:20,
+        fontSize: 20,
+        marginTop: 15,
+        color: 'white', 
     },selecttabActive:{
         position:'absolute',
         right:3,
