@@ -69,9 +69,6 @@ export default function Doctors() {
         } else if (!(mobileNumber.length == 10)) {
             setMessage("Please Enter  Valid Mobile Number");
 
-        } else if (occupation.length == 0) {
-            setMessage("Please Enter  Occupation");
-
         } else {
             setFormReg(false);
             setSuccess(true);
