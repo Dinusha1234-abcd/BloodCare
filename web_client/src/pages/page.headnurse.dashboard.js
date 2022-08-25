@@ -74,19 +74,19 @@ export default function HeadNurseDashboard() {
         <div id="row1-headnurse">
           <div id="medical-staff-headnurse">
             <h3>Medical Staff Members</h3>
-            <div id="users-count-headnurse" display='inline'> <User id='user' image={doctor} name="Doctor" />   <User id='user' image={nurse} name="Nurse" />  <User id='user' image={driver} name="Driver" /> </div>
+            <div id="users-count-headnurse" display='inline'> <User id='user' image={doctor} name="Doctor" count='10'/>   <User id='user' image={nurse} name="Nurse" count='20'/>  <User id='user' image={driver} name="Driver" count='07'/> </div>
           </div>
           <div id="camp-headnurse">
             <h3>Blood Camps</h3>
-            <div id="camp-count-headnurse" display='inline'> <Camp image={pastCamp} name="Past Camp" />  <Camp image={futureCamp} name="Future Camp" status={true} /> </div>
+            <div id="camp-count-headnurse" display='inline'> <Camp image={pastCamp} name="Past Camp" count='10' />  <Camp image={futureCamp} name="Future Camp" count='04'status={true} /> </div>
           </div>
         </div>
         <div id="row2-headnurse">
           <div id="sub-row1-headnurse">
             <div id="sub-row2-headnurse">
               <h3>Blood Counter Details</h3>
-              <div id="blood-headnurse"><Blood name='O+' /><Blood name='A+' /><Blood name='B+' /><Blood name='AB+' /></div>
-              <div id="blood-headnurse"><Blood name='O-' /><Blood name='A-' /><Blood name='B-' /><Blood name='AB-' /></div>
+              <div id="blood-headnurse"><Blood name='O+' count='20' /><Blood name='A+' count='10'/><Blood name='B+' count='40' /><Blood name='AB+' count='13' /></div>
+              <div id="blood-headnurse"><Blood name='O-' count='21'/><Blood name='A-' count='32'/><Blood name='B-' count='18' /><Blood name='AB-' count='09'/></div>
             </div>
             <div id="sub-row3-headnurse">
               <div id="blood-month-dashboard-headnurse">
@@ -100,11 +100,11 @@ export default function HeadNurseDashboard() {
 
           <div id="camp-events-headnurse">
             <h3 id="camp-events-name-headnurse">Upcoming Camp Events</h3>
-            <div id="camp-events-list-headnurse"> <p>2022/08/01 Camp Number 100  <button id="view-button-headnurse">View</button> </p></div>
-            <div id="camp-events-list-headnurse"> <p>2022/08/01 Camp Number 101  <button id="view-button-headnurse">View</button> </p></div>
-            <div id="camp-events-list-headnurse"> <p>2022/08/01 Camp Number 102  <button id="view-button-headnurse">View</button> </p></div>
-            <div id="camp-events-list-headnurse"> <p>2022/08/01 Camp Number 103  <button id="view-button-headnurse">View</button> </p></div>
-            <div id="camp-events-list-headnurse"> <p>2022/08/01 Camp Number 104  <button id="view-button-headnurse">View</button> </p></div>
+            <div id="camp-events-list-headnurse"> <p>2022/09/01 Camp Number 100  <button id="view-button-headnurse">View</button> </p></div>
+            <div id="camp-events-list-headnurse"> <p>2022/09/25 Camp Number 101  <button id="view-button-headnurse">View</button> </p></div>
+            <div id="camp-events-list-headnurse"> <p>2022/10/01 Camp Number 102  <button id="view-button-headnurse">View</button> </p></div>
+            <div id="camp-events-list-headnurse"> <p>2022/10/07 Camp Number 103  <button id="view-button-headnurse">View</button> </p></div>
+            <div id="camp-events-list-headnurse"> <p>2022/11/12 Camp Number 104  <button id="view-button-headnurse">View</button> </p></div>
           </div>
         </div>
         <div id="row3-headnurse">

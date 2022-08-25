@@ -39,6 +39,7 @@ import HeadNurseDonorDetails from "./pages/page.headnurse.donordetails";
 import HeadNurseDonors from "./pages/page.headnurse.donors";
 import HeadNurseAddNewDonors from "./pages/page.headnurse.registerform";
 import HeadNurseSummaryWork from "./pages/page.headnurse.summary";
+import HeadNurseCalender from "./pages/page.headnurse.calendar";
 
 
 //Register Donor
@@ -187,6 +188,7 @@ function App() {
             <Route path='/headnurse/donors' exact element={<HeadNurseDonors />} />
             <Route path='/headnurse/addnewdonor' exact element={<HeadNurseAddNewDonors />} />
             <Route path='/headnurse/summarywork' exact element={<HeadNurseSummaryWork />} />
+            <Route path='/headnurse/calendar' exact element={<HeadNurseCalender />} />
 
          </Routes>
       </BrowserRouter>)

@@ -29,8 +29,9 @@ export default function Home({ navigation }) {
            
             </View>
             <View>
-
-               <Image style={styles.upcomigcamp} source={require('../assests/upcomig_camp.png')}></Image>
+            <TextInput style={styles.search} ></TextInput>
+            <Image style={styles.searchIcon} source={require('../assests/Vector.png')} />
+               <Image style={styles.upcomigcamp} source={require('../assests/upcoming_camp.png')}></Image>
             </View>
             
          </View>
@@ -87,7 +88,32 @@ const styles = StyleSheet.create({
       marginTop: 65,
       marginLeft:40
    },upcomigcamp:{
-      marginTop:60,
+      marginTop:20,
+      marginLeft:15
+   }, search: {
+      position: 'absolute',
+      width: 320,
+      height: 40,
+      left: 30,
+      top: 30,
+      borderColor: 'rgba(246, 156, 174, 1)',
+      borderWidth: 1,
+      shadowColor: 'rgba(0, 0, 0, 0.3)',
+      shadowOffset: {
+         width: 0,
+         height: 3,
+      },
+      shadowOpacity: 0.25,
+      shadowRadius: 3.84,
+      elevation: 5,
+      backgroundColor: 'rgba(255, 255, 255, 1)',
+      borderRadius: 20,
+      textAlign: "center",
+      fontSize: 20
+   }, searchIcon: {
+      marginTop: 45,
+      marginLeft: 60,
+
    }
 
    

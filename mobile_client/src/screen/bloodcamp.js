@@ -23,7 +23,16 @@ export default function BloodCamp({ navigation }) {
             </View>
             <View style={styles.container}>
                 <Text style={styles.campName}>Pepole Live When People Give</Text>
-                <Text style={styles.content}></Text>
+                <View style={styles.contentcontainer}>
+                <Text style={styles.content}>Date       :29-August-2022</Text>
+                <Text style={styles.content}>Location   :Rathmalana</Text>
+                <Text style={styles.content}>Place      :MOH Hall</Text>
+                <Text style={styles.content}>Time       :8.00 a.m. to 3.00 p.m.</Text>
+                <Pressable style={styles.RegisterButton} color="rgba(255, 63, 101, 1)" >  
+                    <Text style={styles.text}>Register Now</Text>
+                </Pressable>
+                <Image style={styles.map} source={require('../assests/map.png')}></Image>
+                </View>
             </View>
         </View>
     )
@@ -65,7 +74,7 @@ const styles = StyleSheet.create({
         left: 30,
         top: 151,
         borderRadius:20,
-        backgroundColor: 'rgba(255, 255, 255, 0.7)',
+        backgroundColor: 'rgba(255, 255, 255, 1)',
         
      },campName:{
         position: 'absolute',
@@ -74,7 +83,29 @@ const styles = StyleSheet.create({
         left: 35,
         top: 30,
         fontSize:20,
+        marginBottom:50,
         color:'rgba(255, 101, 101, 1)',
 
+     },content:{
+        fontSize:16,
+        marginLeft:30,
+        marginTop:30
+     },contentcontainer:{
+        position:'absolute',
+        marginTop:50
+     },map:{
+        marginTop:20,
+     },RegisterButton:{
+        marginTop:10,
+        marginLeft:120,
+        backgroundColor:'rgba(220, 231, 236, 1)',
+        borderRadius:10,
+        marginRight:50,
+        height:40
+     },text:{
+        marginLeft:30,
+        marginTop:5,
+        fontSize:18,
+        color:'rgba(1, 95, 250, 1)',
      }
 })
