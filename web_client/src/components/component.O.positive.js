@@ -6,11 +6,11 @@ export default function OPostive(){
     return(
         <div id='blood-display-container'>
             <div id='blood-display-subcontainer'>
-            <h1 id='header-clusterAdmin-blood'>O Positive Blood Counters</h1>
+            <h1 id='header-clusterAdmin-blood'>O Positive Blood Packets</h1>
             <div id='blood-display-container-box-1'>
                
-                 <div id='blood-display-container-subbox-1'>Cluster Center <br/> <h id='blood-display-container-subbox-1-count'>22</h> <br/>Counters</div>
-                 <div id='blood-display-container-subbox-1'>All Cluster Center<br/><h id='blood-display-container-subbox-1-count'>22</h> <br/>Counters </div>
+                 <div id='blood-display-container-subbox-1'>Cluster Center <br/> <h id='blood-display-container-subbox-1-count'>22</h> <br/>Packets</div>
+                 <div id='blood-display-container-subbox-1'>All Cluster Center<br/><h id='blood-display-container-subbox-1-count'>22</h> <br/>Packets </div>
                  <div id='blood-display-container-subbox-1'>O Positive<br/><h id='blood-display-container-subbox-1-count'>100%</h><br/>Percentage</div>
                  <div id='blood-display-container-subbox-2-1'>
                     <div id='blood-display-container-subbox-2-1-1' >Last Update Date 2022/07/28</div>
@@ -21,12 +21,12 @@ export default function OPostive(){
                 <div id='blood-display-container-subbox-2-1'></div>
            </div>
            <div id='blood-display-container-box-2'>
-                 <h1>Last 3 Months Camp Saving O+ Blood Counters</h1>
+                 <h1>Last 3 Months Camp Saving O+ Blood Packets</h1>
                  <table id="driver-table">
                 <tr>
                     <th id='driver-number'>Date</th>
                     <th>Camp Number</th>
-                    <th id='driver-action'>Number Of Blood Counters</th>
+                    <th id='driver-action'>Number Of Blood Packets</th>
                      
                 </tr>
                 <tr>

@@ -15,7 +15,7 @@ export default function ClusterAdminDonors() {
             <div id='donors-contanier'> 
             <h3 id="header-clusterAdmin">Donors Details</h3>
             <input type="text" id='input-donors' placeholder=" &#xf002; Enter NIC Number"/> 
-            <button id='add-donors'>+ Add New</button>
+            
             <br/><br/>
             <table id="donors-table">
                 <tr>

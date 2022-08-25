@@ -65,14 +65,14 @@ export default function ClusterAdminDashboard() {
             <div id="users-count" display='inline'> <User id='user' image={doctor} name="Doctor" number='11' />  <User id='user' image={headNurse} name="Head Nurse" status={true} number='15' />  <User id='user' image={nurse} name="Nurse" number='14'/>  <User id='user' image={driver} name="Driver" number='11' /> </div>
           </div>
           <div id="camp-clusterAdmin">
-            <h3>Blood Camps</h3>
+            <h3>Last Three Months  Blood Camps</h3>
             <div id="camp-count-clusterAdmin"  > <Camp image={pastCamp} name="Past Camp" number='11' />  <Camp image={OngoingCamp} name="Ongoing Camp" status={true} number='12' />  <Camp image={futureCamp} name="Future Camp" status={true} number='06' />  <Camp image={PendingCamp} name="Pending Camp" status={true} number='12' /></div>
           </div>
         </div>
         <div id="row-2">
           <div id="sub-row-1">
             <div id="sub-row-2">
-              <h3>Blood Counter Details</h3>
+              <h3>Last Three Months Blood Packets Details</h3>
               <div id="blood"><Blood name='O+' /><Blood name='A+' /><Blood name='B+' /><Blood name='AB+' /></div>
               <div id="blood"><Blood name='O-' /><Blood name='A-' /><Blood name='B-' /><Blood name='AB-' /></div>
             </div>

@@ -16,7 +16,7 @@
 #pending-camp-container-box1-clusterAdmin{
     margin-top: 20px;
     padding: 20px;
-    width:130%;
+    width:100%;
     height:350px; 
     border-radius: 20px;
     background-color: rgb(255, 255, 255);
@@ -147,9 +147,9 @@
 }
 #medicalstaff-display-table-display{
     height: 500px;
-    width: 20%;
+    width: 50%;
     background-color: rgb(255, 255, 255);;
-    margin-left:14%;
+    margin-left:2%;
     margin-top: 44px;
     border-radius: 20px;
     padding-top: 11px;
@@ -180,78 +180,54 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
 }
-
-#medical-staff-view-table-header {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 0.05em;
-    color: #605858;
+#medicalstaff-display-table-display-available-confirm{
+     
+    height: 40px;
+    margin-top: 12px;
+    border-radius: 10px;
+    background-color: rgba(221, 45, 80, 1);
+    padding: 11px;
+    color: aliceblue;
+    border-style: hidden;
+    border-color: rgba(221, 45, 80, 1);
+    font-weight: 800;
 }
-
-#medicalOfficer-summary-bloodpercentage{
-    position: absolute;
-    width: 272px;
-    height: 304px;
-    left: 450px;
-    top: 1px;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.55);
-    box-shadow: 20px 20px 100px 5px rgba(0, 0, 0, 0.2);
+#medicalstaff-display-table-display-available-unconfirm{
+    height: 40px;
+    margin-top: 12px;
+    border-radius: 10px;
+    background-color: rgb(223, 192, 92);
+    padding: 11px;
+    color: aliceblue;
+    border-style: hidden;
+    border-color: rgba(221, 45, 80, 1);
+    font-weight: 800;
+}
+#medicalstaff-display-table-display-available-cancle{
+    height: 40px;
+    margin-top: 12px;
+    border-radius: 10px;
+    background-color: rgb(133, 134, 163);
+    padding: 11px;
+    color: aliceblue;
+    border-style: hidden;
+    border-color: rgba(221, 45, 80, 1);
+    font-weight: 800;
+}
+#pending-camp-header-display-name-clusterAdmin{
+    margin-left: -120px;
+}
+#medicalstaff-display-table-display-available{
+    margin-top: 260px;
+    padding-top: 6px;
+    padding-left: 140px;
+    height: 90px;
+    width:90%;
     border-radius: 20px;
+    background: rgba(255, 255, 255, 0.956)
 }
 
-#medicalOfficer-summary-bloodcounts{
-    position: absolute;
-    width: 435px;
-    height: 304px;
-    top: 570px;
-    background: rgba(255, 255, 255, 0.55);
-    box-shadow: 20px 20px 100px 5px rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
-}
+
  
-#medicalOfficer-past-camp-view-table {
-    position: absolute;
-    width: 50%;
-    height: 231px;
-    padding-left: 9%;
 
-    background: #FFFFFF;
-    border-radius: 50px;
-}
-
-#pending-camp-container-box2-medicalOfficer{
-    position: absolute;
-    top: 430px;
-}
-
-#medicalstaff-display-table-display-summary{
-    position: absolute;
-    height: 100%;
-    width: 30%;
-    top: 520px;
-    right: 30px;
-    background-color: rgb(255, 255, 255);;
-    margin-left:14%;
-    margin-top: 44px;
-    border-radius: 20px;
-    padding-top: 11px;
-}
-
-#past-camp-header-medicalOfficer{
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 39px;
-    /* identical to box height */
-    
-    letter-spacing: 0.05em;
-    
-    color: #605858;
-    
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
+ 

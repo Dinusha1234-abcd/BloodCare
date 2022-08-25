@@ -250,11 +250,7 @@ export default function Doctors() {
                                 <td>   <input type="text" id="register-form-doctor-input-clusteradmin" placeholder="Enter Mobile Number" onChange={(e) => { setMobileNumber(e.target.value) }} /> <br />
                                 </td>
                             </tr>
-                            <tr>
-                                <td>Occupation</td>
-                                <td>   <input type="text" id="register-form-doctor-input-clusteradmin" placeholder="Enter Occupation" onChange={(e) => { setOccupation(e.target.value) }} /> <br />
-                                </td>
-                            </tr>
+                         
 
 
                         </table> <br />

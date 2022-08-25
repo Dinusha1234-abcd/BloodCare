@@ -6,6 +6,7 @@ const port = 8070; // asign the port number
 const login = require('./routes/login');
 const forgetPassword = require('./routes/forgetPassword');
 const passwordChange = require('./routes/passwordChange');
+const campRegister  = require('./routes/campRegister')
 app.maxConnections = 100;
 
 //clusterAdmin
@@ -28,7 +29,7 @@ app.get("/",(req,res) => {
 app.use("/login",login);
 app.use("/forgetpassword",forgetPassword);
 app.use("/passwordchange",passwordChange);
-
+app.use("/camp/register",campRegister);
 
 //cluster Admin
 app.use("/medicalstaff/doctor",addDoctor);

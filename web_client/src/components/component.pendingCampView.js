@@ -1,30 +1,29 @@
 import React from 'react';
 import '../assests/css/component.pendingCampView.css' 
-import { useParams } from 'react-router-dom';
 export default function PendingCampView() {
-   const {id , name, mobile,place} = useParams()
+
     return (
         <div id='pending-camp-view'>
             <div id='pending-camp-view-container-clusterAdmin'>
                 <div id='pending-camp-container-box1-clusterAdmin'>
-                    <h3 id='pending-camp-header-clusterAdmin'>Pending Blood Camp Details</h3>
+                    <h3 id='pending-camp-header-display-clusterAdmin'>Pending Blood Camp Details</h3>
 
                     <table id="past-camp-view-table">
                         <tr> 
                         <td>Organizer Name</td>
-                        <td>{name}</td>
+                        <td>Namal Kumara</td>
                         </tr>
                         <tr> 
                         <td>NIC Number</td>
-                        <td>{id}</td>
+                        <td>701234567V</td>
                        </tr> 
                        <tr> 
                         <td>Place</td>
-                        <td>{place}</td>
+                        <td>Colombo</td>
                         </tr>
                         <tr> 
                         <td>Mobile Number</td>
-                        <td>{mobile}</td>
+                        <td>0771234567</td>
                         </tr>
                         <tr> 
                         <td>Email</td>
@@ -40,7 +39,7 @@ export default function PendingCampView() {
                     </div>
                 </div>
                 <div id='pending-camp-container-box3-clusterAdmin'>
-                <h3 id='pending-camp-header-clusterAdmin'>Assign Medical Staff</h3>
+                <h3 id='pending-camp-header-display-clusterAdmin'>Assign Medical Staff</h3>
                 <table id="past-camp-view-table">
                         <tr> 
                         <td>Head Nurse Name</td>
@@ -63,7 +62,7 @@ export default function PendingCampView() {
                 </div>
             </div>
             <div id='medicalstaff-display-table-display'>
-                 <h3 id='pending-camp-header-clusterAdmin'>Available Medical Staff Members</h3>
+                 <h3 id='pending-camp-header-display-clusterAdmin'>Available Medical Staff Members</h3>
                  <table id="medical-staff-view-table">
                         <tr> 
                         <td>Name</td>
@@ -74,33 +73,39 @@ export default function PendingCampView() {
                         <tr> 
                         <td>Supuni Kalhari</td>
                         <td>Head Nurse</td>
-                        <td><button id='add-button-staff'>Add</button></td>
+                        <td><button id='view-button-pastcamp'>Add</button></td>
 
 
                        </tr> 
                        <tr> 
                         <td>Savinda Gunarathna</td>
                         <td>Nurse</td>
-                        <td><button id='add-button-staff'>Add</button></td>
+                        <td><button id='view-button-pastcamp'>Add</button></td>
                         
 
                         </tr>
                         <tr> 
                         <td>Sahan Ranasinha</td>
                         <td>Doctor</td>
-                        <td><button id='add-button-staff'>Add</button></td>
+                        <td><button id='view-button-pastcamp'>Add</button></td>
 
 
                         </tr>
                         <tr> 
                         <td>Damith Asanka</td>
                         <td>Nurse</td>
-                        <td><button id='add-button-staff'>Add</button></td>
+                        <td><button id='view-button-pastcamp'>Add</button></td>
 
 
                         </tr>
                     </table>
-                 <div id='medicalstaff-display-table-display-available'></div>
+                 <div id='medicalstaff-display-table-display-available'>
+                 <h3 id='pending-camp-header-display-name-clusterAdmin'>Please Check Details are True or Not </h3>
+                    <button id="medicalstaff-display-table-display-available-confirm" type="">Confirm</button> {"  "}
+                    <button id="medicalstaff-display-table-display-available-unconfirm" type="">UnConfirm</button> {"   "}
+                    <button id="medicalstaff-display-table-display-available-cancle" type="">Cancel</button>
+
+                 </div>
             </div>
         </div>
     )

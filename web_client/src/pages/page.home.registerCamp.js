@@ -1,4 +1,5 @@
 import {React, useState} from "react";
+import { axios } from "axios";
 import styled from "styled-components";
 import '../assests/css/component.doctors.css';
 import '../assests/css/page.home.registerCamp.css';
@@ -16,10 +17,42 @@ export default function RegisterCamp() {
   const [district , setDistrict] = useState("")
   const [clusterCenter,setClusterCenter] = useState("");
   const [content , setContent] = useState("")
-  const [file , setFile] = useState("")
+  const [numberofDonors , setNumberofDonors] = useState("")
   const [message,setMessage] = useState("");
   const [success, setSuccess] = useState(false)
+ 
+  function addCamp(e) {
+    const camp = {
+      FullName,
+      NIC,
+      email,
+      mobileNumber,
+      campName,
+      campDate,
+      location,
+      district,
+      clusterCenter,
+     
+      numberofDonors
+    }
+    axios.post("http://localhost:8070/camp/register", camp).then(
+      (res) => {
+          //check password and username  
+          if (res['data']['message'] == "success") {
+              window.location = "/camp";
 
+          } else {
+              setMessage("Network Connection issue");
+              
+          }
+
+      }
+  ).catch((err) => {
+      //sever error
+      console.log(err.message);
+  })
+
+  }
   return (
     <RegisteredDonorUpcomingBloodCampRoot>
       <FlexRow>
@@ -37,7 +70,7 @@ export default function RegisterCamp() {
             </Element1>
           </FlexRow1>
           <FlexRow2>
-          <form id='register-form-camp'>
+          <form id='register-form-camp' onSubmit={addCamp}>
 
                         <table id='camp-form-table'>
                             <tr>
@@ -94,15 +127,15 @@ export default function RegisterCamp() {
                                 </select><br />
                                 </td>
                                 <td></td>
-                                <td id="coloum-register-camp" >Attach File</td>
-                                <td>   <input type="file" id="register-form-new-camp" placeholder="Upload a flyer"  onChange={(e)=>{setFile(e.target.value)}}  /> <br />
+                                <td id="coloum-register-camp" >Expect Number of Donors</td>
+                                <td>   <input type="text" id="register-form-new-camp" placeholder="Enter Number of Donors"  onChange={(e)=>{setNumberofDonors(e.target.value)}}  /> <br />
                                 </td>
                             </tr>
             
                              
                             
                         </table> <br/>
-                    <button type="sumbit" id="sumbit-save-form" > Register </button> {" "} 
+                    <button type="sumbit" id="sumbit-save-form"  > Register </button> {" "} 
                     <button   id="sumbit-cancle-form" onClick={ () =>{ setFormReg(!formReg) }}  > Cancel </button> <br/><br/>
 
                     </form>
