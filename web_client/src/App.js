@@ -9,11 +9,11 @@ import AdminUsers from "./pages/page.admin.users";
 import AdminBloodCamp from './pages/page.admin.bloodCamp';
 import AdminClusterCenter from './pages/page.admin.clustercenter';
 import AdminCalendar from "./pages/page.admin.calendar";
-<<<<<<< HEAD
+
 // import AdminAnnoucement from "./pages/page.admin.announcement";
-=======
-/*import AdminAnnoucement from "./pages/page.admin.announcement";*/
->>>>>>> 7ad938bf52df83b899930d0362c810bf5b87db85
+
+import AdminAnnoucement from "./pages/page.admin.announcement";
+
 
 //Cluster Admin
 import ClusterAdminDashboard from "./pages/page.clusterAdmin.dashboard";

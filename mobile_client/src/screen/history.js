@@ -13,6 +13,17 @@ import {
     TextInput
 } from 'react-native';
 import SlideBar from '../component/slidebar';
+import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component';
+const CONTENT = {
+   tableHead: ['Date', 'Camp Name', 'Location'],
+   tableData: [
+      ['13-08-2022', 'YOU CAN HELP SAVE A LIFE!', 'Panadura'],
+      ['18-08-2022', 'Blood Donation Drive', 'Kalutara'],
+      ['29-08-2022', 'BE A HERO DONTAE BLOOD', 'Rathmalana'],
+      ['03-09-2022', 'Give Blood and Save a Life', 'Horana'],
+      ['11-09-2022', 'SAVE A LIFE, GIVE YOUR BLOOD.', 'Bandaragama'],
+   ],
+};
 export default function History({navigation}){
    return(
    <View style={styles.main}>
@@ -24,7 +35,27 @@ export default function History({navigation}){
          <Image style={styles.blood} source={require('../assests/bloodOp.png')}></Image>
          <TextInput style={styles.search} ></TextInput>
          <Image style={styles.searchIcon} source={require('../assests/Vector.png')} />
-         <Image style={styles.historyr} source={require('../assests/history.png')}></Image>
+         <View style={styles.tablecontent}>
+         <Table borderStyle={{ borderWidth: 1,borderColor: 'pink'}}>
+                  <Row data={CONTENT.tableHead}
+                     flexArr={[1, 3, 1]}
+                     style={styles.head}
+                     textStyle={styles.textheader} />
+                  <TableWrapper style={styles.wrapper}>
+                     <Col
+                        heightArr={[28, 28]}
+                        textStyle={styles.text}
+                     />
+
+                     <Rows
+                        data={CONTENT.tableData}
+                        flexArr={[1, 3, 1]}
+                        style={styles.row}
+                        textStyle={styles.text}
+                     />
+                  </TableWrapper>
+               </Table>
+         </View>
 
       </View>
    </View>)
@@ -73,6 +104,22 @@ const styles = StyleSheet.create({
    }, searchIcon: {
       marginTop: 15,
       marginLeft: 60,
+
+   },tablecontent:{
+      marginTop:30,
+      padding:10
+   },
+   container: { flex: 1, padding: 16, paddingTop: 100, backgroundColor: '#fff' },
+   head: { height: 40, backgroundColor: 'pink', },
+   wrapper: { flexDirection: 'row' },
+   row: { height: 30 },
+   text: { textAlign: 'center',fontSize:10
+   },textheader:{
+      textAlign:'center', 
+      fontSize:14
+   },homeI:{
+      opacity:0.3,
+      
 
    }
 

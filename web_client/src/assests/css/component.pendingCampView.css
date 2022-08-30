@@ -214,16 +214,16 @@
     border-color: rgba(221, 45, 80, 1);
     font-weight: 800;
 }
-<<<<<<< HEAD
+
 #pending-camp-header-display-name-clusterAdmin{
     margin-left: -120px;
-=======
+}
 
 #pending-camp-container-box2-medicalOfficer{
     position: absolute;
     top: 430px;
     padding-left: 17%;
->>>>>>> 7ad938bf52df83b899930d0362c810bf5b87db85
+
 }
 #medicalstaff-display-table-display-available{
     margin-top: 260px;
@@ -235,12 +235,12 @@
     background: rgba(255, 255, 255, 0.956)
 }
 
-<<<<<<< HEAD
+
 
  
 
  
-=======
+
 #past-camp-header-medicalOfficer{
     font-family: 'Inter';
     font-style: normal;
@@ -345,4 +345,4 @@
     text-align: center;
     color: #000000;
   }
->>>>>>> 7ad938bf52df83b899930d0362c810bf5b87db85
+

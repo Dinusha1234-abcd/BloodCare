@@ -4,7 +4,7 @@ import styled from "styled-components";
 import '../assests/css/component.doctors.css';
 import '../assests/css/page.home.registerCamp.css';
 import NavBar from "../components/component.home.navbar";
-import axios from 'axios';
+ 
 
 export default function RegisterCamp() {
   const [data, setData] = useState([]);
@@ -26,10 +26,10 @@ export default function RegisterCamp() {
  
   function addCamp(e) {
     const camp = {
-      FullName,
-      NIC,
+      name,
+      nic,
       email,
-      mobileNumber,
+      phoneNumber,
       campName,
       campDate,
       location,
@@ -44,8 +44,7 @@ export default function RegisterCamp() {
           if (res['data']['message'] == "success") {
               window.location = "/camp";
 
-<<<<<<< HEAD
-          } else {
+           } else {
               setMessage("Network Connection issue");
               
           }
@@ -57,7 +56,7 @@ export default function RegisterCamp() {
   })
 
   }
-=======
+ 
   console.log(data[1]);
     function addDoctor(e) {
         e.preventDefault()
@@ -113,7 +112,7 @@ export default function RegisterCamp() {
         }
     }
 
->>>>>>> 7ad938bf52df83b899930d0362c810bf5b87db85
+ 
   return (
     <RegisteredDonorUpcomingBloodCampRoot>
       <FlexRow>
