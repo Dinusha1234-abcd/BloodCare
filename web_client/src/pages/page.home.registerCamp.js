@@ -23,10 +23,10 @@ export default function RegisterCamp() {
  
   function addCamp(e) {
     const camp = {
-      FullName,
-      NIC,
+      name,
+      nic,
       email,
-      mobileNumber,
+      phoneNumber,
       campName,
       campDate,
       location,

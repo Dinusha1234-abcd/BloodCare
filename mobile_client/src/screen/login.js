@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
     },foot:{
         marginTop:32,
         width: '100%',
-        height: 90 
+        height: 100 
     },message:{
         position: 'absolute',
         padding: 6, 

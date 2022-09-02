@@ -1,6 +1,8 @@
 import React from 'react';
 import '../assests/css/component.pendingCampView.css' 
 import { useParams } from 'react-router-dom';
+import Blood from "../components/component.blood.display";
+
 export default function PendingCampView() {
    const {id , name, mobile,place} = useParams()
     return (
@@ -83,7 +85,6 @@ export default function PendingCampView() {
                         <td>Nurse</td>
                         <td><button id='add-button-staff'>View</button></td>
                         
-
                         </tr>
                         <tr> 
                         <td>Sahan Ranasinha</td>
@@ -103,5 +104,6 @@ export default function PendingCampView() {
                  <div id='medicalstaff-display-table-display-available'></div>
             </div>
         </div>
+       
     )
 }
