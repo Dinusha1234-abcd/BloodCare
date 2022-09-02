@@ -84,7 +84,6 @@ export default function PendingCampView() {
                         <td><button id='add-button-staff'>View</button></td>
                         
 
-<<<<<<< HEAD
                         </tr>
                         <tr> 
                         <td>Sahan Ranasinha</td>
@@ -102,75 +101,6 @@ export default function PendingCampView() {
                         </tr>
                     </table>
                  <div id='medicalstaff-display-table-display-available'></div>
-=======
-          <table id="medicalOfficer-past-camp-view-table">
-            <tr>
-              <td>Organizer Name</td>
-              <td>{name}</td>
-            </tr>
-            <tr>
-              <td>NIC Number</td>
-              <td>{id}</td>
-            </tr>
-            <tr>
-              <td>Place</td>
-              <td>{place}</td>
-            </tr>
-            <tr>
-              <td>Mobile Number</td>
-              <td>{mobile}</td>
-            </tr>
-            <tr>
-              <td>Email</td>
-              <td>namal@gmail.com</td>
-            </tr>
-          </table>
-          <div id="pending-camp-container-box2-medicalOfficer">
-            <form>
-              <input type="text" id="input-send-message-clusterAdmin"></input>
-              <br />
-              <button type="sumbit" id="sumbit-send-Email-clusterAdmin">
-                Send Email
-              </button>
-              <button type="sumbit" id="sumbit-send-SMS-clusterAdmin">
-                Send SMS
-              </button>
-            </form>
-          </div>
-          <div id ="exporttopdf-Btn">
-          <h3 id = "exporttopdf-Btn-text">Export To PDF</h3>
-          </div>
-          <div id="pastCamp-DonorsCount">
-          <h3 id="pastCamp-DonorsCount-text">Donors Count</h3>
-          <h3 pastCamp-DonorsCount-text>47</h3>
-          </div>
-
-          <div id="pastCamp-BloodCount">
-          <h3 id="pastCamp-BloodCount-text">Blood Count</h3>
-          <h3 pastCamp-DonorsCount-text>160</h3>
-          </div>
-
-          <div id="pastCamp-StaffCount">
-          <h3 id="pastCamp-StaffCount-text">Staff Members</h3>
-          <h3 pastCamp-DonorsCount-text>5</h3>
-          </div>
-  
-       
-        <div id="pending-camp-container-box3-clusterAdmin">
-          <div id="medicalOfficer-summary-bloodcounts">
-            <h3>Blood Counter Details</h3>
-            <div id="blood">
-              <Blood name="O+" />
-              <Blood name="A+" />
-              <Blood name="B+" />
-              <Blood name="AB+" />
-            </div>
-            <div id="blood">
-              <Blood name="O-" />
-              <Blood name="A-" />
-              <Blood name="B-" />
-              <Blood name="AB-" />
->>>>>>> 7ad938bf52df83b899930d0362c810bf5b87db85
             </div>
         </div>
     )

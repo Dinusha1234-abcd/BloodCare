@@ -11,7 +11,15 @@ app.maxConnections = 100;
 
 //clusterAdmin
 const addDoctor = require('./routes/clusterAdmin/medicalStaff/doctor/addDoctor');
-const selectDoctor = require('./routes/clusterAdmin/medicalStaff/doctor/selectDoctor') 
+const selectDoctor = require('./routes/clusterAdmin/medicalStaff/doctor/selectDoctor'); 
+const addDriver = require('./routes/clusterAdmin/medicalStaff/driver/addDriver');
+
+
+
+
+
+
+
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -34,7 +42,7 @@ app.use("/camp/register",campRegister);
 //cluster Admin
 app.use("/medicalstaff/doctor",addDoctor);
 app.use("/medicalstaff/selectdoctor",selectDoctor);
-
+app.use("/medicalstaff/driver",addDriver);
 
 // app.use((err,req,res,next)=>{
 //     const statusCode =  err.statusCode || 500;

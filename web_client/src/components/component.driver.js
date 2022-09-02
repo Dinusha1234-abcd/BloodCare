@@ -1,4 +1,5 @@
 import React,{useState} from 'react';
+import  axios  from 'axios';
 import '../assests/css/component.drivers.css';
 export default function Drivers() {
     const [formReg, setFormReg] = useState(false);
@@ -8,13 +9,112 @@ export default function Drivers() {
     const [address, setAddress] = useState("");
     const [email, setEmail] = useState("");
     const [mobileNumber, setMobileNumber] = useState("");
-    const [occupation, setOccupation] = useState("")
     const [message, setMessage] = useState("");
     const [success, setSuccess] = useState(false);
     const [show, setShow] = useState(true);
     const clusterAdminNic = localStorage.getItem('userNic');
     const [data, setData] = useState([]);
     const [searchData, setSearchData] = useState("");
+
+    function getDriverData() {
+
+        const clusterAdminNic = localStorage.getItem('userNic');
+        const clusterAdmin = {
+            clusterAdminNic
+        }
+         
+        axios.post("http://localhost:8070/medicalstaff/selectDriver", clusterAdmin).then(
+            (res) => {
+
+                setData(res.data.drivers);
+
+            }).catch((err) => {
+                //sever error
+                console.log(err.message);
+            })
+
+    }
+    
+     
+    function addDriver(e) {
+        e.preventDefault()
+        const clusterAdminNic = localStorage.getItem('userNic');
+        const driver = {
+            clusterAdminNic,
+            firstName,
+            lastName,
+            NIC,
+            address,
+            email,
+            mobileNumber 
+        }
+        if (firstName.length == 0) {
+            setMessage("Please Enter First Name ");
+        } else if (lastName.length == 0) {
+            setMessage("Please Enter Last Name ");
+        } else if (!(NIC.length == 10 || NIC.length == 12)) {
+            console.log(NIC.length);
+            setMessage("Please Enter  Valid NIC Number ");
+        } else if (address.length == 0) {
+            setMessage("Please Enter  Address ");
+
+        } else if (email.length == 0) {
+            setMessage("Please Enter  Email ");
+
+        } else if (!(mobileNumber.length == 10)) {
+            setMessage("Please Enter  Valid Mobile Number");
+
+        } else {
+            setFormReg(false);
+            setSuccess(true);
+            setFirstName('');
+            setLastName('');
+            setNIC('');
+            setAddress('');
+            setMobileNumber('');
+            setEmail('');
+            e.target.reset();
+            // pass check the data with server 
+            console.log("call");
+            axios.post("http://localhost:8070/medicalstaff/driver", driver).then(
+                (res) => {
+                    //check password and username  
+                    if (res['data']['message'] == "success") {
+                        window.location = "/medicalstaff/driver";
+
+                    } else {
+                        setMessage("Network Connection issue");
+                        
+                    }
+
+                }
+            ).catch((err) => {
+                //sever error
+                console.log(err.message);
+            })
+        }
+    }
+    
+    const list = [];
+    if(searchData==""){ 
+    for (let i = 0; i < data.length; i++) {
+        list.push(
+        <> <tr>
+            <td>{data[i]['staffId']}</td>
+            <td>{data[i]['userNic']}</td>
+            <td>Dr {data[i]['firstName'] + " " + data[i]['lastName']}</td>
+            <td>{data[i]['phoneNumber']}</td>
+            <td>{data[i]['email']}</td>
+            <td>
+                <button id='view-button-doctor-view' onClick={show}>View</button>
+                <button id='view-button-doctor-remove'>Remove</button>
+            </td> 
+            </tr>
+        </>)
+    }
+    } 
+
+
     return (
         <div>
             <div id='driver-contanier'> 
@@ -99,8 +199,8 @@ export default function Drivers() {
          <div id={`${formReg ? 'register-form-doctor-clusteradmin-active' : 'register-form-doctor-clusteradmin'}`}>
 
 
-                    <h3 id='register-form-doctor-name-clusteradmin'>Add New Doctor </h3>
-                    <form id='register-form-doctor-form-clusteradmin' >
+                    <h3 id='register-form-doctor-name-clusteradmin'>Add New Driver </h3>
+                    <form id='register-form-doctor-form-clusteradmin'  onSubmit={addDriver} >
                         {message ? <p id="message-form-clusteradmin">{message}   <i class="fa-solid fa-xmark close-button-form" onClick={() => { setMessage("") }}></i></p> : null}
 
                         <table id='medical-staff-view-table'>
@@ -136,9 +236,6 @@ export default function Drivers() {
                                 </td>
                             </tr>
                              
-                         
-
-
                         </table> <br />
                         <button type="sumbit" id="sumbit-save-form" > Register </button> {" "}
                         <button id="sumbit-cancle-form" onClick={() => { setFormReg(!formReg) }}  > Cancel </button> <br /><br />

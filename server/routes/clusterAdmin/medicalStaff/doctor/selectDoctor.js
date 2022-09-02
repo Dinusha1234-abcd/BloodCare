@@ -4,15 +4,23 @@ const selectDoctor = require('../../../../services/clusterAdmin/medicalStaff/doc
 
 
 router.post('/',  async function (req, res) {
-  console.log("name")
-  const clusterAdmin = 1;
+  
+  const clusterAdmin =  req.body.clusterAdminNic ;
+  let centerNumber;
+   await selectDoctor.getBloodCenterNumber(clusterAdmin).then(
+    (clusterAdmin)=>{
+           centerNumber = clusterAdmin[0].bloodCenterNo;
+            
+    }
+    )
+  //  await numberOFDoctor.getNumberofDoctors(centerNumber).then( 
+  //   (res) =>{
+  //     const  number =  res.numberOFDoctor;
+  //   }).catch(err => console.log(err) );
 
-  //  selectDoctor.getBloodCenterNumber(clusterAdmin).then(
-  //   (clusterAdmin)=>{
-  //        centerNumber = clusterAdmin[0].bloodCenterNo;
-  //   }
-  //   )
-  await selectDoctor.getDoctors(clusterAdmin).then(
+
+
+  await selectDoctor.getDoctors(centerNumber).then(
     (user) => {
        
       const doctors = user ;

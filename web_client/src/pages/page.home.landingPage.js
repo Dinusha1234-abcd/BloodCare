@@ -135,19 +135,15 @@ export default function LandingPage ()  {
             <FlexColumn2>
               {[
                 {
-                  childText: `Your donated blood can potentially help save up to three lives`,
+                  childText: `Save lifes`,
                   alignSelf: `inherit`,
                 },
                 {
-                  childText: `Less than 38% of the population is eligible to give blood or platelets`,
+                  childText: `38% is eligible`,
                   alignSelf: `inherit`,
                 },
                 {
-                  childText: `It improves your overall well-being`,
-                  alignSelf: `inherit`,
-                },
-                {
-                  childText: `You may need a blood donation one day`,
+                  childText: `Improve well-being`,
                   alignSelf: `inherit`,
                 },
               ].map((data) => (
