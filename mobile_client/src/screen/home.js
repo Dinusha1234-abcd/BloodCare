@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
       marginLeft: 10,
       width: 370,
       height: 500,
-      backgroundColor: 'rgba(255, 255, 255, 0.73)',
+      backgroundColor: 'rgba(255, 255, 255, 1)',
       borderRadius: 10
    }, searchBar: {
       position: 'absolute',

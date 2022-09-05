@@ -35,7 +35,10 @@ export default function CalendarPage({ navigation }) {
             />
          </View>
          <View style={styles.events}>
-            <Image style={styles.image} source={require('../assests/events.png')}></Image>
+           <Text style={styles.eventText}>Events</Text>
+           <View style={styles.eventcontainer}>
+
+           </View>
          </View>
 
       </View>)
@@ -52,9 +55,11 @@ const styles = StyleSheet.create({
    }, events: {
       position: 'absolute',
       marginTop: 550,
-      marginLeft:25,
-      resizeMode:'stretch',
-      width:'95%'
+      marginLeft:10,
+      backgroundColor:'rgba(255, 255, 255, 0.87)',
+      width:'95%',
+      height:180,
+      borderRadius:30,
    }, search: {
       position: 'absolute',
       width: 280,
@@ -82,5 +87,11 @@ const styles = StyleSheet.create({
    }, sele:{
       position:'absolute',
       marginTop:60
+   },eventText:{
+      fontSize:24,
+      marginTop:10,
+      marginLeft:150
+   },eventcontainer:{
+      
    }
 })
