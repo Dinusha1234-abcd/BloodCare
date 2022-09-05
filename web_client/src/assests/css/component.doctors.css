@@ -6,7 +6,7 @@
     border-radius: 20px;
     padding-left: 20px;
     padding-right: 11px;
-    height: 620px;
+    height: 650px;
     background: rgba(255, 255, 255, 0.79);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     transition: 0.6;
@@ -145,7 +145,7 @@
 #doctor-pageButton {
     position: absolute;
     right: 190px;
-    bottom: 6px;
+    bottom: 2px;
     width: 170px;
     padding: 6px;
     border-radius: 11px;
@@ -342,4 +342,30 @@
     position: relative;
     left: 50px;
     font-size: 20px;
+}
+#update-form-doctor-input-clusteradmin {
+    width: 250px;
+    height: 30px;
+    border-radius: 10px;
+    border-color: rgba(221, 45, 80, 1);
+    padding: 11px;
+    margin-top: 10px;
+    box-shadow: red;
+    border-style: hidden;
+    border-color: rgba(221, 45, 80, 1);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, FontAwesome;
+    font-size: 15px;
+    outline-style: none;
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    color: rgb(19, 19, 19)
+}
+
+#update-form-doctor-input-clusteradmin::placeholder {
+    color: #000000;
+    opacity: 1;
+    font-weight: 550;
 }
