@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect}   from 'react';
 import  axios  from 'axios';
 import '../assests/css/component.drivers.css';
 export default function Drivers() {
@@ -16,6 +16,8 @@ export default function Drivers() {
     const [data, setData] = useState([]);
     const [searchData, setSearchData] = useState("");
 
+
+    useEffect((() => {getDriverData() }), [])
     function getDriverData() {
 
         const clusterAdminNic = localStorage.getItem('userNic');
@@ -23,10 +25,11 @@ export default function Drivers() {
             clusterAdminNic
         }
          
-        axios.post("http://localhost:8070/medicalstaff/selectDriver", clusterAdmin).then(
+        axios.post("http://localhost:8070/medicalstaff/selectdriver", clusterAdmin).then(
             (res) => {
 
                 setData(res.data.drivers);
+                console.log(res.data);
 
             }).catch((err) => {
                 //sever error
@@ -102,7 +105,7 @@ export default function Drivers() {
         <> <tr>
             <td>{data[i]['staffId']}</td>
             <td>{data[i]['userNic']}</td>
-            <td>Dr {data[i]['firstName'] + " " + data[i]['lastName']}</td>
+            <td> {data[i]['firstName'] + " " + data[i]['lastName']}</td>
             <td>{data[i]['phoneNumber']}</td>
             <td>{data[i]['email']}</td>
             <td>
@@ -112,7 +115,26 @@ export default function Drivers() {
             </tr>
         </>)
     }
-    } 
+    } else{
+        for (let i = 0; i < 10; i++) {
+            if (searchData == data[i]['userNic']) {
+                list.push(
+                    <> <tr>
+                        <td>{data[i]['staffId']}</td>
+                        <td>{data[i]['userNic']}</td>
+                        <td> {data[i]['firstName'] + " " + data[i]['lastName']}</td>
+                        <td>{data[i]['phoneNumber']}</td>
+                        <td>{data[i]['email']}</td>
+                        <td>
+                        <button id='view-button-doctor-view'  >View</button>   
+                            <button id='view-button-doctor-remove'>Remove</button>
+                        </td>
+                    </tr>
+                    </>)
+
+            }
+        }
+    }
 
 
     return (
@@ -133,63 +155,8 @@ export default function Drivers() {
                     <th id='driver-action'>Action</th>
                     
                 </tr>
-                <tr>
-                    <td>101</td>
-                    <td>891234567V</td>
-                    <td>Namal Perera</td>
-                    <td>0777123456</td>
-                    <td>namalperera@gmail.com</td>
-                    <td>
-                        <button id='view-button-driver-view'>View</button>
-                        <button id='view-button-driver-remove'>Remove</button>
-                    </td>
-                   
-                </tr>
-                <tr>
-                    <td>102</td>
-                    <td>901234567V</td>
-                    <td>Sewandi Ranasingh</td>
-                    <td>0761234567</td>
-                    <td>sewandiranasingh@gmail.com</td>
-                    <td>
-                        <button id='view-button-driver-view'>View</button>
-                        <button id='view-button-driver-remove'>Remove</button>
-                    </td>
-          </tr>
-                <tr>
-                    <td>103</td>
-                    <td>871234567V</td>
-                    <td>Sathya Ranasingh</td>
-                    <td>0782345678</td>
-                    <td>sathyaransingh@gmail.com</td>
-                    <td>
-                        <button id='view-button-driver-view'>View</button>
-                        <button id='view-button-driver-remove'>Remove</button>
-                    </td>
-              </tr>
-                <tr>
-                    <td>104</td>
-                    <td>891224567V</td>
-                    <td>Kamal Silva</td>
-                    <td>0782347778</td>
-                    <td>kamalsilva@gmail.com</td>
-                    <td>
-                        <button id='view-button-driver-view'>View</button>
-                        <button id='view-button-driver-remove'>Remove</button>
-                    </td>
-                     </tr>
-                <tr>
-                    <td>105</td>
-                    <td>891334567V</td>
-                    <td>Sathya Suriya</td>
-                    <td>0782347678</td>
-                    <td>sathyasurya@gmail.com</td>
-                    <td>
-                        <button id='view-button-driver-view'>View</button>
-                        <button id='view-button-driver-remove'>Remove</button>
-                    </td>
-                </tr>
-             </table>
+                {list}
+              </table>
             <div id='driver-pageButton'>
                 <a className='page-navigation'>{"<< Prev"}  </a> 
                 <a className='page-navigation'>1</a>
