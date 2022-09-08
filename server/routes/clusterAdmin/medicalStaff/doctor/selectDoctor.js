@@ -11,8 +11,7 @@ router.post('/',  async function (req, res) {
     (clusterAdmin)=>{
            centerNumber = clusterAdmin[0].bloodCenterNo;
      }
-    )
- 
+    ) 
   await selectDoctor.getDoctors(centerNumber).then(
     (user) => {
        
