@@ -246,16 +246,17 @@ export default function Drivers() {
     return (
         <div>
             <div id='driver-contanier'>
-            <div id={`${success ? 'sucess-message-active' : 'sucess-message' }`}>
-                    <br/> <h1 id='sucess-message-name'> <img id='successImage' src={successImage} /> <br/> Success !</h1>  <br/>
+            <div id={`${success ? 'sucess-message-active' : 'sucess-message'}`}>
+                    <br /> <h1 id='sucess-message-name'> <img id='successImage' src={successImage} /> <br /> Success !</h1>  <br />
                     <p id='sucess-message-box'>{successMessage}</p> <br></br>
-                    <button  id="okay-button" onClick={() =>{setSuccess(sucessbutton)}}> Okay </button>          
+                    <button id="okay-button" onClick={() => { setSuccess(sucessbutton) }}> Okay </button>
                 </div>
-                <div id={`${wait ? 'wait-cluterAdmin-active' : 'wait-cluterAdmin' }`}> <img id='wait-cluterAdmin-image' src={waitImage}/> </div>
-                <div id={`${unsuccess ? 'unsucess-message-active' : 'unsucess-message' }`}>
-                    <br/> <h1 id='sucess-message-name'> <img id='unsuccessImage' src={unsuccessImage} /> <br/> Wrong !</h1>  <br/>
-                    <p id='sucess-message-box'>{unsuccessMessage}fully</p> <br></br>
-                    <button  id="okay-button-unsucess" onClick={() =>{setSuccess(unsucessbutton)}}> Okay </button>          
+                <div id={`${wait ? 'wait-cluterAdmin-active' : 'wait-cluterAdmin'}`}> <img id='wait-cluterAdmin-image' src={waitImage} /> </div>
+
+                <div id={`${unsuccess ? 'unsucess-message-active' : 'unsucess-message'}`}>
+                    <br /> <h1 id='sucess-message-name'> <img id='unsuccessImage' src={unsuccessImage} /> <br /> Wrong !</h1>  <br />
+                    <p id='unsucess-message-box'> {unsuccessMessage}</p> <br />
+                    <button id="okay-button-unsucess" onClick={() => { setSuccess(unsucessbutton) }}> Okay </button>
                 </div>
                 <div id={`${formReg || success || unsuccess || updateFormShow|| wait? 'fade-clusterAdmin' : null}`} onClick={() => { setFormReg(false);setUpdateFormShow(false) }}></div>
 
