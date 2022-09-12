@@ -34,7 +34,6 @@ router.post('/', async function (req, res) {
       return res.json({ message: "unsucess" });
    });
 
-
-});
+ });
 
 module.exports = router;

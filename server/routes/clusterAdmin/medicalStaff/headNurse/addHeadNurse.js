@@ -14,6 +14,7 @@ router.post('/', async function (req, res) {
     const email = req.body.email;
     const mobileNumber = req.body.mobileNumber;
     const password = req.body.password;
+    
     //hash the password 
     const salt = bcrypt.genSaltSync(10);
     const hashPassword = bcrypt.hashSync(password, salt)

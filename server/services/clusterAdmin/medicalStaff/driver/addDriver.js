@@ -7,7 +7,7 @@ async function getBloodCenterNumber(clusterAdminNic){
 }
 
 
-async function insertDriver(centerNumber,firstName,lastName,NIC,gender,dateOfBirth,address, email, mobileNumber, occupation){
+async function insertDriver(centerNumber,firstName,lastName,NIC,gender,dateOfBirth,address, email, mobileNumber){
     
     await db.query( `INSERT INTO  user (userNic,firstName ,lastName,gender,dateOfBirth,type,email, phoneNumber,address) VALUES (?,?,?,?,?,?,?,?,?)`,
     [NIC,firstName,lastName,gender,dateOfBirth,'6',email,mobileNumber,address]);
@@ -18,5 +18,4 @@ async function insertDriver(centerNumber,firstName,lastName,NIC,gender,dateOfBir
     
 }
  
-
 module.exports = { insertDriver ,getBloodCenterNumber } 

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import SlideMenuClusterAdmin from '../components/component.slidemenu.clusterAdmin';
-import Doctor from '../components/component.doctors';
-import HeadNurse from "../components/component.headNurse";
-import Nurse from "../components/component.nurse";
-import Driver from "../components/component.driver";
-import ClusterAdminMedicalStaffHeader from '../components/component.medicalStaffHeader'
+import Doctor from '../components/clusterAdmin/component.doctors';
+import HeadNurse from "../components/clusterAdmin/component.headNurse";
+import Nurse from "../components/clusterAdmin/component.nurse";
+import Driver from "../components/clusterAdmin/component.driver";
+import ClusterAdminMedicalStaffHeader from '../components/clusterAdmin/component.medicalStaffHeader'
 import '../assests/css/page.clusterAdmin.bloodcamp.css'
 
 export default function ClusterAdminBloodCamp() {
