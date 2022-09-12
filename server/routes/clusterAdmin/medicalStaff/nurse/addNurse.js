@@ -36,7 +36,7 @@ router.post('/', async function (req, res) {
         return num % 30;
     }
 
-    //cheack NIC number length
+    //check NIC number length
     if (NIC.length == 10) {
         const number = parseInt(NIC[2] + NIC[3] + NIC[4]);
         const year = "19" + NIC.substr(0, 2);

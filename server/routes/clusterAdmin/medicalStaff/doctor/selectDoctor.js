@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const selectDoctor = require('../../../../services/clusterAdmin/medicalStaff/doctor/selectDoctor');
 
-
 router.post('/',  async function (req, res) {
   const clusterAdmin =  req.body.clusterAdminNic ;
   let centerNumber;

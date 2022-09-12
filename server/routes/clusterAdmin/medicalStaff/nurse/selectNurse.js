@@ -14,7 +14,6 @@ router.post('/', async function (req, res) {
     }
   )
 
-
   await selectNurse.getNurse(centerNumber).then(
     (user) => {
 

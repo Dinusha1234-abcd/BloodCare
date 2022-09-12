@@ -17,7 +17,6 @@ export default function ClusterAdminDonors() {
     const [lastRow, setLastRow] = useState(0);
     const [pageNumber, setPageNumber] = useState(1);
 
-
     const passData = (data) => {
         setSlideMenu(data);
     };

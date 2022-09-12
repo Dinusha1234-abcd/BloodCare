@@ -265,8 +265,7 @@ export default function Doctors() {
 
     return (
         <div>
-
-            <div id='doctor-contanier'>
+           <div id='doctor-contanier'>
             <div id='loading-cluterAdmin'>  </div>
                 <div id={`${success ? 'sucess-message-active' : 'sucess-message'}`}>
                      <h3 id='sucess-message-name'> Doctor Added Sucessfully <i class="fa-solid fa-xmark close-button-success" onClick={() => { setSuccess(!success) }}></i></h3>

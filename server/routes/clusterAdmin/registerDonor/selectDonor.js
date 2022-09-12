@@ -5,8 +5,6 @@ const selectDonor = require('../../../services/clusterAdmin/registerDonor/select
 
 router.get('/', async function (req, res) {
 
-
-
   await selectDonor.getDonor().then(
     (user) => {
 

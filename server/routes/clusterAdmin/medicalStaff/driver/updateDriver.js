@@ -14,7 +14,6 @@ router.post('/', async function (req, res) {
 
    let gender;
    let dateOfBirth;
-
    const getGender = () => { if (NIC.substr(3, 6) > 500) { return true } }
 
    function getMonth(dayData) {

@@ -7,9 +7,7 @@ export default function Users(props) {
         <h id={`${ props.status ? 'user-role-change-dashboard' : 'user-role-dashboard' }`}>{props.name}</h><br/>
 
         <h2 id='cluster-count-admin'>{props.number}</h2>
- 
-
-       </div>
+    </div>
     )
   
   }

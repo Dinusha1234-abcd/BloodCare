@@ -14,7 +14,6 @@ router.post('/', async function (req, res) {
     }
   )
 
-
   await selectDriver.getDrivers(centerNumber).then(
     (user) => {
 
