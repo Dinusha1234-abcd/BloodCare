@@ -40,9 +40,9 @@ export default function ClusterAdminDonors() {
 
     }
     const list = [];
-    //display data in table
+   //display data in table
     //check the NIC number
-    // if (searchData == "") {
+    if (searchData == "") { 
         for (let i = firstRow; i < data.length; i++) {
             list.push(
                 <> <tr>
@@ -58,29 +58,29 @@ export default function ClusterAdminDonors() {
                 </tr>
                 </>)
         }
-    // } else {
-    //     for (let i = 0; i < 10; i++) {
-    //         if (searchData == data[i]['userNic']) {
-    //             list.push(
-    //                 <> <tr>
-    //                     <td>{data[i]['registerDonorId']}</td>
-    //                     {/* <td>{data[i]['userNic']}</td>
-    //                     <td> {data[i]['firstName'] + " " + data[i]['lastName']}</td>
-    //                     <td>{data[i]['bloodType']}</td>
-    //                     <td>{data[i]['LastDonationDate']}</td> */}
-    //                     <td>
-    //                         <button id='view-button-doctor-view' >View</button>
-    //                         <button id='view-button-doctor-remove'>Remove</button>
-    //                     </td>
-    //                 </tr>
-    //                 </>)
+    } else {
+        for (let i = 0; i < 10; i++) {
+            if (searchData == data[i]['userNic']) {
+                list.push(
+                    <> <tr>
+                        <td>{data[i]['registerDonorId']}</td>
+                        <td>{data[i]['userNic']}</td>
+                        <td> {data[i]['firstName'] + " " + data[i]['lastName']}</td>
+                        <td>{data[i]['bloodType']}</td>
+                        <td>{data[i]['LastDonationDate']}</td>
+                        <td>
+                            <button id='view-button-doctor-view' >View</button>
+                            <button id='view-button-doctor-remove'>Remove</button>
+                        </td>
+                    </tr>
+                    </>)
 
-    //         }
-    //     }
+            }
+        }
 
-    // }
+    }
 
-    console.log(data.length);
+   
     return (
         <div>
             <SlideMenuClusterAdmin headerName={"Donors"} passData={passData} />
