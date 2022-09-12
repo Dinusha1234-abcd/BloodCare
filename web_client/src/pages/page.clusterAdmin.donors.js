@@ -29,7 +29,12 @@ export default function ClusterAdminDonors() {
             (res) => {
 
                 setData(res.data.donors);
-                setLastRow(10);
+                if(data.length < 11){
+                    setLastRow(data.length);
+                }else{
+                    setLastRow(10);
+                }
+             
                 setLoading(!loading);
             }).catch((err) => {
                 //sever error
@@ -43,7 +48,7 @@ export default function ClusterAdminDonors() {
    //display data in table
     //check the NIC number
     if (searchData == "") { 
-        for (let i = firstRow; i < data.length; i++) {
+        for (let i = firstRow; i < lastRow; i++) {
             list.push(
                 <> <tr>
                     <td>{data[0]['registerDonorId']}</td>
@@ -59,7 +64,7 @@ export default function ClusterAdminDonors() {
                 </>)
         }
     } else {
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < lastRow; i++) {
             if (searchData == data[i]['userNic']) {
                 list.push(
                     <> <tr>
@@ -87,7 +92,7 @@ export default function ClusterAdminDonors() {
             <div id={`${slidemenu ? 'state-change-true' : 'state-change-false'}`} >
                 <div id='donors-contanier'>
                     <h3 id="header-clusterAdmin">Donors Details</h3>
-                    <input type="text" id='input-donors' placeholder=" &#xf002; Enter NIC Number" />
+                    <input type="text" id='input-donors' placeholder=" &#xf002; Enter NIC Number" onChange={(e) => { setSearchData(e.target.value) }}/>
 
                     <br /><br />
                     <table id="donors-table">

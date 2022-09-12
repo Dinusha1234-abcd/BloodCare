@@ -292,9 +292,7 @@ export default function Doctors() {
                     </tr>
                      <img id='loading' src={loading}/>  
                     {list}
-
-
-                </table>
+                 </table>
                 <div id='doctor-pageButton'>
                     <a className='page-navigation' href='#' onClick={prevPage}>{"<< Prev"}  </a>
                     <a className='page-navigation'>{pageNumber}</a>
@@ -302,8 +300,6 @@ export default function Doctors() {
                 </div>
                 {/* insert doctor */}
                 <div id={`${formReg ? 'register-form-doctor-clusteradmin-active' : 'register-form-doctor-clusteradmin'}`}>
-
-
                     <h3 id='register-form-doctor-name-clusteradmin'>Add New Doctor </h3>
                     <form id='register-form-doctor-form-clusteradmin' onSubmit={addDoctor}>
                         {message ? <p id="message-form-clusteradmin">{message}   <i class="fa-solid fa-xmark close-button-form" onClick={() => { setMessage("") }}></i></p> : null}

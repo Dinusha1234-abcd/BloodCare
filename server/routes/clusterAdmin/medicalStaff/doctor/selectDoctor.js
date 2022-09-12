@@ -4,7 +4,6 @@ const selectDoctor = require('../../../../services/clusterAdmin/medicalStaff/doc
 
 
 router.post('/',  async function (req, res) {
-  
   const clusterAdmin =  req.body.clusterAdminNic ;
   let centerNumber;
   await selectDoctor.getBloodCenterNumber(clusterAdmin).then(

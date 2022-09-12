@@ -42,7 +42,6 @@ export default function Doctors() {
 
     useEffect((() => { getDoctorData() }), [])
     function getDoctorData() {
-
         const clusterAdminNic = localStorage.getItem('userNic');
         const clusterAdmin = {
             clusterAdminNic
@@ -63,9 +62,7 @@ export default function Doctors() {
 
     }
 
-
-
-    const nextPage = () => {
+   const nextPage = () => {
         const numberOfRows = data.length;
         const equalRows = numberOfRows % 10;
         if (numberOfRows != lastRow) {

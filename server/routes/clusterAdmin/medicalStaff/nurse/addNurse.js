@@ -61,7 +61,7 @@ router.post('/', async function (req, res) {
         }
     )
 
-    await addNurse.insertNurse(centerNumber, firstName, lastName, NIC, gender, dateOfBirth, address, email, mobileNumber ).then(
+    await addNurse.insertNurse(centerNumber, firstName, lastName, NIC, gender, dateOfBirth, address, email, mobileNumber).then(
         (user) => {
 
             return res.json({
