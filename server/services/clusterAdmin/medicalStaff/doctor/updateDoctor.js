@@ -6,7 +6,4 @@ async function updateDoctor(id,firstName,lastName,NIC,gender,dateOfBirth,address
   
 }
 
-
- 
-
 module.exports = {updateDoctor} 

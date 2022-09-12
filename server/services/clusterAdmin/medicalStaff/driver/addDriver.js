@@ -18,5 +18,4 @@ async function insertDriver(centerNumber,firstName,lastName,NIC,gender,dateOfBir
     
 }
  
-
 module.exports = { insertDriver ,getBloodCenterNumber } 

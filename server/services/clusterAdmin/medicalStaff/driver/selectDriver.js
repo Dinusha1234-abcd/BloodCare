@@ -14,6 +14,4 @@ async function getDrivers(clusterCenterNo){
   
     
 }
- 
-
 module.exports = {getBloodCenterNumber,getDrivers } 

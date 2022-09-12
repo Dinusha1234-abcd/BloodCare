@@ -23,8 +23,7 @@ router.post('/', async function (req, res) {
                pinCode : number
             });
          } 
- 
-   ).catch((err) => {
+  ).catch((err) => {
       console.log(err);
       return res.json({ message: "unsucess" });
    });

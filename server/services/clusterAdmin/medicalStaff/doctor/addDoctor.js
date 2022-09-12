@@ -18,5 +18,4 @@ async function insertDoctor(centerNumber,firstName,lastName,NIC,gender,dateOfBir
     
 }
  
-
 module.exports = { insertDoctor ,getBloodCenterNumber } 

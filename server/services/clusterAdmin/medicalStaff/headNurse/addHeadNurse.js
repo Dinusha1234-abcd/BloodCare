@@ -26,5 +26,4 @@ async function insertHeadNurse(centerNumber, firstName, lastName, NIC, gender, d
 
 }
 
-
 module.exports = { insertHeadNurse, getBloodCenterNumber } 
