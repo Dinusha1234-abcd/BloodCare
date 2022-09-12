@@ -1,9 +1,10 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import axios from 'axios';
-import '../assests/css/component.doctors.css';
-import successImage from '../assests/images/sucess.png';
-import lottie from "lottie-web";
-// import loading from '../assests/images/loading.gif';
+import '../../assests/css/component.doctors.css';
+import successImage from '../../assests/images/sucess.png';
+import unsuccessImage from '../../assests/images/wrong.png';
+import loadingImage from '../../assests/images/loading.gif';
+import waitImage from '../../assests/images/wait.gif';
 
 export default function Doctors() {
 
@@ -14,7 +15,7 @@ export default function Doctors() {
     const [address, setAddress] = useState("");
     const [email, setEmail] = useState("");
     const [mobileNumber, setMobileNumber] = useState("");
-    const [id, setId] = useState(""); 
+    const [id, setId] = useState("");
     const [updateFirstName, setUpdateFirstName] = useState("");
     const [updateLastName, setUpdateLastName] = useState("");
     const [updateNIC, setUpdateNIC] = useState("");
@@ -23,23 +24,25 @@ export default function Doctors() {
     const [updateMobileNumber, setUpdateMobileNumber] = useState("");
     const [message, setMessage] = useState("");
     const [success, setSuccess] = useState(false);
-    const [show, setShow] = useState(true);
+    const [unsuccess, setUnSuccess] = useState(false);
+    const [successMessage, setSuccessMessage] = useState("");
+    const [unsuccessMessage, setUnsuccessMessage] = useState("");
     const clusterAdminNic = localStorage.getItem('userNic');
     const [data, setData] = useState([]);
     const [searchData, setSearchData] = useState("");
     const [updateFormShow, setUpdateFormShow] = useState(false);
+    const [loading, setLoading] = useState(true);
+    const [wait, setWait] = useState(false);
+
     //pagination
     const [firstRow, setFirstRow] = useState(0);
     const [lastRow, setLastRow] = useState(0);
     const [pageNumber, setPageNumber] = useState(1);
 
-    let loading = require("../assests/images/loading.gif")
 
     useEffect((() => { getDoctorData() }), [])
     function getDoctorData() {
-        lottie.loadAnimation({
-            container: document.querySelector("#loading-image"),
-          });
+
         const clusterAdminNic = localStorage.getItem('userNic');
         const clusterAdmin = {
             clusterAdminNic
@@ -50,9 +53,12 @@ export default function Doctors() {
 
                 setData(res.data.doctors);
                 setLastRow(10);
+                setLoading(!loading);
             }).catch((err) => {
-                //sever error
-                console.log(err.message);
+                //sever 
+                setLoading(!loading);
+                setUnsuccessMessage("Network Connection Issue Please Try Again");
+                setUnSuccess(true)
             })
 
     }
@@ -101,7 +107,7 @@ export default function Doctors() {
             address,
             email,
             mobileNumber,
-           
+
         }
         if (firstName.length == 0) {
             setMessage("Please Enter First Name ");
@@ -121,7 +127,7 @@ export default function Doctors() {
 
         } else {
             setFormReg(false);
-            setSuccess(true);
+            setWait(true);
             setFirstName('');
             setLastName('');
             setNIC('');
@@ -134,22 +140,34 @@ export default function Doctors() {
                 (res) => {
                     //check password and username  
                     if (res['data']['message'] == "success") {
-                        window.location = "/medicalstaff/doctor";
-
+                        setWait(false);
+                        setSuccessMessage("Doctor Added Sucessfully")
+                        setSuccess(true);
+                        
+                       
                     } else {
-                        setMessage("Network Connection issue");
-
+                        setWait(false);
+                        setUnsuccessMessage("Enter Id Number already Registered");
+                        setUnSuccess(true);
                     }
 
                 }
             ).catch((err) => {
                 //sever error
-                console.log(err.message);
+               
+                setWait(false);
+                setUnsuccessMessage("Network Connection Issue Please Try Again");
+                setUnSuccess(true)
             })
         }
     }
-
-    function showUpdateDoctor(id,firstName,lastName,NIC,address,mobileNumber,email) {
+    function sucessbutton() {
+        window.location = "/medicalstaff/doctor";
+    }
+    function unsucessbutton() {
+        window.location = "/medicalstaff/doctor";
+    }
+    function showUpdateDoctor(id, firstName, lastName, NIC, address, mobileNumber, email) {
         setUpdateFormShow(!updateFormShow);
         setId(id)
         setUpdateFirstName(firstName);
@@ -157,20 +175,20 @@ export default function Doctors() {
         setUpdateNIC(NIC);
         setUpdateAddress(address);
         setUpdateMobileNumber(mobileNumber);
-        setUpdateEmail(email);  
-     
+        setUpdateEmail(email);
+
     }
-    
-    function updateDoctor(e){
+
+    function updateDoctor(e) {
         e.preventDefault()
         const doctor = {
             id,
-            updateFirstName, 
+            updateFirstName,
             updateLastName,
             updateNIC,
             updateAddress,
             updateEmail,
-            updateMobileNumber 
+            updateMobileNumber
         }
         if (updateFirstName.length == 0) {
             setMessage("Please Enter First Name ");
@@ -182,7 +200,7 @@ export default function Doctors() {
         } else if (updateAddress.length == 0) {
             setMessage("Please Enter  Address ");
 
-        } else if ( updateEmail.length == 0) {
+        } else if (updateEmail.length == 0) {
             setMessage("Please Enter  Email ");
 
         } else if (!(updateMobileNumber.length == 10)) {
@@ -190,7 +208,7 @@ export default function Doctors() {
 
         } else {
             setUpdateFormShow(false);
-            // setSuccess(true);
+            setWait(true);
             setUpdateFirstName('');
             setUpdateLastName('');
             setUpdateNIC('');
@@ -203,10 +221,14 @@ export default function Doctors() {
                 (res) => {
                     //check password and username  
                     if (res['data']['message'] == "success") {
-                        window.location = "/medicalstaff/doctor";
+                        setWait(false);
+                        setSuccessMessage("Doctor Update Sucessfully")
+                        setSuccess(true);
 
                     } else {
-                        setMessage("Network Connection issue");
+                        setWait(false);
+                        setUnsuccessMessage("Doctor Update UnSucessfully");
+                        setUnSuccess(true);
 
                     }
 
@@ -214,9 +236,12 @@ export default function Doctors() {
             ).catch((err) => {
                 //sever error
                 console.log(err.message);
+                setWait(false);
+                setUnsuccessMessage("Network Connection Issue Please Try Again");
+                setUnSuccess(true);
             })
         }
-        
+
     }
 
     const list = [];
@@ -232,7 +257,7 @@ export default function Doctors() {
                     <td>{data[i]['phoneNumber']}</td>
                     <td>{data[i]['email']}</td>
                     <td>
-                        <button id='view-button-doctor-view' onClick={() => {showUpdateDoctor(data[i]['staffId'],data[i]['firstName'],data[i]['lastName'],data[i]['userNic'],data[i]['address'],data[i]['phoneNumber'],data[i]['email'] )}}>View</button>
+                        <button id='view-button-doctor-view' onClick={() => { showUpdateDoctor(data[i]['staffId'], data[i]['firstName'], data[i]['lastName'], data[i]['userNic'], data[i]['address'], data[i]['phoneNumber'], data[i]['email']) }}>View</button>
                         <button id='view-button-doctor-remove'>Remove</button>
                     </td>
                 </tr>
@@ -249,7 +274,7 @@ export default function Doctors() {
                         <td>{data[i]['phoneNumber']}</td>
                         <td>{data[i]['email']}</td>
                         <td>
-                        <button id='view-button-doctor-view' onClick={() => {showUpdateDoctor(data[i]['staffId'],data[i]['firstName'],data[i]['lastName'],data[i]['userNic'],data[i]['address'],data[i]['phoneNumber'],data[i]['email'] )}}>View</button>   
+                            <button id='view-button-doctor-view' onClick={() => { showUpdateDoctor(data[i]['staffId'], data[i]['firstName'], data[i]['lastName'], data[i]['userNic'], data[i]['address'], data[i]['phoneNumber'], data[i]['email']) }}>View</button>
                             <button id='view-button-doctor-remove'>Remove</button>
                         </td>
                     </tr>
@@ -259,7 +284,7 @@ export default function Doctors() {
         }
 
     }
- 
+
 
 
 
@@ -267,19 +292,24 @@ export default function Doctors() {
         <div>
 
             <div id='doctor-contanier'>
-            <div id='loading-cluterAdmin'>  </div>
                 <div id={`${success ? 'sucess-message-active' : 'sucess-message'}`}>
-                     <h3 id='sucess-message-name'> Doctor Added Sucessfully <i class="fa-solid fa-xmark close-button-success" onClick={() => { setSuccess(!success) }}></i></h3>
+                    <br /> <h1 id='sucess-message-name'> <img id='successImage' src={successImage} /> <br /> Success !</h1>  <br />
+                    <p id='sucess-message-box'>{successMessage}</p> <br></br>
+                    <button id="okay-button" onClick={() => { setSuccess(sucessbutton) }}> Okay </button>
                 </div>
-                <div id={`${formReg ? 'fade-clusterAdmin' : null}`} onClick={() => { setFormReg(!formReg) }}></div>
+                <div id={`${wait ? 'wait-cluterAdmin-active' : 'wait-cluterAdmin'}`}> <img id='wait-cluterAdmin-image' src={waitImage} /> </div>
+
+                <div id={`${unsuccess ? 'unsucess-message-active' : 'unsucess-message'}`}>
+                    <br /> <h1 id='sucess-message-name'> <img id='unsuccessImage' src={unsuccessImage} /> <br /> Wrong !</h1>  <br />
+                    <p id='unsucess-message-box'> {unsuccessMessage}</p> <br />
+                    <button id="okay-button-unsucess" onClick={() => { setSuccess(unsucessbutton) }}> Okay </button>
+                </div>
+                <div id={`${formReg || success || unsuccess || updateFormShow|| wait? 'fade-clusterAdmin' : null}`} onClick={() => { setFormReg(false);setUpdateFormShow(false) }}></div>
                 <h3 id='header-clusterAdmin'>Doctors Details</h3>
-                <div id='loading-cluterAdmin'>name<img src={loading}/> </div>
                 <input type="text" id='input-doctor' placeholder=" &#xf002; Enter NIC Number" onChange={(e) => { setSearchData(e.target.value) }} />
                 <button id='add-doctor' onClick={() => { setFormReg(!formReg) }}>+ Add New</button>
                 <br /><br />
                 <table id="doctor-table">
-                <div id='loading-clusterAdmin'>name<img src={loading}/> </div>
-
                     <tr>
                         <th id='doctor-number'>Id</th>
                         <th>NIC Number</th>
@@ -287,14 +317,14 @@ export default function Doctors() {
                         <th>Mobile Number</th>
                         <th>Email</th>
                         <th id='doctor-action'>Action</th>
-                     <div id='loading'><img src={loading}/> </div>
 
                     </tr>
-                     <img id='loading' src={loading}/>  
+
                     {list}
 
 
                 </table>
+                <div id={`${loading ? 'loading-cluterAdmin-active' : 'loading-cluterAdmin'}`}> <img src={loadingImage} /> </div>
                 <div id='doctor-pageButton'>
                     <a className='page-navigation' href='#' onClick={prevPage}>{"<< Prev"}  </a>
                     <a className='page-navigation'>{pageNumber}</a>
@@ -365,7 +395,7 @@ export default function Doctors() {
                             </tr>
                             <tr>
                                 <td>Last Name</td>
-                                <td>   <input type="text" id="update-form-doctor-input-clusteradmin" placeholder={updateLastName}  value={updateLastName} onChange={(e) => { setUpdateLastName(e.target.value) }} /> <br />
+                                <td>   <input type="text" id="update-form-doctor-input-clusteradmin" placeholder={updateLastName} value={updateLastName} onChange={(e) => { setUpdateLastName(e.target.value) }} /> <br />
                                 </td>
                             </tr>
                             <tr>
@@ -380,7 +410,7 @@ export default function Doctors() {
                             </tr>
                             <tr>
                                 <td>Email</td>
-                                <td>   <input type="text" id="update-form-doctor-input-clusteradmin" placeholder={updateEmail} value={updateEmail}  onChange={(e) => { setUpdateEmail(e.target.value) }} /> <br />
+                                <td>   <input type="text" id="update-form-doctor-input-clusteradmin" placeholder={updateEmail} value={updateEmail} onChange={(e) => { setUpdateEmail(e.target.value) }} /> <br />
                                 </td>
                             </tr>
                             <tr>
@@ -392,7 +422,7 @@ export default function Doctors() {
 
 
                         </table> <br />
-                        <button type="sumbit" id="sumbit-save-form" > Register </button> {" "}
+                        <button type="sumbit" id="sumbit-save-form" > Update </button> {" "}
                         <button id="sumbit-cancle-form" onClick={() => { setUpdateFormShow(!updateFormShow) }}  > Cancel </button> <br /><br />
 
                     </form>

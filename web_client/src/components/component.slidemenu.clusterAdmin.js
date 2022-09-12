@@ -71,7 +71,7 @@ export default function Slide(props) {
           <div>
             <Link to='/' className='nav-logo'>
               <img id='logo' src={icon} alt="" />
-              <span className='nav-logo-name'>BLOODCARE</span>
+              <span className='nav-logo-name'>BLOODCARE</span> 
             </Link>
             <div className='nav-list'>
             <Link to='/dashboard' className={`${(window.location.pathname === '/dashboard'|| window.location.pathname === '/login' ) ? 'nav-link-active' : 'nav-link'} `}>

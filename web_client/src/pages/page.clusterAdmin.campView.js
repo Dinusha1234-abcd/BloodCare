@@ -1,9 +1,9 @@
 import React,{useState} from 'react';
 import { useParams } from 'react-router-dom';
 import SlideMenuClusterAdmin from '../components/component.slidemenu.clusterAdmin';
-import ClusterAdminCampHeader from '../components/component.campHeader'
-import PendingCampView from '../components/component.pendingCampView';
-import PastCampView from '../components/component.pastCampView';
+import ClusterAdminCampHeader from '../components/clusterAdmin/component.campHeader'
+import PendingCampView from '../components/clusterAdmin/component.pendingCampView';
+import PastCampView from '../components/clusterAdmin/component.pastCampView';
 
 export function ClusterAdminPastCampView(){
     const [slidemenu, setSlideMenu] = useState(true);

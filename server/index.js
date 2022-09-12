@@ -19,7 +19,7 @@ const updateNurse = require('./routes/clusterAdmin/medicalStaff/nurse/updateNurs
 const addDriver = require('./routes/clusterAdmin/medicalStaff/driver/addDriver');
 const selectDriver = require('./routes/clusterAdmin/medicalStaff/driver/selectDriver'); 
 const updateDriver = require('./routes/clusterAdmin/medicalStaff/driver/updateDriver'); 
-
+const selectDonor = require('./routes/clusterAdmin/registerDonor/selectDonor'); 
 
 
 
@@ -53,7 +53,7 @@ app.use("/medicalstaff/updateNurse",updateNurse);
 app.use("/medicalstaff/driver",addDriver);
 app.use("/medicalstaff/selectdriver",selectDriver);
 app.use("/medicalstaff/updatedriver",updateDriver);
- 
+app.use("/registerdonor/selectdonor",selectDonor); 
  
 
 app.listen(port,()=>{

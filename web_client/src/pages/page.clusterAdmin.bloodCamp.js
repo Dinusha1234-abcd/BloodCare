@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import SlideMenuClusterAdmin from '../components/component.slidemenu.clusterAdmin';
 import PastCamp from '../components/component.pastCamp';
 import OngoingCamp from "../components/component.ongoingCamp";
-import FutureCamp from "../components/component.futureCamp";
-import PendingCamp from "../components/component.pendingCamp";
-import ClusterAdminCampHeader from '../components/component.campHeader'
-import PendingCampView from "../components/component.pendingCampView";
+import FutureCamp from "../components/clusterAdmin/component.futureCamp";
+import PendingCamp from "../components/clusterAdmin/component.pendingCamp";
+import ClusterAdminCampHeader from '../components/clusterAdmin/component.campHeader'
+import PendingCampView from "../components/clusterAdmin/component.pendingCampView";
 import '../assests/css/page.clusterAdmin.bloodcamp.css'
 
 export default function ClusterAdminBloodCamp() {

@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Calendar from 'react-calendar';
 import SlideMenuClusterAdmin from "../components/component.slidemenu.clusterAdmin";
-import User from "../components/component.users.display";
-import Camp from "../components/component.camp.display";
-import Blood from "../components/component.blood.display";
-import CampEvents from "../components/component.campEvents";
+import User from "../components/clusterAdmin/component.users.display";
+import Camp from "../components/clusterAdmin/component.camp.display";
+import Blood from "../components/clusterAdmin/component.blood.display"; 
 import doctor from '../assests/images/doctor.png';
 import headNurse from '../assests/images/headNurse2.png';
 import nurse from '../assests/images/nurse.png';
@@ -13,9 +12,9 @@ import pastCamp from '../assests/images/pastCamp.png';
 import OngoingCamp from '../assests/images/ongoingCamp.png';
 import futureCamp from '../assests/images/furtureCamp.png';
 import PendingCamp from '../assests/images/camp.png';
-import DoughnutChart from '../components/compoent.doughnutChart'
-import PieChart from '../components/component.pieChart'
-import BarChart from '../components/component.barChart'
+import DoughnutChart from '../components/clusterAdmin/compoent.doughnutChart'
+import PieChart from '../components/clusterAdmin/component.pieChart'
+import BarChart from '../components/clusterAdmin/component.barChart'
 import '../assests/css/page.clusterAdmin.dashboard.css'
 import '../assests/css/component.calender.css';
 
@@ -89,7 +88,7 @@ export default function ClusterAdminDashboard() {
           </div>
           <Calendar onChange={setDate} readOnly={true} value={date} id="calender" />
 
-          <div id="camp-events">
+          <div id="camp-events-clusterAdmin">
             <h3 id="camp-events-name">Upcoming Camp Events</h3>
             <div id="camp-events-list"> <p>2022/08/01 Camp Number 100  <button id="view-button">View</button> </p></div>
             <div id="camp-events-list"> <p>2022/08/01 Camp Number 101  <button id="view-button">View</button> </p></div>
