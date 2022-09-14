@@ -23,6 +23,11 @@ const selectDonor = require('./routes/clusterAdmin/registerDonor/selectDonor');
 
 
 
+//registerDonor
+const homeSelectCamp = require('./routes/registerDonor/homeSelectCamp');
+const historyRecordsSelect =require('./routes/registerDonor/historyRecordsSelect');
+
+
 
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -53,8 +58,14 @@ app.use("/medicalstaff/updateNurse",updateNurse);
 app.use("/medicalstaff/driver",addDriver);
 app.use("/medicalstaff/selectdriver",selectDriver);
 app.use("/medicalstaff/updatedriver",updateDriver);
-app.use("/registerdonor/selectdonor",selectDonor); 
- 
+app.use("/registerdonor/selectdonor",selectDonor);
+
+
+
+
+//register Donor
+app.use("/registerDonor/homeSelectCamp",homeSelectCamp);
+app.use("/registerDonor/historyRecordsSelect",historyRecordsSelect);
 
 app.listen(port,()=>{
     console.log(`Server listing at http://localhost:${port} `);
