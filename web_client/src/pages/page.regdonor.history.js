@@ -1,9 +1,49 @@
-import React from "react";
+import React, {useState, useCallback, useEffect} from "react";
 import SlideMenuRegDonor from "../components/component.slidemenu.registerDonor";
+import axios from "axios";
 import '../assests/css/page.regdonor.history.css';
-import bloodo from '../assests/images/bloodOp.png'
+import bloodo from '../assests/images/bloodOp.png';
+import unsuccessImage from '../assests//images/wrong.png';
+import loadingImage from '../assests/images/loading.gif';
 
 export default function RegDonorHistory() {
+    const [slidemenu, setSlideMenu] = useState(true);
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [unsuccessMessage, setUnsuccessMessage] = useState("");
+    const [unsuccess, setUnSuccess] = useState(false);
+    const [searchData, setSearchData] = useState("");
+    const [success, setSuccess] = useState(false);
+
+    const [firstRow, setFirstRow] = useState(0);
+    const [lastRow, setLastRow] = useState(0);
+    const [pageNumber, setPageNumber] = useState(1);
+
+    const passData = (data) => {
+        setSlideMenu(data);
+    };
+    useEffect((() => {getHistoryRecords()}), [])
+    function getHistoryRecords() {
+        axios.get(" http://localhost:8070/registerdonor/historyrecordsselect").then(
+            (res) => {
+                setData(res.data.records);
+                if(data.length <11){
+                    setLastRow(data.length);
+                }else {
+                    setLastRow(10);
+                }
+                console.log(lastRow);
+                setLoading(!loading);
+            }).catch((err) => {
+                setLoading(!loading);
+                setUnsuccessMessage("Network Connection Issue Pleace Try Again");
+                setUnSuccess(true)
+            })
+    }
+    function unsucessbutton() {
+        window.location = "/history_records";
+    }
+    const list = [];
     return (
         <div>
             <SlideMenuRegDonor headerName={"History Records"} />
@@ -26,6 +66,7 @@ export default function RegDonorHistory() {
                                 <th>Donation Packet No</th>
                                 <th>Location</th>
                             </tr>
+                    
                             <tr>
                                 <td>04-07-2022</td>
                                 <td>D 000 8574 555</td>
