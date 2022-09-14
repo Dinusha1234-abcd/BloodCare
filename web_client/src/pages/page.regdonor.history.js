@@ -44,6 +44,15 @@ export default function RegDonorHistory() {
         window.location = "/history_records";
     }
     const list = [];
+    if(searchData == ""){
+        for (let i =firstRow; i<data.length; i++){
+            list.push(
+                <><tr>
+                    <td>{data[0]['']}</td>
+                </tr>
+                </>)
+        }
+    }
     return (
         <div>
             <SlideMenuRegDonor headerName={"History Records"} />
