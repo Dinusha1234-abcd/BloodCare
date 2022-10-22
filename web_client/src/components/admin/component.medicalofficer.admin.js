@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useEffect, useState} from 'react';
 import axios from 'axios';
 import '../../assests/css/admin/component.medicalofficer.admin.css';
 import successImage from '../../assests/images/sucess.png';
@@ -16,10 +16,34 @@ export default function MedicalOfficer(){
     const [password , setPassword] = useState("")
     const [ message,setMessage] = useState("");
     const [success, setSuccess] = useState(false)
+    const [data, setData] = useState([]);
+    const [searchData, setSearchData] = useState("");
+
+    useEffect((() => {getMedicalOfficerData() }), [])
+    function getMedicalOfficerData() {
+        const adminNic = localStorage.getItem('userNic');
+        const admin = {
+            adminNic
+        }
+
+        axios.post("http://localhost:8070//users/selectMedicalOfficer", admin).then(
+            (res) => {
+                setData(res.data.medicalofficers);
+                console.log(res.data);
+            }
+        ).catch((err) => {
+            //server error
+            console.log(err.message);
+        })
+    }
+
+
 
     function addMedicalOfficer(e){
         e.preventDefault()
-         const mo = {
+        const adminNic = localStorage.getItem('userNic');
+        const mo = {
+            adminNic,
             firstName,
             lastName,
             NIC,
@@ -84,6 +108,40 @@ export default function MedicalOfficer(){
         )}
     }
 
+    const list = [];
+    if(searchData == "") {
+        for (let i = 0; i < data.length; i++){
+            list.push(
+                <> <tr>
+                    <td>{data[i]['userNic']}</td>
+                    <td>{data[i]['firstName'] + " " + data[i]['lastName']}</td>
+                    <td>{data[i]['email']}</td>
+                    <td>{data[i]['phoneNumber']}</td>
+                    <td><button id='view-user-button-admin'>View</button></td>
+                    <td><button id='remove-user-button-admin'>Deactivate</button></td>
+
+                </tr>
+                </>
+            )
+        }
+    } else {
+        for (let i = 0; i < 10; i++) {
+            if (searchData == data[i]['userNic']) {
+                list.push(
+                    <> <tr>
+                        <td>{data[i]['userNic']}</td>
+                        <td>{data[i]['firstName'] + " " + data[i]['lastName']}</td>
+                        <td>{data[i]['email']}</td>
+                        <td>{data[i]['phoneNumber']}</td>
+                        <td><button id='view-user-button-admin'>View</button></td>
+                        <td><button id='remove-user-button-admin'>Deactivate</button></td>
+                    </tr>
+                    </>)
+
+            }
+        }
+    }
+
     return (
         <div>
             <div id='user-contanier-admin'>
@@ -114,54 +172,11 @@ export default function MedicalOfficer(){
                     <td><button id='view-user-button-admin'>View</button></td>
                     <td><button id='remove-user-button-admin'>Deactivate</button></td>
                 </tr>
-                <tr>
-                    <td>985434567V</td>
-                    <td>Dr. Kamal Silva </td>
-                    <td>kamalk@gmail.com</td>
-                    <td>076-675436</td>
-                    <td><button id='view-user-button-admin'>View</button></td>
-                    <td><button id='remove-user-button-admin'>Deactivate</button></td>
-                </tr>
-                <tr>
-                    <td>98765678V</td>
-                    <td>Dr. Thej Mayadunne</td>
-                    <td>thej88@gmail.com</td>
-                    <td>077-8976549</td>
-                    <td><button id='view-user-button-admin'>View</button></td>
-                    <td><button id='remove-user-button-admin'>Deactivate</button></td>
-                </tr>
-                <tr>
-                    <td>981234567V</td>
-                    <td>Dr. Saman De Silva</td>
-                    <td>kalshi98@gmail.com</td>
-                    <td>078-7890876</td>
-                    <td><button id='view-user-button-admin'>View</button></td>
-                    <td><button id='remove-user-button-admin'>Deactivate</button></td>
-                </tr>
-                <tr>
-                    <td>984567890V</td>
-                    <td>Dr. Nirupama Devindi</td>
-                    <td>dilhara672@gmail.com</td>
-                    <td>077-5467789</td>
-                    <td><button id='view-user-button-admin'>View</button></td>
-                    <td><button id='remove-user-button-admin'>Deactivate</button></td>
-                </tr>
-                <tr>
-                    <td>975643897V</td>
-                    <td>Dr. Sanduka Sanjaya</td>
-                    <td>danapala@gmail.com</td>
-                    <td>078-123456</td>
-                    <td><button id='view-user-button-admin'>View</button></td>
-                    <td><button id='remove-user-button-admin'>Deactivate</button></td>
-                </tr>
+                
                 
                 
             </table>
-            {/* <div id='pastCamp-pageButton'>
-                <a className='page-navigation'>{"<< Prev"}  </a> 
-                <a className='page-navigation'>1</a>
-                <a className='page-navigation'>{"Next >>"}</a> 
-            </div> */}
+          
 
             <div id={ `${ formReg ? 'register-form-user-admin-active' : 'register-form-user-admin'}`}>
                   
