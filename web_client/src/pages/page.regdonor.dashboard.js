@@ -44,13 +44,14 @@ export default function RegDonorDashboard() {
     function unsucessbutton() {
         window.location = "/dashboard";
     }
+    // 100
     const list = [];
 
     if (searchData == "") {
         for (let i = firstRow; i < data.length; i++) {
             list.push(
                 <><tr>
-                    <td>{data[0]['date'].substring(0, 10)}</td>
+                    <td>{data[i]['date'].substring(0, 10)}</td>
                     <td>{data[i]['name']}</td>
                     <td>{data[i]['place']}</td>
                 </tr>
@@ -61,7 +62,7 @@ export default function RegDonorDashboard() {
             if (searchData == data[i]['userNic']) {
                 list.push(
                     <> <tr>
-                        <td>{data[0]['date']}</td>
+                        <td>{data[i]['date']}</td>
                         <td>{data[i]['name']}</td>
                         <td>{data[i]['place']}</td>
                     </tr>

@@ -10,7 +10,7 @@ const REFRESH_TOKEN = '1//04aTdSubg3SWwCgYIARAAGAQSNwF-L9IrBs0Wo6AYy9zNGrru027ra
 const oAuth2Client = new google.auth.OAuth2(CLIENT_ID,CLIENT_SECRET,REDIRECT_URI);
 oAuth2Client.setCredentials({ refresh_token : REFRESH_TOKEN});
 
-async function sendMail(email,number) {
+async function sendMail(email,subject,text,html) {
     try {
         const accessToken = await oAuth2Client.getAccessToken();
         const transport = nodemailer.createTransport({
@@ -27,9 +27,9 @@ async function sendMail(email,number) {
         const mailOption = {
             from : 'BloodCare <bloodcare100@gmail.com>' , 
             to : email,
-            subject : 'Reset Password PIN Number',
-            text : 'hello',
-            html : '<h>Your Pin Number : ' + number +'</h>'
+            subject : subject,
+            text : text,
+            html : html,
         }
         const result = await transport.sendMail(mailOption)
         return result

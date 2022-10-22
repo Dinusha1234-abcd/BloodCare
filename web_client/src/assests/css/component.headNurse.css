@@ -130,3 +130,20 @@
     padding-bottom: 10px; 
     background-color:rgba(221, 45, 80, 0.441)
 }
+#okay-button-headNurse-clusterAdmin{  
+    width: 100px;
+    height: 33px;
+    margin-top: 190px;
+    margin-left: -150px;
+    border-radius: 10px;
+    background-color: rgba(221, 45, 80, 1);
+    color: aliceblue;
+    border-style: hidden;
+    border-color: rgba(221, 45, 80, 1);
+    font-weight: 800;
+}
+#sucess-message-box-headNurse-clusterAdmin {
+    margin-top: 150px;
+    margin-left: -170px;
+
+}

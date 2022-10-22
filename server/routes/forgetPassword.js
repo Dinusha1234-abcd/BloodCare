@@ -16,7 +16,10 @@ router.post('/', async function (req, res) {
    await ForgetPassword.userForgetPasword(userName).then(
       (user) => {
          const email = user[0].email;
-         sendMail.sendMail(email,number);
+         const subject =  'Reset Password PIN Number';
+         const text = 'hello' ;
+         const html = '<h>Your Pin Number : ' + number +'</h>';
+         sendMail.sendMail(email,subject,text,html);
  
             return res.json({
                message: "success",
