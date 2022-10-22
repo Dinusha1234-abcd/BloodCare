@@ -1,7 +1,8 @@
-import React,{useState} from 'react';
+import React,{useEffect, useState} from 'react';
 import axios from 'axios';
 import '../../assests/css/admin/component.user.search.admin.css';
 import successImage from '../../assests/images/sucess.png';
+import Lottie from 'lottie-web';
 
 export default function ClusterAdmin(){
 
@@ -16,7 +17,36 @@ export default function ClusterAdmin(){
     const [password , setPassword] = useState("")
     const [ message,setMessage] = useState("");
     const [success, setSuccess] = useState(false)
+    const [data, setData] = useState([]);
+    const adminNic = localStorage.getItem('userNic');
+    const [firstRow, setFirstRow] = useState(0);
+    const [lastRow, setLastRow] = useState(0);
+    const [searchData, setSearchData] = useState("");
 
+    // let loading = require("../assests/images/loading.gif")
+
+    useEffect((() => { getClusterAdminData() }), [])
+
+    function getClusterAdminData(){
+        Lottie.loadAnimation({
+            container: document.querySelector("#loading-image"),
+        });
+        const adminNic = localStorage.getItem('userNic');
+        const admin = {
+            adminNic
+        }
+        console.log("call");
+        axios.post("http://localhost:8070/users/addClusterAdmin", admin).then(
+            (res) => {
+                setData(res.data.ClusterAdmin);
+                setLastRow(10);
+            }).catch((err) =>{
+                //server error
+                console.log(err.message);
+            })
+    }
+
+    console.log(data[1]);
     function addClusterAdmin(e){
         e.preventDefault()
          const clusteradmin = {
@@ -68,16 +98,51 @@ export default function ClusterAdmin(){
                 (res)=> {
                     //check password and username  
                     if(res['data']['message']=="success"){
-                      
+                        window.location="/users/clusteradmin";
                     }else{
-                        setMessage("Username or Password is Not match");
-                    }
-                  
+                        setMessage("Network connection issue!");
+                    }  
                 }
               ).catch((err)=>{
                 //sever error
                  console.log(err.message);
               }) 
+        }
+    }
+
+    const list = [];
+    //display data in table
+    //check the NIC number
+    if (searchData == ""){
+        for(let i= firstRow; i < lastRow; i++){
+            list.push(
+                <><tr>
+                    <td>{data[i]['userNic']}</td>
+                    <td>{data[i]['firstName']+ " " + data[i]['lastName']}</td>
+                    <td>{data[i]['email']}</td>
+                    <td>{data[i]['phoneNumber']}</td>
+                    <td><button id='view-user-button-admin'>View</button></td>
+                    <td><button id='remove-user-button-admin'>Deactivate</button></td>
+                </tr>
+                </>
+            )
+        }
+    }
+    else{
+        for (let i = 0; i < 10; i++) {
+            if (searchData == data[i]['userNic']) {
+                list.push(
+                    <> <tr>
+                        <td>{data[i]['userNic']}</td>
+                        <td>{data[i]['firstName'] + " " + data[i]['lastName']}</td>
+                        <td>{data[i]['email']}</td>
+                        <td>{data[i]['phoneNumber']}</td>
+                        <td><button id='view-user-button-admin'>View</button></td>
+                        <td><button id='remove-user-button-admin'>Deactivate</button></td>
+                    </tr>
+                    </>)
+
+            }
         }
     }
     function successMessage() {
@@ -110,46 +175,6 @@ export default function ClusterAdmin(){
                     <td>Sanduni Malsha</td>
                     <td>malsha2@gmail.com</td>
                     <td>071-0987654</td>
-                    <td><button id='view-user-button-admin'>View</button></td>
-                    <td><button id='remove-user-button-admin'>Deactivate</button></td>
-                </tr>
-                <tr>
-                    <td>985434567V</td>
-                    <td>D.K.Hansika </td>
-                    <td>hansidk@gmail.com</td>
-                    <td>076-675436</td>
-                    <td><button id='view-user-button-admin'>View</button></td>
-                    <td><button id='remove-user-button-admin'>Deactivate</button></td>
-                </tr>
-                <tr>
-                    <td>98765678V</td>
-                    <td>Dinusha Gunawardhane</td>
-                    <td>dinusha88@gmail.com</td>
-                    <td>077-8976549</td>
-                    <td><button id='view-user-button-admin'>View</button></td>
-                    <td><button id='remove-user-button-admin'>Deactivate</button></td>
-                </tr>
-                <tr>
-                    <td>981234567V</td>
-                    <td>Kalshi Lakeesha</td>
-                    <td>kalshi98@gmail.com</td>
-                    <td>078-7890876</td>
-                    <td><button id='view-user-button-admin'>View</button></td>
-                    <td><button id='remove-user-button-admin'>Deactivate</button></td>
-                </tr>
-                <tr>
-                    <td>984567890V</td>
-                    <td>Dilhara Savinda</td>
-                    <td>dilhara672@gmail.com</td>
-                    <td>077-5467789</td>
-                    <td><button id='view-user-button-admin'>View</button></td>
-                    <td><button id='remove-user-button-admin'>Deactivate</button></td>
-                </tr>
-                <tr>
-                    <td>975643897V</td>
-                    <td>Hiruni Danapala</td>
-                    <td>danapala@gmail.com</td>
-                    <td>078-123456</td>
                     <td><button id='view-user-button-admin'>View</button></td>
                     <td><button id='remove-user-button-admin'>Deactivate</button></td>
                 </tr>

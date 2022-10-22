@@ -41,6 +41,9 @@ const homeSelectCamp = require('./routes/registerDonor/homeSelectCamp');
 const historyRecordsSelect =require('./routes/registerDonor/historyRecordsSelect');
  
 
+//admin
+const addClusterAdmin = require('./routes/admin/users/clusterAdmin/addClusterAdmin');
+
 
 
 
@@ -89,6 +92,12 @@ app.use("/registerdonor/selectdonor",selectDonor);
 //register Donor
 app.use("/registerDonor/homeSelectCamp",homeSelectCamp);
 app.use("/registerDonor/historyRecordsSelect",historyRecordsSelect);
+
+
+//admin
+app.use("/users/addClusterAdmin",addClusterAdmin);
+
+
 
 app.listen(port,()=>{
     console.log(`Server listing at http://localhost:${port} `);
