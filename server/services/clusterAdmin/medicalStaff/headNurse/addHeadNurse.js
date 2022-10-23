@@ -23,6 +23,8 @@ async function insertHeadNurse(centerNumber, firstName, lastName, NIC, gender, d
 
     await db.query(`INSERT INTO medical_staff(staffId, bloodCenterNo, type, userNic) VALUES (?,?,?,?)`,
         ['', centerNumber, 'headNurse', NIC]);
+    await db.query(`INSERT INTO head_nurse  (headNurseId, bloodCenterNo, userNic ) VALUES (?,?,?,?)`,
+        ['', centerNumber, NIC]);
 
 }
 

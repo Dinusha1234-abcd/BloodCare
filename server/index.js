@@ -9,9 +9,15 @@ const passwordChange = require('./routes/passwordChange');
 const campRegister  = require('./routes/campRegister'); 
  
 app.max_user_connections = 100;
+app.max_user_connections = 200;
 
 //clusterAdmin
- 
+
+const pendingCamp = require('./routes/clusterAdmin/camp/pendingCamp/selectPendingCamp');
+const upcomingCamp = require('./routes/clusterAdmin/camp/upcomingCamp/selectUpcomingCamp');
+const pastCamp = require('./routes/clusterAdmin/camp/pastCamp/selectpastCamp');
+const ongoingCamp = require('./routes/clusterAdmin/camp/ongoingCamp/selectOngoingCamp')
+
 const addDoctor = require('./routes/clusterAdmin/medicalStaff/doctor/addDoctor');
 const selectDoctor = require('./routes/clusterAdmin/medicalStaff/doctor/selectDoctor'); 
 const updateDoctor = require('./routes/clusterAdmin/medicalStaff/doctor/updateDoctor');
@@ -25,12 +31,12 @@ const removeHeadNurse = require('./routes/clusterAdmin/medicalStaff/headNurse/re
 const addNurse = require('./routes/clusterAdmin/medicalStaff/nurse/addNurse');
 const selectNurse = require('./routes/clusterAdmin/medicalStaff/nurse/selectNurse');
 const updateNurse = require('./routes/clusterAdmin/medicalStaff/nurse/updateNurse');
- 
+const removeNurse = require('./routes/clusterAdmin/medicalStaff/nurse/removeNurse'); 
 
 const addDriver = require('./routes/clusterAdmin/medicalStaff/driver/addDriver');
 const selectDriver = require('./routes/clusterAdmin/medicalStaff/driver/selectDriver'); 
 const updateDriver = require('./routes/clusterAdmin/medicalStaff/driver/updateDriver'); 
-
+const removeDriver = require('./routes/clusterAdmin/medicalStaff/driver/removeDriver'); 
  
 const selectDonor = require('./routes/clusterAdmin/registerDonor/selectDonor'); 
 
@@ -66,8 +72,11 @@ app.use("/passwordchange",passwordChange);
 app.use("/camp/register",campRegister);
 
 //cluster Admin
+app.use("/camp/selectpendingcamp",pendingCamp); 
+app.use("/camp/selectupcomingcamp",upcomingCamp); 
+app.use("/camp/selectongoingcamp",ongoingCamp); 
+app.use("/camp/selectpastcamp",pastCamp); 
 
-//medicalStaff
 app.use("/medicalstaff/doctor",addDoctor);
 app.use("/medicalstaff/selectdoctor",selectDoctor);
 app.use("/medicalstaff/updatedoctor",updateDoctor);
@@ -79,11 +88,12 @@ app.use("/medicalstaff/removeHeadNurse",removeHeadNurse);
 app.use("/medicalstaff/nurse"   ,addNurse);
 app.use("/medicalstaff/selectNurse",selectNurse);
 app.use("/medicalstaff/updateNurse",updateNurse);
+app.use("/medicalstaff/removenurse",removeNurse);
 app.use("/medicalstaff/driver",addDriver);
 app.use("/medicalstaff/selectdriver",selectDriver);
 app.use("/medicalstaff/updatedriver",updateDriver);
-
-//Donor
+app.use("/medicalstaff/removeDriver",removeDriver);
+ 
 app.use("/registerdonor/selectdonor",selectDonor);
 
 
