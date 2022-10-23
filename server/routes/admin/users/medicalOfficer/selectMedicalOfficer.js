@@ -3,13 +3,13 @@ const router = express.Router();
 const selectMedicalOfficer = require('../../../../services/admin/users/medicalOfficer/selectMedicalOfficer');
 
 router.post('/',  async function (req, res) {
-    const admin =  req.body.adminNic ;
+    // const admin =  req.body.adminNic ;
 
     await selectMedicalOfficer.getMedicalOfficerData().then(
         (user) => {
-            const medicalOfficer = user;
+            const medicalOfficers = user;
             return res.json({
-                medicalOfficers : medicalOfficer
+                medicalOfficers : medicalOfficers
             } )
         }).catch((err) => {
             console.log(err);
