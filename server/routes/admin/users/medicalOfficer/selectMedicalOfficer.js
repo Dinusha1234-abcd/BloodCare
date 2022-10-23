@@ -5,7 +5,7 @@ const selectMedicalOfficer = require('../../../../services/admin/users/medicalOf
 router.post('/',  async function (req, res) {
     const admin =  req.body.adminNic ;
 
-    await selectMedicalOfficer.getMedicalOfficerDetails().then(
+    await selectMedicalOfficer.getMedicalOfficerData().then(
         (user) => {
             const medicalOfficer = user;
             return res.json({

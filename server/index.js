@@ -97,7 +97,7 @@ app.use("/registerDonor/historyRecordsSelect",historyRecordsSelect);
 
 //admin
 app.use("/users/addClusterAdmin",addClusterAdmin);
-app.use("users/selectMedicalOfficer", selectMedicalOfficer);
+app.use("/users/selectMedicalOfficer", selectMedicalOfficer);
 
 
 

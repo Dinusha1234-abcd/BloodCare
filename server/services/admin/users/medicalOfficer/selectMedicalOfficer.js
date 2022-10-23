@@ -1,8 +1,8 @@
 const db = require('../../../db');
 
-async function getMedicalOfficerData(adminNic) {
-    const rows = await db.query(`SELECT * FROM user WHERE type = 3`,[adminNic]);
+async function getMedicalOfficerData() {
+    const rows = await db.query(`SELECT userNic, firstName, lastName, email, phoneNumber FROM user WHERE type = 3`);
     const data  = rows;
-    return rows;
+    return data;
 }
 module.exports = {getMedicalOfficerData}

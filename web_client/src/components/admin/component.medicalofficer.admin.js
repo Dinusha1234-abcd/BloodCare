@@ -3,6 +3,8 @@ import axios from 'axios';
 import '../../assests/css/admin/component.medicalofficer.admin.css';
 import successImage from '../../assests/images/sucess.png';
 import '../../assests/css/admin/component.user.search.admin.css';
+import lottie from "lottie-web";
+// import loading from '../assests/images/loading.gif';
 
 export default function MedicalOfficer(){
 
@@ -15,21 +17,28 @@ export default function MedicalOfficer(){
     const [mobileNumber, setMobileNumber] = useState("");
     const [password , setPassword] = useState("")
     const [ message,setMessage] = useState("");
-    const [success, setSuccess] = useState(false)
+    const [success, setSuccess] = useState(false);
     const [data, setData] = useState([]);
     const [searchData, setSearchData] = useState("");
 
+    // let loading = require("../assests/images/loading.gif")
+
     useEffect((() => {getMedicalOfficerData() }), [])
     function getMedicalOfficerData() {
+        // lottie.loadAnimation({
+        //     container: document.querySelector("#loading-image"),
+        // });
+
         const adminNic = localStorage.getItem('userNic');
         const admin = {
             adminNic
         }
+        console.log("call");
 
-        axios.post("http://localhost:8070//users/selectMedicalOfficer", admin).then(
+        axios.post("http://localhost:8070/users/selectMedicalOfficer", admin).then(
             (res) => {
                 setData(res.data.medicalofficers);
-                console.log(res.data);
+                // console.log(res.data);
             }
         ).catch((err) => {
             //server error
@@ -38,7 +47,7 @@ export default function MedicalOfficer(){
     }
 
 
-
+    console.log(data[1]);
     function addMedicalOfficer(e){
         e.preventDefault()
         const adminNic = localStorage.getItem('userNic');
@@ -50,7 +59,7 @@ export default function MedicalOfficer(){
             address,
             email,
             mobileNumber,
-            password
+            password,
         }
         if(firstName.length==0){
             setMessage("Please Enter First Name ");
@@ -83,10 +92,11 @@ export default function MedicalOfficer(){
               setEmail('');
               e.target.reset();
             // pass check the data with server 
-            axios.post("http://localhost:8070//users/medicalofficer", mo).then(
+            axios.post("http://localhost:8070/users/medicalofficer", mo).then(
                 (res)=> {
                     //check password and username  
                     if(res['data']['message']=="success"){
+                        window.location = "/users/medicalOfficer";
                       
                     }else{
                         setMessage("Username or Password is Not match");
@@ -114,7 +124,7 @@ export default function MedicalOfficer(){
             list.push(
                 <> <tr>
                     <td>{data[i]['userNic']}</td>
-                    <td>{data[i]['firstName'] + " " + data[i]['lastName']}</td>
+                    <td>Dr {data[i]['firstName'] + " " + data[i]['lastName']}</td>
                     <td>{data[i]['email']}</td>
                     <td>{data[i]['phoneNumber']}</td>
                     <td><button id='view-user-button-admin'>View</button></td>
@@ -164,15 +174,15 @@ export default function MedicalOfficer(){
                     <th id='user-action-admin'>Action</th>
                     <th id='user-action-admin'>Action</th>
                 </tr>
-                <tr>
+                {/* <tr>
                     <td>988438430V</td>
                     <td>Dr. K.G.Weerasinghe</td>
                     <td>weer2@gmail.com</td>
                     <td>071-0987654</td>
                     <td><button id='view-user-button-admin'>View</button></td>
                     <td><button id='remove-user-button-admin'>Deactivate</button></td>
-                </tr>
-                
+                </tr> */}
+                {list}
                 
                 
             </table>
