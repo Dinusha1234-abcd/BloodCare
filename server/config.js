@@ -9,7 +9,8 @@ const config = {
         host : hostname,
         user : userName,
         password :password,
-        database : database
+        database : database,
+        connectionLimit: 400
     }
 }
 

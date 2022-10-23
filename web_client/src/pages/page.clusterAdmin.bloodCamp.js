@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import SlideMenuClusterAdmin from '../components/component.slidemenu.clusterAdmin';
-import PastCamp from '../components/component.pastCamp';
-import OngoingCamp from "../components/component.ongoingCamp";
+import PastCamp from '../components/clusterAdmin/component.pastCamp';
+import OngoingCamp from "../components/clusterAdmin/component.ongoingCamp";
 import FutureCamp from "../components/clusterAdmin/component.futureCamp";
 import PendingCamp from "../components/clusterAdmin/component.pendingCamp";
 import ClusterAdminCampHeader from '../components/clusterAdmin/component.campHeader'

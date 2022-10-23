@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../../assests/css/component.nurse.css';
+import successImage from '../../assests/images/sucess.png';
+import unsuccessImage from '../../assests/images/wrong.png';
+import loadingImage from '../../assests/images/loading.gif';
+import waitImage from '../../assests/images/wait.gif';
+import alert from '../../assests/images/alert.png';
+
 export default function Nurse() {
     const [formReg, setFormReg] = useState(false);
     const [firstName, setFirstName] = useState("");
@@ -17,12 +23,19 @@ export default function Nurse() {
     const [updateEmail, setUpdateEmail] = useState("");
     const [updateMobileNumber, setUpdateMobileNumber] = useState("");
     const [message, setMessage] = useState("");
+    const [successMessage, setSuccessMessage] = useState("");
+    const [unsuccessMessage, setUnsuccessMessage] = useState("");
     const [success, setSuccess] = useState(false);
+    const [unsuccess, setUnSuccess] = useState(false);
     const [show, setShow] = useState(true);  
+    const [loading, setLoading] = useState(true);
+    const [wait, setWait] = useState(false);
     const [data, setData] = useState([]);
     const [searchData, setSearchData] = useState("");
     const [updateFormShow, setUpdateFormShow] = useState(false);
-
+    const [removeAlert, setRemoveAlert] = useState(false);
+    const [nurseName, setNurseName] = useState("");
+    const [nurseNic, setNurseNic] = useState("");
     //pagination
     const [firstRow, setFirstRow] = useState(0);
     const [lastRow, setLastRow] = useState(0);
@@ -41,10 +54,12 @@ export default function Nurse() {
 
                 setData(res.data.nurses);
                 setLastRow(10);
-               
+                setLoading(!loading);
             }).catch((err) => {
                 //sever error
-                console.log(err.message);
+                setLoading(!loading);
+                setUnsuccessMessage("Network Connection Issue Please Try Again");
+                setUnSuccess(true)
             })
 
     }
@@ -107,6 +122,13 @@ export default function Nurse() {
             })
         }
     }
+    function sucessbutton() {
+        window.location = "/medicalstaff/nurse";
+    }
+    function unsucessbutton() {
+        window.location = "/medicalstaff/nurse";
+    }
+
     function showUpdateNurse(id, firstName, lastName, NIC, address, mobileNumber, email) {
         setUpdateFormShow(!updateFormShow);
         setId(id)
@@ -147,7 +169,7 @@ export default function Nurse() {
 
         } else {
             setUpdateFormShow(false);
-            // setSuccess(true);
+            setWait(true);
             setUpdateFirstName('');
             setUpdateLastName('');
             setUpdateNIC('');
@@ -160,19 +182,61 @@ export default function Nurse() {
                 (res) => {
                     //check password and username  
                     if (res['data']['message'] == "success") {
-                        window.location = "/medicalstaff/nurse";
+                        setWait(false);
+                        setSuccessMessage("Nurse Update Sucessfully")
+                        setSuccess(true);
+                      
 
                     } else {
-                        setMessage("Network Connection issue");
+                        setWait(false);
+                        setUnsuccessMessage("Doctor Update UnSucessfully");
+                        setUnSuccess(true);
 
                     }
 
                 }
             ).catch((err) => {
                 //sever error
-                console.log(err.message);
+                setWait(false);
+                setUnsuccessMessage("Network Connection Issue Please Try Again");
+                setUnSuccess(true);
             })
         }
+
+    }
+    function showRemoveMessage(nurseName, nurseNIC) {
+
+        setNurseName(nurseName);
+        setNurseNic(nurseNIC);
+        setRemoveAlert(true);
+    }
+    function removeNurse() {
+        setRemoveAlert(false);
+        setWait(true);
+        const nurse = { nurseNic };
+        axios.post("http://localhost:8070/medicalstaff/removenurse", nurse).then(
+            (res) => {
+                //check password and username  
+                if (res['data']['message'] == "success") {
+                    setWait(false);
+                    setSuccessMessage("Nurse Remove Sucessfully")
+                    setSuccess(true);
+
+                } else {
+                    setWait(false);
+                    setUnsuccessMessage("Nurse Remove UnSucessfully");
+                    setUnSuccess(true);
+
+                }
+
+            }
+        ).catch((err) => {
+            //sever error
+            console.log(err.message);
+            setWait(false);
+            setUnsuccessMessage("Network Connection Issue Please Try Again");
+            setUnSuccess(true);
+        })
 
     }
     const nextPage = () => {
@@ -220,7 +284,7 @@ export default function Nurse() {
                     <td>
                     <button id='view-button-doctor-view' onClick={() => {showUpdateNurse(data[i]['staffId'],data[i]['firstName'],data[i]['lastName'],data[i]['userNic'],data[i]['address'],data[i]['phoneNumber'],data[i]['email'] )}}>View</button>
 
-                        <button id='view-button-doctor-remove'>Remove</button>
+                    <button id='view-button-doctor-remove' onClick={() => { showRemoveMessage(data[i]['firstName'] + data[i]['lastName'], data[i]['userNic']) }}>Remove</button>
                     </td>
                 </tr>
                 </>)
@@ -236,8 +300,8 @@ export default function Nurse() {
                         <td>{data[i]['phoneNumber']}</td>
                         <td>{data[i]['email']}</td>
                         <td>
-                            <button id='view-button-doctor-view'  >View</button>
-                            <button id='view-button-doctor-remove'>Remove</button>
+                        <button id='view-button-doctor-view' onClick={() => { showUpdateNurse(data[i]['staffId'], data[i]['firstName'], data[i]['lastName'], data[i]['userNic'], data[i]['address'], data[i]['phoneNumber'], data[i]['email']) }}>View</button>
+                            <button id='view-button-doctor-remove' onClick={() => { showRemoveMessage(data[i]['firstName'] + data[i]['lastName'], data[i]['userNic']) }}>Remove</button>
                         </td>
                     </tr>
                     </>)
@@ -249,7 +313,27 @@ export default function Nurse() {
     return (
         <div>
             <div id='nurse-contanier'>
-                <div id={`${formReg ? 'fade-clusterAdmin' : null}`} onClick={() => { setFormReg(!formReg) }}></div>
+                 {/* Success message/ */}
+                 <div id={`${success ? 'sucess-message-active' : 'sucess-message'}`}>
+                    <br /> <h1 id='sucess-message-name'> <img id='successImage' src={successImage} /> <br /> Success !</h1>  <br />
+                    <p id='sucess-message-box'>{successMessage}</p> <br></br>
+                    <button id="okay-button" onClick={() => { setSuccess(sucessbutton) }}> Okay </button>
+                </div>
+                {/* remove alert */}
+                <div id={`${removeAlert ? 'remove-alert-clusteradmin-active' : 'sucess-message'}`}>
+                    <br /> <h1 id='remove-alert-clusteradmin-name'> <img id='alert' src={alert} /> <br />Are you removing Dr {nurseName}</h1>
+                    <button id="remove-button" onClick={() => { removeNurse() }}> Okay </button>
+                    <button id="remove-button" onClick={() => { setRemoveAlert(false) }}> Cancel </button>
+                </div>
+                <div id={`${wait ? 'wait-cluterAdmin-active' : 'wait-cluterAdmin'}`}> <img id='wait-cluterAdmin-image' src={waitImage} /> </div>
+
+                <div id={`${unsuccess ? 'unsucess-message-active' : 'unsucess-message'}`}>
+                    <br /> <h1 id='sucess-message-name'> <img id='unsuccessImage' src={unsuccessImage} /> <br /> Wrong !</h1>  <br />
+                    <p id='unsucess-message-box'> {unsuccessMessage}</p> <br />
+                    <button id="okay-button-unsucess" onClick={() => { setSuccess(unsucessbutton) }}> Okay </button>
+                </div>
+                <div id={`${formReg || success || unsuccess || updateFormShow || wait || removeAlert ? 'fade-clusterAdmin' : null}`} onClick={() => { setFormReg(false); setUpdateFormShow(false) }}></div>
+               <div id={`${formReg ? 'fade-clusterAdmin' : null}`} onClick={() => { setFormReg(!formReg) }}></div>
                 <h3 id='header-clusterAdmin'>Nurse Details</h3>
                 <input type="text" id='input-nurse' placeholder=" &#xf002; Enter NIC Number" />
                 <button id='add-nurse' onClick={() => { setFormReg(!formReg) }}>+ Add New</button>
@@ -266,6 +350,7 @@ export default function Nurse() {
                     </tr>
                     {list}
                 </table>
+                <div id={`${loading ? 'loading-cluterAdmin-active' : 'loading-cluterAdmin'}`}> <img src={loadingImage} /> </div>
                 <div id='nurse-pageButton'>
                 <a className='page-navigation' href='#' onClick={prevPage}>{"<< Prev"}  </a>
                     <a className='page-navigation'>{pageNumber}</a>

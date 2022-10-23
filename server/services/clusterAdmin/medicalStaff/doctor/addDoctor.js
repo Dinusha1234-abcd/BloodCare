@@ -2,7 +2,7 @@ const db = require('../../../db');
  
 
 async function getBloodCenterNumber(clusterAdminNic){
-    const rows =  await db.query(`SELECT bloodCenterNo FROM  cluster_center_administator  WHERE userNic=?`,[clusterAdminNic]);
+    const rows =  await db.query(`SELECT * FROM  cluster_center_administator INNER JOIN blood_center ON cluster_center_administator.bloodCenterNo = blood_center.bloodCenterNo   WHERE userNic=?`,[clusterAdminNic]);
      return  rows ;
 }
 
