@@ -1,8 +1,10 @@
-import React,{useState} from 'react';
+import React,{useEffect, useState} from 'react';
 import axios from 'axios';
 import '../../assests/css/admin/component.medicalofficer.admin.css';
 import successImage from '../../assests/images/sucess.png';
 import '../../assests/css/admin/component.user.search.admin.css';
+import lottie from "lottie-web";
+// import loading from '../assests/images/loading.gif';
 
 export default function MedicalOfficer(){
 
@@ -15,18 +17,49 @@ export default function MedicalOfficer(){
     const [mobileNumber, setMobileNumber] = useState("");
     const [password , setPassword] = useState("")
     const [ message,setMessage] = useState("");
-    const [success, setSuccess] = useState(false)
+    const [success, setSuccess] = useState(false);
+    const [data, setData] = useState([]);
+    const [searchData, setSearchData] = useState("");
 
+    // let loading = require("../assests/images/loading.gif")
+
+    useEffect((() => {getMedicalOfficerData() }), [])
+    function getMedicalOfficerData() {
+        // lottie.loadAnimation({
+        //     container: document.querySelector("#loading-image"),
+        // });
+
+        const adminNic = localStorage.getItem('userNic');
+        const admin = {
+            adminNic
+        }
+        console.log("call");
+
+        axios.post("http://localhost:8070/users/selectMedicalOfficer", admin).then(
+            (res) => {
+                setData(res.data.medicalofficers);
+                // console.log(res.data);
+            }
+        ).catch((err) => {
+            //server error
+            console.log(err.message);
+        })
+    }
+
+
+    console.log(data[1]);
     function addMedicalOfficer(e){
         e.preventDefault()
-         const mo = {
+        const adminNic = localStorage.getItem('userNic');
+        const mo = {
+            adminNic,
             firstName,
             lastName,
             NIC,
             address,
             email,
             mobileNumber,
-            password
+            password,
         }
         if(firstName.length==0){
             setMessage("Please Enter First Name ");
@@ -59,10 +92,11 @@ export default function MedicalOfficer(){
               setEmail('');
               e.target.reset();
             // pass check the data with server 
-            axios.post("http://localhost:8070//users/medicalofficer", mo).then(
+            axios.post("http://localhost:8070/users/medicalofficer", mo).then(
                 (res)=> {
                     //check password and username  
                     if(res['data']['message']=="success"){
+                        window.location = "/users/medicalOfficer";
                       
                     }else{
                         setMessage("Username or Password is Not match");
@@ -82,6 +116,40 @@ export default function MedicalOfficer(){
               <img id='successImage' src={successImage}/>  <h3 id='sucess-message-name'> Dr {firstName + " " + lastName} Sucessfully Added   <i class="fa-solid fa-xmark close-button-success" onClick={ () =>{ setMessage("")}}></i></h3>
             </div>
         )}
+    }
+
+    const list = [];
+    if(searchData == "") {
+        for (let i = 0; i < data.length; i++){
+            list.push(
+                <> <tr>
+                    <td>{data[i]['userNic']}</td>
+                    <td>Dr {data[i]['firstName'] + " " + data[i]['lastName']}</td>
+                    <td>{data[i]['email']}</td>
+                    <td>{data[i]['phoneNumber']}</td>
+                    <td><button id='view-user-button-admin'>View</button></td>
+                    <td><button id='remove-user-button-admin'>Deactivate</button></td>
+
+                </tr>
+                </>
+            )
+        }
+    } else {
+        for (let i = 0; i < 10; i++) {
+            if (searchData == data[i]['userNic']) {
+                list.push(
+                    <> <tr>
+                        <td>{data[i]['userNic']}</td>
+                        <td>{data[i]['firstName'] + " " + data[i]['lastName']}</td>
+                        <td>{data[i]['email']}</td>
+                        <td>{data[i]['phoneNumber']}</td>
+                        <td><button id='view-user-button-admin'>View</button></td>
+                        <td><button id='remove-user-button-admin'>Deactivate</button></td>
+                    </tr>
+                    </>)
+
+            }
+        }
     }
 
     return (
@@ -106,62 +174,19 @@ export default function MedicalOfficer(){
                     <th id='user-action-admin'>Action</th>
                     <th id='user-action-admin'>Action</th>
                 </tr>
-                <tr>
+                {/* <tr>
                     <td>988438430V</td>
                     <td>Dr. K.G.Weerasinghe</td>
                     <td>weer2@gmail.com</td>
                     <td>071-0987654</td>
                     <td><button id='view-user-button-admin'>View</button></td>
                     <td><button id='remove-user-button-admin'>Deactivate</button></td>
-                </tr>
-                <tr>
-                    <td>985434567V</td>
-                    <td>Dr. Kamal Silva </td>
-                    <td>kamalk@gmail.com</td>
-                    <td>076-675436</td>
-                    <td><button id='view-user-button-admin'>View</button></td>
-                    <td><button id='remove-user-button-admin'>Deactivate</button></td>
-                </tr>
-                <tr>
-                    <td>98765678V</td>
-                    <td>Dr. Thej Mayadunne</td>
-                    <td>thej88@gmail.com</td>
-                    <td>077-8976549</td>
-                    <td><button id='view-user-button-admin'>View</button></td>
-                    <td><button id='remove-user-button-admin'>Deactivate</button></td>
-                </tr>
-                <tr>
-                    <td>981234567V</td>
-                    <td>Dr. Saman De Silva</td>
-                    <td>kalshi98@gmail.com</td>
-                    <td>078-7890876</td>
-                    <td><button id='view-user-button-admin'>View</button></td>
-                    <td><button id='remove-user-button-admin'>Deactivate</button></td>
-                </tr>
-                <tr>
-                    <td>984567890V</td>
-                    <td>Dr. Nirupama Devindi</td>
-                    <td>dilhara672@gmail.com</td>
-                    <td>077-5467789</td>
-                    <td><button id='view-user-button-admin'>View</button></td>
-                    <td><button id='remove-user-button-admin'>Deactivate</button></td>
-                </tr>
-                <tr>
-                    <td>975643897V</td>
-                    <td>Dr. Sanduka Sanjaya</td>
-                    <td>danapala@gmail.com</td>
-                    <td>078-123456</td>
-                    <td><button id='view-user-button-admin'>View</button></td>
-                    <td><button id='remove-user-button-admin'>Deactivate</button></td>
-                </tr>
+                </tr> */}
+                {list}
                 
                 
             </table>
-            {/* <div id='pastCamp-pageButton'>
-                <a className='page-navigation'>{"<< Prev"}  </a> 
-                <a className='page-navigation'>1</a>
-                <a className='page-navigation'>{"Next >>"}</a> 
-            </div> */}
+          
 
             <div id={ `${ formReg ? 'register-form-user-admin-active' : 'register-form-user-admin'}`}>
                   

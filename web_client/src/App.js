@@ -225,6 +225,7 @@ function App() {
             <Route path='/' exact element={<LandingPage />} />
             <Route path='/camps' exact element={<Camps />} />
             <Route path='/registercamp' exact element={<RegisterCamp />} />
+            {/* <Route path="*" component={PageNotFound} /> */}
          </Routes>
       </BrowserRouter>)
    }
