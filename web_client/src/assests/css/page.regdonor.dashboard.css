@@ -12,23 +12,24 @@
 }*/
 #table-Container{
     position: absolute;
-    width: 75%;
+    width: 90%;
 
-    height: 500px;
+    height: 600px;
     margin-top: 50px;
-    margin-left: 10%;
+    margin-left: 3%;
     margin-right: 150px;
     background: rgba(255, 255, 255, 0.7);
-    border-radius: 50px;
+    border-radius: 30px;
 }
 #regDonor-table-name{
     font-size: 22px;
     margin-top: 50px;
+    left: -350px;
 }
 #input-camp-date{
     position: absolute;
     right: 150px;
-    margin-top:40px;
+    top:40px;
     width:300px;
     height: 30px;
     border-radius: 20px;

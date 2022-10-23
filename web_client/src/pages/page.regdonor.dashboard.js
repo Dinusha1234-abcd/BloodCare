@@ -14,7 +14,7 @@ export default function RegDonorDashboard() {
     const [unsuccess, setUnSuccess] = useState(false);
     const [searchData, setSearchData] = useState("");
     const [success, setSuccess] = useState(false);
-
+    const regDonorNic = localStorage.getItem('userNic');
     const [firstRow, setFirstRow] = useState(0);
     const [lastRow, setLastRow] = useState(0);
     const [pageNumber, setPageNumber] = useState(1);
@@ -25,6 +25,10 @@ export default function RegDonorDashboard() {
 
     useEffect((() => { getCampData() }), [])
     function getCampData() {
+        // const regDonorNic =localStorage.getItem('userNic');
+        // const regDonor = {
+        //     regDonorNic
+        // } 
         axios.get(" http://localhost:8070/registerdonor/homeselectcamp").then(
             (res) => {
                 setData(res.data.camps);
@@ -50,7 +54,7 @@ export default function RegDonorDashboard() {
         for (let i = firstRow; i < data.length; i++) {
             list.push(
                 <><tr>
-                    <td>{data[0]['date'].substring(0, 10)}</td>
+                    <td>{data[i]['date'].substring(0, 10)}</td>
                     <td>{data[i]['name']}</td>
                     <td>{data[i]['place']}</td>
                 </tr>
@@ -61,7 +65,7 @@ export default function RegDonorDashboard() {
             if (searchData == data[i]['userNic']) {
                 list.push(
                     <> <tr>
-                        <td>{data[0]['date']}</td>
+                        <td>{data[i]['date'].substring(0,10)}</td>
                         <td>{data[i]['name']}</td>
                         <td>{data[i]['place']}</td>
                     </tr>
