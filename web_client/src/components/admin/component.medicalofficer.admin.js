@@ -37,8 +37,8 @@ export default function MedicalOfficer(){
 
         axios.post("http://localhost:8070/users/selectMedicalOfficer", admin).then(
             (res) => {
-                setData(res.data.medicalofficers);
-                // console.log(res.data);
+                setData(res.data.medicalOfficers);
+                console.log(res.data);
             }
         ).catch((err) => {
             //server error

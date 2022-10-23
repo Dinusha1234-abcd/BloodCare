@@ -284,7 +284,7 @@ export default function Nurse() {
                     <td>
                     <button id='view-button-doctor-view' onClick={() => {showUpdateNurse(data[i]['staffId'],data[i]['firstName'],data[i]['lastName'],data[i]['userNic'],data[i]['address'],data[i]['phoneNumber'],data[i]['email'] )}}>View</button>
 
-                        <button id='view-button-doctor-remove'>Remove</button>
+                    <button id='view-button-doctor-remove' onClick={() => { showRemoveMessage(data[i]['firstName'] + data[i]['lastName'], data[i]['userNic']) }}>Remove</button>
                     </td>
                 </tr>
                 </>)
@@ -300,8 +300,8 @@ export default function Nurse() {
                         <td>{data[i]['phoneNumber']}</td>
                         <td>{data[i]['email']}</td>
                         <td>
-                            <button id='view-button-doctor-view'  >View</button>
-                            <button id='view-button-doctor-remove'>Remove</button>
+                        <button id='view-button-doctor-view' onClick={() => { showUpdateNurse(data[i]['staffId'], data[i]['firstName'], data[i]['lastName'], data[i]['userNic'], data[i]['address'], data[i]['phoneNumber'], data[i]['email']) }}>View</button>
+                            <button id='view-button-doctor-remove' onClick={() => { showRemoveMessage(data[i]['firstName'] + data[i]['lastName'], data[i]['userNic']) }}>Remove</button>
                         </td>
                     </tr>
                     </>)

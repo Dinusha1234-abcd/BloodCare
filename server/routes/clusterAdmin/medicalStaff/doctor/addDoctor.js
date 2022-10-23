@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const addDoctor = require('../../../../services/clusterAdmin/medicalStaff/doctor/addDoctor');
-
+const sendMail = require('../../../../services/mail');
 router.post('/', async function (req, res) {
    const clusterAdmin = req.body.clusterAdminNic;
    const firstName = req.body.firstName;
@@ -14,7 +14,9 @@ router.post('/', async function (req, res) {
    let gender;
    let dateOfBirth;
    let centerNumber;
-
+   let centerName;
+   let centerDistrict;
+   let centerAddress;
    const getGender = (dayData) => { if (dayData > 500) { return true } else { return false } }
 
 
@@ -109,11 +111,19 @@ router.post('/', async function (req, res) {
    await addDoctor.getBloodCenterNumber(clusterAdmin).then(
       (clusterAdmin) => {
          centerNumber = clusterAdmin[0].bloodCenterNo;
-      }
+         centerName = clusterAdmin[0].name;
+         centerDistrict =  clusterAdmin[0].district;
+         centerAddress =  clusterAdmin[0].address;
+      } 
    )
    await addDoctor.insertDoctor(centerNumber, firstName, lastName, NIC, gender, dateOfBirth, address, email, mobileNumber, occupation).then(
       (user) => {
-
+        
+         const subject =  'Dr '+firstName+' '+lastName+ ' Sucessfully added to The BloodCare';
+         const text = 'Dear Dr '+firstName+' ' +lastName;
+         const html = '<h>'+text+'</h><br/><h> Your are  added BloodCare System </h><br/> <p>Blood Center Number : '+centerNumber+ '</p><br/><p>Blood Center Name : '+centerName
+         + '</p><br/><p>Blood Center District : '+centerDistrict+ '</p><br/><p>Blood Center Address : '+centerAddress+ '</p><br/>' ;
+         sendMail.sendMail(email,subject,text,html);
          return res.json({
             message: "success",
          });

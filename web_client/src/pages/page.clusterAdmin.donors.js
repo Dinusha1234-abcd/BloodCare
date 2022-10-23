@@ -34,7 +34,7 @@ export default function ClusterAdminDonors() {
                 }else{
                     setLastRow(10);
                 }
-                console.log(lastRow);
+                console.log(100);
                 setLoading(!loading);
             }).catch((err) => {
                 //sever error
@@ -50,15 +50,17 @@ export default function ClusterAdminDonors() {
     const list = [];
    //display data in table
     //check the NIC number
+    console.log(data);
     if (searchData == "") { 
         for (let i = firstRow; i < data.length; i++) {
             list.push(
                 <> <tr>
-                    <td>{data[0]['registerDonorId']}</td>
+                    <td>{data[i]['registerDonorId']}</td>
                     <td>{data[i]['userNic']}</td>
                     <td> {data[i]['firstName'] + " " + data[i]['lastName']}</td>
                     <td>{data[i]['bloodType']}</td>
-                    <td>{data[i]['LastDonationDate'].substring(0, 10)}</td> 
+                    <td>{data[i]['bloodType']}</td>
+                    {/* <td>{data[i]['LastDonationDate'].substring(0, 10)}</td>  */}
                     <td>
                         <button id='view-button-doctor-view'   >View</button>
                         <button id='view-button-doctor-remove'>Remove</button>
