@@ -72,27 +72,8 @@ router.post('/',async function(req,res){
     }
  }
 
- //cheack NIC number length
-//  if (NIC.length == 10) {
-//     const year = "19"+NIC.substr(0, 2);
-//     gender =  (getGender ? "f" : "m");
-//     const month = getMonth(parseInt(NIC.substr(3, 6)));
-//     const day = getMonth(parseInt(NIC.substr(3, 6)));
-//       dateOfBirth = year+"-"+month+"-"+day;
-//  }
-//  if (NIC.length == 12) {
-//     const year = NIC.substr(0, 4);
-//      gender =  ()=>{ if(NIC.substr(3, 6)>500) { rtprint("f")}else{print("m")}}
-//     const month = getMonth(parseInt(NIC.substr(5, 8)));
-//     const day = getDate(parseInt(NIC.substr(5, 8)));
-//       dateOfBirth = year+"-"+month+"-"+day;
-//  }
-//  await addDoctor.getBloodCenterNumber(clusterAdmin).then(
-//     (clusterAdmin)=>{
-//          centerNumber = clusterAdmin[0].bloodCenterNo;
-//     }
-// )
- await addDoctor.insertDoctor(centerNumber,firstName,lastName,NIC,gender,dateOfBirth,address, email, mobileNumber, occupation).then(
+
+ await addClusterAdmin.insertClusterAdmin(centerNumber,firstName,lastName,NIC,gender,dateOfBirth,address, email, mobileNumber, occupation).then(
     (user) => {
      
           return res.json({
