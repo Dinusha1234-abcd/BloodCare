@@ -50,7 +50,9 @@ const historyRecordsSelect =require('./routes/registerDonor/historyRecordsSelect
 //admin
 const addClusterAdmin = require('./routes/admin/users/clusterAdmin/addClusterAdmin');
 const selectMedicalOfficer = require('./routes/admin/users/medicalOfficer/selectMedicalOfficer');
+
 const selectClusterCenter = require('./routes/admin/clusterCenter/selectClusterCenter');
+const addClusterCenter = require('./routes/admin/clusterCenter/addClusterCenter');
 
 
 
@@ -109,7 +111,9 @@ app.use("/registerDonor/historyRecordsSelect",historyRecordsSelect);
 //admin
 app.use("/users/addClusterAdmin",addClusterAdmin);
 app.use("/users/selectMedicalOfficer", selectMedicalOfficer);
+
 app.use("/clusterCenter/selectClusterCenter", selectClusterCenter);
+app.use("/clusterCenter/addClusterCenter", addClusterCenter);
 
 
 
