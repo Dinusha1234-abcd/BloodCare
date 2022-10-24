@@ -5,9 +5,18 @@ const historyRecordsSelect = require('../../services/registerDonor/historyRecord
 
 router.post('/',async function(req, res) {
     const regDonor = req.body.regDonorNic;
-    await historyRecordsSelect.getHistoryRecords(regDonor).then(
-        (regDonor) =>{
-            const records =regDonor;
+    let donorId;
+    await historyRecordsSelect.getDonor(regDonor).then(
+        (regDonor)=>{
+            donorId = regDonor[0].registerDonorId;
+        }
+    ).catch((err)=>{
+        console.log(err);
+    } );
+    
+    await historyRecordsSelect.getHistoryRecords(donorId).then(
+        (user) =>{
+            const records =user;
             return res.json({
                 records : records
             })
