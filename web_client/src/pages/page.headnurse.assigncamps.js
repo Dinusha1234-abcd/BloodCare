@@ -1,4 +1,5 @@
 import React, { useState,useCallback, useEffect } from "react";
+import axios from 'axios';
 import SlideMenuHeadNurse from "../components/headnurse/component.slidemenu.headNurse";
 import '../assests/css/headnurse/headnurse.assigncamps.css';
 import Upcomming from '../assests/images/upcomming.png';
@@ -8,11 +9,57 @@ import Past from '../assests/images/past.png';
 export default function HeadNurseAssignCamps() {
     const [slidemenu, setSlideMenu] = useState(true);
     const [date, setDate] = useState(new Date());
-   
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [unsuccessMessage, setUnsuccessMessage] = useState("");
+    const [unsuccess, setUnSuccess] = useState(false);
+    const [searchData, setSearchData] = useState("");
+    const [success, setSuccess] = useState(false); 
+
     const passData = (data) => {
       setSlideMenu(data);
     };
+   
+    useEffect((() => { getUpcommingCamp() }), [])
 
+    function getUpcommingCamp() {
+      axios.get("http://localhost:8070/headnurse/upcommingcamp").then(
+          (res) => {
+              setData(res.data.upcommingcamp);
+              console.log(res.data);
+  
+              setLoading(!loading);
+          }).catch((err) => {
+              //sever error
+              setLoading(!loading);
+              setUnsuccessMessage("Network Connection Issue Please Try Again");
+              setUnSuccess(true)
+          })
+    }
+  
+    function unsucessbutton(){
+      window.location = "/assigncamps";
+    }
+  
+    const list = [];
+  
+    //display data in table
+      //check the NIC number
+      //if (searchData == "") {
+          for(let i=0; i<data.length; i++){
+              list.push(
+                  <> <div id="camp1">
+                      <p id="p-head">{data[i]['name']}</p>
+                      <p id="p-head">{data[i]['date']}</p>
+                      <p id="p-head">{data[i]['place']}</p>
+                      <a href="/headnurse/donorrequests">
+                      <button id='button1'>View Requested Donors</button> </a>
+                      
+                  </div>
+                  <br></br> 
+                  </>
+              )
+          }
  
 
 
@@ -41,10 +88,17 @@ export default function HeadNurseAssignCamps() {
               <h1 id ="h1-head">Your Upcomming Blood Camps</h1>
               <input type="text" id='search-headnurse-assigncamps' placeholder="Search.."/>
               <button type="button" id="button-headnurse"> <i class="fas fa-search"></i></button>
-              
+               <br></br><br></br><br></br><br></br><br></br><br></br><br></br> <br></br><br></br><br></br>
           </div>
           
-
+          <div >   
+             {list}
+             </div>
+         
+ 
+          
+          
+          {/*
           <div id="camp1">
                 <h4 id ="h4-head">Wednsday, August 12, 2022</h4>
                 <a href="/headnurse/donorrequests">
@@ -77,8 +131,8 @@ export default function HeadNurseAssignCamps() {
                  <p id ="p-head">  <i class="fa-solid fa-clock"></i> at 11.00 am</p>
                  <p id ="p-head">Western Province</p> 
           </div>
-
-              
+    */}
+         
         </div>
      
       );

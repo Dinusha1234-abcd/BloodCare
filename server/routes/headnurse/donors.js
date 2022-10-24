@@ -3,7 +3,7 @@ const router = express.Router();
 const donors = require('../../services/headnurse/donors');
 
 
-router.post('/',async function(req, res) {
+router.get('/',async function(req, res) {
     await donors.getDonors().then(
         (user) =>{
             const donors =user;
