@@ -3,10 +3,11 @@ const router = express.Router();
 const historyRecordsSelect = require('../../services/registerDonor/historyRecordsSelect');
 
 
-router.get('/',async function(req, res) {
-    await historyRecordsSelect.getHistoryRecords().then(
-        (user) =>{
-            const records =user;
+router.post('/',async function(req, res) {
+    const regDonor = req.body.regDonorNic;
+    await historyRecordsSelect.getHistoryRecords(regDonor).then(
+        (regDonor) =>{
+            const records =regDonor;
             return res.json({
                 records : records
             })
