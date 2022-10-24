@@ -52,6 +52,10 @@ const addClusterAdmin = require('./routes/admin/users/clusterAdmin/addClusterAdm
 const selectMedicalOfficer = require('./routes/admin/users/medicalOfficer/selectMedicalOfficer');
 const selectClusterCenter = require('./routes/admin/clusterCenter/selectClusterCenter');
 
+//headnurse
+const upcommingcamp = require('./routes/headnurse/upcommingcamp');
+const donors = require('./routes/headnurse/donors');
+
 
 
 
@@ -111,6 +115,9 @@ app.use("/users/addClusterAdmin",addClusterAdmin);
 app.use("/users/selectMedicalOfficer", selectMedicalOfficer);
 app.use("/clusterCenter/selectClusterCenter", selectClusterCenter);
 
+//headnurse
+app.use("/headnurse/upcommingamp.js",upcommingamp);
+app.use("/headnurse/donors.js",donors);
 
 
 app.listen(port,()=>{
