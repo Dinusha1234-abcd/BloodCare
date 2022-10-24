@@ -48,7 +48,7 @@ const selectDonor = require('./routes/clusterAdmin/registerDonor/selectDonor');
 //registerDonor
 const homeSelectCamp = require('./routes/registerDonor/homeSelectCamp');
 const historyRecordsSelect =require('./routes/registerDonor/historyRecordsSelect');
- 
+const campAllDetail =require('./routes/registerDonor/campAllDetail');
 
 //admin
 const addClusterAdmin = require('./routes/admin/users/clusterAdmin/addClusterAdmin');
@@ -116,7 +116,7 @@ app.use("/registerdonor/selectdonor",selectDonor);
 //register Donor
 app.use("/registerDonor/homeSelectCamp",homeSelectCamp);
 app.use("/registerDonor/historyRecordsSelect",historyRecordsSelect);
-
+app.use("/registerDonor/campAllDetail",campAllDetail);
 
 //admin
 app.use("/users/addClusterAdmin",addClusterAdmin);
