@@ -57,7 +57,7 @@ const addClusterCenter = require('./routes/admin/clusterCenter/addClusterCenter'
 //headnurse
 const upcommingcamp = require('./routes/headnurse/upcommingcamp');
 const donors = require('./routes/headnurse/donors');
-
+const register = require('./routes/headnurse/registerdonor');
 
 
 
@@ -120,8 +120,9 @@ app.use("/clusterCenter/selectClusterCenter", selectClusterCenter);
 app.use("/clusterCenter/addClusterCenter", addClusterCenter);
 
 //headnurse
-app.use("/headnurse/upcommingamp.js",upcommingamp);
-app.use("/headnurse/donors.js",donors);
+app.use("/headnurse/upcommingcamp",upcommingcamp);
+app.use("/headnurse/donors",donors);
+app.use("/headnurse/registerdonor",register);
 
 
 app.listen(port,()=>{

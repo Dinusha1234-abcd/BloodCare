@@ -17,19 +17,20 @@ export default function HeadNurseAddNewDonors() {
       <div id={`${slidemenu ? 'state-change-true' : 'state-change-false'}`} >
         <div id="form-headnurse-donor-reg">
           <img id="form-img-headnurse" src={formimage} />
+
           <form id="add-donor-headnurse">
             <br /><h2 id="donor-form-header">Donor Registration </h2>
             <button id="donor-reg-button-headnurse"> Register </button>
             <br /><label id="form-label-headnurse">Donor's Name</label> <br />
-            <input type="text" id="form-input" placeholder="    First Name" />
-            <input type="text" id="form-input" placeholder="    Last Name" />
+               <input type="text" id="form-input" placeholder="    First Name" />
+               <input type="text" id="form-input" placeholder="    Last Name" />
             <br /><label id="form-label-headnurse">NIC</label> <br />
-            <input type="text" id="form-input" />
+               <input type="text" id="form-input" />
             <br /><label id="form-label-headnurse">Phone</label> <br />
-            <input type="text" id="form-input" />
+               <input type="text" id="form-input" />
             <br /><label id="form-label-headnurse">Address</label> <br />
-            <input type="text" id="form-input-address" />
-            <br /><label id="form-label-headnurse">Occupation</label> <br />
+               <input type="text" id="form-input-address" />
+            {/*<br /><label id="form-label-headnurse">Occupation</label> <br />
             <input type="text" id="form-input" />
             <br />  <label id="form-label-headnurse">Weight</label> <br />
             <input type="text" id="form-input" />
@@ -58,7 +59,7 @@ export default function HeadNurseAddNewDonors() {
               <label id="diseases2-headnurse">No</label>
               <input type="radio" id="radio-headnurse" value="No"></input>
 
-            </div>
+  </div> */}
           </form>
         </div>
 

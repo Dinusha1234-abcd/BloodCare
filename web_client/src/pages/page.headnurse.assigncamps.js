@@ -3,74 +3,17 @@ import SlideMenuHeadNurse from "../components/headnurse/component.slidemenu.head
 import '../assests/css/headnurse/headnurse.assigncamps.css';
 import Upcomming from '../assests/images/upcomming.png';
 import Past from '../assests/images/past.png';
-import axios from 'axios';
+
 
 export default function HeadNurseAssignCamps() {
     const [slidemenu, setSlideMenu] = useState(true);
     const [date, setDate] = useState(new Date());
-    const [data, setData] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [unsuccessMessage, setUnsuccessMessage] = useState("");
-    const [unsuccess, setUnSuccess] = useState(false);
-    const [searchData, setSearchData] = useState("");
-    const [success, setSuccess] = useState(false);
-
-    const [firstRow, setFirstRow] = useState(0);
-    const [lastRow, setLastRow] = useState(0);
-    const [pageNumber, setPageNumber] = useState(1);
+   
     const passData = (data) => {
       setSlideMenu(data);
     };
 
-    useEffect((() => { getCampData() }), [])
-    function getCampData() {
-        axios.get(" http://localhost:8070/headnurse/upcommingcamp").then(
-            (res) => {
-                setData(res.data.futurecamp);
-                if (data.length < 11) {
-                    setLastRow(data.length);
-                } else {
-                    setLastRow(10);
-                }
-                console.log(lastRow);
-                setLoading(!loading);
-            }).catch((err) => {
-                setLoading(!loading);
-                setUnsuccessMessage("Network Connection Issue Pleace Try Again");
-                setUnSuccess(true)
-            })
-    }
-    function unsucessbutton() {
-        window.location = "/assigncamps";
-    }
-    // 100
-    const list = [];
-
-    if (searchData == "") {
-        for (let i = firstRow; i < data.length; i++) {
-            list.push(
-                <><tr>
-                    <td>{data[i]['date'].substring(0, 10)}</td>
-                    <td>{data[i]['name']}</td>
-                    <td>{data[i]['place']}</td>
-                </tr>
-                </>)
-        }
-    } else {
-        for (let i = 0; i < lastRow; i++) {
-            if (searchData == data[i]['userNic']) {
-                list.push(
-                    <> <tr>
-                        <td>{data[i]['date']}</td>
-                        <td>{data[i]['name']}</td>
-                        <td>{data[i]['place']}</td>
-                    </tr>
-                    </>
-                )
-
-            }
-        }
-    }
+ 
 
 
     return (
@@ -98,7 +41,7 @@ export default function HeadNurseAssignCamps() {
               <h1 id ="h1-head">Your Upcomming Blood Camps</h1>
               <input type="text" id='search-headnurse-assigncamps' placeholder="Search.."/>
               <button type="button" id="button-headnurse"> <i class="fas fa-search"></i></button>
-              {list}
+              
           </div>
           
 
