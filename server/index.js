@@ -66,13 +66,16 @@ const addMedicalOfficer = require('./routes/admin/users/medicalOfficer/addMedica
 const selectDoctorAdmin = require('./routes/admin/users/doctor/selectDoctor');
 const selectHeadNurseAdmin = require('./routes/admin/users/headNurse/selectHeadNurse');
 const selectNurseAdmin = require('./routes/admin/users/nurse/selectNurse');
+const selectOrganizerAdmin = require('./routes/admin/users/organizer/selectOrganizer');
+const selectDriverAdmin = require('./routes/admin/users/driver/selectDriver');
+const selectDonorAdmin = require('./routes/admin/users/donor/selectDonor');
 
 const selectClusterCenter = require('./routes/admin/clusterCenter/selectClusterCenter');
 const addClusterCenter = require('./routes/admin/clusterCenter/addClusterCenter');
 
 
 //headnurse
-const upcommingcamp = require('./routes/headnurse/upcommingcamp');
+// const upcommingcamp = require('./routes/headnurse/upcommingcamp');
 const donors = require('./routes/headnurse/donors');
  
 
@@ -136,7 +139,9 @@ app.use("/registerDonor/campAllDetail",campAllDetail);
 
 app.use("/registerDonor/profileDetail",profileDetail);
 
+
 //admin
+
 // app.use("/users/addClusterAdmin",addClusterAdmin);
 app.use("/users/selectClusterAdmin",selectClusterAdmin);
 
@@ -146,12 +151,17 @@ app.use("/users/addMedicalOfficer", addMedicalOfficer);
 app.use("/users/selectDoctor", selectDoctorAdmin);
 app.use("/users/selectHeadNurse", selectHeadNurseAdmin);
 app.use("/users/selectNurse", selectNurseAdmin);
+app.use("/users/selectOrganizer", selectOrganizerAdmin);
+app.use("/users/selectDriver", selectDriverAdmin);
+app.use("/users/selectDonor", selectDonorAdmin);
 
 app.use("/clusterCenter/selectClusterCenter", selectClusterCenter);
 app.use("/clusterCenter/addClusterCenter", addClusterCenter);
 
+
+
 //headnurse
-// app.use("/headnurse/upcommingamp.js",upcommingamp);
+app.use("/headnurse/upcommingamp.js",upcommingamp);
 app.use("/headnurse/donors",donors);
 
 
