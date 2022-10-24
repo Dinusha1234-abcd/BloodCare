@@ -3,8 +3,16 @@ const router = express.Router();
 const homeSelectCamp = require('../../services/registerDonor/homeSelectCamp');
 
 
-router.get('/',async function(req, res) {
-    await homeSelectCamp.getCamp().then(
+router.post('/',async function(req, res) {
+    const regDonor = req.body.regDonorNic ;
+    let province;
+    var todayDate = new Date().toISOString().slice(0,10);
+    await homeSelectCamp.getdonorProvince(regDonor).then(
+        (regDonor)=>{
+            province = regDonor[0].province;
+        }
+    )
+    await homeSelectCamp.getCamp(province, todayDate).then(
         (user) =>{
             const camps =user;
             return res.json({

@@ -18,13 +18,17 @@ export default function RegDonorHistory() {
     const [firstRow, setFirstRow] = useState(0);
     const [lastRow, setLastRow] = useState(0);
     const [pageNumber, setPageNumber] = useState(1);
-
+    const regDonorNic = localStorage.getItem('userNic');
     const passData = (data) => {
         setSlideMenu(data);
     };
     useEffect((() => { getHistoryRecords() }), [])
     function getHistoryRecords() {
-        axios.get(" http://localhost:8070/registerdonor/historyrecordsselect").then(
+        const regDonorNic =localStorage.getItem('userNic');
+        const regDonor = {
+            regDonorNic
+        }
+        axios.post("http://localhost:8070/registerdonor/historyrecordsselect", regDonor).then(
             (res) => {
                 setData(res.data.records);
                 if (data.length < 11) {

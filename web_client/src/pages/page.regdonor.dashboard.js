@@ -25,11 +25,11 @@ export default function RegDonorDashboard() {
 
     useEffect((() => { getCampData() }), [])
     function getCampData() {
-        // const regDonorNic =localStorage.getItem('userNic');
-        // const regDonor = {
-        //     regDonorNic
-        // } 
-        axios.get(" http://localhost:8070/registerdonor/homeselectcamp").then(
+        const regDonorNic =localStorage.getItem('userNic');
+        const regDonor = {
+            regDonorNic
+        } 
+        axios.post("http://localhost:8070/registerdonor/homeselectcamp", regDonor).then(
             (res) => {
                 setData(res.data.camps);
                 if (data.length < 11) {
@@ -62,7 +62,7 @@ export default function RegDonorDashboard() {
                 </>)
         }
     } else {
-        for (let i = 0; i < lastRow; i++) {
+        for (let i = 0; i < 10; i++) {
             if (searchData == data[i]['userNic']) {
                 list.push(
                     <> <tr>
