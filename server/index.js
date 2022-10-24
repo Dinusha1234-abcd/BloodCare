@@ -50,6 +50,8 @@ const homeSelectCamp = require('./routes/registerDonor/homeSelectCamp');
 const historyRecordsSelect =require('./routes/registerDonor/historyRecordsSelect');
 const campAllDetail =require('./routes/registerDonor/campAllDetail');
 
+const profileDetail =require('./routes/registerDonor/profileDetail');
+
 //admin
 const addClusterAdmin = require('./routes/admin/users/clusterAdmin/addClusterAdmin');
 const selectMedicalOfficer = require('./routes/admin/users/medicalOfficer/selectMedicalOfficer');
@@ -117,6 +119,8 @@ app.use("/registerdonor/selectdonor",selectDonor);
 app.use("/registerDonor/homeSelectCamp",homeSelectCamp);
 app.use("/registerDonor/historyRecordsSelect",historyRecordsSelect);
 app.use("/registerDonor/campAllDetail",campAllDetail);
+
+app.use("/registerDonor/profileDetail",profileDetail);
 
 //admin
 app.use("/users/addClusterAdmin",addClusterAdmin);
