@@ -2,6 +2,10 @@ import React,{useEffect, useState} from 'react';
 import axios from 'axios';
 import '../../assests/css/admin/component.user.search.admin.css';
 import successImage from '../../assests/images/sucess.png';
+import unsuccessImage from '../../assests/images/wrong.png';
+import loadingImage from '../../assests/images/loading.gif';
+import waitImage from '../../assests/images/wait.gif';
+import alert from '../../assests/images/alert.png';
 import Lottie from 'lottie-web';
 
 export default function ClusterAdmin(){
@@ -15,38 +19,39 @@ export default function ClusterAdmin(){
     const [mobileNumber, setMobileNumber] = useState("");
     const [clustercenterId , setClustercenterId] = useState("");
     const [password , setPassword] = useState("")
+
     const [ message,setMessage] = useState("");
     const [success, setSuccess] = useState(false)
     const [data, setData] = useState([]);
-    const adminNic = localStorage.getItem('userNic');
-    const [firstRow, setFirstRow] = useState(0);
-    const [lastRow, setLastRow] = useState(0);
     const [searchData, setSearchData] = useState("");
+    const [wait, setWait] = useState(false);
+    const [unsuccess, setUnSuccess] = useState(false);
+    const [successMessage, setSuccessMessage] = useState("");
+    const [unsuccessMessage, setUnsuccessMessage] = useState("");
+    const [loading, setLoading] = useState(true);
 
-    // let loading = require("../assests/images/loading.gif")
 
-    useEffect((() => { getClusterAdminData() }), [])
+    useEffect((() => {getClusterAdminData() }), [])
 
     function getClusterAdminData(){
-        Lottie.loadAnimation({
-            container: document.querySelector("#loading-image"),
-        });
-        const adminNic = localStorage.getItem('userNic');
-        const admin = {
-            adminNic
-        }
-        console.log("call");
-        axios.post("http://localhost:8070/users/addClusterAdmin", admin).then(
+        // Lottie.loadAnimation({
+        //     container: document.querySelector("#loading-image"),
+        // });
+        
+        axios.post("http://localhost:8070/users/selectClusterAdmin").then(
             (res) => {
-                setData(res.data.ClusterAdmin);
-                setLastRow(10);
+                setData(res.data.clusterAdmins);
+                console.log(res.data);
+
+                setLoading(!loading);
             }).catch((err) =>{
                 //server error
-                console.log(err.message);
+                setLoading(!loading);
+                setUnsuccessMessage("Network Connection Issue Please Try Again");
+                setUnSuccess(true);
             })
     }
 
-    console.log(data[1]);
     function addClusterAdmin(e){
         e.preventDefault()
          const clusteradmin = {
@@ -114,7 +119,7 @@ export default function ClusterAdmin(){
     //display data in table
     //check the NIC number
     if (searchData == ""){
-        for(let i= firstRow; i < lastRow; i++){
+        for(let i= 0; i < data.length; i++){
             list.push(
                 <><tr>
                     <td>{data[i]['userNic']}</td>
@@ -145,14 +150,6 @@ export default function ClusterAdmin(){
             }
         }
     }
-    function successMessage() {
-        if(success){ 
-        return(
-            <div id='sucess-message'>
-              <img id='successImage' src={successImage}/>  <h3 id='sucess-message-name'> Dr {firstName + " " + lastName} Sucessfully Added   <i class="fa-solid fa-xmark close-button-success" onClick={ () =>{ setMessage("")}}></i></h3>
-            </div>
-        )}
-    }
 
     return (
         <div>
@@ -170,22 +167,13 @@ export default function ClusterAdmin(){
                     <th id='user-action-admin'>Action</th>
                     <th id='user-action-admin'>Action</th>
                 </tr>
-                <tr>
-                    <td>98438430V</td>
-                    <td>Sanduni Malsha</td>
-                    <td>malsha2@gmail.com</td>
-                    <td>071-0987654</td>
-                    <td><button id='view-user-button-admin'>View</button></td>
-                    <td><button id='remove-user-button-admin'>Deactivate</button></td>
-                </tr>
-                
-                
+
+                {list}
+    
             </table>
-            {/* <div id='pastCamp-pageButton'>
-                <a className='page-navigation'>{"<< Prev"}  </a> 
-                <a className='page-navigation'>1</a>
-                <a className='page-navigation'>{"Next >>"}</a> 
-            </div> */}
+
+            <div id={`${loading ? 'loading-cluterAdmin-active' : 'loading-cluterAdmin'}`}> <img src={loadingImage} /> </div>
+            
 
             <div id={ `${ formReg ? 'register-form-user-admin-active' : 'register-form-user-admin'}`}>
                   
