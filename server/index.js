@@ -120,8 +120,8 @@ app.use("/clusterCenter/selectClusterCenter", selectClusterCenter);
 app.use("/clusterCenter/addClusterCenter", addClusterCenter);
 
 //headnurse
-app.use("/headnurse/upcommingamp.js",upcommingamp);
-app.use("/headnurse/donors.js",donors);
+// app.use("/headnurse/upcommingamp.js",upcommingamp);
+app.use("/headnurse/donors",donors);
 
 
 app.listen(port,()=>{
