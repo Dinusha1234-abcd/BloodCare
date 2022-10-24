@@ -3,6 +3,10 @@ import '../../assests/css/component.pendingCampView.css'
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import waitImage from '../../assests/images/wait.gif';
+import successImage from '../../assests/images/sucess.png';
+
+import unsuccessImage from '../../assests/images/wrong.png';
+
 export default function PendingCampView() {
     const {id, date} = useParams()
 
@@ -15,7 +19,10 @@ export default function PendingCampView() {
     const [unsuccess, setUnSuccess] = useState(false);
     const [searchData, setSearchData] = useState("");
     const [medicalStaff, setMedicalStaff] = useState([]);
- 
+    const [status, setStatus] = useState("");
+    const [staffAdd, setStaffAdd] = useState(false); 
+    const [staffName, setStaffName] = useState("");
+
     useEffect((() => { getDoctorData() ;getMedicalStaffData() }), [])
     function getDoctorData() {
         const campNumber = id;
@@ -30,13 +37,20 @@ export default function PendingCampView() {
                 
                 setLoading(!loading);
                 setWait(true);
+               
             }).catch((err) => {
                 //sever 
-                setLoading(!loading);
-                setUnsuccessMessage("Network Connection Issue Please Try Again");
-                setUnSuccess(true)
+                    setLoading(!loading);
+                    setUnsuccessMessage("Network Connection Issue Please Try Again");
+                    setUnSuccess(true)
             })
 
+    }
+    function sucessbutton() {
+        window.location = '/bloodcamp/pendingcamp' 
+    }
+    function unsucessbutton() {
+        window.location =  '/bloodcamp/pendingcamp' 
     }
     function getMedicalStaffData() {
         const clusterAdminNic = localStorage.getItem('userNic');
@@ -62,6 +76,37 @@ export default function PendingCampView() {
             })
 
     }
+
+     function confirmationCamp(e){
+        e.preventDefault();
+        setLoading(loading);
+        setWait(false);
+        const status = 'accept';
+        const campNumber = id;
+        const camp = {
+            status,
+            campNumber
+        }
+          axios.post("http://localhost:8070/camp/confirmationcamp", camp).then(
+              (res) => {
+
+                 setSuccessMessage('Camp Confirmation Sucessfully')
+                 setLoading(!loading);
+                 setWait(true);
+                 setSuccess(true);
+             }).catch((err) => {
+                //sever 
+                 setLoading(!loading);
+                // setUnsuccessMessage("Network Connection Issue Please Try Again");
+                 setUnSuccess(true)
+                setWait(true);
+            })
+     } 
+
+     function assignStaff(){
+
+     }
+    
     const headNurse = [];
     const driver = [];
     const otherMedicalStaff = []; 
@@ -91,8 +136,22 @@ export default function PendingCampView() {
     return (
         
         <div id='pending-camp-view'>
+             {/* Success message/ */}
+             <div id={`${success ? 'sucess-message-active' : 'sucess-message'}`}>
+                    <br /> <h1 id='sucess-message-name'> <img id='successImage' src={successImage} /> <br /> Success !</h1>  <br />
+                    <p id='sucess-message-box'>{successMessage}</p> <br></br>
+                    <button id="okay-button" onClick={() => { setSuccess(sucessbutton) }}> Okay </button>
+                </div>
+            {/* message */}
                 <div id={`${wait ? 'wait-cluterAdmin' : 'wait-cluterAdmin-active'}`}> <img id='wait-cluterAdmin-image' src={waitImage} /> </div>
-                <div id={`${wait? null: 'fade-clusterAdmin' }`}></div>
+                
+                <div id={`${unsuccess ? 'unsucess-message-active' : 'unsucess-message'}`}>
+                    <br /> <h1 id='sucess-message-name'> <img id='unsuccessImage' src={unsuccessImage} /> <br /> Wrong !</h1>  <br />
+                    <p id='unsucess-message-box'> {unsuccessMessage}</p> <br />
+                    <button id="okay-button-unsucess" onClick={() => { setSuccess(unsucessbutton) }}> Okay </button>
+                </div>
+                <div id={`${wait ? null : 'fade-clusterAdmin'}`} ></div>
+                <div id={`${success || unsuccess   ?  'fade-clusterAdmin' : null}`} > </div>
             <div id='pending-camp-view-container-clusterAdmin'>
                 <div id='pending-camp-container-box1-clusterAdmin'>
                     <h3 id='pending-camp-header-display-clusterAdmin'>Pending Blood Camp Details</h3>
@@ -146,10 +205,13 @@ export default function PendingCampView() {
                         
                      </table>
                      <div id='pendingCamp-confirmation-clusterAdmin'> 
-                      
-                     <button id="medicalstaff-display-table-display-available-confirm" type="">Confirm</button> {"  "}
-                    <button id="medicalstaff-display-table-display-available-unconfirm" type="">UnConfirm</button> {"   "}
+                      <form onSubmit={confirmationCamp} > 
+                     <button id="medicalstaff-display-table-display-available-confirm" type="sumbit" >Confirm</button> {"  "}
+                    
+                    {/* <button id="medicalstaff-display-table-display-available-unconfirm"  type="sumbit"  >UnConfirm</button> {"   "} */}
+                     
                     <button id="medicalstaff-display-table-display-available-cancle" type="">Cancel</button>
+                    </form>
                    </div>
                 </div>
             </div>

@@ -16,6 +16,8 @@ app.max_user_connections = 200;
 const pendingCamp = require('./routes/clusterAdmin/camp/pendingCamp/selectPendingCamp');
 const pendingCampView = require('./routes/clusterAdmin/camp/pendingCamp/pendingCampView');
 const getMedicalStaff = require('./routes/clusterAdmin/camp/pendingCamp/getStaffMembers')
+const campStatus = require('./routes/clusterAdmin/camp/pendingCamp/statusPendingCamp');
+const assignStaff = require('./routes/clusterAdmin/camp/pendingCamp/assignStaff');
 const upcomingCamp = require('./routes/clusterAdmin/camp/upcomingCamp/selectUpcomingCamp');
 const pastCamp = require('./routes/clusterAdmin/camp/pastCamp/selectpastCamp');
 const ongoingCamp = require('./routes/clusterAdmin/camp/ongoingCamp/selectOngoingCamp')
@@ -60,6 +62,7 @@ const addClusterCenter = require('./routes/admin/clusterCenter/addClusterCenter'
 //headnurse
 const upcommingcamp = require('./routes/headnurse/upcommingcamp');
 const donors = require('./routes/headnurse/donors');
+ 
 
 
 
@@ -89,7 +92,8 @@ app.use("/camp/selectongoingcamp",ongoingCamp);
 app.use("/camp/selectpastcamp",pastCamp); 
 app.use("/camp/pendingcampview",pendingCampView); 
 app.use("/camp/staffmembers",getMedicalStaff); 
-
+app.use("/camp/confirmationcamp",campStatus); 
+app.use("/camp/confirmationcamp",assignStaff); 
 
 app.use("/medicalstaff/doctor",addDoctor);
 app.use("/medicalstaff/selectdoctor",selectDoctor);
