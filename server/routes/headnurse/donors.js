@@ -1,15 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const historyRecordsSelect = require('../../services/registerDonor/historyRecordsSelect');
+const donors = require('../../services/headnurse/donors');
 
 
 router.post('/',async function(req, res) {
-    const regDonor = req.body.regDonorNic;
-    await historyRecordsSelect.getHistoryRecords(regDonor).then(
-        (regDonor) =>{
-            const records =regDonor;
+    await donors.getDonors().then(
+        (user) =>{
+            const donors =user;
             return res.json({
-                records : records
+                donors :donors
             })
         }).catch((err) => {
             console.log(err);

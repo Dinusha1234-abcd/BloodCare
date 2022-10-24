@@ -2,8 +2,8 @@ const db = require('../db');
 
 
 
-async function getHistoryRecords(){
-    const rows =await db.query( `SELECT * FROM user INNNER JOIN blood_donation ON user.userNic = blood_donation.registedDonorId`);
+async function getHistoryRecords(regDonorNic){
+    const rows =await db.query( `SELECT blood_camp.date,blood_camp.place, blood_donation.bloodCounterNumber FROM blood_camp INNER JOIN blood_donation INNER JOIN register_donor ON blood_donation.registedDonorId=register_donor.registerDonorId WHERE register_donor.userNic=?`,[regDonorNic]);
     const data =rows;
     return rows;
 }

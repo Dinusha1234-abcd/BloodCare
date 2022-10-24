@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SlideMenuRegDonor from "../components/component.slidemenu.registerDonor";
 import '../assests/css/page.regdonor.camp.css';
 import futureCamp from '../assests/images/furtureCamp.png';
@@ -7,10 +7,59 @@ import pastCamp from '../assests/images/pastCamp.png';
 import PendingCamp from '../assests/images/camp.png';
 import map from '../assests/images/map.PNG';
 import { Link } from "react-router-dom";
+import axios from "axios";
 export default function RegDonorCamp() {
+    const [slidemenu, setSlideMenu] = useState(true);
+    const [date, setDate] = useState();
+    const [loading, setLoading] = useState(true);
+    const [unsuccessMessage, setUnsuccessMessage] = useState("");
+    const [unsuccess, setUnSuccess] = useState(false);
+    const [searchData, setSearchData] = useState("");
+    const [success, setSuccess] = useState(false);
+
+    const [firstRow, setFirstRow] = useState(0);
+    const [lastRow, setLastRow] = useState(0);
+    const [pageNumber, setPageNumber] = useState(1);
+
+    const passData = (data) => {
+        setSlideMenu(data);
+    };
+    // useEffect((() => {getCampMoreDetails() }),[])
+    // function getCampMoreDetails(){
+    //     axios.get(" http://localhost:8070/registerdonor/").then(
+    //         (res) => {
+    //             setData(res.data.camps);
+    //             if(data.length <11){
+    //                 setLastRow(data.length);
+    //             }else {
+    //                 setLastRow(10);
+    //             }
+    //             console.log(lastRow);
+    //             setLoading(!loading);
+    //         }).catch((err) => {
+    //             setLoading(!loading);
+    //             setUnsuccessMessage("Network Connection Issue Please Try Again");
+    //             setUnSuccess(true)
+    //         })
+    // }
+    // function unsucessbutton(){
+    //     window.location ="/blood_camps";
+    // }
+    // const list = [];
+
+    // if(searchData == "") {
+    //     for(let i = firstRow; i< data.length; i++){
+    //         list.push(
+    //             <><tr>
+                   
+    //             </tr>
+    //             </>
+    //         )
+    //     }
+    // }
     return (
         <div>
-            <SlideMenuRegDonor headerName={"Upcoming Camp Details"}/>
+            <SlideMenuRegDonor headerName={"Upcoming Camp Details"} passData={passData}/>
             <input type="text" id='input-date' placeholder=" &#xf002;"/> 
             <div id="camp-container1"> 
                 <div id="camp-details">
