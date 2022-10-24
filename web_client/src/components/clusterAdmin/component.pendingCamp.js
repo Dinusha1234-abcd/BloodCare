@@ -4,6 +4,8 @@ import axios from 'axios';
 import '../../assests/css/component.pendingCamp.css';
 import loadingImage from '../../assests/images/loading.gif';
 import waitImage from '../../assests/images/wait.gif';
+import unsuccessImage from '../../assests/images/wrong.png';
+
 
 export default function PendingCamp() {
 
@@ -39,6 +41,12 @@ export default function PendingCamp() {
                 setUnSuccess(true)
             })
 
+    }
+    function sucessbutton() {
+        window.location = "/bloodcamp/pendingcamp";
+    }
+    function unsucessbutton() {
+        window.location = "/bloodcamp/pendingcamp";
     }
     const list = [];
     if (searchData == "") {
@@ -83,6 +91,12 @@ export default function PendingCamp() {
 
             <div id='past-camp-contanier'>
             <div id={`${wait ? 'wait-cluterAdmin-active' : 'wait-cluterAdmin'}`}> <img id='wait-cluterAdmin-image' src={waitImage} /> </div>
+            <div id={`${unsuccess ? 'unsucess-message-active' : 'unsucess-message'}`}>
+                    <br /> <h1 id='sucess-message-name'> <img id='unsuccessImage' src={unsuccessImage} /> <br /> Wrong !</h1>  <br />
+                    <p id='unsucess-message-box'> {unsuccessMessage}</p> <br />
+                    <button id="okay-button-unsucess" onClick={() => { setSuccess(unsucessbutton) }}> Okay </button>
+                </div>
+                <div id={`${success || unsuccess || wait ?  'fade-clusterAdmin' : null}`} ></div>
                 <h3 id='header-clusterAdmin'>Pending Camps Details</h3>
                 <input type="text" id='input-pastCamp' placeholder=" &#xf002; Enter Camp Number" />
                 <br /><br />
