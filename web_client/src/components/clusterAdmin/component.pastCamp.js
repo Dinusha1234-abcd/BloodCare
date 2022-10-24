@@ -51,7 +51,7 @@ export default function PastCamp() {
                 <> <tr>
                     <td>{data[i]['bloodCampNumber']}</td>
                     <td>{data[i]['date'].substring(0, 10)}</td>
-                    <td>{data[i]['name']}</td>
+                    <td>{data[i]['organizerName']}</td>
                     <td>{data[i]['numberofregisters']}</td>
                     <td>{data[i]['numberofregisters']}</td>
                     <td>
@@ -67,7 +67,7 @@ export default function PastCamp() {
                     <> <tr>
                         <td>{data[i]['bloodCampNumber']}</td>
                         <td>{data[i]['date'].substring(0, 10)}</td>
-                        <td>{data[i]['name']}</td>
+                        <td>{data[i]['organizerName']}</td>
                         <td>{data[i]['numberofregisters']}</td>
                         <td>{data[i]['numberofregisters']}</td>
                         <td>

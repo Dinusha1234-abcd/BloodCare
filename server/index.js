@@ -14,10 +14,13 @@ app.max_user_connections = 200;
 //clusterAdmin
 
 const pendingCamp = require('./routes/clusterAdmin/camp/pendingCamp/selectPendingCamp');
+const pendingCampView = require('./routes/clusterAdmin/camp/pendingCamp/pendingCampView');
+const getMedicalStaff = require('./routes/clusterAdmin/camp/pendingCamp/getStaffMembers')
 const upcomingCamp = require('./routes/clusterAdmin/camp/upcomingCamp/selectUpcomingCamp');
 const pastCamp = require('./routes/clusterAdmin/camp/pastCamp/selectpastCamp');
 const ongoingCamp = require('./routes/clusterAdmin/camp/ongoingCamp/selectOngoingCamp')
-
+ 
+  
 const addDoctor = require('./routes/clusterAdmin/medicalStaff/doctor/addDoctor');
 const selectDoctor = require('./routes/clusterAdmin/medicalStaff/doctor/selectDoctor'); 
 const updateDoctor = require('./routes/clusterAdmin/medicalStaff/doctor/updateDoctor');
@@ -54,6 +57,10 @@ const selectMedicalOfficer = require('./routes/admin/users/medicalOfficer/select
 const selectClusterCenter = require('./routes/admin/clusterCenter/selectClusterCenter');
 const addClusterCenter = require('./routes/admin/clusterCenter/addClusterCenter');
 
+//headnurse
+const upcommingcamp = require('./routes/headnurse/upcommingcamp');
+const donors = require('./routes/headnurse/donors');
+
 
 
 
@@ -80,6 +87,9 @@ app.use("/camp/selectpendingcamp",pendingCamp);
 app.use("/camp/selectupcomingcamp",upcomingCamp); 
 app.use("/camp/selectongoingcamp",ongoingCamp); 
 app.use("/camp/selectpastcamp",pastCamp); 
+app.use("/camp/pendingcampview",pendingCampView); 
+app.use("/camp/staffmembers",getMedicalStaff); 
+
 
 app.use("/medicalstaff/doctor",addDoctor);
 app.use("/medicalstaff/selectdoctor",selectDoctor);
@@ -115,6 +125,9 @@ app.use("/users/selectMedicalOfficer", selectMedicalOfficer);
 app.use("/clusterCenter/selectClusterCenter", selectClusterCenter);
 app.use("/clusterCenter/addClusterCenter", addClusterCenter);
 
+//headnurse
+// app.use("/headnurse/upcommingamp.js",upcommingamp);
+app.use("/headnurse/donors",donors);
 
 
 app.listen(port,()=>{

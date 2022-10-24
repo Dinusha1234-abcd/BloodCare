@@ -13,7 +13,7 @@ async function insertDriver(centerNumber,firstName,lastName,NIC,gender,dateOfBir
     [NIC,firstName,lastName,gender,dateOfBirth,'6',email,mobileNumber,address]);
    
  
-    await db.query( `INSERT INTO medical_staff(staffId, bloodCenterNo, type, userNic) VALUES (?,?,?,?)`,
+    await db.query( `INSERT INTO medical_staff(staffId, bloodCenterNo, medicalType, userNic) VALUES (?,?,?,?)`,
     [ '',centerNumber,'driver',NIC]);
     
 }
