@@ -21,7 +21,7 @@ async function insertHeadNurse(centerNumber, firstName, lastName, NIC, gender, d
     await db.query(`INSERT INTO  login ( userName , password, lastAccessTime, lastAccessDate) VALUES ( ?,?,?,?)`,
         [NIC, hashpassword, time, date]);
 
-    await db.query(`INSERT INTO medical_staff(staffId, bloodCenterNo, type, userNic) VALUES (?,?,?,?)`,
+    await db.query(`INSERT INTO medical_staff(staffId, bloodCenterNo, medicalType, userNic) VALUES (?,?,?,?)`,
         ['', centerNumber, 'headNurse', NIC]);
     await db.query(`INSERT INTO head_nurse  (headNurseId, bloodCenterNo, userNic ) VALUES (?,?,?,?)`,
         ['', centerNumber, NIC]);

@@ -47,12 +47,12 @@ export default function PendingCamp() {
                 <> <tr>
                    
                     <td>{data[i]['date'].substring(0, 10)}</td>
-                    <td>{data[i]['name']}</td>
+                    <td>{data[i]['organizerName']}</td>
                     <td>{data[i]['place']}</td>
                     <td>{data[i]['watingRegister']}</td>
 
                     <td>
-                    <td><Link to='/bloodcamp/pendingcampView/Amila Sandanayake/982345678V/Bokundara/0777123456/gimhani@gmail.com' id='view-button-pastcamp'>View</Link></td>
+                    <td><Link to={`${'/bloodcamp/pendingcampView/'+data[i]['bloodCampNumber']+'/'+data[i]['date'].substring(0,10)}`} id='view-button-pastcamp'>View</Link></td>
 
                     </td>
                 </tr>
@@ -65,10 +65,10 @@ export default function PendingCamp() {
                     <> <tr>
                         <td>{data[i]['bloodCampNumber']}</td>
                         <td>{data[i]['date'].substring(0, 10)}</td>
-                        <td>{data[i]['name']}</td>
+                        <td>{data[i]['organizerName']}</td>
                         <td>{data[i]['watingRegister']}</td>
                         <td>
-                        <td><Link to='/bloodcamp/pendingcampView/Amila Sandanayake/982345678V/Bokundara/0777123456/gimhani@gmail.com' id='view-button-pastcamp'>View</Link></td>
+                        <td><Link to={`${'/bloodcamp/pendingcampView/'+data[i]['bloodCampNumber']+'/'+data[i]['date'].substring(0,10)}`} id='view-button-pastcamp'>View</Link></td>
 
                         </td>
                     </tr>
@@ -82,6 +82,7 @@ export default function PendingCamp() {
         <div>
 
             <div id='past-camp-contanier'>
+            <div id={`${wait ? 'wait-cluterAdmin-active' : 'wait-cluterAdmin'}`}> <img id='wait-cluterAdmin-image' src={waitImage} /> </div>
                 <h3 id='header-clusterAdmin'>Pending Camps Details</h3>
                 <input type="text" id='input-pastCamp' placeholder=" &#xf002; Enter Camp Number" />
                 <br /><br />

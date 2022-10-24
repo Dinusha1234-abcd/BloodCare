@@ -61,7 +61,7 @@ export default function PendingCampView() {
                  
                 </div>
             </div>
-            <div id='medicalstaff-display-table-display'>
+            <div id='medicalstaff-display-table-display-clusteradmin'>
                  <h3 id='pending-camp-header-display-clusterAdmin'>Available Medical Staff Members</h3>
                  <table id="medical-staff-view-table">
                         <tr> 

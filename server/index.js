@@ -14,10 +14,13 @@ app.max_user_connections = 200;
 //clusterAdmin
 
 const pendingCamp = require('./routes/clusterAdmin/camp/pendingCamp/selectPendingCamp');
+const pendingCampView = require('./routes/clusterAdmin/camp/pendingCamp/pendingCampView');
+const getMedicalStaff = require('./routes/clusterAdmin/camp/pendingCamp/getStaffMembers')
 const upcomingCamp = require('./routes/clusterAdmin/camp/upcomingCamp/selectUpcomingCamp');
 const pastCamp = require('./routes/clusterAdmin/camp/pastCamp/selectpastCamp');
 const ongoingCamp = require('./routes/clusterAdmin/camp/ongoingCamp/selectOngoingCamp')
-
+ 
+  
 const addDoctor = require('./routes/clusterAdmin/medicalStaff/doctor/addDoctor');
 const selectDoctor = require('./routes/clusterAdmin/medicalStaff/doctor/selectDoctor'); 
 const updateDoctor = require('./routes/clusterAdmin/medicalStaff/doctor/updateDoctor');
@@ -45,7 +48,7 @@ const selectDonor = require('./routes/clusterAdmin/registerDonor/selectDonor');
 //registerDonor
 const homeSelectCamp = require('./routes/registerDonor/homeSelectCamp');
 const historyRecordsSelect =require('./routes/registerDonor/historyRecordsSelect');
- 
+const campAllDetail =require('./routes/registerDonor/campAllDetail');
 
 //admin
 const addClusterAdmin = require('./routes/admin/users/clusterAdmin/addClusterAdmin');
@@ -85,6 +88,9 @@ app.use("/camp/selectpendingcamp",pendingCamp);
 app.use("/camp/selectupcomingcamp",upcomingCamp); 
 app.use("/camp/selectongoingcamp",ongoingCamp); 
 app.use("/camp/selectpastcamp",pastCamp); 
+app.use("/camp/pendingcampview",pendingCampView); 
+app.use("/camp/staffmembers",getMedicalStaff); 
+
 
 app.use("/medicalstaff/doctor",addDoctor);
 app.use("/medicalstaff/selectdoctor",selectDoctor);
@@ -111,7 +117,7 @@ app.use("/registerdonor/selectdonor",selectDonor);
 //register Donor
 app.use("/registerDonor/homeSelectCamp",homeSelectCamp);
 app.use("/registerDonor/historyRecordsSelect",historyRecordsSelect);
-
+app.use("/registerDonor/campAllDetail",campAllDetail);
 
 //admin
 app.use("/users/addClusterAdmin",addClusterAdmin);
