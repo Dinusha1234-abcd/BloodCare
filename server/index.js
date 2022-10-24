@@ -50,11 +50,12 @@ const selectDonor = require('./routes/clusterAdmin/registerDonor/selectDonor');
 //registerDonor
 const homeSelectCamp = require('./routes/registerDonor/homeSelectCamp');
 const historyRecordsSelect =require('./routes/registerDonor/historyRecordsSelect');
- 
+const campAllDetail =require('./routes/registerDonor/campAllDetail');
 
 //admin
 const addClusterAdmin = require('./routes/admin/users/clusterAdmin/addClusterAdmin');
 const selectMedicalOfficer = require('./routes/admin/users/medicalOfficer/selectMedicalOfficer');
+const addMedicalOfficer = require('./routes/admin/users/medicalOfficer/addMedicalOfficer');
 
 const selectClusterCenter = require('./routes/admin/clusterCenter/selectClusterCenter');
 const addClusterCenter = require('./routes/admin/clusterCenter/addClusterCenter');
@@ -120,11 +121,12 @@ app.use("/registerdonor/selectdonor",selectDonor);
 //register Donor
 app.use("/registerDonor/homeSelectCamp",homeSelectCamp);
 app.use("/registerDonor/historyRecordsSelect",historyRecordsSelect);
-
+app.use("/registerDonor/campAllDetail",campAllDetail);
 
 //admin
 app.use("/users/addClusterAdmin",addClusterAdmin);
 app.use("/users/selectMedicalOfficer", selectMedicalOfficer);
+app.use("/users/addMedicalOfficer", addMedicalOfficer);
 
 app.use("/clusterCenter/selectClusterCenter", selectClusterCenter);
 app.use("/clusterCenter/addClusterCenter", addClusterCenter);

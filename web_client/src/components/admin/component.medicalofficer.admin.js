@@ -2,9 +2,12 @@ import React,{useEffect, useState} from 'react';
 import axios from 'axios';
 import '../../assests/css/admin/component.medicalofficer.admin.css';
 import successImage from '../../assests/images/sucess.png';
+import unsuccessImage from '../../assests/images/wrong.png';
+import loadingImage from '../../assests/images/loading.gif';
+import waitImage from '../../assests/images/wait.gif';
+import alert from '../../assests/images/alert.png';
 import '../../assests/css/admin/component.user.search.admin.css';
-import lottie from "lottie-web";
-// import loading from '../assests/images/loading.gif';
+
 
 export default function MedicalOfficer(){
 
@@ -16,43 +19,42 @@ export default function MedicalOfficer(){
     const [email, setEmail] = useState("");
     const [mobileNumber, setMobileNumber] = useState("");
     const [password , setPassword] = useState("")
+
     const [ message,setMessage] = useState("");
     const [success, setSuccess] = useState(false);
     const [data, setData] = useState([]);
     const [searchData, setSearchData] = useState("");
+    const [wait, setWait] = useState(false);
+    const [unsuccess, setUnSuccess] = useState(false);
+    const [successMessage, setSuccessMessage] = useState("");
+    const [unsuccessMessage, setUnsuccessMessage] = useState("");
+    const [loading, setLoading] = useState(true);
+    
 
-    // let loading = require("../assests/images/loading.gif")
 
     useEffect((() => {getMedicalOfficerData() }), [])
     function getMedicalOfficerData() {
-        // lottie.loadAnimation({
-        //     container: document.querySelector("#loading-image"),
-        // });
 
-        const adminNic = localStorage.getItem('userNic');
-        const admin = {
-            adminNic
-        }
-        console.log("call");
-
-        axios.post("http://localhost:8070/users/selectMedicalOfficer", admin).then(
+        axios.post("http://localhost:8070/users/selectMedicalOfficer").then(
             (res) => {
                 setData(res.data.medicalOfficers);
                 console.log(res.data);
+
+                setLoading(!loading);
             }
         ).catch((err) => {
             //server error
-            console.log(err.message);
+            setLoading(!loading);
+            setUnsuccessMessage("Network Connection Issue Please Try Again");
+            setUnSuccess(true);
         })
     }
 
 
-    console.log(data[1]);
     function addMedicalOfficer(e){
+        let dayData;
         e.preventDefault()
-        const adminNic = localStorage.getItem('userNic');
         const mo = {
-            adminNic,
             firstName,
             lastName,
             NIC,
@@ -61,12 +63,26 @@ export default function MedicalOfficer(){
             mobileNumber,
             password,
         }
+
+        //check NIC number length
+        if (NIC.length == 10) {
+            dayData = NIC.substr(2, 3)
+           if (dayData > 500) {
+               dayData = dayData - 500;
+           }
+       }
+       if (NIC.length == 12) {
+             dayData = NIC.substr(4, 3)
+           if (dayData > 500) {
+               dayData = dayData - 500;
+           }
+       }
+
         if(firstName.length==0){
             setMessage("Please Enter First Name ");
         }else if(lastName.length==0){
             setMessage("Please Enter Last Name ");
-        }else if(!(NIC.length==10 ||NIC.length==12 )){
-            console.log(NIC.length);
+        }else if(!(NIC.length==10 ||NIC.length==12 ) && (dayData  < 1 && dayData > 366)){
             setMessage("Please Enter  Valid NIC Number ");
         }else if(address.length==0){
             setMessage("Please Enter  Address ");
@@ -95,28 +111,41 @@ export default function MedicalOfficer(){
             axios.post("http://localhost:8070/users/medicalofficer", mo).then(
                 (res)=> {
                     //check password and username  
-                    if(res['data']['message']=="success"){
-                        window.location = "/users/medicalOfficer";
-                      
-                    }else{
-                        setMessage("Username or Password is Not match");
+                    if (res['data']['message'] == "success") {
+                        setWait(false);
+                        setSuccessMessage("MedicalOfficer Added Sucessfully")
+                        setSuccess(true);
+
+
+                    } else {
+                        setWait(false);
+                        setUnsuccessMessage("Enter Id Number already Registered");
+                        setUnSuccess(true);
                     }
                   
                 }
               ).catch((err)=>{
                 //sever error
-                 console.log(err.message);
+                setWait(false);
+                setUnsuccessMessage("Network Connection Issue Please Try Again");
+                setUnSuccess(true)
               }) 
         }
     }
-    function successMessage() {
-        if(success){ 
-        return(
-            <div id='sucess-message'>
-              <img id='successImage' src={successImage}/>  <h3 id='sucess-message-name'> Dr {firstName + " " + lastName} Sucessfully Added   <i class="fa-solid fa-xmark close-button-success" onClick={ () =>{ setMessage("")}}></i></h3>
-            </div>
-        )}
+    function sucessbutton() {
+        window.location = "/users/medicalOfficer";
     }
+    function unsucessbutton() {
+        window.location = "/users/medicalOfficer";
+    }
+    // function successMessage() {
+    //     if(success){ 
+    //     return(
+    //         <div id='sucess-message'>
+    //           <img id='successImage' src={successImage}/>  <h3 id='sucess-message-name'> Dr {firstName + " " + lastName} Sucessfully Added   <i class="fa-solid fa-xmark close-button-success" onClick={ () =>{ setMessage("")}}></i></h3>
+    //         </div>
+    //     )}
+    // }
 
     const list = [];
     if(searchData == "") {
@@ -156,10 +185,22 @@ export default function MedicalOfficer(){
         <div>
             <div id='user-contanier-admin'>
 
-                <div id={`${success ? 'sucess-message-active' :'sucess-message' }`}>
-                    <img id='successImage' src={successImage}/>  <h3 id='sucess-message-name'> Dr {firstName + " " + lastName} Added Sucessfully <i class="fa-solid fa-xmark close-button-success" onClick={ () =>{ setSuccess(!success)}}></i></h3>
+                {/* Success message/ */}
+                <div id={`${success ? 'sucess-message-active' : 'sucess-message'}`}>
+                    <br /> <h1 id='sucess-message-name'> <img id='successImage' src={successImage} /> <br /> Success !</h1>  <br />
+                    <p id='sucess-message-box'>{successMessage}</p> <br></br>
+                    <button id="okay-button" onClick={() => { setSuccess(sucessbutton) }}> Okay </button>
                 </div>
-                <div id={`${formReg ? 'fade-clusterAdmin' : null}`}onClick={ () =>{ setFormReg(!formReg)}}></div>
+
+                <div id={`${wait ? 'wait-cluterAdmin-active' : 'wait-cluterAdmin'}`}> <img id='wait-cluterAdmin-image' src={waitImage} /> </div>
+
+                <div id={`${unsuccess ? 'unsucess-message-active' : 'unsucess-message'}`}>
+                    <br /> <h1 id='sucess-message-name'> <img id='unsuccessImage' src={unsuccessImage} /> <br /> Wrong !</h1>  <br />
+                    <p id='unsucess-message-box'> {unsuccessMessage}</p> <br />
+                    <button id="okay-button-unsucess" onClick={() => { setSuccess(unsucessbutton) }}> Okay </button>
+                </div>
+
+                <div id={`${formReg || success || unsuccess ? 'fade-clusterAdmin' : null}`}onClick={ () =>{ setFormReg(!formReg)}}></div>
 
                 <h7 id='header-user-admin'>MEDICAL OFFICERS</h7>
                 <input type="text" id='input-user-admin' placeholder=" &#xf002; Search"/>
@@ -174,20 +215,13 @@ export default function MedicalOfficer(){
                     <th id='user-action-admin'>Action</th>
                     <th id='user-action-admin'>Action</th>
                 </tr>
-                {/* <tr>
-                    <td>988438430V</td>
-                    <td>Dr. K.G.Weerasinghe</td>
-                    <td>weer2@gmail.com</td>
-                    <td>071-0987654</td>
-                    <td><button id='view-user-button-admin'>View</button></td>
-                    <td><button id='remove-user-button-admin'>Deactivate</button></td>
-                </tr> */}
+                
                 {list}
                 
                 
             </table>
-          
-
+            <div id={`${loading ? 'loading-cluterAdmin-active' : 'loading-cluterAdmin'}`}> <img src={loadingImage} /> </div>
+{/* insert medical officer */}
             <div id={ `${ formReg ? 'register-form-user-admin-active' : 'register-form-user-admin'}`}>
                   
                     

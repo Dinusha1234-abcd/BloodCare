@@ -8,9 +8,11 @@ import PendingCamp from '../assests/images/camp.png';
 import map from '../assests/images/map.PNG';
 import { Link } from "react-router-dom";
 import axios from "axios";
+import unsuccessImage from '../assests//images/wrong.png';
+import loadingImage from '../assests/images/loading.gif';
 export default function RegDonorCamp() {
     const [slidemenu, setSlideMenu] = useState(true);
-    const [date, setDate] = useState();
+    const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [unsuccessMessage, setUnsuccessMessage] = useState("");
     const [unsuccess, setUnSuccess] = useState(false);
@@ -20,47 +22,70 @@ export default function RegDonorCamp() {
     const [firstRow, setFirstRow] = useState(0);
     const [lastRow, setLastRow] = useState(0);
     const [pageNumber, setPageNumber] = useState(1);
-
+    const regDonorNic = localStorage.getItem('userNic');
     const passData = (data) => {
         setSlideMenu(data);
     };
-    // useEffect((() => {getCampMoreDetails() }),[])
-    // function getCampMoreDetails(){
-    //     axios.get(" http://localhost:8070/registerdonor/").then(
-    //         (res) => {
-    //             setData(res.data.camps);
-    //             if(data.length <11){
-    //                 setLastRow(data.length);
-    //             }else {
-    //                 setLastRow(10);
-    //             }
-    //             console.log(lastRow);
-    //             setLoading(!loading);
-    //         }).catch((err) => {
-    //             setLoading(!loading);
-    //             setUnsuccessMessage("Network Connection Issue Please Try Again");
-    //             setUnSuccess(true)
-    //         })
-    // }
-    // function unsucessbutton(){
-    //     window.location ="/blood_camps";
-    // }
-    // const list = [];
+    useEffect((() => {getCampMoreDetails() }),[])
+    function getCampMoreDetails(){
+        // const regDonorNic = localStorage.getItem('userNic');
+        // const regDonor = {
+        //     regDonorNic
+        // }
+        axios.post("http://localhost:8070/registerdonor/campAllDetail").then(
+            (res) => {
+                setData(res.data.allCamps);
+                if(data.length <11){
+                    setLastRow(data.length);
+                }else {
+                    setLastRow(10);
+                }
+                console.log(100);
+                setLoading(!loading);
+            }).catch((err) => {
+                setLoading(!loading);
+                setUnsuccessMessage("Network Connection Issue Please Try Again");
+                setUnSuccess(true)
+            })
+    }
+    function unsucessbutton(){
+        window.location ="/blood_camps";
+    }
+    const list = [];
 
-    // if(searchData == "") {
-    //     for(let i = firstRow; i< data.length; i++){
-    //         list.push(
-    //             <><tr>
-                   
-    //             </tr>
-    //             </>
-    //         )
-    //     }
-    // }
+    if(searchData == "") {
+        for(let i = firstRow; i< data.length; i++){
+            list.push(
+                <><tr>
+                    <td>{data[i]['name']}</td>
+                    <td>{data[i]['date'].substring(0, 10)}</td>
+                    <td>{data[i]['place']}</td>
+                </tr>
+                </>
+            )
+        }
+    } else {
+        for (let i = 0; i < 10; i++) {
+            if (searchData == data[i]['userNic']) {
+                list.push(
+                    <><tr>
+                        <td>{data[i]['name']}</td>
+                        <td>{data[i]['date'].substring(0, 10)}</td>
+                        <td>{data[i]['place']}</td>
+                    </tr>
+                    </>
+                )
+
+            }
+        }
+    }
     return (
         <div>
             <SlideMenuRegDonor headerName={"Upcoming Camp Details"} passData={passData}/>
+            <div id={`${slidemenu ? 'state-change-true' : 'state-change-false'}`} ></div>
             <input type="text" id='input-date' placeholder=" &#xf002;"/> 
+            {/* <div id={`${unsuccess ? 'unsucess-message-active' : 'unsucess-message'}`}></div> */}
+            {/* {list} */}
             <div id="camp-container1"> 
                 <div id="camp-details">
                     <img id="campimg" src={futureCamp} />
