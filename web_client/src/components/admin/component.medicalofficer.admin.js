@@ -108,7 +108,7 @@ export default function MedicalOfficer(){
               setEmail('');
               e.target.reset();
             // pass check the data with server 
-            axios.post("http://localhost:8070/users/medicalofficer", mo).then(
+            axios.post("http://localhost:8070/users/addMedicalOfficer", mo).then(
                 (res)=> {
                     //check password and username  
                     if (res['data']['message'] == "success") {
@@ -262,7 +262,7 @@ export default function MedicalOfficer(){
                           </tr>
                           <tr>
                               <td>Password</td>
-                              <td>   <input type="text" id="register-form-user-input-admin" placeholder="Enter Password"  onChange={(e)=>{setPassword(e.target.value)}}  /> <br />
+                              <td>   <input type="password" id="register-form-user-input-admin" placeholder="Enter Password"  onChange={(e)=>{setPassword(e.target.value)}}  /> <br />
                               </td>
                           </tr>
                            

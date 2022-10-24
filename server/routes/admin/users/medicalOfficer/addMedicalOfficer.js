@@ -23,7 +23,7 @@ router.post('/', async function (req, res) {
     const address = req.body.address;
     const email = req.body.email;
     const mobileNumber = req.body.mobileNumber;
-    const password = req.body.hashPassword;
+    const password = req.body.password;
     //const password = genPassword();
 
     //hash the password 
