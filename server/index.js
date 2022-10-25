@@ -62,11 +62,12 @@ const profileDetail =require('./routes/registerDonor/profileDetail');
 
 //admin
 
-// const addClusterAdmin = require('./routes/admin/users/clusterAdmin/addClusterAdmin');
+const addClusterAdmin = require('./routes/admin/users/clusterAdmin/addClusterAdmin');
 const selectClusterAdmin = require('./routes/admin/users/clusterAdmin/selectClusterAdmin');
 
 const selectMedicalOfficer = require('./routes/admin/users/medicalOfficer/selectMedicalOfficer');
 const addMedicalOfficer = require('./routes/admin/users/medicalOfficer/addMedicalOfficer');
+const removeMedicalOfficer = require('./routes/admin/users/medicalOfficer/removeMedicalOfficer');
 
 const selectDoctorAdmin = require('./routes/admin/users/doctor/selectDoctor');
 const selectHeadNurseAdmin = require('./routes/admin/users/headNurse/selectHeadNurse');
@@ -154,11 +155,12 @@ app.use("/registerDonor/profileDetail",profileDetail);
 
 //admin
 
-// app.use("/users/addClusterAdmin",addClusterAdmin);
+app.use("/users/addClusterAdmin",addClusterAdmin);
 app.use("/users/selectClusterAdmin",selectClusterAdmin);
 
 app.use("/users/selectMedicalOfficer", selectMedicalOfficer);
 app.use("/users/addMedicalOfficer", addMedicalOfficer);
+app.use("/users/removeMedicalOfficer", removeMedicalOfficer);
 
 app.use("/users/selectDoctor", selectDoctorAdmin);
 app.use("/users/selectHeadNurse", selectHeadNurseAdmin);
