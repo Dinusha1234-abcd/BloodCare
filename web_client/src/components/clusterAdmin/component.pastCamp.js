@@ -65,8 +65,8 @@ export default function PastCamp() {
                     <td>{data[i]['numberofregisters']}</td>
                     <td>{data[i]['numberofregisters']}</td>
                     <td>
-                        <td><Link to='/bloodcamp/pastcampView/Yasswin Bandara/982345678V/Boralasgamuwa/0777123456/yasswin@gmail.com' id='view-button-pastcamp'>View</Link></td>
-                    </td>
+                    <td><Link to={`${'/bloodcamp/pastcampView/' + data[i]['bloodCampNumber'] + '/' + data[i]['date'].substring(0, 10)}`} id='view-button-pastcamp'>View</Link></td>
+                        </td>
                 </tr>
                 </>)
             }

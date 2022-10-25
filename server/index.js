@@ -19,10 +19,15 @@ const getMedicalStaff = require('./routes/clusterAdmin/camp/pendingCamp/getStaff
 const campStatus = require('./routes/clusterAdmin/camp/pendingCamp/statusPendingCamp');
 const assignStaff = require('./routes/clusterAdmin/camp/pendingCamp/assignStaff');
 const upcomingCamp = require('./routes/clusterAdmin/camp/upcomingCamp/selectUpcomingCamp');
+const upcomingCampView = require('./routes/clusterAdmin/camp/upcomingCamp/upcomingCampView');
+const getRegisters = require('./routes/clusterAdmin/camp/upcomingCamp/getRegisters');
+const ongoingCampView = require('./routes/clusterAdmin/camp/ongoingCamp/ongoingCampView');
+const getRegistersOngoing = require('./routes/clusterAdmin/camp/ongoingCamp/getRegisters');
 const pastCamp = require('./routes/clusterAdmin/camp/pastCamp/selectpastCamp');
 const ongoingCamp = require('./routes/clusterAdmin/camp/ongoingCamp/selectOngoingCamp')
- 
-  
+const pastCampView = require('./routes/clusterAdmin/camp/pastCamp/pastCampView'); 
+const pastCampDonors = require('./routes/clusterAdmin/camp/pastCamp/getDonotion');
+
 const addDoctor = require('./routes/clusterAdmin/medicalStaff/doctor/addDoctor');
 const selectDoctor = require('./routes/clusterAdmin/medicalStaff/doctor/selectDoctor'); 
 const updateDoctor = require('./routes/clusterAdmin/medicalStaff/doctor/updateDoctor');
@@ -103,12 +108,19 @@ app.use("/camp/register",campRegister);
 //cluster Admin
 app.use("/camp/selectpendingcamp",pendingCamp); 
 app.use("/camp/selectupcomingcamp",upcomingCamp); 
+app.use("/camp/selectupcomingcampview",upcomingCampView); 
+
 app.use("/camp/selectongoingcamp",ongoingCamp); 
 app.use("/camp/selectpastcamp",pastCamp); 
 app.use("/camp/pendingcampview",pendingCampView); 
 app.use("/camp/staffmembers",getMedicalStaff); 
 app.use("/camp/confirmationcamp",campStatus); 
 app.use("/camp/assigncamp",assignStaff); 
+app.use("/camp/registercampusers",getRegisters); 
+app.use("/camp/assigncamp",ongoingCampView); 
+app.use("/camp/registercampusers",getRegistersOngoing); 
+app.use("/camp/pastcampview",pastCampView); 
+app.use("/camp/getpastcampdonors",pastCampDonors); 
 
 app.use("/medicalstaff/doctor",addDoctor);
 app.use("/medicalstaff/selectdoctor",selectDoctor);
@@ -161,7 +173,7 @@ app.use("/clusterCenter/addClusterCenter", addClusterCenter);
 
 
 //headnurse
-app.use("/headnurse/upcommingamp.js",upcommingamp);
+// app.use("/headnurse/upcommingamp.js",upcommingamp);
 app.use("/headnurse/donors",donors);
 
 

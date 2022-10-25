@@ -19,7 +19,7 @@ import ClusterAdminBloodCamp from './pages/page.clusterAdmin.bloodCamp';
 import ClusterAdminMedicalStaff from './pages/page.clusterAdmin.medicalStaff';
 import ClusterAdminDonors from './pages/page.clusterAdmin.donors';
 import ClusterAdminBlood from './pages/page.clusterAdmin.blood'; 
-import {ClusterAdminPendingCampView , ClusterAdminPastCampView } from './pages/page.clusterAdmin.campView';
+import {ClusterAdminPendingCampView , ClusterAdminPastCampView ,ClusterAdminUpcomingCampView} from './pages/page.clusterAdmin.campView';
   
 //Medical Officer
 import MedicalOfficerDashboard from "./pages/page.medicalofficer.dashboard";
@@ -117,7 +117,8 @@ function App() {
             <Route path='/bloodcamp/futurecamp' exact element={<ClusterAdminBloodCamp />} />
             <Route path='/bloodcamp/pendingcamp' exact element={<ClusterAdminBloodCamp />} />
             <Route path='/bloodcamp/pendingcampView/:id/:date' exact element={<ClusterAdminPendingCampView />} />
-            <Route path='/bloodcamp/pastcampView/:name/:id/:place/:mobile/:email' exact element={<ClusterAdminPastCampView />} />
+            <Route path='/bloodcamp/upcommingcampView/:id/:date' exact element={<ClusterAdminUpcomingCampView />} />
+            <Route path='/bloodcamp/pastcampView/:id/:date' exact element={<ClusterAdminPastCampView />} />
             <Route path='/medicalstaff' exact element={<ClusterAdminMedicalStaff />} />
             <Route path='/medicalstaff/doctor' exact element={<ClusterAdminMedicalStaff />} />
             <Route path='/medicalstaff/headNurse' exact element={<ClusterAdminMedicalStaff />} />
