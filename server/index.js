@@ -75,7 +75,7 @@ const addClusterCenter = require('./routes/admin/clusterCenter/addClusterCenter'
 
 
 //headnurse
-// const upcommingcamp = require('./routes/headnurse/upcommingcamp');
+const upcommingcamp = require('./routes/headnurse/upcommingcamp');
 const donors = require('./routes/headnurse/donors');
  
 
