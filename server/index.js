@@ -94,7 +94,7 @@ app.use("/camp/selectpastcamp",pastCamp);
 app.use("/camp/pendingcampview",pendingCampView); 
 app.use("/camp/staffmembers",getMedicalStaff); 
 app.use("/camp/confirmationcamp",campStatus); 
-app.use("/camp/confirmationcamp",assignStaff); 
+app.use("/camp/assigncamp",assignStaff); 
 
 app.use("/medicalstaff/doctor",addDoctor);
 app.use("/medicalstaff/selectdoctor",selectDoctor);
