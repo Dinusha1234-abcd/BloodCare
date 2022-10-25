@@ -30,6 +30,10 @@ export default function ClusterAdmin(){
     const [unsuccessMessage, setUnsuccessMessage] = useState("");
     const [loading, setLoading] = useState(true);
 
+    const [removeAlert, setRemoveAlert] = useState(false);
+    const [clusterAdminName, setClusterAdminName] = useState("");
+    const [clusterAdminNic, setClusterAdminNic] = useState("");
+
 
     useEffect((() => {getClusterAdminData() }), [])
 
@@ -92,10 +96,12 @@ export default function ClusterAdmin(){
         }else if(!(mobileNumber.length==10)){
             setMessage("Please Enter  Valid Mobile Number");
 
-        }else if(bloodCenterNo.length==0){
-            setMessage("Please Enter Cluster Center Id");
+        }
+        // else if(bloodCenterNo.length==0){
+        //     setMessage("Please Enter Cluster Center Id");
 
-        }else if(password.length<6){
+        // }
+        else if(password.length<6){
             setMessage("Please enter more than 6 charactors");
 
         }else{
@@ -142,6 +148,42 @@ export default function ClusterAdmin(){
         window.location = "/users/clusterAdmin";
     }
 
+    function showRemoveMessage(clusterAdminName, clusterAdminNIC){
+        setClusterAdminName(clusterAdminName);
+        setClusterAdminNic(clusterAdminNIC);
+        setRemoveAlert(true);
+    }
+
+    function removeClusterAdmin() {
+        setRemoveAlert(false);
+        setWait(true);
+        const clusterAdmin = { clusterAdminNic };
+        axios.post("http://localhost:8070/users/removeClusterAdmin", clusterAdmin).then(
+            (res) => {
+                //check password and username  
+                if (res['data']['message'] == "success") {
+                    setWait(false);
+                    setSuccessMessage("Cluster Admin Update Sucessfully")
+                    setSuccess(true);
+
+                } else {
+                    setWait(false);
+                    setUnsuccessMessage("Cluster Admin Update UnSucessfully");
+                    setUnSuccess(true);
+
+                }
+
+            }
+        ).catch((err) => {
+            //sever error
+            console.log(err.message);
+            setWait(false);
+            setUnsuccessMessage("Network Connection Issue Please Try Again");
+            setUnSuccess(true);
+        })
+
+    }
+
     const list = [];
     //display data in table
     if (searchData == ""){
@@ -153,7 +195,9 @@ export default function ClusterAdmin(){
                     <td>{data[i]['email']}</td>
                     <td>{data[i]['phoneNumber']}</td>
                     <td><button id='view-user-button-admin'>View</button></td>
-                    <td><button id='remove-user-button-admin'>Deactivate</button></td>
+                    <td><button id='remove-user-button-admin' onClick={() => { showRemoveMessage(
+                                data[i]['firstName'] + data[i]['lastName'], 
+                                data[i]['userNic']) }} >Deactivate</button></td>
                 </tr>
                 </>
             )
@@ -169,7 +213,9 @@ export default function ClusterAdmin(){
                         <td>{data[i]['email']}</td>
                         <td>{data[i]['phoneNumber']}</td>
                         <td><button id='view-user-button-admin'>View</button></td>
-                        <td><button id='remove-user-button-admin'>Deactivate</button></td>
+                        <td><button id='remove-user-button-admin' onClick={() => { showRemoveMessage(
+                                data[i]['firstName'] + data[i]['lastName'], 
+                                data[i]['userNic']) }} >Deactivate</button></td>
                     </tr>
                     </>)
 
@@ -186,6 +232,13 @@ export default function ClusterAdmin(){
                     <br /> <h1 id='sucess-message-name'> <img id='successImage' src={successImage} /> <br /> Success !</h1>  <br />
                     <p id='sucess-message-box'>{successMessage}</p> <br></br>
                     <button id="okay-button" onClick={() => { setSuccess(sucessbutton) }}> Okay </button>
+                </div>
+
+                {/* remove alert */}
+                <div id={`${removeAlert ? 'remove-alert-clusteradmin-active' : 'sucess-message'}`}>
+                    <br /> <h1 id='remove-alert-clusteradmin-name'> <img id='alert' src={alert} /> <br />Are you removing Dr {clusterAdminName}</h1>
+                    <button id="remove-button" onClick={() => { removeClusterAdmin() }}> Okay </button>
+                    <button id="remove-button" onClick={() => { setRemoveAlert(false) }}> Cancel </button>
                 </div>
 
                 <div id={`${wait ? 'wait-cluterAdmin-active' : 'wait-cluterAdmin'}`}> <img id='wait-cluterAdmin-image' src={waitImage} /> </div>

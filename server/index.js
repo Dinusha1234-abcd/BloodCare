@@ -84,15 +84,21 @@ const profileDetail =require('./routes/registerDonor/profileDetail');
 
 const addClusterAdmin = require('./routes/admin/users/clusterAdmin/addClusterAdmin');
 const selectClusterAdmin = require('./routes/admin/users/clusterAdmin/selectClusterAdmin');
+const removeClusterAdmin = require('./routes/admin/users/clusterAdmin/removeClusterAdmin');
 
 const selectMedicalOfficer = require('./routes/admin/users/medicalOfficer/selectMedicalOfficer');
 const addMedicalOfficer = require('./routes/admin/users/medicalOfficer/addMedicalOfficer');
 const removeMedicalOfficer = require('./routes/admin/users/medicalOfficer/removeMedicalOfficer');
 
 const selectDoctorAdmin = require('./routes/admin/users/doctor/selectDoctor');
+const removeDoctorAdmin = require('./routes/admin/users/doctor/removeDoctor');
+
 const selectHeadNurseAdmin = require('./routes/admin/users/headNurse/selectHeadNurse');
+const removeHeadNurseAdmin = require('./routes/admin/users/headNurse/removeHeadNurse');
 const selectNurseAdmin = require('./routes/admin/users/nurse/selectNurse');
+const removeNurseAdmin = require('./routes/admin/users/nurse/removeNurse');
 const selectOrganizerAdmin = require('./routes/admin/users/organizer/selectOrganizer');
+const removeOrganizerAdmin = require('./routes/admin/users/organizer/removeOrganizer');
 const selectDriverAdmin = require('./routes/admin/users/driver/selectDriver');
 const selectDonorAdmin = require('./routes/admin/users/donor/selectDonor');
 
@@ -201,15 +207,21 @@ app.use("/registerDonor/profileDetail",profileDetail);
 
 app.use("/users/addClusterAdmin",addClusterAdmin);
 app.use("/users/selectClusterAdmin",selectClusterAdmin);
+app.use("/users/removeClusterAdmin",removeClusterAdmin);
 
 app.use("/users/selectMedicalOfficer", selectMedicalOfficer);
 app.use("/users/addMedicalOfficer", addMedicalOfficer);
 app.use("/users/removeMedicalOfficer", removeMedicalOfficer);
 
 app.use("/users/selectDoctor", selectDoctorAdmin);
+app.use("/users/removeDoctor", removeDoctorAdmin);
+
 app.use("/users/selectHeadNurse", selectHeadNurseAdmin);
+app.use("/users/removeHeadNurse", removeHeadNurseAdmin);
 app.use("/users/selectNurse", selectNurseAdmin);
+app.use("/users/removeNurse", removeNurseAdmin);
 app.use("/users/selectOrganizer", selectOrganizerAdmin);
+app.use("/users/removeOrganizer", removeOrganizerAdmin);
 app.use("/users/selectDriver", selectDriverAdmin);
 app.use("/users/selectDonor", selectDonorAdmin);
 
