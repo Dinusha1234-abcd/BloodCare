@@ -24,8 +24,8 @@
 }
 #camp-container1{
     position: absolute;
-    width: 300px;
-    height: 500px;
+    width: 600px;
+    height: 200px;
     left: 300px;
     top: 200px;
 
@@ -33,7 +33,7 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
 }
-#camp-container2{
+/* #camp-container2{
     position: absolute;
     width: 300px;
     height: 500px;
@@ -65,7 +65,7 @@
     background: rgba(255, 255, 255, 0.7);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
-}
+} */
 #campimg{
     position: absolute;
     margin-left: 120px;
@@ -74,8 +74,8 @@
 #camp-name{
     position: absolute;
     color: #FF6565;
-    margin-top: 80px;
-    margin-left: 40px;
+    margin-top: 40px;
+    margin-left: 100px;
 }
 #regD-camp-details-table{
     position: absolute;

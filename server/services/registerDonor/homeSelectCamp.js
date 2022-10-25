@@ -7,7 +7,7 @@ async function getdonorProvince(regDonorNic){
 }
 
 async function getCamp(province,date){
-    const rows =await db.query( `SELECT blood_camp.date, blood_camp.name, blood_camp.place FROM blood_camp INNER JOIN blood_center ON blood_camp.bloodCenterNo=blood_center.bloodCenterNo WHERE status='accept' && blood_center.province=? && blood_camp.date >= ?`,[province, date]);
+    const rows =await db.query( `SELECT blood_camp.date, blood_camp.name, blood_camp.place FROM blood_camp INNER JOIN blood_center ON blood_camp.bloodCenterNo=blood_center.bloodCenterNo WHERE status='accept' && blood_center.province=? && blood_camp.date >= ? ORDER BY blood_camp.date `,[province, date]);
     const data =rows;
     return rows;
 }
