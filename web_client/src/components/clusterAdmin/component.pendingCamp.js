@@ -110,6 +110,7 @@ export default function PendingCamp() {
                     </tr>
                  {list}
                  </table>
+              
                  <div id={`${loading ? 'loading-cluterAdmin-active' : 'loading-cluterAdmin'}`}> <img src={loadingImage} /> </div>
                 <div id='pastCamp-pageButton'>
                     <a className='page-navigation'>{"<< Prev"}  </a>

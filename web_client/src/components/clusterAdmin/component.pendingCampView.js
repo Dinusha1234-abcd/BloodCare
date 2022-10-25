@@ -25,8 +25,8 @@ export default function PendingCampView() {
     const [staffId, setStaffId] = useState("");
     const [bloodCenterNumber, setBloodCenterNumber] = useState("");
     const [staffTyoe, setStaffType] = useState("");
-    useEffect((() => { getDoctorData() ;getMedicalStaffData() }), [])
-    function getDoctorData() {
+    useEffect((() => { getCampData() ;getMedicalStaffData() }), [])
+    function getCampData() {
         const campNumber = id;
         const camp = {
             campNumber
@@ -116,8 +116,9 @@ export default function PendingCampView() {
         setStaffAdd(false);
         const userNic = staffNic;
         const campNumber = id;
+        const type = staffTyoe;
         const member = {
-            userNic,
+            type,
             campNumber,
             staffId, 
             bloodCenterNumber
