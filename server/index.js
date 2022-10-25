@@ -28,6 +28,26 @@ const ongoingCamp = require('./routes/clusterAdmin/camp/ongoingCamp/selectOngoin
 const pastCampView = require('./routes/clusterAdmin/camp/pastCamp/pastCampView'); 
 const pastCampDonors = require('./routes/clusterAdmin/camp/pastCamp/getDonotion');
 
+const opositiveCount = require('./routes/clusterAdmin/blood/O/Opositive');
+const opositiveCamp = require('./routes/clusterAdmin/blood/O/OpositiveGetCamp');
+const onegativeCount = require('./routes/clusterAdmin/blood/O/Onegative');
+const onegativeCamp = require('./routes/clusterAdmin/blood/O/OnegativeGetCamp');
+
+const apositiveCount = require('./routes/clusterAdmin/blood/A/Apositive');
+const apositiveCamp = require('./routes/clusterAdmin/blood/A/ApositiveGetCamp');
+const anegativeCount = require('./routes/clusterAdmin/blood/A/Anegative');
+const anegativeCamp = require('./routes/clusterAdmin/blood/A/AnegativeGetCamp');
+
+const abpositiveCount = require('./routes/clusterAdmin/blood/AB/ABpositive');
+const abpositiveCamp = require('./routes/clusterAdmin/blood/AB/ABpositiveGetCamp');
+const abnegativeCount = require('./routes/clusterAdmin/blood/AB/ABnegative');
+const abnegativeCamp = require('./routes/clusterAdmin/blood/AB/ABnegativeGetCamp');
+
+const bpositiveCount = require('./routes/clusterAdmin/blood/B/Bpositive');
+const bpositiveCamp = require('./routes/clusterAdmin/blood/B/BpositiveGetCamp');
+const bnegativeCount = require('./routes/clusterAdmin/blood/B/Bnegative');
+const bnegativeCamp = require('./routes/clusterAdmin/blood/B/BnegativeGetCamp');
+
 const addDoctor = require('./routes/clusterAdmin/medicalStaff/doctor/addDoctor');
 const selectDoctor = require('./routes/clusterAdmin/medicalStaff/doctor/selectDoctor'); 
 const updateDoctor = require('./routes/clusterAdmin/medicalStaff/doctor/updateDoctor');
@@ -121,6 +141,30 @@ app.use("/camp/assigncamp",ongoingCampView);
 app.use("/camp/registercampusers",getRegistersOngoing); 
 app.use("/camp/pastcampview",pastCampView); 
 app.use("/camp/getpastcampdonors",pastCampDonors); 
+
+app.use("/blood/opostivecount",opositiveCount);
+app.use("/blood/opositivecamp",opositiveCamp)
+
+app.use("/blood/onegativecount",onegativeCount);
+app.use("/blood/onegativecamp",onegativeCamp)
+
+app.use("/blood/apostivecount",apositiveCount);
+app.use("/blood/aopositivecamp",apositiveCamp)
+
+app.use("/blood/anegativecount",anegativeCount);
+app.use("/blood/anegativecamp",anegativeCamp)
+
+app.use("/blood/bpostivecount",bpositiveCount);
+app.use("/blood/bpositivecamp",bpositiveCamp)
+
+app.use("/blood/bnegativecount",bnegativeCount);
+app.use("/blood/bnegativecamp",bnegativeCamp)
+
+app.use("/blood/abpostivecount",abpositiveCount);
+app.use("/blood/abositivecamp",abpositiveCamp);
+
+app.use("/blood/abnegativecount",abnegativeCount);
+app.use("/blood/abnegativecamp",abnegativeCamp)
 
 app.use("/medicalstaff/doctor",addDoctor);
 app.use("/medicalstaff/selectdoctor",selectDoctor);
