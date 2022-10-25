@@ -56,24 +56,61 @@ export default function RegDonorCamp() {
     if(searchData == "") {
         for(let i = firstRow; i< data.length; i++){
             list.push(
-                <><tr>
-                    <td>{data[i]['name']}</td>
-                    <td>{data[i]['date'].substring(0, 10)}</td>
-                    <td>{data[i]['place']}</td>
-                </tr>
-                </>
+                <div id="camp-details">
+                    <img id="campimg" src={futureCamp} />
+                    <h3 id="camp-name">{data[i]['name']}</h3>
+                    <br></br>
+                    <table id="regD-camp-details-table">
+                        <tr>
+                            <td>Name </td>
+                            <td> : {data[i]['name']}</td>
+                            {/* <td><i class="fa-solid fa-calendar-day"></i></td> */}
+                        </tr>
+                        <tr>
+                            <td>Date </td>
+                            <td> : {data[i]['date'].substring(0, 10)}</td>
+                            {/* <td><i class="fa-solid fa-calendar-day"></i></td> */}
+                        </tr>
+                        <tr>
+                            <td>Location  </td>
+                            <td> : {data[i]['place']}</td>
+                        </tr>
+                        <tr>
+                            <td>Organizer Name </td>
+                            <td> : {data[i]['organizerName']}</td>
+                        </tr>
+                        <tr>
+                            <td>Organizer Contact No </td>
+                            <td> : {data[i]['phoneNumber']}</td>
+                        </tr>
+                       </table>
+                    <Link to='/blood_camps/register' id="register" >Register Now</Link>
+                    {/* <img id="mapimg" src={map} /> */}
+                </div>  
             )
         }
     } else {
         for (let i = 0; i < 10; i++) {
             if (searchData == data[i]['userNic']) {
                 list.push(
-                    <><tr>
-                        <td>{data[i]['name']}</td>
-                        <td>{data[i]['date'].substring(0, 10)}</td>
-                        <td>{data[i]['place']}</td>
-                    </tr>
-                    </>
+                    <div id="camp-details">
+                    <img id="campimg" src={futureCamp} />
+                    <h3 id="camp-name">{data[i]['name']}</h3>
+                    <br></br>
+                    <table id="regD-camp-details-table">
+                        <tr>
+                            <td>Date </td>
+                            <td> : {data[i]['date'].substring(0, 10)}</td>
+                            {/* <td><i class="fa-solid fa-calendar-day"></i></td> */}
+                        </tr>
+                        <tr>
+                            <td>Location  </td>
+                            <td> : {data[i]['place']}</td>
+                        </tr>
+                       </table>
+                    <Link to='/blood_camps/register' id="register"  >Register Now</Link>
+                    {/* <img id="mapimg" src={map} /> */}
+                </div>  
                 )
 
             }
@@ -87,34 +124,14 @@ export default function RegDonorCamp() {
             {/* <div id={`${unsuccess ? 'unsucess-message-active' : 'unsucess-message'}`}></div> */}
             {/* {list} */}
             <div id="camp-container1"> 
-                <div id="camp-details">
-                    <img id="campimg" src={futureCamp} />
-                    <h3 id="camp-name">YOU CAN HELP SAVE A LIFE!</h3>
-                    <br></br>
-                    <table id="regD-camp-details-table">
-                        <tr>
-                            <td>Date </td>
-                            <td>: August 13, 2022</td>
-                            <td><i class="fa-solid fa-calendar-day"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Location  </td>
-                            <td>: Panadura</td>
-                        </tr>
-                        <tr>
-                            <td>Place :</td>
-                            <td>: MOH Hall</td>
-                        </tr>
-                        <tr>
-                            <td>Time :</td>
-                            <td>: 8.00 a.m. - 3.00 p.m.</td>
-                        </tr>
-                    </table>
-                    <Link to='/blood_camps/register' id="register"  >Register Now</Link>
-                    <img id="mapimg" src={map} />
-                </div>     
+            <div id={`${unsuccess ? 'unsucess-message-active' : 'unsucess-message'}`}>
+                        <br /> <h1 id='sucess-message-name'> <img id='unsuccessImage' src={unsuccessImage} /> <br />Wrong !</h1> <br />
+                        <p id='unsucess-message-box'> {unsuccessMessage}</p> <br />
+                        <button id="okay-button-unsucess" onClick={() => { setSuccess(unsucessbutton) }}> Okay </button>
+                    </div>
+               {list}   
             </div>
-            <div id="camp-container2">
+            {/* <div id="camp-container2">
             <div id="camp-details">
                     <img id="campimg" src={OngoingCamp} />
                     <h3 id="camp-name">Blood Donation Drive</h3>
@@ -141,8 +158,8 @@ export default function RegDonorCamp() {
                     <Link to='/blood_camps/register' id="register"  >Register Now</Link>
                     <img id="mapimg" src={map} />
                 </div>     
-            </div>
-            <div id="camp-container3">
+            </div> */}
+            {/* <div id="camp-container3">
             <div id="camp-details">
                     <img id="campimg2" src={pastCamp} />
                     <h3 id="camp-name">BE A HERO DONTAE BLOOD</h3>
@@ -169,8 +186,8 @@ export default function RegDonorCamp() {
                     <Link to='/blood_camps/register' id="register"  >Register Now</Link>
                     <img id="mapimg" src={map} />
                 </div>     
-            </div>
-            <div id="camp-container4">
+            </div> */}
+            {/* <div id="camp-container4">
             <div id="camp-details">
                     <img id="campimg" src={PendingCamp} />
                     <h3 id="camp-name">Give Blood and Save a Life</h3>
@@ -197,7 +214,8 @@ export default function RegDonorCamp() {
                     <Link to='/blood_camps/register' id="register"  >Register Now</Link>
                     <img id="mapimg" src={map} />
                 </div>     
-            </div>
+            </div> */}
+             <div id={`${loading ? 'loading-cluterAdmin-active' : 'loading-cluterAdmin'}`}> <img src={loadingImage} /> </div>
             <div id='d-history-records-table-pageButton'>
                 <a className='page-navigation'>{"<< "}  </a> 
                 <a className='page-navigation'>{" Prev"}  </a> 

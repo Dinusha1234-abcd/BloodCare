@@ -130,6 +130,22 @@ export default function RegDonorProfile() {
             setUpdateProvince(province);
             setUpdateDistrict(district);
             e.target.reset();
+            axios.post("http://localhost:8070/registerdonor/profileUpdate",donor).then(
+                (res) => {
+                    //check password and username  
+                    if (res['data']['message'] == "success") {
+                        window.location = "/registerdonor/profileUpdate";
+
+                    } else {
+                        setMessage("Network Connection issue");
+
+                    }
+
+                }
+            ).catch((err) => {
+                //sever error
+                console.log(err.message);
+            })
         }
     }
     return (
@@ -151,7 +167,7 @@ export default function RegDonorProfile() {
                     <label for="reg-donor-name">Name</label>
                     <label for="register-donor-NIC">NIC</label><br></br>
                     <input type="text" id="reg-Donor-Name" name="reg-Donor-Name" value="Mr. Viraj Kariyawasam"></input>
-                    <input type="text" id="reg-Donor-NIC" name="reg-Donor-NIC" value="20005671338V"></input><br></br>
+                    <input type="text" id="reg-Donor-NIC" name="reg-Donor-NIC" value={updateNIC}></input><br></br>
                     <label for="reg-donor-contact">Contact</label>
                     <label for="reg-donor-email">E-mail</label><br></br>
                     <input type="text" id="reg-Donor-Contact" name="reg-Donor-Contact" value="0383394565/0716992521"></input>
