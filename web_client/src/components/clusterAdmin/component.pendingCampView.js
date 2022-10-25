@@ -21,8 +21,10 @@ export default function PendingCampView() {
     const [medicalStaff, setMedicalStaff] = useState([]);
     const [status, setStatus] = useState("");
     const [staffAdd, setStaffAdd] = useState(false); 
-    const [staffName, setStaffName] = useState("");
-
+    const [staffNic, setStaffNic] = useState("");
+    const [staffId, setStaffId] = useState("");
+    const [bloodCenterNumber, setBloodCenterNumber] = useState("");
+    const [staffTyoe, setStaffType] = useState("");
     useEffect((() => { getDoctorData() ;getMedicalStaffData() }), [])
     function getDoctorData() {
         const campNumber = id;
@@ -47,10 +49,10 @@ export default function PendingCampView() {
 
     }
     function sucessbutton() {
-        window.location = '/bloodcamp/pendingcamp' 
+        // window.location = '/bloodcamp/pendingcampView/' + id + '/' + date; 
     }
     function unsucessbutton() {
-        window.location =  '/bloodcamp/pendingcamp' 
+        // window.location =  '/bloodcamp/pendingcampView/' + id + '/' + date; 
     }
     function getMedicalStaffData() {
         const clusterAdminNic = localStorage.getItem('userNic');
@@ -103,8 +105,46 @@ export default function PendingCampView() {
             })
      } 
 
-     function assignStaff(){
+     function assignStaff(nicNumber,type,staffId,bloodCenterNo){
+        setStaffNic(nicNumber); 
+        setBloodCenterNumber(bloodCenterNo);
+        setStaffId(staffId);
+        setStaffType(type)
+        setStaffAdd(true);
+     }
+     function addStaffMember(){
+        setStaffAdd(false);
+        const userNic = staffNic;
+        const campNumber = id;
+        const member = {
+            userNic,
+            campNumber,
+            staffId, 
+            bloodCenterNumber
+        }
+        axios.post("http://localhost:8070/camp/assigncamp", member).then(
+            (res) => {
+                //check password and username  
+                if (res['data']['message'] == "success") {
+                    setWait(false);
+                    setSuccessMessage("Medical Staff Member Added Sucessfully")
+                    setSuccess(true);
 
+                } else {
+                    setWait(false);
+                    setUnsuccessMessage("Medical Staff Member Added Unsucessfully");
+                    setUnSuccess(true);
+
+                }
+
+            }
+        ).catch((err) => {
+            //sever error
+            console.log(err.message);
+            setWait(false);
+            setUnsuccessMessage("Network Connection Issue Please Try Again");
+            setUnSuccess(true);
+        })
      }
     
     const headNurse = [];
@@ -128,7 +168,7 @@ export default function PendingCampView() {
                 <tr>
                     <td>{medicalStaff[i]['firstName'] + " " + medicalStaff[i]['lastName'] }</td>
                 <td>{medicalStaff[i]['medicalType']}</td>
-                <td><button id='view-button-pastcamp'>Add</button></td></tr>
+                <td><button id='view-button-pastcamp' onClick={()=> {assignStaff(medicalStaff[i]['userNic'],medicalStaff[i]['medicalType'],medicalStaff[i]['staffId'],medicalStaff[i]['bloodCenterNo'])}}>Add</button></td></tr>
             )
          
     }
@@ -142,6 +182,13 @@ export default function PendingCampView() {
                     <p id='sucess-message-box'>{successMessage}</p> <br></br>
                     <button id="okay-button" onClick={() => { setSuccess(sucessbutton) }}> Okay </button>
                 </div>
+                <div id={`${staffAdd ? 'remove-alert-clusteradmin-active' : 'sucess-message'}`}>
+                    <br /> <h5 id='remove-alert-clusteradmin-name'> <img id='successImage' src={successImage} /> <br /> Are You add New {staffTyoe} for Camp </h5>  
+              
+                    <button id="remove-button" onClick={() => { addStaffMember() }}> Okay </button>
+                    <button id="remove-button" onClick={() => { setStaffAdd(false) }}> Cancel </button>
+
+                </div>
             {/* message */}
                 <div id={`${wait ? 'wait-cluterAdmin' : 'wait-cluterAdmin-active'}`}> <img id='wait-cluterAdmin-image' src={waitImage} /> </div>
                 
@@ -151,7 +198,7 @@ export default function PendingCampView() {
                     <button id="okay-button-unsucess" onClick={() => { setSuccess(unsucessbutton) }}> Okay </button>
                 </div>
                 <div id={`${wait ? null : 'fade-clusterAdmin'}`} ></div>
-                <div id={`${success || unsuccess   ?  'fade-clusterAdmin' : null}`} > </div>
+                <div id={`${success || unsuccess  || staffAdd ?  'fade-clusterAdmin' : null}`} > </div>
             <div id='pending-camp-view-container-clusterAdmin'>
                 <div id='pending-camp-container-box1-clusterAdmin'>
                     <h3 id='pending-camp-header-display-clusterAdmin'>Pending Blood Camp Details</h3>

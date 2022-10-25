@@ -1,8 +1,53 @@
-import React from 'react';
+import React,{useEffect, useState} from 'react';
+import axios from 'axios';
+import loadingImage from '../../assests/images/loading.gif';
+import alert from '../../assests/images/alert.png';
 import '../../assests/css/admin/component.user.search.admin.css';
 
 
 export default function Organizer(){
+
+    const [data, setData] = useState([]);
+    const [searchData, setSearchData] = useState("");
+    const [loading, setLoading] = useState(true);
+    const [unsuccessMessage, setUnsuccessMessage] = useState("");
+    const [unsuccess, setUnSuccess] = useState(false);
+
+    useEffect((() => {getOrganizerData() }), [])
+    function getOrganizerData() {
+
+        axios.post("http://localhost:8070/users/selectOrganizer").then(
+            (res) => {
+                setData(res.data.organizers);
+                console.log(res.data);
+
+                setLoading(!loading);
+            }
+        ).catch((err) => {
+            //server error
+            setLoading(!loading);
+            setUnsuccessMessage("Network Connection Issue Please Try Again");
+            setUnSuccess(true);
+        })
+    }
+
+    const list = [];
+    if(searchData == "") {
+        for (let i = 0; i < data.length; i++){
+            list.push(
+                <> <tr>
+                    <td>{data[i]['nic']}</td>
+                    <td>{data[i]['organizerName'] }</td>
+                    <td>{data[i]['email']}</td>
+                    <td>{data[i]['phoneNumber']}</td>
+                    <td><button id='view-user-button-admin'>View</button></td>
+                    <td><button id='remove-user-button-admin'>Deactivate</button></td>
+
+                </tr>
+                </>
+            )
+        }
+    }
 
     return (
         <div>
@@ -20,62 +65,12 @@ export default function Organizer(){
                     <th id='user-action-admin'>Action</th>
                     <th id='user-action-admin'>Action</th>
                 </tr>
-                <tr>
-                    <td>988438430V</td>
-                    <td>Sanduni Malsha</td>
-                    <td>malsha2@gmail.com</td>
-                    <td>071-0987654</td>
-                    <td><button id='view-user-button-admin'>View</button></td>
-                    <td><button id='remove-user-button-admin'>Deactivate</button></td>
-                </tr>
-                <tr>
-                    <td>985434567V</td>
-                    <td>D.K.Hansika </td>
-                    <td>hansidk@gmail.com</td>
-                    <td>076-675436</td>
-                    <td><button id='view-user-button-admin'>View</button></td>
-                    <td><button id='remove-user-button-admin'>Deactivate</button></td>
-                </tr>
-                <tr>
-                    <td>98765678V</td>
-                    <td>Dinusha Gunawardhane</td>
-                    <td>dinusha88@gmail.com</td>
-                    <td>077-8976549</td>
-                    <td><button id='view-user-button-admin'>View</button></td>
-                    <td><button id='remove-user-button-admin'>Deactivate</button></td>
-                </tr>
-                <tr>
-                    <td>981234567V</td>
-                    <td>Kalshi Lakeesha</td>
-                    <td>kalshi98@gmail.com</td>
-                    <td>078-7890876</td>
-                    <td><button id='view-user-button-admin'>View</button></td>
-                    <td><button id='remove-user-button-admin'>Deactivate</button></td>
-                </tr>
-                <tr>
-                    <td>984567890V</td>
-                    <td>Dilhara Savinda</td>
-                    <td>dilhara672@gmail.com</td>
-                    <td>077-5467789</td>
-                    <td><button id='view-user-button-admin'>View</button></td>
-                    <td><button id='remove-user-button-admin'>Deactivate</button></td>
-                </tr>
-                <tr>
-                    <td>975643897V</td>
-                    <td>Hiruni Danapala</td>
-                    <td>danapala@gmail.com</td>
-                    <td>078-123456</td>
-                    <td><button id='view-user-button-admin'>View</button></td>
-                    <td><button id='remove-user-button-admin'>Deactivate</button></td>
-                </tr>
                 
+                {list}
                 
             </table>
-            {/* <div id='pastCamp-pageButton'>
-                <a className='page-navigation'>{"<< Prev"}  </a> 
-                <a className='page-navigation'>1</a>
-                <a className='page-navigation'>{"Next >>"}</a> 
-            </div> */}
+            <div id={`${loading ? 'loading-cluterAdmin-active' : 'loading-cluterAdmin'}`}> <img src={loadingImage} /> </div>
+            
          </div>
         </div>
     )

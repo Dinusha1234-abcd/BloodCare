@@ -8,7 +8,7 @@ async function getBloodCenterNumber(clusterAdminNic){
 
 async function getMedicalStaff(centerNumber, date,campNumber){
    
-    const rows = await db.query(`SELECT * FROM medical_staff INNER JOIN user ON medical_staff.userNic = user.userNic LEFT JOIN work_assign ON work_assign.staffId = medical_staff.staffId LEFT JOIN blood_camp ON blood_camp.bloodCampNumber = work_assign.bloodCampNumber WHERE  medical_staff.bloodCenterNo=? &&  (blood_camp.bloodCampNumber IS NULL || blood_camp.bloodCampNumber!= ?)
+    const rows = await db.query(`SELECT *,medical_staff.staffId ,medical_staff.bloodCenterNo FROM medical_staff INNER JOIN user ON medical_staff.userNic = user.userNic LEFT JOIN work_assign ON work_assign.staffId = medical_staff.staffId LEFT JOIN blood_camp ON blood_camp.bloodCampNumber = work_assign.bloodCampNumber WHERE  medical_staff.bloodCenterNo=? &&  (blood_camp.bloodCampNumber IS NULL || blood_camp.bloodCampNumber!= ?)
     `,[centerNumber,campNumber]);
     return  rows ;
     
