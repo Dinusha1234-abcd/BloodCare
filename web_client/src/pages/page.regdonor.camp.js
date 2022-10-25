@@ -56,6 +56,7 @@ export default function RegDonorCamp() {
     if(searchData == "") {
         for(let i = firstRow; i< data.length; i++){
             list.push(
+                <div id="camp-container1">
                 <div id="camp-details">
                     <img id="campimg" src={futureCamp} />
                     <h3 id="camp-name">{data[i]['name']}</h3>
@@ -87,6 +88,7 @@ export default function RegDonorCamp() {
                     <Link to='/blood_camps/register' id="register" >Register Now</Link>
                     {/* <img id="mapimg" src={map} /> */}
                 </div>  
+                </div>
             )
         }
     } else {
@@ -94,8 +96,8 @@ export default function RegDonorCamp() {
             if (searchData == data[i]['userNic']) {
                 list.push(
                     <div id="camp-details">
-                    <img id="campimg" src={futureCamp} />
-                    <h3 id="camp-name">{data[i]['name']}</h3>
+                    <img id="campimg" src={futureCamp} /> <h3 id="camp-name">{data[i]['name']}</h3>
+                    {/* <h3 id="camp-name">{data[i]['name']}</h3> */}
                     <br></br>
                     <table id="regD-camp-details-table">
                         <tr>
@@ -123,14 +125,14 @@ export default function RegDonorCamp() {
             <input type="text" id='input-date' placeholder=" &#xf002;"/> 
             {/* <div id={`${unsuccess ? 'unsucess-message-active' : 'unsucess-message'}`}></div> */}
             {/* {list} */}
-            <div id="camp-container1"> 
+            {/* <div id="camp-container1">  */}
             <div id={`${unsuccess ? 'unsucess-message-active' : 'unsucess-message'}`}>
                         <br /> <h1 id='sucess-message-name'> <img id='unsuccessImage' src={unsuccessImage} /> <br />Wrong !</h1> <br />
                         <p id='unsucess-message-box'> {unsuccessMessage}</p> <br />
                         <button id="okay-button-unsucess" onClick={() => { setSuccess(unsucessbutton) }}> Okay </button>
                     </div>
                {list}   
-            </div>
+            {/* </div> */}
             {/* <div id="camp-container2">
             <div id="camp-details">
                     <img id="campimg" src={OngoingCamp} />
@@ -216,13 +218,13 @@ export default function RegDonorCamp() {
                 </div>     
             </div> */}
              <div id={`${loading ? 'loading-cluterAdmin-active' : 'loading-cluterAdmin'}`}> <img src={loadingImage} /> </div>
-            <div id='d-history-records-table-pageButton'>
+            {/* <div id='d-history-records-table-pageButton'>
                 <a className='page-navigation'>{"<< "}  </a> 
                 <a className='page-navigation'>{" Prev"}  </a> 
                 <a className='page-navigation'>1</a>
                 <a className='page-navigation'>{"Next "}</a> 
                 <a className='page-navigation'>{">>"}</a> 
-            </div>
+            </div> */}
         </div>
     );
 }
