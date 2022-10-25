@@ -109,6 +109,10 @@ const addClusterCenter = require('./routes/admin/clusterCenter/addClusterCenter'
 //headnurse
 const upcommingcamp = require('./routes/headnurse/upcommingcamp');
 const donors = require('./routes/headnurse/donors');
+
+//home
+const addCamp = require('./routes/campRegister');
+const getCampsData = require('./routes/showCamps');
  
 
 
@@ -233,6 +237,12 @@ app.use("/clusterCenter/addClusterCenter", addClusterCenter);
 //headnurse
 // app.use("/headnurse/upcommingamp.js",upcommingamp);
 app.use("/headnurse/donors",donors);
+
+//home
+app.use("/showCamps", getCampsData);
+app.use("/campRegister", addCamp);
+
+
 
 
 app.listen(port,()=>{
