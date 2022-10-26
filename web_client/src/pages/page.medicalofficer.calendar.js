@@ -1,4 +1,6 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
+import axios from 'axios';
+
 import { Calendar, dateFnsLocalizer} from 'react-big-calendar';
 import format from 'date-fns/format';
 import parse from 'date-fns/parse';
@@ -11,13 +13,22 @@ import '../assests/css/page.clusterAdminCalendar.css';
 
 export default function MedicalOfficerCalendar(){
     const [slidemenu, setSlideMenu] = useState(true);
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [wait, setWait] = useState(false);
+    const [successMessage, setSuccessMessage] = useState("");
+    const [unsuccessMessage, setUnsuccessMessage] = useState("");
+    const [success, setSuccess] = useState(false);
+    const [unsuccess, setUnSuccess] = useState(false);
+    const [searchData, setSearchData] = useState("");
+    const [camps, setCamps] = useState([]);
+
     const passData = (data) => {
       setSlideMenu(data);
     };
     const locales ={
         "en-US" : require("date-fns/locale/en-US")
     } 
-
 
     const localizer = dateFnsLocalizer({
         format,
@@ -26,8 +37,46 @@ export default function MedicalOfficerCalendar(){
         getDay, 
         locales
     })
+    useEffect((() => { getDate() }), [])
+    function getDate() {
 
-    const events = [{
+      const medicalOfficerNic = localStorage.getItem('userNic');
+       const medicalOfficer = {
+            medicalOfficerNic
+       } 
+       axios.post("http://localhost:8070/calender/getdates",medicalOfficer).then(
+            (res) => {
+
+                setData(res.data.camps);
+                setLoading(!loading);
+            }).catch((err) => {
+                //sever error
+                setLoading(!loading);
+                setUnsuccessMessage("Network Connection Issue Please Try Again");
+                setUnSuccess(true)
+            })
+
+    }
+    function getCamp() {
+
+        const medicalOfficerNic = localStorage.getItem('userNic');
+         const medicalOfficer = {
+            medicalOfficerNic
+         } 
+         axios.post("http://localhost:8070/dashboard/getcamps",medicalOfficer).then(
+              (res) => {
+  
+                  setData(res.data.camps);
+                  setLoading(!loading);
+              }).catch((err) => {
+                  //sever error
+                  setLoading(!loading);
+                  setUnsuccessMessage("Network Connection Issue Please Try Again");
+                  setUnSuccess(true)
+              })
+  
+      }
+    const list = [{
         title: "Camp 12",
         allDay : true,
         start : new Date(2022,7,14),
@@ -36,10 +85,35 @@ export default function MedicalOfficerCalendar(){
     },
     {
         title: 'Camp 14',
-        start: new Date(2022,7,14),
+
         end: new Date(2022,7,14) 
     }
     ];
+    
+    const events = [];
+    for (let i = 0; i < data.length; i++) {
+      
+        events.push(
+            {
+                
+              title: 'Camp ' +data[i]['bloodCampNumber'],
+                allDay : true,
+              start: data[i]['date'].substr(0,10),  
+              end:  data[i]['date'].substr(0,10) 
+            }
+        )
+    }
+    const camp = []
+    for (let i = 0; i < data.length; i++) {
+       if(data[i]['date'].substr(0,10)>=new Date().toISOString().slice(0, 10)){ 
+        camp.push(
+           
+                
+                <div id='clusterAdmin-calender-camp-details-events'><h> {data[i]['date'].substr(0,10)} <br/> <b>Blood camp Number {data[i]['bloodCampNumber']}</b><br/>{data[i]['name']}</h></div>
+            
+        )
+       }
+    }
 
     return (
         <div>
@@ -52,9 +126,7 @@ export default function MedicalOfficerCalendar(){
                  </div> 
                   <div id='clusterAdmin-calender-camp-details' >
                       <h2 id='clusterAdmin-calender-camp-details-name'>Events</h2>
-                      <div id='clusterAdmin-calender-camp-details-events'><h> 2022/08/14 <br/> <b>Blood camp Number 12</b></h></div>
-                      <div id='clusterAdmin-calender-camp-details-events'><h> 2022/08/14 <br/> <b>Blood camp Number 14</b></h></div>
-
+                 {camp}
                   </div>
                   </div>
                  </div>

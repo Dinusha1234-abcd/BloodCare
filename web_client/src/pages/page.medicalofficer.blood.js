@@ -1,17 +1,17 @@
 import React,{useState} from 'react';
 import SlideMenuMedicalOfficer from "../components/component.slidemenu.medicalOfficer";
-import ClusterAdminBloodHeader from "../components/component.bloodHeader";
-import OPositive from "../components/component.O.positive";
-import ONegative from "../components/component.O.negative"
-import APositive from '../components/component.A.positive';
-import ANegative from '../components/component.A.negative';
-import BPositive from '../components/component.B.positive';
-import BNegative from '../components/component.B.negative';
-import ABPositive from '../components/component.AB.positive';
-import ABNegative from '../components/component.AB.negative';
+import ClusterAdminBloodHeader from "../components/clusterAdmin/component.bloodHeader";
+import OPositive from "../components/clusterAdmin/component.O.positive";
+import ONegative from "../components/clusterAdmin/component.O.negative"
+import APositive from '../components/clusterAdmin/component.A.positive';
+import ANegative from '../components/clusterAdmin/component.A.negative';
+import BPositive from '../components/clusterAdmin/component.B.positive';
+import BNegative from '../components/clusterAdmin/component.B.negative';
+import ABPositive from '../components/clusterAdmin/component.AB.positive';
+import ABNegative from '../components/clusterAdmin/component.AB.negative';
 // import BP?
 // import PastCamp from "../components/component.pastCamp";
-export default function MedicalOfficerBlood(){ 
+export default function ClusterAdminBlood(){ 
     const [slidemenu, setSlideMenu] = useState(true);
     const passData = (data) => {
       setSlideMenu(data);
