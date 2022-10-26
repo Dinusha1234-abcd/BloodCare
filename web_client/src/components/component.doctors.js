@@ -91,6 +91,7 @@ export default function Doctors() {
 
 
     console.log(data[1]);
+
     function addDoctor(e) {
         e.preventDefault()
         const doctor = {
@@ -101,8 +102,8 @@ export default function Doctors() {
             address,
             email,
             mobileNumber,
-           
         }
+        
         if (firstName.length == 0) {
             setMessage("Please Enter First Name ");
         } else if (lastName.length == 0) {

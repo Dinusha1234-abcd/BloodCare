@@ -13,6 +13,18 @@ export default function ClusterAdminDonors() {
     const [unsuccess, setUnSuccess] = useState(false);
     const [searchData, setSearchData] = useState("");
     const [success, setSuccess] = useState(false);  
+    const [fomreg,setFormReg] = useState(true);
+    const [tab, setTab] = useState(false);
+   const [name, setName] = useState(""); 
+   const [nic, setNic] = useState("");
+   const [gender, setGender] = useState("");    
+   const [age, setAge] = useState("");
+   const [email, setEmail] = useState("");
+   const [phoneNumber, setPhoneNumber] = useState("");
+   const [address, setAddress] = useState("");
+   const [province, setProvince] = useState("");
+   const [city, setCity] = useState("");
+   
     //pagination
     const [firstRow, setFirstRow] = useState(0);
     const [lastRow, setLastRow] = useState(0);
@@ -47,6 +59,27 @@ export default function ClusterAdminDonors() {
     function unsucessbutton(){
         window.location = "/donors";
     }
+
+    function updateDetails(name,nic,gender,year,email,phoneNumber,province,city,address){
+        console.log("call");
+        setTab(true)
+        setName(name);
+        setNic(nic);
+        if(gender=='f'){
+            setGender('Female');
+        }else{
+            setGender('Male');
+
+        }
+ 
+        setAge(2022-year);
+        setEmail(email);
+        setPhoneNumber(phoneNumber);
+        setProvince(province);
+        setCity(city);
+        setAddress(address)
+    }
+
     const list = [];
    //display data in table
     //check the NIC number
@@ -59,11 +92,11 @@ export default function ClusterAdminDonors() {
                     <td>{data[i]['userNic']}</td>
                     <td> {data[i]['firstName'] + " " + data[i]['lastName']}</td>
                     <td>{data[i]['bloodType']}</td>
-                    <td>{data[i]['bloodType']}</td>
+                    <td>{data[i]['bloodRHTYPE']}</td>
                     {/* <td>{data[i]['LastDonationDate'].substring(0, 10)}</td>  */}
                     <td>
-                        <button id='view-button-doctor-view'   >View</button>
-                        <button id='view-button-doctor-remove'>Remove</button>
+                        <button id='view-button-doctor-view'  onClick={() => { updateDetails(data[i]['firstName']+" "+data[i]['lastName'],data[i]['userNic'],data[i]['gender'],data[i]['dateOfBirth'].substr(0,4), data[i]['email'], data[i]['phoneNumber'],data[i]['province'],data[i]['district'],data[i]['address'])}}>View</button>
+                      
                     </td>
                 </tr>
                 </>)
@@ -77,7 +110,7 @@ export default function ClusterAdminDonors() {
                         <td>{data[i]['userNic']}</td>
                         <td> {data[i]['firstName'] + " " + data[i]['lastName']}</td>
                         <td>{data[i]['bloodType']}</td>
-                        <td>{data[i]['LastDonationDate']}</td>
+                        <td>{data[i]['bloodRHTYPE']}</td>
                         <td>
                             <button id='view-button-doctor-view' >View</button>
                             <button id='view-button-doctor-remove'>Remove</button>
@@ -98,10 +131,10 @@ export default function ClusterAdminDonors() {
                 <div id='donors-contanier'>
                 <div id={`${unsuccess ? 'unsucess-message-active' : 'unsucess-message'}`}>
                     <br /> <h1 id='sucess-message-name'> <img id='unsuccessImage' src={unsuccessImage} /> <br /> Wrong !</h1>  <br />
-                    <p id='unsucess-message-box'> {unsuccessMessage}</p> <br />
+                    <p id='unsucess-message-box'> {unsuccessMessage}</p> <br /> 
                     <button id="okay-button-unsucess" onClick={() => { setSuccess(unsucessbutton) }}> Okay </button>
                 </div>
-                <div id={`${ unsuccess ? 'fade-clusterAdmin' : null}`}  ></div>
+                <div id={`${ tab ? 'fade-clusterAdmin' : null}`}  onClick={() => { setTab(false)  }}>   </div>
 
                     <h3 id="header-clusterAdmin">Donors Details</h3>
                     <input type="text" id='input-donors' placeholder=" &#xf002; Enter NIC Number" onChange={(e) => { setSearchData(e.target.value) }}/>
@@ -113,7 +146,7 @@ export default function ClusterAdminDonors() {
                             <th>NIC Number</th>
                             <th>Name</th>
                             <th>Blood Type</th>
-                            <th>Last Donation Date</th>
+                            <th>RH Type</th>
                             <th id='donors-action'>Action</th>
 
                         </tr>
@@ -132,6 +165,70 @@ export default function ClusterAdminDonors() {
                     </div>
                 </div>
             </div>
+            <div id={`${tab ? 'register-form-doctor-clusteradmin-active' : 'register-form-doctor-clusteradmin'}`}>
+                <div id="register-form-doctor-form-clusteradmin">
+                <h3 id='register-form-donor-name-clusteradmin'>Donor Details</h3>
+
+                <table id="medical-staff-view-table">
+                    <tr> 
+                        <td><b>Name {"    "}</b></td>
+                        
+                        <td>{name} </td>
+                        
+                        </tr>
+                      <tr></tr>
+                        <tr> 
+                        <td><b>NIC</b></td>
+                        <td>{nic} </td>
+                        </tr>
+                      <tr></tr>
+
+                        <tr> 
+                        <td><b>Gender</b></td>
+                        <td>{gender  }</td>
+                       </tr> 
+                      <tr></tr>
+
+                       <tr> 
+                        <td><b>Age</b></td>
+                        <td>{age}</td>
+                        </tr>
+                      <tr></tr>
+
+                        <tr> 
+                        <td><b>Email</b></td>
+                        <td>{email}</td>
+                        </tr>
+                      <tr></tr>
+
+                        <tr> 
+                        <td><b>Phone Number {"  "}</b></td>
+                        <td>{phoneNumber}</td>
+                        </tr>
+                      <tr></tr>
+
+                        <tr> 
+                        <td><b>Province</b></td>
+                        <td>{province}</td>
+                        </tr>
+                      <tr></tr>
+
+                        <tr> 
+                        <td><b>City</b></td>
+                        <td>{city}</td>
+                        </tr>
+                      <tr></tr>
+
+                        <tr> 
+                        <td><b>Address</b></td>
+                        <td>{address}</td>
+                        </tr>
+                        
+                    </table>
+              
+            </div>
+            </div>
+                
         </div>
     )
 

@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const donors = require('../../services/showCamps');
+const showCamps = require('../../services/showCamps');
 
 
-router.post('/',async function(req, res) {
-    await camps.getCamps().then(
+router.get('/camps',async function(req, res) {
+    await showCamps.getCampsData().then(
         (user) =>{
             const camps =user;
             return res.json({

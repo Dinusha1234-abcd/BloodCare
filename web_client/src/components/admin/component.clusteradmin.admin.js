@@ -17,8 +17,8 @@ export default function ClusterAdmin(){
     const [address, setAddress] = useState("");
     const [email, setEmail] = useState("");
     const [mobileNumber, setMobileNumber] = useState("");
-    const [clustercenterId , setClustercenterId] = useState("");
     const [password , setPassword] = useState("")
+    const [bloodCenterNo , setBloodCenterNo] = useState("")
 
     const [ message,setMessage] = useState("");
     const [success, setSuccess] = useState(false)
@@ -30,13 +30,14 @@ export default function ClusterAdmin(){
     const [unsuccessMessage, setUnsuccessMessage] = useState("");
     const [loading, setLoading] = useState(true);
 
+    const [removeAlert, setRemoveAlert] = useState(false);
+    const [clusterAdminName, setClusterAdminName] = useState("");
+    const [clusterAdminNic, setClusterAdminNic] = useState("");
+
 
     useEffect((() => {getClusterAdminData() }), [])
 
     function getClusterAdminData(){
-        // Lottie.loadAnimation({
-        //     container: document.querySelector("#loading-image"),
-        // });
         
         axios.post("http://localhost:8070/users/selectClusterAdmin").then(
             (res) => {
@@ -53,23 +54,38 @@ export default function ClusterAdmin(){
     }
 
     function addClusterAdmin(e){
+        let dayData;
         e.preventDefault()
-         const clusteradmin = {
+         const clusterAdmin = {
             firstName,
             lastName,
             NIC,
             address,
             email,
             mobileNumber,
-            clustercenterId,
-            password
+            // bloodCenterNo,
+            password 
         }
+
+        //check NIC number length
+        if (NIC.length == 10) {
+            dayData = NIC.substr(2, 3)
+           if (dayData > 500) {
+               dayData = dayData - 500;
+           }
+        }
+        if (NIC.length == 12) {
+            dayData = NIC.substr(4, 3)
+            if (dayData > 500) {
+                dayData = dayData - 500;
+            }
+        }
+
         if(firstName.length==0){
             setMessage("Please Enter First Name ");
         }else if(lastName.length==0){
             setMessage("Please Enter Last Name ");
-        }else if(!(NIC.length==10 ||NIC.length==12 )){
-            console.log(NIC.length);
+        }else if(!(NIC.length==10 ||NIC.length==12 ) && (dayData  < 1 && dayData > 366)){
             setMessage("Please Enter  Valid NIC Number ");
         }else if(address.length==0){
             setMessage("Please Enter  Address ");
@@ -80,10 +96,12 @@ export default function ClusterAdmin(){
         }else if(!(mobileNumber.length==10)){
             setMessage("Please Enter  Valid Mobile Number");
 
-        }else if(clustercenterId.length==0){
+        }
+        else if(bloodCenterNo.length==0){
             setMessage("Please Enter Cluster Center Id");
 
-        }else if(password.length<6){
+        }
+        else if(password.length<6){
             setMessage("Please enter more than 6 charactors");
 
         }else{
@@ -94,30 +112,80 @@ export default function ClusterAdmin(){
               setNIC('');
               setAddress('');
               setMobileNumber('');
-              setClustercenterId('');
+              setBloodCenterNo('');
               setPassword('');
               setEmail('');
               e.target.reset();
             // pass check the data with server 
-            axios.post("http://localhost:8070//users/clusteradmin", clusteradmin).then(
+            axios.post("http://localhost:8070/users/addClusterAdmin", clusterAdmin).then(
                 (res)=> {
                     //check password and username  
-                    if(res['data']['message']=="success"){
-                        window.location="/users/clusteradmin";
-                    }else{
-                        setMessage("Network connection issue!");
-                    }  
+                    if (res['data']['message'] == "success") {
+                        setWait(false);
+                        setSuccessMessage("Cluster Admin Added Sucessfully")
+                        setSuccess(true);
+
+
+                    } else {
+                        setWait(false);
+                        setUnsuccessMessage("Enter Id Number already Registered");
+                        setUnSuccess(true);
+                    }
                 }
               ).catch((err)=>{
                 //sever error
-                 console.log(err.message);
+                setWait(false);
+                setUnsuccessMessage("Network Connection Issue Please Try Again");
+                setUnSuccess(true)
               }) 
         }
     }
 
+    function sucessbutton() {
+        window.location = "/users/clusterAdmin";
+    }
+    function unsucessbutton() {
+        window.location = "/users/clusterAdmin";
+    }
+
+    function showRemoveMessage(clusterAdminName, clusterAdminNIC){
+        setClusterAdminName(clusterAdminName);
+        setClusterAdminNic(clusterAdminNIC);
+        setRemoveAlert(true);
+    }
+
+    function removeClusterAdmin() {
+        setRemoveAlert(false);
+        setWait(true);
+        const clusterAdmin = { clusterAdminNic };
+        axios.post("http://localhost:8070/users/removeClusterAdmin", clusterAdmin).then(
+            (res) => {
+                //check password and username  
+                if (res['data']['message'] == "success") {
+                    setWait(false);
+                    setSuccessMessage("Cluster Admin Update Sucessfully")
+                    setSuccess(true);
+
+                } else {
+                    setWait(false);
+                    setUnsuccessMessage("Cluster Admin Update UnSucessfully");
+                    setUnSuccess(true);
+
+                }
+
+            }
+        ).catch((err) => {
+            //sever error
+            console.log(err.message);
+            setWait(false);
+            setUnsuccessMessage("Network Connection Issue Please Try Again");
+            setUnSuccess(true);
+        })
+
+    }
+
     const list = [];
     //display data in table
-    //check the NIC number
     if (searchData == ""){
         for(let i= 0; i < data.length; i++){
             list.push(
@@ -127,7 +195,9 @@ export default function ClusterAdmin(){
                     <td>{data[i]['email']}</td>
                     <td>{data[i]['phoneNumber']}</td>
                     <td><button id='view-user-button-admin'>View</button></td>
-                    <td><button id='remove-user-button-admin'>Deactivate</button></td>
+                    <td><button id='remove-user-button-admin' onClick={() => { showRemoveMessage(
+                                data[i]['firstName'] + data[i]['lastName'], 
+                                data[i]['userNic']) }} >Deactivate</button></td>
                 </tr>
                 </>
             )
@@ -143,7 +213,9 @@ export default function ClusterAdmin(){
                         <td>{data[i]['email']}</td>
                         <td>{data[i]['phoneNumber']}</td>
                         <td><button id='view-user-button-admin'>View</button></td>
-                        <td><button id='remove-user-button-admin'>Deactivate</button></td>
+                        <td><button id='remove-user-button-admin' onClick={() => { showRemoveMessage(
+                                data[i]['firstName'] + data[i]['lastName'], 
+                                data[i]['userNic']) }} >Deactivate</button></td>
                     </tr>
                     </>)
 
@@ -153,7 +225,32 @@ export default function ClusterAdmin(){
 
     return (
         <div>
-            <div id='user-contanier-admin'> 
+            <div id='user-contanier-admin'>
+
+                {/* Success message/ */}
+                <div id={`${success ? 'sucess-message-active' : 'sucess-message'}`}>
+                    <br /> <h1 id='sucess-message-name'> <img id='successImage' src={successImage} /> <br /> Success !</h1>  <br />
+                    <p id='sucess-message-box'>{successMessage}</p> <br></br>
+                    <button id="okay-button" onClick={() => { setSuccess(sucessbutton) }}> Okay </button>
+                </div>
+
+                {/* remove alert */}
+                <div id={`${removeAlert ? 'remove-alert-clusteradmin-active' : 'sucess-message'}`}>
+                    <br /> <h1 id='remove-alert-clusteradmin-name'> <img id='alert' src={alert} /> <br />Are you removing Dr {clusterAdminName}</h1>
+                    <button id="remove-button" onClick={() => { removeClusterAdmin() }}> Okay </button>
+                    <button id="remove-button" onClick={() => { setRemoveAlert(false) }}> Cancel </button>
+                </div>
+
+                <div id={`${wait ? 'wait-cluterAdmin-active' : 'wait-cluterAdmin'}`}> <img id='wait-cluterAdmin-image' src={waitImage} /> </div>
+
+                <div id={`${unsuccess ? 'unsucess-message-active' : 'unsucess-message'}`}>
+                    <br /> <h1 id='sucess-message-name'> <img id='unsuccessImage' src={unsuccessImage} /> <br /> Wrong !</h1>  <br />
+                    <p id='unsucess-message-box'> {unsuccessMessage}</p> <br />
+                    <button id="okay-button-unsucess" onClick={() => { setSuccess(unsucessbutton) }}> Okay </button>
+                </div>
+
+                <div id={`${formReg || success || unsuccess ? 'fade-clusterAdmin' : null}`}onClick={ () =>{ setFormReg(!formReg)}}></div>
+
                 <h7 id='header-user-admin'>CLUSTER CENTER ADMINISTRATORS</h7>
                 <input type="text" id='input-clusteradmin-admin' placeholder=" &#xf002; Search"/>
                 <button id='add-user-button-admin' onClick={ () =>{ setFormReg(!formReg)}}>Add</button> 
@@ -174,7 +271,7 @@ export default function ClusterAdmin(){
 
             <div id={`${loading ? 'loading-cluterAdmin-active' : 'loading-cluterAdmin'}`}> <img src={loadingImage} /> </div>
             
-
+{/* insert medical officer */}
             <div id={ `${ formReg ? 'register-form-user-admin-active' : 'register-form-user-admin'}`}>
                   
                     
@@ -213,14 +310,14 @@ export default function ClusterAdmin(){
                               <td>   <input type="text" id="register-form-user-input-admin" placeholder="Enter Mobile Number"  onChange={(e)=>{setMobileNumber(e.target.value)}} /> <br />
                               </td>
                           </tr>
-                          <tr>
-                              <td>Cluster Center Id</td>
-                              <td>   <input type="text" id="register-form-user-input-admin" placeholder="Enter center id"  onChange={(e)=>{setClustercenterId(e.target.value)}}  /> <br />
+                          {/* <tr>
+                              <td>Cluster Center No</td>
+                              <td>   <input type="text" id="register-form-user-input-admin" placeholder="Enter center no"  onChange={(e)=>{setBloodCenterNo(e.target.value)}}  /> <br />
                               </td>
-                          </tr>
+                          </tr> */}
                           <tr>
                               <td>Password</td>
-                              <td>   <input type="text" id="register-form-user-input-admin" placeholder="Enter Password"  onChange={(e)=>{setPassword(e.target.value)}}  /> <br />
+                              <td>   <input type="password" id="register-form-user-input-admin" placeholder="Enter Password"  onChange={(e)=>{setPassword(e.target.value)}}  /> <br />
                               </td>
                           </tr>
                            

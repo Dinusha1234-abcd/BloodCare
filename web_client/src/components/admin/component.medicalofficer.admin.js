@@ -19,6 +19,9 @@ export default function MedicalOfficer(){
     const [email, setEmail] = useState("");
     const [mobileNumber, setMobileNumber] = useState("");
     const [password , setPassword] = useState("")
+    const [removeAlert, setRemoveAlert] = useState(false);
+    const [medicalOfficerName, setMedicalOfficerName] = useState("");
+    const [medicalOfficerNic, setMedicalOfficerNic] = useState("");
 
     const [ message,setMessage] = useState("");
     const [success, setSuccess] = useState(false);
@@ -138,14 +141,43 @@ export default function MedicalOfficer(){
     function unsucessbutton() {
         window.location = "/users/medicalOfficer";
     }
-    // function successMessage() {
-    //     if(success){ 
-    //     return(
-    //         <div id='sucess-message'>
-    //           <img id='successImage' src={successImage}/>  <h3 id='sucess-message-name'> Dr {firstName + " " + lastName} Sucessfully Added   <i class="fa-solid fa-xmark close-button-success" onClick={ () =>{ setMessage("")}}></i></h3>
-    //         </div>
-    //     )}
-    // }
+
+    function showRemoveMessage(medicalOfficerName, medicalOfficerNIC){
+        setMedicalOfficerName(medicalOfficerName);
+        setMedicalOfficerNic(medicalOfficerNIC);
+        setRemoveAlert(true);
+    }
+
+    function removeMedicalOfficer() {
+        setRemoveAlert(false);
+        setWait(true);
+        const medicalOfficer = { medicalOfficerNic };
+        axios.post("http://localhost:8070/users/removeMedicalOfficer", medicalOfficer).then(
+            (res) => {
+                //check password and username  
+                if (res['data']['message'] == "success") {
+                    setWait(false);
+                    setSuccessMessage("Medical Officer Update Sucessfully")
+                    setSuccess(true);
+
+                } else {
+                    setWait(false);
+                    setUnsuccessMessage("Medical Officer Update UnSucessfully");
+                    setUnSuccess(true);
+
+                }
+
+            }
+        ).catch((err) => {
+            //sever error
+            console.log(err.message);
+            setWait(false);
+            setUnsuccessMessage("Network Connection Issue Please Try Again");
+            setUnSuccess(true);
+        })
+
+    }
+
 
     const list = [];
     if(searchData == "") {
@@ -157,7 +189,9 @@ export default function MedicalOfficer(){
                     <td>{data[i]['email']}</td>
                     <td>{data[i]['phoneNumber']}</td>
                     <td><button id='view-user-button-admin'>View</button></td>
-                    <td><button id='remove-user-button-admin'>Deactivate</button></td>
+                    <td><button id='remove-user-button-admin' onClick={() => { showRemoveMessage(
+                                data[i]['firstName'] + data[i]['lastName'], 
+                                data[i]['userNic']) }} >Deactivate</button></td>
 
                 </tr>
                 </>
@@ -173,7 +207,10 @@ export default function MedicalOfficer(){
                         <td>{data[i]['email']}</td>
                         <td>{data[i]['phoneNumber']}</td>
                         <td><button id='view-user-button-admin'>View</button></td>
-                        <td><button id='remove-user-button-admin'>Deactivate</button></td>
+
+                        <td><button id='remove-user-button-admin' onClick={() => { showRemoveMessage(
+                                data[i]['firstName'] + data[i]['lastName'], 
+                                data[i]['userNic']) }}>Deactivate</button></td>
                     </tr>
                     </>)
 
@@ -190,6 +227,13 @@ export default function MedicalOfficer(){
                     <br /> <h1 id='sucess-message-name'> <img id='successImage' src={successImage} /> <br /> Success !</h1>  <br />
                     <p id='sucess-message-box'>{successMessage}</p> <br></br>
                     <button id="okay-button" onClick={() => { setSuccess(sucessbutton) }}> Okay </button>
+                </div>
+
+                {/* remove alert */}
+                <div id={`${removeAlert ? 'remove-alert-clusteradmin-active' : 'sucess-message'}`}>
+                    <br /> <h1 id='remove-alert-clusteradmin-name'> <img id='alert' src={alert} /> <br />Are you removing Dr {medicalOfficerName}</h1>
+                    <button id="remove-button" onClick={() => { removeMedicalOfficer() }}> Okay </button>
+                    <button id="remove-button" onClick={() => { setRemoveAlert(false) }}> Cancel </button>
                 </div>
 
                 <div id={`${wait ? 'wait-cluterAdmin-active' : 'wait-cluterAdmin'}`}> <img id='wait-cluterAdmin-image' src={waitImage} /> </div>
