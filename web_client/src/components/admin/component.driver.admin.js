@@ -40,7 +40,6 @@ export default function Driver(){
                     <td>{data[i]['email']}</td>
                     <td>{data[i]['phoneNumber']}</td>
                     <td><button id='view-user-button-admin'>View</button></td>
-                    <td><button id='remove-user-button-admin'>Deactivate</button></td>
 
                 </tr>
                 </>
@@ -61,7 +60,6 @@ export default function Driver(){
                     <th>Name</th>
                     <th>Email Address</th>
                     <th>Contact No</th>
-                    <th id='user-action-admin'>Action</th>
                     <th id='user-action-admin'>Action</th>
                 </tr>
                 

@@ -10,28 +10,68 @@ export default function RegisterCamp() {
   const [FullName, setFullName] = useState("");
   const [NIC , setNIC]  = useState("");
   const [email, setEmail] = useState("");
-  const [mobileNumber, setContact] = useState("");
-  const [campName , setCampName] = useState("")
-  const [campDate , setCampDate] = useState("")
-  const [location, setLocation] = useState("");
-  const [district , setDistrict] = useState("")
-  const [clusterCenter,setClusterCenter] = useState("");
-  const [content , setContent] = useState("")
-  const [numberofDonors , setNumberofDonors] = useState("")
+  const [mobileNumber, setmobileNumber] = useState("");
+  const [campName , setcampName] = useState("")
+  const [campDate , setcampDate] = useState("")
+  const [location, setlocation] = useState("");
+  const [district , setdistrict] = useState("")
+  const [clusterCenter,setclusterCenter] = useState("");
   const [message,setMessage] = useState("");
   const [success, setSuccess] = useState(false)
  
   function addCamp(e) {
+    e.preventDefault()
     const camp = {
+      FullName,
+      NIC,
       email,
+      mobileNumber,
       campName,
       campDate,
       location,
       district,
       clusterCenter,
-     
-      numberofDonors
     }
+
+    if (FullName.length == 0) {
+      setMessage("Please Enter Full Name ");
+  } else if (!(NIC.length == 10 || NIC.length == 12)) {
+      console.log(NIC.length);
+      setMessage("Please Enter  Valid NIC Number ");
+  } else if (email.length == 0) {
+      setMessage("Please Enter Email ");
+
+  }else if (!(mobileNumber.length == 10)) {
+    setMessage("Please Enter  Valid Mobile Number");
+
+}else if (campName.length == 0) {
+    setMessage("Please Enter Camp Name ");
+
+  } else if (!campDate) {
+    setMessage("Please Enter Camp Date");
+
+  }else if (location.length == 0) {
+      setMessage("Please Enter Location ");
+
+  } else if (!district) {
+      setMessage("Please Enter District");
+
+  }  else if (!clusterCenter) {
+    setMessage("Please Enter Cluster Center");
+
+}else {
+      setFormReg(false);
+      setSuccess(true);
+      setFullName('');
+      setNIC('');
+      setmobileNumber('');
+      setcampName('');
+      setcampDate('');
+      setlocation('');
+      setdistrict('');
+      setclusterCenter('');
+      e.target.reset();
+
     axios.post("http://localhost:8070/camp/register", camp).then(
       (res) => {
           //check password and username  
@@ -49,7 +89,7 @@ export default function RegisterCamp() {
       console.log(err.message);
   })
 
-  }
+  }}
   return (
     <RegisteredDonorUpcomingBloodCampRoot>
       <FlexRow>
@@ -82,7 +122,7 @@ export default function RegisterCamp() {
                             </tr>
                             <tr>
                                 <td id="camp-form-table-font-size">Contact</td>
-                                <td>   <input type="text" id="register-form-new-camp" placeholder="Enter Telephone Number" onChange={(e)=>{setContact(e.target.value)}}  /> <br />
+                                <td>   <input type="text" id="register-form-new-camp" placeholder="Enter Telephone Number" onChange={(e)=>{setmobileNumber(e.target.value)}}  /> <br />
                                 </td>
                                 <td></td>
                                 <td id="coloum-register-camp">Email</td>
@@ -91,20 +131,20 @@ export default function RegisterCamp() {
                             </tr>
                             <tr>
                                 <td id="camp-form-table-font-size">Blood Camp Name</td>
-                                <td>   <input type="text" id="register-form-new-camp" placeholder="Enter Camp Name"  onChange={(e)=>{setCampName(e.target.value)}} /> <br />
+                                <td>   <input type="text" id="register-form-new-camp" placeholder="Enter Camp Name"  onChange={(e)=>{setcampName(e.target.value)}} /> <br />
                                 </td>
                                 <td></td>
                                 <td id="coloum-register-camp" >Blood Camp Date</td>
-                                <td>   <input type="date" id="register-form-new-camp" placeholder="Enter Camp Date"  onChange={(e)=>{setCampDate(e.target.value)}} /> <br />
+                                <td>   <input type="date" id="register-form-new-camp" placeholder="Enter Camp Date"  onChange={(e)=>{setcampDate(e.target.value)}} /> <br />
                                 </td>
                             </tr>
                             <tr>
                                 <td id="camp-form-table-font-size">Location</td>
-                                <td>   <input type="text" id="register-form-new-camp" placeholder="Enter Location"  onChange={(e)=>{setLocation(e.target.value)}}  /> <br />
+                                <td>   <input type="text" id="register-form-new-camp" placeholder="Enter Location"  onChange={(e)=>{setlocation(e.target.value)}}  /> <br />
                                 </td>
                                 <td></td>
                                 <td id="coloum-register-camp">District</td>
-                                <td><select id="register-form-new-camp" placeholder="Enter District"  onChange={(e)=>{setDistrict(e.target.value)}}>
+                                <td><select id="register-form-new-camp" placeholder="Enter District"  onChange={(e)=>{setdistrict(e.target.value)}}>
                                 <option value="" disabled selected>Select District</option>
                                 <option value="colombo">Colombo</option>
                                 <option value="galle">Galle</option>
@@ -115,7 +155,7 @@ export default function RegisterCamp() {
                             </tr>
                             <tr>
                                 <td id="camp-form-table-font-size">Cluster Center</td>
-                                <td>   <select id="register-form-new-camp" placeholder="Enter Cluster Center"  onChange={(e)=>{setClusterCenter(e.target.value)}}>
+                                <td>   <select id="register-form-new-camp" placeholder="Enter Cluster Center"  onChange={(e)=>{setclusterCenter(e.target.value)}}>
                                 <option value="" disabled selected>Select Cluster Center</option>
                                 <option value="nbc">NBC</option>
                                 <option value="nhsl">NHSL</option>
@@ -124,9 +164,7 @@ export default function RegisterCamp() {
                                 </select><br />
                                 </td>
                                 <td></td>
-                                <td id="coloum-register-camp" >Expect Number of Donors</td>
-                                <td>   <input type="text" id="register-form-new-camp" placeholder="Enter Number of Donors"  onChange={(e)=>{setNumberofDonors(e.target.value)}}  /> <br />
-                                </td>
+                             
                             </tr>
             
                              

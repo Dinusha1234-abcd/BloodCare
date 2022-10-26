@@ -7,15 +7,6 @@ import "../assests/css/component.doctors.css";
 import axios from "axios";
 
 export default function Camps() {
-  const IconButtonFunction = (e, name) => {
-    alert(`${name} was clicked`);
-  };
-  const IconButton1Function = (e, name) => {
-    alert(`${name} was clicked`);
-  };
-  const Text63Function = (e, name) => {
-    alert(`${name} was clicked`);
-  };
 
   function joinCamp(e) {
     e.preventDefault();
@@ -70,7 +61,6 @@ export default function Camps() {
   }
 
   const [date, setDate] = useState(new Date());
-
   const [formRegCamp, setFormRegCamp] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -80,6 +70,66 @@ export default function Camps() {
   const [mobileNumber, setMobileNumber] = useState("");
   const [success, setSuccess] = useState(false);
   const [message, setMessage] = useState("");
+  const [firstRow, setFirstRow] = useState(0);
+  const [lastRow, setLastRow] = useState(0);
+  const [searchData, setSearchData] = useState("");
+  const [data, setData] = useState([]);
+
+  const list = [];
+
+  if (searchData == "") {
+
+    for (let i = firstRow; i < lastRow; i++) {
+      list.push(
+          <>
+
+    <Task height={`200px`}>
+      
+      <Content>
+        <Text47>{data[i]['campName']}</Text47>
+        <Paragraph>
+          Join our blood camp organized by the Leo Club of
+          University of Colombo!
+          <br />
+          <br />
+          {"       "}
+          {data[i]['location']}
+        </Paragraph>
+        <FlexRow12>
+          <PiggyPinkText>Register</PiggyPinkText>
+          <FancyChip>
+            <Chip1 width={`92px`}>
+              <AvatarFill>
+                <Image1
+                  src={`https://file.rendit.io/n/3gXlyjGNIVtjCL0f8Kj5.png`}
+                />
+              </AvatarFill>
+              <Label color={`#334155`}>{data[i]['FullName']}</Label>
+            </Chip1>
+          </FancyChip>
+        </FlexRow12>
+        <Dotsvertical
+          src={`https://file.rendit.io/n/7DQQkHayPLktTdJn6JGq.svg`}
+        />
+      </Content>
+
+      <Footer height={`15px`}>
+        <Action2>
+          <Image1
+            src={`https://file.rendit.io/n/nkwg6PdHOZ0AINY0BgTB.svg`}
+          />
+          <June width={`63px`}>{data[i]['campDate']}</June>
+        </Action2>
+      </Footer>
+      <Akariconslocation>
+        <Akariconslocation1
+          src={`https://file.rendit.io/n/XVa7BszjAOZwC9AViTad.svg`}
+        />
+      </Akariconslocation>
+    </Task>
+    </>)
+}
+  };
    
   return (
     <CampsRoot>
@@ -129,13 +179,7 @@ export default function Camps() {
                         </BaseField>
                       </Field>
                     </Input>
-                    <IconButton
-                      onClick={(e) => IconButtonFunction(e, "IconButton")}
-                    >
-                      <Search
-                        src={`https://file.rendit.io/n/6tFKJOWKIIGPujW7Hkng.svg`}
-                      />
-                    </IconButton>
+                    
                   </Element58>
                   <CurrentLocation
                     src={`https://file.rendit.io/n/5QawF07Pkg99dPOvwROw.svg`}
@@ -150,20 +194,7 @@ export default function Camps() {
                       </Label17>
                     </View>
                     <Controls>
-                      <IconButton1
-                        onClick={(e) => IconButton1Function(e, "IconButton1")}
-                      >
-                        <Search
-                          src={`https://file.rendit.io/n/NSNorMZHKQ99xq1HxPl9.svg`}
-                        />
-                      </IconButton1>
-                      <IconButton1
-                        onClick={(e) => IconButton1Function(e, "IconButton2")}
-                      >
-                        <Search
-                          src={`https://file.rendit.io/n/naYn9K9894qZGhHjWlWL.svg`}
-                        />
-                      </IconButton1>
+                     
                     </Controls>
                   </FlexRow10>
                 </Map1>
@@ -173,48 +204,8 @@ export default function Camps() {
               <Text46>Blood Camp Locations</Text46>
               <FlexRow11>
                 <LaneInner>
-                  <Task height={`200px`}>
-                    <Content>
-                      <Text47>Supipi Blood Camp</Text47>
-                      <Paragraph>
-                        Join our blood camp organized by the Leo Club of
-                        University of Colombo!
-                        <br />
-                        <br />
-                        {"       "}
-                        32/1, Road Lane, Colombo
-                      </Paragraph>
-                      <FlexRow12>
-                        <PiggyPinkText>Register</PiggyPinkText>
-                        <FancyChip>
-                          <Chip1 width={`92px`}>
-                            <AvatarFill>
-                              <Image1
-                                src={`https://file.rendit.io/n/3gXlyjGNIVtjCL0f8Kj5.png`}
-                              />
-                            </AvatarFill>
-                            <Label color={`#334155`}>Rudra Devi</Label>
-                          </Chip1>
-                        </FancyChip>
-                      </FlexRow12>
-                      <Dotsvertical
-                        src={`https://file.rendit.io/n/7DQQkHayPLktTdJn6JGq.svg`}
-                      />
-                    </Content>
-                    <Footer height={`15px`}>
-                      <Action2>
-                        <Image1
-                          src={`https://file.rendit.io/n/nkwg6PdHOZ0AINY0BgTB.svg`}
-                        />
-                        <June width={`63px`}>Jun 2, 2022</June>
-                      </Action2>
-                    </Footer>
-                    <Akariconslocation>
-                      <Akariconslocation1
-                        src={`https://file.rendit.io/n/XVa7BszjAOZwC9AViTad.svg`}
-                      />
-                    </Akariconslocation>
-                  </Task>
+
+             
                   <Task height={`200px`}>
                     <Content>
                       <Text47>Supipi Blood Camp</Text47>
