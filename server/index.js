@@ -259,7 +259,7 @@ app.use("/headnurse/donorrequest",donorrequest);
 
 
 //home
-// app.use("/showCamps", getCampsData);
+app.use("/showCamps", getCampsData);
 app.use("/campRegister", addCamp);
 app.use("/donorRegister", joinCamp);
 
