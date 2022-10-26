@@ -7,7 +7,7 @@ const login = require('./routes/login');
 const forgetPassword = require('./routes/forgetPassword');
 const passwordChange = require('./routes/passwordChange');
 const campRegister  = require('./routes/campRegister'); 
- 
+const clusterCenter = require('./routes/getClusterCenter'); 
 app.max_user_connections = 100;
 app.max_user_connections = 200;
 
@@ -74,6 +74,7 @@ const selectDonor = require('./routes/clusterAdmin/registerDonor/selectDonor');
 
 const medicalstaff = require('./routes/clusterAdmin/dashboard/getMedicalStaff')
 const camp = require('./routes/clusterAdmin/dashboard/getCamps');
+const blood = require('./routes/clusterAdmin/dashboard/getBlood');
 
 //registerDonor
 const homeSelectCamp = require('./routes/registerDonor/homeSelectCamp');
@@ -85,6 +86,9 @@ const foodTypeInsert =require('./routes/registerDonor/registerformUpdate');
 const profileDetail =require('./routes/registerDonor/profileDetail');
 const profileUpdate =require('./routes/registerDonor/profileUpdate');
 
+
+
+
 //admin
 
 const addClusterAdmin = require('./routes/admin/users/clusterAdmin/addClusterAdmin');
@@ -94,6 +98,7 @@ const removeClusterAdmin = require('./routes/admin/users/clusterAdmin/removeClus
 const selectMedicalOfficer = require('./routes/admin/users/medicalOfficer/selectMedicalOfficer');
 const addMedicalOfficer = require('./routes/admin/users/medicalOfficer/addMedicalOfficer');
 const removeMedicalOfficer = require('./routes/admin/users/medicalOfficer/removeMedicalOfficer');
+const updateMedicalOfficer = require('./routes/admin/users/medicalOfficer/updateMedicalOfficer');
 
 const selectDoctorAdmin = require('./routes/admin/users/doctor/selectDoctor');
 const removeDoctorAdmin = require('./routes/admin/users/doctor/removeDoctor');
@@ -109,6 +114,15 @@ const selectDonorAdmin = require('./routes/admin/users/donor/selectDonor');
 
 const selectClusterCenter = require('./routes/admin/clusterCenter/selectClusterCenter');
 const addClusterCenter = require('./routes/admin/clusterCenter/addClusterCenter');
+const removeClusterCenter = require('./routes/admin/clusterCenter/removeClusterCenter');
+
+const selectOngoingCamp = require('./routes/admin/camp/ongoingCamp/selectOngoingCamp');
+const selectUpcomingCamp = require('./routes/admin/camp/upcomingCamp/selectUpcomingCamp');
+
+const members = require('./routes/admin/dashboard/getMembers');
+const clusterCenters = require('./routes/admin/dashboard/getClusterCenters');
+
+
 
 
 //headnurse
@@ -117,12 +131,88 @@ const donors = require('./routes/headnurse/donors');
 //const register = require('./routes/headnurse/registerdonor');
 const pastcamp = require('./routes/headnurse/pastcamp');
 const donorrequest = require('./routes/headnurse/donorrequest');
+const donordetails = require('./routes/headnurse/donordetails');
+const summary = require('./routes/headnurse/summary');
+
+//medical officer
+
+const pendingCampMO = require('./routes/medicalOfficer/camp/pendingCamp/selectPendingCamp');
+const pendingCampViewMO = require('./routes/medicalOfficer/camp/pendingCamp/pendingCampView');
+const getMedicalStaffMO = require('./routes/medicalOfficer/camp/pendingCamp/getStaffMembers')
+const campStatusMO = require('./routes/medicalOfficer/camp/pendingCamp/statusPendingCamp');
+const assignStaffMO = require('./routes/medicalOfficer/camp/pendingCamp/assignStaff');
+const upcomingCampMO = require('./routes/medicalOfficer/camp/upcomingCamp/selectUpcomingCamp');
+const upcomingCampViewMO = require('./routes/medicalOfficer/camp/upcomingCamp/upcomingCampView');
+const getRegistersMO = require('./routes/medicalOfficer/camp/upcomingCamp/getRegisters');
+const ongoingCampViewMO = require('./routes/medicalOfficer/camp/ongoingCamp/ongoingCampView');
+const getRegistersOngoingMO = require('./routes/medicalOfficer/camp/ongoingCamp/getRegisters');
+const pastCampMO = require('./routes/medicalOfficer/camp/pastCamp/selectpastCamp');
+const ongoingCampMO = require('./routes/medicalOfficer/camp/ongoingCamp/selectOngoingCamp')
+const pastCampViewMO = require('./routes/medicalOfficer/camp/pastCamp/pastCampView'); 
+const pastCampDonorsMO = require('./routes/medicalOfficer/camp/pastCamp/getDonotion');
+
+const opositiveCountMO = require('./routes/medicalOfficer/blood/O/Opositive');
+const opositiveCampMO = require('./routes/medicalOfficer/blood/O/OpositiveGetCamp');
+const onegativeCountMO = require('./routes/medicalOfficer/blood/O/Onegative');
+const onegativeCampMO = require('./routes/medicalOfficer/blood/O/OnegativeGetCamp');
+
+const apositiveCountMO = require('./routes/medicalOfficer/blood/A/Apositive');
+const apositiveCampMO = require('./routes/medicalOfficer/blood/A/ApositiveGetCamp');
+const anegativeCountMO = require('./routes/medicalOfficer/blood/A/Anegative');
+const anegativeCampMO = require('./routes/medicalOfficer/blood/A/AnegativeGetCamp');
+
+const abpositiveCountMO = require('./routes/medicalOfficer/blood/AB/ABpositive');
+const abpositiveCampMO = require('./routes/medicalOfficer/blood/AB/ABpositiveGetCamp');
+const abnegativeCountMO = require('./routes/medicalOfficer/blood/AB/ABnegative');
+const abnegativeCampMO = require('./routes/medicalOfficer/blood/AB/ABnegativeGetCamp');
+
+const bpositiveCountMO = require('./routes/medicalOfficer/blood/B/Bpositive');
+const bpositiveCampMO = require('./routes/medicalOfficer/blood/B/BpositiveGetCamp');
+const bnegativeCountMO = require('./routes/medicalOfficer/blood/B/Bnegative');
+const bnegativeCampMO = require('./routes/medicalOfficer/blood/B/BnegativeGetCamp');
+
+const addDoctorMO = require('./routes/medicalOfficer/medicalStaff/doctor/addDoctor');
+const selectDoctorMO = require('./routes/medicalOfficer/medicalStaff/doctor/selectDoctor'); 
+const updateDoctorMO = require('./routes/medicalOfficer/medicalStaff/doctor/updateDoctor');
+const removeDoctorMO = require('./routes/medicalOfficer/medicalStaff/doctor/removeDoctor');
+
+const addHeadNurseMO = require('./routes/medicalOfficer/medicalStaff/headNurse/addHeadNurse');
+const selectHeadNurseMO = require('./routes/medicalOfficer/medicalStaff/headNurse/selectHeadNurse'); 
+const updateHeadNurseMO = require('./routes/medicalOfficer/medicalStaff/headNurse/updateHeadNurse');
+const removeHeadNurseMO = require('./routes/medicalOfficer/medicalStaff/headNurse/removeHeadNurse');
+
+const addNurseMO = require('./routes/medicalOfficer/medicalStaff/nurse/addNurse');
+const selectNurseMO = require('./routes/medicalOfficer/medicalStaff/nurse/selectNurse');
+const updateNurseMO = require('./routes/medicalOfficer/medicalStaff/nurse/updateNurse');
+const removeNurseMO = require('./routes/medicalOfficer/medicalStaff/nurse/removeNurse'); 
+
+const addDriverMO = require('./routes/medicalOfficer/medicalStaff/driver/addDriver');
+const selectDriverMO = require('./routes/medicalOfficer/medicalStaff/driver/selectDriver'); 
+const updateDriverMO = require('./routes/medicalOfficer/medicalStaff/driver/updateDriver'); 
+const removeDriverMO = require('./routes/medicalOfficer/medicalStaff/driver/removeDriver'); 
+
+const getCampMO = require('./routes/medicalOfficer/calender/calender');
+
+const selectDonorMO = require('./routes/medicalOfficer/registerDonor/selectDonor'); 
+
+const medicalstaffMO = require('./routes/medicalOfficer/dashboard/getMedicalStaff')
+const campMO = require('./routes/medicalOfficer/dashboard/getCamps');
+const bloodMO = require('./routes/medicalOfficer/dashboard/getBlood');
 
 
 //home
 const addCamp = require('./routes/campRegister');
+
+
+
+//const getCampsData = require('./routes/showCamps');
+ 
+
+
 const getCampsData = require('./routes/showCamps');
  
+
+
 
 
 
@@ -208,7 +298,7 @@ app.use("/calender/getdates",getCamp);
 
 app.use("/dashboard/medicalstaff",medicalstaff);
 app.use("/dashboard/camp",camp);
-
+app.use("/dashboard/blood",blood);
 
 
 //register Donor
@@ -222,6 +312,8 @@ app.use("/registerDonor/profileDetail",profileDetail);
 app.use("/registerDonor/profileUpdate",profileUpdate);
 
 
+
+
 //admin
 
 app.use("/users/addClusterAdmin",addClusterAdmin);
@@ -231,6 +323,7 @@ app.use("/users/removeClusterAdmin",removeClusterAdmin);
 app.use("/users/selectMedicalOfficer", selectMedicalOfficer);
 app.use("/users/addMedicalOfficer", addMedicalOfficer);
 app.use("/users/removeMedicalOfficer", removeMedicalOfficer);
+app.use("/users/updateMedicalOfficer", updateMedicalOfficer);
 
 app.use("/users/selectDoctor", selectDoctorAdmin);
 app.use("/users/removeDoctor", removeDoctorAdmin);
@@ -246,6 +339,14 @@ app.use("/users/selectDonor", selectDonorAdmin);
 
 app.use("/clusterCenter/selectClusterCenter", selectClusterCenter);
 app.use("/clusterCenter/addClusterCenter", addClusterCenter);
+app.use("/clusterCenter/removeClusterCenter", removeClusterCenter);
+
+app.use("/camp/selectOngoingCamp", selectOngoingCamp);
+app.use("/camp/selectUpcomingCamp", selectUpcomingCamp);
+
+app.use("/dashboard/members",members);
+app.use("/dashboard/clusterCenters",clusterCenters);
+
 
 
 
@@ -256,13 +357,80 @@ app.use("/headnurse/upcommingcamp",upcommingcamp);
 app.use("/headnurse/donors",donors);
 app.use("/headnurse/pastcamp",pastcamp);
 app.use("/headnurse/donorrequest",donorrequest);
+app.use("/headnurse/donordetails",donordetails);
+app.use("/headnurse/summary",summary);
+
+//medical officer
+app.use("/camp/selectpendingcamp",pendingCampMO); 
+app.use("/camp/selectupcomingcamp",upcomingCampMO); 
+app.use("/camp/selectupcomingcampview",upcomingCampViewMO); 
+
+app.use("/camp/selectongoingcamp",ongoingCampMO); 
+app.use("/camp/selectpastcamp",pastCampMO); 
+app.use("/camp/pendingcampview",pendingCampViewMO); 
+app.use("/camp/staffmembers",getMedicalStaffMO); 
+app.use("/camp/confirmationcamp",campStatusMO); 
+app.use("/camp/assigncamp",assignStaffMO); 
+app.use("/camp/registercampusers",getRegistersMO); 
+app.use("/camp/assigncamp",ongoingCampViewMO); 
+app.use("/camp/registercampusers",getRegistersOngoingMO); 
+app.use("/camp/pastcampview",pastCampViewMO); 
+app.use("/camp/getpastcampdonors",pastCampDonorsMO); 
+
+app.use("/blood/opostivecount",opositiveCountMO);
+app.use("/blood/opositivecamp",opositiveCampMO)
+
+app.use("/blood/onegativecount",onegativeCountMO);
+app.use("/blood/onegativecamp",onegativeCampMO)
+
+app.use("/blood/apositivecount",apositiveCountMO);
+app.use("/blood/apositivecamp",apositiveCampMO)
+
+app.use("/blood/anegativecount",anegativeCountMO);
+app.use("/blood/anegativecamp",anegativeCampMO)
+
+app.use("/blood/bpositivecount",bpositiveCountMO);
+app.use("/blood/bpositivecamp",bpositiveCampMO)
+
+app.use("/blood/bnegativecount",bnegativeCountMO);
+app.use("/blood/bnegativecamp",bnegativeCampMO)
+
+app.use("/blood/abpositivecount",abpositiveCountMO);
+app.use("/blood/abpositivecamp",abpositiveCampMO);
+
+app.use("/blood/abnegativecount",abnegativeCountMO);
+app.use("/blood/abnegativecamp",abnegativeCampMO)
+
+app.use("/medicalstaff/doctor",addDoctorMO);
+app.use("/medicalstaff/selectdoctor",selectDoctorMO);
+app.use("/medicalstaff/updatedoctor",updateDoctorMO);
+app.use("/medicalstaff/removedoctor",removeDoctorMO);
+app.use("/Medicalstaff/headNurse",addHeadNurseMO);
+app.use("/medicalstaff/selectHeadNurse", selectHeadNurseMO);
+app.use("/medicalstaff/updateHeadNurse", updateHeadNurseMO);
+app.use("/medicalstaff/removeHeadNurse",removeHeadNurseMO);
+app.use("/medicalstaff/nurse"   ,addNurseMO);
+app.use("/medicalstaff/selectNurse",selectNurseMO);
+app.use("/medicalstaff/updateNurse",updateNurseMO);
+app.use("/medicalstaff/removenurse",removeNurseMO);
+app.use("/medicalstaff/driver",addDriverMO);
+app.use("/medicalstaff/selectdriver",selectDriverMO);
+app.use("/medicalstaff/updatedriver",updateDriverMO);
+app.use("/medicalstaff/removeDriver",removeDriverMO);
+ 
+app.use("/registerdonor/selectdonor",selectDonorMO);
+app.use("/calender/getdates",getCampMO);
+
+app.use("/dashboard/medicalstaff",medicalstaffMO);
+app.use("/dashboard/camp",campMO);
+app.use("/dashboard/blood",bloodMO);
 
 
 //home
-app.use("/showCamps", getCampsData);
+//app.use("/showCamps", getCampsData);
 app.use("/campRegister", addCamp);
 app.use("/donorRegister", joinCamp);
-
+app.use("/clusterCenter", clusterCenter);
 
 
 

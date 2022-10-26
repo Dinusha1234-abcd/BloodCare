@@ -1,5 +1,6 @@
 import React, { useState,useCallback, useEffect } from "react";
 import axios from 'axios';
+import { Link } from "react-router-dom";
 import SlideMenuHeadNurse from "../components/headnurse/component.slidemenu.headNurse";
 import '../assests/css/headnurse/headnurse.assigncamps.css';
 import Upcomming from '../assests/images/upcomming.png';
@@ -52,8 +53,9 @@ export default function HeadNurseAssignCamps() {
                       <p id="p-head">{data[i]['name']}</p>
                       <p id="p-head">{data[i]['date']}</p>
                       <p id="p-head">{data[i]['place']}</p>
-                      <a href="/headnurse/donorrequests">
-                      <button id='button1'>View Requested Donors</button> </a>
+                     
+                        <Link id='button1' to={`${'/headnurse/donorrequests/'+data[i]['bloodCampNumber']+'/'}`}><p id="bu-name">View Requested Donors</p> </Link>
+                    
                       
                   </div>
                   <br></br> 

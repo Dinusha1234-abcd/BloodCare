@@ -224,14 +224,16 @@
 
 /*blood */
 #sub-row2-headnurse-summary{
-    width:83%;
+    position: absolute;
+    width:75%;
+    height: 200px;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.55);
     box-shadow: 20px 20px 100px 5px rgba(0, 0, 0, 0.2);
     padding: 11px;
-    padding-left: 60px;
-    margin-top: 500px;
-    margin-left: 100px;
+    padding-left: 1px;
+    margin-top: 250px;
+    margin-left:100px;
   }
 
 
@@ -275,3 +277,125 @@
     margin-left: 850px;
     margin-top: 20px;
   }
+
+
+  #blood-count-camp1-1-summary{
+    position: absolute;
+    width:78px;
+    height: 100px;
+    border-radius: 20px;
+    padding :3px;
+    /* padding-bottom: 19px; */
+    margin-left: 20px;
+    background: rgba(255, 255, 255, 0.79);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+#blood-count-camp1-2-summary{
+    position: absolute;
+    width:78px;
+    height: 100px;
+    border-radius: 20px;
+    padding :3px;
+    /* padding-bottom: 19px; */
+    margin-left: 110px;
+    background: rgba(255, 255, 255, 0.79);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#blood-count-camp1-3-summary{
+    position: absolute;
+    width:78px;
+    height: 100px;
+    border-radius: 20px;
+    padding :3px;
+    /* padding-bottom: 19px; */
+    margin-left: 200px;
+    background: rgba(255, 255, 255, 0.79);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#blood-count-camp1-4-summary{
+    position: absolute;
+    width:78px;
+    height: 100px;
+    border-radius: 20px;
+    padding :3px;
+    /* padding-bottom: 19px; */
+    margin-left: 290px;
+    background: rgba(255, 255, 255, 0.79);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#blood-count-camp1-5-summary{
+    position: absolute;
+    width:78px;
+    height: 100px;
+    border-radius: 20px;
+    padding :3px;
+    /* padding-bottom: 19px; */
+    margin-left: 380px;
+    background: rgba(255, 255, 255, 0.79);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#blood-count-camp1-6-summary{
+    position: absolute;
+    width:78px;
+    height: 100px;
+    border-radius: 20px;
+    padding :3px;
+    /* padding-bottom: 19px; */
+    margin-left: 470px;
+    background: rgba(255, 255, 255, 0.79);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#blood-count-camp1-7-summary{
+    position: absolute;
+    width:78px;
+    height: 100px;
+    border-radius: 20px;
+    padding :3px;
+    /* padding-bottom: 19px; */
+    margin-left: 560px;
+    background: rgba(255, 255, 255, 0.79);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#blood-count-camp1-8-summary{
+    position: absolute;
+    width:78px;
+    height: 100px;
+    border-radius: 20px;
+    padding :3px;
+    /* padding-bottom: 19px; */
+    margin-left: 650px;
+    background: rgba(255, 255, 255, 0.79);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+#blood-name-summary{
+    margin-top: 20px;
+    font-size: large;
+ }
+ 
+ #blood-cont-summary{
+    margin-top: 10px;
+    color: #DD2D50;
+    margin-left:20px;
+ }
+
+
+ #c-blood-summary{
+    position: absolute;
+    
+    width:800px;
+    height: 100px;
+    margin-left: 10%;
+    margin-top:25px;
+
+}
+
+#blood-headnurse{
+    width:50px;
+}

@@ -185,12 +185,12 @@ function App() {
             <Route path='/login' exact element={<Login />} />
             <Route path='/headnurse/assigncamps' exact element={<HeadNurseAssignCamps />} />
             <Route path='/headnurse/pastcamps' exact element={<HeadNursePastCamps />} />
-            <Route path='/headnurse/donorrequests' exact element={<HeadNurseDonorRequests />} />
+            <Route path='/headnurse/donorrequests/:id' exact element={<HeadNurseDonorRequests />} />
             <Route path='/headnurse/profile' exact element={<HeadNurseProfile />} />
             <Route path='/' exact element={ <LandingPage /> } />
             <Route path='/camps' exact element={<Camps />} />
             <Route path='/registercamp' exact element={<RegisterCamp />} />
-            <Route path='/headnurse/donordetails' exact element={<HeadNurseDonorDetails />} />
+            <Route path='/headnurse/donordetails/:id' exact element={<HeadNurseDonorDetails />} />
             <Route path='/headnurse/donors' exact element={<HeadNurseDonors />} />
             <Route path='/headnurse/addnewdonor' exact element={<HeadNurseAddNewDonors />} />
             <Route path='/headnurse/summarywork' exact element={<HeadNurseSummaryWork />} />

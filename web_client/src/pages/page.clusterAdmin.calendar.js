@@ -57,6 +57,25 @@ export default function ClusterAdminCalendar(){
             })
 
     }
+    function getCamp() {
+
+        const clusterAdminNic = localStorage.getItem('userNic');
+         const clusterAdmin = {
+             clusterAdminNic
+         } 
+         axios.post("http://localhost:8070/dashboard/getcamps",clusterAdmin).then(
+              (res) => {
+  
+                  setData(res.data.camps);
+                  setLoading(!loading);
+              }).catch((err) => {
+                  //sever error
+                  setLoading(!loading);
+                  setUnsuccessMessage("Network Connection Issue Please Try Again");
+                  setUnSuccess(true)
+              })
+  
+      }
     const list = [{
         title: "Camp 12",
         allDay : true,

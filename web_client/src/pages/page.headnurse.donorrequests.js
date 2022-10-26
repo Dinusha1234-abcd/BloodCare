@@ -8,11 +8,13 @@ import donorheadnurse from '../assests/images/donor.png';
 import man from '../assests/images/man.png';
 import boy from '../assests/images/boy.png';
 import woman from '../assests/images/woman.png';
-
+import { useParams } from "react-router-dom"; 
 
 
 
 export default function HeadNurseDonorRequests() {
+
+    const {id} = useParams();
     const [slidemenu, setSlideMenu] = useState(true);
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -22,6 +24,8 @@ export default function HeadNurseDonorRequests() {
     const [success, setSuccess] = useState(false); 
     const [date, setDate] = useState(new Date())
     
+     
+
     const passData = (data) => {
       setSlideMenu(data);
     };
@@ -29,7 +33,12 @@ export default function HeadNurseDonorRequests() {
     useEffect((() => { getDonorRequest() }), [])
 
     function getDonorRequest() {
-      axios.get("http://localhost:8070/headnurse/donorrequest").then(
+     const campNumber = id ;      
+      const camp = {
+         campNumber,
+      }
+
+      axios.post("http://localhost:8070/headnurse/donorrequest" , camp).then(
           (res) => {
               setData(res.data.donorrequest);
               console.log(res.data);
@@ -55,11 +64,13 @@ export default function HeadNurseDonorRequests() {
       //check the NIC number
       //if (searchData == "") {
           for(let i=0; i<data.length; i++){
+            
               list.push(
                   <> <div id="user1">
                       <img id="man" src={man}/>
                       <h4 id="h4-user">{data[i]['firstName']}</h4>
                       <a href="/headnurse/addnewdonor">
+                  
                       <button type="button" id="button1-user" > Register </button>
                       </a>
                       <p id="p-user"> {data[i]['email']}</p>

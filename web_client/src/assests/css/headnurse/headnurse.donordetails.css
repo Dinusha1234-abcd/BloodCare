@@ -14,9 +14,9 @@
     background: rgba(255, 255, 255, 0.5);
     box-shadow: 100px 100px 200px 5px #FCD0D9;
     width:1000px;
-    height:570px;
+    height:605px;
     margin-left: 10%;
-    margin-top: 3%;
+    margin-top: 1%;
 }  
 
 #donor-photo-headnurse{
@@ -24,7 +24,7 @@
     /*background: rgba(255, 255, 255, 0.5);*/
     box-shadow: 100px 100px 200px 5px #FCD0D9;
     width:250px;
-    height:570px;
+    height:605px;
     margin-left: 0%;
     margin-top: 0%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);

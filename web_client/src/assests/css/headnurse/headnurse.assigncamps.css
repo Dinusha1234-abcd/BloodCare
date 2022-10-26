@@ -123,10 +123,16 @@
 
 }
 
+#bu-name{
+    margin-top: 10px;
+    padding-left: 10px;
+   
+}
+
 #button1{
     position:absolute;
-    margin-left: 25%;
-    width:157px;
+    margin-left: 22%;
+    width:185px;
     height: 40px;
     border-radius: 20px; 
     font-size:15px;

@@ -10,8 +10,9 @@ router.post('/', async function (req, res) {
    const campDate = req.body.campDate;
    const location = req.body.location;
    const district = req.body.district;
+   const mobileNumber = req.body.mobileNumber;
    const clusterCenter = req.body.clusterCenter;
- 
+   const numberofDonors = req.body.donors;
    
    await campRegister.addCamp(FullName,NIC,email,mobileNumber,campName,campDate, location, district, clusterCenter,numberofDonors).then(
       (user) => {
@@ -19,6 +20,7 @@ router.post('/', async function (req, res) {
             return res.json({
                message: "success",
             });
+            console.log("ok")
         
       }
    ).catch((err) => {
