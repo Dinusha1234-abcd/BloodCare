@@ -127,6 +127,7 @@ const donors = require('./routes/headnurse/donors');
 const pastcamp = require('./routes/headnurse/pastcamp');
 const donorrequest = require('./routes/headnurse/donorrequest');
 const donordetails = require('./routes/headnurse/donordetails');
+const summary = require('./routes/headnurse/summary');
 
 //medical officer
 
@@ -349,6 +350,7 @@ app.use("/headnurse/donors",donors);
 app.use("/headnurse/pastcamp",pastcamp);
 app.use("/headnurse/donorrequest",donorrequest);
 app.use("/headnurse/donordetails",donordetails);
+app.use("/headnurse/summary",summary);
 
 //medical officer
 app.use("/camp/selectpendingcamp",pendingCampMO); 

@@ -51,9 +51,7 @@ export default function HeadNursePastCamps() {
     const list = [];
    
     
-    const val = [];
-    for(let j=0;j<data.length-1; j++){
-    val.push(<> <h2 id ="h2-head-past">{data[j]['count']}</h2></>) }
+    
   
 
 
@@ -84,9 +82,6 @@ export default function HeadNursePastCamps() {
                       <p id="p-head-past">Orgernizer Name : {data[i]['organizerName']}</p>
                       <p id="p-head-past">Province : {data[i]['province']}</p>
                      
-
-                      
-
                       <a href="/headnurse/donors">
                       <button id='button1-past'>view donor details</button> </a>
                       

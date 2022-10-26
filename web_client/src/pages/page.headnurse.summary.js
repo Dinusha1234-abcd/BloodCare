@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from 'axios';
 import SlideMenuHeadNurse from "../components/headnurse/component.slidemenu.headNurse";
 import '../assests/css/headnurse/headnurse.summary.css';
 import blood_dot_sum from '../assests/images/report.png';
@@ -16,10 +17,98 @@ import Blood from "../components/headnurse/component.blood.display.headnurse";
 
 export default function HeadNurseSummaryWork() {
     const [slidemenu, setSlideMenu] = useState(true);
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [unsuccessMessage, setUnsuccessMessage] = useState("");
+    const [unsuccess, setUnSuccess] = useState(false);
+    const [searchData, setSearchData] = useState("");
+    const [success, setSuccess] = useState(false);
     const [date, setDate] = useState(new Date())
+
     const passData = (data) => {
       setSlideMenu(data);
     };
+
+
+    useEffect((() => { getSummary() }), [])
+  
+
+    function getSummary() {
+      axios.get("http://localhost:8070/headnurse/summary").then(
+          (res) => {
+              setData(res.data.summary);
+              console.log(res.data);
+  
+              setLoading(!loading);
+          }).catch((err) => {
+              //sever error
+              setLoading(!loading);
+              setUnsuccessMessage("Network Connection Issue Please Try Again");
+              setUnSuccess(true)
+          })
+    }
+  
+ 
+  
+
+    function unsucessbutton(){
+      window.location = "/summarywork";
+    }
+  
+    const list = [];
+   
+    
+    const val = [];
+    for(let j=0;j<data.length-1; j++){
+    val.push(<> <h2 id ="h2-head-past">{data[j]['count']}</h2></>) }
+
+    for(let i=0; i<data.length; i++){
+      list.push (
+          <> <div id="summary-box">
+            <img id="blood_dot_sum" src={blood_dot_sum}  /> 
+            <div id="details-summary">
+              <p id="details-names-summary">Camp No : {data[i]['bloodCampNumber']}</p> <br/>
+              <p id="details-names-summary">Blood Center No : {data[i]['bloodCenterNo']}</p> <br/>
+              <p id="details-names-summary">Camp Name : {data[i]['name']}</p> <br/>
+              <p id="details-names-summary">Date : {data[i]['date']}</p> <br/>
+              <p id="details-names-summary">Location : {data[i]['place']}</p> <br/>
+            </div>  
+
+          <div id="organizer-summary">
+                 <h3 id="details-organizer-summary-head">Blood Camp Organizer</h3> <br/>
+                 <p id="details-organizer-summary">Name: {data[i]['organizerName']}</p> <br/>
+                 <p id="details-organizer-summary">NIC : {data[i]['nic']}</p> <br/>
+                 <p id="details-organizer-summary">Phone : {data[i]['phoneNumber']}</p> <br/>
+                 
+           </div>
+            
+          
+            <div id="sub-row2-headnurse-summary">
+              <h3 id ="blood-sum">Blood Counter Details</h3>
+             <div id="blood-headnurse"> 
+              <div id = "c-blood-summary" > 
+              <div id="blood-count-camp1-1-summary"> <h3 id="blood-name-summary">O+</h3> <h4 id = "blood-cont-summary">{data[i]['Opositive']}</h4></div>
+              <div id="blood-count-camp1-2-summary"> <h3 id="blood-name-summary">O-</h3> <h4 id = "blood-cont-summary">{data[i]['Onegative']}</h4></div>
+              <div id="blood-count-camp1-3-summary"> <h3 id="blood-name-summary">A+</h3> <h4 id = "blood-cont-summary">{data[i]['Apositive']}</h4></div>
+              <div id="blood-count-camp1-4-summary"> <h3 id="blood-name-summary">A-</h3> <h4 id = "blood-cont-summary">{data[i]['Anegative']}</h4></div>
+              <div id="blood-count-camp1-5-summary"> <h3 id="blood-name-summary">B+</h3> <h4 id = "blood-cont-summary">{data[i]['Bpositive']}</h4></div>
+              <div id="blood-count-camp1-6-summary"> <h3 id="blood-name-summary">B-</h3> <h4 id = "blood-cont-summary">{data[i]['Bnegative']}</h4></div>
+              <div id="blood-count-camp1-7-summary"> <h3 id="blood-name-summary">AB+</h3> <h4 id = "blood-cont-summary">{data[i]['ABpositive']}</h4></div>
+              <div id="blood-count-camp1-8-summary"> <h3 id="blood-name-summary">AB-</h3> <h4 id = "blood-cont-summary">{data[i]['ABnegative']}</h4></div>
+              </div>
+              </div>
+            </div>
+
+
+
+            
+
+            </div> 
+          
+          <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> 
+          </>
+      )
+  }
 
     return (
         <div>
@@ -27,7 +116,9 @@ export default function HeadNurseSummaryWork() {
           <div id={`${slidemenu ? 'state-change-true' : 'state-change-false'}`} > 
           <input type="text" id='search-headnurse-summary' placeholder="Search.."/>
           <button type="button" id="button-headnurse-summary"> <i class="fas fa-search"></i></button> <br/>
-          <div id="summary-box">
+
+         <div>{list}</div> 
+          {/*<div id="summary-box">
           <img id="blood_dot_sum" src={blood_dot_sum}  /> 
           <div id="details-summary">
               <p id="details-names-summary">Camp No : 02</p> <br/>
@@ -48,8 +139,8 @@ export default function HeadNurseSummaryWork() {
               </div>
            
               <button type="button" id="headnurse-summary-print"> Print Report</button>
-
-           
+    */}
+           {/*
             <div id="staff-summary-details">
               <h3 id="header-staff-headnurse" > Assigned Staff Member Details </h3> 
                <div id="box1-staff-headnurse">
@@ -92,11 +183,14 @@ export default function HeadNurseSummaryWork() {
               
             </div>
            <br/>
+           {/*
             <div id="sub-row2-headnurse-summary">
               <h3 id ="blood-sum">Blood Counter Details</h3>
               <div id="blood-headnurse"><Blood name='O+' count='20' /><Blood name='A+' count='25'/><Blood name='B+' count='12'/><Blood name='AB+' count='34' />
               <Blood name='O-' count='21' /><Blood name='A-' count='08'/><Blood name='B-' count='07'/><Blood name='AB-' count='10'/></div>
-            </div>
+  </div> */} 
+
+  {/*
 
             <div id="summary-table-box"> <br/>  <h3 id="do-head">Donors' Details </h3>
             <table id="donor-table-headnurse">
@@ -158,16 +252,16 @@ export default function HeadNurseSummaryWork() {
   </tr>
   
   
-</table>
+</table>  
             </div>
+*/}
 
 
-
-
+ 
               </div>
-          
+         
         </div> 
-        </div>
+         
         
       );
     }  
