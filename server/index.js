@@ -113,18 +113,17 @@ const addClusterCenter = require('./routes/admin/clusterCenter/addClusterCenter'
 //headnurse
 const upcommingcamp = require('./routes/headnurse/upcommingcamp');
 const donors = require('./routes/headnurse/donors');
-<<<<<<< HEAD
 //const register = require('./routes/headnurse/registerdonor');
 const pastcamp = require('./routes/headnurse/pastcamp');
 const donorrequest = require('./routes/headnurse/donorrequest');
-=======
+
 
 //home
 const addCamp = require('./routes/campRegister');
 const getCampsData = require('./routes/showCamps');
  
 
->>>>>>> a67f4a1a1a0c0d622f36865c6cb3bffd67631879
+
 
 
 
