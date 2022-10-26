@@ -18,7 +18,7 @@ export default function RegDonorCamp() {
     const [unsuccess, setUnSuccess] = useState(false);
     const [searchData, setSearchData] = useState("");
     const [success, setSuccess] = useState(false);
-
+    const [wait, setWait] = useState(false)
     const [firstRow, setFirstRow] = useState(0);
     const [lastRow, setLastRow] = useState(0);
     const [pageNumber, setPageNumber] = useState(1);
@@ -41,6 +41,7 @@ export default function RegDonorCamp() {
                     setLastRow(10);
                 }
                 console.log(100);
+                setWait(true);
                 setLoading(!loading);
             }).catch((err) => {
                 setLoading(!loading);
@@ -64,28 +65,28 @@ export default function RegDonorCamp() {
                     <table id="regD-camp-details-table">
                         <tr>
                             <td>Name </td>
-                            <td> : {data[i]['name']}</td>
+                            <td> : {wait ? data[i]['name'] : null}</td>
                             {/* <td><i class="fa-solid fa-calendar-day"></i></td> */}
                         </tr>
                         <tr>
                             <td>Date </td>
-                            <td> : {data[i]['date'].substring(0, 10)}</td>
+                            <td> : {wait ? data[i]['date'].substring(0, 10) : null}</td>
                             {/* <td><i class="fa-solid fa-calendar-day"></i></td> */}
                         </tr>
                         <tr>
                             <td>Location  </td>
-                            <td> : {data[i]['place']}</td>
+                            <td> : {wait ? data[i]['place'] : null}</td>
                         </tr>
                         <tr>
                             <td>Organizer Name </td>
-                            <td> : {data[i]['organizerName']}</td>
+                            <td> : {wait ? data[i]['organizerName'] : null}</td>
                         </tr>
                         <tr>
                             <td>Organizer Contact No </td>
-                            <td> : {data[i]['phoneNumber']}</td>
+                            <td> : {wait ? data[i]['phoneNumber'] : null}</td>
                         </tr>
                        </table>
-                    <Link to='/blood_camps/register' id="register" >Register Now</Link>
+                    <Link to={wait  ? `${'/blood_camps/register/' + data[i]['bloodCampNumber']} ` : null}id="register" >Register Now</Link>
                     {/* <img id="mapimg" src={map} /> */}
                 </div>  
                 </div>
@@ -96,7 +97,8 @@ export default function RegDonorCamp() {
             if (searchData == data[i]['userNic']) {
                 list.push(
                     <div id="camp-details">
-                    <img id="campimg" src={futureCamp} /> <h3 id="camp-name">{data[i]['name']}</h3>
+                    <img id="campimg" src={futureCamp} /> 
+                    <h3 id="camp-name">{data[i]['name']}</h3>
                     {/* <h3 id="camp-name">{data[i]['name']}</h3> */}
                     <br></br>
                     <table id="regD-camp-details-table">

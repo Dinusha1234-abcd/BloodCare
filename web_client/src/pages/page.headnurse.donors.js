@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
+import { Link } from "react-router-dom";
 import SlideMenuHeadNurse from "../components/headnurse/component.slidemenu.headNurse";
 import '../assests/css/headnurse/headnurse.donors.css';
 import boy_details from '../assests/images/boy.png';
@@ -22,7 +23,7 @@ export default function HeadNurseDonors() {
     useEffect((() => { getDonors() }), [])
 
     function getDonors() {
-      axios.post("http://localhost:8070/headnurse/donors").then(
+      axios.get("http://localhost:8070/headnurse/donors").then(
           (res) => {
               setData(res.data.donors);
               console.log(res.data);
@@ -49,10 +50,12 @@ export default function HeadNurseDonors() {
               list.push(
                   <> <tr>
                       <td>{data[i]['registerDonorId']}</td>
-                      <td>{data[i]['province']}</td>
-                      <td>{data[i]['district']}</td>
+                      <td>{data[i]['firstName']}</td>
+                      <td>{data[i]['phoneNumber']}</td>
+                      <td>{data[i]['address']}</td> 
                       <td>{data[i]['userNic']}</td> 
-                      <td><button id='view-donor-button-headnurse'>View</button></td>
+                      <td><Link id='view-donor-button-headnurse' to={`${'/headnurse/donordetails/'+data[i]['userNic']+'/'}`}>View</Link></td>
+                      
                       
                   </tr>
                   </>
@@ -73,10 +76,10 @@ export default function HeadNurseDonors() {
   <tr>
     <th>Donor ID</th>
     <th>Name</th>
-    <th>Blood group</th>
+   {/* <th>Blood group</th> */}
     <th>Phone</th>
-   {/* <th>Address</th>
-    <th>NIC</th> */}
+    <th>Address</th>
+    <th>NIC</th> 
     <th>Action</th>
 
   </tr>

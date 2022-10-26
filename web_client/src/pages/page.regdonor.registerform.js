@@ -1,7 +1,53 @@
-import React from "react";
+import React, { useState, useCallback, useEffect } from 'react';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';  
 import SlideMenuRegDonor from "../components/component.slidemenu.registerDonor";
 import '../assests/css/page.regdonor.registerform.css';
 export default function RegisterForm() {
+
+    const {id} =useParams()
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [wait, setWait] = useState(false);
+    const [successMessage, setSuccessMessage] = useState("");
+    const [unsuccessMessage, setUnsuccessMessage] = useState("");
+    const [success, setSuccess] = useState(false);
+    const [unsuccess, setUnSuccess] = useState(false);
+    const [searchData, setSearchData] = useState("");
+    const [medicalStaff, setMedicalStaff] = useState([]);
+    const [status, setStatus] = useState("");
+    const [staffAdd, setStaffAdd] = useState(false); 
+    const [staffNic, setStaffNic] = useState("");
+    const [staffId, setStaffId] = useState("");
+    const [bloodCenterNumber, setBloodCenterNumber] = useState("");
+    const [staffTyoe, setStaffType] = useState("");
+    const regDonorNic = localStorage.getItem('userNic');
+    useEffect ((() => {getCampId()}), [])
+
+   
+    function getCampId() {
+        const campNumber =id;
+        const camp = {
+            campNumber,
+            regDonorNic
+        }
+
+        axios.post("http://localhost:8070/registerdonor/registerform",camp).then(
+            (res) => {
+
+                setData(res.data.camps);
+                // setData(res.data.donor);
+                 setLoading(!loading);
+                setWait(true);
+               
+            }).catch((err) => {
+                //sever 
+                    setLoading(!loading);
+                    setUnsuccessMessage("Network Connection Issue Please Try Again");
+                    setUnSuccess(true)
+            })
+    }
+    
     return(
         <div>
             <SlideMenuRegDonor headerName={"Register Form"}/>

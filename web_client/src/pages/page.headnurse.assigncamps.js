@@ -1,9 +1,11 @@
 import React, { useState,useCallback, useEffect } from "react";
+import axios from 'axios';
+import { Link } from "react-router-dom";
 import SlideMenuHeadNurse from "../components/headnurse/component.slidemenu.headNurse";
 import '../assests/css/headnurse/headnurse.assigncamps.css';
 import Upcomming from '../assests/images/upcomming.png';
 import Past from '../assests/images/past.png';
-import axios from 'axios';
+
 
 export default function HeadNurseAssignCamps() {
     const [slidemenu, setSlideMenu] = useState(true);
@@ -13,64 +15,54 @@ export default function HeadNurseAssignCamps() {
     const [unsuccessMessage, setUnsuccessMessage] = useState("");
     const [unsuccess, setUnSuccess] = useState(false);
     const [searchData, setSearchData] = useState("");
-    const [success, setSuccess] = useState(false);
+    const [success, setSuccess] = useState(false); 
 
-    const [firstRow, setFirstRow] = useState(0);
-    const [lastRow, setLastRow] = useState(0);
-    const [pageNumber, setPageNumber] = useState(1);
     const passData = (data) => {
       setSlideMenu(data);
     };
+   
+    useEffect((() => { getUpcommingCamp() }), [])
 
-    useEffect((() => { getCampData() }), [])
-    function getCampData() {
-        axios.get(" http://localhost:8070/headnurse/upcommingcamp").then(
-            (res) => {
-                setData(res.data.futurecamp);
-                if (data.length < 11) {
-                    setLastRow(data.length);
-                } else {
-                    setLastRow(10);
-                }
-                console.log(lastRow);
-                setLoading(!loading);
-            }).catch((err) => {
-                setLoading(!loading);
-                setUnsuccessMessage("Network Connection Issue Pleace Try Again");
-                setUnSuccess(true)
-            })
+    function getUpcommingCamp() {
+      axios.get("http://localhost:8070/headnurse/upcommingcamp").then(
+          (res) => {
+              setData(res.data.upcommingcamp);
+              console.log(res.data);
+  
+              setLoading(!loading);
+          }).catch((err) => {
+              //sever error
+              setLoading(!loading);
+              setUnsuccessMessage("Network Connection Issue Please Try Again");
+              setUnSuccess(true)
+          })
     }
-    function unsucessbutton() {
-        window.location = "/assigncamps";
+  
+    function unsucessbutton(){
+      window.location = "/assigncamps";
     }
-    // 100
+  
     const list = [];
-
-    if (searchData == "") {
-        for (let i = firstRow; i < data.length; i++) {
-            list.push(
-                <><tr>
-                    <td>{data[i]['date'].substring(0, 10)}</td>
-                    <td>{data[i]['name']}</td>
-                    <td>{data[i]['place']}</td>
-                </tr>
-                </>)
-        }
-    } else {
-        for (let i = 0; i < lastRow; i++) {
-            if (searchData == data[i]['userNic']) {
-                list.push(
-                    <> <tr>
-                        <td>{data[i]['date']}</td>
-                        <td>{data[i]['name']}</td>
-                        <td>{data[i]['place']}</td>
-                    </tr>
-                    </>
-                )
-
-            }
-        }
-    }
+  
+    //display data in table
+      //check the NIC number
+      //if (searchData == "") {
+          for(let i=0; i<data.length; i++){
+              list.push(
+                  <> <div id="camp1">
+                      <p id="p-head">{data[i]['name']}</p>
+                      <p id="p-head">{data[i]['date']}</p>
+                      <p id="p-head">{data[i]['place']}</p>
+                     
+                        <Link id='button1' to={`${'/headnurse/donorrequests/'+data[i]['bloodCampNumber']+'/'}`}><p id="bu-name">View Requested Donors</p> </Link>
+                    
+                      
+                  </div>
+                  <br></br> 
+                  </>
+              )
+          }
+ 
 
 
     return (
@@ -84,24 +76,31 @@ export default function HeadNurseAssignCamps() {
               <div id="upcomming-camp" > 
               <img id="camp-img" src={Upcomming}/>
                 <h3 id ="h3-head">Upcomming Blood Camps</h3>
-                <h2 id ="h2-head">04</h2>  
+                <h2 id ="h2-head">{data.length}</h2>  
               </div> </a>
             
               <a href="/headnurse/pastcamps">
               <div id="past-camp"  >
               <img id="camp-img" src={Past}/>
                 <h3 id ="h3-head">Past Blood Camps</h3> 
-                <h2 id ="h2-head" >02</h2> 
+                <h2 id ="h2-head" ></h2> 
               </div> </a>
             </div>
                
               <h1 id ="h1-head">Your Upcomming Blood Camps</h1>
               <input type="text" id='search-headnurse-assigncamps' placeholder="Search.."/>
               <button type="button" id="button-headnurse"> <i class="fas fa-search"></i></button>
-              {list}
+               <br></br><br></br><br></br><br></br><br></br><br></br><br></br> <br></br><br></br><br></br>
           </div>
           
-
+          <div >   
+             {list}
+             </div>
+         
+ 
+          
+          
+          {/*
           <div id="camp1">
                 <h4 id ="h4-head">Wednsday, August 12, 2022</h4>
                 <a href="/headnurse/donorrequests">
@@ -134,8 +133,8 @@ export default function HeadNurseAssignCamps() {
                  <p id ="p-head">  <i class="fa-solid fa-clock"></i> at 11.00 am</p>
                  <p id ="p-head">Western Province</p> 
           </div>
-
-              
+    */}
+         
         </div>
      
       );

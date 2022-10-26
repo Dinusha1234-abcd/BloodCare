@@ -63,7 +63,8 @@
 #h1-head{
     position:absolute;
     color:gray;
-    margin-top: 120px;   
+    margin-top: 120px; 
+    margin-bottom: 200px;   
 }
 
 #search-headnurse-assigncamps{
@@ -102,14 +103,15 @@
   }
 
 #camp1{
-    position: absolute;
+    /*position: absolute; */
     width: 550px;
     height: 170px;
     margin-left: 17%;
-    margin-top: 200px;
+    margin-top: 0px;
     background: rgba(255, 255, 255, 0.73);
     box-shadow: 100px 100px 200px 100px rgba(0, 0, 0, 0.1);
     border-radius: 50px;  
+    margin-bottom: 0px;
 }
 
 #h4-head{
@@ -121,10 +123,16 @@
 
 }
 
+#bu-name{
+    margin-top: 10px;
+    padding-left: 10px;
+   
+}
+
 #button1{
     position:absolute;
-    margin-left: 65%;
-    width:150px;
+    margin-left: 22%;
+    width:185px;
     height: 40px;
     border-radius: 20px; 
     font-size:15px;
@@ -142,7 +150,8 @@
 
 #p-head{
     padding-left: 40px;
-    padding-top: 15px;
+    padding-top: 10px;
+    margin-top: 10px;
 }
 
 #camp2{

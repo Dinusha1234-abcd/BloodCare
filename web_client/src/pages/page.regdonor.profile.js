@@ -7,6 +7,9 @@ import profileP from '../assests/images/Ellipse 11.png';
 import lottie from "lottie-web";
 import unsuccessImage from '../assests//images/wrong.png';
 import loadingImage from '../assests/images/loading.gif';
+// import successImage from '../../assests/images/sucess.png';
+// import waitImage from '../../assests/images/wait.gif';
+// import alert from '../../assests/images/alert.png';
 
 export default function RegDonorProfile() {
     const [formReg, setFormReg] = useState(false);
@@ -40,7 +43,8 @@ export default function RegDonorProfile() {
     const [pageNumber, setPageNumber] = useState(1);
     const [updateFormShow, setUpdateFormShow] = useState(false);
     const [message, setMessage] = useState("");
-
+    const [wait, setWait] = useState(false);
+    const [successMessage, setSuccessMessage] = useState("");
 
     const passData = (data) => {
         setSlideMenu(data);
@@ -56,11 +60,14 @@ export default function RegDonorProfile() {
     axios.post("http://localhost:8070/registerdonor/profileDetail",regDonor).then(
         (res) => {
             setData(res.data.profile);
-            if (data.length < 11) {
-                setLastRow(data.length);
-            } else {
-                setLastRow(10);
-            }
+            setUpdateFirstName(res.data.profile[0].firstName);
+            setUpdateLastName(res.data.profile[0].lastName);
+            setUpdateNIC(res.data.profile[0].userNic);
+            setUpdateMobileNumber(res.data.profile[0].phoneNumber);
+            setUpdateAddress(res.data.profile[0].address);
+            setUpdateDistrict(res.data.profile[0].district);
+            setUpdateEmail(res.data.profile[0].email);
+            setUpdateProvince(res.data.profile[0].province);
             console.log(lastRow);
             setLoading(!loading);
         }).catch((err) => {
@@ -83,6 +90,7 @@ export default function RegDonorProfile() {
         setUpdateEmail(email); 
         setUpdateProvince(province);
         setUpdateDistrict(district);
+
     }
 
     function updateDonor(e){
@@ -127,17 +135,22 @@ export default function RegDonorProfile() {
             setUpdateAddress('');
             setUpdateMobileNumber('');
             setUpdateEmail('');
-            setUpdateProvince(province);
-            setUpdateDistrict(district);
-            e.target.reset();
+            setUpdateProvince('');
+            setUpdateDistrict('');
+            
             axios.post("http://localhost:8070/registerdonor/profileUpdate",donor).then(
                 (res) => {
                     //check password and username  
                     if (res['data']['message'] == "success") {
-                        window.location = "/registerdonor/profileUpdate";
+                        // showUpdateDonor(data[0].firstName,data[0].userNic,data[0].lastName,data[0].phoneNumber,data[0].address, data[0].district,data[0].email, data[0].province);
+                        setWait(false);
+                        setSuccessMessage("Doctor Update Sucessfully")
+                        setSuccess(true);
 
                     } else {
-                        setMessage("Network Connection issue");
+                        setWait(false);
+                        setUnsuccessMessage("Doctor Update UnSucessfully");
+                        setUnSuccess(true);
 
                     }
 
@@ -145,8 +158,12 @@ export default function RegDonorProfile() {
             ).catch((err) => {
                 //sever error
                 console.log(err.message);
+                setWait(false);
+                setUnsuccessMessage("Network Connection Issue Please Try Again");
+                setUnSuccess(true);
             })
         }
+
     }
     return (
         <div>
@@ -160,24 +177,28 @@ export default function RegDonorProfile() {
                 <img id="reg-donor-profile" src={profileP} />
             </div>
 
-            <div id="profile-form">
-                <h3 id="profile-page-donor-name">Viraj Kariyawasam</h3>
+            <div id="profile-form"  >
+                <h3 id="profile-page-donor-name">{updateFirstName}  {updateLastName}</h3>
                 <h4 id="profile-page-actor">Donor</h4>
-                <form id="regDonor-profile-form">
-                    <label for="reg-donor-name">Name</label>
-                    <label for="register-donor-NIC">NIC</label><br></br>
-                    <input type="text" id="reg-Donor-Name" name="reg-Donor-Name" value="Mr. Viraj Kariyawasam"></input>
-                    <input type="text" id="reg-Donor-NIC" name="reg-Donor-NIC" value={updateNIC}></input><br></br>
+                <form id="regDonor-profile-form" onSubmit={updateDonor}>
+                    <label for="reg-donor-name">First Name</label>
+                    <label for="register-donor-NIC">Last Name</label><br></br>
+                    <input type="text" id="reg-Donor-Name" placeholder={updateFirstName} value={updateFirstName} onChange={(e) => { setUpdateFirstName(e.target.value)}}></input>
+                    <input type="text" id="reg-Donor-NIC"  placeholder={updateLastName} value={updateLastName} onChange={(e) => {setUpdateLastName(e.target.value)}}></input><br></br>
                     <label for="reg-donor-contact">Contact</label>
-                    <label for="reg-donor-email">E-mail</label><br></br>
-                    <input type="text" id="reg-Donor-Contact" name="reg-Donor-Contact" value="0383394565/0716992521"></input>
-                    <input type="text" id="reg-Donor-Email" name="reg-Donor-Email" value="virajk2000@gmail.com"></input><br></br>
-                    <label for="reg-donor-address">Address</label>
-                    <label for="reg-donor-district">Home District</label><br></br>
-                    <input type="text" id="reg-Donor-Address" name="reg-Donor-Address" value="131/A, Waduramulla, Panadura"></input>
-                    <input type="text" id="reg-Donor-District" name="reg-Donor-District" value="Kalutara"></input>
-                    <button id="donor-save">Save</button>
-                    <button id="Donor-cancel">Cancel </button>
+                    <label for="reg-donor-email">NIC</label><br></br>
+                    <input type="text" id="reg-Donor-Contact"  placeholder={updateMobileNumber} value={updateMobileNumber} onChange={(e) => {setMobileNumber(e.target.value)}}></input>
+                    <input type="text" id="reg-Donor-Email"  placeholder={updateNIC} value={updateNIC} onChange={(e) => {setUpdateNIC(e.target.value)}}></input><br></br>
+                    <label for="reg-donor-address">E-mail</label>
+                    <label for="reg-donor-district">Address</label><br></br>
+                    <input type="text" id="reg-Donor-Address"  placeholder={updateEmail} value={updateEmail} onChange={(e) => {setUpdateEmail(e.target.value)}}></input>
+                    <input type="text" id="reg-Donor-District"  placeholder={updateAddress} value={updateAddress} onChange={(e) => {setUpdateAddress(e.target.value)}}></input>
+                    <label for="reg-donor-address">District</label>
+                    <label for="reg-donor-district">Province</label><br></br>
+                    <input type="text" id="reg-Donor-Address" placeholder={updateDistrict} value={updateDistrict} onChange={(e) => {setUpdateDistrict(e.target.value)}}></input>
+                    <input type="text" id="reg-Donor-District"  placeholder={updateProvince} value={updateProvince} onChange={(e) => {setUpdateProvince(e.target.value)}}></input>
+                    <button type="submit" id="donor-save" >Update</button>
+                    <button id="Donor-cancel" onClick={() => { setUpdateFormShow(!updateFormShow) }}>Cancel </button>
                 </form>
             </div>
         </div>
