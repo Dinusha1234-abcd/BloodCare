@@ -80,6 +80,7 @@ const homeSelectCamp = require('./routes/registerDonor/homeSelectCamp');
 const historyRecordsSelect =require('./routes/registerDonor/historyRecordsSelect');
 const campAllDetail =require('./routes/registerDonor/campAllDetail');
 const registerform =require('./routes/registerDonor/registerform');
+const foodTypeInsert =require('./routes/registerDonor/registerformUpdate');
 
 const profileDetail =require('./routes/registerDonor/profileDetail');
 const profileUpdate =require('./routes/registerDonor/profileUpdate');
@@ -116,7 +117,7 @@ const donors = require('./routes/headnurse/donors');
 
 //home
 const addCamp = require('./routes/campRegister');
-const getCampsData = require('./routes/showCamps');
+// const getCampsData = require('./routes/showCamps');
  
 
 
@@ -211,6 +212,7 @@ app.use("/registerDonor/homeSelectCamp",homeSelectCamp);
 app.use("/registerDonor/historyRecordsSelect",historyRecordsSelect);
 app.use("/registerDonor/campAllDetail",campAllDetail);
 app.use("/registerDonor/registerform",registerform);
+app.use("/registerDonor/registerformUpdate",foodTypeInsert);
 
 app.use("/registerDonor/profileDetail",profileDetail);
 app.use("/registerDonor/profileUpdate",profileUpdate);
@@ -248,7 +250,7 @@ app.use("/clusterCenter/addClusterCenter", addClusterCenter);
 app.use("/headnurse/donors",donors);
 
 //home
-app.use("/showCamps", getCampsData);
+// app.use("/showCamps", getCampsData);
 app.use("/campRegister", addCamp);
 
 

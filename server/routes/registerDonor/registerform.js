@@ -5,9 +5,10 @@ const registerform = require('../../services/registerDonor/registerform');
 router.post('/', async function(req,res){
     const campId =req.body.Id ;
     const regDonor=req.body.userNic;
-    let camp;
+    // let camp;
     let campNumber;
     let campName;
+    console.log(campName);
     await registerform.getCampId(campId).then(
         (campId)=>{
             campNumber = campId[0].bloodCampNumber;
