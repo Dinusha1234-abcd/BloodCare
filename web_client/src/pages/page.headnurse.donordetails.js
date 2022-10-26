@@ -4,8 +4,10 @@ import SlideMenuHeadNurse from "../components/headnurse/component.slidemenu.head
 import '../assests/css/headnurse/headnurse.donordetails.css';
 import boy_details from '../assests/images/boy.png';
 import dot from '../assests/images/white-blood-cell.png';
+import { useParams } from "react-router-dom"; 
 
 export default function HeadNurseDonorDetails() {
+    const {id} = useParams();
     const [slidemenu, setSlideMenu] = useState(true);
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -21,8 +23,16 @@ export default function HeadNurseDonorDetails() {
    
     useEffect((() => { getDonorDetails() }), [])
 
+    
+
     function getDonorDetails() {
-      axios.get("http://localhost:8070/headnurse/donordetails").then(
+      
+      const donorNumber = id ;      
+      const donor = {
+         donorNumber,
+      }
+
+      axios.post("http://localhost:8070/headnurse/donordetails",donor).then(
           (res) => {
               setData(res.data.donordetails);
               console.log(res.data);

@@ -190,7 +190,7 @@ function App() {
             <Route path='/' exact element={ <LandingPage /> } />
             <Route path='/camps' exact element={<Camps />} />
             <Route path='/registercamp' exact element={<RegisterCamp />} />
-            <Route path='/headnurse/donordetails' exact element={<HeadNurseDonorDetails />} />
+            <Route path='/headnurse/donordetails/:id' exact element={<HeadNurseDonorDetails />} />
             <Route path='/headnurse/donors' exact element={<HeadNurseDonors />} />
             <Route path='/headnurse/addnewdonor' exact element={<HeadNurseAddNewDonors />} />
             <Route path='/headnurse/summarywork' exact element={<HeadNurseSummaryWork />} />

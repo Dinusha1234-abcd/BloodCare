@@ -54,7 +54,7 @@ export default function HeadNurseAssignCamps() {
                       <p id="p-head">{data[i]['date']}</p>
                       <p id="p-head">{data[i]['place']}</p>
                      
-                        <Link id='button1' to={`${'/headnurse/donorrequests/'+data[i]['bloodCampNumber']+'/'}`}>View Requested Donors </Link>
+                        <Link id='button1' to={`${'/headnurse/donorrequests/'+data[i]['bloodCampNumber']+'/'}`}><p id="bu-name">View Requested Donors</p> </Link>
                     
                       
                   </div>

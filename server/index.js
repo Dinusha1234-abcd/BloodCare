@@ -121,14 +121,13 @@ const donordetails = require('./routes/headnurse/donordetails');
 
 //home
 const addCamp = require('./routes/campRegister');
-<<<<<<< HEAD
 //const getCampsData = require('./routes/showCamps');
  
-=======
+
 const getCampsData = require('./routes/showCamps');
 const joinCamp = require('./routes/donorRegister');
 
->>>>>>> c159e4e4e5231cc323fb9c4b8f415416ffdf8d6d
+
 
 
 

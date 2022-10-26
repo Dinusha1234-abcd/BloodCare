@@ -113,7 +113,7 @@ export default function HeadNursePastCamps() {
               <div id="past-camp-past"  >
               <img id="camp-img-past" src={Past}/>
                 <h3 id ="h3-head-past">Past Blood Camps</h3> 
-                <h2 id ="h2-head-past" > {val} </h2> 
+                <h4 id ="h2-head-past" > {data.length} </h4> 
               </div></a>
             </div>
                

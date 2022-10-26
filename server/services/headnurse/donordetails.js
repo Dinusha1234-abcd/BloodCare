@@ -1,7 +1,7 @@
 const db = require('../db');
 
 
-async function getDonorDetails(){
+async function getDonorDetails(donorNumber){
     const rows =await db.query( `SELECT user.userNic, user.firstName,user.lastName, 
      user.gender,
      user.dateOfBirth, user.email, user.phoneNumber, user.address, 
@@ -10,7 +10,8 @@ async function getDonorDetails(){
       FROM user 
       INNER JOIN register_donor ON user.userNic = register_donor.userNic 
       INNER JOIN blood_donation ON register_donor.registerDonorId = blood_donation.registedDonorId
-      INNER JOIN blood_counter ON blood_donation.bloodCounterNumber = blood_counter.bloodCounterNo`);
+      INNER JOIN blood_counter ON blood_donation.bloodCounterNumber = blood_counter.bloodCounterNo 
+      WHERE user.userNic=?`,[donorNumber]);
     const data =rows;
     return rows;
 }

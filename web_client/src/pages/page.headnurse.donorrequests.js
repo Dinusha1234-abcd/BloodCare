@@ -70,6 +70,7 @@ export default function HeadNurseDonorRequests() {
                       <img id="man" src={man}/>
                       <h4 id="h4-user">{data[i]['firstName']}</h4>
                       <a href="/headnurse/addnewdonor">
+                  
                       <button type="button" id="button1-user" > Register </button>
                       </a>
                       <p id="p-user"> {data[i]['email']}</p>
