@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 const addMedicalOfficer = require('../../../../services/admin/users/medicalOfficer/addMecicalOfficer');
 const bcrypt = require('bcrypt');
+const sendMail = require('../../../../services/mail');
 
 function genPassword() {
     var chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -34,6 +35,9 @@ router.post('/', async function (req, res) {
     let gender;
     let dateOfBirth;
     const centerNumber = 2;
+    // let centerName;
+    // let centerDistrict;
+    // let centerAddress;
 
     const getGender = (dayData) => { if (dayData > 500) { return true }else{ return false} }
 
@@ -125,10 +129,26 @@ router.post('/', async function (req, res) {
     const day = getDate(parseInt(NIC.substr(4, 3)));
     dateOfBirth = year + "-" + month + "-" + day;
  }
+
+//  await addMedicalOfficer.getBloodCenterNumber().then(
+//     (user) => {
+//        centerNumber = bloodCenterNo;
+//        centerName = name;
+//        centerDistrict =  district;
+//        centerAddress =  address;
+//     } 
+//  )
  
  
  await addMedicalOfficer.insertMedicalOfficer(centerNumber, firstName, lastName, NIC, gender, dateOfBirth, address, email, mobileNumber, hashPassword).then(
     (user) => {
+
+        // const subject =  'Dr '+firstName+' '+lastName+ ' Sucessfully added to The BloodCare';
+        // const text = 'Dear Dr '+firstName+' ' +lastName;
+        // const html = '<h>'+text+'</h><br/><h> Your are  added BloodCare System </h><br/> <p>Blood Center Number : '+centerNumber+ '</p><br/><p>Blood Center Name : '+centerName
+        // + '</p><br/><p>Blood Center District : '+centerDistrict+ '</p><br/><p>Blood Center Address : '+centerAddress+ '</p><br/>' ;
+        
+        // sendMail.sendMail(email,subject,text,html);
 
         return res.json({
             message: "success",

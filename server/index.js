@@ -93,6 +93,7 @@ const removeClusterAdmin = require('./routes/admin/users/clusterAdmin/removeClus
 const selectMedicalOfficer = require('./routes/admin/users/medicalOfficer/selectMedicalOfficer');
 const addMedicalOfficer = require('./routes/admin/users/medicalOfficer/addMedicalOfficer');
 const removeMedicalOfficer = require('./routes/admin/users/medicalOfficer/removeMedicalOfficer');
+const updateMedicalOfficer = require('./routes/admin/users/medicalOfficer/updateMedicalOfficer');
 
 const selectDoctorAdmin = require('./routes/admin/users/doctor/selectDoctor');
 const removeDoctorAdmin = require('./routes/admin/users/doctor/removeDoctor');
@@ -108,6 +109,7 @@ const selectDonorAdmin = require('./routes/admin/users/donor/selectDonor');
 
 const selectClusterCenter = require('./routes/admin/clusterCenter/selectClusterCenter');
 const addClusterCenter = require('./routes/admin/clusterCenter/addClusterCenter');
+const removeClusterCenter = require('./routes/admin/clusterCenter/removeClusterCenter');
 
 
 //headnurse
@@ -121,14 +123,8 @@ const donordetails = require('./routes/headnurse/donordetails');
 
 //home
 const addCamp = require('./routes/campRegister');
-<<<<<<< HEAD
 //const getCampsData = require('./routes/showCamps');
  
-=======
-const getCampsData = require('./routes/showCamps');
-const joinCamp = require('./routes/donorRegister');
-
->>>>>>> c159e4e4e5231cc323fb9c4b8f415416ffdf8d6d
 
 
 
@@ -228,6 +224,7 @@ app.use("/registerDonor/profileDetail",profileDetail);
 app.use("/registerDonor/profileUpdate",profileUpdate);
 
 
+
 //admin
 
 app.use("/users/addClusterAdmin",addClusterAdmin);
@@ -237,6 +234,7 @@ app.use("/users/removeClusterAdmin",removeClusterAdmin);
 app.use("/users/selectMedicalOfficer", selectMedicalOfficer);
 app.use("/users/addMedicalOfficer", addMedicalOfficer);
 app.use("/users/removeMedicalOfficer", removeMedicalOfficer);
+app.use("/users/updateMedicalOfficer", updateMedicalOfficer);
 
 app.use("/users/selectDoctor", selectDoctorAdmin);
 app.use("/users/removeDoctor", removeDoctorAdmin);
@@ -252,6 +250,7 @@ app.use("/users/selectDonor", selectDonorAdmin);
 
 app.use("/clusterCenter/selectClusterCenter", selectClusterCenter);
 app.use("/clusterCenter/addClusterCenter", addClusterCenter);
+app.use("/clusterCenter/removeClusterCenter", removeClusterCenter);
 
 
 

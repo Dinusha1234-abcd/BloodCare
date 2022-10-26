@@ -3,6 +3,7 @@ import axios from 'axios';
 import SlideMenuAdmin from "../components/component.slidemenu.admin";
 import '../assests/css/admin/page.admin.clustercenter.css';
 import loadingImage from '../assests/images/loading.gif';
+import waitImage from '../assests/images/wait.gif';
 import successImage from '../assests/images/sucess.png';
 import unsuccessImage from '../assests//images/wrong.png';
 
@@ -25,6 +26,10 @@ export default function AdminBloodCamp() {
     const [district, setDistrict] = useState("");
     const [name, setName] = useState("");
 
+    const [removeAlert, setRemoveAlert] = useState(false);
+    const [clusterCenterName, setClusterCenterName] = useState("");
+    const [clusterCenterNic, setClusterCenterNic] = useState("");
+
 
     const passData = (data) => {
     setSlideMenu(data);
@@ -45,10 +50,6 @@ export default function AdminBloodCamp() {
             setUnsuccessMessage("Network Connection Issue Please Try Again");
             setUnSuccess(true)
         })
-  }
-
-  function unsucessbutton(){
-    window.location = "/clusterCenter";
   }
 
   function addClusterCenter(e){
@@ -95,11 +96,48 @@ export default function AdminBloodCamp() {
     }
   }
 function sucessbutton() {
-    window.location = "/admin/clusterCenter";
+    window.location = "/clustercenter";
 }
 function unsucessbutton() {
-    window.location = "/admin/clusterCenter";
+    window.location = "/clustercenter";
 }
+
+function showRemoveMessage(clusterCenterName, clusterCenterNIC){
+    setClusterCenterName(clusterCenterName);
+    setClusterCenterNic(clusterCenterNIC);
+    setRemoveAlert(true);
+}
+
+function removeClusterCenter() {
+    setRemoveAlert(false);
+    setWait(true);
+    const clusterCenter = { clusterCenterNic };
+    axios.post("http://localhost:8070/clusterCenter/removeClusterCenter", clusterCenter).then(
+        (res) => {
+            //check password and username  
+            if (res['data']['message'] == "success") {
+                setWait(false);
+                setSuccessMessage("Cluster Center Remove Sucessfully")
+                setSuccess(true);
+
+            } else {
+                setWait(false);
+                setUnsuccessMessage("Cluster Center Remove UnSucessfully");
+                setUnSuccess(true);
+
+            }
+
+        }
+    ).catch((err) => {
+        //sever error
+        console.log(err.message);
+        setWait(false);
+        setUnsuccessMessage("Network Connection Issue Please Try Again");
+        setUnSuccess(true);
+    })
+
+}
+
 
   const list = [];
 
@@ -115,7 +153,9 @@ function unsucessbutton() {
                     <td>{data[i]['district']}</td>
                     <td>{data[i]['address']}</td> 
                     <td><button id='view-camp-button-admin'>View</button></td>
-                    <td><button id='remove-user-button-admin'>Remove</button></td>
+                    <td><button id='remove-user-button-admin' onClick={() => { showRemoveMessage(
+                                data[i]['name'], 
+                                data[i]['bloodCenterNo']) }} >Remove</button></td>
                 </tr>
                 </>
             )
@@ -129,10 +169,29 @@ function unsucessbutton() {
 
             <div id='clustercenter-container-admin'>
 
-                <div id={`${success ? 'sucess-message-active' :'sucess-message' }`}>
-                    <img id='successImage' src={successImage}/>  <h3 id='sucess-message-name'> {name} Added Sucessfully <i class="fa-solid fa-xmark close-button-success" onClick={ () =>{ setSuccess(!success)}}></i></h3>
+                {/* Success message/ */}
+                <div id={`${success ? 'sucess-message-active' : 'sucess-message'}`}>
+                    <br /> <h1 id='sucess-message-name'> <img id='successImage' src={successImage} /> <br /> Success !</h1>  <br />
+                    <p id='sucess-message-box'>{successMessage}</p> <br></br>
+                    <button id="okay-button" onClick={() => { setSuccess(sucessbutton) }}> Okay </button>
                 </div>
-                <div id={`${formReg ? 'fade-clusterAdmin' : null}`}onClick={ () =>{ setFormReg(!formReg)}}></div> 
+
+                {/* remove alert */}
+                <div id={`${removeAlert ? 'remove-alert-clusteradmin-active' : 'sucess-message'}`}>
+                    <br /> <h1 id='remove-alert-clusteradmin-name'> <img id='alert' src={alert} /> <br />Are you removing {clusterCenterName}</h1>
+                    <button id="remove-button" onClick={() => { removeClusterCenter() }}> Okay </button>
+                    <button id="remove-button" onClick={() => { setRemoveAlert(false) }}> Cancel </button>
+                </div>
+
+                <div id={`${wait ? 'wait-cluterAdmin-active' : 'wait-cluterAdmin'}`}> <img id='wait-cluterAdmin-image' src={waitImage} /> </div>
+
+                <div id={`${unsuccess ? 'unsucess-message-active' : 'unsucess-message'}`}>
+                    <br /> <h1 id='sucess-message-name'> <img id='unsuccessImage' src={unsuccessImage} /> <br /> Wrong !</h1>  <br />
+                    <p id='unsucess-message-box'> {unsuccessMessage}</p> <br />
+                    <button id="okay-button-unsucess" onClick={() => { setSuccess(unsucessbutton) }}> Okay </button>
+                </div>
+
+                <div id={`${formReg || success || unsuccess ? 'fade-clusterAdmin' : null}`}onClick={ () =>{ setFormReg(!formReg)}}></div> 
             
                 <input type="text" id='input-clustercenter-admin' placeholder=" &#xf002; Search"/>
                 <button id='add-clustercenter-button-admin' onClick={ () =>{ setFormReg(!formReg)}}>Add</button> 
