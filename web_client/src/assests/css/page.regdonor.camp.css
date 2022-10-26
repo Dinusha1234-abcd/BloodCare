@@ -32,8 +32,8 @@
     background: rgba(255, 255, 255, 1);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px; */
-    width: 550px;
-    height: 35%;
+    width: 50%;
+    height: 40%;
     margin-left: 30%;
     margin-top: 5%;
     background: rgba(255, 255, 255, 0.73);
@@ -118,8 +118,8 @@
     height: 30px;
     width: 100px;
     position: absolute;
-    margin-top: -2%;
-    margin-left: 20%;
+    margin-top: -3%;
+    margin-left: 30%;
     font-size: 15px;
     cursor: pointer;
     

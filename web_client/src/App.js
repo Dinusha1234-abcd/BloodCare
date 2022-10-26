@@ -210,7 +210,7 @@ function App() {
             <Route path='/calender' exact element={<RegDonorCalender />} />
             <Route path='/history_records' exact element={<RegDonorHistory />} />
             <Route path='/blood_camps' exact element={<RegDonorCamp />} />
-            <Route path='/blood_camps/register' exact element={<RegisterForm />} />
+            <Route path='/blood_camps/register/:id' exact element={<RegisterForm />} />
             <Route path='/profile' exact element={<RegDonorProfile />} />
             <Route path='/' exact element={ <LandingPage /> } />
             <Route path='/camps' exact element={<Camps />} />
