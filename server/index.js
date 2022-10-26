@@ -74,6 +74,7 @@ const selectDonor = require('./routes/clusterAdmin/registerDonor/selectDonor');
 
 const medicalstaff = require('./routes/clusterAdmin/dashboard/getMedicalStaff')
 const camp = require('./routes/clusterAdmin/dashboard/getCamps');
+const blood = require('./routes/clusterAdmin/dashboard/getBlood');
 
 //registerDonor
 const homeSelectCamp = require('./routes/registerDonor/homeSelectCamp');
@@ -115,7 +116,7 @@ const donors = require('./routes/headnurse/donors');
 
 //home
 const addCamp = require('./routes/campRegister');
-const getCampsData = require('./routes/showCamps');
+// const getCampsData = require('./routes/showCamps');  
  
 
 
@@ -202,7 +203,7 @@ app.use("/calender/getdates",getCamp);
 
 app.use("/dashboard/medicalstaff",medicalstaff);
 app.use("/dashboard/camp",camp);
-
+app.use("/dashboard/blood",blood);
 
 
 //register Donor
@@ -245,7 +246,7 @@ app.use("/clusterCenter/addClusterCenter", addClusterCenter);
 app.use("/headnurse/donors",donors);
 
 //home
-app.use("/showCamps", getCampsData);
+// app.use("/showCamps", getCampsData);
 app.use("/campRegister", addCamp);
 
 

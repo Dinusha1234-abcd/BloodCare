@@ -8,7 +8,7 @@ const config = {
     db:{
         host : hostname,
         user : userName,
-        password :password,
+        password :password   ,
         database : database,
         connectionLimit: 400
     }
