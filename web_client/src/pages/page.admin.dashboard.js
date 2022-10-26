@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Calendar from 'react-calendar';
 import SlideMenuAdmin from "../components/component.slidemenu.admin";
@@ -24,72 +25,153 @@ export default function AdminDashboard() {
 
     const [slidemenu, setSlideMenu] = useState(true);
     const [date, setDate] = useState(new Date())
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [unsuccessMessage, setUnsuccessMessage] = useState("");
+    const [success, setSuccess] = useState(false);
+    const [unsuccess, setUnSuccess] = useState(false);
+
+    const [countDoctor, setCountDoctor] = useState("");
+    const [countHeadNurse, setCountHeadNurse] = useState("");
+    const [countNurse, setCountNurse] = useState("");
+    const [countDriver, setCountDriver] = useState("");
+    const [countMedicalOfficer, setCountMedicalOfficer] = useState("");
+    const [countClusterAdmin, setCountClusterAdmin] = useState("");
+    const [countDonor, setCountDonor] = useState("");
+    const [countOrganizer, setCountOrganizer] = useState("");
+    const [countClusterCenter, setCountClusterCenter] = useState("");
+
     const passData = (data) => {
         setSlideMenu(data);
     };
 
-    const [useData, setUseData] = useState({
-        labels: ['O+', 'O-', 'A+', 'A-', 'B+', 'B-', 'AB+', 'AB-'],
-        datasets: [{
-            label: "Collect Blood Group",
-          data: [90, 92, 22, 80, 21, 180, 90, 90],
-          backgroundColor: ['#ED0E02', '#6E2820', '#E61D12', '#E36D66', '#963732', '#F2B8B1', '#6E3B35', '#7A514C']
-        }]
-      })
+    useEffect((() => { getDate(); getClusterCenters() }), [])
 
-    var d = new Date();
-    d.setMonth(d.getMonth() - 3);
-    var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    function getDate(){
 
-    const [useDataBarChart, setUseDataBarchart] = useState({
+        axios.post("http://localhost:8070/dashboard/members").then(
 
-        labels: [months[d.getMonth()  ],months[d.getMonth() +1],months[d.getMonth() +2],months[d.getMonth()+3]],
-        datasets: [{
-          label: "Number of Camps",
-          data: [90, 92, 22, 80, 21, 180, 90, 90],
-          backgroundColor: ['#ED0E02', '#6E2820', '#E61D12', '#E36D66', '#963732', '#F2B8B1', '#6E3B35', '#7A514C']
-        }]
-      })
+            (res) => {
+                setCountMedicalOfficer(res.data.users[0]['medicalOfficers'])
+                setCountClusterAdmin(res.data.users[0]['clusterAdmins'])
+                setCountDoctor(res.data.users[0]['doctors'])
+                setCountHeadNurse(res.data.users[0]['headNurses'])
+                setCountNurse(res.data.users[0]['nurses'])
+                setCountDriver(res.data.users[0]['drivers'])
+                setCountOrganizer(res.data.users[0]['organizers'])
+                setCountDonor(res.data.users[0]['donors'])
+
+                if (parseInt(res.data.users[0]['doctors']) < 10) {
+                    setCountDoctor('0' + res.data.users[0]['doctors'])
+                }
+                if (parseInt(res.data.users[0]['headNurses']) < 10) {
+                    setCountHeadNurse('0' + res.data.users[0]['headNurses'])
+                }
+                if (parseInt(res.data.users[0]['nurses']) < 10) {
+                    setCountNurse('0' + res.data.users[0]['nurses'])
+                }
+                if (parseInt(res.data.users[0]['drivers']) < 10) {
+                    setCountDriver('0' + res.data.users[0]['drivers'])
+                }
+                if (parseInt(res.data.users[0]['medicalOfficers']) < 10) {
+                    setCountMedicalOfficer('0' + res.data.users[0]['medicalOfficers'])
+                }
+                if (parseInt(res.data.users[0]['clusterAdmins']) < 10) {
+                    setCountClusterAdmin('0' + res.data.users[0]['clusterAdmins'])
+                }
+                if (parseInt(res.data.users[0]['organizers']) < 10) {
+                    setCountOrganizer('0' + res.data.users[0]['organizers'])
+                }
+                if (parseInt(res.data.users[0]['donors']) < 10) {
+                    setCountDonor('0' + res.data.users[0]['donors'])
+                }
+          
+                setLoading(!loading);
+            }).catch((err) => {
+                //sever error
+                setLoading(!loading);
+                setUnsuccessMessage("Network Connection Issue Please Try Again");
+                setUnSuccess(true)
+            })
+    }
+
+    function getClusterCenters() {
+        axios.post("http://localhost:8070/dashboard/clusterCenters").then(
+            (res) => {
+                setCountClusterCenter( res.data.clusters[0]['clusterCenters'])
+
+                if (parseInt(res.data.clusters[0]['clusterCenters']) < 10) {
+                    setCountClusterCenter('0' + res.data.clusters[0]['clusterCenters'])
+                }
+
+                setLoading(!loading);
+            }
+        ).catch((err) => {
+            //sever error
+            setLoading(!loading);
+            setUnsuccessMessage("Network Connection Issue Please Try Again");
+            setUnSuccess(true)
+        })
+
+    }
+
+    // const [useData, setUseData] = useState({
+    //     labels: ['O+', 'O-', 'A+', 'A-', 'B+', 'B-', 'AB+', 'AB-'],
+    //     datasets: [{
+    //         label: "Collect Blood Group",
+    //       data: [90, 92, 22, 80, 21, 180, 90, 90],
+    //       backgroundColor: ['#ED0E02', '#6E2820', '#E61D12', '#E36D66', '#963732', '#F2B8B1', '#6E3B35', '#7A514C']
+    //     }]
+    //   })
+
+    // var d = new Date();
+    // d.setMonth(d.getMonth() - 3);
+    // var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+    // const [useDataBarChart, setUseDataBarchart] = useState({
+
+    //     labels: [months[d.getMonth()  ],months[d.getMonth() +1],months[d.getMonth() +2],months[d.getMonth()+3]],
+    //     datasets: [{
+    //       label: "Number of Camps",
+    //       data: [90, 92, 22, 80, 21, 180, 90, 90],
+    //       backgroundColor: ['#ED0E02', '#6E2820', '#E61D12', '#E36D66', '#963732', '#F2B8B1', '#6E3B35', '#7A514C']
+    //     }]
+    //   })
     
 
     return(
         <div><SlideMenuAdmin headerName={"Dashboard"} passData={passData} />
         <div id={`${slidemenu ? 'state-change-true' : 'state-change-false'}`}>
+
         <div className="box">
         <div id="member">
             <h1>Members</h1>
-
-            {/* <div id="users-count" display='inline'> 
-                <User id='user' image={doctor} name="Doctor" number='11' />  
-                <User id='user' image={headNurse2} name="Head Nurse" status={true} number='15' />  
-                <User id='user' image={nurse} name="Nurse" number='14'/>  
-                <User id='user' image={driver} name="Driver" number='11' /> </div> */}
             <div id="users-count-admin" display='inline'> 
-                <User id='user' image={mo} name="Medical Officers " number='12'/>
-                <User id='user' image={bcAdmin} name="Cluster Center Administrators" number='12' />  
-                <User id='user' image={doctor} name="Doctors" number='32'/>  
-                <User id='user' image={headNurse2} name="Head Nurse" number='12'/> 
-                <User id='user' image={nurse} name="Nurse" number='42'/>
-                <User id='user' image={organizer} name="Blood Camp Organizer" number='15'/>
-                <User id='user' image={driver} name="Drivers" number='26'/>
-                <User id='user' image={donor} name="Registerd Donors" number='234'/>
+                <User id='user' image={mo} name="Medical Officers " number={countMedicalOfficer}/>
+                <User id='user' image={bcAdmin} name="Cluster Center Administrators" number={countClusterAdmin} />  
+                <User id='user' image={doctor} name="Doctors" number={countDoctor}/>  
+                <User id='user' image={headNurse2} name="Head Nurse" number={countHeadNurse}/> 
+                <User id='user' image={nurse} name="Nurse" number={countNurse}/>
+                <User id='user' image={organizer} name="Blood Camp Organizer" number={countOrganizer}/>
+                <User id='user' image={driver} name="Drivers" number={countDriver}/>
+                <User id='user' image={donor} name="Registerd Donors" number={countDonor}/>
             </div>
         </div>
 
             <div id="raw2">
 
                 <div className="box1">
-                    <Cluster id='cluster' image={cluster} name="Total Cluster Centers"/>
+                    <Cluster id='cluster' image={cluster} name="Total Cluster Centers" number = {countClusterCenter}/>
                 </div>
 
                 <div className="box2">
                     <h3>Blood Percentage</h3>
-                    <div id="percentage-card"><DoughnutChart chartData={useData} /></div>
+                    {/* <div id="percentage-card"><DoughnutChart chartData={useData} /></div> */}
                 </div>
 
                 <div className="box3">
                     <h3>Monthly Blood Camps</h3>
-                    <BarChart chartData={useDataBarChart} />
+                    {/* <BarChart chartData={useDataBarChart} /> */}
                 </div>
 
                 <div className="box3">

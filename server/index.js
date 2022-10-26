@@ -87,6 +87,7 @@ const profileUpdate =require('./routes/registerDonor/profileUpdate');
 
 
 
+
 //admin
 
 const addClusterAdmin = require('./routes/admin/users/clusterAdmin/addClusterAdmin');
@@ -116,6 +117,9 @@ const removeClusterCenter = require('./routes/admin/clusterCenter/removeClusterC
 
 const selectOngoingCamp = require('./routes/admin/camp/ongoingCamp/selectOngoingCamp');
 const selectUpcomingCamp = require('./routes/admin/camp/upcomingCamp/selectUpcomingCamp');
+
+const members = require('./routes/admin/dashboard/getMembers');
+const clusterCenters = require('./routes/admin/dashboard/getClusterCenters');
 
 
 
@@ -309,6 +313,7 @@ app.use("/registerDonor/profileUpdate",profileUpdate);
 
 
 
+
 //admin
 
 app.use("/users/addClusterAdmin",addClusterAdmin);
@@ -338,6 +343,9 @@ app.use("/clusterCenter/removeClusterCenter", removeClusterCenter);
 
 app.use("/camp/selectOngoingCamp", selectOngoingCamp);
 app.use("/camp/selectUpcomingCamp", selectUpcomingCamp);
+
+app.use("/dashboard/members",members);
+app.use("/dashboard/clusterCenters",clusterCenters);
 
 
 
