@@ -58,6 +58,8 @@ const addClusterCenter = require('./routes/admin/clusterCenter/addClusterCenter'
 const upcommingcamp = require('./routes/headnurse/upcommingcamp');
 const donors = require('./routes/headnurse/donors');
 //const register = require('./routes/headnurse/registerdonor');
+const pastcamp = require('./routes/headnurse/pastcamp');
+const donorrequest = require('./routes/headnurse/donorrequest');
 
 
 
@@ -124,6 +126,8 @@ app.use("/clusterCenter/addClusterCenter", addClusterCenter);
 app.use("/headnurse/upcommingcamp",upcommingcamp);
 //app.use("/headnurse/registerdonor",register);
 app.use("/headnurse/donors",donors);
+app.use("/headnurse/pastcamp",pastcamp);
+app.use("/headnurse/donorrequest",donorrequest);
 
 
 

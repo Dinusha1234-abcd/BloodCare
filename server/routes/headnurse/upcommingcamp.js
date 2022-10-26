@@ -3,16 +3,16 @@ const router = express.Router();
 const upcommingcamp = require('../../services/headnurse/upcommingcamp');
 
 
-router.get('/',async function(req, res) {
+router.get('/',async function(req, res2) {
     await upcommingcamp.getUpcommingCamp().then(
         (assigncamps) =>{
             const upcommingcamp = assigncamps;
-            return res.json({
+            return res2.json({
                 upcommingcamp : upcommingcamp
             })
         }).catch((err) => {
             console.log(err);
-            return res.json({message: "Unsucess"});
+            return res2.json({message: "Unsucess"});
         });
 });
 module.exports = router;

@@ -46,7 +46,7 @@
 
 #h2-head-past{
     margin-top:10px;
-    padding-left:120px;
+    padding-left:70px;
     
 }
 
@@ -101,11 +101,11 @@
   }
 
 #camp1-past{
-    position: absolute;
+    /*position: absolute; */
     width: 1150px;
-    height: 200px;
+    height: 220px;
     margin-left: 17%;
-    margin-top: 200px;
+    margin-top: 0px;
     background: rgba(255, 255, 255, 0.73);
     box-shadow: 100px 100px 200px 100px rgba(0, 0, 0, 0.1);
     border-radius: 50px;  
@@ -122,8 +122,8 @@
 
 #button1-past{
     position:absolute;
-    margin-left: 86%;
-    margin-top: 100px;
+    margin-left: 63%;
+    
     width:150px;
     height: 40px;
     border-radius: 20px; 
@@ -142,7 +142,7 @@
 
 #p-head-past{
     padding-left: 40px;
-    padding-top: 5px;
+    padding-top: 10px;
 }
 
 #camp2-past{
@@ -181,10 +181,11 @@
   /*blood counts*/
 #c-blood{
     position: absolute;
+   
     width:800px;
     height: 100px;
     margin-left: 25%;
-    margin-top:20px;
+    margin-top:25px;
 
 }
 
