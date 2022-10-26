@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const showCamps = require('../../services/showCamps');
+const showCamps = require('../services/showCamps');
 
 
 router.get('/camps',async function(req, res) {
