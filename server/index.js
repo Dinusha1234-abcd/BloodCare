@@ -85,6 +85,8 @@ const registerform =require('./routes/registerDonor/registerform');
 const profileDetail =require('./routes/registerDonor/profileDetail');
 const profileUpdate =require('./routes/registerDonor/profileUpdate');
 
+
+
 //admin
 
 const addClusterAdmin = require('./routes/admin/users/clusterAdmin/addClusterAdmin');
@@ -111,6 +113,11 @@ const selectDonorAdmin = require('./routes/admin/users/donor/selectDonor');
 const selectClusterCenter = require('./routes/admin/clusterCenter/selectClusterCenter');
 const addClusterCenter = require('./routes/admin/clusterCenter/addClusterCenter');
 const removeClusterCenter = require('./routes/admin/clusterCenter/removeClusterCenter');
+
+const selectOngoingCamp = require('./routes/admin/camp/ongoingCamp/selectOngoingCamp');
+const selectUpcomingCamp = require('./routes/admin/camp/upcomingCamp/selectUpcomingCamp');
+
+
 
 
 //headnurse
@@ -327,6 +334,10 @@ app.use("/users/selectDonor", selectDonorAdmin);
 app.use("/clusterCenter/selectClusterCenter", selectClusterCenter);
 app.use("/clusterCenter/addClusterCenter", addClusterCenter);
 app.use("/clusterCenter/removeClusterCenter", removeClusterCenter);
+
+app.use("/camp/selectOngoingCamp", selectOngoingCamp);
+app.use("/camp/selectUpcomingCamp", selectUpcomingCamp);
+
 
 
 

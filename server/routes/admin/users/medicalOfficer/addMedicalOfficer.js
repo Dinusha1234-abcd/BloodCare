@@ -130,25 +130,25 @@ router.post('/', async function (req, res) {
     dateOfBirth = year + "-" + month + "-" + day;
  }
 
-//  await addMedicalOfficer.getBloodCenterNumber().then(
-//     (user) => {
-//        centerNumber = bloodCenterNo;
-//        centerName = name;
-//        centerDistrict =  district;
-//        centerAddress =  address;
-//     } 
-//  )
+ await addMedicalOfficer.getBloodCenterNumber().then(
+    (user) => {
+       centerNumber = bloodCenterNo;
+       centerName = name;
+       centerDistrict =  district;
+       centerAddress =  address;
+    } 
+ )
  
  
  await addMedicalOfficer.insertMedicalOfficer(centerNumber, firstName, lastName, NIC, gender, dateOfBirth, address, email, mobileNumber, hashPassword).then(
     (user) => {
 
-        // const subject =  'Dr '+firstName+' '+lastName+ ' Sucessfully added to The BloodCare';
-        // const text = 'Dear Dr '+firstName+' ' +lastName;
-        // const html = '<h>'+text+'</h><br/><h> Your are  added BloodCare System </h><br/> <p>Blood Center Number : '+centerNumber+ '</p><br/><p>Blood Center Name : '+centerName
-        // + '</p><br/><p>Blood Center District : '+centerDistrict+ '</p><br/><p>Blood Center Address : '+centerAddress+ '</p><br/>' ;
+        const subject =  'Dr '+firstName+' '+lastName+ ' Sucessfully added to The BloodCare';
+        const text = 'Dear Dr '+firstName+' ' +lastName;
+        const html = '<h>'+text+'</h><br/><h> Your are  added BloodCare System </h><br/> <p>Blood Center Number : '+centerNumber+ '</p><br/><p>Blood Center Name : '+centerName
+        + '</p><br/><p>Blood Center District : '+centerDistrict+ '</p><br/><p>Blood Center Address : '+centerAddress+ '</p><br/>' ;
         
-        // sendMail.sendMail(email,subject,text,html);
+        sendMail.sendMail(email,subject,text,html);
 
         return res.json({
             message: "success",
