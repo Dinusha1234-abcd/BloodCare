@@ -23,7 +23,7 @@
     border-radius: 15px;
     border-color: #F79CAE;
     width: 30%;
-    margin-left: 45%;
+    margin-left: 56%;
     height: 30px;
     font-size: 17px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, FontAwesome; 
@@ -113,7 +113,7 @@
     font-weight:100;
 }
 #register-form-user-form-admin{
-    margin-top: 50px;
+    /* margin-top: 50px; */
     margin-left: 100px;
 }
 #message-form-admin{

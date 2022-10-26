@@ -1,4 +1,5 @@
-import React from 'react';
+import React,{useState} from 'react';
+import axios from 'axios';
 import {
    ImageBackground, SafeAreaView,
    ScrollView,
@@ -15,17 +16,36 @@ import {
 import SlideBar from '../component/slidebar';
 import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component';
 
-const CONTENT = {
-   tableHead: ['Date', 'Camp Name', 'Location'],
-   tableData: [
-      ['13-08-2022', 'YOU CAN HELP SAVE A LIFE!', 'Panadura'],
-      ['18-08-2022', 'Blood Donation Drive', 'Kalutara'],
-      ['29-08-2022', 'BE A HERO DONTAE BLOOD', 'Rathmalana'],
-      ['03-09-2022', 'Give Blood and Save a Life', 'Horana'],
-      ['11-09-2022', 'SAVE A LIFE, GIVE YOUR BLOOD.', 'Bandaragama'],
-   ],
-};
+// const CONTENT = {
+//    tableHead: ['Date', 'Camp Name', 'Location'],
+//    tableData: [
+//       ['13-08-2022', 'YOU CAN HELP SAVE A LIFE!', 'Panadura'],
+//       ['18-08-2022', 'Blood Donation Drive', 'Kalutara'],
+//       ['29-08-2022', 'BE A HERO DONTAE BLOOD', 'Rathmalana'],
+//       ['03-09-2022', 'Give Blood and Save a Life', 'Horana'],
+//       ['11-09-2022', 'SAVE A LIFE, GIVE YOUR BLOOD.', 'Bandaragama'],
+//    ],
+// };
 export default function Home({ navigation }) {
+   const regDonorNic = localStorage.getItem('userNic');
+   const CONTENT = {
+      tableHead: ['Date', 'Camp Name', 'Location'],
+      tableData: [
+         // ['13-08-2022', 'YOU CAN HELP SAVE A LIFE!', 'Panadura'],
+         // ['18-08-2022', 'Blood Donation Drive', 'Kalutara'],
+         // ['29-08-2022', 'BE A HERO DONTAE BLOOD', 'Rathmalana'],
+         // ['03-09-2022', 'Give Blood and Save a Life', 'Horana'],
+         // ['11-09-2022', 'SAVE A LIFE, GIVE YOUR BLOOD.', 'Bandaragama'],
+      ],
+   };
+   useEffect((() => { getCampData() }), [])
+   function getCampData() {
+      const regDonorNic =localStorage.getItem('userNic');
+      const regDonor = {
+          regDonorNic
+      } 
+      axios.post(`http://10.0.2.2:8070/registerdonor/homeselectcamp`, regDonor).then()
+   }
 
    return (
       <View style={styles.main}>

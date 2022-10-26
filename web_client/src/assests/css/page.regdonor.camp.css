@@ -23,17 +23,25 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 #camp-container1{
-    position: absolute;
-    width: 300px;
-    height: 500px;
+    /* position: absolute;
+    width: 600px;
+    height: 200px;
     left: 300px;
     top: 200px;
 
     background: rgba(255, 255, 255, 1);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 30px;
+    border-radius: 30px; */
+    width: 50%;
+    height: 40%;
+    margin-left: 30%;
+    margin-top: 5%;
+    background: rgba(255, 255, 255, 0.73);
+    box-shadow: 100px 100px 200px 100px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;  
+    margin-bottom: 0px;
 }
-#camp-container2{
+/* #camp-container2{
     position: absolute;
     width: 300px;
     height: 500px;
@@ -65,21 +73,22 @@
     background: rgba(255, 255, 255, 0.7);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
-}
+} */
 #campimg{
-    position: absolute;
-    margin-left: 120px;
+    /* position: absolute; */
+    margin-left: 10%;
     margin-top: 20px;    
 }
 #camp-name{
     position: absolute;
     color: #FF6565;
-    margin-top: 80px;
-    margin-left: 40px;
+    margin-top: -45px;
+    margin-left: 150px;
+    font-size: 18px;
 }
 #regD-camp-details-table{
-    position: absolute;
-    margin-top: 28%;
+    /* position: absolute; */
+    /* margin-top: 28%; */
     text-align: left;
     color: #605858;
     margin-left: 10%;
@@ -104,12 +113,14 @@
 #register{
     color: rgba(1, 95, 250, 1);
     background-color: rgba(220, 231, 236, 1);
+    padding: auto;
     border: none;
     height: 30px;
     width: 100px;
     position: absolute;
-    margin-top: 220px;
-    margin-left: 180px;
+    margin-top: -3%;
+    margin-left: 30%;
     font-size: 15px;
     cursor: pointer;
+    
 }

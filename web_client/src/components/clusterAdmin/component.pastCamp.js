@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import '../../assests/css/component.pastCamp.css';
 import loadingImage from '../../assests/images/loading.gif';
 import waitImage from '../../assests/images/wait.gif';
+import unsuccessImage from '../../assests/images/wrong.png';
+
 
 
 export default function PastCamp() {
@@ -41,24 +43,33 @@ export default function PastCamp() {
             })
 
     }
+    function sucessbutton() {
+        window.location = "/bloodcamp/pastcamp";
+    }
+    function unsucessbutton() {
+        window.location = "/bloodcamp/pastcamp";
+    }
 
     const list = [];
     //display data in table
     //check the NIC number
+    
     if (searchData == "") {
         for (let i = firstRow; i < data.length; i++) {
+            if( data[0]['bloodCampNumber'] != null){ 
             list.push(
                 <> <tr>
                     <td>{data[i]['bloodCampNumber']}</td>
                     <td>{data[i]['date'].substring(0, 10)}</td>
-                    <td>{data[i]['name']}</td>
+                    <td>{data[i]['organizerName']}</td>
                     <td>{data[i]['numberofregisters']}</td>
                     <td>{data[i]['numberofregisters']}</td>
                     <td>
-                        <td><Link to='/bloodcamp/pastcampView/Yasswin Bandara/982345678V/Boralasgamuwa/0777123456/yasswin@gmail.com' id='view-button-pastcamp'>View</Link></td>
-                    </td>
+                    <td><Link to={`${'/bloodcamp/pastcampView/' + data[i]['bloodCampNumber'] + '/' + data[i]['date'].substring(0, 10)}`} id='view-button-pastcamp'>View</Link></td>
+                        </td>
                 </tr>
                 </>)
+            }
         }
     } else {
         for (let i = 0; i < 10; i++) {
@@ -67,7 +78,7 @@ export default function PastCamp() {
                     <> <tr>
                         <td>{data[i]['bloodCampNumber']}</td>
                         <td>{data[i]['date'].substring(0, 10)}</td>
-                        <td>{data[i]['name']}</td>
+                        <td>{data[i]['organizerName']}</td>
                         <td>{data[i]['numberofregisters']}</td>
                         <td>{data[i]['numberofregisters']}</td>
                         <td>
@@ -79,13 +90,20 @@ export default function PastCamp() {
             }
         }
 
-    }
+   
+}
 
     // return function
 
     return (
         <div>
             <div id='past-camp-contanier'>
+            <div id={`${success || unsuccess || wait ?   'fade-clusterAdmin' : null }`} ></div>
+            <div id={`${unsuccess ? 'unsucess-message-active' : 'unsucess-message'}`}>
+                    <br /> <h1 id='sucess-message-name'> <img id='unsuccessImage' src={unsuccessImage} /> <br /> Wrong !</h1>  <br />
+                    <p id='unsucess-message-box'> {unsuccessMessage}</p> <br />
+                    <button id="okay-button-unsucess" onClick={() => { setSuccess(unsucessbutton) }}> Okay </button>
+                </div>
                 <h3 id='header-clusterAdmin'>Past Camps Details</h3>
                 <input type="text" id='input-pastCamp' placeholder=" &#xf002; Enter Camp Number" />
                 <br /><br />

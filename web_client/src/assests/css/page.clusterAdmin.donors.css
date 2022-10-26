@@ -149,3 +149,14 @@
     background-color:rgba(221, 45, 80, 0.441);
     transition: 0.6;
 }
+#register-form-donor-name-clusteradmin{
+    font-size: 20px;
+    margin-top: -22px;
+    margin-right: 50px;
+    padding: 6px;
+    background-color: rgba(246, 156, 174, 1);
+    /* margin: 11px; */
+    color: rgb(255, 255, 255);
+    border-radius: 12px;
+    font-weight: 200;
+}

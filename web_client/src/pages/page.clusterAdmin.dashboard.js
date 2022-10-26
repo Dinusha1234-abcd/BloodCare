@@ -20,7 +20,7 @@ import '../assests/css/component.calender.css';
 
 export default function ClusterAdminDashboard() {
   const [slidemenu, setSlideMenu] = useState(true);
-  const [date, setDate] = useState(new Date())
+  const [date, setDate] = useState([new Date(2020,10,11),new Date(2020,10,12) ])
   const passData = (data) => {
     setSlideMenu(data);
   };

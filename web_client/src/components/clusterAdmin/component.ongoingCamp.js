@@ -1,7 +1,93 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 import '../../assests/css/component.pastCamp.css';
+
+
+import loadingImage from '../../assests/images/loading.gif';
+import waitImage from '../../assests/images/wait.gif';
+import unsuccessImage from '../../assests/images/wrong.png';
 export default function OngoingCamp() {
 
+    
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [wait, setWait] = useState(false);
+    const [successMessage, setSuccessMessage] = useState("");
+    const [unsuccessMessage, setUnsuccessMessage] = useState("");
+    const [success, setSuccess] = useState(false);
+    const [unsuccess, setUnSuccess] = useState(false);
+    const [searchData, setSearchData] = useState("");
+    //pagination
+    const [firstRow, setFirstRow] = useState(0);
+    const [lastRow, setLastRow] = useState(0);
+    const [pageNumber, setPageNumber] = useState(1); 
+    useEffect((() => { getOngoingCampData() }), [])
+    function getOngoingCampData() {
+        const clusterAdminNic = localStorage.getItem('userNic');
+        const clusterAdmin = {
+            clusterAdminNic
+        }
+
+        axios.post("http://localhost:8070/camp/selectongoingcamp", clusterAdmin).then(
+            (res) => {
+                setData(res.data.camps);
+                setLastRow(10);
+                setLoading(!loading);
+            }).catch((err) => {
+                //sever 
+                setLoading(!loading);
+                setUnsuccessMessage("Network Connection Issue Please Try Again");
+                setUnSuccess(true);
+            })
+
+    }
+    function sucessbutton() {
+        window.location = "/bloodcamp/ongoingcamp";
+    }
+    function unsucessbutton() {
+        window.location = "/bloodcamp/ongoingcamp";
+    }
+    const list = [];
+    //display data in table
+    //check the NIC number
+    
+    if (searchData == "") {
+        for (let i = firstRow; i < data.length; i++) {
+            if( data[0]['bloodCampNumber'] != null){ 
+            list.push(
+                <> <tr>
+                    <td>{data[i]['bloodCampNumber']}</td>
+                    <td>{data[i]['date'].substring(0, 10)}</td>
+                    <td>{data[i]['organizerName']}</td>
+                    <td>{data[i]['place']}</td>
+                    <td>{data[i]['firstName'] + ' ' + data[i]['lastName'] }</td>
+                    <td>
+                    <td><Link to={`${'/bloodcamp/upcommingcampView/' + data[i]['bloodCampNumber'] + '/' + data[i]['date'].substring(0, 10)}`} id='view-button-pastcamp'>View</Link></td>
+  </td>
+                </tr>
+                </>)
+            }
+        }
+    } else {
+        for (let i = 0; i < 10; i++) {
+            if (searchData == data[i]['userNic']) {
+                list.push(
+                    <> <tr>
+                        <td>{data[i]['bloodCampNumber']}</td>
+                        <td>{data[i]['date'].substring(0, 10)}</td>
+                        <td>{data[i]['organizerName']}</td>
+                        <td>{data[i]['place']}</td>
+                        <td>{data[i]['firstName'] + ' ' + data[i]['lastName'] }</td>
+                        <td>
+                        <td><Link to={`${'/bloodcamp/upcommingcampView/' + data[i]['bloodCampNumber'] + '/' + data[i]['date'].substring(0, 10)}`} id='view-button-pastcamp'>View</Link></td>
+  </td>
+                    </tr>
+                    </>)
+
+            }
+        }
+    }
     return (
         <div>
             <div id='past-camp-contanier'> 
@@ -17,79 +103,9 @@ export default function OngoingCamp() {
                     <th>Head Nurse Name</th>
                     <th id='pastCamp-action'>Action</th>
                 </tr>
-                <tr>
-                    <td>110</td>
-                    <td>2022/08/05</td>
-                    <td>Namal Udawatha</td>
-                    <td>Kesbewa</td>
-                    <td>Samanthika Silva</td>
-                    <td><button id='view-button-pastcamp'>View</button></td>
-                </tr>
-                <tr>
-                    <td>111</td>
-                    <td>2022/08/05</td>
-                    <td>Pasindu Senanayake</td>
-                    <td>Piliyandala</td>
-                    <td>Shamila Nissansala</td>
-                    <td><button id='view-button-pastcamp'>View</button></td>
-                </tr>
-                <tr>
-                    <td>112</td>
-                    <td>2022/08/05</td>
-                    <td>Vishwa Ruwantha</td>
-                    <td>Mawithra</td>
-                    <td>Sewandi Namali</td>
-                    <td><button id='view-button-pastcamp'>View</button></td>
-                </tr>
-                <tr>
-                    <td>113</td>
-                    <td>2022/08/05</td>
-                    <td>Sathya Ranasingh</td>
-                    <td>Moratuwa</td>
-                    <td>Vishma Rajapaksha</td>
-                    <td><button id='view-button-pastcamp'>View</button></td>
-                </tr>
-                <tr>
-                    <td>114</td>
-                    <td>2022/08/05</td>
-                    <td>Nishamal Silva</td>
-                    <td>Boralasgamuwa</td>
-                    <td>Vishma Lakshani</td>
-                    <td><button id='view-button-pastcamp'>View</button></td>
-                </tr>
-                <tr>
-                    <td>115</td>
-                    <td>2022/08/05</td>
-                    <td>Gimhani Silva</td>
-                    <td>Bokundara</td>
-                    <td>Namal Rajakaruna</td>
-                    <td><button id='view-button-pastcamp'>View</button></td>
-                </tr>
-                <tr>
-                    <td>116</td>
-                    <td>2022/08/05</td>
-                    <td>Sathya Suriya</td>
-                    <td>Kesbewa</td>
-                    <td>Sandya Samanthika</td>
-                    <td><button id='view-button-pastcamp'>View</button></td>
-                </tr>
-                <tr>
-                    <td>117</td>
-                    <td>2022/08/05</td>
-                    <td>Kamal Silva</td>
-                    <td>Bokundara</td>
-                    <td>Sewandi Namali</td>
-                    <td><button id='view-button-pastcamp'>View</button></td>
-                </tr>
-                <tr>
-                    <td>118</td>
-                    <td>2022/08/05</td>
-                    <td>Dumidu Shamal</td>
-                    <td>Kesbewa</td>
-                    <td>Samanthika Silva</td>
-                    <td><button id='view-button-pastcamp'>View</button></td>
-                </tr>
+                {list}
             </table>
+            <div id={`${loading ? 'loading-cluterAdmin-active' : 'loading-cluterAdmin'}`}> <img src={loadingImage} /> </div>
             <div id='pastCamp-pageButton'>
                 <a className='page-navigation'>{"<< Prev"}  </a> 
                 <a className='page-navigation'>1</a>
