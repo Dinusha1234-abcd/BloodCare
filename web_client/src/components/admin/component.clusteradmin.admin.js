@@ -97,10 +97,10 @@ export default function ClusterAdmin(){
             setMessage("Please Enter  Valid Mobile Number");
 
         }
-        else if(bloodCenterNo.length==0){
-            setMessage("Please Enter Cluster Center Id");
+        // else if(bloodCenterNo.length==0){
+        //     setMessage("Please Enter Cluster Center Id");
 
-        }
+        // }
         else if(password.length<6){
             setMessage("Please enter more than 6 charactors");
 
@@ -142,10 +142,10 @@ export default function ClusterAdmin(){
     }
 
     function sucessbutton() {
-        window.location = "/users/clusterAdmin";
+        window.location = "/users/clusteradmin";
     }
     function unsucessbutton() {
-        window.location = "/users/clusterAdmin";
+        window.location = "/users/clusteradmin";
     }
 
     function showRemoveMessage(clusterAdminName, clusterAdminNIC){
@@ -236,7 +236,7 @@ export default function ClusterAdmin(){
 
                 {/* remove alert */}
                 <div id={`${removeAlert ? 'remove-alert-clusteradmin-active' : 'sucess-message'}`}>
-                    <br /> <h1 id='remove-alert-clusteradmin-name'> <img id='alert' src={alert} /> <br />Are you removing Dr {clusterAdminName}</h1>
+                    <br /> <h1 id='remove-alert-clusteradmin-name'> <img id='alert' src={alert} /> <br />Are you removing {clusterAdminName}</h1>
                     <button id="remove-button" onClick={() => { removeClusterAdmin() }}> Okay </button>
                     <button id="remove-button" onClick={() => { setRemoveAlert(false) }}> Cancel </button>
                 </div>

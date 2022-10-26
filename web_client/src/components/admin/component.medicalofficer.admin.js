@@ -33,7 +33,14 @@ export default function MedicalOfficer(){
     const [unsuccessMessage, setUnsuccessMessage] = useState("");
     const [loading, setLoading] = useState(true);
     
-
+    const [updateFormShow, setUpdateFormShow] = useState(false);
+    const [id, setId] = useState("");
+    const [updateFirstName, setUpdateFirstName] = useState("");
+    const [updateLastName, setUpdateLastName] = useState("");
+    const [updateNIC, setUpdateNIC] = useState("");
+    const [updateAddress, setUpdateAddress] = useState("");
+    const [updateEmail, setUpdateEmail] = useState("");
+    const [updateMobileNumber, setUpdateMobileNumber] = useState("");
 
     useEffect((() => {getMedicalOfficerData() }), [])
     function getMedicalOfficerData() {
@@ -136,12 +143,89 @@ export default function MedicalOfficer(){
         }
     }
     function sucessbutton() {
-        window.location = "/users/medicalOfficer";
+        window.location = "/users/medicalofficer";
     }
     function unsucessbutton() {
-        window.location = "/users/medicalOfficer";
+        window.location = "/users/medicalofficer";
     }
 
+//Update    
+    function showUpdateMedicalOfficer(id, firstName, lastName, NIC, address, mobileNumber, email) {
+        setUpdateFormShow(!updateFormShow);
+        setId(id);
+        setUpdateFirstName(firstName);
+        setUpdateLastName(lastName);
+        setUpdateNIC(NIC);
+        setUpdateAddress(address);
+        setUpdateMobileNumber(mobileNumber);
+        setUpdateEmail(email);
+
+    }
+
+    function updateMedicalOfficer(e) {
+        e.preventDefault()
+        const medicalOfficer = {
+            id,
+            updateFirstName,
+            updateLastName,
+            updateNIC,
+            updateAddress,
+            updateEmail,
+            updateMobileNumber
+        }
+        if (updateFirstName.length == 0) {
+            setMessage("Please Enter First Name ");
+        } else if (updateLastName.length == 0) {
+            setMessage("Please Enter Last Name ");
+        } else if (!(updateNIC.length == 10 || NIC.length == 12)) {
+            console.log(updateNIC.length);
+            setMessage("Please Enter  Valid NIC Number ");
+        } else if (updateAddress.length == 0) {
+            setMessage("Please Enter  Address ");
+
+        } else if (updateEmail.length == 0) {
+            setMessage("Please Enter  Email ");
+
+        } else if (!(updateMobileNumber.length == 10)) {
+            setMessage("Please Enter  Valid Mobile Number");
+
+        } else {
+            setUpdateFormShow(false);
+            setWait(true);
+            setUpdateFirstName('');
+            setUpdateLastName('');
+            setUpdateNIC('');
+            setUpdateAddress('');
+            setUpdateMobileNumber('');
+            setUpdateEmail('');
+            e.target.reset();
+            // pass check the data with server 
+            axios.post("http://localhost:8070/users/updateMedicalOfficer", medicalOfficer).then(
+                (res) => {
+                    //check password and username  
+                    if (res['data']['message'] == "success") {
+                        setWait(false);
+                        setSuccessMessage("Medical Officer Update Sucessfully")
+                        setSuccess(true);
+
+                    } else {
+                        setWait(false);
+                        setUnsuccessMessage("Medical Officer Update UnSucessfully");
+                        setUnSuccess(true);
+
+                    }
+
+                }
+            ).catch((err) => {
+                setWait(false);
+                setUnsuccessMessage("Network Connection Issue Please Try Again");
+                setUnSuccess(true);
+            })
+        }
+
+    }
+
+//Delete
     function showRemoveMessage(medicalOfficerName, medicalOfficerNIC){
         setMedicalOfficerName(medicalOfficerName);
         setMedicalOfficerNic(medicalOfficerNIC);
@@ -188,7 +272,17 @@ export default function MedicalOfficer(){
                     <td>Dr {data[i]['firstName'] + " " + data[i]['lastName']}</td>
                     <td>{data[i]['email']}</td>
                     <td>{data[i]['phoneNumber']}</td>
-                    <td><button id='view-user-button-admin'>View</button></td>
+
+                    <td><button id='view-user-button-admin' onClick={() => { showUpdateMedicalOfficer(
+                                data[i]['staffId'],
+                                data[i]['firstName'], 
+                                data[i]['lastName'], 
+                                data[i]['userNic'], 
+                                data[i]['address'], 
+                                data[i]['phoneNumber'], 
+                                data[i]['email']
+                            ) }}>View</button></td>
+
                     <td><button id='remove-user-button-admin' onClick={() => { showRemoveMessage(
                                 data[i]['firstName'] + data[i]['lastName'], 
                                 data[i]['userNic']) }} >Deactivate</button></td>
@@ -206,8 +300,15 @@ export default function MedicalOfficer(){
                         <td>{data[i]['firstName'] + " " + data[i]['lastName']}</td>
                         <td>{data[i]['email']}</td>
                         <td>{data[i]['phoneNumber']}</td>
-                        <td><button id='view-user-button-admin'>View</button></td>
-
+                        <td><button id='view-user-button-admin' onClick={() => { showUpdateMedicalOfficer(
+                                data[i]['staffId'],
+                                data[i]['firstName'], 
+                                data[i]['lastName'], 
+                                data[i]['userNic'], 
+                                data[i]['address'], 
+                                data[i]['phoneNumber'], 
+                                data[i]['email']
+                            ) }}>View</button></td>
                         <td><button id='remove-user-button-admin' onClick={() => { showRemoveMessage(
                                 data[i]['firstName'] + data[i]['lastName'], 
                                 data[i]['userNic']) }}>Deactivate</button></td>
@@ -229,6 +330,8 @@ export default function MedicalOfficer(){
                     <button id="okay-button" onClick={() => { setSuccess(sucessbutton) }}> Okay </button>
                 </div>
 
+                <div id={`${wait ? 'wait-cluterAdmin-active' : 'wait-cluterAdmin'}`}> <img id='wait-cluterAdmin-image' src={waitImage} /> </div>
+
                 {/* remove alert */}
                 <div id={`${removeAlert ? 'remove-alert-clusteradmin-active' : 'sucess-message'}`}>
                     <br /> <h1 id='remove-alert-clusteradmin-name'> <img id='alert' src={alert} /> <br />Are you removing Dr {medicalOfficerName}</h1>
@@ -236,20 +339,19 @@ export default function MedicalOfficer(){
                     <button id="remove-button" onClick={() => { setRemoveAlert(false) }}> Cancel </button>
                 </div>
 
-                <div id={`${wait ? 'wait-cluterAdmin-active' : 'wait-cluterAdmin'}`}> <img id='wait-cluterAdmin-image' src={waitImage} /> </div>
-
                 <div id={`${unsuccess ? 'unsucess-message-active' : 'unsucess-message'}`}>
                     <br /> <h1 id='sucess-message-name'> <img id='unsuccessImage' src={unsuccessImage} /> <br /> Wrong !</h1>  <br />
                     <p id='unsucess-message-box'> {unsuccessMessage}</p> <br />
                     <button id="okay-button-unsucess" onClick={() => { setSuccess(unsucessbutton) }}> Okay </button>
                 </div>
 
-                <div id={`${formReg || success || unsuccess ? 'fade-clusterAdmin' : null}`}onClick={ () =>{ setFormReg(!formReg)}}></div>
+                <div id={`${formReg || success || unsuccess || updateFormShow || wait ? 'fade-clusterAdmin' : null}`} onClick={ () =>{ setFormReg(false); setUpdateFormShow(false)}}></div>
 
                 <h7 id='header-user-admin'>MEDICAL OFFICERS</h7>
                 <input type="text" id='input-user-admin' placeholder=" &#xf002; Search"/>
                 <button id='add-user-button-admin' onClick={ () =>{ setFormReg(!formReg)}}>Add</button> 
                 <br/><br/>
+
                 <table id="user-table-admin">
                 <tr>
                     <th id='user-nic'>NIC</th>
@@ -317,6 +419,56 @@ export default function MedicalOfficer(){
 
                   </form>
             </div>
+
+{/*update medical officer */}
+            <div id={`${updateFormShow ? 'register-form-doctor-clusteradmin-active' : 'register-form-doctor-clusteradmin'}`}>
+
+
+                <h3 id='register-form-doctor-name-clusteradmin'>Update Medical Officer </h3>
+                <form id='register-form-doctor-form-clusteradmin' onSubmit={updateMedicalOfficer}>
+                    {message ? <p id="message-form-clusteradmin">{message}   <i class="fa-solid fa-xmark close-button-form" onClick={() => { setMessage("") }}></i></p> : null}
+
+                    <table id='medical-staff-view-table'>
+                        <tr>
+                            <td>First Name</td>
+                            <td>   <input type="text" id="update-form-doctor-input-clusteradmin" placeholder={updateFirstName} value={updateFirstName} onChange={(e) => { setUpdateFirstName(e.target.value) }} /> <br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Last Name</td>
+                            <td>   <input type="text" id="update-form-doctor-input-clusteradmin" placeholder={updateLastName} value={updateLastName} onChange={(e) => { setUpdateLastName(e.target.value) }} /> <br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>NIC Number</td>
+                            <td>   <input type="text" id="update-form-doctor-input-clusteradmin" placeholder={updateNIC} value={updateNIC} onChange={(e) => { setUpdateNIC(e.target.value) }} /> <br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                            <td>   <input type="text" id="update-form-doctor-input-clusteradmin" placeholder={updateAddress} value={updateAddress} onChange={(e) => { setUpdateAddress(e.target.value) }} /> <br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>   <input type="text" id="update-form-doctor-input-clusteradmin" placeholder={updateEmail} value={updateEmail} onChange={(e) => { setUpdateEmail(e.target.value) }} /> <br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Mobile Number</td>
+                            <td>   <input type="text" id="update-form-doctor-input-clusteradmin" placeholder={updateMobileNumber} value={updateMobileNumber} onChange={(e) => { setUpdateMobileNumber(e.target.value) }} /> <br />
+                            </td>
+                        </tr>
+
+
+
+                    </table> <br />
+                    <button type="sumbit" id="sumbit-save-form" > Update </button> {" "}
+                    <button id="sumbit-cancle-form" onClick={() => { setUpdateFormShow(!updateFormShow) }}  > Cancel </button> <br /><br />
+
+                </form>
+            </div>
+
          </div>
         </div>
     )
