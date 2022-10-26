@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const pastCampView = require('../../../../services/clusterAdmin/camp/pastCamp/pastCampView');
+const pastCampView = require('../../../../services/medicalOfficer/camp/pastCamp/pastCampView');
 
 router.post('/',  async function (req, res) {
   const campnumber =  req.body.campNumber ;

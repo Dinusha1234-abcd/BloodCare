@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const blood = require('../../../services/clusterAdmin/dashboard/getBlood');
+const blood = require('../../../services/medicalOfficer/dashboard/getBlood');
 // 100
 router.post('/',  async function (req, res) {
-  const clusterAdminNic =  req.body.clusterAdminNic ;
+  const medicalOfficerNic =  req.body.medicalOfficerNic ;
     
-  await blood.getBloodDetails(clusterAdminNic).then(
+  await blood.getBloodDetails(medicalOfficerNic).then(
     (bloods) => {
        
       const blood = bloods ;

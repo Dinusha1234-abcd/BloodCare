@@ -1,31 +1,31 @@
 const express = require('express');
 const router = express.Router();
-const camps = require('../../../services/clusterAdmin/dashboard/getCamps');
+const camps = require('../../../services/medicalOfficer/dashboard/getCamps');
 // 100
 router.post('/',  async function (req, res) {
-  const clusterAdminNic =  req.body.clusterAdminNic ;
+  const medicalOfficerNic =  req.body.medicalOfficerNic ;
   let pastCamp;
   let ongoingCamp;
   let upcomingCamp;
   let pendingCamp;
   let allCamp;
   let clusterCamp;
-  await camps.getCamps(clusterAdminNic).then(
-    (clusterAdmin) => {
-      pastCamp = clusterAdmin[0]['pastCamp'];
-      ongoingCamp = clusterAdmin[0]['ongoingCamp'];
-      upcomingCamp =  clusterAdmin[0]['upcomingCamp'];
-      pendingCamp =  clusterAdmin[0]['pendingCamp'];
+  await camps.getCamps(medicalOfficerNic).then(
+    (medicalOfficer) => {
+      pastCamp = medicalOfficer[0]['pastCamp'];
+      ongoingCamp = medicalOfficer[0]['ongoingCamp'];
+      upcomingCamp =  medicalOfficer[0]['upcomingCamp'];
+      pendingCamp =  medicalOfficer[0]['pendingCamp'];
     } 
  )
- await camps.getCampsCount(clusterAdminNic).then(
-  (clusterAdmin) => {
-    allCamp = clusterAdmin[0]['allCamp'];
-    clusterCamp = clusterAdmin[0]['clusterCenterCamp'];
+ await camps.getCampsCount(medicalOfficerNic).then(
+  (medicalOfficer) => {
+    allCamp = medicalOfficer[0]['allCamp'];
+    clusterCamp = medicalOfficer[0]['clusterCenterCamp'];
  
   } 
 )
-  await camps.getCampsDetails(clusterAdminNic).then(
+  await camps.getCampsDetails(medicalOfficerNic).then(
     (camps) => {
        
       const camp = camps ;

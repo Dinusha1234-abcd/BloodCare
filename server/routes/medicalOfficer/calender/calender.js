@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const calender = require('../../../services/clusterAdmin/calender/calender');
+const calender = require('../../../services/medicalOfficer/calender/calender');
 
 router.post('/',  async function (req, res) {
-  const clusterAdminNic =  req.body.clusterAdminNic ;
+  const medicalOfficerNic =  req.body.medicalOfficerNic ;
  
-  await calender.getCamp(clusterAdminNic).then(
+  await calender.getCamp(medicalOfficerNic).then(
     (camps) => {
        
       const camp = camps ;

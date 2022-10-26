@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const selectPendingCamp = require('../../../../services/clusterAdmin/camp/pendingCamp/selectPendingCamp');
+const selectPendingCamp = require('../../../../services/medicalOfficer/camp/pendingCamp/selectPendingCamp');
 
 router.post('/',  async function (req, res) {
-  const clusterAdmin =  req.body.clusterAdminNic ;
+  const medicalOfficer =  req.body.medicalOfficerNic ;
   let centerNumber;
-  await selectPendingCamp.getBloodCenterNumber(clusterAdmin).then(
-    (clusterAdmin)=>{
-           centerNumber = clusterAdmin[0].bloodCenterNo;
+  await selectPendingCamp.getBloodCenterNumber(medicalOfficer).then(
+    (medicalOfficer)=>{
+           centerNumber = medicalOfficer[0].bloodCenterNo;
      }
     ) 
   await selectPendingCamp.getPendingCamps(centerNumber).then(
