@@ -100,9 +100,9 @@ export default function Camps() {
     for (let i = firstRow; i < lastRow; i++) {
       list.push(
         <>
-          <Task height={`200px`}>
+          <div class ='card' height={`200px`}>
             <Content>
-              <Text47>{data[i]["campName"]}</Text47>
+              <div class = 'campName'>{data[i]["campName"]}</div>
               <Paragraph>
                 Join our blood camp organized by the Leo Club of University of
                 Colombo!
@@ -142,7 +142,7 @@ export default function Camps() {
                 src={`https://file.rendit.io/n/XVa7BszjAOZwC9AViTad.svg`}
               />
             </Akariconslocation>
-          </Task>
+          </div>
         </>
       );
     }
@@ -187,10 +187,12 @@ export default function Camps() {
             <FlexColumn2>
               <Text46>Blood Camp Locations</Text46>
               <FlexRow11>
+
                 <LaneInner>
-                  <Task height={`200px`}>
+
+                  <div class ='card' height={`200px`}>
                     <Content>
-                      <Text47>Supipi Blood Camp</Text47>
+                      <div class = 'campName'>Supipi Blood Camp</div>
                       <Paragraph>
                         Join our blood camp organized by the Leo Club of
                         University of Colombo!
@@ -230,49 +232,14 @@ export default function Camps() {
                         <June width={`67px`}>Jun 21, 2022</June>
                       </Action2>
                     </Footer>
-                  </Task>
-                  <Task height={`183px`}>
-                    <Content>
-                      <Text47>Supipi Blood Camp</Text47>
-                      <Paragraph>
-                        Join our blood camp organized by the Leo Club of
-                        University of Colombo!
-                        <br />
-                        <br />
-                        {"       "}
-                        32/1, Road Lane, Colombo
-                      </Paragraph>
-                      <FlexRow12>
-                        <PiggyPinkText>Register</PiggyPinkText>
-                        <FancyChip>
-                          <Chip1 width={`115px`}>
-                            <AvatarFill>
-                              <Image1
-                                src={`https://file.rendit.io/n/NZpnmyAhdKuzTzL8HXwj.png`}
-                              />
-                            </AvatarFill>
-                            <Label color={`#334155`}>Jose Schneider</Label>
-                          </Chip1>
-                        </FancyChip>
-                      </FlexRow12>
-                      <Dotsvertical
-                        src={`https://file.rendit.io/n/7DQQkHayPLktTdJn6JGq.svg`}
-                      />
-                    </Content>
-                    <Footer height={`auto`}>
-                      <Action2>
-                        <Message2
-                          src={`https://file.rendit.io/n/nkwg6PdHOZ0AINY0BgTB.svg`}
-                        />
-                        <Text52 width={`67px`}>Jun 14, 2022</Text52>
-                      </Action2>
-                    </Footer>
-                  </Task>
+                  </div>
+
                 </LaneInner>
+
                 <LaneInner>
-                  <Task height={`200px`}>
+                  <div class = 'card' height={`200px`}>
                     <Content>
-                      <Text47>Supipi Blood Camp</Text47>
+                      <div class = 'campName'>Supipi Blood Camp</div>
                       <Paragraph>
                         Join our blood camp organized by the Leo Club of
                         University of Colombo!|
@@ -306,90 +273,19 @@ export default function Camps() {
                         <June width={`69px`}>Jun 24, 2022</June>
                       </Action2>
                     </Footer>
-                  </Task>
-                  <Task height={`200px`}>
-                    <Content>
-                      <Text47>Supipi Blood Camp</Text47>
-                      <Paragraph>
-                        Join our blood camp organized by the Leo Club of
-                        University of Colombo!|
-                        <br />
-                        <br />
-                        {"       "}
-                        32/1, Road Lane, Colombo
-                      </Paragraph>
-                      <FlexRow12>
-                        <PiggyPinkText>Register</PiggyPinkText>
-                        <FancyChip>
-                          <Chip1 width={`111px`}>
-                            <AvatarFill>
-                              <Image1
-                                src={`https://file.rendit.io/n/niq46ihNp7osY0FXGwPy.png`}
-                              />
-                            </AvatarFill>
-                            <Label color={`#334155`}>Boyd Goodwin</Label>
-                          </Chip1>
-                        </FancyChip>
-                      </FlexRow12>
-                      <Dotsvertical
-                        src={`https://file.rendit.io/n/7DQQkHayPLktTdJn6JGq.svg`}
-                      />
-                    </Content>
-                    <Footer height={`15px`}>
-                      <Action2>
-                        <Image1
-                          src={`https://file.rendit.io/n/nkwg6PdHOZ0AINY0BgTB.svg`}
-                        />
-                        <June width={`63px`}>Jun 6, 2022</June>
-                      </Action2>
-                    </Footer>
-                  </Task>
-                  <Task height={`183px`}>
-                    <Content>
-                      <Text47>Supipi Blood Camp</Text47>
-                      <Paragraph>
-                        Join our blood camp organized by the Leo Club of
-                        University of Colombo!|
-                        <br />
-                        <br />
-                        {"       "}
-                        32/1, Road Lane, Colombo
-                      </Paragraph>
-                      <FlexRow12>
-                        <PiggyPinkText>Register</PiggyPinkText>
-                        <FancyChip>
-                          <Chip1 width={`89px`}>
-                            <AvatarFill>
-                              <Image1
-                                src={`https://file.rendit.io/n/0tfnv95V0yoygm5uaPN1.png`}
-                              />
-                            </AvatarFill>
-                            <Label color={`#334155`}>Kim Bailey</Label>
-                          </Chip1>
-                        </FancyChip>
-                      </FlexRow12>
-                      <Dotsvertical
-                        src={`https://file.rendit.io/n/7DQQkHayPLktTdJn6JGq.svg`}
-                      />
-                    </Content>
-                    <Footer height={`auto`}>
-                      <Action2>
-                        <Message2
-                          src={`https://file.rendit.io/n/nkwg6PdHOZ0AINY0BgTB.svg`}
-                        />
-                        <Text52 width={`62px`}>Jun 3, 2022</Text52>
-                      </Action2>
-                    </Footer>
-                  </Task>
+                  </div>
+
                 </LaneInner>
+
               </FlexRow11>
             </FlexColumn2>
           </FlexRow2>
         </FlexColumn>
         <LaneInner2>
-          <Task height={`200px`}>
+
+          <div class = 'card' height={`200px`}>
             <Content>
-              <Text47>Supipi Blood Camp</Text47>
+              <div class = 'campName'>Supipi Blood Camp</div>
               <Paragraph>
                 Join our blood camp organized by the Leo Club of University of
                 Colombo!|
@@ -423,81 +319,10 @@ export default function Camps() {
                 <June width={`66px`}>May 4, 2022</June>
               </Action2>
             </Footer>
-          </Task>
-          <Task height={`200px`}>
-            <Content>
-              <Text47>Supipi Blood Camp</Text47>
-              <Paragraph>
-                Join our blood camp organized by the Leo Club of University of
-                Colombo!|
-                <br />
-                <br />
-                {"    32/1, Road Lane, Colombo   "}
-              </Paragraph>
-              <FlexRow12>
-                <PiggyPinkText>Register</PiggyPinkText>
-                <FancyChip>
-                  <Chip1 width={`102px`}>
-                    <AvatarFill>
-                      <Image1
-                        src={`https://file.rendit.io/n/4Omxxm3EpyPwB0fw97yn.png`}
-                      />
-                    </AvatarFill>
-                    <Label color={`#334155`}>Morris Lopez</Label>
-                  </Chip1>
-                </FancyChip>
-              </FlexRow12>
-              <Dotsvertical
-                src={`https://file.rendit.io/n/7DQQkHayPLktTdJn6JGq.svg`}
-              />
-            </Content>
-            <Footer height={`15px`}>
-              <Action2>
-                <Image1
-                  src={`https://file.rendit.io/n/nkwg6PdHOZ0AINY0BgTB.svg`}
-                />
-                <June width={`66px`}>May 4, 2022</June>
-              </Action2>
-            </Footer>
-          </Task>
-          <Task height={`183px`}>
-            <Content>
-              <Text47>Supipi Blood Camp</Text47>
-              <Paragraph>
-                Join our blood camp organized by the Leo Club of University of
-                Colombo!|
-                <br />
-                <br />
-                {"       "}
-                32/1, Road Lane, Colombo
-              </Paragraph>
-              <FlexRow12>
-                <PiggyPinkText>Register</PiggyPinkText>
-                <FancyChip>
-                  <Chip1 width={`108px`}>
-                    <AvatarFill>
-                      <Image1
-                        src={`https://file.rendit.io/n/zYZhCEonn7LSMPBahidv.png`}
-                      />
-                    </AvatarFill>
-                    <Label color={`#334155`}>Gilberto Ward</Label>
-                  </Chip1>
-                </FancyChip>
-              </FlexRow12>
-              <Dotsvertical
-                src={`https://file.rendit.io/n/7DQQkHayPLktTdJn6JGq.svg`}
-              />
-            </Content>
-            <Footer height={`auto`}>
-              <Action2>
-                <Message2
-                  src={`https://file.rendit.io/n/nkwg6PdHOZ0AINY0BgTB.svg`}
-                />
-                <Text52 width={`64px`}>May 1, 2022</Text52>
-              </Action2>
-            </Footer>
-          </Task>
+          </div>
+
         </LaneInner2>
+
       </HeroImage>
       <div
         id={`${formRegCamp ? "fade-clusterAdmin" : null}`}
@@ -681,7 +506,7 @@ const LaneInner = styled.div`
   padding: 16px;
   border-width: 1px;
 `;
-const Task = styled.div`
+const card = styled.div`
   width: 303px;
   background-color: #ffffff;
   display: flex;
@@ -702,7 +527,7 @@ const Content = styled.div`
   min-width: 288px;
   padding: 16px;
 `;
-const Text47 = styled.div`
+const campName = styled.div`
   font-size: 14px;
   font-family: Quicksand;
   font-weight: 700;
