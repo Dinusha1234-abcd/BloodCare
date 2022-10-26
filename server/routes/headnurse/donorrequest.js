@@ -3,8 +3,11 @@ const router = express.Router();
 const donorrequest = require('../../services/headnurse/donorrequest');
 
 
-router.get('/',async function(req, res) {
-    await donorrequest.getDonorRequest().then(
+router.post('/',async function(req, res) {
+      
+    const campNumber = req.body.campNumber;
+
+    await donorrequest.getDonorRequest(campNumber).then(
         (requests) =>{
             const donorrequest = requests;
             return res.json({

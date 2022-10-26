@@ -185,7 +185,7 @@ function App() {
             <Route path='/login' exact element={<Login />} />
             <Route path='/headnurse/assigncamps' exact element={<HeadNurseAssignCamps />} />
             <Route path='/headnurse/pastcamps' exact element={<HeadNursePastCamps />} />
-            <Route path='/headnurse/donorrequests' exact element={<HeadNurseDonorRequests />} />
+            <Route path='/headnurse/donorrequests/:id' exact element={<HeadNurseDonorRequests />} />
             <Route path='/headnurse/profile' exact element={<HeadNurseProfile />} />
             <Route path='/' exact element={ <LandingPage /> } />
             <Route path='/camps' exact element={<Camps />} />

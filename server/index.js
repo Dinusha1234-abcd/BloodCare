@@ -116,11 +116,12 @@ const donors = require('./routes/headnurse/donors');
 //const register = require('./routes/headnurse/registerdonor');
 const pastcamp = require('./routes/headnurse/pastcamp');
 const donorrequest = require('./routes/headnurse/donorrequest');
+const donordetails = require('./routes/headnurse/donordetails');
 
 
 //home
 const addCamp = require('./routes/campRegister');
-const getCampsData = require('./routes/showCamps');
+//const getCampsData = require('./routes/showCamps');
  
 
 
@@ -255,10 +256,11 @@ app.use("/headnurse/upcommingcamp",upcommingcamp);
 app.use("/headnurse/donors",donors);
 app.use("/headnurse/pastcamp",pastcamp);
 app.use("/headnurse/donorrequest",donorrequest);
+app.use("/headnurse/donordetails",donordetails);
 
 
 //home
-app.use("/showCamps", getCampsData);
+//app.use("/showCamps", getCampsData);
 app.use("/campRegister", addCamp);
 
 

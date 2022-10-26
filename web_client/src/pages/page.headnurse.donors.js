@@ -53,7 +53,7 @@ export default function HeadNurseDonors() {
                       <td>{data[i]['phoneNumber']}</td>
                       <td>{data[i]['address']}</td> 
                       <td>{data[i]['userNic']}</td> 
-                      <td><button id='view-donor-button-headnurse'>View</button></td>
+                      <td><a href="/headnurse/donordetails"><button id='view-donor-button-headnurse'>View</button></a></td>
                       
                   </tr>
                   </>
