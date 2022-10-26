@@ -1,16 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const ABpositive = require('../../../../services/clusterAdmin/blood/AB/ABpositive');
+const calender = require('../../../services/clusterAdmin/calender/calender');
 
 router.post('/',  async function (req, res) {
   const clusterAdminNic =  req.body.clusterAdminNic ;
  
-  await ABpositive.getABnegative(clusterAdminNic).then(
-    (bloods) => {
+  await calender.getCamp(clusterAdminNic).then(
+    (camps) => {
        
-      const blood = bloods ;
+      const camp = camps ;
       return res.json({
-        bloods: blood
+        camps: camp
       })
     }).catch((err) => {
         console.log(err) 

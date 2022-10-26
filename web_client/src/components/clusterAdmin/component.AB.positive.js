@@ -24,7 +24,7 @@ export default function ABPositive(){
               
                 setData(res.data.bloods);
                  setLoading(!loading);
-                setWait(true);
+                setWait(true)
             }).catch((err) => {
                 //sever 
                 setLoading(!loading);
@@ -45,7 +45,7 @@ export default function ABPositive(){
               
                 setCamps(res.data.camps);
                  setLoading(!loading);
-                setWait(true);
+               
             }).catch((err) => {
                 //sever 
                 setLoading(!loading);
@@ -75,9 +75,9 @@ export default function ABPositive(){
             <h1 id='header-clusterAdmin-blood'>AB Positive Blood Packets</h1>
             <div id='blood-display-container-box-1'>
                
-                 <div id='blood-display-container-subbox-1'>Cluster Center <br/> <h id='blood-display-container-subbox-1-count'>{wait ?  data[0]['Apositive'] :  '0' }</h> <br/>Packets</div>
-                 <div id='blood-display-container-subbox-1'>All Cluster Center<br/><h id='blood-display-container-subbox-1-count'>{wait ?  data[0]['ApositiveAll'] :  '0' }</h> <br/>Packets </div>
-                 <div id='blood-display-container-subbox-1'>AB Positive<br/><h id='blood-display-container-subbox-1-count'>{wait ?  (parseInt(data[0]['Apositive'])/ parseInt(data[0]['ApositiveAll']))*100 + '%': '0%' }</h><br/>Percentage</div>
+                 <div id='blood-display-container-subbox-1'>Cluster Center <br/> <h id='blood-display-container-subbox-1-count'>{wait ?  data[0]['ABpositive'] :  '0' }</h> <br/>Packets</div>
+                 <div id='blood-display-container-subbox-1'>All Cluster Center<br/><h id='blood-display-container-subbox-1-count'>{wait ?  data[0]['ABpositiveAll'] :  '0' }</h> <br/>Packets </div>
+                 <div id='blood-display-container-subbox-1'>AB Positive<br/><h id='blood-display-container-subbox-1-count'>{wait ?  (parseInt(data[0]['ABpositive'])/ parseInt(data[0]['ABpositiveAll']))*100 + '%': '0%' }</h><br/>Percentage</div>
                  <div id='blood-display-container-subbox-2-1'>
                     <div id='blood-display-container-subbox-2-1-1' >Last Update Date 2022/07/28</div>
                     <div id='blood-display-container-subbox-2-1-1' >Last Update Time 12:00 PM</div>

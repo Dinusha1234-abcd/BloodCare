@@ -67,10 +67,13 @@ const addDriver = require('./routes/clusterAdmin/medicalStaff/driver/addDriver')
 const selectDriver = require('./routes/clusterAdmin/medicalStaff/driver/selectDriver'); 
 const updateDriver = require('./routes/clusterAdmin/medicalStaff/driver/updateDriver'); 
 const removeDriver = require('./routes/clusterAdmin/medicalStaff/driver/removeDriver'); 
- 
+
+const getCamp = require('./routes/clusterAdmin/calender/calender');
+
 const selectDonor = require('./routes/clusterAdmin/registerDonor/selectDonor'); 
 
-
+const medicalstaff = require('./routes/clusterAdmin/dashboard/getMedicalStaff')
+const camp = require('./routes/clusterAdmin/dashboard/getCamps');
 
 //registerDonor
 const homeSelectCamp = require('./routes/registerDonor/homeSelectCamp');
@@ -149,20 +152,20 @@ app.use("/blood/opositivecamp",opositiveCamp)
 app.use("/blood/onegativecount",onegativeCount);
 app.use("/blood/onegativecamp",onegativeCamp)
 
-app.use("/blood/apostivecount",apositiveCount);
-app.use("/blood/aopositivecamp",apositiveCamp)
+app.use("/blood/apositivecount",apositiveCount);
+app.use("/blood/apositivecamp",apositiveCamp)
 
 app.use("/blood/anegativecount",anegativeCount);
 app.use("/blood/anegativecamp",anegativeCamp)
 
-app.use("/blood/bpostivecount",bpositiveCount);
+app.use("/blood/bpositivecount",bpositiveCount);
 app.use("/blood/bpositivecamp",bpositiveCamp)
 
 app.use("/blood/bnegativecount",bnegativeCount);
 app.use("/blood/bnegativecamp",bnegativeCamp)
 
-app.use("/blood/abpostivecount",abpositiveCount);
-app.use("/blood/abositivecamp",abpositiveCamp);
+app.use("/blood/abpositivecount",abpositiveCount);
+app.use("/blood/abpositivecamp",abpositiveCamp);
 
 app.use("/blood/abnegativecount",abnegativeCount);
 app.use("/blood/abnegativecamp",abnegativeCamp)
@@ -185,7 +188,10 @@ app.use("/medicalstaff/updatedriver",updateDriver);
 app.use("/medicalstaff/removeDriver",removeDriver);
  
 app.use("/registerdonor/selectdonor",selectDonor);
+app.use("/calender/getdates",getCamp);
 
+app.use("/dashboard/medicalstaff",medicalstaff);
+app.use("/dashboard/camp",camp);
 
 
 

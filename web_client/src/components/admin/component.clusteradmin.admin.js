@@ -60,7 +60,7 @@ export default function ClusterAdmin(){
             email,
             mobileNumber,
             // bloodCenterNo,
-            password,
+            password 
         }
 
         //check NIC number length
@@ -92,10 +92,7 @@ export default function ClusterAdmin(){
         }else if(!(mobileNumber.length==10)){
             setMessage("Please Enter  Valid Mobile Number");
 
-        }else if(bloodCenterNo.length==0){
-            setMessage("Please Enter Cluster Center Id");
-
-        }else if(password.length<6){
+        } else if(password.length<6){
             setMessage("Please enter more than 6 charactors");
 
         }else{

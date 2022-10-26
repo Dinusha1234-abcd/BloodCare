@@ -45,7 +45,7 @@ export default function BNegative(){
               
                 setCamps(res.data.camps);
                  setLoading(!loading);
-                setWait(true);
+               
             }).catch((err) => {
                 //sever 
                 setLoading(!loading);

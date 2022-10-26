@@ -43,9 +43,9 @@ export default function ABNegative(){
         axios.post("http://localhost:8070/blood/abnegativecamp", clusterAdmin).then(
             (res) => {
               
-                setCamps(res.data.camps);
+                 setCamps(res.data.camps);
                  setLoading(!loading);
-                setWait(true);
+                
             }).catch((err) => {
                 //sever 
                 setLoading(!loading);

@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const Anegative = require('../../../../services/clusterAdmin/blood/A/Apositive');
+const Anegative = require('../../../../services/clusterAdmin/blood/A/Anegative');
 
 
 router.post('/',  async function (req, res) {
   const clusterAdminNic =  req.body.clusterAdminNic ;
 
  
-  await Anegative.Anegative(clusterAdminNic).then(
+  await Anegative.getAnegative(clusterAdminNic).then(
     (bloods) => {
        
       const blood = bloods ;

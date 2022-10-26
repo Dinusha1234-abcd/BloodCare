@@ -24,7 +24,7 @@ export default function ANegative(){
               
                 setData(res.data.bloods);
                  setLoading(!loading);
-                setWait(true);
+               setWait(true)
             }).catch((err) => {
                 //sever 
                 setLoading(!loading);
@@ -45,7 +45,7 @@ export default function ANegative(){
               
                 setCamps(res.data.camps);
                  setLoading(!loading);
-                setWait(true);
+              
             }).catch((err) => {
                 //sever 
                 setLoading(!loading);
@@ -75,7 +75,7 @@ export default function ANegative(){
             <div id='blood-display-container-box-1'>
                
                  <div id='blood-display-container-subbox-1'>Cluster Center <br/> <h id='blood-display-container-subbox-1-count'>{wait ?  data[0]['Anegative'] :  '0' }</h> <br/>Packets</div>
-                 <div id='blood-display-container-subbox-1'>All Cluster Center<br/><h id='blood-display-container-subbox-1-count'>{wait ?  data[0]['OnegativeAll'] :  '0' }</h> <br/>Packets </div>
+                 <div id='blood-display-container-subbox-1'>All Cluster Center<br/><h id='blood-display-container-subbox-1-count'>{wait ?  data[0]['AnegativeAll'] :  '0' }</h> <br/>Packets </div>
                  <div id='blood-display-container-subbox-1'>A Negative<br/><h id='blood-display-container-subbox-1-count'>{wait ?  (parseInt(data[0]['Onegative'])/ parseInt(data[0]['OnegativeAll']))*100 + '%': '0%' }</h><br/>Percentage</div>
                  <div id='blood-display-container-subbox-2-1'>
                     <div id='blood-display-container-subbox-2-1-1' >Last Update Date 2022/07/28</div>

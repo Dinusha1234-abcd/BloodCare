@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const Bnegative = require('../../../../services/clusterAdmin/blood/B/Bpositive');
+const Bnegative = require('../../../../services/clusterAdmin/blood/B/Bnegative');
 
 
 router.post('/',  async function (req, res) {
   const clusterAdminNic =  req.body.clusterAdminNic ;
 
  
-  await Bnegative.Bnegative(clusterAdminNic).then(
+  await Bnegative.getBnegative(clusterAdminNic).then(
     (bloods) => {
        
       const blood = bloods ;
@@ -16,7 +16,7 @@ router.post('/',  async function (req, res) {
       })
     }).catch((err) => {
         console.log(err) 
-        return res.json({ message: "unsucess" });
+        return res.json({ message: "unsucess" }); 
       });
 
      

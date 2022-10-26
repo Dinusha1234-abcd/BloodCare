@@ -24,7 +24,7 @@ export default function ONegative(){
               
                 setData(res.data.bloods);
                  setLoading(!loading);
-                setWait(true);
+               setWait(true)
             }).catch((err) => {
                 //sever 
                 setLoading(!loading);
@@ -45,7 +45,7 @@ export default function ONegative(){
               
                 setCamps(res.data.camps);
                  setLoading(!loading);
-                setWait(true);
+               
             }).catch((err) => {
                 //sever 
                 setLoading(!loading);
@@ -59,7 +59,7 @@ export default function ONegative(){
   
         camp.push(
             <tr>
-                <td>{camps[i]['bloodCampNumber'] }</td>
+            <td>{camps[i]['bloodCampNumber'] }</td>
             <td>{camps[i]['name']}</td>
             <td>{camps[i]['Total']}</td>
 
