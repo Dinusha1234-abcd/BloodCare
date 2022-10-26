@@ -121,7 +121,8 @@ const donorrequest = require('./routes/headnurse/donorrequest');
 //home
 const addCamp = require('./routes/campRegister');
 const getCampsData = require('./routes/showCamps');
- 
+const joinCamp = require('./routes/donorRegister');
+
 
 
 
@@ -260,6 +261,8 @@ app.use("/headnurse/donorrequest",donorrequest);
 //home
 app.use("/showCamps", getCampsData);
 app.use("/campRegister", addCamp);
+app.use("/donorRegister", joinCamp);
+
 
 
 
