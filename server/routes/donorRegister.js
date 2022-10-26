@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const campRegister = require('../services/donorRegister');
 
-router.post('/registerCamp', async function (req, res) {
+router.post('/', async function (req, res) {
    const FirstName = req.body.FirstName;
    const LastName = req.body.LastName;
    const NIC = req.body.NIC;

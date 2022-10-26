@@ -7,9 +7,10 @@ import "../assests/css/component.doctors.css";
 import axios from "axios";
 
 export default function Camps() {
-
   function joinCamp(e) {
     e.preventDefault();
+
+    const registeredDonorNic = localStorage.getItem("userNic");
 
     const donor = {
       firstName,
@@ -43,20 +44,38 @@ export default function Camps() {
       setEmail("");
       e.target.reset();
       // pass check the data with server
-      axios
-        .post("http://localhost:8070/camps", donor)
-        .then((res) => {
-          //check password and username
-          if (res["data"]["message"] == "success") {
-            window.location = "/camps";
-          } else {
-            setMessage("Network Connection issue");
-          }
-        })
-        .catch((err) => {
-          //sever error
-          console.log(err.message);
-        });
+
+      if (registeredDonorNic) {
+        axios
+          .post("http://localhost:8070/camps", donor, registeredDonorNic)
+          .then((res) => {
+            //check password and username
+            if (res["data"]["message"] == "success") {
+              window.location = "/camps";
+            } else {
+              setMessage("Network Connection issue");
+            }
+          })
+          .catch((err) => {
+            //sever error
+            console.log(err.message);
+          });
+      } else {
+        axios
+          .post("http://localhost:8070/camps", donor)
+          .then((res) => {
+            //check password and username
+            if (res["data"]["message"] == "success") {
+              window.location = "/camps";
+            } else {
+              setMessage("Network Connection issue");
+            }
+          })
+          .catch((err) => {
+            //sever error
+            console.log(err.message);
+          });
+      }
     }
   }
 
@@ -78,59 +97,57 @@ export default function Camps() {
   const list = [];
 
   if (searchData == "") {
-
     for (let i = firstRow; i < lastRow; i++) {
       list.push(
-          <>
+        <>
+          <Task height={`200px`}>
+            <Content>
+              <Text47>{data[i]["campName"]}</Text47>
+              <Paragraph>
+                Join our blood camp organized by the Leo Club of University of
+                Colombo!
+                <br />
+                <br />
+                {"       "}
+                {data[i]["location"]}
+              </Paragraph>
+              <FlexRow12>
+                <PiggyPinkText>Register</PiggyPinkText>
+                <FancyChip>
+                  <Chip1 width={`92px`}>
+                    <AvatarFill>
+                      <Image1
+                        src={`https://file.rendit.io/n/3gXlyjGNIVtjCL0f8Kj5.png`}
+                      />
+                    </AvatarFill>
+                    <Label color={`#334155`}>{data[i]["FullName"]}</Label>
+                  </Chip1>
+                </FancyChip>
+              </FlexRow12>
+              <Dotsvertical
+                src={`https://file.rendit.io/n/7DQQkHayPLktTdJn6JGq.svg`}
+              />
+            </Content>
 
-    <Task height={`200px`}>
-      
-      <Content>
-        <Text47>{data[i]['campName']}</Text47>
-        <Paragraph>
-          Join our blood camp organized by the Leo Club of
-          University of Colombo!
-          <br />
-          <br />
-          {"       "}
-          {data[i]['location']}
-        </Paragraph>
-        <FlexRow12>
-          <PiggyPinkText>Register</PiggyPinkText>
-          <FancyChip>
-            <Chip1 width={`92px`}>
-              <AvatarFill>
+            <Footer height={`15px`}>
+              <Action2>
                 <Image1
-                  src={`https://file.rendit.io/n/3gXlyjGNIVtjCL0f8Kj5.png`}
+                  src={`https://file.rendit.io/n/nkwg6PdHOZ0AINY0BgTB.svg`}
                 />
-              </AvatarFill>
-              <Label color={`#334155`}>{data[i]['FullName']}</Label>
-            </Chip1>
-          </FancyChip>
-        </FlexRow12>
-        <Dotsvertical
-          src={`https://file.rendit.io/n/7DQQkHayPLktTdJn6JGq.svg`}
-        />
-      </Content>
+                <June width={`63px`}>{data[i]["campDate"]}</June>
+              </Action2>
+            </Footer>
+            <Akariconslocation>
+              <Akariconslocation1
+                src={`https://file.rendit.io/n/XVa7BszjAOZwC9AViTad.svg`}
+              />
+            </Akariconslocation>
+          </Task>
+        </>
+      );
+    }
+  }
 
-      <Footer height={`15px`}>
-        <Action2>
-          <Image1
-            src={`https://file.rendit.io/n/nkwg6PdHOZ0AINY0BgTB.svg`}
-          />
-          <June width={`63px`}>{data[i]['campDate']}</June>
-        </Action2>
-      </Footer>
-      <Akariconslocation>
-        <Akariconslocation1
-          src={`https://file.rendit.io/n/XVa7BszjAOZwC9AViTad.svg`}
-        />
-      </Akariconslocation>
-    </Task>
-    </>)
-}
-  };
-   
   return (
     <CampsRoot>
       <FlexRow>
@@ -171,8 +188,6 @@ export default function Camps() {
               <Text46>Blood Camp Locations</Text46>
               <FlexRow11>
                 <LaneInner>
-
-             
                   <Task height={`200px`}>
                     <Content>
                       <Text47>Supipi Blood Camp</Text47>
@@ -185,7 +200,11 @@ export default function Camps() {
                         32/1, Road Lane, Colombo
                       </Paragraph>
                       <FlexRow12>
-                        <button onClick={() => {setFormRegCamp(!formRegCamp) }}>
+                        <button
+                          onClick={() => {
+                            setFormRegCamp(!formRegCamp);
+                          }}
+                        >
                           <PiggyPinkText>Register</PiggyPinkText>
                         </button>
                         <FancyChip>
@@ -480,7 +499,12 @@ export default function Camps() {
           </Task>
         </LaneInner2>
       </HeroImage>
-      <div id={`${formRegCamp ? 'fade-clusterAdmin' : null}`} onClick={() => { setFormRegCamp(!formRegCamp) }}></div>
+      <div
+        id={`${formRegCamp ? "fade-clusterAdmin" : null}`}
+        onClick={() => {
+          setFormRegCamp(!formRegCamp);
+        }}
+      ></div>
       <div
         id={`${
           formRegCamp
