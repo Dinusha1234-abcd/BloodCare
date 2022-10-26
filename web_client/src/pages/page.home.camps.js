@@ -166,39 +166,6 @@ export default function Camps() {
                   id="calender"
                 />
               </CalendarContainer>
-              <Map2>
-                <Map1>
-                  <Element58>
-                    <Input>
-                      <Field>
-                        <BaseField>
-                          <Search
-                            src={`https://file.rendit.io/n/KbMwPgQDD7sHeEGBaoVz.svg`}
-                          />
-                          <Content9 placeholder={`Search map`} />
-                        </BaseField>
-                      </Field>
-                    </Input>
-                    
-                  </Element58>
-                  <CurrentLocation
-                    src={`https://file.rendit.io/n/5QawF07Pkg99dPOvwROw.svg`}
-                  />
-                  <FlexRow10>
-                    <View>
-                      <Label17>
-                        <Layers1
-                          src={`https://file.rendit.io/n/P7BzA59gCDMySsSXptvy.svg`}
-                        />
-                        <Text45>Layers</Text45>
-                      </Label17>
-                    </View>
-                    <Controls>
-                     
-                    </Controls>
-                  </FlexRow10>
-                </Map1>
-              </Map2>
             </FlexColumn1>
             <FlexColumn2>
               <Text46>Blood Camp Locations</Text46>
