@@ -1,14 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const donors = require('../../services/headnurse/donors');
+const pastcamp = require('../../services/headnurse/pastcamp');
 
 
 router.get('/',async function(req, res) {
-    await donors.getDonors().then(
-        (user) =>{
-            const donors =user;
+    await pastcamp.getPastCamp().then(
+        (pastcamps) =>{
+            const pastcamp = pastcamps;
             return res.json({
-                donors :donors
+                pastcamp : pastcamp
             })
         }).catch((err) => {
             console.log(err);

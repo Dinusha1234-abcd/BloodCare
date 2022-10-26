@@ -1,14 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const donors = require('../../services/headnurse/donors');
+const donorrequest = require('../../services/headnurse/donorrequest');
 
 
 router.get('/',async function(req, res) {
-    await donors.getDonors().then(
-        (user) =>{
-            const donors =user;
+    await donorrequest.getDonorRequest().then(
+        (requests) =>{
+            const donorrequest = requests;
             return res.json({
-                donors :donors
+                donorrequest : donorrequest
             })
         }).catch((err) => {
             console.log(err);

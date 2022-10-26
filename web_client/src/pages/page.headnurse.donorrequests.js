@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from 'axios';
 import SlideMenuHeadNurse from "../components/headnurse/component.slidemenu.headNurse";
 import '../assests/css/headnurse/headnurse.donorrequests.css';
 import Upcomming from '../assests/images/upcomming.png';
@@ -13,10 +14,64 @@ import woman from '../assests/images/woman.png';
 
 export default function HeadNurseDonorRequests() {
     const [slidemenu, setSlideMenu] = useState(true);
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [unsuccessMessage, setUnsuccessMessage] = useState("");
+    const [unsuccess, setUnSuccess] = useState(false);
+    const [searchData, setSearchData] = useState("");
+    const [success, setSuccess] = useState(false); 
     const [date, setDate] = useState(new Date())
+    
     const passData = (data) => {
       setSlideMenu(data);
     };
+
+    useEffect((() => { getDonorRequest() }), [])
+
+    function getDonorRequest() {
+      axios.get("http://localhost:8070/headnurse/donorrequest").then(
+          (res) => {
+              setData(res.data.donorrequest);
+              console.log(res.data);
+  
+              setLoading(!loading);
+          }).catch((err) => {
+              //sever error
+              setLoading(!loading);
+              setUnsuccessMessage("Network Connection Issue Please Try Again");
+              setUnSuccess(true)
+          })
+    }
+  
+    function unsucessbutton(){
+      window.location = "/assigncamps";
+    }
+  
+    const list = [];
+  
+    
+
+    //display data in table
+      //check the NIC number
+      //if (searchData == "") {
+          for(let i=0; i<data.length; i++){
+              list.push(
+                  <> <div id="user1">
+                      <img id="man" src={man}/>
+                      <h4 id="h4-user">{data[i]['firstName']}</h4>
+                      <a href="/headnurse/addnewdonor">
+                      <button type="button" id="button1-user" > Register </button>
+                      </a>
+                      <p id="p-user"> {data[i]['email']}</p>
+                      <p id="p-user"> {data[i]['phoneNumber']}</p>
+                      <p id="p-user">{data[i]['address']}</p>
+                      
+                      
+                  </div>
+                  <br></br> 
+                  </>
+              )
+          }
 
     return (
         <div>
@@ -25,13 +80,17 @@ export default function HeadNurseDonorRequests() {
               <div id="donor-count-headnurse" > 
               <img id="donor-img" src={donorheadnurse}/>
                 <h3 id ="h3-user">Total Requested Dornors</h3>
-                <h2 id ="h2-user">22</h2>  
+                <h2 id ="h2-user">{data.length}</h2>  
               </div>
             
               <input type="text" id='search' placeholder="Search.."/>
               <button type="button" id="button-headnurse-user"> <i class="fas fa-search"></i></button>  
           </div>
-
+          <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+          <div >   
+             {list}
+          </div>
+{/*
           <div id="user1">
                 <img id="man" src={man}/>
                 <h4 id ="h4-user">User1</h4>
@@ -114,7 +173,7 @@ export default function HeadNurseDonorRequests() {
                  <p id ="p-user">071-4578142</p> 
           </div>
 
-          
+    */}
               
         </div>
         

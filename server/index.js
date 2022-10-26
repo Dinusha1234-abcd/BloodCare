@@ -114,10 +114,14 @@ const addClusterCenter = require('./routes/admin/clusterCenter/addClusterCenter'
 //headnurse
 const upcommingcamp = require('./routes/headnurse/upcommingcamp');
 const donors = require('./routes/headnurse/donors');
+//const register = require('./routes/headnurse/registerdonor');
+const pastcamp = require('./routes/headnurse/pastcamp');
+const donorrequest = require('./routes/headnurse/donorrequest');
+
 
 //home
 const addCamp = require('./routes/campRegister');
-// const getCampsData = require('./routes/showCamps');
+const getCampsData = require('./routes/showCamps');
  
 
 
@@ -246,12 +250,19 @@ app.use("/clusterCenter/addClusterCenter", addClusterCenter);
 
 
 //headnurse
-// app.use("/headnurse/upcommingamp.js",upcommingamp);
+
+app.use("/headnurse/upcommingcamp",upcommingcamp);
+//app.use("/headnurse/registerdonor",register);
 app.use("/headnurse/donors",donors);
+app.use("/headnurse/pastcamp",pastcamp);
+app.use("/headnurse/donorrequest",donorrequest);
+
 
 //home
 // app.use("/showCamps", getCampsData);
 app.use("/campRegister", addCamp);
+app.use("/donorRegister", joinCamp);
+
 
 
 
