@@ -1,8 +1,8 @@
 const db = require('../../../db');
 
 
-async function getBloodCenterNumber(medicalOfficerNic){
-    const rows =  await db.query(`SELECT bloodCenterNo FROM  cluster_center_administator  WHERE userNic=?`,[medicalOfficerNic]);
+async function getBloodCenterNumber(clusterAdminNic){
+    const rows =  await db.query(`SELECT bloodCenterNo FROM  cluster_center_administator  WHERE userNic=?`,[clusterAdminNic]);
      return  rows ;
 }
 

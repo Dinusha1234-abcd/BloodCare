@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const pendingCampView = require('../../../../services/clusterAdmin/camp/pendingCamp/pendingCampView');
+const OpositiveGetCamp = require('../../../../services/clusterAdmin/blood/O/OpositiveGetCamp');
+
 
 router.post('/',  async function (req, res) {
-  const campnumber =  req.body.campNumber ;
+  const clusterAdminNic =  req.body.clusterAdminNic ;
  
-  await pendingCampView.getPendingCamp(campnumber).then(
+  await OpositiveGetCamp.getCamp(clusterAdminNic).then(
     (camps) => {
        
       const camp = camps ;

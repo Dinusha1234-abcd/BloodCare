@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const pendingCampView = require('../../../../services/clusterAdmin/camp/pendingCamp/pendingCampView');
+const ongoingCampView = require('../../../../services/clusterAdmin/camp/ongoingCamp/ongoingCampView');
 
 router.post('/',  async function (req, res) {
   const campnumber =  req.body.campNumber ;
  
-  await pendingCampView.getPendingCamp(campnumber).then(
+  await ongoingCampView.getOngoingCamp(campnumber).then(
     (camps) => {
        
       const camp = camps ;
