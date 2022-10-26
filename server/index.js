@@ -7,7 +7,7 @@ const login = require('./routes/login');
 const forgetPassword = require('./routes/forgetPassword');
 const passwordChange = require('./routes/passwordChange');
 const campRegister  = require('./routes/campRegister'); 
- 
+const clusterCenter = require('./routes/getClusterCenter'); 
 app.max_user_connections = 100;
 app.max_user_connections = 200;
 
@@ -124,6 +124,9 @@ const donordetails = require('./routes/headnurse/donordetails');
 
 //home
 const addCamp = require('./routes/campRegister');
+
+
+
 //const getCampsData = require('./routes/showCamps');
  
 
@@ -276,7 +279,7 @@ app.use("/headnurse/donordetails",donordetails);
 //app.use("/showCamps", getCampsData);
 app.use("/campRegister", addCamp);
 app.use("/donorRegister", joinCamp);
-
+app.use("/clusterCenter", clusterCenter);
 
 
 

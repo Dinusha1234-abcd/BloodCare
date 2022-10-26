@@ -1,8 +1,12 @@
-import {React, useState} from "react";
-import { axios } from "axios";
+import {React, useState, useEffect} from "react";
+import  axios  from "axios";
 import styled from "styled-components";
 import '../assests/css/component.doctors.css';
 import '../assests/css/page.home.registerCamp.css';
+import successImage from '../assests/images/sucess.png';
+import waitImage from '../assests/images/wait.gif';
+
+
 import NavBar from "../components/component.home.navbar";
 
 export default function RegisterCamp() {
@@ -11,6 +15,7 @@ export default function RegisterCamp() {
   const [NIC , setNIC]  = useState("");
   const [email, setEmail] = useState("");
   const [mobileNumber, setmobileNumber] = useState("");
+  const [donors,setDonors] = useState("");
   const [campName , setcampName] = useState("")
   const [campDate , setcampDate] = useState("")
   const [location, setlocation] = useState("");
@@ -18,7 +23,28 @@ export default function RegisterCamp() {
   const [clusterCenter,setclusterCenter] = useState("");
   const [message,setMessage] = useState("");
   const [success, setSuccess] = useState(false)
- 
+  const [center, setCenter] =useState([]);
+  const [wait, setWait] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+
+
+  useEffect((() => {getClusterCenter() }), []);
+
+  function getClusterCenter() { 
+  axios.get("http://localhost:8070/clusterCenter" ).then(
+    (res) => {
+       setCenter(res.data.centers)
+    }
+  )
+  }
+  const list = []
+  for (let i = 0; i < center.length; i++) {
+    list.push(
+      <option value={center[i]['bloodCenterNo']} >{center[i]['name']}</option>)
+}
+function sucessbutton() {
+  window.location = "/registerCamp";
+}
   function addCamp(e) {
     e.preventDefault()
     const camp = {
@@ -31,6 +57,7 @@ export default function RegisterCamp() {
       location,
       district,
       clusterCenter,
+      donors
     }
 
     if (FullName.length == 0) {
@@ -71,15 +98,17 @@ export default function RegisterCamp() {
       setdistrict('');
       setclusterCenter('');
       e.target.reset();
+    
 
     axios.post("http://localhost:8070/camp/register", camp).then(
       (res) => {
           //check password and username  
           if (res['data']['message'] == "success") {
-              window.location = "/camp";
-
+            setWait(false);
+            setSuccessMessage("Doctor Added Sucessfully")
+            setSuccess(true);
           } else {
-              setMessage("Network Connection issue");
+             alert("error")
               
           }
 
@@ -107,6 +136,15 @@ export default function RegisterCamp() {
             </Element1>
           </FlexRow1>
           <FlexRow2>
+                {/* Success message/ */}
+                <div id={`${success ? 'sucess-camp-active' : 'sucess-message'}`}>
+                    <br /> <h1 id='sucess-message-name'> <img id='successImage' src={successImage} /> <br /> Success !</h1>  <br />
+                    <p id='sucess-message-box'>Camp Registration Sucessfully</p> <br></br>
+                    <button id="okay-camp" onClick={() => { setSuccess(sucessbutton) }}> Okay </button>
+                </div>
+                <div id={`${success || wait ? 'fade-camp' : null}`}  ></div>
+                <div id={`${wait ? 'wait-camp-active' : 'wait-cluterAdmin'}`}> <img id='wait-cluterAdmin-image' src={waitImage} /> </div>
+            
           <form id='register-form-camp' onSubmit={addCamp}>
 
                         <table id='camp-form-table'>
@@ -157,13 +195,14 @@ export default function RegisterCamp() {
                                 <td id="camp-form-table-font-size">Cluster Center</td>
                                 <td>   <select id="register-form-new-camp" placeholder="Enter Cluster Center"  onChange={(e)=>{setclusterCenter(e.target.value)}}>
                                 <option value="" disabled selected>Select Cluster Center</option>
-                                <option value="nbc">NBC</option>
-                                <option value="nhsl">NHSL</option>
-                                <option value="cshw">CSHW</option>
-                                <option value="csth">CSTH</option>
-                                </select><br />
+                              {list}  </select><br />
                                 </td>
-                                <td></td>
+                                <td></td>{" "}
+                                <td id="coloum-register-camp">Accept Of Donors</td>
+
+                                <td>   <input type="text" id="register-form-new-camp" placeholder="Enter Number of Donors"  onChange={(e)=>{setDonors(e.target.value)}} /> <br />
+                                </td>
+                             
                              
                             </tr>
             
