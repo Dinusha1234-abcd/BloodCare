@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import styled from "styled-components";
 import Calendar from "react-calendar";
 import NavBar from "../components/component.home.navbar";
@@ -7,6 +7,76 @@ import "../assests/css/component.doctors.css";
 import axios from "axios";
 
 export default function Camps() {
+
+const [center , setCenter] = useState([]);
+
+
+  useEffect((() => {getcamps() }), []);
+
+  function getcamps() { 
+  axios.get("http://localhost:8070/showCamps" ).then(
+    (res) => {
+       setCenter(res.data.camps)
+    }
+  )
+  }
+  const camps = []
+  for (let i = 0; i < center.length; i++) {
+      
+    camps.push(
+     
+      <LaneInner>
+    
+      <div class ='card' height={`200px`}  >
+        <Content>
+          <div class = 'campName'>{center[i]['name']}</div>
+          <Paragraph>
+            Join our blood camp organized by the {center[i]['organizerName']}
+            <br />
+            <br />
+            {"       "}
+            {center[i]['place']}
+          </Paragraph>
+          <FlexRow12>
+            <button
+              onClick={() => {
+                setFormRegCamp(!formRegCamp);
+              }}
+            >
+              <PiggyPinkText>Register</PiggyPinkText>
+            </button>
+            <FancyChip>
+              <Chip1 width={`108px`}>
+                <AvatarFill>
+                  <Image1
+                    src={`https://file.rendit.io/n/2gRAvJdvPXAwnIGN4ywg.png`}
+                  />
+                </AvatarFill>
+                <Label color={`#334155`}>Jennifer Cook</Label>
+              </Chip1>
+            </FancyChip>
+          </FlexRow12>
+          <Dotsvertical
+            src={`https://file.rendit.io/n/7DQQkHayPLktTdJn6JGq.svg`}
+          />
+        </Content>
+        <Footer height={`15px`}>
+          <Action2>
+            <Image1
+              src={`https://file.rendit.io/n/nkwg6PdHOZ0AINY0BgTB.svg`}
+            />
+            <June width={`67px`}>Jun 21, 2022</June>
+          </Action2>
+        </Footer>
+      </div>
+
+    </LaneInner>
+
+      )
+}
+
+
+
   function joinCamp(e) {
     e.preventDefault();
 
@@ -99,52 +169,26 @@ export default function Camps() {
   if (searchData == "") {
     for (let i = firstRow; i < lastRow; i++) {
       list.push(
-        <>
-          <div class ='card' height={`200px`}>
-            <Content>
-              <div class = 'campName'>{data[i]["campName"]}</div>
-              <Paragraph>
-                Join our blood camp organized by the Leo Club of University of
-                Colombo!
-                <br />
-                <br />
-                {"       "}
-                {data[i]["location"]}
-              </Paragraph>
-              <FlexRow12>
-                <PiggyPinkText>Register</PiggyPinkText>
-                <FancyChip>
-                  <Chip1 width={`92px`}>
-                    <AvatarFill>
-                      <Image1
-                        src={`https://file.rendit.io/n/3gXlyjGNIVtjCL0f8Kj5.png`}
-                      />
-                    </AvatarFill>
-                    <Label color={`#334155`}>{data[i]["FullName"]}</Label>
-                  </Chip1>
-                </FancyChip>
-              </FlexRow12>
-              <Dotsvertical
-                src={`https://file.rendit.io/n/7DQQkHayPLktTdJn6JGq.svg`}
-              />
-            </Content>
-
-            <Footer height={`15px`}>
-              <Action2>
-                <Image1
-                  src={`https://file.rendit.io/n/nkwg6PdHOZ0AINY0BgTB.svg`}
-                />
-                <June width={`63px`}>{data[i]["campDate"]}</June>
-              </Action2>
-            </Footer>
-            <Akariconslocation>
-              <Akariconslocation1
-                src={`https://file.rendit.io/n/XVa7BszjAOZwC9AViTad.svg`}
-              />
-            </Akariconslocation>
-          </div>
-        </>
-      );
+        <div id="camp-details">
+        {/* <img id="campimg" src={futureCamp} />  */}
+        <h3 id="camp-name">{center[i]['name']}</h3>
+        {/* <h3 id="camp-name">{data[i]['name']}</h3> */}
+        <br></br>
+        <table id="regD-camp-details-table">
+            <tr>
+                <td>Date </td>
+                <td> : {center[i]['date'].substring(0, 10)}</td>
+                {/* <td><i class="fa-solid fa-calendar-day"></i></td> */}
+            </tr>
+            <tr>
+                <td>Location  </td>
+                <td> : {center[i]['place']}</td>
+            </tr>
+           </table>
+        {/* <Link to='/blood_camps/register' id="register"  >Register Now</Link> */}
+        {/* <img id="mapimg" src={map} /> */}
+    </div>  
+       );
     }
   }
 
@@ -186,9 +230,10 @@ export default function Camps() {
             </FlexColumn1>
             <FlexColumn2>
               <Text46>Blood Camp Locations</Text46>
-              <FlexRow11>
-
-                <LaneInner>
+              {/* <FlexRow11> */}
+                  
+                {camps}
+                {/* <LaneInner>
 
                   <div class ='card' height={`200px`}>
                     <Content>
@@ -234,9 +279,9 @@ export default function Camps() {
                     </Footer>
                   </div>
 
-                </LaneInner>
+                </LaneInner> */}
 
-                <LaneInner>
+                {/* <LaneInner>
                   <div class = 'card' height={`200px`}>
                     <Content>
                       <div class = 'campName'>Supipi Blood Camp</div>
@@ -275,13 +320,13 @@ export default function Camps() {
                     </Footer>
                   </div>
 
-                </LaneInner>
+                </LaneInner> */}
 
-              </FlexRow11>
+              {/* </FlexRow11> */}
             </FlexColumn2>
           </FlexRow2>
         </FlexColumn>
-        <LaneInner2>
+        {/* <LaneInner2>
 
           <div class = 'card' height={`200px`}>
             <Content>
@@ -321,7 +366,7 @@ export default function Camps() {
             </Footer>
           </div>
 
-        </LaneInner2>
+        </LaneInner2> */}
 
       </HeroImage>
       <div
@@ -495,7 +540,7 @@ const LaneInner = styled.div`
   border-color: #ffffff;
   border-style: solid;
   backdrop-filter: blur(12px);
-  background-color: #dd2d50;
+  background-color: #D7F2C2;
   display: flex;
   overflow: hidden;
   flex-direction: column;
@@ -505,9 +550,10 @@ const LaneInner = styled.div`
   border-radius: 24px;
   padding: 16px;
   border-width: 1px;
+  width: 80%;
 `;
 const card = styled.div`
-  width: 303px;
+  width: 500px;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -945,6 +991,7 @@ const Text46 = styled.div`
 const FlexRow11 = styled.div`
   align-self: stretch;
   display: flex;
+  width: 300%;
   flex-direction: row;
   gap: 24px;
   justify-content: center;

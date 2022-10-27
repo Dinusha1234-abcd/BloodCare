@@ -12,7 +12,7 @@ async function getCamp(campNumber) {
    INNER JOIN blood_counter ON blood_counter.bloodCounterNo= blood_donation.bloodCounterNumber 
    WHERE blood_counter.bloodRHtype='A+' && blood_camp.bloodCenterNo=(SELECT bloodCenterNo  FROM cluster_center_administator WHERE userNic=?)
    GROUP BY blood_camp.bloodCampNumber ,
-    blood_camp.name;`, [campNumber]);
+    blood_camp.name`, [campNumber]);
     return rows;
 
 }

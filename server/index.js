@@ -192,9 +192,7 @@ const addCamp = require('./routes/campRegister');
 
 
 
-//const getCampsData = require('./routes/showCamps');
  
-
 
 const getCampsData = require('./routes/showCamps');
 const joinCamp = require('./routes/donorRegister');
@@ -406,7 +404,7 @@ app.use("/dashboard/blood",bloodMO);
 
 
 //home
-//app.use("/showCamps", getCampsData);
+app.use("/showCamps", getCampsData);
 app.use("/campRegister", addCamp);
 app.use("/donorRegister", joinCamp);
 app.use("/clusterCenter", clusterCenter);

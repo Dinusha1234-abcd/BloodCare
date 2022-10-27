@@ -5,8 +5,8 @@ const showCamps = require('../services/showCamps');
 
 router.get('/',async function(req, res) {
     await showCamps.getCampsData().then(
-        (user) =>{
-            const camps =user;
+        (camp) =>{
+            const camps =camp;
             return res.json({
                 camps :camps
             })

@@ -49,10 +49,10 @@ export default function PendingCampView() {
 
     }
     function sucessbutton() {
-        // window.location = '/bloodcamp/pendingcampView/' + id + '/' + date; 
+        window.location = '/bloodcamp/pendingcamp'; 
     }
     function unsucessbutton() {
-        // window.location =  '/bloodcamp/pendingcampView/' + id + '/' + date; 
+        window.location =  '/bloodcamp/pendingcampView/' + id + '/' + date; 
     }
     function getMedicalStaffData() {
         const clusterAdminNic = localStorage.getItem('userNic');
@@ -69,7 +69,7 @@ export default function PendingCampView() {
 
                 setMedicalStaff(res.data.medicalStaff);
                 setLoading(!loading);
-                setWait(true);
+                 
             }).catch((err) => {
                 //sever 
                 setLoading(!loading);
@@ -155,6 +155,7 @@ export default function PendingCampView() {
     const list = [];
 
     for (let i = 0; i < data.length; i++) {
+        if(data[i]['workId']!="null"){ 
         if(data[i]['type']=="4"){
             headNurse.push(
                 <div id='past-camp-medicalstaff-name'>{data[i]['firstName'] + " " + data[i]['lastName'] + " "}<i class="fa-solid fa-xmark close-button"></i></div>
@@ -162,6 +163,7 @@ export default function PendingCampView() {
         }else { 
             otherMedicalStaff.push(<div id='past-camp-medicalstaff-name'>{data[i]['firstName'] + " " + data[i]['lastName'] + " "}<i class="fa-solid fa-xmark close-button"></i></div>
         )}
+        }
     }
     for (let i = 0; i < medicalStaff.length; i++) {
   

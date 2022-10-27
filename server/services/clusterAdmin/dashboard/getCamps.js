@@ -3,11 +3,11 @@ const db = require('../../db');
 async function getCamps(clusterNic){
     var todayDate = new Date().toISOString().slice(0, 10);
     const rows = await db.query( `SELECT 
-    sum( date <    ? &&	status ='accept')  as pastCamp,
-    sum(date = ? &&	status ='accept')  as ongoingCamp,
-    sum(date > ? &&	status ='accept')  as upcomingCamp,
-    sum(date  <  ? &&	status ='pending')  as pendingCamp 
-    FROM blood_camp    WHERE  bloodCenterNo=(SELECT bloodCenterNo FROM cluster_center_administator WHERE userNic=?) `,[ todayDate,todayDate,todayDate,todayDate,clusterNic]);
+    SUM( date <    ? &&	status ='accept')  as pastCamp,
+    SUM(date = ? &&	status ='accept')  as ongoingCamp,
+    SUM(date > ? &&	status ='accept')  as upcomingCamp,
+    SUM(status ='pending')  as pendingCamp 
+    FROM blood_camp    WHERE  bloodCenterNo=(SELECT bloodCenterNo FROM cluster_center_administator WHERE userNic=?) `,[ todayDate,todayDate,todayDate,clusterNic]);
     return  rows ;
     
 }
