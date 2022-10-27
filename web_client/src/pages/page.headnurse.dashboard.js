@@ -20,7 +20,7 @@ import '../assests/css/component.calender.css';
 import DoughnutChart from '../components/compoent.doughnutChart';
 import PieChart from '../components/component.pieChart';
 import BarChart from '../components/component.barChart';
-import { getDashboard } from "../../../server/services/headnurse/dashboard";
+// import { getDashboard } from "../../../server/services/headnurse/dashboard";
 
 
 export default function HeadNurseDashboard() {

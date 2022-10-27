@@ -21,10 +21,10 @@ async function getPastCamp(){
      blood_donation.campNumber
      INNER JOIN blood_counter ON blood_counter.bloodCounterNo=
      blood_donation.bloodCounterNumber
-     WHERE  blood_camp.date < ?
+     WHERE  blood_camp.date < '2022-10-27'
      GROUP BY blood_camp.bloodCampNumber ,
      blood_camp.name  
-     ` ,[ todayDate]);
+     `);
 
     const data =rows;
     return rows;

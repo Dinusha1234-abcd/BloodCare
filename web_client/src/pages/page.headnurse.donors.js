@@ -48,13 +48,13 @@ export default function HeadNurseDonors() {
       //if (searchData == "") {
           for(let i=0; i<data.length; i++){
               list.push(
-                  <> <tr>
+                  <> <tr id="tr2-tab">
                       <td>{data[i]['registerDonorId']}</td>
                       <td>{data[i]['firstName']}</td>
                       <td>{data[i]['phoneNumber']}</td>
                       <td>{data[i]['address']}</td> 
                       <td>{data[i]['userNic']}</td> 
-                      <td><Link id='view-donor-button-headnurse' to={`${'/headnurse/donordetails/'+data[i]['userNic']+'/'}`}>View</Link></td>
+                      <td><Link id='view-donor-button-headnurse ' to={`${'/headnurse/donordetails/'+data[i]['userNic']+'/'}`}>View</Link></td>
                       
                       
                   </tr>
@@ -67,14 +67,14 @@ export default function HeadNurseDonors() {
         <div>
           <SlideMenuHeadNurse headerName={"Registered Donors"} passData={passData} />
           <div id={`${slidemenu ? 'state-change-true' : 'state-change-false'}`} > 
-          <div id= "search-donor-head">
+          {/*<div id= "search-donor-head">
              <input type="text" id='search-headnurse-donors' placeholder="Search.."/>
              <button type="button" id="button-headnurse-donor-filter"> <i class="fas fa-search"></i></button>
-          </div>
+    </div> */}
 <div id="headnurse-donor-box"> <br/>
 <table id="donor-table-headnurse">
-  <tr>
-    <th>Donor ID</th>
+  <tr id="tr-tab">
+    <th id="th-tab">Donor ID</th>
     <th>Name</th>
    {/* <th>Blood group</th> */}
     <th>Phone</th>

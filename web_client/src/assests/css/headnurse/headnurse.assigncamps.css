@@ -104,9 +104,9 @@
 
 #camp1{
     /*position: absolute; */
-    width: 550px;
+    width: 700px;
     height: 170px;
-    margin-left: 17%;
+    margin-left: 30%;
     margin-top: 0px;
     background: rgba(255, 255, 255, 0.73);
     box-shadow: 100px 100px 200px 100px rgba(0, 0, 0, 0.1);
@@ -131,7 +131,7 @@
 
 #button1{
     position:absolute;
-    margin-left: 22%;
+    margin-left: 30%;
     width:185px;
     height: 40px;
     border-radius: 20px; 

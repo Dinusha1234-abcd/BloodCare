@@ -134,8 +134,8 @@ const donorrequest = require('./routes/headnurse/donorrequest');
 const donordetails = require('./routes/headnurse/donordetails');
 const summary = require('./routes/headnurse/summary');
 const dashboard = require('./routes/headnurse/dashboard');
-
-
+const register  = require('./routes/headnurse/registerdonor')
+ 
 
 
 //medical officer
@@ -357,7 +357,7 @@ app.use("/dashboard/clusterCenters",clusterCenters);
 //headnurse
 
 app.use("/headnurse/upcommingcamp",upcommingcamp);
-//app.use("/headnurse/registerdonor",register);
+app.use("/headnurse/registerdonor",register);
 app.use("/headnurse/donors",donors);
 app.use("/headnurse/pastcamp",pastcamp);
 app.use("/headnurse/donorrequest",donorrequest);
@@ -436,7 +436,7 @@ app.use("/dashboard/blood",bloodMO);
 //home
 //app.use("/showCamps", getCampsData);
 app.use("/campRegister", addCamp);
-app.use("/donorRegister", joinCamp);
+//app.use("/donorRegister", joinCamp);
 app.use("/clusterCenter", clusterCenter);
 
 
