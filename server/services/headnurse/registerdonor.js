@@ -1,4 +1,4 @@
-const db = require('../../db');
+/*const db = require('../../db');
 
 async function insertDonor(province, district, userNic){
 
@@ -6,4 +6,8 @@ async function insertDonor(province, district, userNic){
     [province, district, userNic]);
 }
 
+<<<<<<< Updated upstream
 module.exports = {insertDonor} 
+=======
+module.exports = {insertDonor} */
+>>>>>>> Stashed changes

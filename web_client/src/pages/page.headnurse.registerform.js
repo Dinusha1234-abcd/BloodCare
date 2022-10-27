@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+/*import React, { useState, useEffect } from "react";
 import axios from 'axios';
+import { useParams } from 'react-router-dom'; 
 import SlideMenuHeadNurse from "../components/headnurse/component.slidemenu.headNurse";
 import '../assests/css/headnurse/headnurse.registerform.css';
 import boy_details from '../assests/images/boy.png';
@@ -7,23 +8,31 @@ import formimage from '../assests/images/donate.png';
 
 export default function HeadNurseAddNewDonors() {
   const [slidemenu, setSlideMenu] = useState(true);
-  const [data, setData] = useState([]);
+    const {id} =useParams()
+    const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [wait, setWait] = useState(false);
+    const [successMessage, setSuccessMessage] = useState("");
     const [unsuccessMessage, setUnsuccessMessage] = useState("");
+    const [success, setSuccess] = useState(false);
     const [unsuccess, setUnSuccess] = useState(false);
     const [searchData, setSearchData] = useState("");
-    const [success, setSuccess] = useState(false);
-    const [ message,setMessage] = useState("");
-    const [wait, setWait] = useState(false); 
-    const [successMessage, setSuccessMessage] = useState("");
-
-    const [formReg, setFormReg] = useState(false);
-    //const [address, setAddress] = useState("");
-    const [province, setProvince] = useState("");
-    const [district, setDistrict] = useState("");
-    const [userNic, setNic] = useState("");
-
+    const [medicalStaff, setMedicalStaff] = useState([]);
+    const [status, setStatus] = useState("");
+    const [staffAdd, setStaffAdd] = useState(false); 
+    const [staffNic, setStaffNic] = useState("");
+    const [staffId, setStaffId] = useState("");
+    const [bloodCenterNumber, setBloodCenterNumber] = useState("");
+    const [staffTyoe, setStaffType] = useState("");
+    const [lastRow, setLastRow] = useState(0);
+    const [updateFormShow, setUpdateFormShow] = useState(false);
+    const regDonorNic = localStorage.getItem('userNic');
+    const [getFirstName, setFirstName] = useState("");
+    const [getLastName, setLastName] = useState("");
+    const [getcampName, setcampName] =useState("");
+    const [value, setValue] = useState(false);
   const [date, setDate] = useState(new Date())
+
   const passData = (data) => {
     setSlideMenu(data);
   };
@@ -35,8 +44,10 @@ export default function HeadNurseAddNewDonors() {
     window.location = "/registerCamp";
   }
 
-  function registerdonor(e){
-    e.preventDefault()
+  function registerdonor(){
+    const Id =id;
+    const userNic = regDonorNic;
+   // e.preventDefault()
     const register= {
         province,
         district,
@@ -97,13 +108,21 @@ function unsucessbutton() {
             <br /><label id="form-label-headnurse">Donor's Name</label> <br />
                <input type="text" id="form-input" placeholder="    First Name" onChange={(e)=>{setProvince(e.target.value)}} />
               {/* <input type="text" id="form-input" placeholder="    Last Name" />  */
+<<<<<<< Updated upstream
          /*   <br /><label id="form-label-headnurse">NIC</label> <br />
+=======
+       /*     <br /><label id="form-label-headnurse">NIC</label> <br />
+>>>>>>> Stashed changes
                <input type="text" id="form-input" onChange={(e)=>{setDistrict(e.target.value)}} />
            <br /><label id="form-label-headnurse">Phone</label> <br />
                <input type="text" id="form-input" onChange={(e)=>{setNic(e.target.value)}} />
                <button type="sumbit" id="sumbit-button"  > Register </button> {" "} 
            {/*} <br /><label id="form-label-headnurse">Address</label> <br />
+<<<<<<< Updated upstream
   <input type="text" id="form-input-address" />  */
+=======
+  <input type="text" id="form-input-address" /> }  */
+>>>>>>> Stashed changes
             {/*<br /><label id="form-label-headnurse">Occupation</label> <br />
             <input type="text" id="form-input" />
             <br />  <label id="form-label-headnurse">Weight</label> <br />
@@ -133,8 +152,13 @@ function unsucessbutton() {
               <label id="diseases2-headnurse">No</label>
               <input type="radio" id="radio-headnurse" value="No"></input>
 
+<<<<<<< Updated upstream
   </div> */} 
           </form>
+=======
+  </div> */}
+          /*</form>
+>>>>>>> Stashed changes
         </div>
 
 
@@ -143,4 +167,8 @@ function unsucessbutton() {
     </div>
 
   );
+<<<<<<< Updated upstream
 }    
+=======
+}     */
+>>>>>>> Stashed changes
