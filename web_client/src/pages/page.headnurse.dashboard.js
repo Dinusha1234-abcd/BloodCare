@@ -102,19 +102,19 @@ export default function HeadNurseDashboard() {
         <div id="row1-headnurse">
           <div id="medical-staff-headnurse">
             <h3>Medical Staff Members</h3>
-            <div id="users-count-headnurse" display='inline'> <User id='user' image={doctor} name="Doctor" count='10'/>   <User id='user' image={nurse} name="Nurse" count='20'/>  <User id='user' image={driver} name="Driver" count='07'/> </div>
+            <div id="users-count-headnurse" display='inline'> <User id='user' image={doctor} name="Doctor" count='2'/>   <User id='user' image={nurse} name="Nurse" count='3'/>  <User id='user' image={driver} name="Driver" count='01'/> </div>
           </div>
           <div id="camp-headnurse">
             <h3>Blood Camps</h3>
-            <div id="camp-count-headnurse" display='inline'> <Camp image={pastCamp} name="Past Camp" count='10' />  <Camp image={futureCamp} name="Future Camp" count='04'status={true} /> </div>
+            <div id="camp-count-headnurse" display='inline'> <Camp image={pastCamp} name="Past Camp" count='1' />  <Camp image={futureCamp} name="Future Camp" count='5'status={true} /> </div>
           </div>
         </div>
         <div id="row2-headnurse">
           <div id="sub-row1-headnurse">
             <div id="sub-row2-headnurse">
               <h3>Blood Counter Details</h3>
-              <div id="blood-headnurse"><Blood name='O+' count='20' /><Blood name='A+' count='10'/><Blood name='B+' count='40' /><Blood name='AB+' count='13' /></div>
-              <div id="blood-headnurse"><Blood name='O-' count='21'/><Blood name='A-' count='32'/><Blood name='B-' count='18' /><Blood name='AB-' count='09'/></div>
+              <div id="blood-headnurse"><Blood name='O+' count='2' /><Blood name='A+' count='1'/><Blood name='B+' count='1' /><Blood name='AB+' count='0' /></div>
+              <div id="blood-headnurse"><Blood name='O-' count='0'/><Blood name='A-' count='1'/><Blood name='B-' count='0' /><Blood name='AB-' count='2'/></div>
             </div>
             <div id="sub-row3-headnurse">
               <div id="blood-month-dashboard-headnurse">
@@ -128,11 +128,11 @@ export default function HeadNurseDashboard() {
 
           <div id="camp-events-headnurse">
             <h3 id="camp-events-name-headnurse">Upcoming Camp Events</h3>
-            <div id="camp-events-list-headnurse"> <p>2022/09/01 Camp Number 100  <button id="view-button-headnurse">View</button> </p></div>
-            <div id="camp-events-list-headnurse"> <p>2022/09/25 Camp Number 101  <button id="view-button-headnurse">View</button> </p></div>
-            <div id="camp-events-list-headnurse"> <p>2022/10/01 Camp Number 102  <button id="view-button-headnurse">View</button> </p></div>
-            <div id="camp-events-list-headnurse"> <p>2022/10/07 Camp Number 103  <button id="view-button-headnurse">View</button> </p></div>
-            <div id="camp-events-list-headnurse"> <p>2022/11/12 Camp Number 104  <button id="view-button-headnurse">View</button> </p></div>
+            <div id="camp-events-list-headnurse"> <p>2022/10/30 Camp Number 3  <button id="view-button-headnurse">View</button> </p></div>
+            <div id="camp-events-list-headnurse"> <p>2022/10/30 Camp Number 5  <button id="view-button-headnurse">View</button> </p></div>
+            <div id="camp-events-list-headnurse"> <p>2022-11-04 Camp Number 4  <button id="view-button-headnurse">View</button> </p></div>
+            <div id="camp-events-list-headnurse"> <p>2022-11-05 Camp Number 11  <button id="view-button-headnurse">View</button> </p></div>
+            <div id="camp-events-list-headnurse"> <p>2022/11/24 Camp Number 2  <button id="view-button-headnurse">View</button> </p></div>
           </div>
         </div>
         <div id="row3-headnurse">
