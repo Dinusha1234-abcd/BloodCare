@@ -2,12 +2,12 @@ const express = require('express');
 const router = express.Router();
 const selectOngoingCamp = require('../../../../services/admin/camp/ongoingCamp/selectOngoingCamp');
 
-router.post('/',  async function (req, res) {
+router.get('/',  async function (req, res) {
   
   let centerNumber;
   var todayDate = new Date().toISOString().slice(0, 10);
   
-  await selectOngoingCamp.getOngoingCamps(centerNumber,todayDate).then(
+  await selectOngoingCamp.getOngoingCamps(todayDate).then(
     (camp) => {
        
       const camps = camp ;

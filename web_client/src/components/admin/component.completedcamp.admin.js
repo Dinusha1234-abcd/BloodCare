@@ -15,22 +15,22 @@ export default function CompletedCamp(){
     const [unsuccess, setUnSuccess] = useState(false);
     const [searchData, setSearchData] = useState("");
 
-    useEffect((() => { getCompletedCampData() }), [])
+    // useEffect((() => { getCompletedCampData() }), [])
 
-    function getCompletedCampData() {
-        axios.post("http://localhost:8070/camp/selectCompletedCamp").then(
-            (res) => {
-                setData(res.data.camps);
-                console.log(res.data);
-                setLoading(!loading);
-            }).catch((err) => {
-                //sever 
-                setLoading(!loading);
-                setUnsuccessMessage("Network Connection Issue Please Try Again");
-                setUnSuccess(true);
-            }
-        )
-    }
+    // function getCompletedCampData() {
+    //     axios.post("http://localhost:8070/camp/selectCompletedCamp").then(
+    //         (res) => {
+    //             setData(res.data.camps);
+    //             console.log(res.data);
+    //             setLoading(!loading);
+    //         }).catch((err) => {
+    //             //sever 
+    //             setLoading(!loading);
+    //             setUnsuccessMessage("Network Connection Issue Please Try Again");
+    //             setUnSuccess(true);
+    //         }
+    //     )
+    // }
 
     function sucessbutton() {
         window.location = "/bloodcamps/completedcamp";

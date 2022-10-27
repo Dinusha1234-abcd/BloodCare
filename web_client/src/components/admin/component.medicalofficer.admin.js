@@ -22,6 +22,8 @@ export default function MedicalOfficer(){
     const [removeAlert, setRemoveAlert] = useState(false);
     const [medicalOfficerName, setMedicalOfficerName] = useState("");
     const [medicalOfficerNic, setMedicalOfficerNic] = useState("");
+    const [bloodCenterNo, setClusterNo] = useState("");
+
 
     const [ message,setMessage] = useState("");
     const [success, setSuccess] = useState(false);
@@ -71,6 +73,7 @@ export default function MedicalOfficer(){
             address,
             email,
             mobileNumber,
+            bloodCenterNo,
             password,
         }
 
@@ -404,6 +407,11 @@ export default function MedicalOfficer(){
                           <tr>
                               <td>Mobile Number</td>
                               <td>   <input type="text" id="register-form-user-input-admin" placeholder="Enter Mobile Number"  onChange={(e)=>{setMobileNumber(e.target.value)}} /> <br />
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>Cluster Center No </td>
+                              <td>   <input type="text" id="register-form-user-input-admin" placeholder="Enter Cluster Center No"  onChange={(e)=>{setClusterNo(e.target.value)}}  /> <br />
                               </td>
                           </tr>
                           <tr>

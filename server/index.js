@@ -122,6 +122,10 @@ const selectUpcomingCamp = require('./routes/admin/camp/upcomingCamp/selectUpcom
 
 const members = require('./routes/admin/dashboard/getMembers');
 const clusterCenters = require('./routes/admin/dashboard/getClusterCenters');
+const blooddata = require('./routes/admin/dashboard/getBlood');
+
+const campAdmin = require('./routes/clusterAdmin/dashboard/getCamps');
+
 
 
 
@@ -353,7 +357,7 @@ app.use("/camp/selectUpcomingCamp", selectUpcomingCamp);
 
 app.use("/dashboard/members",members);
 app.use("/dashboard/clusterCenters",clusterCenters);
-
+app.use("/dashboard/blooddata",blooddata);
 
 
 

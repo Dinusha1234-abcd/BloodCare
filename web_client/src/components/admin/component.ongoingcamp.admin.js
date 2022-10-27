@@ -18,7 +18,7 @@ export default function OngoingCamp(){
 
     function getOngoingCampData() {
 
-        axios.post("http://localhost:8070/camp/selectOngoingCamp").then(
+        axios.get("http://localhost:8070/camp/selectOngoingCamp").then(
             (res) => {
                 setData(res.data.camps);
                 console.log(res.data);
