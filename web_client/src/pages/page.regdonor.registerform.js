@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';  
 import SlideMenuRegDonor from "../components/component.slidemenu.registerDonor";
 import '../assests/css/page.regdonor.registerform.css';
+import loadingImage from '../assests/images/loading.gif';
+import successImage from '../assests/images/sucess.png';
 export default function RegisterForm() {
     const [slidemenu, setSlideMenu] = useState(true);
     const {id} =useParams()
@@ -110,9 +112,11 @@ export default function RegisterForm() {
         <div>
             <SlideMenuRegDonor headerName={"Register Form"} passData={passData}/>
             <div id="register-form">
+            
                 <h3 id="register-form-name">Register Form</h3>
                 <h4 id="register-form-camp-name" >{getcampName}</h4>
                 <form id="reg-form" onSubmit={registerCamp}>
+               
                     <label id="regDonor-camp-name" for="camp-name">Camp Name</label> 
                     <label id="camp-id" for="camp-id">Camp ID</label><br></br>
                     <input type="text" id="regDonor-camp-name" name="camp-name" value={getcampName}></input>
@@ -128,7 +132,9 @@ export default function RegisterForm() {
                     <label for="non">Non-Vegetarian</label><br></br><br></br>
                     <button id="donor-register">Register</button>
                     <button id="donor-cancel">Cancel </button>
+                   
                 </form>
+                
             </div>
         </div>
 

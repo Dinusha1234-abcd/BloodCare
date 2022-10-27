@@ -181,22 +181,22 @@ export default function RegDonorProfile() {
                 <h3 id="profile-page-donor-name">{updateFirstName}  {updateLastName}</h3>
                 <h4 id="profile-page-actor">Donor</h4>
                 <form id="regDonor-profile-form" onSubmit={updateDonor}>
-                    <label for="reg-donor-name">First Name</label>
-                    <label for="register-donor-NIC">Last Name</label><br></br>
+                    <h2 for="reg-donor-name">First Name :</h2>
                     <input type="text" id="reg-Donor-Name" placeholder={updateFirstName} value={updateFirstName} onChange={(e) => { setUpdateFirstName(e.target.value)}}></input>
+                    <h2 for="register-donor-LName"> Last Name : </h2>
                     <input type="text" id="reg-Donor-NIC"  placeholder={updateLastName} value={updateLastName} onChange={(e) => {setUpdateLastName(e.target.value)}}></input><br></br>
-                    <label for="reg-donor-contact">Contact</label>
-                    <label for="reg-donor-email">NIC</label><br></br>
+                    <h2 for="reg-donor-contact">Contact :</h2>
                     <input type="text" id="reg-Donor-Contact"  placeholder={updateMobileNumber} value={updateMobileNumber} onChange={(e) => {setMobileNumber(e.target.value)}}></input>
-                    <input type="text" id="reg-Donor-Email"  placeholder={updateNIC} value={updateNIC} onChange={(e) => {setUpdateNIC(e.target.value)}}></input><br></br>
-                    <label for="reg-donor-address">E-mail</label>
-                    <label for="reg-donor-district">Address</label><br></br>
-                    <input type="text" id="reg-Donor-Address"  placeholder={updateEmail} value={updateEmail} onChange={(e) => {setUpdateEmail(e.target.value)}}></input>
+                    <h2 for="reg-donor-email">NIC :</h2>
+                    <input type="text" id="reg-Donor-Nic"  placeholder={updateNIC} value={updateNIC} onChange={(e) => {setUpdateNIC(e.target.value)}}></input><br></br>
+                    <h2 for="reg-donor-address">E-mail :</h2>
+                    <input type="text" id="reg-Donor-Email"  placeholder={updateEmail} value={updateEmail} onChange={(e) => {setUpdateEmail(e.target.value)}}></input>
+                    <h2 for="reg-donor-district">Address :</h2>
                     <input type="text" id="reg-Donor-District"  placeholder={updateAddress} value={updateAddress} onChange={(e) => {setUpdateAddress(e.target.value)}}></input>
-                    <label for="reg-donor-address">District</label>
-                    <label for="reg-donor-district">Province</label><br></br>
+                    <h2 for="reg-donor-address">District :</h2>
                     <input type="text" id="reg-Donor-Address" placeholder={updateDistrict} value={updateDistrict} onChange={(e) => {setUpdateDistrict(e.target.value)}}></input>
-                    <input type="text" id="reg-Donor-District"  placeholder={updateProvince} value={updateProvince} onChange={(e) => {setUpdateProvince(e.target.value)}}></input>
+                    <h2 for="reg-donor-district">Province  :</h2>
+                    <input type="text" id="reg-Donor-Province"  placeholder={updateProvince} value={updateProvince} onChange={(e) => {setUpdateProvince(e.target.value)}}></input>
                     <button type="submit" id="donor-save" >Update</button>
                     <button id="Donor-cancel" onClick={() => { setUpdateFormShow(!updateFormShow) }}>Cancel </button>
                 </form>

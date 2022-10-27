@@ -59,9 +59,9 @@ export default function History({ navigation }) {
       <View style={styles.main}>
          <SlideBar nav={navigation} headerName="History" />
          <View style={styles.history}>
-            <Text style={styles.totaldonote}>Total Donate 4/10</Text>
-            <Image style={styles.cdonate} source={require('../assests/totald.png')}></Image>
-            <Image style={styles.badge} source={require('../assests/badge.png')}></Image>
+            {/* <Text style={styles.totaldonote}>Total Donate 4/10</Text> */}
+            {/* <Image style={styles.cdonate} source={require('../assests/totald.png')}></Image>
+            <Image style={styles.badge} source={require('../assests/badge.png')}></Image> */}
             <Image style={styles.blood} source={require('../assests/bloodOp.png')}></Image>
             <View style={styles.historyrecoder}>
             <TextInput style={styles.search} ></TextInput>
