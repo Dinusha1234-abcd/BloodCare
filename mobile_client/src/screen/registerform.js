@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import axios from 'axios';
 import RadioButtonRN from 'radio-buttons-react-native';
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
    ImageBackground, SafeAreaView,
    ScrollView,
@@ -17,14 +17,90 @@ import {
 } from 'react-native';
 import SlideBar from '../component/slidebar';
 export default function registerForm({ navigation }) {
-    
+    const regDonorNic = AsyncStorage.getItem('userNic');
+    const [data, setData] = useState([]);
+    const [unsuccess, setUnSuccess] = useState(false);
+    const [lastRow, setLastRow] = useState(0);
+    const [loading, setLoading] = useState(true);
+    const [unsuccessMessage, setUnsuccessMessage] = useState("");
     // const [data, setData] = useState([]);
     // const [unsuccess, setUnSuccess] = useState(false);
     // const [lastRow, setLastRow] = useState(0);
-    // // const {id} =useParams()
+    // const {id} =useParams()
     // const [loading, setLoading] = useState(true);
     // const [unsuccessMessage, setUnsuccessMessage] = useState("");
     // useEffect ((() => {getCampId()}), [])
+    // useEffect ((() => {getCampId()}), [])
+    // function getCampId() {
+    //     const Id ='2';
+    //     const userNic = '981234566V';
+    //     const camp = {
+    //         id,
+    //         userNic,
+    //         value
+    //     }
+    //     axios.post("http://10.0.2.2:8070/registerdonor/registerform",camp).then(
+    //         (res) => {
+
+    //             setData(res.data.camps);
+    //             setcampName(res.data.campName);
+    //             // setFirstName(res.data.camps[0].firstName);
+    //             // setLastName(res.data.camps[0].lastName);
+    //             // setcampName(res.data[0].campName);
+    //             setLoading(!loading);
+    //             console.log(lastRow);
+    //             setWait(true);
+               
+    //         }).catch((err) => {
+    //             //sever 
+    //                 setLoading(!loading);
+    //                 setUnsuccessMessage("Network Connection Issue Please Try Again");
+    //                 setUnSuccess(true)
+    //         })
+    // }
+     const changeVeg = () => {
+        setValue('veg')
+     }
+     const changeNonVeg = () => {
+        setValue('nonveg')
+     }
+
+    // function registerCamp(){
+    //     const Id =id;
+    //     const userNic = regDonorNic;
+    //     const   user = {
+    //         id,
+    //         userNic,
+    //         value
+    //     }
+    //     axios.post("http://10.0.2.2:8070/registerdonor/registerformUpdate",user).then(
+    //         (res) => {
+    //             //check password and username  
+    //             if (res['data']['message'] == "success") {
+    //                 // showUpdateDonor(data[0].firstName,data[0].userNic,data[0].lastName,data[0].phoneNumber,data[0].address, data[0].district,data[0].email, data[0].province);
+    //                 setWait(false);
+    //                 setSuccessMessage("Doctor Update Sucessfully")
+    //                 setSuccess(true);
+
+    //             } else {
+    //                 setWait(false);
+    //                 setUnsuccessMessage("Doctor Update UnSucessfully");
+    //                 setUnSuccess(true);
+
+    //             }
+
+    //         }
+    //     ).catch((err) => {
+    //         //sever error
+    //         console.log(err.message);
+    //         setWait(false);
+    //         setUnsuccessMessage("Network Connection Issue Please Try Again");
+    //         setUnSuccess(true);
+    //      } )
+
+         
+    // }
+
     
     return(
         <ScrollView>
@@ -32,16 +108,16 @@ export default function registerForm({ navigation }) {
              <SlideBar nav={navigation} headerName="Register Form" />
                 <View style={styles.form}>
                 <Text style={styles.headname}>Register Form</Text>
-                <Text style={styles.campName}>Camp Name</Text>
+                <Text style={styles.campName}>Blood Donation</Text>
                 <View style={styles.formconent}>
                 <Text style={styles.lable}>Camp ID</Text>
-                <TextInput style={styles.content1} ></TextInput>
+                <TextInput style={styles.content1} placeholder='3' ></TextInput>
                 <Text style={styles.lable}>Camp Name</Text>
-                <TextInput style={styles.content2} ></TextInput>
+                <TextInput style={styles.content2} placeholder='Blood Donation'></TextInput>
                 <Text style={styles.lable}>Name</Text>
-                <TextInput style={styles.content3} ></TextInput>
+                <TextInput style={styles.content3} placeholder='Kalshi Lakeesha'></TextInput>
                 <Text style={styles.lable}>NIC</Text>
-                <TextInput style={styles.content4} ></TextInput>
+                <TextInput style={styles.content4} placeholder='981234566V'></TextInput>
                 <Text style={styles.lable}>Are you vegetarian or not?</Text>
                 <RadioButtonRN />
                 <RadioButtonRN />

@@ -2,7 +2,7 @@
     position: absolute;
 
     width: 846px;
-    height: 570px;
+    height: 800px;
     left: 500px;
     top: 150px;
     border-radius: 30px;
@@ -105,7 +105,7 @@
     font-size: 18px;
     line-height: 29px;
     letter-spacing: 0.02em;
-    width: 280px;
+    width: 300px;
     height: 45px;
     color: rgba(0, 0, 0, 0.8);
     background-color: rgba(253, 223, 229, 1);
@@ -114,38 +114,80 @@
     padding: 10px;
 }
 
-#regDonor-profile-form label {
+#regDonor-profile-form h2 {
     font-family: 'Ubuntu';
     font-style: italic;
     font-weight: 400;
     font-size: 22px;
     line-height: 29px;
     letter-spacing: 0.02em;
-
+    position: flex;
     color: #000000;
+    
 }
 
-#register-donor-NIC {
-    margin-left: 400px;
 
+#register-donor-NIC {
+    margin-left: 300px;
 }
 
 #reg-Donor-NIC {
-    margin-left: 70px;
+    margin-top: -150px;
+    margin-left: 300px;
+}
+#reg-Donor-Email {
+    margin-top: -150px;
+    margin-left: 300px;
+}
+
+#reg-Donor-District{
+    margin-top: -150px;
+    margin-left: 300px;
+}
+#reg-Donor-Address {
+    margin-top: -150px;
+    margin-left: 300px;
+}
+#reg-Donor-Nic{
+    margin-top: -150px;
+    margin-left: 300px;
+}
+#reg-Donor-Email {
+    margin-top: -150px;
+    margin-left: 300px;
+}
+#reg-Donor-Province{
+    margin-top: -150px;
+    margin-left: 300px;
+}
+
+#reg-Donor-Address {
+    margin-top: -150px;
+    margin-left: 300px;
+}
+#reg-Donor-District {
+    margin-top: -150px;
+    margin-left: 300px;
 }
 
 #reg-donor-email {
     margin-left: 280px;
 }
+#reg-Donor-Name {
+    margin-top: -150px;
+    margin-left: 300px;
+}
+#reg-Donor-Contact {
+    margin-top: -150px;
+    margin-left: 300px;
+}
 
 #reg-Donor-Email {
-    margin-left: 70px;
+    margin-top: -150px;
+    margin-left: 300px;
 }
 
 #reg-donor-district {
     margin-left: 280px;
 }
 
-#reg-Donor-District {
-    margin-left: 70px;
-}

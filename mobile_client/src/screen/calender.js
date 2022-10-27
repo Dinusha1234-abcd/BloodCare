@@ -16,6 +16,7 @@ import SlideBar from '../component/slidebar';
 import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
 export default function CalendarPage({ navigation }) {
    return (
+      <ScrollView>
       <View style={styles.main}>
          <SlideBar nav={navigation} headerName="Calender" />
          <View style={styles.sele}>
@@ -41,7 +42,9 @@ export default function CalendarPage({ navigation }) {
            </View>
          </View>
 
-      </View>)
+      </View>
+      </ScrollView>
+      )
 }
 
 const styles = StyleSheet.create({
@@ -54,11 +57,11 @@ const styles = StyleSheet.create({
       width:'95%'
    }, events: {
       position: 'absolute',
-      marginTop: 550,
+      marginTop: 580,
       marginLeft:10,
       backgroundColor:'rgba(255, 255, 255, 0.87)',
       width:'95%',
-      height:180,
+      // height:160,
       borderRadius:30,
    }, search: {
       position: 'absolute',

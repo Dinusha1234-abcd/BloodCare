@@ -20,7 +20,7 @@ export default function UpcomingCamp(){
 
     function getUpcomingCampData() {
 
-        axios.post("http://localhost:8070/camp/selectUpcomingCamp").then(
+        axios.get("http://localhost:8070/camp/selectUpcomingCamp").then(
             (res) => {
                 setData(res.data.camps);
                 console.log(res.data);

@@ -79,10 +79,10 @@ export default function RegDonorHistory() {
                 <div>
                     <img id="bloodOpimg" src={bloodo} />
                     <div>
-                        <p id="total_donate">Total Donate 5/10</p>
+                        {/* <p id="total_donate">Total Donate 5/10</p>
                         <div id="full">
                             <div id="totalcount"></div>
-                        </div>
+                        </div> */}
 
                     </div>
                     <div id="tableContainer">

@@ -82,6 +82,7 @@ const historyRecordsSelect =require('./routes/registerDonor/historyRecordsSelect
 const campAllDetail =require('./routes/registerDonor/campAllDetail');
 const registerform =require('./routes/registerDonor/registerform');
 const foodTypeInsert =require('./routes/registerDonor/registerformUpdate');
+const donorCalender = require('./routes/registerDonor/donorCalender');
 
 const profileDetail =require('./routes/registerDonor/profileDetail');
 const profileUpdate =require('./routes/registerDonor/profileUpdate');
@@ -121,6 +122,10 @@ const selectUpcomingCamp = require('./routes/admin/camp/upcomingCamp/selectUpcom
 
 const members = require('./routes/admin/dashboard/getMembers');
 const clusterCenters = require('./routes/admin/dashboard/getClusterCenters');
+const blooddata = require('./routes/admin/dashboard/getBlood');
+
+const campAdmin = require('./routes/clusterAdmin/dashboard/getCamps');
+
 
 
 
@@ -312,6 +317,7 @@ app.use("/registerDonor/historyRecordsSelect",historyRecordsSelect);
 app.use("/registerDonor/campAllDetail",campAllDetail);
 app.use("/registerDonor/registerform",registerform);
 app.use("/registerDonor/registerformUpdate",foodTypeInsert);
+app.use("/registerDonor/getDates",donorCalender);
 
 app.use("/registerDonor/profileDetail",profileDetail);
 app.use("/registerDonor/profileUpdate",profileUpdate);
@@ -351,7 +357,7 @@ app.use("/camp/selectUpcomingCamp", selectUpcomingCamp);
 
 app.use("/dashboard/members",members);
 app.use("/dashboard/clusterCenters",clusterCenters);
-
+app.use("/dashboard/blooddata",blooddata);
 
 
 
@@ -437,7 +443,7 @@ app.use("/dashboard/blood",bloodMO);
 //home
 //app.use("/showCamps", getCampsData);
 app.use("/campRegister", addCamp);
-//app.use("/donorRegister", joinCamp);
+app.use("/donorRegister", joinCamp);
 app.use("/clusterCenter", clusterCenter);
 
 
