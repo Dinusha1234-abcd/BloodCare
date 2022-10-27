@@ -1,15 +1,6 @@
-/*import React from "react";
-import SlideMenuHeadNurse from "../components/component.slidemenu.headNurse";
-export default function HeadNurseDashboard() {
-    return(
-        <SlideMenuHeadNurse headerName={"Dashboard"}/>
-    );
-}*/
-
-
-//new code
 import React, { useState, useEffect } from "react";
 import { Bar } from 'react-chartjs-2';
+import axios from 'axios';
 import Calendar from 'react-calendar';
 import SlideMenuHeadNurse from "../components/headnurse/component.slidemenu.headNurse";
 import User from "../components/headnurse/component.users.display.headnurse";
@@ -29,14 +20,50 @@ import '../assests/css/component.calender.css';
 import DoughnutChart from '../components/compoent.doughnutChart';
 import PieChart from '../components/component.pieChart';
 import BarChart from '../components/component.barChart';
+// import { getDashboard } from "../../../server/services/headnurse/dashboard";
 
 
 export default function HeadNurseDashboard() {
   const [slidemenu, setSlideMenu] = useState(true);
+  const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [unsuccessMessage, setUnsuccessMessage] = useState("");
+    const [unsuccess, setUnSuccess] = useState(false);
+    const [searchData, setSearchData] = useState("");
+    const [success, setSuccess] = useState(false); 
   const [date, setDate] = useState(new Date())
+
   const passData = (data) => {
     setSlideMenu(data);
   };
+
+  useEffect((() => { getPastCamp() }), [])
+  
+
+    function getPastCamp() {
+      axios.get("http://localhost:8070/headnurse/pastcamp").then(
+          (res) => {
+              setData(res.data.pastcamp);
+              console.log(res.data);
+  
+              setLoading(!loading);
+          }).catch((err) => {
+              //sever error
+              setLoading(!loading);
+              setUnsuccessMessage("Network Connection Issue Please Try Again");
+              setUnSuccess(true)
+          })
+    }
+
+    function unsucessbutton(){
+      window.location = "/assigncamps";
+    }
+  
+    const list = [];
+   
+
+  
+
   const [useData, setUseData] = useState({
     labels: ['O+', 'O-', 'A+', 'A-', 'B+', 'B-', 'AB+', 'AB-'],
     datasets: [{
@@ -67,6 +94,7 @@ export default function HeadNurseDashboard() {
     }]
   })
 
+  
   return (
     <div>
       <SlideMenuHeadNurse headerName={"Dashboard"} passData={passData} />
@@ -116,5 +144,5 @@ export default function HeadNurseDashboard() {
         </div>
       </div>
     </div>
-  );
+  ); 
 }
