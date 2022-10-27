@@ -29,8 +29,11 @@ export default function HeadNurseAddNewDonors() {
   };
 
   
+  useEffect((() => {registerdonor() }), []);
 
-  
+  function sucessbutton() {
+    window.location = "/registerCamp";
+  }
 
   function registerdonor(e){
     e.preventDefault()
@@ -59,7 +62,7 @@ export default function HeadNurseAddNewDonors() {
             (res) => {
                 if (res['data']['message'] == "success") {
                     setWait(false);
-                    setSuccessMessage("Cluster Center Added Sucessfully")
+                    setSuccessMessage("Donor Added Sucessfully")
                     setSuccess(true);
                 } 
             }
@@ -93,13 +96,14 @@ function unsucessbutton() {
             <button id="donor-reg-button-headnurse"> Register </button> {" "} 
             <br /><label id="form-label-headnurse">Donor's Name</label> <br />
                <input type="text" id="form-input" placeholder="    First Name" onChange={(e)=>{setProvince(e.target.value)}} />
-              {/* <input type="text" id="form-input" placeholder="    Last Name" />  */}
-            <br /><label id="form-label-headnurse">NIC</label> <br />
+              {/* <input type="text" id="form-input" placeholder="    Last Name" />  */
+         /*   <br /><label id="form-label-headnurse">NIC</label> <br />
                <input type="text" id="form-input" onChange={(e)=>{setDistrict(e.target.value)}} />
            <br /><label id="form-label-headnurse">Phone</label> <br />
                <input type="text" id="form-input" onChange={(e)=>{setNic(e.target.value)}} />
+               <button type="sumbit" id="sumbit-button"  > Register </button> {" "} 
            {/*} <br /><label id="form-label-headnurse">Address</label> <br />
-  <input type="text" id="form-input-address" />  */}
+  <input type="text" id="form-input-address" />  */
             {/*<br /><label id="form-label-headnurse">Occupation</label> <br />
             <input type="text" id="form-input" />
             <br />  <label id="form-label-headnurse">Weight</label> <br />
@@ -129,7 +133,7 @@ function unsucessbutton() {
               <label id="diseases2-headnurse">No</label>
               <input type="radio" id="radio-headnurse" value="No"></input>
 
-  </div> */}
+  </div> */} 
           </form>
         </div>
 

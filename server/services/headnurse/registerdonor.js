@@ -6,4 +6,4 @@ async function insertDonor(province, district, userNic){
     [province, district, userNic]);
 }
 
-module.exports = {insertDonor}
+module.exports = {insertDonor} 

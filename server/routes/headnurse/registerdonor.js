@@ -1,12 +1,13 @@
-/*const express = require('express');
+const express = require('express');
 const router = express.Router();
 const registerdonor = require('../../../services/headnurse/registerdonor');
 
 router.post('/', async function(req, res){
+    
     const province = req.body.province;
     const district = req.body.district;
-    const name = req.body.userNic;
-    
+    const userNic = req.body.userNic;
+  
  
     
 
@@ -22,4 +23,4 @@ router.post('/', async function(req, res){
     });
 
 });
-module.exports = router; */
+module.exports = router;  
