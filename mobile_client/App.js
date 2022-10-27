@@ -9,6 +9,7 @@ import Home from "./src/screen/home";
 import CalendarPage from "./src/screen/calender";
 import History from "./src/screen/history";
 import BloodCamp from "./src/screen/bloodcamp"
+import registerForm from "./src/screen/registerform";
 const Stack = createNativeStackNavigator();
 const App = () => {
   const getData = async (key) => {
@@ -35,6 +36,7 @@ const App = () => {
         <Stack.Screen options={{headerShown:false}} name="CalendarPage" component={CalendarPage} />  
         <Stack.Screen options={{headerShown:false}} name="History" component={History} />
         <Stack.Screen options={{headerShown:false}} name="BloodCamp" component={BloodCamp}/>
+        <Stack.Screen options={{headerShown:false}} name="registerForm" component={registerForm}/>
 
         </Stack.Navigator>
   </NavigationContainer>

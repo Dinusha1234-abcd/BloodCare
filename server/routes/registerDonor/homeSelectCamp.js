@@ -6,6 +6,7 @@ const homeSelectCamp = require('../../services/registerDonor/homeSelectCamp');
 router.post('/',async function(req, res) {
     const regDonor = req.body.regDonorNic ;
     let province;
+    console.log(regDonor);
     var todayDate = new Date().toISOString().slice(0,10);
     await homeSelectCamp.getdonorProvince(regDonor).then(
         (regDonor)=>{
