@@ -1,4 +1,6 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
+import axios from 'axios';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
    ImageBackground, SafeAreaView,
    ScrollView,
@@ -14,24 +16,52 @@ import {
 } from 'react-native';
 import SlideBar from '../component/slidebar';
 import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component';
-const CONTENT = {
-   tableHead: ['Date', 'Donation Packet No', 'Location'],
-   tableData: [
-      ['04-07-2022', 'D 000 8574 555', 'Panadura'],
-      ['18-05-2019', 'D 000 5675 273', 'Colombo'],
-      ['25-09-2017', 'D 00 98 2634 59', 'Rathmalana'],
-      ['30-11-2016', 'D 00 16 2054 17', 'Horana'],
-      ['07-09-2015', 'D 00 58 4057 83', 'Kalutara'],
-   ],
-};
+
 export default function History({ navigation }) {
+   const regDonorNic = AsyncStorage.getItem('userNic');
+   const [data, setData] = useState([]);
+   const [unsuccess, setUnSuccess] = useState(false);
+   const [lastRow, setLastRow] = useState(0);
+   const [loading, setLoading] = useState(true);
+   const [unsuccessMessage, setUnsuccessMessage] = useState("");
+   const CONTENT = {
+      tableHead: ['Date', 'Donation Packet No', 'Location'],
+      tableData: [],
+   };
+   useEffect((() => { getHistoryRecords() }), [])
+   function getHistoryRecords() {
+      const regDonorNic ='981234566V';
+      const regDonor = {
+          regDonorNic
+      }
+      axios.post(`http://10.0.2.2:8070/registerdonor/historyrecordsselect/`, regDonor).then(
+            (res) => {
+                setData(res.data.records);
+                if (data.length < 11) {
+                    setLastRow(data.length);
+                } else {
+                    setLastRow(10);
+                }
+                console.log(lastRow);
+                setLoading(!loading);
+            }).catch((err) => {
+                setLoading(!loading);
+                setUnsuccessMessage("Network Connection Issue Pleace Try Again");
+                setUnSuccess(true)
+            })
+   }
+   for (let i = 0; i < data.length; i++) {
+      CONTENT.tableData.push(
+         [data[i]['date'].substring(0, 10), data[i]['bloodCounterNumber'],data[i]['place']]
+         )
+   }
    return (
       <View style={styles.main}>
          <SlideBar nav={navigation} headerName="History" />
          <View style={styles.history}>
-            <Text style={styles.totaldonote}>Total Donate 4/10</Text>
-            <Image style={styles.cdonate} source={require('../assests/totald.png')}></Image>
-            <Image style={styles.badge} source={require('../assests/badge.png')}></Image>
+            {/* <Text style={styles.totaldonote}>Total Donate 4/10</Text> */}
+            {/* <Image style={styles.cdonate} source={require('../assests/totald.png')}></Image>
+            <Image style={styles.badge} source={require('../assests/badge.png')}></Image> */}
             <Image style={styles.blood} source={require('../assests/bloodOp.png')}></Image>
             <View style={styles.historyrecoder}>
             <TextInput style={styles.search} ></TextInput>

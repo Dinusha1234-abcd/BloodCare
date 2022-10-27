@@ -1,25 +1,39 @@
-/*const express = require('express');
+const express = require('express');
 const router = express.Router();
-const registerdonor = require('../../../services/headnurse/registerdonor');
+const { hash } = require('bcrypt');
+const bcrypt = require('bcrypt');
 
-router.post('/', async function(req, res){
-    const province = req.body.province;
-    const district = req.body.district;
-    const name = req.body.userNic;
-    
- 
-    
+const registerformUpdate = require('../../services/headNurse/registerdonor');
 
-    await registerdonor.insertDonor(province,district,userNic).then(
-        (headnurse) => {
-            return res.json({
-                message: "success",
-            });
+router.post('/',async function(req, res){
+    const firstName=req.body.firstName;
+    const lastName=req.body.lastName;
+    const NIC = 'req.body.NIC';
+    const phoneNumber = req.body.phoneNumber;
+    const address = req.body.address;
+    const groupNumber = req.body.groupNumber;
+    const blood = req.body.blood;
+    const bloodCounterNumber = req.body.bloodCounterNumber;
+    const email = req.body.email;
+    const password = req.body.password;
+    
+    const salt = bcrypt.genSaltSync(10);
+    const hashPassword = bcrypt.hashSync(password, salt)
+
+    let gender = 'f';
+    let dateOfBirth= '1998-06-20';
+    let centerNumber;
+   
+     await registerformUpdate.insertfoodType(firstName,lastName,NIC,phoneNumber,email, address,groupNumber,groupNumber,blood,gender,dateOfBirth ,hashPassword,bloodCounterNumber).then(
+        () =>{  return res.json(
+            {
+              message: "sucess"  
+            })
         }
-    ).catch((err) => {
+           
+    ).catch((err) =>{
         console.log(err);
-        return res.json({message : "unsuccess"});
-    });
+    })
 
 });
-module.exports = router; */
+module.exports = router;

@@ -1,5 +1,6 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import axios from 'axios';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
    ImageBackground, SafeAreaView,
    ScrollView,
@@ -16,36 +17,50 @@ import {
 import SlideBar from '../component/slidebar';
 import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component';
 
-// const CONTENT = {
-//    tableHead: ['Date', 'Camp Name', 'Location'],
-//    tableData: [
-//       ['13-08-2022', 'YOU CAN HELP SAVE A LIFE!', 'Panadura'],
-//       ['18-08-2022', 'Blood Donation Drive', 'Kalutara'],
-//       ['29-08-2022', 'BE A HERO DONTAE BLOOD', 'Rathmalana'],
-//       ['03-09-2022', 'Give Blood and Save a Life', 'Horana'],
-//       ['11-09-2022', 'SAVE A LIFE, GIVE YOUR BLOOD.', 'Bandaragama'],
-//    ],
-// };
+
 export default function Home({ navigation }) {
-   const regDonorNic = localStorage.getItem('userNic');
+   const regDonorNic = AsyncStorage.getItem('userNic');
+   const [data, setData] = useState([]);
+   const [unsuccess, setUnSuccess] = useState(false);
+   const [lastRow, setLastRow] = useState(0);
+   const [loading, setLoading] = useState(true);
+   const [unsuccessMessage, setUnsuccessMessage] = useState("");
    const CONTENT = {
       tableHead: ['Date', 'Camp Name', 'Location'],
-      tableData: [
-         // ['13-08-2022', 'YOU CAN HELP SAVE A LIFE!', 'Panadura'],
-         // ['18-08-2022', 'Blood Donation Drive', 'Kalutara'],
-         // ['29-08-2022', 'BE A HERO DONTAE BLOOD', 'Rathmalana'],
-         // ['03-09-2022', 'Give Blood and Save a Life', 'Horana'],
-         // ['11-09-2022', 'SAVE A LIFE, GIVE YOUR BLOOD.', 'Bandaragama'],
-      ],
+      tableData: [],
    };
    useEffect((() => { getCampData() }), [])
    function getCampData() {
-      const regDonorNic =localStorage.getItem('userNic');
+      const regDonorNic ='981234566V';
+      console.log(regDonorNic);
       const regDonor = {
           regDonorNic
       } 
-      axios.post(`http://10.0.2.2:8070/registerdonor/homeselectcamp`, regDonor).then()
-   }
+      axios.post(`http://10.0.2.2:8070/registerdonor/homeselectcamp/`, regDonor).then(
+         (res) => {
+            setData(res.data.camps);
+                console.log(res);
+                if (data.length < 11) {
+                    setLastRow(data.length);
+                } else {
+                    setLastRow(10);
+                }
+                 
+                setLoading(!loading);
+            }).catch((err) => {
+                setLoading(!loading);
+                setUnsuccessMessage("Network Connection Issue Pleace Try Again");
+                setUnSuccess(true)
+         })
+      }
+   const list =[];
+   // if (searchData == "") {
+      for (let i = 0; i < data.length; i++) {
+         CONTENT.tableData.push(
+            [data[i]['date'].substring(0,10), data[i]['name'], data[i]['place']]
+            )
+      }
+
 
    return (
       <View style={styles.main}>

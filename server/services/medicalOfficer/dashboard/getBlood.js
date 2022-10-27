@@ -1,6 +1,6 @@
 const db = require('../../db');
 
-async function getBloodDetails(clusterNic){
+async function getBloodDetails(medicalNic){
    
     const rows = await db.query( `SELECT
     
@@ -16,9 +16,9 @@ async function getBloodDetails(clusterNic){
      blood_camp
    INNER JOIN blood_donation ON blood_camp.bloodCampNumber = blood_donation.campNumber 
    INNER JOIN blood_counter ON blood_counter.bloodCounterNo= blood_donation.bloodCounterNumber 
-   WHERE  blood_camp.bloodCenterNo=(SELECT bloodCenterNo FROM cluster_center_administator WHERE userNic=?) 
+   WHERE  blood_camp.bloodCenterNo=(SELECT bloodCenterNo FROM medical_officer WHERE userNic=?) 
     
- `,[clusterNic]);
+ `,[medicalNic]);
     return  rows ;
     
 }

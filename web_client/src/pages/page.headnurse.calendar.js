@@ -51,9 +51,9 @@ export default function HeadNurseCalender() {
                         </div>
                         <div id='headnurse-calender-camp-details' >
                             <h2 id='headnurse-calender-camp-details-name'>Events</h2>
-                            <div id='headnurse-calender-camp-details-events'><h> 2022/08/14 <br /> <b>Blood camp Number 12</b></h>
+                            <div id='headnurse-calender-camp-details-events'><h> 2022/10/30 <br /> <b>Blood camp Number 1</b></h>
                            </div>
-                            <div id='headnurse-calender-camp-details-events'><h> 2022/08/14 <br /> <b>Blood camp Number 14</b></h>
+                            <div id='headnurse-calender-camp-details-events'><h> 2022/11/24 <br /> <b>Blood camp Number 2</b></h>
                             </div>
 
                         </div>

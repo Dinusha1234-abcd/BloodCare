@@ -81,9 +81,14 @@ const homeSelectCamp = require('./routes/registerDonor/homeSelectCamp');
 const historyRecordsSelect =require('./routes/registerDonor/historyRecordsSelect');
 const campAllDetail =require('./routes/registerDonor/campAllDetail');
 const registerform =require('./routes/registerDonor/registerform');
+const foodTypeInsert =require('./routes/registerDonor/registerformUpdate');
+const donorCalender = require('./routes/registerDonor/donorCalender');
 
 const profileDetail =require('./routes/registerDonor/profileDetail');
 const profileUpdate =require('./routes/registerDonor/profileUpdate');
+
+
+
 
 //admin
 
@@ -112,6 +117,18 @@ const selectClusterCenter = require('./routes/admin/clusterCenter/selectClusterC
 const addClusterCenter = require('./routes/admin/clusterCenter/addClusterCenter');
 const removeClusterCenter = require('./routes/admin/clusterCenter/removeClusterCenter');
 
+const selectOngoingCamp = require('./routes/admin/camp/ongoingCamp/selectOngoingCamp');
+const selectUpcomingCamp = require('./routes/admin/camp/upcomingCamp/selectUpcomingCamp');
+
+const members = require('./routes/admin/dashboard/getMembers');
+const clusterCenters = require('./routes/admin/dashboard/getClusterCenters');
+const blooddata = require('./routes/admin/dashboard/getBlood');
+
+const campAdmin = require('./routes/clusterAdmin/dashboard/getCamps');
+
+
+
+
 
 //headnurse
 const upcommingcamp = require('./routes/headnurse/upcommingcamp');
@@ -120,6 +137,11 @@ const donors = require('./routes/headnurse/donors');
 const pastcamp = require('./routes/headnurse/pastcamp');
 const donorrequest = require('./routes/headnurse/donorrequest');
 const donordetails = require('./routes/headnurse/donordetails');
+const summary = require('./routes/headnurse/summary');
+const dashboard = require('./routes/headnurse/dashboard');
+const register  = require('./routes/headnurse/registerdonor')
+ 
+
 
 //medical officer
 
@@ -189,15 +211,14 @@ const bloodMO = require('./routes/medicalOfficer/dashboard/getBlood');
 
 //home
 const addCamp = require('./routes/campRegister');
+const joinCamp = require('./routes/donorRegister');
 
 
 
  
 
 const getCampsData = require('./routes/showCamps');
-const joinCamp = require('./routes/donorRegister');
-
-
+ 
 
 
 
@@ -293,9 +314,12 @@ app.use("/registerDonor/homeSelectCamp",homeSelectCamp);
 app.use("/registerDonor/historyRecordsSelect",historyRecordsSelect);
 app.use("/registerDonor/campAllDetail",campAllDetail);
 app.use("/registerDonor/registerform",registerform);
+app.use("/registerDonor/registerformUpdate",foodTypeInsert);
+app.use("/registerDonor/getDates",donorCalender);
 
 app.use("/registerDonor/profileDetail",profileDetail);
 app.use("/registerDonor/profileUpdate",profileUpdate);
+
 
 
 
@@ -326,16 +350,27 @@ app.use("/clusterCenter/selectClusterCenter", selectClusterCenter);
 app.use("/clusterCenter/addClusterCenter", addClusterCenter);
 app.use("/clusterCenter/removeClusterCenter", removeClusterCenter);
 
+app.use("/camp/selectOngoingCamp", selectOngoingCamp);
+app.use("/camp/selectUpcomingCamp", selectUpcomingCamp);
+
+app.use("/dashboard/members",members);
+app.use("/dashboard/clusterCenters",clusterCenters);
+app.use("/dashboard/blooddata",blooddata);
+
 
 
 //headnurse
 
 app.use("/headnurse/upcommingcamp",upcommingcamp);
-//app.use("/headnurse/registerdonor",register);
+app.use("/headnurse/registerdonor",register);
 app.use("/headnurse/donors",donors);
 app.use("/headnurse/pastcamp",pastcamp);
 app.use("/headnurse/donorrequest",donorrequest);
 app.use("/headnurse/donordetails",donordetails);
+app.use("/headnurse/summary",summary);
+app.use("/headnurse/dashboard",dashboard);
+
+
 
 //medical officer
 app.use("/camp/selectpendingcamp",pendingCampMO); 

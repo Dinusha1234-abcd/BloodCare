@@ -2,6 +2,7 @@ const db = require('../db');
 
 
 async function getPastCamp(){
+    var todayDate = new Date().toISOString().slice(0, 10);
     const rows =await db.query( `
 
      SELECT blood_camp.date, blood_camp.place, blood_camp.name, blood_camp_organizer.organizerName,blood_center.province , COUNT(blood_camp.bloodCampNumber) AS count,
@@ -20,7 +21,7 @@ async function getPastCamp(){
      blood_donation.campNumber
      INNER JOIN blood_counter ON blood_counter.bloodCounterNo=
      blood_donation.bloodCounterNumber
-     WHERE  blood_camp.date < NOW()
+     WHERE  blood_camp.date < '2022-10-27'
      GROUP BY blood_camp.bloodCampNumber ,
      blood_camp.name  
      `);

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const statusPendingCamp = require('../../../../services/clusterAdmin/camp/pendingCamp/statusPendingCamp');
+const statusPendingCamp = require('../../../../services/medicalOfficer/camp/pendingCamp/statusPendingCamp');
 
 
 router.post('/', async function (req, res) {

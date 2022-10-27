@@ -34,7 +34,9 @@ const Login = ({navigation}) => {
             const firstName = res.data.firstName;
             const lastName = res.data.lastName;
             const type = res.data.type;
-            await AsyncStorage.setItem('token', token);
+            const  userNic = res.data.userName;
+         
+            await AsyncStorage.setItem('userNic', userNic);
             await AsyncStorage.setItem('firstName', firstName);
             await AsyncStorage.setItem('lastName', lastName);
             await AsyncStorage.setItem('type', token);

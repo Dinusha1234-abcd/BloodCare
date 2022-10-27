@@ -89,7 +89,7 @@ export default function HeadNurseAssignCamps() {
                
               <h1 id ="h1-head">Your Upcomming Blood Camps</h1>
               <input type="text" id='search-headnurse-assigncamps' placeholder="Search.."/>
-              <button type="button" id="button-headnurse"> <i class="fas fa-search"></i></button>
+              <button type="button" id="button-headnurse"> <i class="fas fa-search"></i></button> 
                <br></br><br></br><br></br><br></br><br></br><br></br><br></br> <br></br><br></br><br></br>
           </div>
           

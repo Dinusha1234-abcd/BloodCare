@@ -28,10 +28,7 @@ export default function RegDonorCamp() {
     };
     useEffect((() => {getCampMoreDetails() }),[])
     function getCampMoreDetails(){
-        // const regDonorNic = localStorage.getItem('userNic');
-        // const regDonor = {
-        //     regDonorNic
-        // }
+        
         axios.post("http://localhost:8070/registerdonor/campAllDetail").then(
             (res) => {
                 setData(res.data.allCamps);

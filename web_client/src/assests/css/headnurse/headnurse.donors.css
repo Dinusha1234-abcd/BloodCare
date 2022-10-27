@@ -64,8 +64,8 @@
 
   }
   #view-donor-button-headnurse{
-    width: 70%;
-    height: 27px;
+    width: 100px;
+    height: 100px;
     border-radius: 20px;
     border: none;
     background: #FB6281;
@@ -101,4 +101,13 @@
 #button-headnurse-donor-filter:hover {
   background-color: #7e7c7c; /* Green */
   color: white;
+}
+
+#tr-tab{
+  height:60px;
+}
+
+
+#tr2-tab{
+  
 }

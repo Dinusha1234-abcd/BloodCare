@@ -1,11 +1,74 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import loadingImage from '../../assests/images/loading.gif';
+import unsuccessImage from '../../assests/images/wrong.png';
 import '../../assests/css/admin/component.bloodcamp.admin.css'; 
 
 export default function CompletedCamp(){
 
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [wait, setWait] = useState(false);
+    const [successMessage, setSuccessMessage] = useState("");
+    const [unsuccessMessage, setUnsuccessMessage] = useState("");
+    const [success, setSuccess] = useState(false);
+    const [unsuccess, setUnSuccess] = useState(false);
+    const [searchData, setSearchData] = useState("");
+
+    // useEffect((() => { getCompletedCampData() }), [])
+
+    // function getCompletedCampData() {
+    //     axios.post("http://localhost:8070/camp/selectCompletedCamp").then(
+    //         (res) => {
+    //             setData(res.data.camps);
+    //             console.log(res.data);
+    //             setLoading(!loading);
+    //         }).catch((err) => {
+    //             //sever 
+    //             setLoading(!loading);
+    //             setUnsuccessMessage("Network Connection Issue Please Try Again");
+    //             setUnSuccess(true);
+    //         }
+    //     )
+    // }
+
+    function sucessbutton() {
+        window.location = "/bloodcamps/completedcamp";
+    }
+    function unsucessbutton() {
+        window.location = "/bloodcamps/completedcamp";
+    }
+
+    const list = [];
+    if (searchData == "") {
+        for (let i = 0; i < data.length; i++) {
+            if( data[0]['bloodCampNumber'] != null){ 
+            list.push(
+                <> <tr>
+                    <td>{data[i]['bloodCampNumber']}</td>
+                    <td>{data[i]['date'].substring(0, 10)}</td>
+                    <td>{data[i]['place']}</td>
+                    <td>{data[i]['organizerName']}</td>
+                    <td>{data[i]['name']}</td>
+                    <td>{data[i]['numberofregisters']}</td>
+                    <td><button id='view-button-pastcamp'>View</button></td>
+                </tr>
+                </>)
+            }
+        }
+    }
+
     return (
         <div>
-            <div id='camp-contanier-admin'> 
+            <div id='camp-contanier-admin'>
+                <div id={`${success || unsuccess || wait ?   'fade-clusterAdmin' : null }`} ></div>
+
+                <div id={`${unsuccess ? 'unsucess-message-active' : 'unsucess-message'}`}>
+                    <br /> <h1 id='sucess-message-name'> <img id='unsuccessImage' src={unsuccessImage} /> <br /> Wrong !</h1>  <br />
+                    <p id='unsucess-message-box'> {unsuccessMessage}</p> <br />
+                    <button id="okay-button-unsucess" onClick={() => { setSuccess(unsucessbutton) }}> Okay </button>
+                </div>
+
                 <h7 id='header-camp-admin'>Completed Blood Camps</h7>
                 <input type="text" id='input-completedcamp-admin' placeholder=" &#xf002; Search"/>
                 <br/><br/>
@@ -19,68 +82,11 @@ export default function CompletedCamp(){
                     <th >Number of Donors</th>
                     <th id='camp-action-admin'>Action</th>
                 </tr>
-                <tr>
-                    <td>13</td>
-                    <td>06-12-2022</td>
-                    <td>Gold house, Matara</td>
-                    <td>K.L.M.Sandaruwan</td>
-                    <td>Heartland</td>
-                    <td>98</td>
-                    <td><button id='view-camp-button-admin'>View</button></td>
-                </tr>
-                <tr>
-                    <td>14</td>
-                    <td>06-18-2022</td>
-                    <td>Green palace, Galle</td>
-                    <td>D.D.Kumud</td>
-                    <td>Central care</td>
-                    <td>101</td>
-                    <td><button id='view-camp-button-admin'>View</button></td>
-                </tr>
-                <tr>
-                    <td>15</td>
-                    <td>07-07-2022</td>
-                    <td>Gold house, Matara</td>
-                    <td>M.K. Gunawardhane</td>
-                    <td>Red Bucket</td>
-                    <td>103</td>
-                    <td><button id='view-camp-button-admin'>View</button></td>
-                </tr>
-                <tr>
-                    <td>16</td>
-                    <td>07-23-2022</td>
-                    <td>Sakya Institute, Nugegoda </td>
-                    <td>Sanath Gunapala</td>
-                    <td>LifeSupport</td>
-                    <td>124</td>
-                    <td><button id='view-camp-button-admin'>View</button></td>
-                </tr>
-                <tr>
-                    <td>17</td>
-                    <td>07-29-2022</td>
-                    <td>Gurukula, Matara</td>
-                    <td>Harith Induwara</td>
-                    <td>Little Help</td>
-                    <td>101</td>
-                    <td><button id='view-camp-button-admin'>View</button></td>
-                </tr>
-                <tr>
-                    <td>18</td>
-                    <td>08-09-2022</td>
-                    <td>NDDT, Kohuwala</td>
-                    <td>Sarith Ridhmika</td>
-                    <td>Redonest</td>
-                    <td>94</td>
-                    <td><button id='view-camp-button-admin'>View</button></td>
-                </tr>
+                {list}
                 
                 
             </table>
-            {/* <div id='pastCamp-pageButton'>
-                <a className='page-navigation'>{"<< Prev"}  </a> 
-                <a className='page-navigation'>1</a>
-                <a className='page-navigation'>{"Next >>"}</a> 
-            </div> */}
+            <div id={`${loading ? 'loading-cluterAdmin-active' : 'loading-cluterAdmin'}`}> <img src={loadingImage} /> </div>
          </div>
         </div>
     )

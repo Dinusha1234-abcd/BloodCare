@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const assignStaff = require('../../../../services/clusterAdmin/camp/pendingCamp/assignStaff');
+const assignStaff = require('../../../../services/medicalOfficer/camp/pendingCamp/assignStaff');
 
 
 router.post('/', async function (req, res) {

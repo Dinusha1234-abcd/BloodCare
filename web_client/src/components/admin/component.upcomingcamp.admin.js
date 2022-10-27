@@ -1,7 +1,62 @@
-import React from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
+import axios from 'axios';
+import waitImage from '../../assests/images/wait.gif';
+import successImage from '../../assests/images/sucess.png';
+import unsuccessImage from '../../assests/images/wrong.png';
 import '../../assests/css/admin/component.bloodcamp.admin.css'; 
+import loadingImage from '../../assests/images/loading.gif';
 
 export default function UpcomingCamp(){
+
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [wait, setWait] = useState(false);
+    const [unsuccessMessage, setUnsuccessMessage] = useState("");
+    const [success, setSuccess] = useState(false);
+    const [unsuccess, setUnSuccess] = useState(false);
+    const [searchData, setSearchData] = useState("");
+
+    useEffect((() => { getUpcomingCampData() }), [])
+
+    function getUpcomingCampData() {
+
+        axios.get("http://localhost:8070/camp/selectUpcomingCamp").then(
+            (res) => {
+                setData(res.data.camps);
+                console.log(res.data);
+                setLoading(!loading);
+            }).catch((err) => {
+                //sever 
+                setLoading(!loading);
+                setUnsuccessMessage("Network Connection Issue Please Try Again");
+                setUnSuccess(true);
+            })
+
+    }
+    function sucessbutton() {
+        window.location = "/bloodcamp/upcomingcamp";
+    }
+    function unsucessbutton() {
+        window.location = "/bloodcamp/upcomingcamp";
+    }
+
+    const list = [];
+    if (searchData == "") {
+        for (let i = 0; i < data.length; i++) {
+            if( data[0]['bloodCampNumber'] != null){ 
+            list.push(
+                <> <tr>
+                    <td>{data[i]['bloodCampNumber']}</td>
+                    <td>{data[i]['date'].substring(0, 10)}</td>
+                    <td>{data[i]['place']}</td>
+                    <td>{data[i]['organizerName']}</td>
+                    <td>{data[i]['name']  }</td>
+                    <td>< button id='view-button-pastcamp'>View</button></td>
+                </tr>
+                </>)
+            }
+        }
+    }
 
     return (
         <div>
@@ -18,62 +73,20 @@ export default function UpcomingCamp(){
                     <th >Blood Center Name</th>
                     <th id='camp-action-admin'>Action</th>
                 </tr>
-                <tr>
+
+                {list}
+                {/* <tr>
                     <td>09</td>
                     <td>08-29-2022</td>
                     <td>Gold house, Matara</td>
                     <td>Sanduni Malsha</td>
                     <td>HeartWings</td>
                     <td><button id='view-camp-button-admin'>View</button></td>
-                </tr>
-                <tr>
-                    <td>10</td>
-                    <td>09-11-2022</td>
-                    <td>Green palace, Galle</td>
-                    <td>D.K.Hansika</td>
-                    <td>BloodSource</td>
-                    <td><button id='view-camp-button-admin'>View</button></td>
-                </tr>
-                <tr>
-                    <td>11</td>
-                    <td>09-18-2022</td>
-                    <td>Gold house, Matara</td>
-                    <td>Dinusha Gunawardhane</td>
-                    <td>SK Community Blood Center</td>
-                    <td><button id='view-camp-button-admin'>View</button></td>
-                </tr>
-                <tr>
-                    <td>12</td>
-                    <td>09-24-2022</td>
-                    <td>Sarasi Hall, Kottawa</td>
-                    <td>Kalshi Lakeesha</td>
-                    <td>Heartland</td>
-                    <td><button id='view-camp-button-admin'>View</button></td>
-                </tr>
-                <tr>
-                    <td>13</td>
-                    <td>09-30-2022</td>
-                    <td>Dekma, Matara</td>
-                    <td>Dilhara Savinda</td>
-                    <td>Lifeline Blood Bank</td>
-                    <td><button id='view-camp-button-admin'>View</button></td>
-                </tr>
-                <tr>
-                    <td>14</td>
-                    <td>10-02-2022</td>
-                    <td>NDDT, Kohuwala</td>
-                    <td>Hiruni Danapala</td>
-                    <td>Central care</td>
-                    <td><button id='view-camp-button-admin'>View</button></td>
-                </tr>
-                
+                </tr>   */}
                 
             </table>
-            {/* <div id='pastCamp-pageButton'>
-                <a className='page-navigation'>{"<< Prev"}  </a> 
-                <a className='page-navigation'>1</a>
-                <a className='page-navigation'>{"Next >>"}</a> 
-            </div> */}
+            <div id={`${loading ? 'loading-cluterAdmin-active' : 'loading-cluterAdmin'}`}> <img src={loadingImage} /> </div>
+  
          </div>
         </div>
     )

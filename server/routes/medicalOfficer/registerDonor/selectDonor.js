@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const selectDonor = require('../../../services/clusterAdmin/registerDonor/selectDonor');
+const selectDonor = require('../../../services/medicalOfficer/registerDonor/selectDonor');
 
 
 router.get('/', async function (req, res) {

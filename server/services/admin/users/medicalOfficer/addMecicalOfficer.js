@@ -1,8 +1,9 @@
 const db = require('../../../db');
 
-async function insertMedicalOfficer(centerNumber, firstName, lastName, NIC, gender, dateOfBirth, address, email, mobileNumber, hashpassword){
+async function insertMedicalOfficer(bloodCenterNo, firstName, lastName, NIC, gender, dateOfBirth, address, email, mobileNumber,   hashpassword){
     //get date
     var today = new Date();
+    console.log(gender);
     var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
     //get time
     var today = new Date();
@@ -15,10 +16,12 @@ async function insertMedicalOfficer(centerNumber, firstName, lastName, NIC, gend
         [NIC, hashpassword, time, date]);
 
     await db.query(`INSERT INTO medical_staff(staffId, bloodCenterNo, medicalType, userNic) VALUES (?,?,?,?)`,
-        ['', centerNumber, 'medicalOfficer', NIC]);
+        ['', bloodCenterNo, 'medicalOfficer', NIC]);
 
     await db.query(`INSERT INTO medical_officer  (medicalOfficerId, BloodCenterNo, userNic ) VALUES (?,?,? )`,
-        ['', centerNumber, NIC]);
+        ['', bloodCenterNo, NIC]);
+
+    
 
 }
 

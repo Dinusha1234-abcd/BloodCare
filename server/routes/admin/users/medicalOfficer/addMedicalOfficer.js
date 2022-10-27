@@ -24,6 +24,7 @@ router.post('/', async function (req, res) {
     const address = req.body.address;
     const email = req.body.email;
     const mobileNumber = req.body.mobileNumber;
+    const bloodCenterNo = req.body.bloodCenterNo;
     const password = req.body.password;
     //const password = genPassword();
 
@@ -34,7 +35,7 @@ router.post('/', async function (req, res) {
     //intialize variable
     let gender;
     let dateOfBirth;
-    const centerNumber = 2;
+    // const centerNumber = 2;
     // let centerName;
     // let centerDistrict;
     // let centerAddress;
@@ -132,7 +133,7 @@ router.post('/', async function (req, res) {
 
 //  await addMedicalOfficer.getBloodCenterNumber().then(
 //     (user) => {
-//        centerNumber = bloodCenterNo;
+//         bloodCenterNo = bloodCenterNo;
 //        centerName = name;
 //        centerDistrict =  district;
 //        centerAddress =  address;
@@ -140,12 +141,12 @@ router.post('/', async function (req, res) {
 //  )
  
  
- await addMedicalOfficer.insertMedicalOfficer(centerNumber, firstName, lastName, NIC, gender, dateOfBirth, address, email, mobileNumber, hashPassword).then(
+ await addMedicalOfficer.insertMedicalOfficer(bloodCenterNo, firstName, lastName, NIC, gender, dateOfBirth, address, email, mobileNumber, hashPassword).then(
     (user) => {
 
         // const subject =  'Dr '+firstName+' '+lastName+ ' Sucessfully added to The BloodCare';
         // const text = 'Dear Dr '+firstName+' ' +lastName;
-        // const html = '<h>'+text+'</h><br/><h> Your are  added BloodCare System </h><br/> <p>Blood Center Number : '+centerNumber+ '</p><br/><p>Blood Center Name : '+centerName
+        // const html = '<h>'+text+'</h><br/><h> Your are  added BloodCare System </h><br/> <p>Blood Center Number : '+bloodCenterNo+ '</p><br/><p>Blood Center Name : '+centerName
         // + '</p><br/><p>Blood Center District : '+centerDistrict+ '</p><br/><p>Blood Center Address : '+centerAddress+ '</p><br/>' ;
         
         // sendMail.sendMail(email,subject,text,html);

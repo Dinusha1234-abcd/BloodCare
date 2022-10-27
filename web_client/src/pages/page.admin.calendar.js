@@ -55,15 +55,17 @@ export default function AdminCalendar(){
                  </div> 
                   <div id='admin-calender-camp-details' >
                       <h2 id='admin-calender-camp-details-name'>Events</h2>
-                      <div id='admin-calender-camp-details-events'><h> 2022/08/14 <br/> <b>Blood camp Number 12</b></h></div>
-                      <div id='admin-calender-camp-details-events'><h> 2022/08/14 <br/> <b>Blood camp Number 14</b></h></div>
+                      <div id='admin-calender-camp-details-events'><h> 2022-11-23 <br/> <b>ලේ දන්දීමේ මහා පිංකම</b></h></div>
+                      <div id='admin-calender-camp-details-events'><h> 2022-11-04<br/> <b>Give Blood and Save a Life</b></h></div>
+                      <div id='admin-calender-camp-details-events'><h> 2022-10-29<br/> <b>Blood Donation</b></h></div>
+                      <div id='admin-calender-camp-details-events'><h> 2022-10-29<br/> <b>Blood Donation</b></h></div>
 
                       <div id="admin-edit-calendar-button">
                         <button>Edit</button>
                       </div>
-                      <div id="admin-add-calendar-button">
+                      {/* <div id="admin-add-calendar-button">
                         <button>+</button>
-                      </div>
+                      </div> */}
 
                   </div>
                   </div>
