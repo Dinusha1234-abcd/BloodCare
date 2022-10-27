@@ -206,6 +206,7 @@ const bloodMO = require('./routes/medicalOfficer/dashboard/getBlood');
 
 //home
 const addCamp = require('./routes/campRegister');
+const joinCamp = require('./routes/donorRegister');
 
 
 
